@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/stroke_taxonomy/raw/
+# pixi environments
+.pixi/*
+!.pixi/config.toml

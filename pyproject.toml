@@ -1,0 +1,34 @@
+[project]
+authors = [{name = "HappyEthan", email = "112837211+HappyEthan@users.noreply.github.com"}]
+name = "FYP"
+requires-python = ">= 3.11"
+version = "0.1.0"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64"]
+
+[tool.pixi.pypi-dependencies]
+fyp = { path = ".", editable = true }
+
+[tool.pixi.dependencies]
+python = ">=3.11"
+pytest = ">=7.4"
+numpy = ">=1.24"
+requests = ">=2.31"
+libopencv = ">=4.8"
+py-opencv = ">=4.8"
+
+[tool.pixi.tasks]
+test = "pytest tests/ -v"
+test-download = "pytest tests/test_download_data.py -v"
+test-parser = "pytest tests/test_parser.py -v"
+test-taxonomy = "pytest tests/test_taxonomy.py -v"
+test-ocr = "pytest tests/test_recognizer.py -v"
+test-pipeline = "pytest tests/test_pipeline.py -v"
+download-data = "python scripts/download_data.py data/stroke_taxonomy/raw"
+build-taxonomy = "python scripts/build_taxonomy.py"
