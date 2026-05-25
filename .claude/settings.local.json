@@ -6,7 +6,10 @@
       "Bash(python -c \"import sys,json; d=json.loads\\(sys.stdin.read\\(\\)\\); print\\(list\\(d.keys\\(\\)\\)\\); print\\('strokes count:', len\\(d.get\\('strokes',[]\\)\\)\\); print\\('first stroke:', d['strokes'][0][:80] if d.get\\('strokes'\\) else 'N/A'\\)\")",
       "Bash(python -m pytest tests/test_recognizer.py -v)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "WebSearch",
+      "Bash(timeout 15 python -c ' *)",
+      "Bash(pixi run *)"
     ]
   }
 }
