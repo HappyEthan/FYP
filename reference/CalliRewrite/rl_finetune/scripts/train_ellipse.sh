@@ -1,0 +1,1 @@
+python try_tianshou.py --train_data_dir ./data/train_data/ --test_data_dir ./data/test_data/ --which_tool ellipse --tool_property_dir ./tool_property/ellipse.json --logdir ./result/ # > output.log 2>&1^C
