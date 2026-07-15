@@ -1,0 +1,6 @@
+from typing import Protocol
+from brushbot.types import State, Command
+
+class RobotBackend(Protocol):
+    def read(self) -> State: ...
+    def write(self, cmd: Command) -> None: ...
