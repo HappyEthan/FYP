@@ -77,7 +77,7 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 
 > 目标：让 Elfin5 忠实复现 StrokePlan 的"路径 + 提按"，并证明"闭环触觉力控 > 开环位置控"。
 > 核心里程碑 = B2/B3；B4 模型是升级项。
-> **技术栈决策（07-13）**：**纯 Python + PyBullet 仿真**开发算法，**ROS 仅实机阶段**用（Elfin 高频闭环走 ROS/EtherCAT）。代码按"**算法 ↔ I/O 解耦、后端可插拔**"组织：① 纯算法层（环境无关）②后端(SimBackend/Ros2Backend) ③运行循环 → 详见 `docs/control-architecture.md`。实机化 = 写一个 `Ros2Backend`（rclpy/rosbridge）+ 切 g_meas 来源，①③不动。实机接口(ROS vs TCP)/ROS 环境(Foxy-Docker vs Humble)延后到臂到位再定。
+> **技术栈决策（07-15）**：**纯 Python + PyBullet 仿真**开发算法，**实机用华沿 Python SDK**（`CPS`/`HRIF_*`，TCP 连控制器）——**无需 ROS/Docker/EtherCAT**（已读官方 SDK 手册确认）。代码按"**算法 ↔ I/O 解耦、后端可插拔**"组织：① 纯算法层（环境无关）②后端(`PyBulletBackend`/`HuayanBackend`) ③运行循环 → 详见 `docs/control-architecture.md`。实机化 = 写一个 `HuayanBackend`（`HRIF_ReadActTcpPos` 读、`HRIF_StartServo`+`HRIF_PushServoP` 流式写，控制器自动逆解）+ 切 g_meas 来源，①③不动。
 
 > **⚠️ 仿真能 / 不能验证什么**
 > - ✅ 仿真做得了：B1 开环写字全程、轨迹/`s→t`/坐标系/IK、B2 导纳外环**软件骨架**（用合成 `g_meas` 或刚性平面接触）。
@@ -86,9 +86,9 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 ## B0 · Python + PyBullet 仿真环境（现在就能起，不等硬件、不用 ROS）
 - [ ] 搭 Python 环境（miniconda：numpy + pybullet）
 - [ ] 拿 Elfin5 **URDF**（官方 `elfin_robot` 包 / 大族 3D 模型下载）→ PyBullet 直接 `loadURDF`
-- [ ] 按 `docs/control-architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(SimBackend) / `run.py`(循环)
+- [ ] 按 `docs/control-architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(PyBulletBackend) / `run.py`(循环)
 - [ ] PyBullet 里让 Elfin 动起来（读关节位姿 + `calculateInverseKinematics` 下发）
-- [ ] （实机阶段再做）确认 Elfin 实机接口(ROS/TCP) + ROS 环境方案，写 `Ros2Backend`
+- [ ] （实机阶段再做）写 `HuayanBackend`：`HRIF_Connect`→`HRIF_StartServo`→循环 `HRIF_PushServoP`(写)/`HRIF_ReadActTcpPos`(读)。注意 SDK `.so` 为 py3.6/3.7，可能需单独环境；servo 频率实机测
 
 ## B1 · 复现 CalliRewrite 开环写字（PyBullet 先行，不依赖触角）
 > **复现 CalliRewrite 的机械臂部分** = 开环位置控制、笔宽靠 `z=func(r)` 标定映射的笔高来凑。这既验证控制链路，也是对比实验的**开环基线**。此阶段 `controller` 退化为"只走 xy + 固定/给定 z"。
@@ -102,7 +102,7 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 - [ ] （实机）**纸面标定**：示教三点定平面 → `z_surface`（固定纸夹具）
 
 ## B2 · 导纳外环 + 触角反馈闭环（★核心，E1 过后）
-> 算法在 ① 纯算法层（`AdmittanceController.step`）——与环境无关。仿真里先用**合成 `g_meas`** / 刚性平面接触验证软件结构与稳定性；**真实触角物理必须真机**。实机下发：`Ros2Backend` 逆解→流式位置控制器 `joint_group_position_controller`（或 FZI `cartesian_controllers`）。
+> 算法在 ① 纯算法层（`AdmittanceController.step`）——与环境无关。仿真里先用**合成 `g_meas`** / 刚性平面接触验证软件结构与稳定性；**真实触角物理必须真机**。实机下发：`HuayanBackend` 用 **`HRIF_PushServoP`** 流式推笛卡尔位姿（控制器自动逆解），连 IK 都不用自己写。备选/安全网：SDK **内置力控**（`SetForceControlState`+`SetMass/Damp/StiffParams`，用机器人腕部 F/T）。
 - [ ] 定义 **StrokePlan 数据结构**（与队友对齐契约2）
 - [ ] 接**契约1**实时 `g_meas` 流（有线低延迟）
 - [ ] **机器人姿态下 re-baseline**：实测 Elfin 法兰/电机磁干扰对 B0 的影响，必要时扣背景磁场
