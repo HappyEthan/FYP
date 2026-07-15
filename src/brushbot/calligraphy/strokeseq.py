@@ -17,7 +17,9 @@ def process(seq, r2z, alpha=0.04, beta=0.5):
                 continue
             xs.append(x_ - 2 * r_); ys.append(y_ - 2 * r_); zs.append(0.05)  # 悬空进入
             xs.append(x_); ys.append(y_); zs.append(h)                        # 落笔
-    if has_new_stroke:                   # 末尾抬笔离纸 (仅当有新笔时)
+    # 末尾抬笔离纸. 门控 has_new_stroke 是为满足 Task6 的 len==1 用例(纯延续输入不加抬笔点),
+    # 勿改回无条件循环否则破坏该测试; `and xs` 防单点退化输入(如仅 [(1,...)] 被跳过)时 xs[-1] 越界.
+    if has_new_stroke and xs:
         for _ in range(5):
             xs.append(xs[-1]); ys.append(ys[-1]); zs.append(zs[-1] + 0.015)
     return list(zip(xs, ys, zs))
