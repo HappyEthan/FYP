@@ -20,7 +20,7 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 ```
 
 **关键门禁**：`E1` 未过之前不要写正式力控代码；`E1` 决定走"触角闭环"还是"F/T 安全网"。
-**可最先并行**：`B1`（Elfin 纯位置伺服）不依赖触角，拿到臂即可起步。
+**可最先并行**：`B0/B1`（Python+PyBullet 仿真、开环写字）不依赖触角、不依赖实机，**现在就能起步**。
 
 ---
 
@@ -77,21 +77,32 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 
 > 目标：让 Elfin5 忠实复现 StrokePlan 的"路径 + 提按"，并证明"闭环触觉力控 > 开环位置控"。
 > 核心里程碑 = B2/B3；B4 模型是升级项。
+> **技术栈决策（07-13）**：**纯 Python + PyBullet 仿真**开发算法，**ROS 仅实机阶段**用（Elfin 高频闭环走 ROS/EtherCAT）。代码按"**算法 ↔ I/O 解耦、后端可插拔**"组织：① 纯算法层（环境无关）②后端(SimBackend/Ros2Backend) ③运行循环 → 详见 `docs/control-architecture.md`。实机化 = 写一个 `Ros2Backend`（rclpy/rosbridge）+ 切 g_meas 来源，①③不动。实机接口(ROS vs TCP)/ROS 环境(Foxy-Docker vs Humble)延后到臂到位再定。
 
-## B0 · 环境与 Elfin 接口摸底（拿到臂先做）
-- [ ] Elfin5 通电、示教器/急停/安全区熟悉
-- [ ] **查清实时控制接口**：大族 SDK / ROS 驱动是否支持高频位置流（类 `servoL`）？能跑多少 Hz？（外环要 100–200Hz）
-- [ ] 搭 Python 控制环境（Elfin SDK 绑定 / ROS2 桥）
-- [ ] 记录接口能力到 `note.md`（决定导纳外环落地方式）
+> **⚠️ 仿真能 / 不能验证什么**
+> - ✅ 仿真做得了：B1 开环写字全程、轨迹/`s→t`/坐标系/IK、B2 导纳外环**软件骨架**（用合成 `g_meas` 或刚性平面接触）。
+> - ❌ 仿真做不了：触角真实物理（迟滞/带宽/磁干扰）、**E1–E4 门禁**、真实提按复现与"闭环 vs 开环"对比、实机安全限幅 → **必须真机**。
 
-## B1 · 纯位置伺服跑通（不依赖触角，可最先做）
-- [ ] 用 SDK 控 Elfin 走一条**直线**（先验证控制链路 + 实时性/伺服频率）
-- [ ] 走一个字骨架的 xy 路径（z 固定悬空，先不接触）
-- [ ] **纸面标定**：示教三点定平面 → `z_surface`（固定纸夹具）
+## B0 · Python + PyBullet 仿真环境（现在就能起，不等硬件、不用 ROS）
+- [ ] 搭 Python 环境（miniconda：numpy + pybullet）
+- [ ] 拿 Elfin5 **URDF**（官方 `elfin_robot` 包 / 大族 3D 模型下载）→ PyBullet 直接 `loadURDF`
+- [ ] 按 `docs/control-architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(SimBackend) / `run.py`(循环)
+- [ ] PyBullet 里让 Elfin 动起来（读关节位姿 + `calculateInverseKinematics` 下发）
+- [ ] （实机阶段再做）确认 Elfin 实机接口(ROS/TCP) + ROS 环境方案，写 `Ros2Backend`
+
+## B1 · 复现 CalliRewrite 开环写字（PyBullet 先行，不依赖触角）
+> **复现 CalliRewrite 的机械臂部分** = 开环位置控制、笔宽靠 `z=func(r)` 标定映射的笔高来凑。这既验证控制链路，也是对比实验的**开环基线**。此阶段 `controller` 退化为"只走 xy + 固定/给定 z"。
+> ⚠️ CalliRewrite 的 `RoboControl.py`(发送循环) **未开源**、Dobot DLL 仅 Windows/Dobot → 用自己的后端重写（细节见 `docs/callirewrite-arm-control.md`）。
+- [ ] PyBullet 里让 Elfin 走一条**直线**（验证控制链路）
+- [ ] 写"读 `(x,y,z)` 控制点 npz → 逐点位姿设定值 → SimBackend 下发"的最小控制器（对标缺失的 `RoboControl.Control()`）
+- [ ] 走一个字骨架的 xy 路径（z 悬空，或用 r→z 高度凑宽度复现 CalliRewrite）
 - [ ] `s→t` 换算：弧长参数化 + v1 定速剖面 → 实时目标 `s(t)`
 - [ ] 姿态 v1 固定（笔杆垂直）
+- [ ]（可选）r→z 标定脚本：复现 CalliRewrite 的"画横线→量宽度→拟合分段线性"标定思路
+- [ ] （实机）**纸面标定**：示教三点定平面 → `z_surface`（固定纸夹具）
 
 ## B2 · 导纳外环 + 触角反馈闭环（★核心，E1 过后）
+> 算法在 ① 纯算法层（`AdmittanceController.step`）——与环境无关。仿真里先用**合成 `g_meas`** / 刚性平面接触验证软件结构与稳定性；**真实触角物理必须真机**。实机下发：`Ros2Backend` 逆解→流式位置控制器 `joint_group_position_controller`（或 FZI `cartesian_controllers`）。
 - [ ] 定义 **StrokePlan 数据结构**（与队友对齐契约2）
 - [ ] 接**契约1**实时 `g_meas` 流（有线低延迟）
 - [ ] **机器人姿态下 re-baseline**：实测 Elfin 法兰/电机磁干扰对 B0 的影响，必要时扣背景磁场
@@ -121,6 +132,6 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 
 ## 近期下一步（Ethan）
 
-1. 等 Elfin5 到位 → 先做 **B0 接口摸底 + B1 纯位置伺服**（不依赖触角，最先能推进）。
+1. **不等硬件**：搭 **B0（Python+PyBullet 环境 + 三层骨架 + Elfin URDF）** → **B1（PyBullet 里开环写字，复现 CalliRewrite）**。
 2. 与队友对齐**两个接口契约**的具体格式（契约1 g_meas 流、契约2 StrokePlan）。
 3. 关注队友 **E1** 结果——它决定 B2 走触角闭环还是 F/T 安全网。

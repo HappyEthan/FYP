@@ -37,9 +37,10 @@
 | 毛笔本体（触角嵌毛+装杆+法兰夹持） | ⏳ 待集成 |
 | 双模固件（BLE 无线 + USB 有线，≥100Hz，时间戳） | ⏳ 待做 |
 | **机械臂** | **Elfin5**（大族 HansRobot 6-DOF 协作臂，5kg）——**非 UR** |
+| Elfin 官方 ROS 驱动（**仅实机用**） | ✅ 现成（`huayan-robotics/elfin_robot_ros2`，Foxy/EtherCAT）——仿真开发**不需要** |
 | 相机、电脑 | ✅ 已有 |
 
-> ⚠️ `reference/` 里执行方案的示例代码全是 `ur_rtde`（UR 专用）。**换 Elfin5 后控制接口需重写**，用大族 SDK / ROS 驱动。Elfin 是 6-DOF，未来做笔锋姿态（v2）有优势。
+> ⚠️ `reference/` 执行方案示例代码是 `ur_rtde`（UR 专用），不能直接用。**开发方式见 §5**：算法用**纯 Python + PyBullet 仿真**开发，**ROS 仅实机阶段**接入（Elfin 高频实时控制走 ROS 的 EtherCAT master）。控制代码按"算法 ↔ I/O 解耦、后端可插拔"组织，详见 `docs/control-architecture.md`。Elfin 6-DOF，未来做笔锋姿态（v2）有优势。
 
 ---
 
@@ -67,6 +68,8 @@
 | 架构原则 | 执行器与轨迹来源用 **StrokePlan 契约解耦** | 07-13 |
 | 反馈表示 | **形变量 + 偏移角**（论文 Fig.7 正解；触角驱动、自带拖拽解耦） | 参见执行方案§1 |
 | 控制律 | 前馈标定 `z_ff(g_d)` + 低增益反馈 `Kv∫(g_d−g_meas)dt` | 参见执行方案§3.2 |
+| **开发方式** | **纯 Python + PyBullet 仿真**开发算法（**算法与 I/O 解耦、后端可插拔**，见 `docs/control-architecture.md`）；ROS **仅实机阶段**用（高频闭环经 EtherCAT）。实机化 = 写一个 ROS/TCP 后端 + 把 g_meas 从合成切到真流，①算法③循环不改 | 07-13 |
+| **复现基线** | 复现 CalliRewrite = 开环位置写字 = 计划 B1 = 对比实验的**开环基线** | 07-13 |
 | 时间 | 不设限、里程碑递增、核心优先 | 07-13 |
 
 ---
@@ -74,7 +77,9 @@
 ## 6. 开放问题 / 待决（TODO 决策）
 
 - [ ] **示范采集方式**（相机追标记 / 拖动示教 Elfin / 先合成模板）——**按下不表，未定**。核心闭环不依赖它（靠 StrokePlan 解耦）。
-- [ ] **Elfin5 实时控制接口**：有无类似 `servoL` 的高频位置流？能跑多少 Hz？（决定导纳外环怎么落地）——**需查大族 SDK/ROS 驱动**。
+- [x] **Elfin5 实时控制接口**（已查 07-13）：官方 ROS 驱动（Foxy, EtherCAT），内部 EtherCAT 1000Hz；**高频实时控制走 ROS 的 EtherCAT master**。→ 开发用 Python+PyBullet，**实机再接 ROS**。
+- [ ] **实机接口方式（延后到臂到位）**：紧闭环(B2)走 ROS(EtherCAT)；开环写字(B1)或许可用 Elfin **TCP/脚本 API**（免 ROS，待手册确认）。**仿真阶段不需要定。**
+- [ ] **ROS 运行环境（延后到实机）**：官方驱动 Foxy 原生只跑 Ubuntu 20.04，本机 22.04 → 三选一：Docker-Foxy / 双系统20.04 / 移植或找 Humble 分支。**非必须 Docker。**
 - [ ] 契约 1/契约 2 的**具体数据格式**与队友敲定。
 - [ ] `g_press` 方向解耦"能否干净分离提按 vs 拖拽"——**未证实**，靠 E4 量化。
 
@@ -88,7 +93,8 @@
 | 迟滞/蠕变 | 触角有粘弹性，快速提按下污染估计 | E3 量化回环面积 |
 | 磁干扰漂移 | Elfin 钢法兰+电机磁场使基线 B0 漂；人写 vs 机器人写要可比 | **机器人姿态下重取基线**，必要时背景磁场扣除 |
 | 数据稀缺（模型阶段） | 自示范样本少，Transformer 易过拟合 | 小模型+强正则+笔画重组增强；模型是升级项，不阻塞核心 |
-| Elfin ≠ UR | 参考代码不能直接跑 | 早期就摸清 Elfin 实时接口，别到后期返工 |
+| Elfin ≠ UR | 参考代码(ur_rtde)不能直接跑 | 算法用 Python 自写；实机经 ROS/TCP 接入（后端可插拔） |
+| ROS 环境（仅实机） | 官方驱动 Foxy(EOL)、需 Ubuntu 20.04；本机 22.04 | **延后到实机**：Docker-Foxy / 双系统20.04 / Humble 分支，三选一；非必须 Docker |
 
 ---
 
@@ -109,8 +115,12 @@
   - 深度阅读 `reference/` 全部方案，确认项目重定向。
   - 通过提问锁定：重心=执行闭环、核心=Motion Copy 复现、架构=StrokePlan 解耦、机构=Elfin5、旧代码归档。
   - Git：旧"书法教学/评估系统"代码归档到 **`legacy` 分支**；`master` 重置为 `reference/` + 计划文档（并把之前未跟踪的 reference/ 纳入、将内嵌的 CalliRewrite 展平为普通文件）。
-  - 建立 `note.md`（本文件）+ `plan.md`。
-  - **下一步**：等 Elfin5 到位，从 P2 执行闭环开始（先纯位置伺服跑通）。
+  - 建立 `note.md`（本文件）+ `plan.md`；提交并推送到 `origin/master`。
+  - **分析 CalliRewrite 机械臂控制**：纯开环 PTP 位置控制，笔宽靠 `z=func(r)` 标定映射的笔高来凑（"位置控宽度"）。链路 = RL 状态 `(p_t,x,y,r)` → `process()` 出 `(x,y,z)` npz → `RoboControl.Control()` 逐点 `SetPTPCmd` 下发。⚠️ **`RoboControl.py`(发送循环) 未开源**、Dobot DLL 仅 Windows/Dobot → 控制层需自己重写。**复现 CalliRewrite = B1 开环基线**。
+  - 写 `docs/callirewrite-arm-control.md`：CalliRewrite 开环写字技术细节拆解。
+  - **开发方式决策（含修订）**：先定"ROS2+Gazebo"，后查证 Elfin 实时控制以 **ROS/EtherCAT 为中心**（EtherCAT=控制器↔关节的 1000Hz 实时总线，ROS 驱动充当 master；官方驱动是 Foxy），遂**改为纯 Python + PyBullet 仿真开发**（免 ROS 学习成本、发挥算法长处），**ROS 仅实机阶段用**。代码按"算法↔I/O 解耦、后端可插拔"组织 → 写 `docs/control-architecture.md`。实机接口/ROS 版本延后到臂到位再定。
+  - 配好 **ESP32 开发环境**（arduino-cli + esp32 core + MLX90393 库，编译验证通过）→ `~/esp32-brush-test/ESP32使用手册.md`（属队友硬件部分，本机备查）。
+  - **下一步**：不等硬件，搭 Python+PyBullet 环境（B0）+ B1 开环写字（复现 CalliRewrite）；用合成 g_meas 起 B2 导纳骨架。
 
 ---
 
@@ -129,3 +139,12 @@
 | `2024_CalliRewrite_精读.md` | 最接近的前作精读（拿什么/扔什么/超越点） |
 | 种子论文 PDF | Ren et al., Nat. Commun. 16:3135 (2025)，Fig.7 触角毛笔嵌 UR3e |
 | `CalliRewrite/` | 参考实现源码（图像→笔迹→书写） |
+
+**本项目自产文档（`docs/`）：**
+
+| 文档 | 内容 |
+|---|---|
+| `docs/control-architecture.md` | 执行端控制架构：算法↔I/O 解耦、后端可插拔、Python 仿真→ROS 实机、代码骨架 |
+| `docs/callirewrite-arm-control.md` | CalliRewrite 开环写字技术细节（r→z 标定、process()、Dobot 下发、缺失件） |
+
+> ESP32 开发环境手册在 `~/esp32-brush-test/ESP32使用手册.md`（本机，非本仓库）。
