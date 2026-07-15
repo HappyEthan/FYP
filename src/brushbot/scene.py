@@ -13,7 +13,8 @@ class Scene:
         self.cid = p.connect(p.GUI if self._gui else p.DIRECT)
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
         p.setGravity(0, 0, -9.81)
-        p.loadURDF("plane.urdf", [0, 0, config.PAPER_Z])
+        # PAPER_Z is an ABSTRACT writing plane used only for pen-down detection & rendering — it is NOT a physical collision surface; the ground plane sits at z=0.
+        p.loadURDF("plane.urdf", [0, 0, 0])
         self.robot = p.loadURDF(config.ARM_URDF, [0, 0, 0], useFixedBase=True)
         self.num_joints = p.getNumJoints(self.robot)
 
