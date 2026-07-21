@@ -8,6 +8,7 @@ class Scene:
         self.cid = None
         self.robot = None
         self.num_joints = 0
+        self.movable = []      # 可动(非 FIXED)关节的索引, IK 结果按此顺序映射
 
     def load(self):
         self.cid = p.connect(p.GUI if self._gui else p.DIRECT)
@@ -17,6 +18,10 @@ class Scene:
         p.loadURDF("plane.urdf", [0, 0, 0])
         self.robot = p.loadURDF(config.ARM_URDF, [0, 0, 0], useFixedBase=True)
         self.num_joints = p.getNumJoints(self.robot)
+        # calculateInverseKinematics 返回的 q 只含可动关节, 按出现顺序排列.
+        # Elfin 前有 2 个 FIXED 关节 -> 关节索引 != 自由度索引, 必须显式映射.
+        self.movable = [i for i in range(self.num_joints)
+                        if p.getJointInfo(self.robot, i)[2] != p.JOINT_FIXED]
 
     def tcp_pose(self):
         ls = p.getLinkState(self.robot, config.EEF_LINK)
@@ -26,9 +31,8 @@ class Scene:
 
     def ik(self, pos_xyz, ori_euler=None):
         # B1 用位置-only IK, 保证笔尖到达 xyz (姿态 v1 不约束, 留给 B2/实机)
-        # 注: pybullet 默认 maxNumIterations=20 对本 7-DOF 臂单次求解收敛不够精确
-        # (实测残差 ~0.05-0.1m, 与目标点无关), 提高迭代次数/收紧残差阈值以获得
-        # 更精确的解 (调优后残差 ~0.02m, 符合 test_ik_reaches_target 的 0.03m 容差)。
+        # Elfin5 是 6-DOF 非冗余臂, 位置-only IK 精确 (残差 ~0). 提高迭代/收紧残差
+        # 只是稳妥 (对早期用的 KUKA 7-DOF 冗余臂尤为必要, 那时有 ~0.02m 收敛地板)。
         if ori_euler is None:
             q = p.calculateInverseKinematics(
                 self.robot, config.EEF_LINK, pos_xyz,
@@ -43,8 +47,10 @@ class Scene:
         return list(q)
 
     def set_joints(self, q):
-        for i in range(min(len(q), self.num_joints)):
-            p.setJointMotorControl2(self.robot, i, p.POSITION_CONTROL, q[i], force=200)
+        # q[k] 对应第 k 个可动关节 (非 FIXED), 非关节索引 k
+        for k, jidx in enumerate(self.movable):
+            if k < len(q):
+                p.setJointMotorControl2(self.robot, jidx, p.POSITION_CONTROL, q[k], force=200)
 
     def step(self):
         p.stepSimulation()
