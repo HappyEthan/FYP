@@ -11,3 +11,5 @@ reference/HuayanRobot_Library_Python_V1.0.11.0.pdf
 reference/Elfin软件操作说明书V6.4.pdf
 # SDD scratch (ledger/briefs/reports/diffs)
 .superpowers/
+# Make Me a Hanzi 数据集(外部, 30MB)
+data/makemeahanzi/
