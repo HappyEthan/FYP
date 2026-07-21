@@ -32,12 +32,15 @@ def write_hanzi(character, graphics_path=DEFAULT_GRAPHICS, size=0.032,
     strokes = medians_to_strokes(load_medians(character, graphics_path), size=size)
     z_down = config.PAPER_Z + (zc_down - config.Z_TOUCH_REF)
     wp = strokes_to_waypoints(strokes, config.CHAR_ORIGIN, z_down,
-                              config.PAPER_Z + 0.03)
+                              config.PAPER_Z + 0.03,
+                              char_yaw_deg=config.CHAR_YAW_DEG)
 
     scene = Scene(gui=gui)
     scene.load()
-    # 先把笔移到起点上方停稳再开始记录, 否则起笔瞬态会在纸面拖出墨迹
-    scene.set_joints(scene.ik(wp[0]))
+    # 先把笔移到起点上方停稳再开始记录, 否则起笔瞬态会在纸面拖出墨迹。
+    # 必须用同样的全位姿 IK: 若这里只约束位置, 姿态会停在 pitch≈-88°,
+    # 控制环一开始要求笔杆垂直就会产生巨大跳变。
+    scene.set_joints(scene.ik(wp[0], config.FIXED_ORI))
     for _ in range(240):
         scene.step()
 

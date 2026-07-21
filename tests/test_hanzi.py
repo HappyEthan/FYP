@@ -56,3 +56,13 @@ def test_strokes_to_waypoints_lifts_pen_between_strokes():
     # 局部坐标被平移到 origin
     assert wp[1][:2] == pytest.approx((0.5, 0.1))
     assert wp[2][:2] == pytest.approx((0.51, 0.1))
+
+
+def test_strokes_to_waypoints_rotates_character_on_paper():
+    """char_yaw_deg=-90: 字的"上"(局部+y)应转到世界 +x(远离底座的方向)。"""
+    strokes = [[(0.0, 0.0), (0.0, 0.01)]]        # 一笔朝局部 +y
+    wp = strokes_to_waypoints(strokes, origin=(0.5, 0.0), z_down=0.196,
+                              z_up=0.23, char_yaw_deg=-90.0)
+    start, end = wp[1][:2], wp[2][:2]
+    assert start == pytest.approx((0.5, 0.0))
+    assert end == pytest.approx((0.51, 0.0))     # 变成朝世界 +x

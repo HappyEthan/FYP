@@ -50,7 +50,8 @@ class Scene:
         # q[k] 对应第 k 个可动关节 (非 FIXED), 非关节索引 k
         for k, jidx in enumerate(self.movable):
             if k < len(q):
-                p.setJointMotorControl2(self.robot, jidx, p.POSITION_CONTROL, q[k], force=200)
+                p.setJointMotorControl2(self.robot, jidx, p.POSITION_CONTROL, q[k],
+                                        force=config.JOINT_MAX_FORCE)
 
     def step(self):
         p.stepSimulation()

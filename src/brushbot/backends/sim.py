@@ -20,7 +20,10 @@ class SimBackend:
 
     def write(self, cmd: Command) -> None:
         pos = cmd.tcp_pose[:3]
-        q = self.scene.ik(pos)          # 位置-only IK (姿态 v1 不约束)
+        ori = cmd.tcp_pose[3:6]
+        # 全位姿 IK: v1 要求笔杆垂直, 姿态必须受控。位置-only 下法兰姿态不受约束
+        # (实测 pitch≈-88° 且会解支突跳), 笔的朝向就毫无意义。
+        q = self.scene.ik(pos, ori)
         self.scene.set_joints(q)
         for _ in range(self.substeps):
             self.scene.step()

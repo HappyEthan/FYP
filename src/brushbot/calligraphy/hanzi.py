@@ -6,6 +6,7 @@
 """
 
 import json
+import math
 
 
 def load_medians(character, graphics_path):
@@ -33,15 +34,26 @@ def medians_to_strokes(medians, size=0.032):
             for stroke in medians]
 
 
-def strokes_to_waypoints(strokes, origin, z_down, z_up):
-    """局部笔画 -> 世界 (x,y,z) 路点: 每笔抬笔趋近 -> 落笔走完 -> 抬笔收尾。"""
+def strokes_to_waypoints(strokes, origin, z_down, z_up, char_yaw_deg=0.0):
+    """局部笔画 -> 世界 (x,y,z) 路点: 每笔抬笔趋近 -> 落笔走完 -> 抬笔收尾。
+
+    char_yaw_deg: 字在纸上的朝向。机械臂坐在纸的一侧写字时, 字的"上"应
+    朝远离底座的方向(否则从人的视角看字是躺倒的), 此时取 -90。
+    """
     ox, oy = origin
+    rad = math.radians(char_yaw_deg)
+    cos_a, sin_a = math.cos(rad), math.sin(rad)
+
+    def place(x, y):
+        return (ox + x * cos_a - y * sin_a, oy + x * sin_a + y * cos_a)
+
     wp = []
     for stroke in strokes:
-        sx, sy = stroke[0]
-        wp.append((ox + sx, oy + sy, z_up))
-        for (x, y) in stroke:
-            wp.append((ox + x, oy + y, z_down))
-        ex, ey = stroke[-1]
-        wp.append((ox + ex, oy + ey, z_up))
+        sx, sy = place(*stroke[0])
+        wp.append((sx, sy, z_up))
+        for point in stroke:
+            px, py = place(*point)
+            wp.append((px, py, z_down))
+        ex, ey = place(*stroke[-1])
+        wp.append((ex, ey, z_up))
     return wp

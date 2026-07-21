@@ -15,8 +15,12 @@ def write(seq, gui=False, speed=0.05, out_png="/tmp/brushbot_out.png"):
     ox, oy = config.CHAR_ORIGIN
     wp = [(x + ox, y + oy, config.PAPER_Z + (z - config.Z_TOUCH_REF))
           for (x, y, z) in pts]
-    # 3. 搭场景 + 后端
+    # 3. 搭场景 + 后端; 先用同样的全位姿 IK 把笔移到起点停稳
+    #    (姿态受控后, 从零位直接起步会因姿态突变而甩飞)
     sc = Scene(gui=gui); sc.load()
+    sc.set_joints(sc.ik(wp[0], config.FIXED_ORI))
+    for _ in range(240):
+        sc.step()
     backend = SimBackend(sc, ZeroTactile(), substeps=4)
     ctrl = OpenLoopController(wp, speed=speed, fixed_ori=config.FIXED_ORI)
     # 4. 跑开环, 记录笔尖轨迹
