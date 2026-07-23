@@ -120,8 +120,50 @@ def _t(cl):
     t = np.gradient(cl, axis=0); return t / (np.linalg.norm(t, axis=1, keepdims=True) + 1e-12)
 
 
+def _press_cycle(k, period=500, depth_mm=20.0):
+    """一个循环的下压深度(mm): 0 → depth → 0 (余弦, 平滑)."""
+    ph = (k % period) / period
+    return depth_mm * (0.5 - 0.5 * np.cos(2 * np.pi * ph))
+
+
+def watch(period=500):
+    """★ 实时 3D: 打开 MuJoCo 交互窗口, 触角被循环下压/抬起而弯曲/回弹,
+    控制台同步打印 ΔB. 需要显示器(在你本机跑; 无显示会优雅报错)。"""
+    import time
+    try:
+        import mujoco.viewer as viewer
+    except Exception as e:
+        print("需要 mujoco.viewer(本机有显示器时可用):", e); return
+    model = mujoco.MjModel.from_xml_string(_build_xml())
+    data = mujoco.MjData(model)
+    sensor, mag = (0.0, 0.0, 3.0), (0.4, 1.0)
+    for _ in range(400):
+        mujoco.mj_step(model, data)          # 悬空稳定 → 基线
+    cl0 = _local_centerline(model, data)
+    B0 = sensor_B(cl0, _t(cl0), mag, 1.0, sensor)
+    print("打开窗口: 触角循环下压→回弹; 每半秒打印 ΔB. 关窗退出。")
+    with viewer.launch_passive(model, data) as v:
+        k = 0
+        while v.is_running():
+            data.ctrl[0] = -_press_cycle(k, period) / 1000.0
+            mujoco.mj_step(model, data)
+            if k % 120 == 0:
+                cl = _local_centerline(model, data)
+                dB = sensor_B(cl, _t(cl), mag, 1.0, sensor) - B0
+                print(f"  press={_press_cycle(k,period):5.1f}mm  "
+                      f"|ΔBxy|={np.hypot(dB[0],dB[1])/np.linalg.norm(B0)*100:5.1f}%  "
+                      f"ΔBz={dB[2]/np.linalg.norm(B0)*100:+5.1f}% (of |B0|)")
+            v.sync()
+            time.sleep(model.opt.timestep)
+            k += 1
+
+
 if __name__ == "__main__":
     import sys
-    press, dB = demo(sys.argv[1] if len(sys.argv) > 1 else "contact.png")
-    for d, b in zip(press, dB):
-        print(f"press {d:4.0f}mm -> ΔB=({b[0]:+.4f},{b[1]:+.4f},{b[2]:+.4f})  |xy|={np.hypot(b[0],b[1]):.4f}")
+    mode = sys.argv[1] if len(sys.argv) > 1 else "demo"
+    if mode == "watch":
+        watch()
+    else:
+        press, dB = demo(sys.argv[1] if len(sys.argv) > 1 else "contact.png")
+        for d, b in zip(press, dB):
+            print(f"press {d:4.0f}mm -> ΔB=({b[0]:+.4f},{b[1]:+.4f},{b[2]:+.4f})  |xy|={np.hypot(b[0],b[1]):.4f}")
