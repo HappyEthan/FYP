@@ -282,6 +282,7 @@ def test_parse_serial_line_rejects(bad):
 
 
 def test_array_source_streams_all_samples():
+    import time
     t = np.arange(5) / 100.0
     B = np.arange(15, dtype=float).reshape(5, 3)
     src = ArraySource(t, B, rate_hz=100.0)
@@ -291,6 +292,7 @@ def test_array_source_streams_all_samples():
         got.extend(src.read())
         if src.done:
             break
+        time.sleep(0.001)           # 由调用方推进墙钟(真实场景是 GUI 定时器); read() 必须保持非阻塞
     src.stop()
     assert len(got) == 5
     assert got[0] == (0.0, 0.0, 1.0, 2.0)
@@ -310,6 +312,7 @@ def test_array_source_read_is_incremental():
 
 
 def test_array_source_seek():
+    import time
     t = np.arange(10) / 100.0
     B = np.tile(np.arange(10, dtype=float)[:, None], (1, 3))
     src = ArraySource(t, B)
@@ -320,6 +323,7 @@ def test_array_source_seek():
         got.extend(src.read())
         if src.done:
             break
+        time.sleep(0.001)           # 同上: 墙钟由调用方推进
     # 从一半开始 → 拿到的第一个样本索引 >= 5
     assert got[0][1] >= 5.0
 ```
