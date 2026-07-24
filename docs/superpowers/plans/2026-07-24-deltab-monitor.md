@@ -345,7 +345,7 @@ Sample = tuple  # (t_s, Bx, By, Bz)
 
 
 def parse_serial_line(line: str):
-    """固件一行 'ت_us,Bx,By,Bz' → (t_us, Bx, By, Bz); 表头/空行/坏行 → None."""
+    """固件一行 't_us,Bx,By,Bz' → (t_us, Bx, By, Bz); 表头/空行/坏行 → None."""
     if not isinstance(line, str):
         return None
     s = line.strip()
@@ -388,8 +388,12 @@ class ArraySource:
         """跳到总时长的 frac(0~1) 处."""
         frac = min(max(float(frac), 0.0), 1.0)
         self._i = int(frac * len(self._t))
-        self._t0 = time.monotonic() - (self._t[self._i] - self._t[0]) / max(self.rate, 1e-9) \
-            if self._i < len(self._t) else time.monotonic()
+        now = time.monotonic()
+        if self._i < len(self._t):
+            offset = (self._t[self._i] - self._t[0]) / max(self.rate, 1e-9)
+            self._t0 = now - offset
+        else:
+            self._t0 = now
 
     @property
     def done(self) -> bool:
