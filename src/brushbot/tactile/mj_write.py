@@ -26,9 +26,15 @@ ANT_SEG = 0.003                      # 段长 m
 PAPER_Z = 0.20                       # 与 brushbot config 一致
 
 
-def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0):
-    """MjSpec 组装: Elfin + 末端触角链(微倾, 便于弯) + 纸 + 关节位置执行器."""
+def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0, paper_z=PAPER_Z,
+                ah_stiff=0.02, ah_damp=0.02, timestep=None,
+                paper_solref=(0.004, 1.0), paper_solimp=None):
+    """MjSpec 组装: Elfin + 末端触角链(微倾, 便于弯) + 纸 + 关节位置执行器.
+    paper_z: 纸(BOX)中心高度. 实时接触时应对齐触角尖落点, 否则触角会穿纸(见 watch_write).
+    ah_stiff/ah_damp: 触角铰链刚度/阻尼(越小越易弯). paper_solref/solimp+timestep: 接触硬度旋钮。"""
     spec = mujoco.MjSpec.from_file(urdf)
+    if timestep is not None:
+        spec.option.timestep = timestep
     eef = spec.body("elfin_link6")
     mount = eef.add_body(name="ant_mount", pos=[0, 0, 0],
                          euler=[0, np.radians(tilt_deg), 0])
@@ -38,7 +44,7 @@ def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0):
         b = parent.add_body(name=f"ant{i}", pos=[0, 0, 0] if i == 0 else [0, 0, ANT_SEG])
         if i > 0:
             j = b.add_joint(name=f"ah{i}", type=mujoco.mjtJoint.mjJNT_HINGE,
-                            axis=[0, 1, 0], stiffness=0.02, damping=0.02)
+                            axis=[0, 1, 0], stiffness=ah_stiff, damping=ah_damp)
             j.range = [-0.3, 0.3]                       # 限位防折叠(每段<17°)
             j.limited = mujoco.mjtLimited.mjLIMITED_TRUE
         g = b.add_geom(type=mujoco.mjtGeom.mjGEOM_CAPSULE, fromto=[0, 0, 0, 0, 0, ANT_SEG],
@@ -48,9 +54,12 @@ def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0):
     spec.worldbody.add_geom(type=mujoco.mjtGeom.mjGEOM_PLANE, size=[0.5, 0.5, 0.05],
                             pos=[0, 0, 0], rgba=[0.8, 0.75, 0.7, 1])          # 地面(视觉)
     paper = spec.worldbody.add_geom(name="paper", type=mujoco.mjtGeom.mjGEOM_BOX,
-                                    size=[0.07, 0.07, 0.001], pos=[0.45, 0.0, PAPER_Z],
+                                    size=[0.07, 0.07, 0.002], pos=[0.45, 0.0, paper_z],
                                     rgba=[0.98, 0.98, 0.98, 1])
     paper.contype = 4; paper.conaffinity = 4           # 纸: 与触角碰
+    paper.solref = list(paper_solref)                  # 硬接触(小时间常数)→ 减少软穿透
+    if paper_solimp is not None:
+        paper.solimp = list(paper_solimp)
     for jn in ARM_JOINTS:
         a = spec.add_actuator(name="m_" + jn, trntype=mujoco.mjtTrn.mjTRN_JOINT,
                               gaintype=mujoco.mjtGain.mjGAIN_FIXED,
@@ -167,7 +176,13 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
         import mujoco.viewer as viewer
     except Exception as e:
         print("需要 mujoco.viewer(本机有显示器时可用):", e); return
-    m = build_model(); d = mujoco.MjData(m); scratch = mujoco.MjData(m)
+    # 纸对齐触角尖落点(尖停纸面、其余在纸上方, 不穿模); 留 1mm 压量→触角尖贴纸微弯。
+    # 硬接触(solimp)把软穿透压到 <0.7mm(屏幕看不出); 压量再大只会增穿透不增弯(实测)。
+    pen_tip_z = config.PAPER_Z + (0.0045 - config.Z_TOUCH_REF)   # 触角尖落笔目标高度
+    paper_top = pen_tip_z + 0.001
+    m = build_model(paper_z=paper_top - 0.002,                   # BOX 半厚 0.002
+                    paper_solimp=[0.98, 0.999, 0.0001, 0.5, 2])
+    d = mujoco.MjData(m); scratch = mujoco.MjData(m)
     wp = _writing_waypoints(character)
     quat = np.zeros(4); mujoco.mju_euler2Quat(quat, [math.pi, 0.0, 0.0], "xyz")
     qadr = _arm_qadr(m)
@@ -188,7 +203,7 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
 
         def ink():                                       # 笔尖贴近纸面 → 加一个持久墨点
             tp = d.xpos[tipid]
-            if tp[2] <= PAPER_Z + 0.003 and v.user_scn.ngeom < v.user_scn.maxgeom:
+            if tp[2] <= paper_top + 0.003 and v.user_scn.ngeom < v.user_scn.maxgeom:
                 g = v.user_scn.geoms[v.user_scn.ngeom]
                 mujoco.mjv_initGeom(g, mujoco.mjtGeom.mjGEOM_SPHERE, [0.0012, 0, 0],
                                     tp.copy(), eye, np.array([0.05, 0.05, 0.05, 1.0]))
