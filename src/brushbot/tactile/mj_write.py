@@ -24,6 +24,9 @@ TIP_BODY = "elfin_link6"             # 刚性法兰(触角挂此, 从它往下�
 ANT_N = 8                            # 触角分段
 ANT_SEG = 0.003                      # 段长 m
 PAPER_Z = 0.20                       # 与 brushbot config 一致
+# 法兰端面在 elfin_link6 局部 +z 的偏移(实测: link6 网格局部 z ∈ [0.006, 0.0545])。
+# 触角必须挂在端面而非 link6 原点, 否则整根埋在腕壳里, 且腕部会戳穿纸/桌。
+FLANGE_FACE = 0.0545
 
 
 def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0, paper_z=PAPER_Z,
@@ -36,7 +39,7 @@ def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0, paper_z=PAPER_Z,
     if timestep is not None:
         spec.option.timestep = timestep
     eef = spec.body("elfin_link6")
-    mount = eef.add_body(name="ant_mount", pos=[0, 0, 0],
+    mount = eef.add_body(name="ant_mount", pos=[0, 0, FLANGE_FACE],   # 挂法兰端面, 不埋在腕壳里
                          euler=[0, np.radians(tilt_deg), 0])
     parent = mount
     # 触角沿 mount-local +z 延伸(工具 roll=180 → link6 z 朝下 → +z=世界朝下, 指向纸)
@@ -56,11 +59,12 @@ def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0, paper_z=PAPER_Z,
     # 桌子: 从地面撑到纸底, 让纸不再悬空。
     # 注意: URDF 派生的 spec 默认 discardvisual=true, 纯视觉件(contype/conaffinity 全 0)
     # 会被编译丢弃 → 这里给它独立碰撞组 2(臂=1, 触角/纸=4), 谁也碰不着但能留在模型里。
+    # 只做薄桌面板(不是从地面起的实心块, 否则机械臂下臂会穿过去)
     paper_bot = paper_z - 0.002
-    if paper_bot > 0.002:
+    if paper_bot > 0.014:
         table = spec.worldbody.add_geom(name="table", type=mujoco.mjtGeom.mjGEOM_BOX,
-                                        size=[0.10, 0.10, paper_bot / 2],
-                                        pos=[0.45, 0.0, paper_bot / 2],
+                                        size=[0.10, 0.10, 0.006],          # 12mm 厚桌面
+                                        pos=[0.45, 0.0, paper_bot - 0.006],
                                         rgba=[0.55, 0.40, 0.25, 1])
         table.contype = 2; table.conaffinity = 2
     paper = spec.worldbody.add_geom(name="paper", type=mujoco.mjtGeom.mjGEOM_BOX,
@@ -124,18 +128,20 @@ from brushbot.controller import OpenLoopController
 from brushbot.types import State
 
 DEFAULT_GRAPHICS = "data/makemeahanzi/graphics.txt"
-ANT_LEN = ANT_N * ANT_SEG                       # 触角总长, 法兰目标要抬高这么多
+ANT_LEN = ANT_N * ANT_SEG                       # 触角总长
+TOOL_LEN = FLANGE_FACE + ANT_LEN                # link6 原点 → 触角尖: 法兰端面 + 触角
 
 
 def _writing_waypoints(character, size=0.032):
-    """汉字 → link6(法兰) 的笛卡尔路点. 触角从法兰往下伸 ANT_LEN, 故 z 抬高."""
+    """汉字 → link6(法兰) 的笛卡尔路点. 触角尖在 link6 原点下方 TOOL_LEN 处, 故 z 抬高该值
+    (含法兰端面偏移; 只补 ANT_LEN 会让腕壳戳穿纸面)."""
     from brushbot.calligraphy.hanzi import load_medians, medians_to_strokes, strokes_to_waypoints
     strokes = medians_to_strokes(load_medians(character, DEFAULT_GRAPHICS), size=size)
     z_down = config.PAPER_Z + (0.0045 - config.Z_TOUCH_REF)
     z_up = config.PAPER_Z + 0.03
     wp = strokes_to_waypoints(strokes, config.CHAR_ORIGIN, z_down, z_up,
                               char_yaw_deg=config.CHAR_YAW_DEG)
-    return [(x, y, z + ANT_LEN) for (x, y, z) in wp]
+    return [(x, y, z + TOOL_LEN) for (x, y, z) in wp]
 
 
 def write(character="永", speed=0.02, substeps=8):
