@@ -120,8 +120,11 @@ class MonitorWindow(QtWidgets.QMainWindow):
                 if not path:
                     return
                 self.src = S.ReplaySource(path)
-                self.bl.b0 = self.src.b0; self.bl.ready = True   # 先用记录自带基线
-                self.bl.sigma = np.zeros(3)   # 避免沿用上一个源的陈旧 sigma, 门控先归零
+                # 只借用记录自带的 b0 (apply() 不看 ready, 从第一帧起 ΔB 就正确)。
+                # 不把 ready 置 True: 若沿用上一个源的旧 sigma (可能为 0), 门控会
+                # 失效而放行方向线; 保持 ready=False 让 _redraw 用 gate=inf 抑制方向,
+                # 直到 1 秒后的自动重取基线 (_pending_baseline) 产生真实 sigma 为止。
+                self.bl.b0 = self.src.b0
             self.src.start()
         except Exception as e:
             self.src = None
@@ -236,11 +239,12 @@ class MonitorWindow(QtWidgets.QMainWindow):
             self.c_vec.setData([0.0, last[0]], [0.0, last[1]])
         self.lbl_read.setText(
             "|ΔB| %.1f   |ΔBxy| %.1f   φ %s   θ %s   ΔBx %.1f  ΔBy %.1f  ΔBz %.1f   "
-            "缓冲 %d   门控 %.1f µT"
+            "缓冲 %d   门控 %s"
             % (d["mag"], d["mag_xy"],
                "—" if d["phi_deg"] is None else "%.1f°" % d["phi_deg"],
                "—" if d["theta_deg"] is None else "%.1f°" % d["theta_deg"],
-               last[0], last[1], last[2], self.rb.n_total, gate))
+               last[0], last[1], last[2], self.rb.n_total,
+               "— µT" if not np.isfinite(gate) else "%.1f µT" % gate))
 
 
 def main(argv=None) -> int:
