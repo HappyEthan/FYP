@@ -114,3 +114,24 @@ def test_replay_source_roundtrips_to_original_delta(tmp_path):
     bl = Baseline()
     bl.b0 = src.b0                       # 用记录自带的基线扣回去
     assert np.allclose(bl.apply(raw), dB)   # 应与原 CSV 的 ΔB 逐点一致
+
+
+from brushbot.monitor.sources import synth_writing_B
+
+
+def test_synth_writing_B_produces_streamable_source():
+    src = synth_writing_B(n=200, rate_hz=100.0)
+    assert src.info["n_samples"] == 200
+    src.start()
+    got = []
+    for _ in range(2000):
+        got.extend(src.read())
+        if src.done:
+            break
+        time.sleep(0.001)
+    src.stop()
+    assert len(got) == 200
+    B = np.array([[g[1], g[2], g[3]] for g in got])
+    assert np.isfinite(B).all()
+    # 应当围绕标称 B0 波动, 且确实有变化(不是常数)
+    assert B.std(axis=0).max() > 0.0

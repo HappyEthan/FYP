@@ -161,3 +161,25 @@ class ReplaySource(ArraySource):
         d = super().info
         d["action"] = self.meta.get("action")
         return d
+
+
+def synth_writing_B(n: int = 600, rate_hz: float = 100.0,
+                    b0=(270.0, 710.0, -5500.0)) -> ArraySource:
+    """合成信号源: 构造一段"落笔-横拖-抬笔"轨迹 → 合成 ΔB → 叠加标称 B0 得原始 B.
+
+    不依赖字形数据集与 PyBullet, 确定性可测。
+    """
+    from brushbot import config
+    from brushbot.tactile.writing_tactile import tactile_from_trace
+
+    k = np.arange(n)
+    # 前 15% 悬空, 中间落笔并横向匀速拖行, 末 15% 抬笔
+    down = (k > 0.15 * n) & (k < 0.85 * n)
+    z = np.where(down, config.PAPER_Z - 0.0015, config.PAPER_Z + 0.01)
+    x = config.CHAR_ORIGIN[0] + np.linspace(-0.015, 0.015, n)
+    y = np.full(n, config.CHAR_ORIGIN[1], dtype=float)
+    trace = np.c_[x, y, z]
+    dB, _ = tactile_from_trace(trace)
+    B_raw = np.asarray(dB, dtype=float) + np.asarray(b0, dtype=float)
+    t = k / float(rate_hz)
+    return ArraySource(t, B_raw, name="synth:writing", rate_hz=rate_hz)
