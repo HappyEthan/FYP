@@ -9,7 +9,8 @@
      但连续写字的动态积分不稳: 某些拍触角中线换到传感器系时错乱(本该 +z 的段出现在 -z),
      磁偶极子 1/r³ 发散 → ΔB 爆表(10^9%). 试过 pin-step / 伺服+重力补偿 / 加刚度限位均未根治.
      → write_contact(), demo_contact()  (mode "contact")  —— 勿信其 ΔB 输出.
-  ⏳ Phase 4: viewer 可视化.
+  ✅ Phase 4: 实时 viewer, 看臂一笔一划写字 + 笔尖落点留墨(运动学驱动, 稳).
+     → watch_write()  (mode "watch")
 
 后续方向: 改用真实数据集(一横→真实 ΔB 序列)做标定, 合成 ΔB 只是没硬件时的替代.
 见 docs/tactile-fem-sim.md.
@@ -155,6 +156,48 @@ def demo_write(character="永", out_png="mj_write.png"):
     return r
 
 
+def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
+    """★ Phase4 实时窗口: 打开 MuJoCo viewer, 看 Elfin 一笔一划写字, 笔尖落点留墨迹点.
+    运动学驱动(同 write(), 每拍 IK 设 qpos, 已验证稳定); 需显示器(本机跑)。
+    无显示会优雅报错。写完窗口保持打开, 关窗退出。"""
+    import time
+    try:
+        import mujoco.viewer as viewer
+    except Exception as e:
+        print("需要 mujoco.viewer(本机有显示器时可用):", e); return
+    m = build_model(); d = mujoco.MjData(m)
+    wp = _writing_waypoints(character)
+    quat = np.zeros(4); mujoco.mju_euler2Quat(quat, [math.pi, 0.0, 0.0], "xyz")
+    ik(m, d, np.array(wp[0]), quat)                       # 起点
+    tipid = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, f"ant{ANT_N-1}")
+    dt = substeps * m.opt.timestep
+    print(f"打开窗口: Elfin 写 '{character}'; 笔尖落点留墨。关窗退出。")
+    with viewer.launch_passive(m, d) as v:
+        eye = np.eye(3).flatten()
+
+        def ink():                                       # 笔尖贴近纸面 → 加一个持久墨点
+            tp = d.xpos[tipid]
+            if tp[2] <= PAPER_Z + 0.002 and v.user_scn.ngeom < v.user_scn.maxgeom:
+                g = v.user_scn.geoms[v.user_scn.ngeom]
+                mujoco.mjv_initGeom(g, mujoco.mjtGeom.mjGEOM_SPHERE, [0.0012, 0, 0],
+                                    tp.copy(), eye, np.array([0.05, 0.05, 0.05, 1.0]))
+                v.user_scn.ngeom += 1
+
+        ctrl = OpenLoopController(wp, speed=speed, fixed_ori=(math.pi, 0.0, 0.0))
+        t = 0.0
+        while v.is_running() and not ctrl.done():
+            cmd = ctrl.step(State(tcp_pose=(0,) * 6, g_meas=0.0, t=t))
+            ik(m, d, np.array(cmd.tcp_pose[:3]), quat, iters=100)
+            mujoco.mj_forward(m, d)
+            ink(); v.sync()
+            if realtime:
+                time.sleep(dt)
+            t += dt
+        print(f"写完({v.user_scn.ngeom} 墨点)。关窗退出。")
+        while v.is_running():
+            v.sync(); time.sleep(0.05)
+
+
 def _antenna_centerline(m, d):
     """触角各段世界位置 → 转到 ant_mount(根/传感器)局部系, mm 制中线."""
     mount = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, "ant_mount")
@@ -249,7 +292,9 @@ def demo_contact(character="永", out_png="mj_contact.png"):
 if __name__ == "__main__":
     import sys
     mode = sys.argv[1] if len(sys.argv) > 1 else "ik"
-    if mode == "write":
+    if mode == "watch":
+        watch_write(sys.argv[2] if len(sys.argv) > 2 else "永")
+    elif mode == "write":
         ch = sys.argv[2] if len(sys.argv) > 2 else "永"
         out = sys.argv[3] if len(sys.argv) > 3 else "mj_write.png"
         r = demo_write(ch, out)
