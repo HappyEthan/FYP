@@ -120,17 +120,22 @@ class MonitorWindow(QtWidgets.QMainWindow):
                 if not path:
                     return
                 self.src = S.ReplaySource(path)
-                # 只借用记录自带的 b0 (apply() 不看 ready, 从第一帧起 ΔB 就正确)。
-                # 不把 ready 置 True: 若沿用上一个源的旧 sigma (可能为 0), 门控会
-                # 失效而放行方向线; 保持 ready=False 让 _redraw 用 gate=inf 抑制方向,
-                # 直到 1 秒后的自动重取基线 (_pending_baseline) 产生真实 sigma 为止。
-                self.bl.b0 = self.src.b0
             self.src.start()
         except Exception as e:
             self.src = None
             self.statusBar().showMessage("打不开信号源: %s" % e, 8000)
             return
+        # 基线属于"这一次连接", 不属于窗口本身: 换源时必须整体换掉, 否则会残留
+        # 上一个源标定出的 ready/sigma(甚至 b0), 导致门控用错误的 σ 放行方向,
+        # 或 ΔB 用错误的 b0 计算。
         self.rb = RingBuffer(BUF_SECONDS * RATE_HZ)
+        self.bl = Baseline()
+        if isinstance(self.src, S.ReplaySource):
+            # 只借用记录自带的 b0 (apply() 不看 ready, 从第一帧起 ΔB 就正确)。
+            # 不把 ready 置 True: 若沿用上一个源的旧 sigma (可能为 0), 门控会
+            # 失效而放行方向线; 保持 ready=False 让 _redraw 用 gate=inf 抑制方向,
+            # 直到 1 秒后的自动重取基线 (_pending_baseline) 产生真实 sigma 为止。
+            self.bl.b0 = self.src.b0
         self.btn_conn.setText("断开")
         # 所有源都在采到 1 秒后自动重取基线 —— 回放也要, 否则 sigma 为 0 会让门控失效
         # (记录开头通常是静止段, 重取得到的 b0 与记录自带的基本一致, 但额外拿到 sigma)
