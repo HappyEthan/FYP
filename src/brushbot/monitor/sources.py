@@ -79,8 +79,6 @@ class ArraySource:
             out.append((float(self._t[self._i]), float(self._B[self._i, 0]),
                         float(self._B[self._i, 1]), float(self._B[self._i, 2])))
             self._i += 1
-        if not out and not self.done:
-            time.sleep(0.0005)
         return out
 
 

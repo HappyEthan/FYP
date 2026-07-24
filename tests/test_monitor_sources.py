@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import pytest
 from brushbot.monitor.sources import parse_serial_line, ArraySource
@@ -27,10 +29,11 @@ def test_array_source_streams_all_samples():
     src = ArraySource(t, B, rate_hz=100.0)
     src.start()
     got = []
-    for _ in range(100):            # 反复读直到读完
+    for _ in range(100):            # 反复读直到读完; 模拟 20ms 间隔的 GUI 定时器轮询
         got.extend(src.read())
         if src.done:
             break
+        time.sleep(0.001)
     src.stop()
     assert len(got) == 5
     assert got[0] == (0.0, 0.0, 1.0, 2.0)
@@ -60,5 +63,6 @@ def test_array_source_seek():
         got.extend(src.read())
         if src.done:
             break
+        time.sleep(0.001)
     # 从一半开始 → 拿到的第一个样本索引 >= 5
     assert got[0][1] >= 5.0
