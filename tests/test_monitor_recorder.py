@@ -68,3 +68,52 @@ def test_recorder_refuses_empty(tmp_path):
     rec = Recorder(str(tmp_path), "empty", np.zeros(3), {"name": "array"})
     with pytest.raises(ValueError):
         rec.finish()
+
+
+def test_action_window_is_rebased_to_csv_time_origin(tmp_path):
+    """标记(mark_start/mark_stop)必须用与样本相同的时间原点重新基准化.
+
+    若首个样本不在 t_s=0(操作员先接源、观察一阵再按录制), CSV 里的
+    t_s 会被重新基准化到从 0 开始, 但标记若不跟着重新基准化,
+    action_window_s 就不再对应 CSV 里的任何东西。
+    """
+    b0 = np.zeros(3)
+    rec = Recorder(str(tmp_path), "line_lr", b0, {"name": "array"})
+    for i, t in enumerate([100.0, 100.01, 100.02]):
+        rec.add(t, [float(i), float(i), float(i)])
+    rec.mark_start(100.005)
+    rec.mark_stop(100.015)
+    csv_path, json_path = rec.finish()
+
+    d = np.genfromtxt(csv_path, delimiter=",", names=True)
+    assert d["t_s"][0] == pytest.approx(0.0)
+
+    meta = json.load(open(json_path, encoding="utf-8"))
+    win = meta["action_window_s"]
+    assert win["start"] == pytest.approx(0.005)
+    assert win["end"] == pytest.approx(0.015)
+
+
+def test_next_repetition_does_not_match_action_name_suffix(tmp_path):
+    """action 名是既有 action 的后缀时不应误命中(必须锚定完整文件名)."""
+    (tmp_path / "20260724_120000_line_lr_r01.csv").write_text("x")
+    (tmp_path / "20260724_120000_line_lr_r05.csv").write_text("x")
+    assert next_repetition(str(tmp_path), "lr") == 1
+
+
+def test_action_start_stop_t_us_present_and_consistent(tmp_path):
+    """JSON 必须包含微秒级的 action_start_t_us/action_end_t_us,
+    与 action_window_s(秒)在同一重新基准化的时间原点上一致。"""
+    b0 = np.zeros(3)
+    rec = Recorder(str(tmp_path), "line_lr", b0, {"name": "array"})
+    for i, t in enumerate([100.0, 100.01, 100.02]):
+        rec.add(t, [float(i), float(i), float(i)])
+    rec.mark_start(100.005)
+    rec.mark_stop(100.015)
+    _, json_path = rec.finish()
+
+    meta = json.load(open(json_path, encoding="utf-8"))
+    assert isinstance(meta["action_start_t_us"], int)
+    assert isinstance(meta["action_end_t_us"], int)
+    assert meta["action_start_t_us"] == pytest.approx(meta["action_window_s"]["start"] * 1e6, abs=1)
+    assert meta["action_end_t_us"] == pytest.approx(meta["action_window_s"]["end"] * 1e6, abs=1)

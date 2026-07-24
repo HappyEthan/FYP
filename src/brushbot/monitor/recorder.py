@@ -14,11 +14,16 @@ CSV_HEADER = "t_us,t_s,dBx_uT,dBy_uT,dBz_uT"
 
 
 def next_repetition(out_dir: str, action: str) -> int:
-    """扫描同 action 的既有文件, 返回最大编号 + 1(从 1 起)."""
+    """扫描同 action 的既有文件, 返回最大编号 + 1(从 1 起).
+
+    锚定完整文件名(YYYYMMDD_HHMMSS_<action>_rNN.csv), 避免 action 名是
+    另一个 action 的后缀时被误当同一 action(fullmatch, 而非子串搜索)。
+    """
     pat = os.path.join(out_dir, "*_%s_r*.csv" % action)
     best = 0
+    fmt = re.compile(r"\d{8}_\d{6}_%s_r(\d+)\.csv" % re.escape(action))
     for p in glob.glob(pat):
-        m = re.search(r"_%s_r(\d+)\.csv$" % re.escape(action), os.path.basename(p))
+        m = fmt.fullmatch(os.path.basename(p))
         if m:
             best = max(best, int(m.group(1)))
     return best + 1
@@ -53,7 +58,8 @@ class Recorder:
             raise ValueError("没有样本, 拒绝写空记录")
         t = np.array(self._t, dtype=float)
         dB = np.array(self._dB, dtype=float)
-        t = t - t[0]                                   # 相对秒
+        t0 = t[0]
+        t = t - t0                                      # 相对秒
         rep = next_repetition(self.out_dir, self.action)
         stem = "%s_%s_r%02d" % (datetime.now().strftime("%Y%m%d_%H%M%S"), self.action, rep)
         csv_path = os.path.join(self.out_dir, stem + ".csv")
@@ -92,7 +98,11 @@ class Recorder:
             "csv_file": os.path.basename(csv_path),
         }
         if self._start is not None and self._stop is not None:
-            meta["action_window_s"] = {"start": self._start, "end": self._stop}
+            start_s = self._start - t0
+            stop_s = self._stop - t0
+            meta["action_window_s"] = {"start": float(start_s), "end": float(stop_s)}
+            meta["action_start_t_us"] = int(round(start_s * 1e6))
+            meta["action_end_t_us"] = int(round(stop_s * 1e6))
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
         return csv_path, json_path
