@@ -53,6 +53,16 @@ def build_model(urdf=ELFIN_URDF, ant_n=ANT_N, tilt_deg=12.0, paper_z=PAPER_Z,
         parent = b
     spec.worldbody.add_geom(type=mujoco.mjtGeom.mjGEOM_PLANE, size=[0.5, 0.5, 0.05],
                             pos=[0, 0, 0], rgba=[0.8, 0.75, 0.7, 1])          # 地面(视觉)
+    # 桌子: 从地面撑到纸底, 让纸不再悬空。
+    # 注意: URDF 派生的 spec 默认 discardvisual=true, 纯视觉件(contype/conaffinity 全 0)
+    # 会被编译丢弃 → 这里给它独立碰撞组 2(臂=1, 触角/纸=4), 谁也碰不着但能留在模型里。
+    paper_bot = paper_z - 0.002
+    if paper_bot > 0.002:
+        table = spec.worldbody.add_geom(name="table", type=mujoco.mjtGeom.mjGEOM_BOX,
+                                        size=[0.10, 0.10, paper_bot / 2],
+                                        pos=[0.45, 0.0, paper_bot / 2],
+                                        rgba=[0.55, 0.40, 0.25, 1])
+        table.contype = 2; table.conaffinity = 2
     paper = spec.worldbody.add_geom(name="paper", type=mujoco.mjtGeom.mjGEOM_BOX,
                                     size=[0.07, 0.07, 0.002], pos=[0.45, 0.0, paper_z],
                                     rgba=[0.98, 0.98, 0.98, 1])
@@ -197,7 +207,8 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
     _, q_ik = ik(m, d, np.array(wp[0]), quat)            # 起点位形
     pin(q_ik); mujoco.mj_forward(m, d)
     dt = substeps * m.opt.timestep
-    print(f"打开窗口: Elfin 写 '{character}'; 触角碰纸会弯, 笔尖落点留墨。关窗退出。")
+    print(f"[新代码] 桌上放纸, 纸面高={paper_top:.4f}m; Elfin 写 '{character}', 触角尖贴纸微弯, 落点留墨。关窗退出。")
+    print("  (若窗口里没看到棕色桌子 → 你跑的还是旧代码, 重装: pip install -e .)")
     with viewer.launch_passive(m, d) as v:
         eye = np.eye(3).flatten()
 
