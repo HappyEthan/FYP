@@ -95,7 +95,14 @@ class MonitorWindow(QtWidgets.QMainWindow):
     def _sync_controls(self):
         mode = self.cb_src.currentText()
         self.ed_port.setEnabled(mode == "串口")
-        self.btn_rec.setEnabled(mode != "回放")      # 回放不产生新数据
+        # 录制是否可用取决于**实际已连接的源**, 而非下拉框当前选项——
+        # 否则连上回放源后再切下拉框会在不断开的情况下把回放样本录进去。
+        # 未连接时才退回用下拉框选项预判。
+        if self.src is not None:
+            is_replay = isinstance(self.src, S.ReplaySource)
+        else:
+            is_replay = (mode == "回放")
+        self.btn_rec.setEnabled(not is_replay)      # 回放不产生新数据
 
     # ---------- 源 ----------
     def _toggle_connect(self):
@@ -114,6 +121,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
                     return
                 self.src = S.ReplaySource(path)
                 self.bl.b0 = self.src.b0; self.bl.ready = True   # 先用记录自带基线
+                self.bl.sigma = np.zeros(3)   # 避免沿用上一个源的陈旧 sigma, 门控先归零
             self.src.start()
         except Exception as e:
             self.src = None
@@ -125,6 +133,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
         # (记录开头通常是静止段, 重取得到的 b0 与记录自带的基本一致, 但额外拿到 sigma)
         self._pending_baseline = 1.0
         self.statusBar().showMessage("已连接: %s" % self.src.info.get("name"), 4000)
+        self._sync_controls()
 
     def _disconnect(self, note=""):
         if self.rec is not None:
@@ -135,6 +144,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
             pass
         self.src = None
         self.btn_conn.setText("连接")
+        self._sync_controls()
 
     # ---------- 基线 ----------
     def _take_baseline(self, seconds=1.0):
@@ -149,11 +159,15 @@ class MonitorWindow(QtWidgets.QMainWindow):
     # ---------- 录制 ----------
     def _toggle_record(self):
         if self.rec is None:
+            if self.src is None:
+                self.statusBar().showMessage("请先连接信号源", 4000); return
             if not self.bl.ready:
                 self.statusBar().showMessage("请先取基线", 4000); return
             self.rec = Recorder(self.out_dir, self.ed_action.text().strip() or "unnamed",
-                                self.bl.b0, self.src.info if self.src else {})
+                                self.bl.b0, self.src.info)
             self.btn_rec.setText("■ 停止")
+            self.btn_base.setEnabled(False)   # 录制中不可重取基线, 否则 JSON 里冻结的
+                                               # b0 与后续 CSV 行实际用的 b0 就对不上了
         else:
             self._stop_record()
 
@@ -168,6 +182,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
             self.statusBar().showMessage("录制收尾失败: %s" % e, 8000)
         self.rec = None
         self.btn_rec.setText("● 录制"); self.btn_mark.setText("标记 START")
+        self.btn_base.setEnabled(True)
 
     def _toggle_mark(self):
         if self.rec is None:
@@ -210,7 +225,9 @@ class MonitorWindow(QtWidgets.QMainWindow):
         n_trail = min(len(dB), 2 * RATE_HZ)
         self.c_trail.setData(dB[-n_trail:, 0], dB[-n_trail:, 1])
         last = dB[-1]
-        gate = 3.0 * self.bl.sigma_norm if self.bl.ready else 0.0
+        # 未取基线前 dB 实际是原始 B(apply 减的是全零 b0), 门控必须无穷大以
+        # 完全抑制方向线, 否则会把原始 B 的方向当成有效形变画出来。
+        gate = 3.0 * self.bl.sigma_norm if self.bl.ready else float("inf")
         d = derive(last, gate)
         self.c_pt.setData([last[0]], [last[1]])
         if d["phi_deg"] is None:
