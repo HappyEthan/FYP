@@ -2,6 +2,8 @@
 
 > PyBullet 版见 `quick_start.md`。这份是 **MuJoCo** 版：同样是 Elfin5 写字，但跑在 MuJoCo 里，
 > 为的是往下接**末端物理触角 + 接触形变 → ΔB**（PyBullet 那套只做开环写字，不做触角物理）。
+>
+> 📖 **完整手册**（全部参数、场景构成、原理、踩坑记录）见 **`docs/mujoco-usage.md`**。
 
 目标：**一条命令**弹出 MuJoCo 窗口，看机械臂一笔一划写字、笔尖落点留下墨迹点。
 
@@ -34,10 +36,10 @@ mkdir -p data/makemeahanzi && curl -fsSL https://raw.githubusercontent.com/skish
 conda activate brushbot && python -m brushbot.tactile.mj_write watch 永
 ```
 
-写别的字换参数即可：
+写别的字换参数即可；**给多个字可在窗口里按 `n` 逐个切换**：
 
 ```
-conda activate brushbot && python -m brushbot.tactile.mj_write watch 書
+conda activate brushbot && python -m brushbot.tactile.mj_write watch 永 書 王 龍
 ```
 
 ---
@@ -58,13 +60,27 @@ conda activate brushbot && python -m brushbot.tactile.mj_write watch 書
 
 ---
 
-## 四、窗口里的操作（MuJoCo viewer）
+## 四、窗口里的操作（写完后仍可交互）
 
-**鼠标**：左键拖 = 转视角 ｜ 右键拖 = 平移 ｜ 滚轮 = 缩放 ｜ 双击 = 选中某个部件
+**鼠标**：左键拖 = 转视角 ｜ 右键拖 = 平移 ｜ 滚轮 = 缩放 ｜ 双击 = 选中部件
 
-**键盘**：`Tab` 开/关侧栏面板 ｜ `H` 帮助浮层 ｜ `Esc` 或关窗 = 退出
+**键盘**：
 
-> MuJoCo 的窗口和 PyBullet 不一样，快捷键也不同。找不着字就滚轮拉近、左键转到俯视。
+| 键 | 作用 |
+|---|---|
+| `r` | **清墨重写**当前字 |
+| `c` | 只清墨（擦干净） |
+| `n` | **下一个字**（命令行给多字时） |
+| `1` | 俯视——看成品字最清楚 |
+| `2` | 斜视（默认） |
+| `3` | 侧视——**看抬落笔 / 触角弯**最直观 |
+| `4` | 全景——看整条机械臂 |
+| `空格` | 暂停 / 继续 |
+| `+` / `-` | 播放快 / 慢 |
+| `q` | 退出（也可直接关窗） |
+
+> 建议：写的过程按 `3` 侧视看触角贴纸和抬落笔，写完按 `1` 俯视看成品。
+> MuJoCo 自带：`Tab` 侧栏面板、`H` 帮助浮层。
 
 ---
 

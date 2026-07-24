@@ -181,42 +181,77 @@ def demo_write(character="永", out_png="mj_write.png"):
     return r
 
 
-def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
+# 视角预设: (azimuth, elevation, distance, lookat) —— lookat 为 None 时用纸面中心
+CAM_PRESETS = {
+    1: ("俯视(看成品字)",  90.0, -89.0, 0.22, None),
+    2: ("斜视(默认)",     135.0, -35.0, 0.45, None),
+    3: ("侧视(看抬落笔)", 180.0,  -6.0, 0.32, None),
+    4: ("全景(整条臂)",   135.0, -25.0, 1.40, (0.22, 0.0, 0.30)),
+}
+
+
+def watch_write(chars="永", speed=0.02, substeps=8, realtime=True):
     """★ Phase4 实时窗口: 看 Elfin 一笔一划写字, 末端**物理触角碰纸被顶弯**, 笔尖落点留墨。
 
     混合驱动(关键): 臂用**运动学锁死**(每拍 IK 求解, 步进后把臂关节 qpos 硬置回目标, 速度清零
     → 臂精确跟轨迹、绝不乱甩); 触角**跑动力学**(mj_step 让铰链在接触下积分 → 撞纸真弯,
-    不再穿模)。只做可视化, 不算 ΔB, 故绕开 Phase3 的 ΔB 发散 bug。需显示器(本机跑)。"""
+    不再穿模)。只做可视化, 不算 ΔB, 故绕开 Phase3 的 ΔB 发散 bug。需显示器(本机跑)。
+
+    交互键: r 重写 | c 清墨 | n 下一个字 | 1/2/3/4 视角 | 空格 暂停 | +/- 快慢 | q 退出
+    chars: 单个字或多字序列(用 n 切换), 如 "永" 或 "永書王"。"""
     import time
     try:
         import mujoco.viewer as viewer
     except Exception as e:
         print("需要 mujoco.viewer(本机有显示器时可用):", e); return
+    chars = list(chars)
     # 纸对齐触角尖落点(尖停纸面、其余在纸上方, 不穿模); 留 1mm 压量→触角尖贴纸微弯。
-    # 硬接触(solimp)把软穿透压到 <0.7mm(屏幕看不出); 压量再大只会增穿透不增弯(实测)。
+    # 硬接触(solimp)把软穿透压到 <1mm(屏幕看不出); 压量再大只会增穿透不增弯(实测)。
     pen_tip_z = config.PAPER_Z + (0.0045 - config.Z_TOUCH_REF)   # 触角尖落笔目标高度
     paper_top = pen_tip_z + 0.001
     m = build_model(paper_z=paper_top - 0.002,                   # BOX 半厚 0.002
                     paper_solimp=[0.98, 0.999, 0.0001, 0.5, 2])
     d = mujoco.MjData(m); scratch = mujoco.MjData(m)
-    wp = _writing_waypoints(character)
     quat = np.zeros(4); mujoco.mju_euler2Quat(quat, [math.pi, 0.0, 0.0], "xyz")
     qadr = _arm_qadr(m)
     arm_dof = [m.jnt_dofadr[mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, jn)] for jn in ARM_JOINTS]
     tipid = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, f"ant{ANT_N-1}")
+    paper_ctr = (config.CHAR_ORIGIN[0], config.CHAR_ORIGIN[1], paper_top)
 
     def pin(q):                                          # 臂关节钉在 IK 解, 速度清零
         for k, a in enumerate(qadr):
             d.qpos[a] = q[k]
         d.qvel[arm_dof] = 0.0
 
-    _, q_ik = ik(m, d, np.array(wp[0]), quat)            # 起点位形
-    pin(q_ik); mujoco.mj_forward(m, d)
+    ui = {"restart": True, "clear": False, "next": False,
+          "pause": False, "quit": False, "cam": 2, "rate": 1.0}
+
+    def key_callback(keycode):
+        k = chr(keycode).lower() if 32 <= keycode < 127 else ""
+        if k == "r":
+            ui["restart"] = True
+        elif k == "c":
+            ui["clear"] = True
+        elif k == "n":
+            ui["next"] = True; ui["restart"] = True
+        elif k == " ":
+            ui["pause"] = not ui["pause"]
+            print("  ⏸ 暂停" if ui["pause"] else "  ▶ 继续")
+        elif k in "1234":
+            ui["cam"] = int(k)
+        elif k in "+=":
+            ui["rate"] = min(ui["rate"] * 1.5, 8.0); print(f"  速度 x{ui['rate']:.1f}")
+        elif k == "-":
+            ui["rate"] = max(ui["rate"] / 1.5, 0.15); print(f"  速度 x{ui['rate']:.1f}")
+        elif k == "q":
+            ui["quit"] = True
+
     dt = substeps * m.opt.timestep
-    print(f"[新代码] 桌上放纸, 纸面高={paper_top:.4f}m; Elfin 写 '{character}', 触角尖贴纸微弯, 落点留墨。关窗退出。")
-    print("  (若窗口里没看到棕色桌子 → 你跑的还是旧代码, 重装: pip install -e .)")
-    with viewer.launch_passive(m, d) as v:
+    print(f"桌上放纸, 纸面高={paper_top:.4f}m; 触角尖贴纸微弯, 落点留墨。")
+    print("键位: r 重写 | c 清墨 | n 下一个字 | 1 俯视 2 斜视 3 侧视 4 全景 | 空格 暂停 | +/- 快慢 | q 退出")
+    with viewer.launch_passive(m, d, key_callback=key_callback) as v:
         eye = np.eye(3).flatten()
+        q_ik = np.zeros(6); ctrl = None; idx = 0; cam_applied = None; t = 0.0
 
         def ink():                                       # 笔尖贴近纸面 → 加一个持久墨点
             tp = d.xpos[tipid]
@@ -226,9 +261,27 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
                                     tp.copy(), eye, np.array([0.05, 0.05, 0.05, 1.0]))
                 v.user_scn.ngeom += 1
 
-        ctrl = OpenLoopController(wp, speed=speed, fixed_ori=(math.pi, 0.0, 0.0))
-        t = 0.0
-        while v.is_running() and not ctrl.done():
+        while v.is_running() and not ui["quit"]:
+            if ui["restart"]:                            # r / n: 回起笔位, 清墨, 重开
+                if ui["next"]:
+                    idx = (idx + 1) % len(chars); ui["next"] = False
+                ch = chars[idx]
+                wp = _writing_waypoints(ch)
+                _, q_ik = ik(m, d, np.array(wp[0]), quat, iters=300)
+                pin(q_ik); mujoco.mj_forward(m, d)
+                ctrl = OpenLoopController(wp, speed=speed, fixed_ori=(math.pi, 0.0, 0.0))
+                v.user_scn.ngeom = 0; t = 0.0; ui["restart"] = False
+                print(f"写 '{ch}' ({len(wp)} 路点)")
+            if ui["clear"]:
+                v.user_scn.ngeom = 0; ui["clear"] = False
+            if cam_applied != ui["cam"]:                 # 1/2/3/4: 切视角
+                name, az, el, dist, look = CAM_PRESETS[ui["cam"]]
+                with v.lock():
+                    v.cam.azimuth = az; v.cam.elevation = el; v.cam.distance = dist
+                    v.cam.lookat[:] = look if look is not None else paper_ctr
+                cam_applied = ui["cam"]; print(f"  视角 {ui['cam']}: {name}")
+            if ui["pause"] or ctrl.done():               # 暂停 / 写完: 只刷新, 保持可交互
+                v.sync(); time.sleep(0.03); continue
             cmd = ctrl.step(State(tcp_pose=(0,) * 6, g_meas=0.0, t=t))
             scratch.qpos[:] = d.qpos                     # IK 从当前解暖启动(在 scratch 上, 不扰触角动力学)
             for k, a in enumerate(qadr):
@@ -239,12 +292,11 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
                 mujoco.mj_step(m, d)
             pin(q_ik); mujoco.mj_forward(m, d)           # 收尾对齐, 渲染用
             ink(); v.sync()
+            if ctrl.done():
+                print(f"  写完 '{chars[idx]}' ({v.user_scn.ngeom} 墨点) — r 重写 / n 下一个字")
             if realtime:
-                time.sleep(dt)
+                time.sleep(dt / ui["rate"])
             t += dt
-        print(f"写完({v.user_scn.ngeom} 墨点)。关窗退出。")
-        while v.is_running():
-            v.sync(); time.sleep(0.05)
 
 
 def _antenna_centerline(m, d):
@@ -342,7 +394,7 @@ if __name__ == "__main__":
     import sys
     mode = sys.argv[1] if len(sys.argv) > 1 else "ik"
     if mode == "watch":
-        watch_write(sys.argv[2] if len(sys.argv) > 2 else "永")
+        watch_write("".join(sys.argv[2:]) or "永")       # 可给多字: watch 永 書 王 (n 键切换)
     elif mode == "write":
         ch = sys.argv[2] if len(sys.argv) > 2 else "永"
         out = sys.argv[3] if len(sys.argv) > 3 else "mj_write.png"
