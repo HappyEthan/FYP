@@ -15,3 +15,6 @@ reference/Elfin软件操作说明书V6.4.pdf
 data/makemeahanzi/
 # 生成的演示图/GIF (可由各模块 CLI 重生成)
 docs/assets/
+
+# 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
+deltab_replay.html
