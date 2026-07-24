@@ -37,12 +37,18 @@ class Baseline:
         self.sigma = np.zeros(3)
         self.ready = False
 
-    def take(self, B: np.ndarray) -> None:
-        """用一段静止样本 (N,3) 取基线, 同时算三轴标准差."""
+    def take(self, B: np.ndarray, update_b0: bool = True) -> None:
+        """用一段静止样本 (N,3) 取基线, 同时算三轴标准差.
+
+        update_b0=False 时只重新测 sigma(仍会置 ready=True), b0 保持不变——
+        用于回放源: 记录自带的 b0 要原样保留(否则回放不再逐点复现原始 ΔB),
+        但门控仍需要一份真实测得的 sigma。
+        """
         B = np.asarray(B, dtype=float)
         if B.ndim != 2 or B.shape[1] != 3 or len(B) == 0:
             raise ValueError("take() 需要形如 (N,3) 的非空数组")
-        self.b0 = B.mean(axis=0)
+        if update_b0:
+            self.b0 = B.mean(axis=0)
         self.sigma = B.std(axis=0)
         self.ready = True
 

@@ -32,6 +32,20 @@ def test_baseline_take_and_apply():
     assert out.tolist() == [[0.0, 0.0, 0.0]]
 
 
+def test_baseline_take_sigma_only_keeps_b0():
+    """update_b0=False: 只刷新 sigma, 保留原 b0.
+
+    回放源要的就是这个——记录自带的 b0 必须原样保留(否则回放不再逐点复现
+    原始 ΔB), 但方向门控仍需要一份真实测得的 sigma。
+    """
+    bl = Baseline()
+    bl.b0 = np.array([100.0, 200.0, 300.0])          # 记录自带的基线
+    bl.take(np.array([[-1.0, -1.0, -1.0], [1.0, 1.0, 1.0]]), update_b0=False)
+    assert bl.b0.tolist() == [100.0, 200.0, 300.0]   # 未被覆盖
+    assert np.allclose(bl.sigma, [1.0, 1.0, 1.0])    # sigma 已更新
+    assert bl.ready is True
+
+
 def test_baseline_sigma_norm():
     bl = Baseline()
     # 每轴取 [-1, 1] → 总体标准差 = 1.0 每轴 → 模 = sqrt(3)

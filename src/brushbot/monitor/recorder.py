@@ -71,16 +71,39 @@ class Recorder:
                 f.write("%d,%.6f,%.3f,%.3f,%.3f\n"
                         % (round(t[k] * 1e6), t[k], dB[k, 0], dB[k, 1], dB[k, 2]))
 
+        # 动作窗: 标记(START/STOP)是可选的, 且来自 GUI 里未经校验的按钮点击顺序,
+        # 可能反了(STOP 早于 START)或落在样本范围之外(比如第一份录制样本前就按了
+        # 标记)。analyze_deltab.py 对 action_window_s 要么要求它存在(w["start"]),
+        # 要么会拿它去掩码再 .max() 空数组——两种情况都会崩。所以这里保证
+        # action_window_s 永远存在且是 [0, t[-1]] 内的合法非空区间:
+        #   1) 完全没标记 → 整段记录当作窗口;
+        #   2) 有标记但裁剪进样本范围后 start >= stop(顺序反了或都越界到同一侧)
+        #      → 同样退化为整段记录。
+        # 两种情况都在 note 里注明"自动回退", 不会被误当成人工标注的窗口。
+        note_extra = ""
+        if self._start is not None and self._stop is not None:
+            start_c = min(max(self._start - t0, 0.0), float(t[-1]))
+            stop_c = min(max(self._stop - t0, 0.0), float(t[-1]))
+            if start_c >= stop_c:
+                start_c, stop_c = 0.0, float(t[-1])
+                note_extra = "动作窗口: 标记无效(裁剪后 start>=stop), 已自动回退为整段记录"
+        else:
+            start_c, stop_c = 0.0, float(t[-1])
+            note_extra = "动作窗口: 未设置标记, 已自动回退为整段记录"
+        full_note = ("%s; %s" % (note, note_extra)) if (note and note_extra) else (note or note_extra)
+
         dt = np.diff(t)
+        name = self.source_info.get("name", "")
+        is_synthetic = name.startswith(("synth", "array"))
+        is_hardware = name == "serial"
         meta = {
             "created_at": datetime.now(timezone.utc).astimezone().isoformat(),
             "action": self.action,
             "repetition": rep,
             "valid": bool(valid),
-            "note": note,
-            "sensor": "synthetic" if self.source_info.get("name", "").startswith(("array", "replay"))
-                      else "MLX90393",
-            "board": "Seeed Studio XIAO ESP32-C3",
+            "note": full_note,
+            "sensor": "synthetic" if is_synthetic else "MLX90393",
+            "board": "Seeed Studio XIAO ESP32-C3" if is_hardware else None,
             "port": self.source_info.get("port"),
             "baud": self.source_info.get("baud"),
             "units": {"t_us": "us", "t_s": "s",
@@ -96,13 +119,10 @@ class Recorder:
             "mean_sample_rate_hz": float(1.0 / dt.mean()) if len(dt) else None,
             "max_interval_us": int(dt.max() * 1e6) if len(dt) else None,
             "csv_file": os.path.basename(csv_path),
+            "action_window_s": {"start": float(start_c), "end": float(stop_c)},
+            "action_start_t_us": int(round(start_c * 1e6)),
+            "action_end_t_us": int(round(stop_c * 1e6)),
         }
-        if self._start is not None and self._stop is not None:
-            start_s = self._start - t0
-            stop_s = self._stop - t0
-            meta["action_window_s"] = {"start": float(start_s), "end": float(stop_s)}
-            meta["action_start_t_us"] = int(round(start_s * 1e6))
-            meta["action_end_t_us"] = int(round(stop_s * 1e6))
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
         return csv_path, json_path

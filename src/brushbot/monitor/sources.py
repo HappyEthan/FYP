@@ -164,10 +164,17 @@ class ReplaySource(ArraySource):
 
 
 def synth_writing_B(n: int = 600, rate_hz: float = 100.0,
-                    b0=(270.0, 710.0, -5500.0)) -> ArraySource:
+                    b0=(270.0, 710.0, -5500.0), peak_uT: float = 400.0) -> ArraySource:
     """合成信号源: 构造一段"落笔-横拖-抬笔"轨迹 → 合成 ΔB → 叠加标称 B0 得原始 B.
 
     不依赖字形数据集与 PyBullet, 确定性可测。
+
+    注意单位: tactile_from_trace() 输出的是该触觉模型的**任意内部单位**,
+    量纲上与真实磁场(µT)毫无关系——直接拿它当 µT 用会比真机数据小 ~7 个
+    数量级(峰值 ~1e-4 vs 真实数据集的 ~461 µT), 录出来的 CSV 用 "%.3f" 格式化
+    后全部四舍五入成 0.000。这里显式把整段合成轨迹的峰值 |ΔB| 缩放到 peak_uT
+    (默认 400 µT, 真实数据集量级), 使合成信号成为一段"看起来合理的信号",
+    而不是任何物理量的预测——它只用于联调/演示/无硬件测试, 不代表真实传感器响应。
     """
     from brushbot import config
     from brushbot.tactile.writing_tactile import tactile_from_trace
@@ -180,6 +187,10 @@ def synth_writing_B(n: int = 600, rate_hz: float = 100.0,
     y = np.full(n, config.CHAR_ORIGIN[1], dtype=float)
     trace = np.c_[x, y, z]
     dB, _ = tactile_from_trace(trace)
-    B_raw = np.asarray(dB, dtype=float) + np.asarray(b0, dtype=float)
+    dB = np.asarray(dB, dtype=float)
+    peak = np.abs(dB).max()
+    if peak > 1e-9:                     # 防止全零轨迹除零; 全零时不缩放, 仍是全零
+        dB = dB * (peak_uT / peak)
+    B_raw = dB + np.asarray(b0, dtype=float)
     t = k / float(rate_hz)
     return ArraySource(t, B_raw, name="synth:writing", rate_hz=rate_hz)

@@ -250,18 +250,22 @@ def _figure(recs, idle, acts, act_win, mean_dir, area_vec, out_png):
     # 行3: 相图 (xy / xz) + 方向
     by = {r["action"]: r for r in acts}
     for col, (pa, pb, ttl) in enumerate([("line_lr", "line_rl", "lines"), ("circle_cw", "circle_ccw", "circles")]):
-        ax = fig.add_subplot(gs[2, col * 2])
-        for nm, c in [(pa, "tab:blue"), (pb, "tab:red")]:
-            if nm in by:
-                Bw = act_win(by[nm]); ax.plot(Bw[:, 0], Bw[:, 1], lw=0.8, color=c, label=nm)
-        ax.set_xlabel("dBx (uT)"); ax.set_ylabel("dBy (uT)"); ax.set_title("%s: xy phase" % ttl, fontsize=9)
-        ax.legend(fontsize=6); ax.grid(alpha=0.3); ax.set_aspect("equal", adjustable="datalim")
-        ax = fig.add_subplot(gs[2, col * 2 + 1])
-        for nm, c in [(pa, "tab:blue"), (pb, "tab:red")]:
-            if nm in by:
-                Bw = act_win(by[nm]); ax.plot(Bw[:, 0], Bw[:, 2], lw=0.8, color=c, label=nm)
-        ax.set_xlabel("dBx (uT)"); ax.set_ylabel("dBz (uT)"); ax.set_title("%s: xz phase" % ttl, fontsize=9)
-        ax.legend(fontsize=6); ax.grid(alpha=0.3)
+        # 数据集里不一定有这些成对动作(例如监控窗口录出来的单条记录), 此时面板是空的,
+        # 空 axes 上调 legend() 会发 UserWarning —— 只在真画了东西时才加图例。
+        for zi, (ylab, yi) in enumerate([("dBy (uT)", 1), ("dBz (uT)", 2)]):
+            ax = fig.add_subplot(gs[2, col * 2 + zi])
+            drew = False
+            for nm, c in [(pa, "tab:blue"), (pb, "tab:red")]:
+                if nm in by:
+                    Bw = act_win(by[nm]); ax.plot(Bw[:, 0], Bw[:, yi], lw=0.8, color=c, label=nm)
+                    drew = True
+            ax.set_xlabel("dBx (uT)"); ax.set_ylabel(ylab)
+            ax.set_title("%s: %s phase" % (ttl, "xy" if yi == 1 else "xz"), fontsize=9)
+            if drew:
+                ax.legend(fontsize=6)
+            ax.grid(alpha=0.3)
+            if yi == 1:
+                ax.set_aspect("equal", adjustable="datalim")
 
     fig.suptitle("Delta-B V0 dataset analysis (MLX90393, 100 Hz, real hardware)", fontsize=13)
     fig.savefig(out_png, dpi=110, bbox_inches="tight")

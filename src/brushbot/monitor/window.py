@@ -4,6 +4,7 @@
 采集在定时器里 poll 信号源, 重绘固定 ~50 FPS, 与采样率解耦。
 """
 import os
+import time
 import numpy as np
 import pyqtgraph as pg
 from PyQt5 import QtCore, QtWidgets
@@ -15,6 +16,7 @@ from brushbot.monitor import sources as S
 BUF_SECONDS = 60
 RATE_HZ = 100
 WINDOWS_S = [5, 10, 30, 60]
+RATE_TOLERANCE = 0.02     # 测得速率偏离标称值超过这个比例 → 状态栏变黄示警
 
 
 class MonitorWindow(QtWidgets.QMainWindow):
@@ -27,7 +29,12 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.rb = RingBuffer(BUF_SECONDS * RATE_HZ)
         self.bl = Baseline()
         self.rec = None
-        self._pending_baseline = None     # 连上后自动取基线的截止时间
+        self._rec_started_wall = None     # 本次录制开始的墙钟时间(用于状态栏"已录制"计时)
+        # 连上后自动取一次基线, 用"样本自己的时间戳"(而非墙钟, 也不是样本计数)
+        # 走够这么多秒就触发——样本计数在慢于 100Hz 的源上要等好几秒才触发,
+        # 早就晚于操作员手动取基线+开始录制的时间窗口了。
+        self._auto_baseline_s = None          # 还差多少"源自己的秒"触发自动取基线; None=已完成/未安排
+        self._auto_baseline_ref_t = None      # 本次连接第一份样本的时间戳(源自己的时钟), 用作 0 点
 
         self._build_ui()
         self.timer = QtCore.QTimer(self)
@@ -90,6 +97,10 @@ class MonitorWindow(QtWidgets.QMainWindow):
 
         self.lbl_read = QtWidgets.QLabel("—")
         self.statusBar().addPermanentWidget(self.lbl_read, 1)
+        # 健康信号: 连接状态 / 测得采样率(偏离标称>2%变黄) / 坏行数 / 录制计时——
+        # 光看曲线看不出采样率掉了或者串口在丢帧, 这几个数必须常驻在状态栏上。
+        self.lbl_health = QtWidgets.QLabel("未连接")
+        self.statusBar().addPermanentWidget(self.lbl_health)
         self._sync_controls()
 
     def _sync_controls(self):
@@ -138,8 +149,10 @@ class MonitorWindow(QtWidgets.QMainWindow):
             self.bl.b0 = self.src.b0
         self.btn_conn.setText("断开")
         # 所有源都在采到 1 秒后自动重取基线 —— 回放也要, 否则 sigma 为 0 会让门控失效
-        # (记录开头通常是静止段, 重取得到的 b0 与记录自带的基本一致, 但额外拿到 sigma)
-        self._pending_baseline = 1.0
+        # (记录开头通常是静止段, 重取得到的 b0 与记录自带的基本一致, 但额外拿到 sigma;
+        # 回放源的自动取基线用 update_b0=False, 保留记录自带的 b0, 只刷新 sigma)
+        self._auto_baseline_s = 1.0
+        self._auto_baseline_ref_t = None
         self.statusBar().showMessage("已连接: %s" % self.src.info.get("name"), 4000)
         self._sync_controls()
 
@@ -155,11 +168,11 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self._sync_controls()
 
     # ---------- 基线 ----------
-    def _take_baseline(self, seconds=1.0):
+    def _take_baseline(self, seconds=1.0, update_b0=True):
         t, B = self.rb.latest(int(seconds * RATE_HZ))
         if len(B) < 10:
             self.statusBar().showMessage("样本不足, 无法取基线", 4000); return
-        self.bl.take(B)
+        self.bl.take(B, update_b0=update_b0)
         self.statusBar().showMessage(
             "已取基线 B0=(%.1f, %.1f, %.1f) µT, 门控=%.1f µT"
             % (*self.bl.b0, 3 * self.bl.sigma_norm), 6000)
@@ -173,6 +186,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
                 self.statusBar().showMessage("请先取基线", 4000); return
             self.rec = Recorder(self.out_dir, self.ed_action.text().strip() or "unnamed",
                                 self.bl.b0, self.src.info)
+            self._rec_started_wall = time.monotonic()
             self.btn_rec.setText("■ 停止")
             self.btn_base.setEnabled(False)   # 录制中不可重取基线, 否则 JSON 里冻结的
                                                # b0 与后续 CSV 行实际用的 b0 就对不上了
@@ -189,6 +203,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
         except Exception as e:
             self.statusBar().showMessage("录制收尾失败: %s" % e, 8000)
         self.rec = None
+        self._rec_started_wall = None
         self.btn_rec.setText("● 录制"); self.btn_mark.setText("标记 START")
         self.btn_base.setEnabled(True)
 
@@ -214,10 +229,24 @@ class MonitorWindow(QtWidgets.QMainWindow):
             except Exception as e:
                 self.statusBar().showMessage("采集中断: %s" % e, 8000)
                 self._disconnect(note=str(e))
-            if self._pending_baseline and self.rb.n_total >= RATE_HZ * self._pending_baseline:
-                self._pending_baseline = None
-                self._take_baseline()
+            # 待定的自动取基线: 录制中绝不能触发(会让 JSON 冻结的 b0 与录制中途
+            # 实际使用的 b0 对不上, 且 verify() 看不出这种损坏), 因此录制期间整体
+            # 跳过——包括参考时间点的采集, 计时在录制结束后从当前样本重新起算。
+            # 触发条件用"源自己时间戳"的已过秒数, 而不是样本计数: 按样本数算的话,
+            # 任何慢于 100Hz 的源都要等好几秒才触发, 早就晚于操作员手动取基线+
+            # 开始录制的时间窗口了。
+            if self._auto_baseline_s is not None and self.rec is None and self.rb.n_total > 0:
+                t_latest, _ = self.rb.latest(1)
+                now_t = float(t_latest[-1])
+                if self._auto_baseline_ref_t is None:
+                    self._auto_baseline_ref_t = now_t
+                elif now_t - self._auto_baseline_ref_t >= self._auto_baseline_s:
+                    self._auto_baseline_s = None
+                    # 回放源: 保留记录自带的 b0(逐点复现原始 ΔB), 只用这次自动
+                    # 取基线刷新一份真实 sigma 用于方向门控(见 core.Baseline.take)。
+                    self._take_baseline(update_b0=not isinstance(self.src, S.ReplaySource))
         self._redraw()
+        self._update_health()
 
     def _redraw(self):
         win_s = WINDOWS_S[self.cb_win.currentIndex()]
@@ -250,6 +279,40 @@ class MonitorWindow(QtWidgets.QMainWindow):
                "—" if d["theta_deg"] is None else "%.1f°" % d["theta_deg"],
                last[0], last[1], last[2], self.rb.n_total,
                "— µT" if not np.isfinite(gate) else "%.1f µT" % gate))
+
+    def measured_rate_hz(self):
+        """由样本自己的时间戳测得的实际采样率; 样本不足时返回 None.
+
+        这是操作员判断"采集是否健康"的唯一实时信号——曲线本身看不出掉速。
+        """
+        t, _ = self.rb.latest(2 * RATE_HZ)
+        if len(t) < 2:
+            return None
+        span = float(t[-1] - t[0])
+        return (len(t) - 1) / span if span > 1e-9 else None
+
+    def _update_health(self):
+        """状态栏健康区: 连接状态 / 实测 Hz(偏离标称 >2% 变黄) / 坏行数 / 录制计时."""
+        if self.src is None:
+            self.lbl_health.setText("未连接")
+            self.lbl_health.setStyleSheet("")
+            return
+        parts = ["● %s" % self.src.info.get("name", "?")]
+        nominal = float(self.src.info.get("nominal_rate_hz") or RATE_HZ)
+        rate = self.measured_rate_hz()
+        off_nominal = False
+        if rate is None:
+            parts.append("— Hz")
+        else:
+            parts.append("%.1f Hz" % rate)
+            off_nominal = nominal > 0 and abs(rate - nominal) / nominal > RATE_TOLERANCE
+        bad = getattr(self.src, "bad_lines", None)      # 只有串口源有这个计数
+        if bad is not None:
+            parts.append("坏行 %d" % bad)
+        if self.rec is not None and self._rec_started_wall is not None:
+            parts.append("录制中 %.1fs" % (time.monotonic() - self._rec_started_wall))
+        self.lbl_health.setText("  ·  ".join(parts))
+        self.lbl_health.setStyleSheet("color: #d29922;" if off_nominal else "")
 
 
 def main(argv=None) -> int:
