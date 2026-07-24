@@ -976,6 +976,14 @@ Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"
 ⚠️ **本任务无自动化测试**：PyQtGraph 窗口无法在无显示环境验证。
 测试方式为**手动验收**（Step 6 给出清单）。核心逻辑的正确性已由 Task 1–5 的单测覆盖。
 
+> **注记（实施后补）**：下面 Step 4 的窗口代码在评审中被查出 4 个缺陷，经三轮修复才通过——
+> ① 录制按钮按下拉框而非实际连接源判定（连回放后切下拉框即可录制回放数据）
+> ② 无基线时门控取 `0.0`（完全放行）而非 `inf`（抑制），方向判据反了
+> ③ 录制中可重取基线 → CSV 用新基线而 JSON 记旧的，静默污染且 `verify()` 查不出
+> ④ 无源也能开录 → 孤儿 `Recorder` 的元数据错误
+> 根因是 `self.bl` 只在 `__init__` 建一次、重连不重置，换源时残留上个源的 `ready/sigma/b0`。
+> **以仓库中 `src/brushbot/monitor/window.py` 的实际代码为准**，下面的代码块仅供理解结构。
+
 - [ ] **Step 1: 声明可选依赖**
 
 修改 `pyproject.toml`，在 `dependencies` 那一行之后插入：
