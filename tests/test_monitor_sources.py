@@ -66,3 +66,51 @@ def test_array_source_seek():
         time.sleep(0.001)
     # 从一半开始 → 拿到的第一个样本索引 >= 5
     assert got[0][1] >= 5.0
+
+
+import json
+from brushbot.monitor.sources import load_v0_record, ReplaySource
+
+
+def _write_fake_v0(tmp_path, dB, b0=(100.0, 200.0, 300.0)):
+    csv = tmp_path / "20260724_120000_test_r01.csv"
+    lines = ["t_us,t_s,dBx_uT,dBy_uT,dBz_uT"]
+    for i, row in enumerate(dB):
+        lines.append("%d,%.6f,%.3f,%.3f,%.3f" % (i * 10000, i / 100.0, *row))
+    csv.write_text("\n".join(lines) + "\n")
+    (tmp_path / "20260724_120000_test_r01.json").write_text(json.dumps({
+        "action": "test", "valid": True,
+        "baseline_B0_uT": {"Bx_uT": b0[0], "By_uT": b0[1], "Bz_uT": b0[2]},
+        "units": {"dBx_uT": "uT"}, "delta_definition": "dB = B - B0",
+    }))
+    return str(csv)
+
+
+def test_load_v0_record_restores_raw_B(tmp_path):
+    dB = np.array([[1.0, 2.0, 3.0], [-1.0, -2.0, -3.0]])
+    path = _write_fake_v0(tmp_path, dB)
+    rec = load_v0_record(path)
+    assert rec["b0"].tolist() == [100.0, 200.0, 300.0]
+    # 原始 B = ΔB + B0
+    assert np.allclose(rec["B_raw"], dB + np.array([100.0, 200.0, 300.0]))
+    assert rec["meta"]["action"] == "test"
+
+
+def test_replay_source_roundtrips_to_original_delta(tmp_path):
+    from brushbot.monitor.core import Baseline
+    dB = np.array([[1.0, 2.0, 3.0], [-4.0, 5.0, -6.0], [7.0, -8.0, 9.0]])
+    path = _write_fake_v0(tmp_path, dB)
+    src = ReplaySource(path)
+    src.start()
+    got = []
+    for _ in range(500):
+        got.extend(src.read())
+        if src.done:
+            break
+        time.sleep(0.001)
+    src.stop()
+    assert len(got) == 3
+    raw = np.array([[g[1], g[2], g[3]] for g in got])
+    bl = Baseline()
+    bl.b0 = src.b0                       # 用记录自带的基线扣回去
+    assert np.allclose(bl.apply(raw), dB)   # 应与原 CSV 的 ΔB 逐点一致

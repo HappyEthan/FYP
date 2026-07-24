@@ -4,6 +4,8 @@
 """
 import time
 import numpy as np
+import json
+import os
 
 Sample = tuple  # (t_s, Bx, By, Bz)
 
@@ -128,3 +130,34 @@ class SerialSource:
                 self._t0_us = t_us
             out.append(((t_us - self._t0_us) / 1e6, bx, by, bz))
         return out
+
+
+def load_v0_record(csv_path: str) -> dict:
+    """读一对 V0 CSV+JSON. CSV 存的是 ΔB, 这里加回 B0 还原成原始 B."""
+    js_path = csv_path[:-4] + ".json" if csv_path.endswith(".csv") else csv_path + ".json"
+    if not os.path.exists(js_path):
+        raise FileNotFoundError("缺少配套 JSON: %s" % js_path)
+    meta = json.load(open(js_path, encoding="utf-8"))
+    b0d = meta["baseline_B0_uT"]
+    b0 = np.array([b0d["Bx_uT"], b0d["By_uT"], b0d["Bz_uT"]], dtype=float)
+    d = np.genfromtxt(csv_path, delimiter=",", names=True)
+    dB = np.c_[d["dBx_uT"], d["dBy_uT"], d["dBz_uT"]]
+    return {"t_s": np.atleast_1d(d["t_s"]).astype(float),
+            "B_raw": dB + b0, "b0": b0, "meta": meta}
+
+
+class ReplaySource(ArraySource):
+    """回放已录制的 V0 数据集(还原成原始 B 后走 ArraySource 的流式逻辑)."""
+
+    def __init__(self, csv_path: str):
+        rec = load_v0_record(csv_path)
+        super().__init__(rec["t_s"], rec["B_raw"],
+                         name="replay:" + os.path.basename(csv_path))
+        self.b0 = rec["b0"]
+        self.meta = rec["meta"]
+
+    @property
+    def info(self) -> dict:
+        d = super().info
+        d["action"] = self.meta.get("action")
+        return d
