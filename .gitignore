@@ -18,3 +18,6 @@ docs/assets/
 
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
+
+# 监控窗口的录制输出
+recordings/
