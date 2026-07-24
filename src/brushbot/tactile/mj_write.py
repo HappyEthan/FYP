@@ -157,27 +157,38 @@ def demo_write(character="永", out_png="mj_write.png"):
 
 
 def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
-    """★ Phase4 实时窗口: 打开 MuJoCo viewer, 看 Elfin 一笔一划写字, 笔尖落点留墨迹点.
-    运动学驱动(同 write(), 每拍 IK 设 qpos, 已验证稳定); 需显示器(本机跑)。
-    无显示会优雅报错。写完窗口保持打开, 关窗退出。"""
+    """★ Phase4 实时窗口: 看 Elfin 一笔一划写字, 末端**物理触角碰纸被顶弯**, 笔尖落点留墨。
+
+    混合驱动(关键): 臂用**运动学锁死**(每拍 IK 求解, 步进后把臂关节 qpos 硬置回目标, 速度清零
+    → 臂精确跟轨迹、绝不乱甩); 触角**跑动力学**(mj_step 让铰链在接触下积分 → 撞纸真弯,
+    不再穿模)。只做可视化, 不算 ΔB, 故绕开 Phase3 的 ΔB 发散 bug。需显示器(本机跑)。"""
     import time
     try:
         import mujoco.viewer as viewer
     except Exception as e:
         print("需要 mujoco.viewer(本机有显示器时可用):", e); return
-    m = build_model(); d = mujoco.MjData(m)
+    m = build_model(); d = mujoco.MjData(m); scratch = mujoco.MjData(m)
     wp = _writing_waypoints(character)
     quat = np.zeros(4); mujoco.mju_euler2Quat(quat, [math.pi, 0.0, 0.0], "xyz")
-    ik(m, d, np.array(wp[0]), quat)                       # 起点
+    qadr = _arm_qadr(m)
+    arm_dof = [m.jnt_dofadr[mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_JOINT, jn)] for jn in ARM_JOINTS]
     tipid = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_BODY, f"ant{ANT_N-1}")
+
+    def pin(q):                                          # 臂关节钉在 IK 解, 速度清零
+        for k, a in enumerate(qadr):
+            d.qpos[a] = q[k]
+        d.qvel[arm_dof] = 0.0
+
+    _, q_ik = ik(m, d, np.array(wp[0]), quat)            # 起点位形
+    pin(q_ik); mujoco.mj_forward(m, d)
     dt = substeps * m.opt.timestep
-    print(f"打开窗口: Elfin 写 '{character}'; 笔尖落点留墨。关窗退出。")
+    print(f"打开窗口: Elfin 写 '{character}'; 触角碰纸会弯, 笔尖落点留墨。关窗退出。")
     with viewer.launch_passive(m, d) as v:
         eye = np.eye(3).flatten()
 
         def ink():                                       # 笔尖贴近纸面 → 加一个持久墨点
             tp = d.xpos[tipid]
-            if tp[2] <= PAPER_Z + 0.002 and v.user_scn.ngeom < v.user_scn.maxgeom:
+            if tp[2] <= PAPER_Z + 0.003 and v.user_scn.ngeom < v.user_scn.maxgeom:
                 g = v.user_scn.geoms[v.user_scn.ngeom]
                 mujoco.mjv_initGeom(g, mujoco.mjtGeom.mjGEOM_SPHERE, [0.0012, 0, 0],
                                     tp.copy(), eye, np.array([0.05, 0.05, 0.05, 1.0]))
@@ -187,8 +198,14 @@ def watch_write(character="永", speed=0.02, substeps=8, realtime=True):
         t = 0.0
         while v.is_running() and not ctrl.done():
             cmd = ctrl.step(State(tcp_pose=(0,) * 6, g_meas=0.0, t=t))
-            ik(m, d, np.array(cmd.tcp_pose[:3]), quat, iters=100)
-            mujoco.mj_forward(m, d)
+            scratch.qpos[:] = d.qpos                     # IK 从当前解暖启动(在 scratch 上, 不扰触角动力学)
+            for k, a in enumerate(qadr):
+                scratch.qpos[a] = q_ik[k]
+            _, q_ik = ik(m, scratch, np.array(cmd.tcp_pose[:3]), quat, iters=100)
+            for _ in range(substeps):                    # 臂钉死 + 触角在接触下积分
+                pin(q_ik)
+                mujoco.mj_step(m, d)
+            pin(q_ik); mujoco.mj_forward(m, d)           # 收尾对齐, 渲染用
             ink(); v.sync()
             if realtime:
                 time.sleep(dt)
