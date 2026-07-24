@@ -737,11 +737,15 @@ CSV_HEADER = "t_us,t_s,dBx_uT,dBy_uT,dBz_uT"
 
 
 def next_repetition(out_dir: str, action: str) -> int:
-    """扫描同 action 的既有文件, 返回最大编号 + 1(从 1 起)."""
-    pat = os.path.join(out_dir, "*_%s_r*.csv" % action)
+    """扫描**同 action**的既有文件, 返回最大编号 + 1(从 1 起).
+
+    必须整名 fullmatch: 用 re.search 会让后缀相同的 action 撞车
+    (只有 line_lr 文件时, next_repetition(dir,'lr') 会错误地返回 6)。
+    """
     best = 0
-    for p in glob.glob(pat):
-        m = re.search(r"_%s_r(\d+)\.csv$" % re.escape(action), os.path.basename(p))
+    for p in glob.glob(os.path.join(out_dir, "*.csv")):
+        m = re.fullmatch(r"\d{8}_\d{6}_%s_r(\d+)\.csv" % re.escape(action),
+                         os.path.basename(p))
         if m:
             best = max(best, int(m.group(1)))
     return best + 1
@@ -776,7 +780,8 @@ class Recorder:
             raise ValueError("没有样本, 拒绝写空记录")
         t = np.array(self._t, dtype=float)
         dB = np.array(self._dB, dtype=float)
-        t = t - t[0]                                   # 相对秒
+        t0 = t[0]                                      # ★ 时间原点: 样本与标记必须共用
+        t = t - t0                                     # 相对秒
         rep = next_repetition(self.out_dir, self.action)
         stem = "%s_%s_r%02d" % (datetime.now().strftime("%Y%m%d_%H%M%S"), self.action, rep)
         csv_path = os.path.join(self.out_dir, stem + ".csv")
@@ -815,7 +820,13 @@ class Recorder:
             "csv_file": os.path.basename(csv_path),
         }
         if self._start is not None and self._stop is not None:
-            meta["action_window_s"] = {"start": self._start, "end": self._stop}
+            # ★ 标记必须减去同一个 t0。否则"连上→看一会儿→按录制"时,
+            #   样本被 rebase 到 0 而标记停在几十秒处, action_window_s 直接失效。
+            start_s = self._start - t0
+            stop_s = self._stop - t0
+            meta["action_window_s"] = {"start": start_s, "end": stop_s}
+            meta["action_start_t_us"] = int(round(start_s * 1e6))   # 设计文档 §5 要求
+            meta["action_end_t_us"] = int(round(stop_s * 1e6))
         with open(json_path, "w", encoding="utf-8") as f:
             json.dump(meta, f, ensure_ascii=False, indent=2)
         return csv_path, json_path
