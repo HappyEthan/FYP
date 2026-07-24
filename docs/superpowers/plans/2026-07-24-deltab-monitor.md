@@ -897,6 +897,7 @@ from brushbot.monitor.sources import synth_writing_B
 
 
 def test_synth_writing_B_produces_streamable_source():
+    import time
     src = synth_writing_B(n=200, rate_hz=100.0)
     assert src.info["n_samples"] == 200
     src.start()
@@ -905,6 +906,7 @@ def test_synth_writing_B_produces_streamable_source():
         got.extend(src.read())
         if src.done:
             break
+        time.sleep(0.001)           # 墙钟由调用方推进; read() 保持非阻塞
     src.stop()
     assert len(got) == 200
     B = np.array([[g[1], g[2], g[3]] for g in got])
