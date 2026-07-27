@@ -61,6 +61,15 @@ class ArraySource:
         else:
             self._t0 = now
 
+    def set_rate(self, multiplier: float) -> None:
+        """设置播放倍速(0.5=半速, 1=正常, 2=双倍). seek 会自动对轨."""
+        self.rate = max(float(multiplier), 0.01)
+        # 重设时间原点, 避免倍速切换瞬间跳帧
+        if self._t0 is not None and self._i < len(self._t):
+            now = time.monotonic()
+            offset = (self._t[self._i] - self._t[0]) / max(self.rate, 1e-9)
+            self._t0 = now - offset
+
     @property
     def done(self) -> bool:
         return self._i >= len(self._t)
