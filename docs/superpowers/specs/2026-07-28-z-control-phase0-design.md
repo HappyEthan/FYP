@@ -70,7 +70,6 @@ Phase 0 先用 `contact_sim.py` 的合成標定曲線（純 numpy 無需硬體�
 | **抗積分飽和** | back-calculation：`z_fb += Ki · e · dt + K_aw · (z_fb_limited − z_fb) · dt` |
 | **接觸判別** | `\|ΔB_meas\| < 3 × NOISE_STD` → 懸空 → 凍結積分、歸零 z_fb |
 | **抬筆凍結** | 目標 `\|ΔB_d\| < CONTACT_THRESHOLD` → 凍結積分（筆未觸紙時誤差無意義） |
-| **拖拽監控** | 預留介面 `d_perp()`，Phase 0 不啟用 |
 
 ### ZController 介面
 
@@ -80,7 +79,7 @@ Phase 0 的標定數據（C 曲線）由調用方直接傳入陣列，不依賴�
 class ZController:
     def __init__(self, calib_z_mm: np.ndarray, calib_dB: np.ndarray,
                  dt: float = 0.01, kp: float = 0.5, ki: float = 0.1,
-                 dz_margin: float = 3e-3, noise_std: float = 7e-6):
+                 dz_margin: float = 3e-3, noise_std: float = 7.0):
         """calib_z_mm: (N,) 壓深 mm；calib_dB: (N, 3) 或 (N,) 對應 |ΔB| μT。"""
 
     def step(self, dB_meas: np.ndarray, g_d: float) -> float:

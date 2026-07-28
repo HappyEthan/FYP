@@ -28,10 +28,12 @@ class ZController:
         noise_std : 噪声标准差 (μT), 用于接触判定
         """
         assert len(calib_z_mm) == len(calib_abs_dB) > 1
-        # z_ff lookup: |ΔB| μT → z_offset m
+        # Sort by abs_dB so np.interp works correctly even with non-monotonic input
+        abs_dB = np.asarray(calib_abs_dB, dtype=float)
         z_offset_m = np.asarray(calib_z_mm, dtype=float) / 1000.0
-        self._calib_dB = np.asarray(calib_abs_dB, dtype=float)
-        self._z_offset_m = z_offset_m
+        sort_idx = np.argsort(abs_dB)
+        self._calib_dB = abs_dB[sort_idx]
+        self._z_offset_m = z_offset_m[sort_idx]
         self._dt = dt
         self._kp = kp
         self._ki = ki
@@ -62,6 +64,11 @@ class ZController:
         abs_meas = float(np.linalg.norm(dB_meas))
         e = g_d - abs_meas
         self._last_g_d = g_d
+
+        # NaN/Inf guard: freeze and return safe z_cmd
+        if not (np.isfinite(abs_meas) and np.isfinite(g_d)):
+            self._frozen = True
+            return float(self._z_surface + self._z_ff_lookup(g_d) + self._z_fb)
 
         # Contact / lift detection
         if abs_meas < 3.0 * self._noise_std or g_d < 3.0 * self._noise_std:
