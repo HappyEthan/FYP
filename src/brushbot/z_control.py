@@ -41,8 +41,6 @@ class ZController:
 
         self._z_fb = 0.0
         self._frozen = False
-        # Anti-windup gain (classic back-calculation)
-        self._k_aw = 2.0 / ki if ki > 1e-12 else 0.0
 
     def _z_ff_lookup(self, g_d: float) -> float:
         """|ΔB| (μT) → z_offset (m). 超出标定范围则饱和."""
@@ -77,9 +75,7 @@ class ZController:
         # Feedback (only integrate when not frozen)
         if not self._frozen:
             self._z_fb += self._ki * e * self._dt
-            z_fb_limited = np.clip(self._z_fb, -self._dz_margin, self._dz_margin)
-            self._z_fb += self._k_aw * (z_fb_limited - self._z_fb) * self._dt
-            self._z_fb = z_fb_limited
+            self._z_fb = np.clip(self._z_fb, -self._dz_margin, self._dz_margin)
 
         z_cmd = self._z_surface + z_ff + self._kp * e + self._z_fb
         return float(z_cmd)

@@ -50,10 +50,11 @@ def test_reset_clears_integrator():
 
 def test_z_fb_clamping():
     """反饋超出 DZ_MARGIN 時被限幅，退飽和啟動。"""
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=5.0, dz_margin=1e-3)
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=5.0, dz_margin=1e-3,
+                       noise_std=1.0)  # lower noise_std so dB_meas stays above 3σ
     # Large persistent error should saturate the integrator
     for _ in range(200):
-        ctrl.step(np.array([0.0, 0.0, 10.0]), 200.0)
+        ctrl.step(np.array([0.0, 0.0, 30.0]), 200.0)  # abs_meas=30 > 3σ=3 → not frozen
     assert abs(ctrl.z_fb) <= 1e-3 + 1e-9, f"z_fb={ctrl.z_fb} exceeded margin"
 
 
