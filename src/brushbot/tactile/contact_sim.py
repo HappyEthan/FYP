@@ -158,6 +158,24 @@ def watch(period=500):
             k += 1
 
 
+def calibrate(press_mm=None, settle=500):
+    """Run calibration: press in steps, return calibration curve.
+
+    Returns dict with:
+        z_mm: (N,) press depths (mm, from 0)
+        abs_dB: (N,) |ΔB| at each press
+        dB: (N, 3) ΔB vector at each press
+    """
+    if press_mm is None:
+        press_mm = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 22)
+    z, dB_arr, _ = run(press_mm, settle=settle)
+    return {
+        "z_mm": z,
+        "abs_dB": np.linalg.norm(dB_arr, axis=1),
+        "dB": dB_arr,
+    }
+
+
 if __name__ == "__main__":
     import sys
     mode = sys.argv[1] if len(sys.argv) > 1 else "demo"
