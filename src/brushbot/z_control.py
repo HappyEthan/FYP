@@ -90,6 +90,11 @@ class ZController:
         return self._z_ff_lookup(self._last_g_d) if hasattr(self, '_last_g_d') else 0.0
 
     @property
+    def z_surface(self) -> float:
+        """纸面高度 (m)."""
+        return self._z_surface
+
+    @property
     def z_fb(self) -> float:
         return self._z_fb
 
