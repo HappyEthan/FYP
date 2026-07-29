@@ -34,11 +34,11 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self._src_mode = "回放"
         self._norm_radius = 0.0
         self._paused = False
-        self._pause_t0 = None
         self.rec = None
         self._rec_started_wall = None
         self._auto_baseline_s = None
         self._auto_baseline_ref_t = None
+        self._last_draw_state = None
 
         self._build_ui()
         self.timer = QtCore.QTimer(self)
@@ -197,10 +197,10 @@ class MonitorWindow(QtWidgets.QMainWindow):
     def _set_pause(self, paused: bool):
         self._paused = paused
         if paused:
-            self._pause_t0 = time.monotonic()
             self.btn_pause.setText("▶ 继续")
         else:
-            self._pause_t0 = None
+            if self.src is not None and hasattr(self.src, "seek"):
+                self.src.seek(self.src.progress)
             self.btn_pause.setText("⏸ 暂停")
 
     # ---- 源模式 / 控制同步 ----
@@ -362,7 +362,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
                 elif now_t - self._auto_baseline_ref_t >= self._auto_baseline_s:
                     self._auto_baseline_s = None
                     self._take_baseline(update_b0=not isinstance(self.src, S.ReplaySource))
-        # 暂停时 read() 不调用, _t0 自动对轨, 恢复时无缝继续
+        # 暂停时 read() 不调用; 恢复时 _set_pause 里 seek(progress) 重锚 _t0, 不会 burst 补帧
         self._redraw()
         self._update_health()
         self._update_progress()
@@ -372,6 +372,13 @@ class MonitorWindow(QtWidgets.QMainWindow):
         t, B = self.rb.latest(win_s * RATE_HZ)
         if len(t) == 0:
             return
+        state = (self.rb.n_total, self.cb_filter.currentText(),
+                 self.cb_win.currentIndex(), self.p_mag.isVisible(),
+                 self.p_z.isVisible(), self.bl.ready,
+                 tuple(float(v) for v in self.bl.b0), float(self.bl.sigma_norm))
+        if state == self._last_draw_state:
+            return
+        self._last_draw_state = state
         dB = self.bl.apply(B)
         # 批量重滤(仅显示; 录制/门控/接触判定仍用原始 dB)
         if self.filt is None:
