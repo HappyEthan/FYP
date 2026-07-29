@@ -1,5 +1,6 @@
 """无 GUI 核心: 环形缓冲 + 基线 + 派生量. 禁止 import 任何 GUI 库."""
 import numpy as np
+from brushbot.filter import ButterworthFilter, OneEuroFilter
 
 
 class RingBuffer:
@@ -99,6 +100,17 @@ class EMA:
     def reset(self) -> None:
         """清空状态, 下次 update 重新冷启动."""
         self._value = None
+
+
+# 窗口滤波选择器工厂: label -> 无参构造函数; None = 原始不滤波.
+# 参数依据 docs/filter-comparison.md 选型报告.
+FILTERS = {
+    "原始": None,
+    "EMA 0.3": lambda: EMA(0.3),
+    "Butter 5Hz": lambda: ButterworthFilter(5.0),
+    "Butter 8Hz": lambda: ButterworthFilter(8.0),
+    "OneEuro": lambda: OneEuroFilter(0.5, 0.03),
+}
 
 
 def derive(dB, gate: float) -> dict:
