@@ -62,3 +62,55 @@ class ButterworthFilter:
         z2 = z1 * z1
         return ((self._b[0] + self._b[1] * z1 + self._b[2] * z2)
                 / (1.0 + self._a[0] * z1 + self._a[1] * z2))
+
+
+class OneEuroFilter:
+    """One Euro 自适应低通 (Casiez et al. 2012), 三通道独立.
+
+    截止频率 fc = min_cutoff + beta·|dx_filt|:
+    静止时截止低 (强降噪), 快速动作时截止升高 (低滞后).
+    """
+
+    def __init__(self, min_cutoff: float = 1.0, beta: float = 0.0,
+                 d_cutoff: float = 1.0, fs: float = 100.0):
+        if min_cutoff <= 0.0 or d_cutoff <= 0.0:
+            raise ValueError("min_cutoff/d_cutoff 必须 > 0, 当前: %s / %s"
+                             % (min_cutoff, d_cutoff))
+        self.min_cutoff = float(min_cutoff)
+        self.beta = float(beta)
+        self.d_cutoff = float(d_cutoff)
+        self.fs = float(fs)
+        self._x = None   # 上一滤波输出 (3,)
+        self._dx = None  # 速度低通状态 (3,)
+
+    @staticmethod
+    def smoothing_alpha(cutoff, dt):
+        """一阶低通系数 α = 1 / (1 + τ/dt), τ = 1/(2π·cutoff)."""
+        tau = 1.0 / (2.0 * np.pi * np.asarray(cutoff, dtype=float))
+        return 1.0 / (1.0 + tau / dt)
+
+    def update(self, x: np.ndarray, dt: float | None = None) -> np.ndarray:
+        x, single = _validate(x)
+        dt = 1.0 / self.fs if dt is None else float(dt)
+        out = np.empty_like(x)
+        for i, xi in enumerate(x):
+            if not np.all(np.isfinite(xi)):
+                out[i] = xi          # NaN 透传, 状态不更新
+                continue
+            if self._x is None:      # 冷启动: 首输出=输入, 速度置零
+                self._x = xi.copy()
+                self._dx = np.zeros(3)
+                out[i] = xi
+                continue
+            dx = (xi - self._x) / dt
+            a_d = self.smoothing_alpha(self.d_cutoff, dt)
+            self._dx = a_d * dx + (1.0 - a_d) * self._dx
+            cutoff = self.min_cutoff + self.beta * np.abs(self._dx)
+            a = self.smoothing_alpha(cutoff, dt)   # (3,) 逐通道自适应
+            self._x = a * xi + (1.0 - a) * self._x
+            out[i] = self._x
+        return out[0] if single else out
+
+    def reset(self) -> None:
+        self._x = None
+        self._dx = None
