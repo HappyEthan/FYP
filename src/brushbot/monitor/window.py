@@ -95,6 +95,17 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.cb_filter.currentTextChanged.connect(self._set_filter)
         self.cb_speed.currentTextChanged.connect(self._set_speed)
 
+        self.bar_prog = self.addToolBar("回放进度")
+        self.sl_prog = QtWidgets.QSlider(QtCore.Qt.Horizontal)
+        self.sl_prog.setRange(0, 1000)
+        self.lbl_prog = QtWidgets.QLabel(" 0.0 / 0.0 s ")
+        self.bar_prog.addWidget(self.sl_prog)
+        self.bar_prog.addWidget(self.lbl_prog)
+        self.bar_prog.setVisible(False)
+        self._prog_dragging = False
+        self.sl_prog.sliderPressed.connect(self._prog_press)
+        self.sl_prog.sliderReleased.connect(self._prog_release)
+
         pg.setConfigOptions(antialias=True, background="#0e1116", foreground="#c9d1d9")
 
         # ===== 上半: 归一化 XY 圆(左) + 空隙(右) =====
@@ -354,6 +365,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
         # 暂停时 read() 不调用, _t0 自动对轨, 恢复时无缝继续
         self._redraw()
         self._update_health()
+        self._update_progress()
 
     def _redraw(self):
         win_s = WINDOWS_S[self.cb_win.currentIndex()]
@@ -471,6 +483,27 @@ class MonitorWindow(QtWidgets.QMainWindow):
             parts.append("录制中 %.1fs" % (time.monotonic() - self._rec_started_wall))
         self.lbl_health.setText("  ·  ".join(parts))
         self.lbl_health.setStyleSheet("color: #d29922;" if off_nominal else "")
+
+    def _prog_press(self):
+        self._prog_dragging = True
+
+    def _prog_release(self):
+        self._prog_dragging = False
+        if self.src is not None and hasattr(self.src, "seek"):
+            self.src.seek(self.sl_prog.value() / 1000.0)
+
+    def _update_progress(self):
+        has_seek = self.src is not None and hasattr(self.src, "seek")
+        if self.bar_prog.isVisible() != has_seek:
+            self.bar_prog.setVisible(has_seek)
+        if not has_seek:
+            return
+        dur = self.src.duration_s
+        if not self._prog_dragging:
+            self.sl_prog.blockSignals(True)
+            self.sl_prog.setValue(int(self.src.progress * 1000))
+            self.sl_prog.blockSignals(False)
+        self.lbl_prog.setText(" %.1f / %.1f s " % (self.src.progress * dur, dur))
 
 
 def main(argv=None) -> int:
