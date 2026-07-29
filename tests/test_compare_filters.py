@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from compare_filters import (build_configs, dynamic_rms, ema_freq_response,
                              f3db, fft_lowpass, group_delay_ms, phase_lag_deg,
-                             sigmas, step_settle_ms)
+                             recommend, sigmas, step_settle_ms)
 from brushbot.filter import ButterworthFilter
 
 
@@ -69,3 +69,27 @@ def test_build_configs_complete():
     assert sum("OneEuro" in s for s in labels) == 9
     for c in cfgs:
         assert callable(c["make"]) and callable(c["freq"]) and c["fc_ref"] > 0.0
+
+
+def test_recommend_fallback_when_no_dynamic_data():
+    # 全部 dyn_rms=NaN (例如只有 idle 数据) → 门槛无法评估, 必须显式回退并标注原因,
+    # 不能悄悄按全表最小 |σ| 选出滞后最重的配置.
+    rows = [
+        {"label": "A (heavy lag)", "dyn_rms": float("nan"), "settle_ms": 600.0, "sigma_norm": 1.0},
+        {"label": "B", "dyn_rms": float("nan"), "settle_ms": 50.0, "sigma_norm": 3.0},
+    ]
+    rec = recommend(rows)
+    assert rec["fallback"] is not None
+    assert rec["label"] == "A (heavy lag)"  # 回退路径确实按 |σ| 最小选中, 但必须暴露 fallback 原因
+
+
+def test_recommend_no_fallback_when_thresholds_met():
+    # 正常路径: 存在配置同时满足动态 RMS/settle 门槛 → 无需回退.
+    rows = [
+        {"label": "A", "dyn_rms": 5.0, "settle_ms": 50.0, "sigma_norm": 3.0},
+        {"label": "B", "dyn_rms": 5.1, "settle_ms": 80.0, "sigma_norm": 1.0},
+        {"label": "C (excluded)", "dyn_rms": 50.0, "settle_ms": 500.0, "sigma_norm": 0.1},
+    ]
+    rec = recommend(rows)
+    assert rec["fallback"] is None
+    assert rec["label"] == "B"

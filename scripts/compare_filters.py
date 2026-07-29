@@ -126,12 +126,25 @@ def evaluate(cfg, idle_dB, dyn_runs):
 
 
 def recommend(rows):
-    """选型: 动态 RMS 在最优 1.25 倍内且阶跃 ≤100 ms 者中, 取 idle |σ| 最小."""
+    """选型: 动态 RMS 在最优 1.25 倍内且阶跃 ≤100 ms 者中, 取 idle |σ| 最小.
+
+    若没有有效动态数据 (全部 dyn_rms=NaN, 如仅提供 idle CSV) 或没有配置通过
+    动态 RMS/settle 门槛, 回退为在全表按 idle |σ| 排序取最小者. 返回 dict
+    附加 `fallback` 键: 正常路径为 None, 回退路径为原因说明字符串, 供调用方
+    (main/write_report) 把这一事实暴露出来, 而不是静默给出一个看似经过门槛
+    筛选、实际未经筛选的推荐."""
     valid = [r for r in rows if np.isfinite(r["dyn_rms"])]
-    best_rms = min(r["dyn_rms"] for r in valid) if valid else float("nan")
-    ok = [r for r in valid
-          if r["dyn_rms"] <= 1.25 * best_rms and r["settle_ms"] <= 100.0]
-    return min(ok or rows, key=lambda r: r["sigma_norm"])
+    if not valid:
+        fallback = "无有效动态 RMS 数据 (全部 dyn_rms=NaN), 未按动态门槛筛选, 仅按 idle |σ| 排序"
+        ok = []
+    else:
+        best_rms = min(r["dyn_rms"] for r in valid)
+        ok = [r for r in valid
+              if r["dyn_rms"] <= 1.25 * best_rms and r["settle_ms"] <= 100.0]
+        fallback = None if ok else "无配置同时满足动态 RMS≤最优×1.25 且阶跃≤100ms, 仅按 idle |σ| 排序"
+    rec = dict(min(ok or rows, key=lambda r: r["sigma_norm"]))
+    rec["fallback"] = fallback
+    return rec
 
 
 def make_figure(cfgs_sel, idle, out_png):
@@ -182,15 +195,27 @@ def write_report(rows, rec, runs, out_md, out_png):
     lines += [
         "",
         "注: OneEuro 的相位/群延迟为慢态线性化等效值 (cutoff=min_cutoff), 快态滞后由动态 RMS 体现;",
-        "FFT 对照差 % 的 <10% 验收判据适用于 2 阶 Butterworth (spec §7), 一阶滤波器 ENBW 更宽, 差异天然更大.",
+        "FFT 对照差 % 的 <10% 验收判据适用于 2 阶 Butterworth (spec §7), 一阶滤波器 ENBW 更宽, 差异天然更大;",
+        "阶跃 settle 用 1 µT 单位阶跃测量; 对幅值相关的非线性滤波器 (OneEuro) 这是小信号最坏情形——",
+        "实际提按 ΔB 变化为数十 µT 量级, 代表性幅值下 OneEuro 的 settle 会显著变短",
+        "(实测 mc=0.5 b=0.03: 1 µT→380 ms, 10 µT→100 ms, 30 µT→50 ms), 本表 settle 数字不应单独用于淘汰 OneEuro.",
         "",
         "## 推荐",
         "",
-        "**%s** — 选型规则: 动态 RMS ≤ 最优×1.25 且阶跃 ≤100 ms 者中取 idle |σ| 最小." % rec["label"],
+    ]
+    if rec.get("fallback"):
+        lines.append(
+            "**%s** — ⚠️ 无配置通过动态 RMS/settle 门槛（或无动态数据），"
+            "本推荐仅按 idle |σ| 排序，不代表滞后可接受 (%s)." % (rec["label"], rec["fallback"]))
+    else:
+        lines.append(
+            "**%s** — 选型规则: 动态 RMS ≤ 最优×1.25 且阶跃 ≤100 ms 者中取 idle |σ| 最小." % rec["label"])
+    lines += [
         "",
         "handoff §2.5 四问 (以推荐配置回答):",
         "",
-        "1. 3 Hz 相位滞后: **%.1f°** (慢态等效)" % rec["phase3_deg"],
+        "1. 3 Hz 相位滞后: **%.1f°**%s" % (
+            rec["phase3_deg"], " (慢态等效)" if "OneEuro" in rec["label"] else ""),
         "2. 噪声: |σ| 从全带宽 6.94 µT → **%.2f µT**" % rec["sigma_norm"],
         "3. 等效 Z 噪声: σ_z = σ_filtered/S = %.2f/S mm (S 待装配态 E2 标定, µT/mm)" % rec["sigma"][2],
         "4. 滤波器延迟: 群延迟 **%.1f ms** @ 3 Hz (延迟预算 ≲10 ms)" % rec["gd_ms"],
@@ -238,6 +263,8 @@ def main(argv=None):
         print("%-22s |σ|=%.2f fftΔ=%+.1f%% φ3=%.1f° gd=%.1fms settle=%.0fms rms=%.2f"
               % (r["label"], r["sigma_norm"], r["fft_diff_pct"], r["phase3_deg"],
                  r["gd_ms"], r["settle_ms"], r["dyn_rms"]))
+    if rec.get("fallback"):
+        print("警告:", rec["fallback"])
     print("推荐:", rec["label"], "→ 报告:", out_md)
 
 
