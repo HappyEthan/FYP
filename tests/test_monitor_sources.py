@@ -117,6 +117,7 @@ def test_replay_source_roundtrips_to_original_delta(tmp_path):
 
 
 from brushbot.monitor.sources import synth_writing_B
+from brushbot.monitor import sources as S
 
 
 def test_synth_writing_B_produces_streamable_source():
@@ -135,3 +136,22 @@ def test_synth_writing_B_produces_streamable_source():
     assert np.isfinite(B).all()
     # 应当围绕标称 B0 波动, 且确实有变化(不是常数)
     assert B.std(axis=0).max() > 0.0
+
+
+def test_progress_and_duration():
+    t = np.arange(100) / 100.0
+    src = S.ArraySource(t, np.zeros((100, 3)), rate_hz=100.0)
+    assert src.progress == 0.0
+    assert src.duration_s == pytest.approx(0.99)
+    src.start()
+    src.seek(0.5)
+    assert src.progress == pytest.approx(0.5, abs=0.02)
+    src.seek(1.0)
+    assert src.progress == 1.0
+    assert src.done
+
+
+def test_progress_empty_array():
+    src = S.ArraySource([], np.zeros((0, 3)))
+    assert src.progress == 1.0
+    assert src.duration_s == 0.0

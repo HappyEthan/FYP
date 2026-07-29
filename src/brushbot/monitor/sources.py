@@ -75,6 +75,17 @@ class ArraySource:
         return self._i >= len(self._t)
 
     @property
+    def progress(self) -> float:
+        """播放进度 0~1. 空数组视为已播完, 返回 1.0."""
+        n = len(self._t)
+        return 1.0 if n == 0 else min(self._i / n, 1.0)
+
+    @property
+    def duration_s(self) -> float:
+        """记录总时长 (s). 空数组返回 0.0."""
+        return float(self._t[-1] - self._t[0]) if len(self._t) else 0.0
+
+    @property
     def info(self) -> dict:
         return {"name": self.name, "nominal_rate_hz": self.rate_hz,
                 "units": "uT", "n_samples": int(len(self._t))}
