@@ -375,7 +375,8 @@ class MonitorWindow(QtWidgets.QMainWindow):
         state = (self.rb.n_total, self.cb_filter.currentText(),
                  self.cb_win.currentIndex(), self.p_mag.isVisible(),
                  self.p_z.isVisible(), self.bl.ready,
-                 tuple(float(v) for v in self.bl.b0), float(self.bl.sigma_norm))
+                 tuple(float(v) for v in self.bl.b0), float(self.bl.sigma_norm),
+                 self._paused)
         if state == self._last_draw_state:
             return
         self._last_draw_state = state
