@@ -53,3 +53,49 @@ class V0NoiseSource:
         """样本池过滤波器后的 |σ| (µT); None → 原始 |σ|. noise_std 现算入口."""
         y = self._pool if make_filter is None else make_filter().update(self._pool)
         return float(np.linalg.norm(y.std(axis=0)))
+
+
+class Plant:
+    """被控对象: 延迟 FIFO → 一阶执行器 → 标定映射(+扰动) → 三轴合成(+漂移+噪声).
+
+    真实曲线 = calib_abs_dB × calib_scale, 与控制器手里的标定表故意是两份
+    (calib_scale≠1 即标定偏差扰动). calib_abs_dB 须单调升.
+    paper_step=(t_step_s, dz_m): t≥t_step 后纸面朝笔抬高 dz (压深等效加深).
+    drift_rate (µT/s): 沿 press_direction 注入 (与信号同向 = 最坏情形).
+    tau/n_delay 为假设值 (真机未标定), 层1 做敏感性抽查.
+    """
+
+    def __init__(self, calib_z_mm, calib_abs_dB, dt=0.01, tau=0.05, n_delay=2,
+                 z_surface=0.20, press_direction=(1.0, 0.3, 0.1), noise=None,
+                 calib_scale=1.0, paper_step=None, drift_rate=0.0):
+        self._z_grid_mm = np.asarray(calib_z_mm, float)
+        self._db_grid = np.asarray(calib_abs_dB, float) * calib_scale
+        self._dt = dt
+        self._alpha = 1.0 - np.exp(-dt / tau) if tau > 0 else 1.0
+        self._fifo = [z_surface] * max(0, int(n_delay))
+        self._z_surface = z_surface
+        d = np.asarray(press_direction, float)
+        self._dir = d / np.linalg.norm(d)
+        self._noise = noise
+        self._paper_step = paper_step
+        self._drift_rate = drift_rate
+        self._t = 0.0
+        self.z_act = z_surface
+        self.abs_true = 0.0
+
+    def step(self, z_cmd):
+        """z 指令 (m, 世界坐标) → dB_raw (3,) µT. 每调用前进一拍."""
+        self._fifo.append(float(z_cmd))
+        z_delayed = self._fifo.pop(0)
+        self.z_act += self._alpha * (z_delayed - self.z_act)
+        paper = 0.0
+        if self._paper_step is not None and self._t >= self._paper_step[0]:
+            paper = self._paper_step[1]
+        z_off_mm = (self.z_act - self._z_surface + paper) * 1000.0
+        self.abs_true = float(np.interp(z_off_mm, self._z_grid_mm, self._db_grid,
+                                        left=0.0, right=self._db_grid[-1]))
+        dB = self._dir * (self.abs_true + self._drift_rate * self._t)
+        if self._noise is not None:
+            dB = dB + self._noise.sample(1)[0]
+        self._t += self._dt
+        return dB
