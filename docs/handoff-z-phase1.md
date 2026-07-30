@@ -38,8 +38,8 @@ z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e     e = g_d − |ΔB_meas|
 ### 1.3 选型结论（过渡）与量化工具
 
 - `python scripts/compare_filters.py` 一条命令出 18 配置 × 4 指标 + Pareto 图 + 报告（`docs/filter-comparison.md`）。装配态数据到位换 CSV 重跑即重新选型。
-- **当前推荐 EMA α=0.3**（|σ| 6.94→3.31 µT，3Hz 滞后 22.8°/17.2ms），但有三个保留（详见记忆 `filter-selection-provisional` 与报告注释）：
-  1. settle 指标用 1 µT 小信号阶跃，对非线性 OneEuro 是最坏情形；修成 10–30 µT 代表幅值后**推荐预期翻转为 OneEuro mc=0.5 β=0.03**（σ=2.67、动态 RMS 双优）。
+- **当前推荐 OneEuro mc=0.5 β=0.03**（|σ| 6.94→2.67 µT，动态 RMS 7.09 双优；2026-07-30 settle 幅值修正后翻转实锤，见下），但有保留（详见记忆 `filter-selection-provisional` 与报告注释）：
+  1. ~~settle 指标用 1 µT 小信号阶跃~~ **已修**（2026-07-30）：`step_settle_ms` 加 `amp` 参数，默认 10 µT（代表区间 10–30 µT 下界=最坏情形）。推荐翻转为 OneEuro mc=0.5 β=0.03，且是 10–30 µT 全区间唯一稳定胜出者（中值/上界口径会漂移到压线的激进配置）。待裁决：OneEuro 静止态 ~70 ms 相位延迟是否可接受——Phase 1 时域闭环仿真裁决。
   2. spec 的滤波器延迟份额 ≲5–10 ms 与有效降噪在裸态数据下**互斥**（任何降噪够用的滤波器都超预算）——Phase 1 需要重划相位/延迟预算，而不是硬卡 10ms。
   3. 裸态数据是乐观下界；Pareto 图上"EMA 支配 Butterworth"依赖 1/f 噪声谱形状，装配态 EMI 可能翻盘。
 - 教学文档 `docs/filter-tutorial.md`（概念、公式、逐节动手命令）——设计时当参考书用。
@@ -84,7 +84,7 @@ for dB_raw in stream:
 
 用户已确认的架构方向：示范录制的 raw ΔB → **离线零相位滤波**（`compare_filters.fft_lowpass` 现成可用）→ 干净 `g_press(s)` → 标定表反查 → `z_ff(t)` 前馈轨迹 → 进 `StrokePlan`。
 
-- 目标曲线用理想滤波是**正确的**（数据完整，无因果性约束），实时滤波器只管反馈通路——两个滤波各司其职，别混。
+- 目标曲线用理想滤波是**正确的**（数实时（Real-Time）据完整，无因果性约束），实时滤波器只管反馈通路——两个滤波各司其职，别混。
 - 纯开环执行这条轨迹 = 论文对照组（CalliRewrite 式），先建它，闭环是加法：两条实验臂共享前馈，差异干净落在"有无触觉反馈"。
 - 没有真实示范数据前，可用合成 g_press 曲线（synth 源的思路）把管线跑通。
 
