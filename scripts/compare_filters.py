@@ -91,9 +91,12 @@ def dynamic_rms(make_filter, dB):
 
 def build_configs():
     """全部对比配置. fc_ref: σ 对照用的 FFT 截断频率."""
-    cfgs = [{"label": "EMA a=0.3", "make": lambda: EMA(0.3),
-             "freq": lambda f: ema_freq_response(0.3, f),
-             "fc_ref": f3db(lambda f: ema_freq_response(0.3, f))}]
+    cfgs = []
+    for a in (0.05, 0.1, 0.2, 0.3, 0.5):
+        cfgs.append({"label": "EMA a=%g" % a,
+                     "make": (lambda a=a: EMA(a)),
+                     "freq": (lambda f, a=a: ema_freq_response(a, f)),
+                     "fc_ref": f3db(lambda f, a=a: ema_freq_response(a, f))})
     for fc in (5.0, 8.0, 10.0, 12.0):
         cfgs.append({"label": "Butter fc=%g" % fc,
                      "make": (lambda fc=fc: ButterworthFilter(fc)),
@@ -149,9 +152,7 @@ def recommend(rows):
 
 def make_figure(cfgs_sel, idle, out_png):
     """图: idle z 通道滤波对比 + 阶跃响应."""
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = _plt()
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4))
     t = idle["t"][:500]
@@ -170,6 +171,53 @@ def make_figure(cfgs_sel, idle, out_png):
     axes[1].axhspan(0.95, 1.05, color="0.9")
     axes[1].set(xlabel="t (ms)", ylabel="step response", title="阶跃响应")
     axes[1].legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_png, dpi=120)
+
+
+def _plt():
+    """Agg 后端 + CJK 字体的 matplotlib.pyplot (中文标签不出方框)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    matplotlib.rcParams["font.sans-serif"] = [
+        "Noto Sans CJK SC", "Noto Sans CJK HK", "Noto Sans CJK JP", "DejaVu Sans"]
+    matplotlib.rcParams["axes.unicode_minus"] = False
+    import matplotlib.pyplot as plt
+    return plt
+
+
+def make_pareto(rows, out_png):
+    """噪声-滞后 Pareto 散点: x=3Hz 相位滞后°, y=idle |σ| µT. 左下=最优方向.
+
+    颜色取 Okabe-Ito 无障碍色板; OneEuro 用空心标记 + 形状双编码,
+    因其相位为慢态线性化等效值, 与线性滤波器不可直接比相位.
+    """
+    plt = _plt()
+
+    families = [  # (前缀, 颜色, 标记, 实心)
+        ("EMA", "#0072B2", "o", True),
+        ("Butter", "#E69F00", "s", True),
+        ("OneEuro", "#009E73", "^", False),
+    ]
+    fig, ax = plt.subplots(figsize=(7.5, 5.5))
+    for prefix, color, marker, filled in families:
+        pts = [r for r in rows if r["label"].startswith(prefix)]
+        xs = [r["phase3_deg"] for r in pts]
+        ys = [r["sigma_norm"] for r in pts]
+        ax.scatter(xs, ys, s=70, marker=marker, zorder=3,
+                   facecolors=color if filled else "none",
+                   edgecolors=color, linewidths=1.6,
+                   label=prefix + ("" if filled else " (慢态等效相位)"))
+        for r in pts:  # 直接标注参数, 文字用中性墨色而非系列色
+            ax.annotate(r["label"].replace(prefix, "").strip(),
+                        (r["phase3_deg"], r["sigma_norm"]),
+                        textcoords="offset points", xytext=(6, 4),
+                        fontsize=7.5, color="#444444")
+    ax.set(xlabel="3 Hz 相位滞后 (°)", ylabel="idle |σ| (µT)",
+           title="噪声-滞后权衡 (左下为 Pareto 最优方向)")
+    ax.margins(x=0.14, y=0.08)   # 给右缘的直接标注留位置
+    ax.grid(True, color="0.9", lw=0.6, zorder=0)
+    ax.legend(fontsize=8, loc="upper right")
     fig.tight_layout()
     fig.savefig(out_png, dpi=120)
 
@@ -228,6 +276,12 @@ def write_report(rows, rec, runs, out_md, out_png):
         "",
         "![对比图](assets/filter-comparison.png)",
         "",
+        "![噪声-滞后 Pareto](assets/filter-pareto.png)",
+        "",
+        "散点图读法: 左下角为 Pareto 最优方向; EMA α 扫描与 Butterworth fc 扫描各成一条权衡曲线,",
+        "同等相位滞后下更低的点降噪更强. OneEuro (空心三角) 的横坐标是慢态线性化等效值,",
+        "不能与线性滤波器直接比相位——其真实动态滞后见对比矩阵的动态 RMS 列.",
+        "",
     ]
     Path(out_md).write_text("\n".join(lines), encoding="utf-8")
 
@@ -257,6 +311,7 @@ def main(argv=None):
     sel_labels = {rec["label"], "EMA a=0.3", "Butter fc=8"}
     make_figure([c for c in cfgs if c["label"] in sel_labels],
                 idle_runs[0], out_png)
+    make_pareto(rows, out_md.parent / "assets" / "filter-pareto.png")
     write_report(rows, rec, runs, out_md, out_png)
 
     for r in rows:
