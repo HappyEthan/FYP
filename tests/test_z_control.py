@@ -36,9 +36,23 @@ def test_z_ff_interpolation():
     assert ctrl._z_ff_lookup(150.0) == pytest.approx(0.003, rel=0.01)
 
 
+def test_s_cal_from_calib():
+    """S_cal = z 跨度 / |ΔB| 跨度 (m/µT)。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    assert ctrl.s_cal == pytest.approx(0.005 / 250.0)
+
+
+def test_kp_dimensionless_semantics():
+    """kp=0.5 表示每拍修正误差的 50%: 比例项 = kp·S_cal·e。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=0.5, ki=0.0)
+    z_cmd = ctrl.step(np.array([100.0, 0.0, 0.0]), 150.0)  # e = 50, 未 freeze
+    expected = 0.20 + 0.003 + 0.5 * ctrl.s_cal * 50.0      # surface + z_ff(150) + Kp 项
+    assert z_cmd == pytest.approx(expected)
+
+
 def test_reset_clears_integrator():
     """reset 後反饋項歸零。"""
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=1.0)
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=5.0)
     # Run a few steps to build up integrator
     for _ in range(50):
         ctrl.step(np.array([0.0, 0.0, 50.0]), 150.0)  # g_d=150 but meas only 50
@@ -87,23 +101,13 @@ def test_air_freezes_integrator():
 
 
 def test_step_tracks_constant():
-    """固定目標下閉環收斂到 ±5% 誤差。
-
-    NOTE: The brief specified kp=0.5, ki=0.2 but those values cause a limit cycle
-    because kp * 120 (max error) = 60 m, far exceeding the 5 mm calibration range.
-    Additionally, the original _plant() in the brief passed z_cmd (world frame,
-    ~0.20 m) as z_offset (0-5 mm), which saturated the plant at 250 uT always.
-    Tuned kp=1e-5, ki=0.0005 for stable convergence.
-    """
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=1e-5, ki=0.0005)
-    g_d = 120.0  # target |ΔB|
-    z_cmd = 0.0
+    """固定目標下閉環用默認無量綱增益收斂到 ±5%。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    g_d = 120.0
     dB_meas = np.zeros(3)
-
     for _ in range(300):
         z_cmd = ctrl.step(dB_meas, g_d)
         abs_meas = _plant(z_cmd, _CALIB_Z, _CALIB_DB)
         dB_meas = np.array([abs_meas, 0.0, 0.0])
-
     error = abs(g_d - np.linalg.norm(dB_meas)) / g_d
     assert error < 0.05, f"steady-state error {error:.3f} > 0.05"

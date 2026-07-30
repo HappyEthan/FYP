@@ -1,6 +1,6 @@
 """Z 轴闭环控制 Phase 0: 整体 ΔB 跟踪.
 
-控制律: z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e
+控制律: z_cmd = z_surface + z_ff(|ΔB_d|) + kp·S_cal·e + ki·S_cal·∫e
   e = |ΔB_d| − |ΔB_meas|
   前馈为主, 积分仅补残差.
 
@@ -13,7 +13,7 @@ class ZController:
     """整体 ΔB 标量跟踪控制器。"""
 
     def __init__(self, calib_z_mm: np.ndarray, calib_abs_dB: np.ndarray,
-                 dt: float = 0.01, kp: float = 0.5, ki: float = 0.1,
+                 dt: float = 0.01, kp: float = 0.3, ki: float = 0.03,
                  z_surface: float = 0.20, dz_margin: float = 3e-3,
                  noise_std: float = 7.0):
         """
@@ -22,10 +22,10 @@ class ZController:
         calib_z_mm : (N,) 压深 mm (从接触起点起算)
         calib_abs_dB : (N,) 对应 |ΔB| μT
         dt : 控制周期 (s)
-        kp/ki : 比例/积分增益 (z 单位: m)
+        kp/ki : 无量纲增益，每拍将误差的该比例折算为压深修正
         z_surface : 纸面高度 (m)
         dz_margin : 积分限幅 ±m
-        noise_std : 噪声标准差 (μT), 用于接触判定
+        noise_std : 噪声标准差 (μT), 全带宽裸态口径，接滤波后必须显式传滤波后 σ；用于接触判定
         """
         assert len(calib_z_mm) == len(calib_abs_dB) > 1
         # Sort by abs_dB so np.interp works correctly even with non-monotonic input
@@ -34,6 +34,13 @@ class ZController:
         sort_idx = np.argsort(abs_dB)
         self._calib_dB = abs_dB[sort_idx]
         self._z_offset_m = z_offset_m[sort_idx]
+
+        # Calculate calibration slope S_cal (m/µT)
+        db_span = float(self._calib_dB[-1] - self._calib_dB[0])   # 已升序
+        assert db_span > 0, "calib |dB| span must be > 0"
+        z_span = float(self._z_offset_m.max() - self._z_offset_m.min())
+        self._s_cal = z_span / db_span                            # m/µT
+
         self._dt = dt
         self._kp = kp
         self._ki = ki
@@ -81,10 +88,10 @@ class ZController:
 
         # Feedback (only integrate when not frozen)
         if not self._frozen:
-            self._z_fb += self._ki * e * self._dt
+            self._z_fb += self._ki * self._s_cal * e * self._dt
             self._z_fb = np.clip(self._z_fb, -self._dz_margin, self._dz_margin)
 
-        z_cmd = self._z_surface + z_ff + self._kp * e + self._z_fb
+        z_cmd = self._z_surface + z_ff + self._kp * self._s_cal * e + self._z_fb
         return float(z_cmd)
 
     def reset(self):
@@ -108,3 +115,8 @@ class ZController:
     @property
     def frozen(self) -> bool:
         return self._frozen
+
+    @property
+    def s_cal(self) -> float:
+        """标定斜率 (m/µT), 无量纲增益的换算因子."""
+        return self._s_cal
