@@ -966,6 +966,11 @@ SCENARIOS = [
     ("drift +1uT/s", {"drift_rate": +1.0}),
     ("drift -1uT/s", {"drift_rate": -1.0}),
 ]
+# (2026-07-30 二次修订) 多笔画场景另行处理, 不进 SCENARIOS 矩阵:
+#   g_multi = np.concatenate([synth_press(cal_max=CALIB_DB[-1])] * 8), plant calib_scale=0.8
+#   臂: open / P / PI(ki ∈ {wp_PI 0.005} ∪ kp=wp 行裕度合规的更大稳定 ki 候选, 由 --ki-multi 传入)
+#   指标: 每笔 t∈[5.8,6.8)+7.6·k 窗均偏差随笔序 k 的收敛曲线; 判据 = |偏差|≤2σ_f 所需笔数
+#   报告: 收敛曲线图 + "Task 9 回填 ki 推荐 = 裕度合规且收敛最快者"
 
 
 def run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw):
