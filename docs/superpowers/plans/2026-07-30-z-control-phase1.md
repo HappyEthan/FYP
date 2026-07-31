@@ -1103,7 +1103,7 @@ Run: `python -m pytest tests/ -q` → 全绿。
 
 - [ ] **Step 1: 回填默认增益**
 
-把 `ZController.__init__` 的 `kp=0.3, ki=0.03` 改为层 1 胜出滤波臂的 **wp_PI** 值（积分是设计意图，ki=0 的 wp_P 只作层 2 对照口径），docstring 注明"默认值 = Phase 1 层 1 扫描工作点 wp_PI（裸态仿真，`docs/z-phase1-sweep.md`）"。
+把 `ZController.__init__` 的 `kp=0.3, ki=0.03` 改为：kp = 层 1 胜出滤波臂的工作点 kp；ki = **层 2 多笔画场景的推荐值**（裕度合规且跨笔画收敛最快，见 `docs/z-phase1-results.md` 多笔画节；2026-07-30 二次修订取代"wp_PI 网格最小 ki"）。docstring 注明"默认值 = Phase 1 工作点（kp 出自层 1 扫描、ki 出自层 2 多笔画收敛，裸态仿真，`docs/z-phase1-sweep.md` / `docs/z-phase1-results.md`）；ki 面向跨笔画自适应时间尺度（~3 笔收敛），不承诺单笔画内扰动抑制"。
 
 - [ ] **Step 2: 全套测试回归**
 
