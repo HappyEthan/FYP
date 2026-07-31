@@ -50,20 +50,36 @@ def run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw):
 
 
 def steady_bias(res):
-    """提按末 1s (t∈[5.8, 6.8)) 平均误差 (µT, 以真值评)."""
+    """提按末 1s (t∈[5.8, 6.8)) 窗均偏差 (µT, 以真值评).
+
+    该窗口跨越 ~2.5–3Hz 扫频正弦约 3 个周期, 逐样本误差本身有 ±dozens µT 量级的
+    跟踪摆动 (并非真正静止的"稳态"); 窗口均值是多周期平均, 幸存下来的只是偏差
+    (bias) 分量的估计, 不是瞬时稳态误差。"""
     m = (res["t"] >= 5.8) & (res["t"] < 6.8)
     return float((res["g_d"][m] - res["abs_true"][m]).mean())
 
 
 def recovery_time_s(res, t_step, sigma_f):
-    """t_step 后 |误差| 首次连续 0.3s 落回 ±2σ 带内的耗时 (s); 未恢复 → inf."""
+    """t_step 后, 接触段内 (g_d >= 3σ) |误差| 首次连续 0.3s 落回 ±2σ 带内的耗时 (s).
+
+    仅在接触段内评估: ok = err < 2σ 只在 g_d>=3σ 的样本上判定, 接触段外 (收笔/
+    悬空, g_d<3σ) 的样本一律不计入 (2026-07-30 修正: 原版收笔段自动满足判据,
+    量的是笔画结束). 若在 t_step 后到接触段最后一个样本前始终未凑满连续 0.3s,
+    返回 inf (接触段内恢复 → 秒数; 收笔前未恢复 → inf)。"""
     err = np.abs(res["g_d"] - res["abs_true"])
-    ok = (err < 2.0 * sigma_f) | (res["g_d"] < 3.0 * sigma_f)
+    in_contact = res["g_d"] >= 3.0 * sigma_f
     start = int(t_step * FS)
     need = int(0.3 * FS)
+    contact_after = np.nonzero(in_contact[start:])[0]
+    if len(contact_after) == 0:
+        return float("inf")
+    end = start + int(contact_after[-1])
     run = 0
-    for i in range(start, len(ok)):
-        run = run + 1 if ok[i] else 0
+    for i in range(start, end + 1):
+        if not in_contact[i]:
+            run = 0
+            continue
+        run = run + 1 if err[i] < 2.0 * sigma_f else 0
         if run >= need:
             return (i - need + 1 - start) / FS
     return float("inf")
@@ -183,7 +199,8 @@ def _drift_deception(rows):
 
 
 def write_report(rows, v0_rows, args, sigma_f, out_path):
-    """生成 docs/z-phase1-results.md: Q3 主表 + drift 负面对照注记 +
+    """生成 docs/z-phase1-results.md: Q3 主表（窗均偏差 + 仅接触段判定的恢复时间） +
+    扣除 baseline 后的纯扰动残留比例主对比表 + drift 负面对照注记 +
     Q4 freeze 判据结论 + 两张波形图 + caveat."""
     import matplotlib
     matplotlib.use("Agg")
@@ -221,7 +238,7 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
         "积分闭环 (闭环-PI) 理论上 → 0（无限增益抗直流扰动）；开环臂 (kp=ki=0) 不做任何补偿，"
         "偏差与真实曲线偏离量同源。" % (kp_p, 100.0 * kp_p / (1.0 + kp_p)),
         "",
-        "| 场景 | 臂 | RMS % | 稳态偏差 µT | 恢复时间 s |",
+        "| 场景 | 臂 | RMS % | 窗均偏差 µT (提按末 1s 均值) | 恢复时间 s |",
         "|---|---|---|---|---|",
     ]
     for r in rows:
@@ -229,10 +246,28 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
             r["scenario"], r["arm"], r["rms"], r["bias"], _fmt_rec(r["recovery"])))
     lines.append("")
 
+    lines += [
+        "**窗均偏差口径注意**：上表\"窗均偏差\"是 t∈[5.8, 6.8) 1s 窗口内逐样本误差的均值，"
+        "而该窗口跨越提按段 ~2.5–3Hz 扫频正弦约 3 个周期——逐样本误差本身有 ±dozens µT 量级的"
+        "跟踪摆动，并不是系统进入了真正静止的稳态；均值是多周期平均后幸存下来的偏差 (bias) "
+        "分量估计。它仍是该分量的合理估计量（正弦项在 ~3 个周期上大致平均掉），但不应读作"
+        "\"某一时刻的稳态误差\"。下方\"扣除 baseline 分量后的纯扰动残留比例\"表（对应理论 "
+        "`e_ss=d/(1+kp)`）才是本报告 Q3 的主对比结论。",
+        "",
+        "**open 臂 baseline 窗均偏差非零 (+%.2f µT) 的成因**：开环臂没有反馈，理论上不该有"
+        "\"偏差\"这个概念，但仿真 Plant 含 2 拍传输延迟 + τ=0.05s 一阶执行器滞后，目标曲线"
+        "在提按窗口内持续变化（扫频正弦），执行器/延迟跟不上瞬时变化的目标，产生纯物理"
+        "滞后误差——这不是反馈引入的伪像，纯开环下也会出现。" % (
+            next((r["bias"] for r in rows if r["scenario"] == "baseline" and r["arm"] == "open"), 0.0)),
+        "",
+    ]
+
     ret = _disturbance_retained(rows)
     lines += [
-        "**calib / paper 场景叙事核对（扣除 baseline 分量后的纯扰动残留比例）**：baseline "
-        "(无扰动) 场景本身已有非零稳态偏差（提按段目标是 0.5–3Hz 正弦扫频，跟踪相位滞后"
+        "### Q3 主对比表：扣除 baseline 分量后的纯扰动残留比例",
+        "",
+        "**（此表为 Q3 的主要对比结论，取代上方窗均偏差原始表的直接解读）**：baseline "
+        "(无扰动) 场景本身已有非零窗均偏差（提按段目标是 0.5–3Hz 正弦扫频，跟踪相位滞后"
         "所致，与扰动无关）；用 `scenario_bias − baseline_bias` 提取纯扰动分量再算残留比例，"
         "才对应理论 `e_ss=d/(1+kp)`：",
         "",
@@ -246,12 +281,15 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
 
     max_pi_p_gap = max(abs(d["ret_p"] - d["ret_pi"]) for d in ret) if ret else 0.0
     theory_ret = 1.0 / (1.0 + kp_p)
+    paper_ret = [d for d in ret if "paper" in d["scenario"]]
+    paper_ret_avg = (100 * sum(d["ret_p"] for d in paper_ret) / len(paper_ret)
+                     if paper_ret else float("nan"))
     lines += [
         "闭环-P 残留比例（paper_step 场景，接近纯加性扰动模型）实测 ≈%.0f%%，与理论 "
         "`1/(1+kp)=%.1f%%`（kp=%.4g）吻合良好；calib_scale 场景（乘性扰动，非加性）实测"
         "残留比例在 %.0f%%–%.0f%% 之间浮动，与简单加性公式有出入但同量级，属预期"
         "（乘性扰动的有效环路增益随 calib_scale 变化，简单公式只是一阶近似）。" % (
-            100 * sum(d["ret_p"] for d in ret if "paper" in d["scenario"]) / 2,
+            paper_ret_avg,
             100 * theory_ret, kp_p,
             100 * min(d["ret_p"] for d in ret), 100 * max(d["ret_p"] for d in ret)),
         "",
@@ -265,6 +303,15 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
         "尺度与本次层 2 场景窗口不匹配；本报告如实呈现，不通过换用更大 ki（会破坏层 1 "
         "稳定裕度判据）或拉长窗口来\"修出\"预期方向。" % (
             max_pi_p_gap * 100, ki_pi, s_cal, ki_pi * s_cal),
+        "",
+        "**恢复时间 (recovery) 为何全部\"未恢复 (∞)\"**：上方 Q3 主表的\"恢复时间\"列现改为"
+        "只在接触段内 (g_d≥3σ) 判定 err<2σ_f 是否连续 0.3s 成立，收笔段不再自动满足判据。"
+        "paper_step 场景下三臂的窗均偏差（扣除 baseline 前，绝对值 ~9–14µT）本身就超过 "
+        "2σ_f=%.2fµT 的判据门槛——与上一段 ⚠️ 一样是同一根因：wp_PI 的 ki 太小、wp_P 的 kp "
+        "只消 ~%.0f%% 偏差，误差在阶跃后从未真正压回 ±2σ 带内，所以三臂在整个提按窗口内都"
+        "报告未恢复 (∞)。这是诚实的负面结果（P/PI 在单笔画时间尺度内都来不及收敛），"
+        "不通过放宽判据阈值来\"修出\"有限恢复时间。" % (
+            2.0 * sigma_f, 100.0 * kp_p / (1.0 + kp_p)),
         "",
     ]
 
@@ -369,6 +416,10 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
         "见 spec §3.3 规则与 Task 9 报告。",
         "- drift 场景闭环劣化是本设计的**已知特性**而非缺陷：它是差分测量方案的论据，禁止通过调参"
         "\"修掉\"。",
+        "- **恢复时间判据口径（2026-07-30 修正）**：`recovery_time_s` 现仅在接触段内 "
+        "(g_d≥3σ) 判定 err<2σ_f，收笔段 (g_d<3σ) 不再自动满足判据；修正前的旧版会被收笔段"
+        "误判为\"已恢复\"，实际量的是笔画结束时刻而非真实收敛，全部三臂旧版都报 3.07s 左右"
+        "（≈ stroke end − t_step）。",
         ("- **叙事矛盾（Task 8 已发现，未修改代码）**：wp_PI 的 ki=%.4g（层 1 对数网格最小 "
          "ki>0 候选点）在本层 2 场景 (~6–8s) 内积分时间常数过长，闭环-PI 在 calib/paper/drift "
          "全部场景下实测表现与闭环-P 几乎不可区分（详见上文 Q3 表格与逐场景比对），未达 spec "

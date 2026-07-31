@@ -976,20 +976,36 @@ def run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw):
 
 
 def steady_bias(res):
-    """提按末 1s (t∈[5.8, 6.8)) 平均误差 (µT, 以真值评)."""
+    """提按末 1s (t∈[5.8, 6.8)) 窗均偏差 (µT, 以真值评).
+
+    该窗口跨越 ~2.5–3Hz 扫频正弦约 3 个周期, 逐样本误差本身有 ±dozens µT 量级的
+    跟踪摆动 (并非真正静止的"稳态"); 窗口均值是多周期平均, 幸存下来的只是偏差
+    (bias) 分量的估计, 不是瞬时稳态误差。"""
     m = (res["t"] >= 5.8) & (res["t"] < 6.8)
     return float((res["g_d"][m] - res["abs_true"][m]).mean())
 
 
 def recovery_time_s(res, t_step, sigma_f):
-    """t_step 后 |误差| 首次连续 0.3s 落回 ±2σ 带内的耗时 (s); 未恢复 → inf."""
+    """t_step 后, 接触段内 (g_d >= 3σ) |误差| 首次连续 0.3s 落回 ±2σ 带内的耗时 (s).
+
+    仅在接触段内评估: ok = err < 2σ 只在 g_d>=3σ 的样本上判定, 接触段外 (收笔/
+    悬空, g_d<3σ) 的样本一律不计入 (2026-07-30 修正: 原版收笔段自动满足判据,
+    量的是笔画结束). 若在 t_step 后到接触段最后一个样本前始终未凑满连续 0.3s,
+    返回 inf (接触段内恢复 → 秒数; 收笔前未恢复 → inf)。"""
     err = np.abs(res["g_d"] - res["abs_true"])
-    ok = (err < 2.0 * sigma_f) | (res["g_d"] < 3.0 * sigma_f)
+    in_contact = res["g_d"] >= 3.0 * sigma_f
     start = int(t_step * FS)
     need = int(0.3 * FS)
+    contact_after = np.nonzero(in_contact[start:])[0]
+    if len(contact_after) == 0:
+        return float("inf")
+    end = start + int(contact_after[-1])
     run = 0
-    for i in range(start, len(ok)):
-        run = run + 1 if ok[i] else 0
+    for i in range(start, end + 1):
+        if not in_contact[i]:
+            run = 0
+            continue
+        run = run + 1 if err[i] < 2.0 * sigma_f else 0
         if run >= need:
             return (i - need + 1 - start) / FS
     return float("inf")
@@ -1052,7 +1068,7 @@ if __name__ == "__main__":
     main()
 ```
 
-`write_report` 生成 `docs/z-phase1-results.md`：Q3 主表（场景 × 三臂 → RMS% / 稳态偏差 µT / 恢复时间 s），须讲清两个口径差的因果（spec §3.4 修订）：恒定偏差下 P 臂稳态残差 e_ss=d/(1+kp) 只消 ~55% 而 PI→0；drift 行加"诚实负面对照：P 臂被骗 ~45%、PI 臂被骗 100%（抗扰与被骗同源），开环免疫——差分测量的论据"注释；Q4 节（baseline 两个闭环臂的 freeze_jump、p99、判据结论，**PI 臂为主**；不通过 → 显著标注"触发 spec §2.4 fallback：Kp 纳入 freeze，需回 Task 9 前处理"）；波形图两张（paper step 恢复对比、起笔/收笔 freeze 放大）存 `docs/assets/z-phase1-arms-paperstep.png` / `-freeze.png`（matplotlib Agg + CJK 字体设置抄 `sweep_z_gains.make_heatmap` 开头）；文末 caveat：裸态噪声乐观下界、τ/n_delay 假设值、结论限"裸态仿真条件"。
+`write_report` 生成 `docs/z-phase1-results.md`：Q3 主表（场景 × 三臂 → RMS% / 窗均偏差 µT（提按末 1s 均值，附口径注意：窗口跨 ~3 个扫频周期，均值是多周期平均后幸存的偏差分量）/ 恢复时间 s（仅接触段内判定，2026-07-30 修正后语义）），须讲清两个口径差的因果（spec §3.4 修订）：恒定偏差下 P 臂稳态残差 e_ss=d/(1+kp) 只消 ~55% 而 PI→0（该"扣除 baseline 后的纯扰动残留比例"表为 Q3 headline 对比结论）；drift 行加"诚实负面对照：P 臂被骗 ~45%、PI 臂被骗 100%（抗扰与被骗同源），开环免疫——差分测量的论据"注释；Q4 节（baseline 两个闭环臂的 freeze_jump、p99、判据结论，**PI 臂为主**；不通过 → 显著标注"触发 spec §2.4 fallback：Kp 纳入 freeze，需回 Task 9 前处理"）；波形图两张（paper step 恢复对比、起笔/收笔 freeze 放大）存 `docs/assets/z-phase1-arms-paperstep.png` / `-freeze.png`（matplotlib Agg + CJK 字体设置抄 `sweep_z_gains.make_heatmap` 开头）；文末 caveat：裸态噪声乐观下界、τ/n_delay 假设值、结论限"裸态仿真条件"。
 
 - [ ] **Step 2: 运行（工作点取自层 1 报告）**
 
