@@ -120,3 +120,68 @@ def synth_press(cal_max, fs=FS, hold_s=0.5, ramp_s=0.3, press_s=6.0,
 def press_from_v0(csv_path, fc=3.0):
     """V0 动态段 → 零相位滤波 → |ΔB| 目标曲线. 铁律: 先滤 (N,3) 向量再取 norm."""
     return np.linalg.norm(fft_lowpass(load_deltab_csv(csv_path), fc), axis=1)
+
+
+def run_loop(ctrl, filt, g_d, plant):
+    """唯一闭环路径. filt=None → 无滤波臂; 开环臂 = ctrl 增益置零.
+
+    滤波器实例整段连续运行, 永不 mid-run reset; NaN 原样透传到 ctrl guard.
+    """
+    n = len(g_d)
+    res = {k: np.empty(n) for k in
+           ("g_d", "abs_f", "z_cmd", "z_ff", "z_fb", "z_act", "abs_true")}
+    res["dB_raw"] = np.empty((n, 3))
+    res["dB_f"] = np.empty((n, 3))
+    res["frozen"] = np.empty(n, dtype=bool)
+    res["t"] = np.arange(n) / FS
+    z_cmd = ctrl.z_surface
+    for i in range(n):
+        raw = plant.step(z_cmd)
+        dB_f = filt.update(raw) if filt is not None else raw
+        z_cmd = ctrl.step(dB_f, float(g_d[i]))
+        res["dB_raw"][i] = raw
+        res["dB_f"][i] = dB_f
+        res["abs_f"][i] = np.linalg.norm(dB_f)
+        res["g_d"][i] = g_d[i]
+        res["z_cmd"][i] = z_cmd
+        res["z_ff"][i] = ctrl.z_ff
+        res["z_fb"][i] = ctrl.z_fb
+        res["frozen"][i] = ctrl.frozen
+        res["z_act"][i] = plant.z_act
+        res["abs_true"][i] = plant.abs_true
+    return res
+
+
+def rms_pct(res, noise_std):
+    """接触段 (g_d ≥ 3σ) 跟踪 RMS, % 目标量程. 以 plant 真值 abs_true 评."""
+    m = res["g_d"] >= 3.0 * noise_std
+    if not m.any():
+        return float("nan")
+    err = res["g_d"][m] - res["abs_true"][m]
+    return float(np.sqrt(np.mean(err ** 2)) / res["g_d"].max() * 100.0)
+
+
+def osc_index(res, f_cut=5.0, fs=FS):
+    """z_cmd 交流功率中 >f_cut Hz 份额 (0-1). 稳定判定: ≤0.05 (spec §3.3)."""
+    z = res["z_cmd"] - res["z_cmd"].mean()
+    P = np.abs(np.fft.rfft(z)) ** 2
+    f = np.fft.rfftfreq(len(z), d=1.0 / fs)
+    tot = float(P[f > 0].sum())
+    return float(P[f > f_cut].sum() / tot) if tot > 0 else 0.0
+
+
+def freeze_jump(res):
+    """freeze 切换点 ±5 拍窗内 |Δz_cmd| 单步最大值 (m); 无切换 → 0."""
+    edges = np.nonzero(np.diff(res["frozen"].astype(int)))[0]
+    dz = np.abs(np.diff(res["z_cmd"]))
+    best = 0.0
+    for e in edges:
+        best = max(best, float(dz[max(0, e - 5):min(len(dz), e + 5)].max()))
+    return best
+
+
+def diverged(res, z_surface, calib_range_m):
+    """z_cmd 非有限, 或偏离纸面超 2× 标定量程."""
+    z = res["z_cmd"]
+    return bool((~np.isfinite(z)).any()
+                or np.abs(z - z_surface).max() > 2.0 * calib_range_m)

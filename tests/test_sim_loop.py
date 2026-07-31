@@ -3,8 +3,12 @@ from pathlib import Path
 import numpy as np
 import pytest
 
+from brushbot.filter import OneEuroFilter
 from brushbot.monitor.core import EMA
-from brushbot.sim_loop import FS, Plant, V0NoiseSource, load_deltab_csv, press_from_v0, synth_press
+from brushbot.sim_loop import (FS, Plant, V0NoiseSource, diverged, freeze_jump,
+                               load_deltab_csv, osc_index, press_from_v0, rms_pct,
+                               run_loop, synth_press)
+from brushbot.z_control import ZController
 
 ROOT = Path(__file__).resolve().parents[1]
 IDLE_CSVS = sorted(p for p in (ROOT / "delta_b_v0_20260724").glob("*.csv")
@@ -138,3 +142,67 @@ def test_press_from_v0_zero_phase_norm():
     raw = np.linalg.norm(load_deltab_csv(dyn[0]), axis=1)
     assert g.shape == raw.shape and np.isfinite(g).all()
     assert g.std() < raw.std()                             # 滤过更平滑
+
+
+def _make(kp=0.3, ki=0.03, noise=None, **plant_kw):
+    ctrl = ZController(_CAL_Z, _CAL_DB, kp=kp, ki=ki, noise_std=7.0)
+    plant = Plant(_CAL_Z, _CAL_DB, noise=noise, **plant_kw)
+    return ctrl, plant
+
+
+def test_run_loop_open_arm_is_pure_feedforward():
+    """开环臂 (kp=ki=0): z_fb≡0 且 z_cmd = z_surface + z_ff 逐点成立。
+
+    注: res["z_ff"] 是 ZController.z_ff 属性 = 前馈 offset (m), 不含 z_surface。"""
+    ctrl, plant = _make(kp=0.0, ki=0.0)
+    g = synth_press(cal_max=250.0)
+    res = run_loop(ctrl, None, g, plant)
+    np.testing.assert_allclose(res["z_cmd"], 0.20 + res["z_ff"], atol=1e-12)
+
+
+def test_run_loop_deterministic_same_seed():
+    g = synth_press(cal_max=250.0)
+    outs = []
+    for _ in range(2):
+        ctrl, plant = _make(noise=V0NoiseSource(IDLE_CSVS, seed=5)) if IDLE_CSVS \
+            else _make()
+        outs.append(run_loop(ctrl, OneEuroFilter(0.5, 0.03), g, plant))
+    np.testing.assert_array_equal(outs[0]["z_cmd"], outs[1]["z_cmd"])
+
+
+def test_run_loop_nan_chain_reaches_guard():
+    """NaN 从 plant → 滤波透传 → 控制器 freeze 且 z_cmd 有限 (guard 链路)。"""
+    class _NaNPlant:
+        z_act, abs_true = 0.2, 0.0
+        def __init__(self):
+            self.k = 0
+        def step(self, z_cmd):
+            self.k += 1
+            return np.full(3, np.nan) if self.k == 50 else np.array([100.0, 0.0, 0.0])
+    ctrl = ZController(_CAL_Z, _CAL_DB)
+    res = run_loop(ctrl, OneEuroFilter(0.5, 0.03), np.full(100, 150.0), _NaNPlant())
+    assert np.isnan(res["abs_f"][49])
+    assert np.isfinite(res["z_cmd"]).all()
+    assert res["frozen"][49]
+
+
+def test_run_loop_closed_loop_converges_constant():
+    """恒定目标 + 默认增益 + 无噪声 plant: 末段误差 <5% (Phase 0 行为回归)。"""
+    ctrl, plant = _make()
+    res = run_loop(ctrl, None, np.full(300, 120.0), plant)
+    tail = res["abs_true"][-50:]
+    assert abs(tail.mean() - 120.0) / 120.0 < 0.05
+
+
+def test_metrics_contract():
+    res = {"g_d": np.array([0.0, 100.0, 100.0, 0.0]),
+           "abs_true": np.array([0.0, 90.0, 110.0, 50.0]),
+           "z_cmd": np.array([0.2, 0.201, 0.2, 0.201]),
+           "frozen": np.array([True, False, False, True])}
+    r = rms_pct(res, noise_std=7.0)                       # 接触段 = g_d≥21 的中间两点
+    assert r == pytest.approx(np.sqrt((100.0 + 100.0) / 2) / 100.0 * 100.0)
+    assert 0.0 <= osc_index(res) <= 1.0
+    assert freeze_jump(res) == pytest.approx(1e-3)
+    assert not diverged(res, 0.2, 0.005)
+    bad = dict(res, z_cmd=np.array([0.2, 0.3, 0.2, 0.2]))
+    assert diverged(bad, 0.2, 0.005)                      # 偏 0.1m > 2×5mm
