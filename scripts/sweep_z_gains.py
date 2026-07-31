@@ -75,7 +75,8 @@ def working_point(rms, stable, kp_grid, ki_grid):
 
 def phase_margin_deg(kp, ki, freq_fn, tau=TAU, delay_s=(N_DELAY + 1) / FS):
     """线性臂解析相位裕度. L = (kp + ki/s)·执行器·延迟·滤波器 (S_cal 与 plant
-    斜率互逆, calib_scale=1 时消掉). OneEuro 不适用 (spec 坑3)."""
+    斜率互逆, calib_scale=1 时消掉). OneEuro 不适用 (spec 坑3).
+    delay_s 含 +1 拍用于 run_loop 计算管线 (plant.step → ctrl.step 顺序)."""
     f = np.geomspace(0.01, 49.0, 4000)
     w = 2 * np.pi * f
     L = (kp + ki / (1j * w)) * np.exp(-1j * w * delay_s) / (1 + 1j * w * tau)
@@ -124,6 +125,11 @@ def make_heatmap(rms, stable, kp_grid, ki_grid, wp, label, out_png):
 
 def write_report(results, kp_grid, ki_grid, out_md):
     """生成 markdown 报告: 每滤波臂一节 + 汇总表, 回答 spec §1 Q1/Q2."""
+    # 计算 +2 网格步增益倍数
+    kp_mult = kp_grid[2] / kp_grid[0]
+    nz = ki_grid[ki_grid > 0]
+    ki_mult = nz[2] / nz[0] if len(nz) >= 3 else float('nan')
+
     slugs = {r["label"]: r["label"].replace(" ", "").replace("=", "").replace(".", "")
              for r in results}
     none_rms = next((r["rms"][r["wp"]] for r in results
@@ -159,12 +165,12 @@ def write_report(results, kp_grid, ki_grid, out_md):
             lines.append("")
             if label == "OneEuro mc=0.5 b=0.03":
                 lines.append("相位裕度: 非线性滤波器无频域相位裕度 (OneEuro 坑3) — "
-                             "时域裕度: 工作点在 kp ×2.48 / ki ×3.73 (+2 网格步) 仍稳定.")
+                             "时域裕度: 工作点在 kp ×%.2f / ki ×%.2f (+2 网格步) 仍稳定." % (kp_mult, ki_mult))
             elif r["pm"] is not None:
                 pm = r["pm"]
                 pm_str = "∞ (环路增益全频段 <1, 未见穿越)" if not np.isfinite(pm) else "%.1f°" % pm
                 lines.append("相位裕度 (解析, 线性臂): **%s**; 时域裕度: +2 网格步 "
-                             "(kp ×2.48 / ki ×3.73) 仍稳定." % pm_str)
+                             "(kp ×%.2f / ki ×%.2f) 仍稳定." % (pm_str, kp_mult, ki_mult))
             else:
                 lines.append("相位裕度: 未计算.")
             lines.append("")
@@ -244,7 +250,7 @@ def write_report(results, kp_grid, ki_grid, out_md):
 
     lines += [
         "**Q2 (稳定边界+裕度):** 稳定判定 = 未发散 (`diverged`) 且 `osc_index ≤ OSC_MAX`; "
-        "工作点规则要求 (kp, ki) 处及 +2 网格步 (kp ×2.48, ki ×3.73, 保守 ≥2× 裕度) 处均稳定, "
+        "工作点规则要求 (kp, ki) 处及 +2 网格步 (kp ×%.2f, ki ×%.2f, 保守 ≥2× 裕度) 处均稳定, " % (kp_mult, ki_mult) +
         "取满足此条件者中 RMS 最小的格点; 线性滤波臂另附解析相位裕度 (环路含 PI + 一阶执行器 τ + "
         "n_delay 拍延迟 + 滤波器频响); OneEuro 为非线性滤波器, 无法定义频域相位裕度, 只报工作点 "
         "规则本身蕴含的时域增益裕度.",
@@ -252,10 +258,11 @@ def write_report(results, kp_grid, ki_grid, out_md):
         "## 注记",
         "",
         "- 稳定判定阈值 OSC_MAX=%.2f (spec §3.3 暂定值, 未经真机验证)." % OSC_MAX,
-        "- \"+2 网格步\" 在本报告的网格间距下等价于 kp ×2.48、ki ×3.73 (几何网格, 全臂通用).",
+        "- \"+2 网格步\" 在本报告的网格间距下等价于 kp ×%.2f、ki ×%.2f (几何网格, 全臂通用)." % (kp_mult, ki_mult),
         "- Plant 的 τ=%.2fs、n_delay=%d 拍为假设值 (真机未标定); 各工作点的敏感性 3×3 表 "
           "(τ∈{0.02,0.05,0.1}s × n_delay∈{1,2,4}) 显示工作点在假设范围内是否仍稳定, "
           "用于评估该假设对结论的影响." % (TAU, N_DELAY),
+        "- 相位裕度用连续一阶执行器近似 (离散精确极点差 ~4°, 不影响 45° 判线结论).",
         "- σ_f 用裸态 (未装配) V0 idle 数据估计, 是乐观下界; 装配态数据到位后须重跑本脚本.",
         "- OneEuro 工作点为层 1 (简化仿真) 下的定稿候选, 非线性特性未在层 1 频域核算中体现, "
           "最终结论待层 2 (`compare_z_arms.py`, Task 8) 用扰动场景确认.",
