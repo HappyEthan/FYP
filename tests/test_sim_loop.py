@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 
 from brushbot.monitor.core import EMA
-from brushbot.sim_loop import FS, Plant, V0NoiseSource, load_deltab_csv
+from brushbot.sim_loop import FS, Plant, V0NoiseSource, load_deltab_csv, press_from_v0, synth_press
 
 ROOT = Path(__file__).resolve().parents[1]
 IDLE_CSVS = sorted(p for p in (ROOT / "delta_b_v0_20260724").glob("*.csv")
@@ -115,3 +115,26 @@ def test_plant_noise_added():
     plant = Plant(_CAL_Z, _CAL_DB, noise=src)
     outs = np.array([np.linalg.norm(plant.step(Z_SURF)) for _ in range(500)])
     assert outs.std() > 1.0                     # 悬空但有噪声起伏
+
+
+def test_synth_press_structure():
+    g = synth_press(cal_max=250.0)
+    assert len(g) == int((0.5 + 0.3 + 6.0 + 0.3 + 0.5) * FS)
+    assert g[0] == 0.0 and g[-1] == 0.0                    # 首尾悬空
+    assert g.max() <= 0.8 * 250.0 + 1e-9                   # base+depth = 0.8·cal_max
+    assert g.min() >= 0.0
+    press = g[int(0.8 * FS):int(6.8 * FS)]                 # 提按段
+    assert press.min() >= 0.2 * 250.0 - 1e-9               # base−depth, 不离纸
+    sigma3 = 3 * 2.7                                       # 代表性 3σ 阈值
+    assert (g < sigma3).any() and (g > sigma3).any()       # 穿越 freeze 阈值
+
+
+def test_press_from_v0_zero_phase_norm():
+    if not IDLE_CSVS:
+        pytest.skip("V0 data not present")
+    dyn = sorted(p for p in (ROOT / "delta_b_v0_20260724").glob("*.csv")
+                 if "idle" not in p.stem)
+    g = press_from_v0(dyn[0])
+    raw = np.linalg.norm(load_deltab_csv(dyn[0]), axis=1)
+    assert g.shape == raw.shape and np.isfinite(g).all()
+    assert g.std() < raw.std()                             # 滤过更平滑

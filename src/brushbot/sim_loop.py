@@ -99,3 +99,24 @@ class Plant:
             dB = dB + self._noise.sample(1)[0]
         self._t += self._dt
         return dB
+
+
+def synth_press(cal_max, fs=FS, hold_s=0.5, ramp_s=0.3, press_s=6.0,
+                f0=0.5, f1=3.0, base=0.5, depth=0.3):
+    """合成提按目标 g_d(t): 悬空→落笔ramp→正弦扫频(f0→f1 Hz)→收笔ramp→悬空.
+
+    幅值: 提按段在 (base±depth)·cal_max 内起伏; 落笔/收笔斜坡保证穿越
+    3σ 接触阈值 (freeze 切换的测试场景). 返回 (N,) µT.
+    """
+    n_hold, n_ramp, n_press = int(hold_s * fs), int(ramp_s * fs), int(press_s * fs)
+    A = base * cal_max
+    t = np.arange(n_press) / fs
+    phase = 2 * np.pi * (f0 * t + (f1 - f0) * t ** 2 / (2 * press_s))
+    press = A + depth * cal_max * np.sin(phase)
+    return np.concatenate([np.zeros(n_hold), np.linspace(0.0, A, n_ramp), press,
+                           np.linspace(press[-1], 0.0, n_ramp), np.zeros(n_hold)])
+
+
+def press_from_v0(csv_path, fc=3.0):
+    """V0 动态段 → 零相位滤波 → |ΔB| 目标曲线. 铁律: 先滤 (N,3) 向量再取 norm."""
+    return np.linalg.norm(fft_lowpass(load_deltab_csv(csv_path), fc), axis=1)
