@@ -20,10 +20,18 @@ from brushbot.monitor.core import EMA                          # noqa: E402
 from brushbot.sim_loop import (FS, Plant, V0NoiseSource, freeze_jump, osc_index,  # noqa: E402
                                press_from_v0, rms_pct, run_loop, synth_press)
 from brushbot.z_control import ZController                     # noqa: E402
+from sweep_z_gains import run_cell                              # noqa: E402  (同目录)
 
 CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
 CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
 SEED = 42
+# 多笔画场景常量 (spec §3.4 二次修订, 2026-07-30): 层1 默认增益网格 + 单笔画时长
+KP_GRID = np.geomspace(0.05, 3.0, 10)
+KI_GRID = np.concatenate([[0.0], np.geomspace(0.005, 0.5, 8)])
+STROKE_S = 0.5 + 0.3 + 6.0 + 0.3 + 0.5  # synth_press 默认参数之和 = 7.6s
+CONTACT_S = 6.0  # synth_press press_s 默认值: 每笔实际接触(提按)段时长, 用于笔数折算
+N_STROKES = 8
+MULTI_CALIB_SCALE = 0.8
 MAKE_FILTER = {
     "none": None,
     "EMA a=0.3": lambda: EMA(0.3),
@@ -96,6 +104,49 @@ def glitch_verdict(res):
                   and osc_index(res) <= 0.05}
 
 
+def select_ki_candidates(kp_pi, mk, sigma_f, g_single, csvs):
+    """多笔画 ki 候选筛选 (spec §3.4 二次修订).
+
+    在层1默认网格上定位 kp=kp_pi 最近格点 i；对每个非零 ki (格点 j)，若其
+    +2 网格步 margin 格点仍在网格内 (j+2 ≤ last index → ki ≤ KI_GRID[6]≈0.1334)，
+    用 `sweep_z_gains.run_cell` 在层1单笔画 synth 目标(无扰动)上复核 (kp,ki) 与
+    (kp×+2步, ki×+2步) 两点是否都稳定。返回 (通过的 ki 升序列表, 全部候选记录)。
+    """
+    i = int(np.argmin(np.abs(KP_GRID - kp_pi)))
+    records = []
+    if i + 2 >= len(KP_GRID):
+        return [], records
+    kp_lo, kp_hi = KP_GRID[i], KP_GRID[i + 2]
+    for j in range(1, len(KI_GRID)):
+        if j + 2 > len(KI_GRID) - 1:
+            continue
+        ki, ki_hi = KI_GRID[j], KI_GRID[j + 2]
+        _, s_lo = run_cell(mk, kp_lo, ki, sigma_f, g_single, csvs)
+        _, s_hi = run_cell(mk, kp_hi, ki_hi, sigma_f, g_single, csvs)
+        records.append({"ki": float(ki), "ok": bool(s_lo and s_hi)})
+    passing = sorted(r["ki"] for r in records if r["ok"])
+    return passing, records
+
+
+def stroke_biases(res, n_strokes=N_STROKES, stroke_s=STROKE_S):
+    """每笔 k (k=0..n_strokes-1) 窗口 t∈[5.8+7.6k, 6.8+7.6k) 内 mean(g_d−abs_true)."""
+    out = []
+    for k in range(n_strokes):
+        t0, t1 = 5.8 + stroke_s * k, 6.8 + stroke_s * k
+        m = (res["t"] >= t0) & (res["t"] < t1)
+        out.append(float((res["g_d"][m] - res["abs_true"][m]).mean()))
+    return out
+
+
+def convergence_stroke(biases, sigma_f):
+    """首个 |偏差_k| ≤ 2σ_f 的笔序 k；从未满足 → None (未收敛)."""
+    thr = 2.0 * sigma_f
+    for k, b in enumerate(biases):
+        if abs(b) <= thr:
+            return k
+    return None
+
+
 def _fmt_rec(rec):
     if rec is None:
         return "—"
@@ -154,6 +205,108 @@ def _fig_freeze(rows, out_png):
     plt.close(fig)
 
 
+def _fig_multistroke(multi_rows, sigma_f, out_png):
+    """图3: 多笔画收敛曲线 (bias_k vs 笔序), 各臂/ki 一条线, ±2σ_f 带阴影."""
+    import matplotlib.pyplot as plt
+
+    fig, ax = plt.subplots(figsize=(8.5, 4.8))
+    xs = np.arange(N_STROKES)
+    ax.axhspan(-2.0 * sigma_f, 2.0 * sigma_f, color="0.85", zorder=0, label="±2σ_f 带")
+    ax.axhline(0.0, color="k", lw=0.6, zorder=0)
+    for r in multi_rows:
+        ax.plot(xs, r["biases"], marker="o", ms=4, lw=1.2, label=r["arm"])
+    ax.set(xlabel="笔画序号 k", ylabel="窗均偏差 g_d−abs_true (µT)",
+           title="多笔画收敛曲线 (calib_scale=%.1f): 窗均偏差 vs 笔序" % MULTI_CALIB_SCALE)
+    ax.set_xticks(xs)
+    ax.legend(fontsize=8, ncol=2, loc="best")
+    fig.tight_layout()
+    fig.savefig(out_png, dpi=120)
+    plt.close(fig)
+
+
+def _write_multistroke_section(lines, multi_rows, cand_records, sigma_f, kp_pi):
+    """追加"多笔画：积分器的真实时间尺度"节 (spec §3.4 二次修订, 2026-07-30)."""
+    lines += [
+        "## 多笔画：积分器的真实时间尺度",
+        "",
+        "spec §3.4 二次修订理由：层 2 单笔画场景实测 PI≈P（wp_PI 的积分时间常数 "
+        "τ_i=(1+kp)/ki 常年远超单笔画 ~%.1fs 提按窗口）。积分器的真实作用时间尺度是"
+        "**跨笔画**（标定误差可持续数分钟；`ZController` 的 freeze 在笔画间**保持** "
+        "`z_fb`，不清零）。本节改用 %d×`synth_press` 连写 (~%.0fs) + calib_scale=%.1f "
+        "持续标定偏差场景，滤波器实例与控制器跨全部 %d 笔连续运行（笔画间不重置、不 "
+        "reset——这正是被测机制本身），在积分器的真实时间尺度上评估。" % (
+            STROKE_S, N_STROKES, N_STROKES * STROKE_S, MULTI_CALIB_SCALE, N_STROKES),
+        "",
+        "### ki 候选筛选 (kp=wp_PI=%.4g)" % kp_pi,
+        "",
+        "层 1 默认增益网格 (`np.concatenate([[0.0], np.geomspace(0.005, 0.5, 8)])`) 上每个"
+        "非零 ki，若其 +2 网格步 margin 格点仍在网格内 (j+2 ≤ last index)，用 "
+        "`sweep_z_gains.run_cell` 在层 1 单笔画 synth 目标 (无扰动) 上复核 (kp, ki) 与 "
+        "(kp×+2 网格步, ki×+2 网格步) 两点是否都稳定：",
+        "",
+        "| ki | 结果 |",
+        "|---|---|",
+    ]
+    for r in cand_records:
+        lines.append("| %.4g | %s |" % (r["ki"], "**通过 ✓**" if r["ok"] else "不通过 ✗"))
+    lines.append("")
+    passing = [r["ki"] for r in cand_records if r["ok"]]
+    lines.append("通过候选 (裕度合规): %s" %
+                 ("、".join("%.4g" % k for k in passing) if passing else "无"))
+    lines.append("")
+
+    lines += [
+        "### 收敛曲线表",
+        "",
+        "指标：笔 k (k=0..%d) 窗口 t∈[5.8+%.1fk, 6.8+%.1fk) 内 mean(g_d−abs_true)（µT，"
+        "与单笔画 `steady_bias` 同口径的窗均偏差）；收敛笔数 = 首个 |偏差_k| ≤ 2σ_f "
+        "(=%.2fµT) 的 k（全部 %d 笔均未满足 → \"未收敛\"）。" % (
+            N_STROKES - 1, STROKE_S, STROKE_S, 2.0 * sigma_f, N_STROKES),
+        "",
+        "| 臂 | kp | ki | τ_i=(1+kp)/ki (s) | " +
+        " | ".join("笔%d" % k for k in range(N_STROKES)) + " | 收敛笔数 |",
+        "|---|---|---|---|" + "---|" * N_STROKES + "---|",
+    ]
+    for r in multi_rows:
+        tau_str = "∞ (ki=0)" if r["ki"] == 0.0 else "%.1f" % r["tau_i"]
+        bias_cells = " | ".join("%+.2f" % b for b in r["biases"])
+        conv_str = "未收敛" if r["conv"] is None else str(r["conv"])
+        lines.append("| %s | %.4g | %.4g | %s | %s | %s |" % (
+            r["arm"], r["kp"], r["ki"], tau_str, bias_cells, conv_str))
+    lines.append("")
+    lines.append("![多笔画收敛曲线](assets/z-phase1-arms-multistroke.png)")
+    lines.append("")
+
+    pred_lines = []
+    for r in multi_rows:
+        if r["ki"] <= 0.0:
+            continue
+        pred_strokes = r["tau_i"] / CONTACT_S
+        pred_lines.append(
+            "ki=%.4g → τ_i≈%.1fs ≈ %.1f 笔（按 ~%.0fs 接触段/笔折算）；实测收敛笔数 = %s"
+            % (r["ki"], r["tau_i"], pred_strokes, CONTACT_S,
+               "未收敛" if r["conv"] is None else str(r["conv"])))
+    if pred_lines:
+        lines.append("**预测 vs 实测**：" + "；".join(pred_lines) + "。")
+        lines.append("")
+
+    passing_set = set(passing)
+    pi_candidates = [r for r in multi_rows
+                     if r["ki"] in passing_set and r["conv"] is not None]
+    if pi_candidates:
+        best = min(pi_candidates, key=lambda r: (r["conv"], r["ki"]))
+        rec_str = "%.4g（收敛笔数=%d）" % (best["ki"], best["conv"])
+    elif passing:
+        best_ki = max(passing)
+        rec_str = ("%.4g（⚠️ 全部裕度合规候选在 %d 笔内均未收敛，取理论 τ_i 最小/理论"
+                   "收敛最快者，需 Task 9 结合更长笔画序列或更大 ki 网格复核）"
+                   % (best_ki, N_STROKES))
+    else:
+        rec_str = "无（本次筛选无裕度合规候选，需 Task 9 扩大网格重新筛选）"
+    lines.append("**Task 9 回填 ki 推荐 = %s**（依据：本表）" % rec_str)
+    lines.append("")
+
+
 _DRIFT_RATE = {"drift +1uT/s": 1.0, "drift -1uT/s": -1.0}
 _WINDOW_T_MID = 6.3  # (5.8+6.8)/2, 与 steady_bias 窗口对齐
 
@@ -198,10 +351,11 @@ def _drift_deception(rows):
     return out
 
 
-def write_report(rows, v0_rows, args, sigma_f, out_path):
+def write_report(rows, v0_rows, args, sigma_f, out_path, multi_rows=None, cand_records=None):
     """生成 docs/z-phase1-results.md: Q3 主表（窗均偏差 + 仅接触段判定的恢复时间） +
     扣除 baseline 后的纯扰动残留比例主对比表 + drift 负面对照注记 +
-    Q4 freeze 判据结论 + 两张波形图 + caveat."""
+    Q4 freeze 判据结论 + 多笔画积分器时间尺度节 (2026-07-30 二次修订) +
+    三张波形图 + caveat."""
     import matplotlib
     matplotlib.use("Agg")
     matplotlib.rcParams["font.sans-serif"] = [
@@ -213,11 +367,23 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
     asset_dir.mkdir(parents=True, exist_ok=True)
     fig_paperstep = asset_dir / "z-phase1-arms-paperstep.png"
     fig_freeze = asset_dir / "z-phase1-arms-freeze.png"
+    fig_multi = asset_dir / "z-phase1-arms-multistroke.png"
     _fig_paper_step(rows, sigma_f, fig_paperstep)
     _fig_freeze(rows, fig_freeze)
+    if multi_rows:
+        _fig_multistroke(multi_rows, sigma_f, fig_multi)
 
     kp_p, ki_p, kp_pi, ki_pi = args.kp_p, args.ki_p, args.kp_pi, args.ki_pi
     s_cal = float((CALIB_Z[-1] - CALIB_Z[0]) / 1000.0 / (CALIB_DB[-1] - CALIB_DB[0]))
+
+    _base_pi = next((r for r in rows if r["scenario"] == "baseline" and r["arm"] == "closed-PI"), None)
+    if _base_pi is not None:
+        _res = _base_pi["res"]
+        _m = _res["g_d"] >= 3.0 * sigma_f
+        inst_err_mean = (float(np.mean(np.abs(_res["g_d"][_m] - _res["abs_true"][_m])))
+                          if _m.any() else float("nan"))
+    else:
+        inst_err_mean = float("nan")
 
     lines = [
         "# Z 控制层 2 开环 vs 闭环扰动对比报告 (脚本生成)",
@@ -406,6 +572,12 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
     lines += [
         "![freeze 切换放大](assets/z-phase1-arms-freeze.png)",
         "",
+    ]
+
+    if multi_rows:
+        _write_multistroke_section(lines, multi_rows, cand_records or [], sigma_f, args.kp_pi)
+
+    lines += [
         "## Caveat",
         "",
         "- **裸态噪声是乐观下界**：σ_f 用未装配 (裸态) V0 idle 数据估计；装配态 E0 数据到位后"
@@ -419,7 +591,11 @@ def write_report(rows, v0_rows, args, sigma_f, out_path):
         "- **恢复时间判据口径（2026-07-30 修正）**：`recovery_time_s` 现仅在接触段内 "
         "(g_d≥3σ) 判定 err<2σ_f，收笔段 (g_d<3σ) 不再自动满足判据；修正前的旧版会被收笔段"
         "误判为\"已恢复\"，实际量的是笔画结束时刻而非真实收敛，全部三臂旧版都报 3.07s 左右"
-        "（≈ stroke end − t_step）。",
+        "（≈ stroke end − t_step）。即使在无扰动的 baseline 场景下，±2σ_f 的瞬时误差带也"
+        "本质上不可满足——接触段内逐样本 |g_d−abs_true| 均值 ≈%.1fµT（扫频正弦跟踪相位滞后"
+        "所致），远超 2σ_f=%.2fµT；因此\"瞬时误差落回 ±2σ 带\"这类判据在提按段内注定几乎"
+        "总报\"未恢复\"，真正有信息量的是笔画/窗口级别的均值判据——这正是下方\"多笔画\"节"
+        "改用逐笔窗均偏差 (而非瞬时误差) 作收敛判据的原因。" % (inst_err_mean, 2.0 * sigma_f),
         ("- **叙事矛盾（Task 8 已发现，未修改代码）**：wp_PI 的 ki=%.4g（层 1 对数网格最小 "
          "ki>0 候选点）在本层 2 场景 (~6–8s) 内积分时间常数过长，闭环-PI 在 calib/paper/drift "
          "全部场景下实测表现与闭环-P 几乎不可区分（详见上文 Q3 表格与逐场景比对），未达 spec "
@@ -470,7 +646,31 @@ def main(argv=None):
         for arm, kp, ki in arms:
             res, _ = run_arm(kp, ki, mk, sigma_f, g_v0, csvs, {})
             v0_rows.append({"arm": arm, "rms": rms_pct(res, sigma_f)})
-    write_report(rows, v0_rows, args, sigma_f, Path(args.out))
+
+    # 多笔画场景 (spec §3.4 二次修订): ki 候选筛选 + 8 笔连写收敛评估
+    passing_ki, cand_records = select_ki_candidates(args.kp_pi, mk, sigma_f, g_d, csvs)
+    print("多笔画 ki 候选 (裕度合规):", passing_ki)
+    ki_list = list(passing_ki)
+    if not any(np.isclose(args.ki_pi, k) for k in ki_list):
+        ki_list.append(args.ki_pi)
+    ki_list = sorted(set(ki_list))
+
+    g_multi = np.concatenate([synth_press(cal_max=CALIB_DB[-1])] * N_STROKES)
+    multi_arms = [("open", 0.0, 0.0), ("closed-P", args.kp_p, args.ki_p)]
+    multi_arms += [("closed-PI ki=%.4g" % ki, args.kp_pi, ki) for ki in ki_list]
+    multi_rows = []
+    for name, kp, ki in multi_arms:
+        res, _ = run_arm(kp, ki, mk, sigma_f, g_multi, csvs, {"calib_scale": MULTI_CALIB_SCALE})
+        biases = stroke_biases(res)
+        conv = convergence_stroke(biases, sigma_f)
+        tau_i = (1.0 + kp) / ki if ki > 0 else float("inf")
+        multi_rows.append({"arm": name, "kp": kp, "ki": ki, "tau_i": tau_i,
+                           "biases": biases, "conv": conv, "res": res})
+        print(name, "收敛笔数=", "未收敛" if conv is None else conv, "biases=",
+              ["%.2f" % b for b in biases])
+
+    write_report(rows, v0_rows, args, sigma_f, Path(args.out),
+                 multi_rows=multi_rows, cand_records=cand_records)
     print("报告:", args.out)
 
 
