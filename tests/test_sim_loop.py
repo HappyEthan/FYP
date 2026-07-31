@@ -138,6 +138,8 @@ def test_press_from_v0_zero_phase_norm():
         pytest.skip("V0 data not present")
     dyn = sorted(p for p in (ROOT / "delta_b_v0_20260724").glob("*.csv")
                  if "idle" not in p.stem)
+    if not dyn:
+        pytest.skip("V0 dynamic (non-idle) data not present")
     g = press_from_v0(dyn[0])
     raw = np.linalg.norm(load_deltab_csv(dyn[0]), axis=1)
     assert g.shape == raw.shape and np.isfinite(g).all()

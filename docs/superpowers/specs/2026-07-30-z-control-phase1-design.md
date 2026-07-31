@@ -29,6 +29,7 @@
 3. **noise_std 不硬编码**：harness 运行时用噪声源现算滤波后 σ 传入。
 4. **freeze 期间 Kp 保持作用**（Phase 0 行为不变），由 Q4 毛刺数据裁决；超标则 fallback 为 Kp 一并冻结（预留一行改动，见 §6.3）。
    **裁决结果（2026-07-30 Task 9，见 `docs/z-phase1-results.md` Q4 节）：PASS，两个闭环臂（closed-P/closed-PI）均通过——毛刺跳变 0.1937 mm ≤ 0.2 mm 阈值，且 ≤ 正常段 p99×2（0.9530/0.9531 mm），`osc_index`=0.002（切换后无新增振荡）。fallback 未触发，Phase 0"freeze 期间 Kp 保持作用"的行为按原设计维持不变。**
+   （2026-07-31 终评补充：本 PASS 限单笔画口径；多笔画 8 连写的全局最大跳变 ~0.247 mm 超暂定上限，与 ki 无关，已记为开放项——见 `docs/z-phase1-results.md` 多笔画节，真机以实测笔尖运动重评。）
 
 ## 3. 组件设计
 

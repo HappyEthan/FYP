@@ -39,6 +39,9 @@ FILTERS = [
 OSC_MAX = 0.05     # 稳定判定: osc_index ≤ 5% (spec §3.3 暂定值)
 SEED = 42
 TAU, N_DELAY = 0.05, 2
+# 默认 (非 --quick) kp/ki 网格; 提为模块级常量供 compare_z_arms.py 复用, 避免字面量分叉.
+KP_GRID_DEFAULT = np.geomspace(0.05, 3.0, 10)
+KI_GRID_DEFAULT = np.concatenate([[0.0], np.geomspace(0.005, 0.5, 8)])
 
 
 def run_cell(make_filter, kp, ki, sigma_f, g_d, csvs, tau=TAU, n_delay=N_DELAY):
@@ -401,8 +404,8 @@ def main(argv=None):
         kp_grid = np.geomspace(0.1, 1.0, 4)
         ki_grid = np.array([0.0, 0.03, 0.1])
     else:
-        kp_grid = np.geomspace(0.05, 3.0, 10)
-        ki_grid = np.concatenate([[0.0], np.geomspace(0.005, 0.5, 8)])
+        kp_grid = KP_GRID_DEFAULT
+        ki_grid = KI_GRID_DEFAULT
     g_d = synth_press(cal_max=CALIB_DB[-1])
 
     out_md = Path(args.out)

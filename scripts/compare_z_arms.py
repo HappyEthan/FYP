@@ -20,15 +20,16 @@ from brushbot.monitor.core import EMA                          # noqa: E402
 from brushbot.sim_loop import (FS, Plant, V0NoiseSource, freeze_jump, osc_index,  # noqa: E402
                                press_from_v0, rms_pct, run_loop, synth_press)
 from brushbot.z_control import ZController                     # noqa: E402
-from sweep_z_gains import run_cell                              # noqa: E402  (同目录)
+from sweep_z_gains import (KI_GRID_DEFAULT as KI_GRID,           # noqa: E402  (同目录)
+                           KP_GRID_DEFAULT as KP_GRID, run_cell)
 
 CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
 CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
 SEED = 42
-# 多笔画场景常量 (spec §3.4 二次修订, 2026-07-30): 层1 默认增益网格 + 单笔画时长
-KP_GRID = np.geomspace(0.05, 3.0, 10)
-KI_GRID = np.concatenate([[0.0], np.geomspace(0.005, 0.5, 8)])
-STROKE_S = 0.5 + 0.3 + 6.0 + 0.3 + 0.5  # synth_press 默认参数之和 = 7.6s
+# 多笔画场景常量 (spec §3.4 二次修订, 2026-07-30): KP_GRID/KI_GRID 复用层1默认增益网格
+# (import 自 sweep_z_gains, 不再重复字面量); STROKE_S 由 synth_press 实际长度算出,
+# 不能与 synth_press 默认参数分叉.
+STROKE_S = len(synth_press(cal_max=CALIB_DB[-1])) / FS  # synth_press 默认参数决定的单笔画时长 (s)
 CONTACT_S = 6.0  # synth_press press_s 默认值: 每笔实际接触(提按)段时长, 用于笔数折算
 N_STROKES = 8
 MULTI_CALIB_SCALE = 0.8
@@ -94,7 +95,7 @@ def recovery_time_s(res, t_step, sigma_f):
 
 
 def glitch_verdict(res):
-    """Q4 判据 (spec §3.4): 切换处单步跳变 ≤ 正常段 p99×2 且 ≤0.2mm,
+    """Q4 判据 (spec §3.4): 切换处单步跳变 ≤ 全段 (含切换窗口本身) p99×2 且 ≤0.2mm,
     且切换后 0.5s 无新增振荡 (整段 osc_index ≤0.05 代理)."""
     dz = np.abs(np.diff(res["z_cmd"]))
     p99 = float(np.percentile(dz[~np.isnan(dz)], 99))
@@ -305,6 +306,48 @@ def _write_multistroke_section(lines, multi_rows, cand_records, sigma_f, kp_pi):
         rec_str = "无（本次筛选无裕度合规候选，需 Task 9 扩大网格重新筛选）"
     lines.append("**Task 9 回填 ki 推荐 = %s**（依据：本表）" % rec_str)
     lines.append("")
+
+    rec_row = None
+    if pi_candidates:
+        rec_row = best
+    elif passing:
+        rec_row = next((r for r in multi_rows
+                        if r["ki"] > 0 and np.isclose(r["ki"], best_ki)), None)
+    p_row = next((r for r in multi_rows if r["arm"] == "closed-P"), None)
+    open_item_rows = [("closed-P", p_row)]
+    if rec_row is not None:
+        open_item_rows.append((rec_row["arm"], rec_row))
+
+    lines += [
+        "### 开放项：多笔画 freeze 跳变（不计入 Q4 判据）",
+        "",
+        "**本节数字明确不属于上文 Q4 裁决**——Q4 判据 (spec §3.4) 定义并裁决于单笔画 baseline "
+        "场景（见上文\"Q4: freeze 切换毛刺判据\"节，结论维持 PASS，口径限定单笔画）；以下仅将"
+        "本节 %d×synth_press 连写多笔画场景下的 freeze 跳变数字如实记录为**开放项**，"
+        "供真机验证参考，不用于本次 Q4 通过/不通过的裁决：" % N_STROKES,
+        "",
+        "| 臂 | 毛刺跳变 jump (mm) | osc_index |",
+        "|---|---|---|",
+    ]
+    max_jump_mm = 0.0
+    for label, r in open_item_rows:
+        if r is None:
+            lines.append("| %s | — | — |" % label)
+            continue
+        g = r["glitch"]
+        max_jump_mm = max(max_jump_mm, g["jump_m"] * 1000.0)
+        lines.append("| %s | %.4f | %.3f |" % (
+            label, g["jump_m"] * 1000.0, osc_index(r["res"])))
+    lines.append("")
+    lines += [
+        "多笔画 freeze 跳变最大值实测 ~%.3f mm，超单笔画口径的 0.2 mm 暂定上限；与 ki 无关"
+        "（Kp 项在接触切换处的固有行为，各臂数值接近，closed-P 与 closed-PI 几乎相同）。"
+        "两条物理注记：① 0.2 mm 上限约束的是 z_cmd 单步跳变，执行器 τ=50 ms 会显著平滑实际"
+        "笔尖运动；② 全局最大值随切换次数（2→%d）增长是极值统计的必然，单次切换分布未变坏。"
+        "结论：单笔画口径 Q4 维持 PASS，多笔画数字记为开放项，真机验证时用实测笔尖运动重评。"
+        % (max_jump_mm, 2 * N_STROKES),
+        "",
+    ]
 
 
 _DRIFT_RATE = {"drift +1uT/s": 1.0, "drift -1uT/s": -1.0}
@@ -532,12 +575,13 @@ def write_report(rows, v0_rows, args, sigma_f, out_path, multi_rows=None, cand_r
     lines += [
         "## Q4: freeze 切换毛刺判据 (spec §3.4)",
         "",
-        "判据：切换点 ±5 拍窗口内单步 `|Δz_cmd|` ≤ 正常跟踪段单步 `|Δz_cmd|` 的 p99×2 且绝对值 "
-        "≤0.2mm，且整段 `osc_index ≤ 0.05`（切换后 0.5s 内无新增振荡的代理判据）。评估 baseline "
+        "判据：切换点 ±5 拍窗口内单步 `|Δz_cmd|` ≤ 全段单步 `|Δz_cmd|` 的 p99×2（该百分位数跨"
+        "整条轨迹计算，含切换窗口本身，并非仅正常跟踪段）且绝对值 ≤0.2mm，且整段 "
+        "`osc_index ≤ 0.05`（切换后 0.5s 内无新增振荡的代理判据）。评估 baseline "
         "场景下两个闭环臂（**闭环-PI 为主判据**——freeze 冻结的是积分器，其切换交互只在 ki>0 时"
         "有意义）。",
         "",
-        "| 臂 | 毛刺跳变 jump (mm) | 正常段 p99×2 (mm) | osc_index | 判据 |",
+        "| 臂 | 毛刺跳变 jump (mm) | 全段 p99×2 (mm) | osc_index | 判据 |",
         "|---|---|---|---|---|",
     ]
     for name, r in (("closed-P", baseline_P), ("closed-PI", baseline_PI)):
@@ -585,7 +629,7 @@ def write_report(rows, v0_rows, args, sigma_f, out_path, multi_rows=None, cand_r
         "- **τ=0.05s / n_delay=2 拍为假设值**（真机执行器未标定），层 1 报告 (`docs/z-phase1-sweep.md`) "
         "的敏感性抽查覆盖了工作点在该假设范围内的稳定性，本报告未重复该抽查。",
         "- 全部结论限定在\"裸态仿真条件\"下；OneEuro 滤波器的最终选型定稿（层 1 vs 层 2 综合裁决）"
-        "见 spec §3.3 规则与 Task 9 报告。",
+        "见 spec §3.3/§6 与 handoff §1.3（记忆 `filter-selection-provisional`）。",
         "- drift 场景闭环劣化是本设计的**已知特性**而非缺陷：它是差分测量方案的论据，禁止通过调参"
         "\"修掉\"。",
         "- **恢复时间判据口径（2026-07-30 修正）**：`recovery_time_s` 现仅在接触段内 "
@@ -665,7 +709,8 @@ def main(argv=None):
         conv = convergence_stroke(biases, sigma_f)
         tau_i = (1.0 + kp) / ki if ki > 0 else float("inf")
         multi_rows.append({"arm": name, "kp": kp, "ki": ki, "tau_i": tau_i,
-                           "biases": biases, "conv": conv, "res": res})
+                           "biases": biases, "conv": conv, "res": res,
+                           "glitch": glitch_verdict(res)})
         print(name, "收敛笔数=", "未收敛" if conv is None else conv, "biases=",
               ["%.2f" % b for b in biases])
 
