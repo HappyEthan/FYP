@@ -13,6 +13,7 @@ import numpy as np
 
 from brushbot.z_control import ZController
 from brushbot.tactile import contact_sim
+from brushbot.sim_loop import Plant, run_loop
 
 
 def _load_v0(path):
@@ -44,81 +45,27 @@ def _synthetic_target(n=400, fs=100.0):
 
 def _run_demo(target_abs_dB, dt=0.01, kp=None, ki=None,
               calib_z_mm=None, calib_abs_dB=None):
-    """Run closed-loop demo with synthetic plant.
-
-    Controller gains and noise level are auto-computed from the
-    calibration curve magnitude unless explicitly overridden.
-
-    Returns dict of arrays for plotting.
-    """
+    """闭环 demo: 合成标定 + sim_loop.run_loop (唯一闭环路径)."""
     if calib_z_mm is None or calib_abs_dB is None:
         cal = contact_sim.calibrate()
-        calib_z_mm = cal["z_mm"]
-        calib_abs_dB = cal["abs_dB"]
-
-    # --- Auto-compute controller parameters from calibration ---
+        calib_z_mm, calib_abs_dB = cal["z_mm"], cal["abs_dB"]
     cal_max = float(calib_abs_dB.max())
-    z_range_m = calib_z_mm[-1] / 1000.0
-    slope = z_range_m / cal_max if cal_max > 0 else 1.0  # m / arb
-
-    if kp is None:
-        kp = 0.3 * slope
-    if ki is None:
-        ki = 0.03 * slope
     noise_std = max(cal_max * 0.02, 1e-12)
-
-    ctrl = ZController(calib_z_mm, calib_abs_dB, dt=dt, kp=kp, ki=ki,
-                       noise_std=noise_std)
-    z_surface = ctrl.z_surface
-
-    # --- Scale target to fit within calibration range ---
-    target_max = float(np.max(np.abs(target_abs_dB)))
-    if target_max > 0 and cal_max > 0:
-        target_abs_dB = np.asarray(target_abs_dB, dtype=float).copy()
-        target_abs_dB *= 0.8 * cal_max / target_max
-
-    # --- Synthetic plant: interpolate calibration curve ---
-    z_off_mm_grid = np.linspace(0, calib_z_mm[-1], 500)
-    abs_dB_grid = np.interp(z_off_mm_grid, calib_z_mm, calib_abs_dB)
-
-    press_direction = np.array([1.0, 0.3, 0.1])
-    press_direction = press_direction / np.linalg.norm(press_direction)
-
-    n = len(target_abs_dB)
-    time = np.arange(n) * dt
-    z_cmd_arr = np.empty(n)
-    z_ff_arr = np.empty(n)
-    z_fb_arr = np.empty(n)
-    meas_arr = np.empty(n)
-    frozen_arr = np.empty(n, dtype=bool)
-    rng = np.random.default_rng(42)
-
-    dB_meas = np.zeros(3)  # start at zero (no contact)
-    for i, g_d in enumerate(target_abs_dB):
-        z_cmd = ctrl.step(dB_meas, g_d)
-        z_off_mm = (z_cmd - z_surface) * 1000.0
-        abs_meas = float(np.interp(z_off_mm, z_off_mm_grid, abs_dB_grid,
-                                    left=0.0, right=abs_dB_grid[-1]))
-        noise = rng.normal(0, noise_std * 0.5)
-        abs_meas = max(0.0, abs_meas + noise)
-        dB_meas = press_direction * abs_meas  # used in NEXT iteration (1-step delay)
-
-        z_cmd_arr[i] = z_cmd
-        z_ff_arr[i] = ctrl.z_ff
-        z_fb_arr[i] = ctrl.z_fb
-        meas_arr[i] = abs_meas
-        frozen_arr[i] = ctrl.frozen
-
-    return {
-        "time": time,
-        "z_surface": z_surface,
-        "target": np.asarray(target_abs_dB),
-        "meas": meas_arr,
-        "z_cmd": z_cmd_arr,
-        "z_ff": z_ff_arr,
-        "z_fb": z_fb_arr,
-        "frozen": frozen_arr,
-    }
+    kw = {}
+    if kp is not None:
+        kw["kp"] = kp
+    if ki is not None:
+        kw["ki"] = ki
+    ctrl = ZController(calib_z_mm, calib_abs_dB, dt=dt, noise_std=noise_std, **kw)
+    target = np.asarray(target_abs_dB, dtype=float).copy()
+    if target.max() > 0 and cal_max > 0:
+        target *= 0.8 * cal_max / target.max()
+    plant = Plant(calib_z_mm, calib_abs_dB, dt=dt)
+    res = run_loop(ctrl, None, target, plant)
+    return {"time": res["t"], "z_surface": ctrl.z_surface, "target": res["g_d"],
+            "meas": res["abs_f"], "z_cmd": res["z_cmd"],
+            "z_ff": ctrl.z_surface + res["z_ff"], "z_fb": res["z_fb"],
+            "frozen": res["frozen"]}
 
 
 def plot_result(result, out_path):
