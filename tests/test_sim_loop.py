@@ -187,8 +187,9 @@ def test_run_loop_nan_chain_reaches_guard():
 
 
 def test_run_loop_closed_loop_converges_constant():
-    """恒定目标 + 默认增益 + 无噪声 plant: 末段误差 <5% (Phase 0 行为回归)。"""
-    ctrl, plant = _make()
+    """恒定目标 + 出厂默认增益(真实签名默认, 不显式传) + 现实 plant: 末段误差 <5% —— 默认增益收敛性的唯一属主测试。"""
+    ctrl = ZController(_CAL_Z, _CAL_DB, noise_std=7.0)
+    plant = Plant(_CAL_Z, _CAL_DB)
     res = run_loop(ctrl, None, np.full(300, 120.0), plant)
     tail = res["abs_true"][-50:]
     assert abs(tail.mean() - 120.0) / 120.0 < 0.05

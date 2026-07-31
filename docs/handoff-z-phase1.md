@@ -63,7 +63,7 @@ z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e     e = g_d − |ΔB_meas|
 | 原始噪声 |σ| | 6.94 µT（裸态，乐观下界） | V0 idle |
 | 滤波后 σ（候选） | EMA0.3: 3.31 / OneEuro(0.5,0.03): 2.67 µT | filter-comparison.md |
 | 滤波滞后（候选） | EMA0.3: 17.2ms / Butter8: ~13ms / OneEuro 慢态相位 75°但动态 RMS 最优 | 同上 |
-| 总回路延迟预算 | ≲30 ms（**滤波份额需重划**，见 §1.3 保留 2） | deltaB-control.md §6.4 |
+| 总回路延迟预算 | ≲30 ms（**实测相位裕度 116° 有富余，重划结论见 §1.3 保留 2）| deltaB-control.md §6.4 |
 | 相位裕度目标 | ≥45°（滤波+积分+系统延迟总滞后 ≤135°） | handoff-filter §2.2 |
 | 灵敏度 S (µT/mm) | **未标定**（等装配态 E2）；σ_z_equiv = σ_filtered/S | gate-experiments |
 | ZController 默认 noise_std | 7.0 µT（全带宽口径，**接滤波后必须改**） | z_control.py |
