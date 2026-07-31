@@ -1,7 +1,7 @@
 # Handoff: Z 控制环 Phase 1 —— 滤波接入、目标曲线管线与闭环验证
 
 > 给下一个 session 的交接文档。写于 2026-07-29。
-> 状态：滤波器库已完工并选型（过渡结论）；ZController Phase 0 已完工；**Phase 1（滤波进环 + 时变目标跟踪 + 验证）待设计**。
+> **状态（2026-07-30 更新）：Phase 1 已完成（裸态仿真）**。滤波进环、增益重调、开环/闭环对比、freeze 毛刺判据均已跑完并裁决，见 `docs/z-phase1-sweep.md`（层 1，Q1/Q2）与 `docs/z-phase1-results.md`（层 2，Q3/Q4）。默认增益已回填（`kp=1.2077`/`ki=0.134`），控制环滤波器选型定稿 EMA α=0.3（见下 §1.3）。装配态 E0/E2 复测前，全部数字仍是裸态仿真下的结论，不视为最终定稿。
 > 取代 `handoff-z-control.md`（其"Z 控制待开发"状态已过时）与 `handoff-filter.md`（滤波器已交付）中的相应章节。
 >
 > **分支/仓库状态（先读这个再动手）**：
@@ -38,9 +38,12 @@ z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e     e = g_d − |ΔB_meas|
 ### 1.3 选型结论（过渡）与量化工具
 
 - `python scripts/compare_filters.py` 一条命令出 18 配置 × 4 指标 + Pareto 图 + 报告（`docs/filter-comparison.md`）。装配态数据到位换 CSV 重跑即重新选型。
-- **当前推荐 OneEuro mc=0.5 β=0.03**（|σ| 6.94→2.67 µT，动态 RMS 7.09 双优；2026-07-30 settle 幅值修正后翻转实锤，见下），但有保留（详见记忆 `filter-selection-provisional` 与报告注释）：
-  1. ~~settle 指标用 1 µT 小信号阶跃~~ **已修**（2026-07-30）：`step_settle_ms` 加 `amp` 参数，默认 10 µT（代表区间 10–30 µT 下界=最坏情形）。推荐翻转为 OneEuro mc=0.5 β=0.03，且是 10–30 µT 全区间唯一稳定胜出者（中值/上界口径会漂移到压线的激进配置）。待裁决：OneEuro 静止态 ~70 ms 相位延迟是否可接受——Phase 1 时域闭环仿真裁决。
-  2. spec 的滤波器延迟份额 ≲5–10 ms 与有效降噪在裸态数据下**互斥**（任何降噪够用的滤波器都超预算）——Phase 1 需要重划相位/延迟预算，而不是硬卡 10ms。
+- **口径区分（2026-07-30 Phase 1 裁决后必读）**：`compare_filters.py` 的**孤立滤波指标**选型与**闭环在环评估**选型是两回事，结论不同，别混用：
+  - **孤立指标口径（显示/离线参考用，未变）**：OneEuro mc=0.5 β=0.03 仍推荐（|σ| 6.94→2.67 µT，动态 RMS 双优；2026-07-30 settle 幅值修正后翻转实锤——见下保留 1）。
+  - **控制环在环评估口径（Phase 1 层 1 定稿，本节新增）**：`docs/z-phase1-sweep.md` 用真实闭环仿真（滞后进环、重新扫描增益）直接比较各滤波臂的闭环跟踪 RMS，结果 OneEuro **两个工作点口径（wp_P 与 wp_PI）跟踪 RMS 均劣于 EMA a=0.3**（OneEuro 11.83% vs EMA 9.47%）——OneEuro 的滞后压低了可用 kp 上限，代价超过其降噪收益。**控制环选型定稿 EMA α=0.3**；"OneEuro 静止态 ~70ms 相位滞后可否接受"的时域答案是**否定的（在控制环内）**。显示端滤波不受影响，仍用孤立指标口径的 OneEuro 结论。
+  - 装配态 E0 复测后，孤立指标与在环评估两个结论都要重跑，任一个都可能翻盘。
+  1. ~~settle 指标用 1 µT 小信号阶跃~~ **已修**（2026-07-30）：`step_settle_ms` 加 `amp` 参数，默认 10 µT（代表区间 10–30 µT 下界=最坏情形）。孤立指标口径推荐翻转为 OneEuro mc=0.5 β=0.03，且是 10–30 µT 全区间唯一稳定胜出者（中值/上界口径会漂移到压线的激进配置）。**OneEuro 静止态 ~70 ms 相位延迟是否可接受——已由 Phase 1 时域闭环仿真裁决：控制环内不可接受，见上。**
+  2. spec 的滤波器延迟份额 ≲5–10 ms 与有效降噪在裸态数据下**互斥**（任何降噪够用的滤波器都超预算）——Phase 1 层 1 报告的相位裕度实测（EMA a=0.3 wp_P 116.2°）表明该预算有富余，重划结论见 `docs/z-phase1-sweep.md`。
   3. 裸态数据是乐观下界；Pareto 图上"EMA 支配 Butterworth"依赖 1/f 噪声谱形状，装配态 EMI 可能翻盘。
 - 教学文档 `docs/filter-tutorial.md`（概念、公式、逐节动手命令）——设计时当参考书用。
 
@@ -64,6 +67,9 @@ z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e     e = g_d − |ΔB_meas|
 | 相位裕度目标 | ≥45°（滤波+积分+系统延迟总滞后 ≤135°） | handoff-filter §2.2 |
 | 灵敏度 S (µT/mm) | **未标定**（等装配态 E2）；σ_z_equiv = σ_filtered/S | gate-experiments |
 | ZController 默认 noise_std | 7.0 µT（全带宽口径，**接滤波后必须改**） | z_control.py |
+| ZController 默认 kp/ki（2026-07-30 Task 9 回填） | kp=1.2077 / ki=0.134 | z-phase1-sweep.md / z-phase1-results.md |
+
+> **硬件风险提示（2026-07-30 Task 9）**：`kp=1.2077` 以执行器滞后 τ≥20ms（层 1 敏感性抽查下界，见 `docs/z-phase1-sweep.md` τ∈{0.02,0.05,0.10}s 表）为前提。理想瞬时执行器（零滞后）下，单拍闭环的稳定界是 `kp<1`——真机 E2 标定时若执行器显著快于该假设（τ 远小于 20ms），需重扫层 1 增益，不能直接沿用本回填值。`tests/test_z_control.py::test_step_tracks_constant` 用零滞后理想瞬时 plant 复核过这一点：套用 `kp=1.2077` 会触发飽和式极限环不收敛，因此该测试改用显式温和增益 `kp=0.3/ki=0.03` 只考机制，默认增益的收敛性由 `tests/test_sim_loop.py::test_run_loop_closed_loop_converges_constant`（含延迟+滞后的真实 plant）承担。
 
 ## 3. 本期要设计的四块
 
@@ -102,12 +108,12 @@ for dB_raw in stream:
 
 验证完成必须回答的数字（handoff-filter §2.5 风格）：
 
-| 问题 | 怎么答 |
-|---|---|
-| 滤波接入后时变跟踪 RMS 是多少？比无滤波好多少？ | 层 1 矩阵 |
-| 滞后进环后增益稳定边界在哪？工作点裕度多少度？ | Kp/Ki 扫描 + 频域核算 |
-| 开环 vs 闭环在扰动下各偏差多少？ | 层 2 对比 |
-| freeze 切换处有无毛刺？ | 起笔/收笔段仿真波形 |
+| 问题 | 怎么答 | 结果文档（2026-07-30 Task 9 补） |
+|---|---|---|
+| 滤波接入后时变跟踪 RMS 是多少？比无滤波好多少？ | 层 1 矩阵 | `docs/z-phase1-sweep.md`（Q1） |
+| 滞后进环后增益稳定边界在哪？工作点裕度多少度？ | Kp/Ki 扫描 + 频域核算 | `docs/z-phase1-sweep.md`（Q2） |
+| 开环 vs 闭环在扰动下各偏差多少？ | 层 2 对比 | `docs/z-phase1-results.md`（Q3） |
+| freeze 切换处有无毛刺？ | 起笔/收笔段仿真波形 | `docs/z-phase1-results.md`（Q4） |
 
 ## 4. 已知坑清单（评审攒下来的，别重踩）
 

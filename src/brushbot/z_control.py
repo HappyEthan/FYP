@@ -13,7 +13,7 @@ class ZController:
     """整体 ΔB 标量跟踪控制器。"""
 
     def __init__(self, calib_z_mm: np.ndarray, calib_abs_dB: np.ndarray,
-                 dt: float = 0.01, kp: float = 0.3, ki: float = 0.03,
+                 dt: float = 0.01, kp: float = 1.2077, ki: float = 0.134,
                  z_surface: float = 0.20, dz_margin: float = 3e-3,
                  noise_std: float = 7.0):
         """
@@ -22,7 +22,15 @@ class ZController:
         calib_z_mm : (N,) 压深 mm (从接触起点起算)
         calib_abs_dB : (N,) 对应 |ΔB| μT
         dt : 控制周期 (s)
-        kp/ki : 无量纲增益，每拍将误差的该比例折算为压深修正
+        kp/ki : 无量纲增益，每拍将误差的该比例折算为压深修正。
+            默认值 = Phase 1 工作点（裸态仿真，`docs/z-phase1-sweep.md` /
+            `docs/z-phase1-results.md`）：
+            kp=1.2077 出自层 1 增益扫描，EMA a=0.3 臂 wp_P/wp_PI 工作点
+            （kp 网格第 8 点，精确值 1.2077485712993403，四舍五入 1.2077）；
+            ki=0.134 出自层 2 多笔画收敛场景推荐值（精确值 0.1341347897639862，
+            8×synth_press 连写 + calib_scale=0.8，收敛笔数=3，裕度合规候选中最快）。
+            ki 面向跨笔画自适应时间尺度（~3 笔收敛），不承诺单笔画内扰动抑制——
+            层 2 单笔画场景实测 PI≈P（积分时间常数 τ_i 远超单笔画窗口）。
         z_surface : 纸面高度 (m)
         dz_margin : 积分限幅 ±m
         noise_std : 噪声标准差 (μT), 全带宽裸态口径，接滤波后必须显式传滤波后 σ；用于接触判定

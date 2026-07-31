@@ -68,6 +68,8 @@ def test_step_tracks_constant():
     assert error < 0.05, f"steady-state error {error:.3f} > 0.05"
 ```
 
+（2026-07-30 Task 9 修订: 默认值回填 wp 后本测试改显式 kp=0.3/ki=0.03 考机制, 默认值收敛由 sim_loop 现实 plant 测试承担）
+
 更新 `test_reset_clears_integrator`：ki=1.0 在新语义下 50 步只积到 7×10⁻⁴ 左右，把 `ki=1.0` 改为 `ki=5.0`（50 步积 5×10⁻³ → 被 clamp 到 3×10⁻³，仍满足 `> 0.001` 断言）。其余测试（clamping/lift/air/z_ff）不改。
 
 - [ ] **Step 2: 跑测试确认失败**

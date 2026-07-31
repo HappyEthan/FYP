@@ -28,6 +28,7 @@
 2. **增益无量纲化进控制器**（§3.1 详述）。
 3. **noise_std 不硬编码**：harness 运行时用噪声源现算滤波后 σ 传入。
 4. **freeze 期间 Kp 保持作用**（Phase 0 行为不变），由 Q4 毛刺数据裁决；超标则 fallback 为 Kp 一并冻结（预留一行改动，见 §6.3）。
+   **裁决结果（2026-07-30 Task 9，见 `docs/z-phase1-results.md` Q4 节）：PASS，两个闭环臂（closed-P/closed-PI）均通过——毛刺跳变 0.1937 mm ≤ 0.2 mm 阈值，且 ≤ 正常段 p99×2（0.9530/0.9531 mm），`osc_index`=0.002（切换后无新增振荡）。fallback 未触发，Phase 0"freeze 期间 Kp 保持作用"的行为按原设计维持不变。**
 
 ## 3. 组件设计
 
@@ -43,6 +44,7 @@ z_fb  += ki·S_cal·e·dt，clamp ±dz_margin          # dz_margin 仍为物理�
 
 - `kp`/`ki` 变为无量纲（语义："每拍把误差的多少比例折算成压深修正"）。**参数名与签名不变，语义变**。
 - 暂定默认 `kp=0.3, ki=0.03`（demo 外部折算的现值）；层 1 扫描完成后**用工作点回填默认值**（本期交付物之一）。
+  **回填结果（2026-07-30 Task 9）：`kp=1.2077`（层 1 EMA a=0.3 臂 wp_P/wp_PI 工作点，精确值 1.2077485712993403，见 `docs/z-phase1-sweep.md`）、`ki=0.134`（层 2 多笔画收敛推荐值，精确值 0.1341347897639862，8×synth_press 连写场景收敛笔数=3，见 `docs/z-phase1-results.md` 多笔画节）。ki 面向跨笔画自适应时间尺度，不承诺单笔画内扰动抑制。已回填进 `ZController.__init__` 签名默认值。**
 - `noise_std` 参数保留（µT 口径），默认 7.0 并在 docstring 注明"全带宽裸态口径，接滤波必须显式传滤波后 σ"。
 - NaN/Inf guard、freeze 判定逻辑、`reset()`、属性接口全部不动。
 - `demo_z_control.py` 里的外部折算逻辑（`kp=0.3*slope`）删除，直接用默认值。

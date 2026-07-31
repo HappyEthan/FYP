@@ -101,8 +101,19 @@ def test_air_freezes_integrator():
 
 
 def test_step_tracks_constant():
-    """固定目標下閉環用默認無量綱增益收斂到 ±5%。"""
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    """固定目標下閉環機制驗證：顯式温和增益 kp=0.3/ki=0.03 在理想瞬時 plant
+    （零延遲、零執行器滯後）上收斂到 ±5%。
+
+    本測試考的是"閉環機制本身能收斂"，不考默認增益政策——Phase 1 回填後的默認值
+    (kp=1.2077/ki=0.134) 是在假設執行器滯後 (n_delay=2 拍、tau=0.05s) 的前提下由
+    層 1/層 2 掃描得出的工作點，套到本測試零滯後的理想瞬時 plant 上會單拍過衝出整
+    個標定量程觸發飽和式極限環，不收斂（不是機制壞了，是工作點的前提條件不滿足）。
+    默認增益在其設計前提（有延遲/滯後的真實 plant）下的收斂性由
+    `tests/test_sim_loop.py::test_run_loop_closed_loop_converges_constant`
+    （用 `sim_loop.Plant`，含 n_delay=2 拍傳輸延遲 + tau=0.05s 一階執行器）驗證。
+    （2026-07-30 Task 9 修訂）
+    """
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=0.3, ki=0.03)
     g_d = 120.0
     dB_meas = np.zeros(3)
     for _ in range(300):
