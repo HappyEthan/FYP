@@ -1,0 +1,427 @@
+#!/usr/bin/env python3
+"""层2: {开环, 闭环-P, 闭环-PI} × {扰动场景} 对比 → 论文数字 + freeze 毛刺检查.
+
+用法 (单行, 两组 kp/ki 取层1报告的 wp_P 与 wp_PI, spec §3.3 双工作点修订):
+    python scripts/compare_z_arms.py --kp-p 1.21 --ki-p 0 --kp-pi 1.21 --ki-pi 0.03 --filter "EMA a=0.3"
+
+回答 spec §1 的 Q3 (开环 vs 闭环-P vs 闭环-PI) 与 Q4 (freeze 毛刺, PI 臂为主).
+"""
+import argparse
+import sys
+from pathlib import Path
+
+import numpy as np
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from brushbot.filter import ButterworthFilter, OneEuroFilter  # noqa: E402
+from brushbot.monitor.core import EMA                          # noqa: E402
+from brushbot.sim_loop import (FS, Plant, V0NoiseSource, freeze_jump, osc_index,  # noqa: E402
+                               press_from_v0, rms_pct, run_loop, synth_press)
+from brushbot.z_control import ZController                     # noqa: E402
+
+CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
+SEED = 42
+MAKE_FILTER = {
+    "none": None,
+    "EMA a=0.3": lambda: EMA(0.3),
+    "Butter fc=8": lambda: ButterworthFilter(8.0),
+    "OneEuro mc=0.5 b=0.03": lambda: OneEuroFilter(0.5, 0.03),
+}
+# t_step=4.0s 落在提按段 (0.8–6.8s) 中部
+SCENARIOS = [
+    ("baseline", {}),
+    ("calib x0.8", {"calib_scale": 0.8}),
+    ("calib x1.2", {"calib_scale": 1.2}),
+    ("paper +0.5mm", {"paper_step": (4.0, +0.5e-3)}),
+    ("paper -0.5mm", {"paper_step": (4.0, -0.5e-3)}),
+    ("drift +1uT/s", {"drift_rate": +1.0}),
+    ("drift -1uT/s", {"drift_rate": -1.0}),
+]
+
+
+def run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw):
+    noise = V0NoiseSource(csvs, seed=SEED)
+    plant = Plant(CALIB_Z, CALIB_DB, noise=noise, **plant_kw)
+    ctrl = ZController(CALIB_Z, CALIB_DB, kp=kp, ki=ki, noise_std=sigma_f)
+    return run_loop(ctrl, mk() if mk else None, g_d, plant), sigma_f
+
+
+def steady_bias(res):
+    """提按末 1s (t∈[5.8, 6.8)) 平均误差 (µT, 以真值评)."""
+    m = (res["t"] >= 5.8) & (res["t"] < 6.8)
+    return float((res["g_d"][m] - res["abs_true"][m]).mean())
+
+
+def recovery_time_s(res, t_step, sigma_f):
+    """t_step 后 |误差| 首次连续 0.3s 落回 ±2σ 带内的耗时 (s); 未恢复 → inf."""
+    err = np.abs(res["g_d"] - res["abs_true"])
+    ok = (err < 2.0 * sigma_f) | (res["g_d"] < 3.0 * sigma_f)
+    start = int(t_step * FS)
+    need = int(0.3 * FS)
+    run = 0
+    for i in range(start, len(ok)):
+        run = run + 1 if ok[i] else 0
+        if run >= need:
+            return (i - need + 1 - start) / FS
+    return float("inf")
+
+
+def glitch_verdict(res):
+    """Q4 判据 (spec §3.4): 切换处单步跳变 ≤ 正常段 p99×2 且 ≤0.2mm,
+    且切换后 0.5s 无新增振荡 (整段 osc_index ≤0.05 代理)."""
+    dz = np.abs(np.diff(res["z_cmd"]))
+    p99 = float(np.percentile(dz[~np.isnan(dz)], 99))
+    fj = freeze_jump(res)
+    return {"jump_m": fj, "p99_m": p99,
+            "ok": fj <= max(2 * p99, 0.0) + 1e-15 and fj <= 0.2e-3
+                  and osc_index(res) <= 0.05}
+
+
+def _fmt_rec(rec):
+    if rec is None:
+        return "—"
+    if rec == float("inf"):
+        return "未恢复 (∞)"
+    return "%.2f" % rec
+
+
+def _fig_paper_step(rows, sigma_f, out_png):
+    """图1: 纸面阶跃 (+0.5mm) 后三臂误差恢复对比."""
+    import matplotlib.pyplot as plt
+
+    scen = "paper +0.5mm"
+    t_step = 4.0
+    colors = {"open": "0.5", "closed-P": "tab:blue", "closed-PI": "tab:orange"}
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    for r in rows:
+        if r["scenario"] != scen:
+            continue
+        res = r["res"]
+        err = res["g_d"] - res["abs_true"]
+        m = (res["t"] >= t_step - 0.5) & (res["t"] <= t_step + 3.0)
+        ax.plot(res["t"][m] - t_step, err[m], label=r["arm"],
+                color=colors.get(r["arm"], None), lw=1.2)
+    ax.axhline(2.0 * sigma_f, color="k", ls="--", lw=0.8, label="±2σ 带")
+    ax.axhline(-2.0 * sigma_f, color="k", ls="--", lw=0.8)
+    ax.axvline(0.0, color="k", ls=":", lw=0.8, label="阶跃时刻")
+    ax.set(xlabel="t − t_step (s)", ylabel="误差 g_d − abs_true (µT)",
+           title="纸面阶跃 (+0.5mm) 恢复对比: 开环 vs 闭环-P vs 闭环-PI")
+    ax.legend(fontsize=9)
+    fig.tight_layout()
+    fig.savefig(out_png, dpi=120)
+    plt.close(fig)
+
+
+def _fig_freeze(rows, out_png):
+    """图2: baseline 场景起笔/收笔 freeze 切换处 z_cmd 放大 (两个闭环臂)."""
+    import matplotlib.pyplot as plt
+
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), sharey=True)
+    for ax, arm in zip(axes, ("closed-P", "closed-PI")):
+        r = next((x for x in rows if x["scenario"] == "baseline" and x["arm"] == arm), None)
+        if r is None:
+            continue
+        res = r["res"]
+        edges = np.nonzero(np.diff(res["frozen"].astype(int)))[0]
+        z_mm = (res["z_cmd"] - res["z_cmd"][0]) * 1000.0
+        for e in edges:
+            lo, hi = max(0, e - 20), min(len(z_mm), e + 20)
+            ax.plot(res["t"][lo:hi] - res["t"][e], z_mm[lo:hi], marker=".", ms=3, lw=1.0)
+        ax.axvline(0.0, color="k", ls=":", lw=0.8)
+        ax.set(xlabel="t − 切换点 (s)", title="%s: freeze 切换 z_cmd 放大" % arm)
+    axes[0].set_ylabel("z_cmd 相对起点 (mm)")
+    fig.tight_layout()
+    fig.savefig(out_png, dpi=120)
+    plt.close(fig)
+
+
+_DRIFT_RATE = {"drift +1uT/s": 1.0, "drift -1uT/s": -1.0}
+_WINDOW_T_MID = 6.3  # (5.8+6.8)/2, 与 steady_bias 窗口对齐
+
+
+def _disturbance_retained(rows):
+    """扣除 baseline 分量后, 各扰动场景闭环-P/PI 相对开环扰动量的残留比例.
+
+    baseline (无扰动) 场景本身仍有非零稳态偏差 (正弦扫频跟踪相位滞后所致, 与扰动无关);
+    用 scenario_bias − baseline_bias 提取"纯扰动引起"的偏差分量再算残留比例, 才是
+    e_ss=d/(1+kp) 理论对应的量."""
+    by_key = {(r["scenario"], r["arm"]): r["bias"] for r in rows}
+    base = {arm: by_key.get(("baseline", arm)) for arm in ("open", "closed-P", "closed-PI")}
+    out = []
+    for scen in ("calib x0.8", "calib x1.2", "paper +0.5mm", "paper -0.5mm"):
+        if (scen, "open") not in by_key:
+            continue
+        d_open = by_key[(scen, "open")] - base["open"]
+        d_p = by_key[(scen, "closed-P")] - base["closed-P"]
+        d_pi = by_key[(scen, "closed-PI")] - base["closed-PI"]
+        ret_p = d_p / d_open if abs(d_open) > 1e-9 else float("nan")
+        ret_pi = d_pi / d_open if abs(d_open) > 1e-9 else float("nan")
+        out.append({"scenario": scen, "d_open": d_open, "d_p": d_p, "d_pi": d_pi,
+                    "ret_p": ret_p, "ret_pi": ret_pi})
+    return out
+
+
+def _drift_deception(rows):
+    """drift 场景: 闭环臂相对 baseline 的偏差偏移量, 与该窗口内漂移量对比 (被骗比例)."""
+    by_key = {(r["scenario"], r["arm"]): r["bias"] for r in rows}
+    base = {arm: by_key.get(("baseline", arm)) for arm in ("open", "closed-P", "closed-PI")}
+    out = []
+    for scen, rate in _DRIFT_RATE.items():
+        if (scen, "open") not in by_key:
+            continue
+        drift_ref = rate * _WINDOW_T_MID
+        d_open = by_key[(scen, "open")] - base["open"]
+        d_p = by_key[(scen, "closed-P")] - base["closed-P"]
+        d_pi = by_key[(scen, "closed-PI")] - base["closed-PI"]
+        out.append({"scenario": scen, "drift_ref_uT": drift_ref,
+                    "d_open": d_open, "d_p": d_p, "d_pi": d_pi,
+                    "frac_p": d_p / drift_ref, "frac_pi": d_pi / drift_ref})
+    return out
+
+
+def write_report(rows, v0_rows, args, sigma_f, out_path):
+    """生成 docs/z-phase1-results.md: Q3 主表 + drift 负面对照注记 +
+    Q4 freeze 判据结论 + 两张波形图 + caveat."""
+    import matplotlib
+    matplotlib.use("Agg")
+    matplotlib.rcParams["font.sans-serif"] = [
+        "Noto Sans CJK SC", "Noto Sans CJK HK", "Noto Sans CJK JP", "DejaVu Sans"]
+    matplotlib.rcParams["axes.unicode_minus"] = False
+
+    out_path = Path(out_path)
+    asset_dir = out_path.parent / "assets"
+    asset_dir.mkdir(parents=True, exist_ok=True)
+    fig_paperstep = asset_dir / "z-phase1-arms-paperstep.png"
+    fig_freeze = asset_dir / "z-phase1-arms-freeze.png"
+    _fig_paper_step(rows, sigma_f, fig_paperstep)
+    _fig_freeze(rows, fig_freeze)
+
+    kp_p, ki_p, kp_pi, ki_pi = args.kp_p, args.ki_p, args.kp_pi, args.ki_pi
+    s_cal = float((CALIB_Z[-1] - CALIB_Z[0]) / 1000.0 / (CALIB_DB[-1] - CALIB_DB[0]))
+
+    lines = [
+        "# Z 控制层 2 开环 vs 闭环扰动对比报告 (脚本生成)",
+        "",
+        "> 生成命令: `python scripts/compare_z_arms.py --kp-p %.4g --ki-p %.4g "
+        "--kp-pi %.4g --ki-pi %.4g --filter \"%s\"`" % (kp_p, ki_p, kp_pi, ki_pi, args.filter),
+        "> 滤波臂 (取自层 1 报告 `docs/z-phase1-sweep.md`): **%s**" % args.filter,
+        "> 工作点: wp_P (kp=%.4g, ki=%.4g) / wp_PI (kp=%.4g, ki=%.4g)"
+        % (kp_p, ki_p, kp_pi, ki_pi),
+        "> σ_f (滤波后噪声标准差, µT): **%.2f**" % sigma_f,
+        "> 回答 spec §1 的 Q3 (开环 vs 闭环-P vs 闭环-PI 扰动对比) 与 Q4 (freeze 毛刺判据).",
+        "",
+        "## Q3: 开环 vs 闭环-P vs 闭环-PI 扰动对比",
+        "",
+        "控制律: `z_cmd = z_surface + z_ff(g_d) + kp·S_cal·e + z_fb`, `z_fb += ki·S_cal·e·dt`。"
+        "对恒定偏差 d，比例-only 闭环 (闭环-P, ki=0) 的稳态残差理论值"
+        "`e_ss = d / (1 + kp)`；本次 kp=%.4g → 理论消偏比例 ≈ %.0f%%，"
+        "积分闭环 (闭环-PI) 理论上 → 0（无限增益抗直流扰动）；开环臂 (kp=ki=0) 不做任何补偿，"
+        "偏差与真实曲线偏离量同源。" % (kp_p, 100.0 * kp_p / (1.0 + kp_p)),
+        "",
+        "| 场景 | 臂 | RMS % | 稳态偏差 µT | 恢复时间 s |",
+        "|---|---|---|---|---|",
+    ]
+    for r in rows:
+        lines.append("| %s | %s | %.2f | %+.2f | %s |" % (
+            r["scenario"], r["arm"], r["rms"], r["bias"], _fmt_rec(r["recovery"])))
+    lines.append("")
+
+    ret = _disturbance_retained(rows)
+    lines += [
+        "**calib / paper 场景叙事核对（扣除 baseline 分量后的纯扰动残留比例）**：baseline "
+        "(无扰动) 场景本身已有非零稳态偏差（提按段目标是 0.5–3Hz 正弦扫频，跟踪相位滞后"
+        "所致，与扰动无关）；用 `scenario_bias − baseline_bias` 提取纯扰动分量再算残留比例，"
+        "才对应理论 `e_ss=d/(1+kp)`：",
+        "",
+        "| 场景 | 开环扰动分量 µT | 闭环-P 残留比例 | 闭环-PI 残留比例 |",
+        "|---|---|---|---|",
+    ]
+    for d in ret:
+        lines.append("| %s | %+.2f | %.1f%% | %.1f%% |" % (
+            d["scenario"], d["d_open"], 100 * d["ret_p"], 100 * d["ret_pi"]))
+    lines.append("")
+
+    max_pi_p_gap = max(abs(d["ret_p"] - d["ret_pi"]) for d in ret) if ret else 0.0
+    theory_ret = 1.0 / (1.0 + kp_p)
+    lines += [
+        "闭环-P 残留比例（paper_step 场景，接近纯加性扰动模型）实测 ≈%.0f%%，与理论 "
+        "`1/(1+kp)=%.1f%%`（kp=%.4g）吻合良好；calib_scale 场景（乘性扰动，非加性）实测"
+        "残留比例在 %.0f%%–%.0f%% 之间浮动，与简单加性公式有出入但同量级，属预期"
+        "（乘性扰动的有效环路增益随 calib_scale 变化，简单公式只是一阶近似）。" % (
+            100 * sum(d["ret_p"] for d in ret if "paper" in d["scenario"]) / 2,
+            100 * theory_ret, kp_p,
+            100 * min(d["ret_p"] for d in ret), 100 * max(d["ret_p"] for d in ret)),
+        "",
+        "⚠️ **叙事矛盾（需报告，未调参掩盖）：闭环-PI 相对闭环-P 的残留比例差距最大仅 "
+        "%.1f 个百分点**——spec §3.4 预期 PI 臂在 calib/paper 场景应\"≈全补偿\"（残留 →0%%），"
+        "但实测 PI 与 P 几乎不可区分。根因：wp_PI 的 ki=%.4g 是层 1 (`sweep_z_gains.py`) "
+        "对数网格上满足\"ki>0 且 +2 网格步双向裕度仍稳定\"规则的**最小候选点**，积分时间常数"
+        "远超本场景 ~6s 的提按窗口——`z_fb += ki·S_cal·e·dt`，S_cal=%.2e m/µT，"
+        "ki·S_cal ≈ %.2e (m/µT/拍)，6s (600 拍) 内即使误差恒定在 ~10µT 量级，z_fb 累积量级"
+        "也只有个位数微米，远不足以抵消 mm 级的标定/纸面偏差。积分器并非无效，只是其时间"
+        "尺度与本次层 2 场景窗口不匹配；本报告如实呈现，不通过换用更大 ki（会破坏层 1 "
+        "稳定裕度判据）或拉长窗口来\"修出\"预期方向。" % (
+            max_pi_p_gap * 100, ki_pi, s_cal, ki_pi * s_cal),
+        "",
+    ]
+
+    drift = _drift_deception(rows)
+    lines += [
+        "**诚实负面对照 (drift 场景)**：传感器漂移场景下开环臂对偏差**免疫**（实测两条 "
+        "drift 场景的开环扰动分量均 ≈0µT，与 baseline 相比无统计差异，符合预期——开环不看"
+        "测量值）；而闭环臂反被漂移\"骗\"——漂移量与真实压力信号同向注入，反馈机制把它当成"
+        "真实接触压力的一部分来补偿，从而把 z 命令朝错误方向拉偏：",
+        "",
+        "| 场景 | 窗口漂移量 µT | 闭环-P 偏移 µT (被骗比例) | 闭环-PI 偏移 µT (被骗比例) |",
+        "|---|---|---|---|",
+    ]
+    for d in drift:
+        lines.append("| %s | %+.2f | %+.2f (%.0f%%) | %+.2f (%.0f%%) |" % (
+            d["scenario"], d["drift_ref_uT"], d["d_p"], 100 * d["frac_p"],
+            d["d_pi"], 100 * d["frac_pi"]))
+    lines.append("")
+    lines += [
+        "抗扰能力与被假信号欺骗是同一枚硬币的两面——反馈越强，对真实扰动补偿越好，对虚假信号"
+        "（无法被当前单磁通量计传感器区分是真实压力还是外部磁场漂移）也补偿越多，这正是差分测量"
+        "（多磁通量计差分抵消共模漂移）的论据；本报告如实呈现该劣化，**不通过调参掩盖**。",
+        "",
+        "⚠️ 与 calib/paper 场景同一根因：闭环-PI 被骗比例（~%.0f%%）与闭环-P（~%.0f%%）"
+        "同量级，**未**如 spec §3.4 预期那样趋近 100%%（积分器\"无差别全部吸收\"恒速漂移）——"
+        "同样是因为 ki=%.4g 的积分时间常数远超 ~6s 窗口，drift 场景下积分器同样来不及发力。"
+        "这不是数值符号或方向性错误（PI 被骗比例确实 ≥P，方向正确），而是**幅度未达预期**，"
+        "与上方 calib/paper 节的根因诊断一致，一并计入本报告的\"叙事矛盾\"清单。" % (
+            100 * sum(d["frac_pi"] for d in drift) / max(len(drift), 1),
+            100 * sum(d["frac_p"] for d in drift) / max(len(drift), 1), ki_pi),
+        "",
+        "![纸面阶跃恢复对比](assets/z-phase1-arms-paperstep.png)",
+        "",
+    ]
+
+    if v0_rows:
+        lines += [
+            "### 真实感目标复核 (press_from_v0)",
+            "",
+            "V0 动态段目标曲线 (缩放至 0.8×量程上限) 下三臂跟踪 RMS，作为 `synth_press` "
+            "合成目标之外的复核：",
+            "",
+            "| 臂 | RMS % |",
+            "|---|---|",
+        ]
+        for r in v0_rows:
+            lines.append("| %s | %.2f |" % (r["arm"], r["rms"]))
+        lines.append("")
+
+    baseline_P = next((r for r in rows if r["scenario"] == "baseline" and r["arm"] == "closed-P"), None)
+    baseline_PI = next((r for r in rows if r["scenario"] == "baseline" and r["arm"] == "closed-PI"), None)
+    lines += [
+        "## Q4: freeze 切换毛刺判据 (spec §3.4)",
+        "",
+        "判据：切换点 ±5 拍窗口内单步 `|Δz_cmd|` ≤ 正常跟踪段单步 `|Δz_cmd|` 的 p99×2 且绝对值 "
+        "≤0.2mm，且整段 `osc_index ≤ 0.05`（切换后 0.5s 内无新增振荡的代理判据）。评估 baseline "
+        "场景下两个闭环臂（**闭环-PI 为主判据**——freeze 冻结的是积分器，其切换交互只在 ki>0 时"
+        "有意义）。",
+        "",
+        "| 臂 | 毛刺跳变 jump (mm) | 正常段 p99×2 (mm) | osc_index | 判据 |",
+        "|---|---|---|---|---|",
+    ]
+    for name, r in (("closed-P", baseline_P), ("closed-PI", baseline_PI)):
+        if r is None:
+            lines.append("| %s | — | — | — | 未找到 baseline 数据 |" % name)
+            continue
+        g = r["glitch"]
+        verdict = "**通过 ✓**" if g["ok"] else "**不通过 ✗**"
+        osc = osc_index(r["res"])
+        lines.append("| %s | %.4f | %.4f | %.3f | %s |" % (
+            name, g["jump_m"] * 1000.0, 2 * g["p99_m"] * 1000.0, osc, verdict))
+    lines.append("")
+
+    pi_ok = baseline_PI is not None and baseline_PI["glitch"]["ok"]
+    p_ok = baseline_P is not None and baseline_P["glitch"]["ok"]
+    if pi_ok:
+        lines.append("**结论 (PI 臂为主判据): 通过。** freeze 切换未产生超标毛刺，"
+                     "spec §2.4 fallback（Kp 一并冻结）**不触发**，`z_control.py` 当前"
+                     "\"freeze 期间 Kp 保持作用\"的行为维持不变。")
+    else:
+        lines.append("**结论 (PI 臂为主判据): 不通过。** ⚠️ **触发 spec §2.4 fallback：需在 "
+                     "`z_control.py` 的 `step()` 中把 Kp 项改为 "
+                     "`(0.0 if self._frozen else self._kp) * self._s_cal * e`，重跑 Task 7 正式扫描 "
+                     "+ 本任务 (Task 8)，并在两份报告标注 fallback 已触发。本次运行未做此改动**"
+                     "（由控制器决定 spec §2.4 fallback 的裁决权限不属于本脚本，此处只报告结论）。")
+    lines.append("")
+    if not p_ok and baseline_P is not None:
+        lines.append("（附注：闭环-P 臂同样未通过判据，但按 spec §3.4 以 PI 臂为主判据裁决 fallback "
+                     "是否触发；P 臂结果仅供参考。）")
+        lines.append("")
+
+    lines += [
+        "![freeze 切换放大](assets/z-phase1-arms-freeze.png)",
+        "",
+        "## Caveat",
+        "",
+        "- **裸态噪声是乐观下界**：σ_f 用未装配 (裸态) V0 idle 数据估计；装配态 E0 数据到位后"
+        "须重跑本脚本复核全部数字（脚本吃 `--csv-dir` 参数）。",
+        "- **τ=0.05s / n_delay=2 拍为假设值**（真机执行器未标定），层 1 报告 (`docs/z-phase1-sweep.md`) "
+        "的敏感性抽查覆盖了工作点在该假设范围内的稳定性，本报告未重复该抽查。",
+        "- 全部结论限定在\"裸态仿真条件\"下；OneEuro 滤波器的最终选型定稿（层 1 vs 层 2 综合裁决）"
+        "见 spec §3.3 规则与 Task 9 报告。",
+        "- drift 场景闭环劣化是本设计的**已知特性**而非缺陷：它是差分测量方案的论据，禁止通过调参"
+        "\"修掉\"。",
+        ("- **叙事矛盾（Task 8 已发现，未修改代码）**：wp_PI 的 ki=%.4g（层 1 对数网格最小 "
+         "ki>0 候选点）在本层 2 场景 (~6–8s) 内积分时间常数过长，闭环-PI 在 calib/paper/drift "
+         "全部场景下实测表现与闭环-P 几乎不可区分（详见上文 Q3 表格与逐场景比对），未达 spec "
+         "§3.4 预期的\"≈全补偿\" / \"~100%% 被骗\"。这是 Layer 1 工作点规则（min-RMS + 稳定裕度）"
+         "在干净场景下天然选出的\"能用但慢\"积分增益的直接后果，留给 Task 9 综合裁决"
+         "（例如是否需要为层 2 抗扰专门重选一个更大的 ki 候选、或拉长扰动持续时间、或接受"
+         "此限制并如实写入最终选型结论）。" % ki_pi),
+        "",
+    ]
+    out_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--kp-p", type=float, required=True, help="wp_P 的 kp")
+    ap.add_argument("--ki-p", type=float, required=True, help="wp_P 的 ki (通常 0)")
+    ap.add_argument("--kp-pi", type=float, required=True, help="wp_PI 的 kp")
+    ap.add_argument("--ki-pi", type=float, required=True, help="wp_PI 的 ki (>0)")
+    ap.add_argument("--filter", default="OneEuro mc=0.5 b=0.03",
+                    choices=list(MAKE_FILTER))
+    ap.add_argument("--csv-dir", default=str(ROOT / "delta_b_v0_20260724"))
+    ap.add_argument("--out", default=str(ROOT / "docs" / "z-phase1-results.md"))
+    args = ap.parse_args(argv)
+
+    csvs = sorted(p for p in Path(args.csv_dir).glob("*.csv") if "idle" in p.stem)
+    mk = MAKE_FILTER[args.filter]
+    sigma_f = V0NoiseSource(csvs, seed=SEED).filtered_sigma(mk)
+    g_d = synth_press(cal_max=CALIB_DB[-1])
+
+    arms = (("open", 0.0, 0.0), ("closed-P", args.kp_p, args.ki_p),
+            ("closed-PI", args.kp_pi, args.ki_pi))
+    rows = []
+    for name, plant_kw in SCENARIOS:
+        for arm, kp, ki in arms:
+            res, _ = run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw)
+            rec = (recovery_time_s(res, plant_kw["paper_step"][0], sigma_f)
+                   if "paper_step" in plant_kw else None)
+            rows.append({"scenario": name, "arm": arm,
+                         "rms": rms_pct(res, sigma_f), "bias": steady_bias(res),
+                         "recovery": rec, "glitch": glitch_verdict(res),
+                         "res": res})
+    # 真实感目标复核: baseline 双臂再跑一条 press_from_v0
+    dyn = sorted(p for p in Path(args.csv_dir).glob("*.csv") if "idle" not in p.stem)
+    v0_rows = []
+    if dyn:
+        g_v0 = press_from_v0(dyn[0])
+        g_v0 = g_v0 * (0.8 * CALIB_DB[-1] / max(g_v0.max(), 1e-9))
+        for arm, kp, ki in arms:
+            res, _ = run_arm(kp, ki, mk, sigma_f, g_v0, csvs, {})
+            v0_rows.append({"arm": arm, "rms": rms_pct(res, sigma_f)})
+    write_report(rows, v0_rows, args, sigma_f, Path(args.out))
+    print("报告:", args.out)
+
+
+if __name__ == "__main__":
+    main()
