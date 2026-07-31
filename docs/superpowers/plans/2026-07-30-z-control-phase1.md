@@ -889,7 +889,7 @@ if __name__ == "__main__":
     main()
 ```
 
-`write_report(results, kp_grid, ki_grid, out_md)` 生成 markdown：每臂一节（σ_f、工作点 kp/ki/RMS、相位裕度或"非线性—时域裕度 2 网格步"、敏感性 3×3 表、热力图引用）；汇总表回答 Q1（各臂工作点 RMS vs "none" 臂 RMS）与 Q2（边界描述 + 裕度数）；注明：稳定判定 OSC_MAX=0.05、+2 网格步的实际倍数（kp ×2.48、ki ×3.73）、τ/n_delay 为假设值、裸态噪声乐观下界、OneEuro 定稿候选结论待层 2 确认。表格格式仿 `docs/filter-comparison.md`。
+**（2026-07-30 修订：双工作点）** `working_point` 除原规则（wp_P，实测落 ki=0）外，再以 ki>0 约束选出 wp_PI；`sensitivity` 与相位裕度两点都算。`write_report(results, kp_grid, ki_grid, out_md)` 生成 markdown：每臂一节（σ_f、wp_P 与 wp_PI 各自的 kp/ki/RMS、相位裕度或"非线性—时域裕度 2 网格步"、两点的敏感性 3×3 表、热力图标两星、ki=0 现象的盲区解释）；汇总表回答 Q1（各臂工作点 RMS vs "none" 臂 RMS）与 Q2（边界描述 + 裕度数）；注明：稳定判定 OSC_MAX=0.05、+2 网格步的实际倍数（kp ×2.48、ki ×3.73）、τ/n_delay 为假设值、裸态噪声乐观下界、OneEuro 定稿候选结论待层 2 确认。表格格式仿 `docs/filter-comparison.md`。
 
 - [ ] **Step 2: 冒烟运行**
 
@@ -925,12 +925,12 @@ Run: `python -m pytest tests/ -q` → 全绿。
 
 ```python
 #!/usr/bin/env python3
-"""层2: {开环, 闭环} × {扰动场景} 对比 → 论文数字 + freeze 毛刺检查.
+"""层2: {开环, 闭环-P, 闭环-PI} × {扰动场景} 对比 → 论文数字 + freeze 毛刺检查.
 
-用法 (单行, kp/ki/filter 取层1报告工作点):
-    python scripts/compare_z_arms.py --kp 0.4 --ki 0.03 --filter "OneEuro mc=0.5 b=0.03"
+用法 (单行, 两组 kp/ki 取层1报告的 wp_P 与 wp_PI, spec §3.3 双工作点修订):
+    python scripts/compare_z_arms.py --kp-p 1.21 --ki-p 0 --kp-pi 1.21 --ki-pi 0.03 --filter "EMA a=0.3"
 
-回答 spec §1 的 Q3 (开环 vs 闭环) 与 Q4 (freeze 毛刺).
+回答 spec §1 的 Q3 (开环 vs 闭环-P vs 闭环-PI) 与 Q4 (freeze 毛刺, PI 臂为主).
 """
 import argparse
 import sys
@@ -1008,8 +1008,10 @@ def glitch_verdict(res):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--kp", type=float, required=True)
-    ap.add_argument("--ki", type=float, required=True)
+    ap.add_argument("--kp-p", type=float, required=True, help="wp_P 的 kp")
+    ap.add_argument("--ki-p", type=float, required=True, help="wp_P 的 ki (通常 0)")
+    ap.add_argument("--kp-pi", type=float, required=True, help="wp_PI 的 kp")
+    ap.add_argument("--ki-pi", type=float, required=True, help="wp_PI 的 ki (>0)")
     ap.add_argument("--filter", default="OneEuro mc=0.5 b=0.03",
                     choices=list(MAKE_FILTER))
     ap.add_argument("--csv-dir", default=str(ROOT / "delta_b_v0_20260724"))
@@ -1021,9 +1023,11 @@ def main(argv=None):
     sigma_f = V0NoiseSource(csvs, seed=SEED).filtered_sigma(mk)
     g_d = synth_press(cal_max=CALIB_DB[-1])
 
+    arms = (("open", 0.0, 0.0), ("closed-P", args.kp_p, args.ki_p),
+            ("closed-PI", args.kp_pi, args.ki_pi))
     rows = []
     for name, plant_kw in SCENARIOS:
-        for arm, kp, ki in (("open", 0.0, 0.0), ("closed", args.kp, args.ki)):
+        for arm, kp, ki in arms:
             res, _ = run_arm(kp, ki, mk, sigma_f, g_d, csvs, plant_kw)
             rec = (recovery_time_s(res, plant_kw["paper_step"][0], sigma_f)
                    if "paper_step" in plant_kw else None)
@@ -1037,7 +1041,7 @@ def main(argv=None):
     if dyn:
         g_v0 = press_from_v0(dyn[0])
         g_v0 = g_v0 * (0.8 * CALIB_DB[-1] / max(g_v0.max(), 1e-9))
-        for arm, kp, ki in (("open", 0.0, 0.0), ("closed", args.kp, args.ki)):
+        for arm, kp, ki in arms:
             res, _ = run_arm(kp, ki, mk, sigma_f, g_v0, csvs, {})
             v0_rows.append({"arm": arm, "rms": rms_pct(res, sigma_f)})
     write_report(rows, v0_rows, args, sigma_f, Path(args.out))
@@ -1048,12 +1052,12 @@ if __name__ == "__main__":
     main()
 ```
 
-`write_report` 生成 `docs/z-phase1-results.md`：Q3 主表（场景 × 臂 → RMS% / 稳态偏差 µT / 恢复时间 s），drift 行加"诚实负面对照：闭环被漂移拉偏 X µT，开环免疫——差分测量的论据（spec §3.4）"注释；Q4 节（baseline 闭环的 freeze_jump、p99、判据结论；不通过 → 显著标注"触发 spec §2.4 fallback：Kp 纳入 freeze，需回 Task 9 前处理"）；波形图两张（paper step 恢复对比、起笔/收笔 freeze 放大）存 `docs/assets/z-phase1-arms-paperstep.png` / `-freeze.png`（matplotlib Agg + CJK 字体设置抄 `sweep_z_gains.make_heatmap` 开头）；文末 caveat：裸态噪声乐观下界、τ/n_delay 假设值、结论限"裸态仿真条件"。
+`write_report` 生成 `docs/z-phase1-results.md`：Q3 主表（场景 × 三臂 → RMS% / 稳态偏差 µT / 恢复时间 s），须讲清两个口径差的因果（spec §3.4 修订）：恒定偏差下 P 臂稳态残差 e_ss=d/(1+kp) 只消 ~55% 而 PI→0；drift 行加"诚实负面对照：P 臂被骗 ~45%、PI 臂被骗 100%（抗扰与被骗同源），开环免疫——差分测量的论据"注释；Q4 节（baseline 两个闭环臂的 freeze_jump、p99、判据结论，**PI 臂为主**；不通过 → 显著标注"触发 spec §2.4 fallback：Kp 纳入 freeze，需回 Task 9 前处理"）；波形图两张（paper step 恢复对比、起笔/收笔 freeze 放大）存 `docs/assets/z-phase1-arms-paperstep.png` / `-freeze.png`（matplotlib Agg + CJK 字体设置抄 `sweep_z_gains.make_heatmap` 开头）；文末 caveat：裸态噪声乐观下界、τ/n_delay 假设值、结论限"裸态仿真条件"。
 
 - [ ] **Step 2: 运行（工作点取自层 1 报告）**
 
-Run: `python scripts/compare_z_arms.py --kp <层1工作点kp> --ki <层1工作点ki> --filter "<层1胜出滤波>"`
-Expected: 报告生成。核对叙事方向：calib/paper 场景闭环显著优于开环；drift 场景开环 bias≈0、闭环被拉偏；baseline 两臂接近。freeze 判据出结论。若 Q4 不通过：按 spec §2.4 在 `z_control.py` 的 `step()` 中把 Kp 项改为 `(0.0 if self._frozen else self._kp) * self._s_cal * e`，重跑 Task 7 正式扫描 + 本任务，并在两份报告标注 fallback 已触发。
+Run: `python scripts/compare_z_arms.py --kp-p <层1 wp_P kp> --ki-p <层1 wp_P ki> --kp-pi <层1 wp_PI kp> --ki-pi <层1 wp_PI ki> --filter "<层1胜出滤波>"`
+Expected: 报告生成。核对叙事方向：calib/paper 场景 PI 臂 ≈ 全补偿、P 臂 ~55% 部分补偿、开环不补；drift 场景开环 bias≈0、P 臂被拉偏 ~45%、PI 臂被拉偏 ~100%；baseline 三臂接近。freeze 判据出结论。若 Q4 不通过：按 spec §2.4 在 `z_control.py` 的 `step()` 中把 Kp 项改为 `(0.0 if self._frozen else self._kp) * self._s_cal * e`，重跑 Task 7 正式扫描 + 本任务，并在两份报告标注 fallback 已触发。
 
 - [ ] **Step 3: 全套测试回归**
 
@@ -1078,7 +1082,7 @@ Run: `python -m pytest tests/ -q` → 全绿。
 
 - [ ] **Step 1: 回填默认增益**
 
-把 `ZController.__init__` 的 `kp=0.3, ki=0.03` 改为层 1 胜出滤波臂的工作点值，docstring 注明"默认值 = Phase 1 层 1 扫描工作点（裸态仿真，`docs/z-phase1-sweep.md`）"。
+把 `ZController.__init__` 的 `kp=0.3, ki=0.03` 改为层 1 胜出滤波臂的 **wp_PI** 值（积分是设计意图，ki=0 的 wp_P 只作层 2 对照口径），docstring 注明"默认值 = Phase 1 层 1 扫描工作点 wp_PI（裸态仿真，`docs/z-phase1-sweep.md`）"。
 
 - [ ] **Step 2: 全套测试回归**
 
