@@ -1,5 +1,7 @@
 # Handoff: Z 控制即時濾波器設計
 
+> ⚠️ **本文档已完成历史使命（2026-07-31 归档）**：滤波器库已交付（src/brushbot/filter.py），选型与在环评估均已定稿。现状见 docs/filter-comparison.md（孤立指标口径）、docs/z-phase1-sweep.md + docs/handoff-z-phase1.md §1.3（控制环在环口径，定稿 EMA α=0.3）。以下内容仅作立项背景历史参考。
+
 > 給下一個 session 的交接文件。
 > 狀態：監控窗口已有 EMA 平滑顯示（視覺用途）；**Z 控制迴路的即時濾波器尚未設計與實現**。
 > 分支：`feat/deltab-monitor`

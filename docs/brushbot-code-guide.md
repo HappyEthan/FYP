@@ -2,7 +2,7 @@
 
 > 执行端（机械臂书法）的完整代码导览：每个文件干什么、为什么这么写、踩过哪些坑。
 > 对应架构设计见 `docs/control-architecture.md`；上手运行见 `quick_start.md`。
-> 生成 2026-07-21。当前状态：B0+B1（仿真开环写字）完成，33 个测试全绿，739 行。
+> 生成 2026-07-21，2026-07-31 更新。当前状态：B0+B1 + ΔB 监控 + 触觉仿真 + 滤波器库 + Z 控制 Phase 0/1 完成，130 个测试全绿。
 
 ---
 
@@ -22,6 +22,9 @@ src/brushbot/
 ├── types.py             11行  State / Command —— 层与层之间只传这两个
 ├── run.py                8行  ③ 通用运行循环 (read→step→write)
 ├── controller.py        34行  ① 开环控制器 (弧长匀速插值)
+├── filter.py            116行  逐样本实时滤波器: 2阶 Butterworth IIR / One Euro 自适应低通
+├── z_control.py         130行  Z 轴闭环控制 Phase 0: `ZController` 前馈 z_ff + 低增益 PI 反馈
+├── sim_loop.py           187行  闭环仿真 harness: V0 噪声回放 + Plant(延迟/执行器/扰动) + 唯一闭环路径 `run_loop`
 ├── scene.py             62行  PyBullet 封装: 载臂/IK/关节/步进
 ├── backends/
 │   ├── base.py           6行  RobotBackend 协议 (read/write)
@@ -37,10 +40,30 @@ src/brushbot/
 ├── write_hanzi.py       55行  入口A: 写任意汉字   ★主力
 ├── write_openloop.py    33行  入口B: 写手编笔序 (复现 CalliRewrite)
 ├── examples/strokes.py   6行  手编的"十"字笔序
+├── monitor/                  ΔB 实时监控窗口 (独立于书写主链路)
+│   ├── core.py          116行  无 GUI 核心: 环形缓冲 + 基线 + 派生量 (禁止 import GUI 库)
+│   ├── sources.py       205行  可插拔信号源 (串口/仿真/回放), 一律输出原始 B, 扣基线由 core 负责
+│   ├── recorder.py      141行  录制成 V0 数据集格式 (CSV+JSON)
+│   ├── window.py        466行  PyQtGraph 监控窗口, 唯一允许 import GUI 库的模块
+│   └── __main__.py        4行  `python -m brushbot.monitor` 入口
+├── tactile/                  触觉仿真 (MuJoCo 路线)
+│   ├── antenna_model.py 199行  P0 触角磁学半段: 中线形变 → 磁偶极子链 → 传感器处 ΔB (纯 numpy)
+│   ├── contact_sim.py   187行  MuJoCo 接触涌现形变 → 复用 P0 磁学 → ΔB
+│   ├── separability.py  102行  压/拖可分性量化 → 喂 E4 判据
+│   ├── writing_tactile.py 98行  写字运动实时驱动合成 ΔB (B2 的合成 g_meas 源)
+│   └── mj_write.py      421行  方案B·全 MuJoCo: 臂+末端物理触角+纸; Phase1/2/4 可用, Phase3 触角物理弯 ΔB 发散未根治
 └── assets/
     ├── elfin5/          Elfin5 URDF + STL (BSD-3, 见 NOTICE.md)
     └── paper.obj        带 UV 的四边形 = 仿真里的"纸"
-scripts/watch_write.py  188行  交互式写字入口 (GUI/按键/重写)
+scripts/
+├── watch_write.py            188行  交互式写字入口 (GUI/按键/重写)
+├── watch_write_tactile.py    114行  本机 GUI: 写字 + 笔尖触角随压深/拖拽弯曲 + 实时 ΔB 曲线
+├── analyze_deltab.py         277行  V0 数据集分析: 完整性/噪声底(E0)/基线/幅度/可分性(E4)/三轴结构
+├── make_replay.py            428行  ΔB 数据集打包成自包含交互式回放 HTML
+├── compare_filters.py        336行  滤波器定量对比 (EMA/Butterworth/One Euro) → 孤立指标选型报告
+├── sweep_z_gains.py          443行  层1: {滤波}×{kp,ki} 增益扫描 → 稳定边界 + 双工作点 (Q1/Q2)
+├── compare_z_arms.py         723行  层2: {开环,闭环-P,闭环-PI}×{扰动场景} 对比 → 论文数字 + freeze 毛刺检查 (Q3/Q4)
+└── demo_z_control.py         141行  Phase 0 demo: 整体 ΔB 跟踪闭环仿真三联图
 ```
 
 **分层**（见 `control-architecture.md`）：
@@ -259,7 +282,7 @@ push_ink(canvas, paper_id, cid)   # 落盘 → loadTexture → changeVisualShape
 
 ---
 
-## 4. 测试地图（33 个）
+## 4. 测试地图（130 个）
 
 | 测试文件 | 数量 | 测什么 | 需要 pybullet? |
 |---|---|---|---|
@@ -267,6 +290,7 @@ push_ink(canvas, paper_id, cid)   # 落盘 → loadTexture → changeVisualShape
 | `test_run` | 2 | FakeBackend 回显 + 循环记录 | ❌ |
 | `test_controller` | 3 | 弧长插值/终止/越界钳制 | ❌ |
 | `test_calibration` | 2 | r→z 单调性/溢出保护 | ❌ |
+| `test_strokeseq` | 2 | CalliRewrite 笔序 → 米制坐标缩放/抬笔点门控 | ❌ |
 | `test_hanzi` | 6 | 查字/缩放居中/抬落笔结构/**字旋转** | ❌ |
 | `test_inkcanvas` | 5 | 世界→像素/画墨/清空/字节长度 | ❌ |
 | `test_render` | 2 | 出图/无落笔点报错 | ❌ |
@@ -274,8 +298,17 @@ push_ink(canvas, paper_id, cid)   # 落盘 → loadTexture → changeVisualShape
 | `test_sim_backend` | 2 | 位置跟踪/**姿态保持垂直** | ✅ |
 | `test_write_openloop` | 1 | 端到端写"十" | ✅ |
 | `test_write_hanzi` | 2 | 端到端写"永"/字不存在报错 | ✅（缺数据集自动 skip） |
+| `test_filter` | 20 | ButterworthFilter/OneEuroFilter 单测（阶跃/频响/NaN 透传，spec §6） | ❌ |
+| `test_compare_filters` | 11 | `scripts/compare_filters.py` 指标函数（f3db/群延迟/相位滞后/推荐逻辑） | ❌ |
+| `test_z_control` | 8 | `ZController` 前馈+PI、积分器 freeze 行为 | ❌ |
+| `test_sim_loop` | 18 | `sim_loop.py`：V0NoiseSource/Plant/run_loop/收敛与发散判据 | ❌ |
+| `test_monitor_core` | 7 | `RingBuffer`/`Baseline`/`EMA`/`derive` | ❌ |
+| `test_monitor_sources` | 15 | 串口成帧 `parse_serial_line`/可插拔信号源 | ❌ |
+| `test_monitor_recorder` | 8 | 录制成 V0 格式 + 与 `analyze_deltab.py` 对接 | ❌ |
+| `test_monitor_contracts` | 10 | 跨模块契约（无 GUI 依赖/录制→分析脚本端到端），评审 Critical 项来源 | ❌ |
+| `test_smoke` | 1 | 包可导入、`__version__` 存在 | ❌ |
 
-**24/33 是纯逻辑测试**，毫秒级——这是分层的直接收益。
+**122/130 是纯逻辑测试**，毫秒级——这是分层的直接收益（仅 `test_scene`/`test_sim_backend`/`test_write_openloop`/`test_write_hanzi` 共 4 个文件、8 项测试需要 pybullet）。
 
 ---
 
@@ -323,3 +356,5 @@ push_ink(canvas, paper_id, cid)   # 落盘 → loadTexture → changeVisualShape
 - ❌ **运笔节奏**：全程匀速
 
 这些正是 **B2（触觉力控提按）** 与后续的工作内容，也是项目"闭环 vs 开环"核心对比实验的另一半。
+
+> B2/Z 控制详见 `docs/handoff-z-phase1.md`。

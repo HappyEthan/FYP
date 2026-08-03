@@ -3,6 +3,7 @@
 > 目的：定下**执行端算法代码的组织方式**，使"先在仿真开发、后接实机"变成**换后端**、而不是重写。
 > 核心一句话：**把"控制算法"和"跟谁通信(I/O)"彻底分开——算法是纯 Python，不知道自己在跟 PyBullet 还是真机 Elfin 说话。**
 > 关联：`note.md` 的两个接口契约（`StrokePlan` + 实时 `g_meas` 流）；`plan.md` 的 B0/B1/B2；`reference/执行方案-力控.md`。
+> Z 轴闭环的具体实现见 `docs/handoff-z-phase1.md`（ZController + sim_loop）。
 > 生成 2026-07-13。
 
 ---
@@ -192,5 +193,5 @@ while running:
 ## 8. 待定 / 依赖
 
 - **实机接口已定 = 华沿 Python SDK**（`HRIF_PushServoP` 流式笛卡尔伺服，无需 ROS/Docker/EtherCAT）。待实机确认：**Servo 频率上限**（示例 50Hz，能否更高）、**SDK `.so` 的 Python 版本**（见到 py3.6/3.7，实机后端可能需单独环境）、`HRIF_SetSimulation` 需连控制器。
-- **仿真器**：先 **PyBullet**（最省事、内置 IK、直接读 URDF）；要更真实接触动力学再考虑 **MuJoCo**。
+- **仿真器**：先 **PyBullet**（最省事、内置 IK、直接读 URDF）；要更真实接触动力学再考虑 **MuJoCo**——MuJoCo 路线已落地，见 `docs/mujoco-usage.md`。
 - **Elfin URDF**：从官方 `elfin_robot` 包 / 大族 3D 模型下载获取。
