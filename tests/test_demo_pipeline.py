@@ -91,14 +91,22 @@ def _make_demo(speed_mod=0.5, seed=3, noise_std=2.0, n_strokes=2,
     s_of_t = tn + speed_mod * np.sin(2.0 * np.pi * tn) / (2.0 * np.pi)
     s_of_t = (s_of_t - s_of_t[0]) / (s_of_t[-1] - s_of_t[0])
     s_grid = np.linspace(0.0, 1.0, 400)
-    g_parts, xy_parts = [np.zeros(ngap)], [np.zeros((ngap, 2))]
+    # (2026-07-31 修正) 悬空段 XY 必须从上笔终点线性平移到下笔起点, 不许原地停住后瞬移:
+    # 真实的手不会瞬移; 零相位滤波会把接触边界抹进悬空段一两拍, 切分段若裹进瞬移点,
+    # 一步假弧长会吃掉大块 s 轴 (实测笔 1 恢复 RMS 98 µT 的根因).
+    starts = [np.array([0.0, 0.01 * k]) for k in range(n_strokes)]
+    ends = [np.array([0.04, 0.01 * k]) for k in range(n_strokes)]
+    frac = np.linspace(0.0, 1.0, ngap)[:, None]
+    g_parts = [np.zeros(ngap)]
+    xy_parts = [np.tile(starts[0], (ngap, 1))]          # 初始悬空: 停在首笔起点
     for k in range(n_strokes):
         g_parts.append(np.interp(s_of_t, s_grid, _g_true_s(s_grid)))
         x = 0.04 * s_of_t
         y = np.full(n, 0.01 * k)
         xy_parts.append(np.column_stack([x, y]))
+        nxt = starts[k + 1] if k + 1 < n_strokes else ends[k]
         g_parts.append(np.zeros(ngap))
-        xy_parts.append(np.tile([0.04, 0.01 * k], (ngap, 1)))
+        xy_parts.append(ends[k][None, :] * (1.0 - frac) + nxt[None, :] * frac)
     g = np.concatenate(g_parts)
     xy = np.vstack(xy_parts)
     direction = np.array([1.0, 0.3, 0.1]) / np.linalg.norm([1.0, 0.3, 0.1])
