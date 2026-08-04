@@ -547,11 +547,22 @@ def _make_demo(speed_mod=0.5, seed=3, noise_std=2.0, n_strokes=2,
     return {"t": t, "xy": xy, "dB": dB}, s_grid, _g_true_s(s_grid)
 
 
-def _interior_rms(a_s, a_g, b_s, b_g, lo=0.1, hi=0.9):
-    """两条 s 域曲线在内部区间的 RMS 差 (裁掉边缘: 切分边界与真值 s=0 不严格对齐)."""
-    grid = np.linspace(lo, hi, 200)
-    return float(np.sqrt(np.mean(
-        (np.interp(grid, a_s, a_g) - np.interp(grid, b_s, b_g)) ** 2)))
+def _true_s(st):
+    """几何真值 s: _make_demo 的笔画是 x=0.04·s 的直线, 故 x/0.04 精确给出每个
+    恢复样本的真实 s —— 不依赖"恢复段支撑 == 真值支撑"假设 (边界内缩后两者必然不同)."""
+    return np.clip(st.xy[:, 0] / 0.04, 0.0, 1.0)
+
+
+def _geom_rms(st, lo=0.1, hi=0.9):
+    """恢复 g_press vs 几何对齐真值的内部区间 RMS."""
+    ts = _true_s(st)
+    m = (ts >= lo) & (ts <= hi)
+    return float(np.sqrt(np.mean((st.g_press[m] - _g_true_s(ts[m])) ** 2)))
+
+
+def _on_true_grid(st, grid):
+    """恢复 g_press 重采样到几何真值 s 网格 (直线笔画的 ts 单调递增)."""
+    return np.interp(grid, _true_s(st), st.g_press)
 
 
 def test_reparam_arclength_uniform_grid_and_short_arc():
@@ -565,24 +576,27 @@ def test_reparam_arclength_uniform_grid_and_short_arc():
 
 
 def test_build_plan_segments_and_recovers_truth():
-    """恢复精度 (spec Q1 单测版): 带噪变速示范 → 逐笔内部 RMS ≤ 3 µT."""
+    """恢复精度 (spec Q1 单测版): 带噪变速示范 → 逐笔几何对齐 RMS ≤ 3 µT."""
     demo, s_grid, g_true = _make_demo(speed_mod=0.5)
     plan = build_plan(demo, _CAL_Z, _CAL_DB)
     assert len(plan.strokes) == 2
+    assert plan.meta["edge_trim_s"] == pytest.approx(0.17)
     for st in plan.strokes:
-        assert _interior_rms(st.s, st.g_press, s_grid, g_true) <= 3.0
+        assert _geom_rms(st) <= 3.0
         assert (st.z_ff >= 0.0).all() and (st.z_ff <= 0.005).all()
     assert plan.meta["n_dropped_short"] == 0 and plan.meta["sat_frac"] == 0.0
 
 
 def test_speed_invariance():
-    """速度解耦 (spec Q2 单测版): 匀速 vs 变速恢复互差 ≤ 1 µT."""
+    """速度解耦 (spec Q2 单测版): 匀速 vs 变速恢复互差 ≤ 1 µT (几何网格上比)."""
     d_uni, _, _ = _make_demo(speed_mod=0.0, seed=5, noise_std=0.5)
     d_var, _, _ = _make_demo(speed_mod=0.5, seed=5, noise_std=0.5)
     p_uni = build_plan(d_uni, _CAL_Z, _CAL_DB)
     p_var = build_plan(d_var, _CAL_Z, _CAL_DB)
+    grid = np.linspace(0.1, 0.9, 200)
     for a, b in zip(p_uni.strokes, p_var.strokes):
-        assert _interior_rms(a.s, a.g_press, b.s, b.g_press) <= 1.0
+        diff = _on_true_grid(a, grid) - _on_true_grid(b, grid)
+        assert float(np.sqrt(np.mean(diff ** 2))) <= 1.0
 
 
 def test_build_plan_saturation_counted():
@@ -626,9 +640,16 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
     if sigma is None:
         sigma = estimate_sigma(g_clean)
     segs, n_dropped_short = segment_strokes(g_clean, sigma)
+    # 边界内缩: 零相位砖墙低通把接触边界抹开 ~0.5/fc, 段边缘裹进的"悬空但在移动"
+    # 样本会伪造弧长 (实测 40mm 笔画被污染 17-21%); 收缩后段内每拍 XY 都真实在纸上.
+    trim = int(round(0.5 * FS / fc))
     cal_max = float(np.max(calib_abs_dB))
     strokes, n_dropped_arc, n_sat, n_tot = [], 0, 0, 0
     for a, b in segs:
+        a, b = a + trim, b - trim
+        if b - a < int(0.1 * FS):              # 裁后过短 → 并入过短丢弃计数
+            n_dropped_short += 1
+            continue
         try:
             s, xy_s, g_s = reparam_arclength(demo["xy"][a:b], g_clean[a:b], M)
         except ValueError:
@@ -641,6 +662,7 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
                                   g_s, calib_z_mm, calib_abs_dB), float)))
     sat_frac = n_sat / max(n_tot, 1)
     meta = {"fc": float(fc), "M": int(M), "sigma": float(sigma),
+            "edge_trim_s": trim / FS,
             "n_dropped_short": int(n_dropped_short),
             "n_dropped_arc": int(n_dropped_arc), "sat_frac": float(sat_frac),
             "calib_fingerprint": [float(np.min(calib_z_mm)), float(np.max(calib_z_mm)),
@@ -712,6 +734,18 @@ def stroke_path(k, m):
         return np.column_stack([0.04 * t, np.full(m, y0)])
     ang = np.pi * t
     return np.column_stack([0.02 - 0.02 * np.cos(ang), y0 + 0.012 * np.sin(ang)])
+
+
+def true_s_on_path(xy, k):
+    """恢复样本 XY -> 几何真值 s (E2E 对齐用; 与管线边界内缩配套, 不假设支撑一致).
+
+    直线笔画 (偶 k) 用 x/0.04; 半椭圆弧 (奇 k) 用参数角反解."""
+    xy = np.asarray(xy, float)
+    if k % 2 == 0:
+        return np.clip(xy[:, 0] / 0.04, 0.0, 1.0)
+    y0 = 0.01 * k
+    ang = np.arctan2((xy[:, 1] - y0) / 0.012, (0.02 - xy[:, 0]) / 0.02)
+    return np.clip(ang / np.pi, 0.0, 1.0)
 
 
 def make_demo(n_strokes=3, stroke_s=3.0, gap_s=0.8, speed_mod=0.5, seed=42,
@@ -833,7 +867,8 @@ from brushbot.sim_loop import (Plant, V0NoiseSource, rms_pct,   # noqa: E402
                                run_loop)
 from brushbot.z_control import ZController, calib_lookup_z      # noqa: E402
 from brushbot.monitor.core import EMA                           # noqa: E402
-from synth_demo import make_demo, write_demo_csv                # noqa: E402
+from synth_demo import (g_true_s, make_demo, true_s_on_path,    # noqa: E402
+                        write_demo_csv)
 
 FS = 100.0
 CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
@@ -842,10 +877,15 @@ SEED = 42
 STROKE_DURATION_S = 3.0
 
 
-def _interior_rms(a_s, a_g, b_s, b_g, lo=0.1, hi=0.9):
-    grid = np.linspace(lo, hi, 200)
-    return float(np.sqrt(np.mean(
-        (np.interp(grid, a_s, a_g) - np.interp(grid, b_s, b_g)) ** 2)))
+def _geom_rms(st, k, lo=0.1, hi=0.9):
+    """恢复 g_press vs 几何对齐真值的内部 RMS (对齐经 true_s_on_path, 支撑无关)."""
+    ts = true_s_on_path(st.xy, k)
+    m = (ts >= lo) & (ts <= hi)
+    return float(np.sqrt(np.mean((st.g_press[m] - g_true_s(ts[m])) ** 2)))
+
+
+def _on_grid(st, k, grid):
+    return np.interp(grid, true_s_on_path(st.xy, k), st.g_press)
 
 
 def main():
@@ -864,16 +904,15 @@ def main():
         truths[name] = truth
     plan = plans["var"]
 
-    # --- Q1: 恢复精度 (变速+V0 噪声 vs 真值, 逐笔内部 RMS) ---
-    tr = truths["var"]
-    q1 = [_interior_rms(st.s, st.g_press, tr["s_grid"], tr["g%d" % k])
-          for k, st in enumerate(plan.strokes)]
+    # --- Q1: 恢复精度 (变速+V0 噪声 vs 真值, 逐笔几何对齐 RMS) ---
+    q1 = [_geom_rms(st, k) for k, st in enumerate(plan.strokes)]
     print("Q1 恢复精度: 逐笔 RMS = %s µT (判据 ≤3)" %
           ", ".join("%.2f" % v for v in q1))
 
-    # --- Q2: 速度解耦 ---
-    q2 = [_interior_rms(a.s, a.g_press, b.s, b.g_press)
-          for a, b in zip(plans["uni"].strokes, plans["var"].strokes)]
+    # --- Q2: 速度解耦 (几何真值网格上比) ---
+    grid = np.linspace(0.1, 0.9, 200)
+    q2 = [float(np.sqrt(np.mean((_on_grid(a, k, grid) - _on_grid(b, k, grid)) ** 2)))
+          for k, (a, b) in enumerate(zip(plans["uni"].strokes, plans["var"].strokes))]
     print("Q2 速度解耦: 匀速 vs 变速互差 RMS = %s µT (判据 ≤1)" %
           ", ".join("%.2f" % v for v in q2))
 
@@ -908,14 +947,17 @@ def main():
     import matplotlib.pyplot as plt
     fig, axes = plt.subplots(3, 1, figsize=(10, 10))
     st = plan.strokes[0]
+    tr = truths["var"]
     axes[0].plot(tr["s_grid"], tr["g0"], "k-", lw=2, label="真值 g(s)")
-    axes[0].plot(st.s, st.g_press, "--", lw=1.2, label="管线恢复")
+    axes[0].plot(true_s_on_path(st.xy, 0), st.g_press, "--", lw=1.2,
+                 label="管线恢复 (几何对齐)")
     axes[0].set(xlabel="s", ylabel="g (µT)", title="Q1: 恢复精度 (笔 0)")
     axes[0].legend(fontsize=8)
-    axes[1].plot(plans["uni"].strokes[0].s, plans["uni"].strokes[0].g_press,
-                 lw=1.2, label="匀速示范")
-    axes[1].plot(plans["var"].strokes[0].s, plans["var"].strokes[0].g_press,
-                 "--", lw=1.2, label="±50% 变速示范")
+    axes[1].plot(true_s_on_path(plans["uni"].strokes[0].xy, 0),
+                 plans["uni"].strokes[0].g_press, lw=1.2, label="匀速示范")
+    axes[1].plot(true_s_on_path(plans["var"].strokes[0].xy, 0),
+                 plans["var"].strokes[0].g_press, "--", lw=1.2,
+                 label="±50% 变速示范")
     axes[1].set(xlabel="s", ylabel="g (µT)", title="Q2: 速度解耦")
     axes[1].legend(fontsize=8)
     t_axis = np.arange(len(g_d)) / FS

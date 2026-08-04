@@ -72,10 +72,12 @@ reparam_arclength(xy_seg, g_seg, M=200) -> (s, xy_s, g_s)
 
 build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None) -> StrokePlan
 # 编排：sim_loop.fft_lowpass 整段 (N,3) 向量（先滤向量再取 norm，铁律）→ norm
-# → σ（sigma 参数可覆盖）→ 切分 → 逐笔重参数化 → z_ff 反查 → 打包
+# → σ（sigma 参数可覆盖）→ 切分 → 边界内缩 trim → 逐笔重参数化 → z_ff 反查 → 打包
 ```
 
 **滤波顺序决策**：整段滤波后再切笔画（避免短笔画的 FFT 边缘伪影；切分用滤后信号，边界干净）。
+
+**边界内缩（2026-07-31 实施期修订，实测驱动）**：零相位砖墙低通把接触边界抹开约 **0.5/fc**（fc=3Hz → ~0.17s ≈ 17 拍），切分段因此会裹进"悬空但笔在移动"的样本——实测漏 14–20 拍、给 40mm 笔画伪造 17–21% 弧长，把 g_press(s) 的 s 轴整体拉歪。真实示范同样存在此物理（笔画间笔在空中移动）。故 `build_plan` 在切分后把每段边界向内收缩 `trim = round(0.5·fs/fc)` 拍再重参数化；裁后过短的段并入丢弃计数。代价是每边丢 ~0.17s 的起笔/收笔沿（该区间 g 小、z_ff 贡献小，执行端本来就从悬空 ramp 进入），换来的是段内每一拍的 XY 都真实在纸上。meta 记录 `edge_trim_s`。
 
 **共享反查（小重构）**：把 `ZController._z_ff_lookup` 的排序+插值+饱和逻辑提为 `z_control.py` 模块级公开函数 `calib_lookup_z(g, calib_z_mm, calib_abs_dB) -> z_offset_m`，`ZController` 与管线共用——"想要多重→压多深"全项目只允许一份实现。反查饱和样本占比记入 `meta`，>5% 时 warning（示范力度超出标定范围的信号）。
 
