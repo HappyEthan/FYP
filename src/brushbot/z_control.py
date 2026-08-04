@@ -9,6 +9,19 @@
 import numpy as np
 
 
+def calib_lookup_z(g, calib_z_mm, calib_abs_dB):
+    """标定反查: 目标 |ΔB| (µT) -> 压深 offset (m). 全项目唯一实现.
+
+    内部按 abs_dB 排序 (容忍非单调标定输入); 低于下界 -> 0.0, 超上界 -> 最大压深
+    (饱和保护). g 为标量返回 float, 为数组返回同形状数组.
+    ZController 与离线管线 (demo_pipeline) 共用本函数."""
+    abs_dB = np.asarray(calib_abs_dB, dtype=float)
+    z_m = np.asarray(calib_z_mm, dtype=float) / 1000.0
+    idx = np.argsort(abs_dB)
+    out = np.interp(g, abs_dB[idx], z_m[idx], left=0.0, right=float(z_m[idx][-1]))
+    return float(out) if np.isscalar(g) or np.ndim(g) == 0 else out
+
+
 class ZController:
     """整体 ΔB 标量跟踪控制器。"""
 
@@ -42,6 +55,7 @@ class ZController:
         sort_idx = np.argsort(abs_dB)
         self._calib_dB = abs_dB[sort_idx]
         self._z_offset_m = z_offset_m[sort_idx]
+        self._calib_z_mm_sorted = np.asarray(calib_z_mm, dtype=float)[sort_idx]
 
         # Calculate calibration slope S_cal (m/µT)
         db_span = float(self._calib_dB[-1] - self._calib_dB[0])   # 已升序
@@ -60,9 +74,8 @@ class ZController:
         self._frozen = False
 
     def _z_ff_lookup(self, g_d: float) -> float:
-        """|ΔB| (μT) → z_offset (m). 超出标定范围则饱和."""
-        return float(np.interp(g_d, self._calib_dB, self._z_offset_m,
-                               left=0.0, right=self._z_offset_m[-1]))
+        """|ΔB| (μT) → z_offset (m). 委托 calib_lookup_z (全项目唯一反查实现)."""
+        return float(calib_lookup_z(g_d, self._calib_z_mm_sorted, self._calib_dB))
 
     def step(self, dB_meas: np.ndarray, g_d: float) -> float:
         """计算 z_cmd (m, 世界坐标).

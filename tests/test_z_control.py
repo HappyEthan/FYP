@@ -122,3 +122,17 @@ def test_step_tracks_constant():
         dB_meas = np.array([abs_meas, 0.0, 0.0])
     error = abs(g_d - np.linalg.norm(dB_meas)) / g_d
     assert error < 0.05, f"steady-state error {error:.3f} > 0.05"
+
+
+def test_calib_lookup_z_matches_controller_and_vectorizes():
+    from brushbot.z_control import calib_lookup_z
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    for g in (-10.0, 0.0, 75.0, 150.0, 999.0):
+        assert calib_lookup_z(g, _CALIB_Z, _CALIB_DB) == pytest.approx(
+            ctrl._z_ff_lookup(g))
+    arr = calib_lookup_z(np.array([0.0, 150.0, 999.0]), _CALIB_Z, _CALIB_DB)
+    np.testing.assert_allclose(arr, [0.0, 0.003, 0.005])
+    # 非单调标定输入同样正确 (排序在函数内)
+    shuffled = np.array([2, 0, 4, 1, 5, 3])
+    assert calib_lookup_z(150.0, _CALIB_Z[shuffled], _CALIB_DB[shuffled]) \
+        == pytest.approx(0.003)
