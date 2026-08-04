@@ -5,6 +5,10 @@
 """
 import numpy as np
 
+from brushbot.sim_loop import fft_lowpass
+from brushbot.strokeplan import Stroke, StrokePlan
+from brushbot.z_control import calib_lookup_z
+
 FS = 100.0
 DEMO_COLS = ("t_us", "t_s", "dBx_uT", "dBy_uT", "dBz_uT", "x_m", "y_m")
 
@@ -56,3 +60,53 @@ def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3):
     min_len = int(min_len_s * fs)
     segs = [(int(a), int(b)) for a, b in zip(starts, ends) if b - a >= min_len]
     return segs, int(len(starts) - len(segs))
+
+
+def reparam_arclength(xy_seg, g_seg, M=200):
+    """时域笔段 -> 均匀弧长域 (s, xy_s, g_s). 总弧长 < 1mm 抛 ValueError.
+
+    XY 停顿产生的 s 平台是合法输入 (非降序列, np.interp 安全)."""
+    ds = np.hypot(*np.diff(np.asarray(xy_seg, float), axis=0).T)
+    s = np.concatenate([[0.0], np.cumsum(ds)])
+    if s[-1] < 1e-3:
+        raise ValueError("笔画弧长 %.3g m < 1mm (原地按压不算笔画)" % s[-1])
+    s = s / s[-1]
+    s_grid = np.linspace(0.0, 1.0, M)
+    xy_s = np.column_stack([np.interp(s_grid, s, xy_seg[:, 0]),
+                            np.interp(s_grid, s, xy_seg[:, 1])])
+    return s_grid, xy_s, np.interp(s_grid, s, np.asarray(g_seg, float))
+
+
+def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
+    """编排整条管线: 整段零相位滤波 -> norm -> σ -> 切分 -> 逐笔重参数化 -> 反查.
+
+    铁律: 先滤 (N,3) 向量再取 norm. 整段滤波后再切分 (避免短笔段 FFT 边缘伪影)."""
+    g_clean = np.linalg.norm(fft_lowpass(demo["dB"], fc), axis=1)
+    if sigma is None:
+        sigma = estimate_sigma(g_clean)
+    segs, n_dropped_short = segment_strokes(g_clean, sigma)
+    cal_max = float(np.max(calib_abs_dB))
+    strokes, n_dropped_arc, n_sat, n_tot = [], 0, 0, 0
+    for a, b in segs:
+        try:
+            s, xy_s, g_s = reparam_arclength(demo["xy"][a:b], g_clean[a:b], M)
+        except ValueError:
+            n_dropped_arc += 1
+            continue
+        n_sat += int((g_s > cal_max).sum())
+        n_tot += len(g_s)
+        strokes.append(Stroke(s=s, xy=xy_s, g_press=g_s,
+                              z_ff=np.asarray(calib_lookup_z(
+                                  g_s, calib_z_mm, calib_abs_dB), float)))
+    sat_frac = n_sat / max(n_tot, 1)
+    meta = {"fc": float(fc), "M": int(M), "sigma": float(sigma),
+            "n_dropped_short": int(n_dropped_short),
+            "n_dropped_arc": int(n_dropped_arc), "sat_frac": float(sat_frac),
+            "calib_fingerprint": [float(np.min(calib_z_mm)), float(np.max(calib_z_mm)),
+                                  float(np.min(calib_abs_dB)), cal_max]}
+    if sat_frac > 0.05:
+        print("警告: %.1f%% 样本超标定范围被饱和 -- 示范力度超出标定表, 建议重标"
+              % (100.0 * sat_frac))
+    if n_dropped_short or n_dropped_arc:
+        print("提示: 丢弃过短笔画 %d 段 / 短弧长 %d 段" % (n_dropped_short, n_dropped_arc))
+    return StrokePlan(strokes=strokes, meta=meta)
