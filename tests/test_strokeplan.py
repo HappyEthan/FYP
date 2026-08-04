@@ -35,3 +35,39 @@ def test_empty_plan_roundtrip(tmp_path):
     p = tmp_path / "empty.npz"
     StrokePlan(strokes=[], meta={}).save(p)
     assert StrokePlan.load(p).strokes == []
+
+
+def test_waypoints_structure():
+    plan = _plan2()
+    wps = plan.to_waypoints(z_surface=0.20, lift=0.015)
+    m = len(plan.strokes[0].s)
+    assert len(wps) == 2 * (m + 2)                      # 每笔: 进入 + M + 抬笔
+    x0, y0 = plan.strokes[0].xy[0]
+    assert wps[0] == pytest.approx((x0, y0, 0.215))     # 悬空进入点
+    assert wps[1][2] == pytest.approx(0.20 + plan.strokes[0].z_ff[0])
+    assert wps[m + 1][2] == pytest.approx(0.215)        # 抬笔点
+    zs = np.array([w[2] for w in wps])
+    assert (zs >= 0.20 - 1e-12).all() and (zs <= 0.215 + 1e-12).all()
+
+
+def test_gd_series_structure():
+    plan = _plan2()
+    g_d, xy = plan.to_gd_series(stroke_duration_s=2.0, fs=100.0, gap_s=0.5)
+    n_st, n_gap = 200, 50
+    assert len(g_d) == len(xy) == 2 * (n_st + n_gap)
+    assert (g_d >= 0).all()
+    np.testing.assert_array_equal(g_d[n_st:n_st + n_gap], 0.0)   # 笔间悬空
+    np.testing.assert_array_equal(g_d[-n_gap:], 0.0)             # 尾部悬空
+    assert g_d[0] == pytest.approx(plan.strokes[0].g_press[0])
+
+
+def test_waypoints_drive_openloop_controller():
+    """B1 兼容 (spec Q4): OpenLoopController 原样消费 to_waypoints."""
+    from brushbot.controller import OpenLoopController
+    from brushbot.types import State
+    ctrl = OpenLoopController(_plan2().to_waypoints(), speed=0.02,
+                              fixed_ori=(0.0, 0.0, 0.0))
+    for i in range(50):
+        cmd = ctrl.step(State(tcp_pose=(0, 0, 0, 0, 0, 0), g_meas=0.0, t=i * 0.01))
+        x, y, z = cmd.tcp_pose[:3]
+        assert np.isfinite([x, y, z]).all() and 0.19 <= z <= 0.22

@@ -42,3 +42,39 @@ class StrokePlan:
                           g_press=d["s%d_g" % i], z_ff=d["s%d_z" % i])
                    for i in range(n)]
         return cls(strokes=strokes, meta=json.loads(str(d["meta_json"])))
+
+    def to_waypoints(self, z_surface=0.20, lift=0.015):
+        """开环路点 (CalliRewrite 式 baseline): 每笔 悬空进入 -> M 点 -> 抬笔.
+
+        输出裸 (x,y,z) 列表 (世界系, 米), OpenLoopController 零改动消费."""
+        wps = []
+        for st in self.strokes:
+            x0, y0 = (float(st.xy[0, 0]), float(st.xy[0, 1]))
+            xe, ye = (float(st.xy[-1, 0]), float(st.xy[-1, 1]))
+            wps.append((x0, y0, z_surface + lift))
+            for (x, y), z in zip(st.xy, st.z_ff):
+                wps.append((float(x), float(y), z_surface + float(z)))
+            wps.append((xe, ye, z_surface + lift))
+        return wps
+
+    def to_gd_series(self, stroke_duration_s, fs=FS, gap_s=0.5):
+        """闭环目标: 每笔匀速播放 g_press(s), 每笔后接 g_d=0 悬空段 (含最后一笔).
+
+        悬空段 xy 从本笔终点线性过渡到下一笔起点 (末笔停在原地).
+        返回 (g_d (T,), xy (T,2)), 可直接喂 sim_loop.run_loop."""
+        n_st = int(round(stroke_duration_s * fs))
+        n_gap = int(round(gap_s * fs))
+        t_norm = np.linspace(0.0, 1.0, n_st)
+        frac = np.linspace(0.0, 1.0, n_gap)[:, None]
+        g_parts, xy_parts = [], []
+        for k, st in enumerate(self.strokes):
+            g_parts.append(np.interp(t_norm, st.s, st.g_press))
+            xy_parts.append(np.column_stack(
+                [np.interp(t_norm, st.s, st.xy[:, 0]),
+                 np.interp(t_norm, st.s, st.xy[:, 1])]))
+            last = np.asarray(st.xy[-1], float)
+            nxt = (np.asarray(self.strokes[k + 1].xy[0], float)
+                   if k + 1 < len(self.strokes) else last)
+            g_parts.append(np.zeros(n_gap))
+            xy_parts.append(last[None, :] * (1.0 - frac) + nxt[None, :] * frac)
+        return np.concatenate(g_parts), np.vstack(xy_parts)
