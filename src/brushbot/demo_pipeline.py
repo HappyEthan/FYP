@@ -85,9 +85,16 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
     if sigma is None:
         sigma = estimate_sigma(g_clean)
     segs, n_dropped_short = segment_strokes(g_clean, sigma)
+    # 边界内缩: 零相位砖墙低通把接触边界抹开 ~0.5/fc, 段边缘裹进的"悬空但在移动"
+    # 样本会伪造弧长 (实测 40mm 笔画被污染 17-21%); 收缩后段内每拍 XY 都真实在纸上.
+    trim = int(round(0.5 * FS / fc))
     cal_max = float(np.max(calib_abs_dB))
     strokes, n_dropped_arc, n_sat, n_tot = [], 0, 0, 0
     for a, b in segs:
+        a, b = a + trim, b - trim
+        if b - a < int(0.1 * FS):              # 裁后过短 → 并入过短丢弃计数
+            n_dropped_short += 1
+            continue
         try:
             s, xy_s, g_s = reparam_arclength(demo["xy"][a:b], g_clean[a:b], M)
         except ValueError:
@@ -100,6 +107,7 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
                                   g_s, calib_z_mm, calib_abs_dB), float)))
     sat_frac = n_sat / max(n_tot, 1)
     meta = {"fc": float(fc), "M": int(M), "sigma": float(sigma),
+            "edge_trim_s": trim / FS,
             "n_dropped_short": int(n_dropped_short),
             "n_dropped_arc": int(n_dropped_arc), "sat_frac": float(sat_frac),
             "calib_fingerprint": [float(np.min(calib_z_mm)), float(np.max(calib_z_mm)),

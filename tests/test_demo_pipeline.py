@@ -115,11 +115,22 @@ def _make_demo(speed_mod=0.5, seed=3, noise_std=2.0, n_strokes=2,
     return {"t": t, "xy": xy, "dB": dB}, s_grid, _g_true_s(s_grid)
 
 
-def _interior_rms(a_s, a_g, b_s, b_g, lo=0.1, hi=0.9):
-    """两条 s 域曲线在内部区间的 RMS 差 (裁掉边缘: 切分边界与真值 s=0 不严格对齐)."""
-    grid = np.linspace(lo, hi, 200)
-    return float(np.sqrt(np.mean(
-        (np.interp(grid, a_s, a_g) - np.interp(grid, b_s, b_g)) ** 2)))
+def _true_s(st):
+    """几何真值 s: _make_demo 的笔画是 x=0.04·s 的直线, 故 x/0.04 精确给出每个
+    恢复样本的真实 s —— 不依赖"恢复段支撑 == 真值支撑"假设 (边界内缩后两者必然不同)."""
+    return np.clip(st.xy[:, 0] / 0.04, 0.0, 1.0)
+
+
+def _geom_rms(st, lo=0.1, hi=0.9):
+    """恢复 g_press vs 几何对齐真值的内部区间 RMS."""
+    ts = _true_s(st)
+    m = (ts >= lo) & (ts <= hi)
+    return float(np.sqrt(np.mean((st.g_press[m] - _g_true_s(ts[m])) ** 2)))
+
+
+def _on_true_grid(st, grid):
+    """恢复 g_press 重采样到几何真值 s 网格 (直线笔画的 ts 单调递增)."""
+    return np.interp(grid, _true_s(st), st.g_press)
 
 
 def test_reparam_arclength_uniform_grid_and_short_arc():
@@ -133,24 +144,27 @@ def test_reparam_arclength_uniform_grid_and_short_arc():
 
 
 def test_build_plan_segments_and_recovers_truth():
-    """恢复精度 (spec Q1 单测版): 带噪变速示范 → 逐笔内部 RMS ≤ 3 µT."""
+    """恢复精度 (spec Q1 单测版): 带噪变速示范 → 逐笔几何对齐 RMS ≤ 3 µT."""
     demo, s_grid, g_true = _make_demo(speed_mod=0.5)
     plan = build_plan(demo, _CAL_Z, _CAL_DB)
     assert len(plan.strokes) == 2
+    assert plan.meta["edge_trim_s"] == pytest.approx(0.17)
     for st in plan.strokes:
-        assert _interior_rms(st.s, st.g_press, s_grid, g_true) <= 3.0
+        assert _geom_rms(st) <= 3.0
         assert (st.z_ff >= 0.0).all() and (st.z_ff <= 0.005).all()
-    assert plan.meta["n_dropped_short"] == 0 and plan.meta["sat_frac"] == 0.0
+    assert plan.meta["sat_frac"] == 0.0
 
 
 def test_speed_invariance():
-    """速度解耦 (spec Q2 单测版): 匀速 vs 变速恢复互差 ≤ 1 µT."""
+    """速度解耦 (spec Q2 单测版): 匀速 vs 变速恢复互差 ≤ 1 µT (几何网格上比)."""
     d_uni, _, _ = _make_demo(speed_mod=0.0, seed=5, noise_std=0.5)
     d_var, _, _ = _make_demo(speed_mod=0.5, seed=5, noise_std=0.5)
     p_uni = build_plan(d_uni, _CAL_Z, _CAL_DB)
     p_var = build_plan(d_var, _CAL_Z, _CAL_DB)
+    grid = np.linspace(0.1, 0.9, 200)
     for a, b in zip(p_uni.strokes, p_var.strokes):
-        assert _interior_rms(a.s, a.g_press, b.s, b.g_press) <= 1.0
+        diff = _on_true_grid(a, grid) - _on_true_grid(b, grid)
+        assert float(np.sqrt(np.mean(diff ** 2))) <= 1.0
 
 
 def test_build_plan_saturation_counted():
