@@ -300,16 +300,18 @@ def calib_lookup_z(g, calib_z_mm, calib_abs_dB):
     return float(out) if np.isscalar(g) or np.ndim(g) == 0 else out
 ```
 
-`ZController._z_ff_lookup` 改为（构造函数里已排序的 `self._calib_dB`/`self._z_offset_m` 保留不动——`s_cal` 计算还要用；查表委托为对已排序数组的直接 interp 即可保持零行为变化）：
+`ZController` 改为**真委托**（不留第二份 interp 副本）：`__init__` 的排序段同时保留 mm 口径的已排序表，`_z_ff_lookup` 直接调用公开函数：
 
 ```python
+# __init__ 排序段追加一行 (原 self._calib_dB / self._z_offset_m 保留, s_cal 计算不变):
+        self._calib_z_mm_sorted = np.asarray(calib_z_mm, dtype=float)[sort_idx]
+
     def _z_ff_lookup(self, g_d: float) -> float:
-        """|ΔB| (μT) → z_offset (m). 委托 calib_lookup_z 的同款插值+饱和语义."""
-        return float(np.interp(g_d, self._calib_dB, self._z_offset_m,
-                               left=0.0, right=self._z_offset_m[-1]))
+        """|ΔB| (μT) → z_offset (m). 委托 calib_lookup_z (全项目唯一反查实现)."""
+        return float(calib_lookup_z(g_d, self._calib_z_mm_sorted, self._calib_dB))
 ```
 
-（即 `_z_ff_lookup` 本体不变，新增的 `calib_lookup_z` 是同一语义的公开版本——等价性由 Step 1 测试钉死。docstring 注明两者必须保持同语义。）
+（对已排序数组再 argsort 是恒等置换，行为逐位不变；每拍对 6 元素 argsort 的开销在 100 Hz 下可忽略。等价性由 Step 1 测试钉死。）
 
 - [ ] **Step 4: 跑全套测试确认通过**
 
