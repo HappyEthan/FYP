@@ -406,6 +406,18 @@ def test_segment_strokes_finds_runs_and_drops_short():
     segs, dropped = segment_strokes(g, sigma, fs=FS, min_len_s=0.3)
     assert segs == [(100, 400), (600, 950)]
     assert dropped == 1
+
+
+def test_segment_strokes_merges_chatter_and_gates_noise_peaks():
+    """(2026-07-31 二次修订) 边界抖动并入主段; 低峰值噪声游走静默弃置不计数."""
+    sigma = 2.0
+    g = np.zeros(1000)
+    g[100:400] = 100.0
+    g[404:412] = 100.0        # 边界抖动: 间隙 4 拍 < merge_gap → 并入主段
+    g[600:625] = 7.0          # 噪声游走: 超 3σ=6 但峰值 < 6σ=12 → 静默弃置
+    segs, dropped = segment_strokes(g, sigma, fs=FS)
+    assert segs == [(100, 412)]
+    assert dropped == 0
 ```
 
 - [ ] **Step 2: 跑测试确认失败**
@@ -464,17 +476,27 @@ def estimate_sigma(g_clean, fs=FS, head_s=0.5):
     return sigma
 
 
-def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3):
-    """接触段切分: g >= 3σ 的连续区间 [(start, end)), 过短段丢弃并计数.
+def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3, merge_gap_s=0.15,
+                    peak_k=6.0):
+    """接触段切分: g >= 3σ 的连续区间 [(start, end)). 返回 (segs, n_dropped).
 
-    返回 (segs, n_dropped)."""
+    (2026-07-31 二次修订, Task 5 评审驱动) 滤波后噪声相关时间 ~0.15s, 接触边界处
+    g 缓慢穿越阈值, 噪声造成抖动穿越. 三道门: ① 间隙 < merge_gap_s 的相邻 run
+    合并 (边界抖动吸收进主段); ② 峰值 < peak_k·σ 的 run 是噪声游走, 静默弃置
+    (不是"被丢弃的笔画", 不计数); ③ 过幅度门但短于 min_len_s 的才计入 n_dropped."""
     mask = np.concatenate([[False], g_clean >= 3.0 * sigma, [False]])
     d = np.diff(mask.astype(int))
-    starts = np.flatnonzero(d == 1)
-    ends = np.flatnonzero(d == -1)
+    merge_gap = int(merge_gap_s * fs)
+    runs = []
+    for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1)):
+        if runs and a - runs[-1][1] < merge_gap:
+            runs[-1] = (runs[-1][0], int(b))
+        else:
+            runs.append((int(a), int(b)))
+    runs = [r for r in runs if g_clean[r[0]:r[1]].max() >= peak_k * sigma]
     min_len = int(min_len_s * fs)
-    segs = [(int(a), int(b)) for a, b in zip(starts, ends) if b - a >= min_len]
-    return segs, int(len(starts) - len(segs))
+    segs = [r for r in runs if r[1] - r[0] >= min_len]
+    return segs, int(len(runs) - len(segs))
 ```
 
 - [ ] **Step 4: 跑测试确认通过**
@@ -561,8 +583,10 @@ def _geom_rms(st, lo=0.1, hi=0.9):
 
 
 def _on_true_grid(st, grid):
-    """恢复 g_press 重采样到几何真值 s 网格. 按 ts 排序后插值: 段边界残留的
-    悬空移动样本 (x 折返) 会破坏 ts 单调性, 排序 + [0.1,0.9] 网格裁剪将其排除."""
+    """恢复 g_press 重采样到几何真值 s 网格. argsort 是单调性防御: 强滤波
+    (如 fc=3) 下段边界残留的悬空移动样本会使 ts 折返, 乱序结点让 np.interp 出
+    垃圾; 本测试的 fc=10 下 ts 本就单调, 排序为 no-op. 残留样本的影响由
+    边界内缩 (build_plan trim) 和网格裁剪共同控制, 排序本身不构成排除机制."""
     ts = _true_s(st)
     idx = np.argsort(ts)
     return np.interp(grid, ts[idx], st.g_press[idx])
@@ -587,6 +611,7 @@ def test_build_plan_segments_and_recovers_truth():
     for st in plan.strokes:
         assert _geom_rms(st) <= 3.0
         assert (st.z_ff >= 0.0).all() and (st.z_ff <= 0.005).all()
+    # (2026-07-31 恢复) 噪声毛刺由 segment_strokes 的合并+幅度门吸收, 不再污染丢弃计数
     assert plan.meta["n_dropped_short"] == 0 and plan.meta["sat_frac"] == 0.0
 
 

@@ -63,8 +63,14 @@ estimate_sigma(g_clean, fs=100.0, head_s=0.5) -> float
 # 首段悬空的 std；若首段明显非静止（std 超过一个宽松阈值，如 > 全段 std 的一半）→
 # 报错提示"录制需首尾悬空 ≥0.5s，或显式传 sigma"
 
-segment_strokes(g_clean, sigma, fs=100.0, min_len_s=0.3) -> list[tuple[int,int]]
-# 接触 = g ≥ 3σ 连续段；短于 min_len_s 的段丢弃并计数（进 meta，不静默）
+segment_strokes(g_clean, sigma, fs=100.0, min_len_s=0.3, merge_gap_s=0.15, peak_k=6.0)
+#   -> (segs: list[tuple[int,int]], n_dropped)
+# 接触 = g ≥ 3σ 连续段。鲁棒性（2026-07-31 实施期修订，实测驱动）：滤波后噪声的
+# 相关时间 ~0.15s，g 在接触边界缓慢穿越阈值时噪声造成抖动穿越，纯阈值切分会碎出
+# 大量短 run。三道门依次处理：① 间隙 < merge_gap_s 的相邻 run 合并（边界抖动吸收
+# 进主段）；② 合并后峰值 < peak_k·σ 的 run 是噪声游走，静默弃置——它们不是"被丢弃
+# 的笔画"，不计入 n_dropped；③ 过了幅度门但短于 min_len_s 的 run 才计入 n_dropped
+# （真正可疑的短笔画）。
 
 reparam_arclength(xy_seg, g_seg, M=200) -> (s, xy_s, g_s)
 # 累计弧长归一化 + 均匀 M 点重采样（np.interp）；总弧长 < 1 mm → 该笔丢弃并计数
