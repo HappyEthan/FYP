@@ -52,6 +52,7 @@ def true_s_on_path(xy, k):
 def make_demo(n_strokes=3, stroke_s=3.0, gap_s=0.8, speed_mod=0.5, seed=42,
               noise=None):
     """(rows (N,7), truth). speed_mod: 变速幅度 (0=匀速; 0.5 → 速度在 0.5~1.5x 摆动)."""
+    assert 0.0 <= speed_mod < 1.0, "speed_mod ∈ [0,1) 否则 s_of_t 非单调"
     n, ngap = int(stroke_s * FS), int(gap_s * FS)
     tn = np.linspace(0.0, 1.0, n)
     s_of_t = tn + speed_mod * np.sin(2.0 * np.pi * tn) / (2.0 * np.pi)

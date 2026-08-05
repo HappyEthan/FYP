@@ -62,6 +62,8 @@ class StrokePlan:
 
         悬空段 xy 从本笔终点线性过渡到下一笔起点 (末笔停在原地).
         返回 (g_d (T,), xy (T,2)), 可直接喂 sim_loop.run_loop."""
+        if not self.strokes:
+            raise ValueError("StrokePlan 无笔画, 无法生成 g_d 序列")
         n_st = int(round(stroke_duration_s * fs))
         n_gap = int(round(gap_s * fs))
         t_norm = np.linspace(0.0, 1.0, n_st)

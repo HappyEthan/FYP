@@ -35,6 +35,14 @@ def test_load_demo_missing_xy_columns(tmp_path):
         load_demo(p)
 
 
+def test_load_demo_wrong_sample_rate_rejected(tmp_path):
+    p = tmp_path / "demo_50hz.csv"
+    rows = [(i * 2e4, i * 0.02, 1.0, 2.0, 3.0, 0.001 * i, 0.0) for i in range(100)]
+    _write_csv(p, rows)
+    with pytest.raises(ValueError, match="采样率"):
+        load_demo(p)
+
+
 def test_load_demo_nan_reports_row(tmp_path):
     p = tmp_path / "bad.csv"
     rows = _rows()

@@ -27,11 +27,20 @@ def load_demo(csv_path):
     if bad.any():
         row = int(np.flatnonzero(bad.any(axis=1))[0]) + 2   # +1 表头, +1 改 1 始计数
         raise ValueError("示范 CSV 含非有限值, 首个坏行为第 %d 行: %s" % (row, csv_path))
-    return {"t": np.atleast_1d(d["t_s"]),
+    t = np.atleast_1d(d["t_s"])
+    if len(t) < 2:
+        raise ValueError("示范太短")
+    dt_med = float(np.median(np.diff(t)))
+    if abs(dt_med - 1.0 / FS) > 0.1 / FS:
+        raise ValueError(
+            "示范采样率 %.1f Hz ≠ 管线假定的 %g Hz (σ 窗口/切分/边界内缩的时间常数都会静默失真): %s"
+            % (1.0 / dt_med, FS, csv_path))
+    return {"t": t,
             "xy": np.column_stack([np.atleast_1d(d["x_m"]), np.atleast_1d(d["y_m"])]),
             "dB": np.column_stack([np.atleast_1d(d["dBx_uT"]),
                                    np.atleast_1d(d["dBy_uT"]),
-                                   np.atleast_1d(d["dBz_uT"])])}
+                                   np.atleast_1d(d["dBz_uT"])]),
+            "source": str(csv_path)}
 
 
 def estimate_sigma(g_clean, fs=FS, head_s=0.5):
@@ -45,7 +54,8 @@ def estimate_sigma(g_clean, fs=FS, head_s=0.5):
     if sigma > 0.5 * float(np.std(g_clean)):
         raise ValueError(
             "首段 %.1fs 不像悬空段 (std=%.2f µT), 录制需首尾悬空 >=0.5s; "
-            "或给 build_plan 显式传 sigma" % (head_s, sigma))
+            "或给 build_plan 显式传 sigma; 或整段无书写内容(全程安静的录音同样触发本判据)"
+            % (head_s, sigma))
     return sigma
 
 
@@ -123,7 +133,8 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
             "n_dropped_short": int(n_dropped_short),
             "n_dropped_arc": int(n_dropped_arc), "sat_frac": float(sat_frac),
             "calib_fingerprint": [float(np.min(calib_z_mm)), float(np.max(calib_z_mm)),
-                                  float(np.min(calib_abs_dB)), cal_max]}
+                                  float(np.min(calib_abs_dB)), cal_max],
+            "source": demo.get("source", "")}
     if sat_frac > 0.05:
         print("警告: %.1f%% 样本超标定范围被饱和 -- 示范力度超出标定表, 建议重标"
               % (100.0 * sat_frac))

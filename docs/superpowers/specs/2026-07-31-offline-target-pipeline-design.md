@@ -50,7 +50,7 @@ class StrokePlan:
 - `to_waypoints(z_surface=0.20, lift=0.015) -> list[tuple[float,float,float]]`
   每笔：起点上方 `(x0, y0, z_surface+lift)` 悬空进入 → M 个 `(x, y, z_surface + z_ff)` → 终点上方抬笔点。裸 (x,y,z) 列表，`OpenLoopController` 零改动消费。
 - `to_gd_series(stroke_duration_s, fs=100.0, gap_s=0.5) -> tuple[np.ndarray, np.ndarray]`
-  每笔按匀速剖面把 g_press(s) 重采样回时域（s = t/duration），笔画间插 `gap_s` 的 g_d=0 悬空段（触发 freeze 切换，与层 2 场景同构）。返回 `(g_d(T,), xy(T,2))`，可直接喂 `run_loop`。
+  每笔按匀速剖面把 g_press(s) 重采样回时域（s = t/duration），每笔后接 `gap_s` 的 g_d=0 悬空段（含最后一笔，触发 freeze 切换，与层 2 场景同构）。返回 `(g_d(T,), xy(T,2))`，可直接喂 `run_loop`。
 - `save(path)` / `load(path)`：npz 往返无损（meta 以 JSON 字符串存入 npz）。
 
 ### 3.2 `src/brushbot/demo_pipeline.py`（新建，纯函数）
@@ -80,6 +80,7 @@ reparam_arclength(xy_seg, g_seg, M=200) -> (s, xy_s, g_s)
 build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None) -> StrokePlan
 # 编排：sim_loop.fft_lowpass 整段 (N,3) 向量（先滤向量再取 norm，铁律）→ norm
 # → σ（sigma 参数可覆盖）→ 切分 → 边界内缩 trim → 逐笔重参数化 → z_ff 反查 → 打包
+# （meta 含 source，透传自 demo["source"]，即 load_demo 记录的 csv_path）
 ```
 
 **滤波顺序决策**：整段滤波后再切笔画（避免短笔画的 FFT 边缘伪影；切分用滤后信号，边界干净）。
