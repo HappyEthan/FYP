@@ -408,13 +408,14 @@ def test_segment_strokes_finds_runs_and_drops_short():
     assert dropped == 1
 
 
-def test_segment_strokes_merges_chatter_and_gates_noise_peaks():
-    """(2026-07-31 二次修订) 边界抖动并入主段; 低峰值噪声游走静默弃置不计数."""
-    sigma = 2.0
+def test_segment_strokes_merges_chatter_and_scales_threshold():
+    """(2026-07-31 三次修订) 阈值随信号规模缩放: 滤波旁瓣量级的游走不成 run;
+    强信号的边界抖动并入主段."""
+    sigma = 2.0                        # 3σ=6; p99≈200 → T=max(6, 10)=10
     g = np.zeros(1000)
-    g[100:400] = 100.0
-    g[404:412] = 100.0        # 边界抖动: 间隙 4 拍 < merge_gap → 并入主段
-    g[600:625] = 7.0          # 噪声游走: 超 3σ=6 但峰值 < 6σ=12 → 静默弃置
+    g[100:400] = 200.0
+    g[404:412] = 200.0                 # 边界抖动: 间隙 4 拍 < merge_gap → 并入主段
+    g[600:625] = 8.0                   # 旁瓣量级 (4% 峰值): 低于 T=10 → 不成 run
     segs, dropped = segment_strokes(g, sigma, fs=FS)
     assert segs == [(100, 412)]
     assert dropped == 0
@@ -477,31 +478,27 @@ def estimate_sigma(g_clean, fs=FS, head_s=0.5):
 
 
 def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3, merge_gap_s=0.15,
-                    peak_k=6.0):
-    """接触段切分: g >= 3σ 的连续区间 [(start, end)). 返回 (segs, n_dropped).
+                    rel_peak=0.05):
+    """接触段切分: g >= T 的连续区间 [(start, end)). 返回 (segs, n_dropped).
 
-    (2026-07-31 二次修订+顺序修正, Task 5 评审驱动) 滤波后噪声相关时间 ~0.15s,
-    悬空段与边界处噪声会间歇性穿越 3σ, 碎出大量低峰值短 run. 三道门**顺序关键**:
-    ① 幅度门在先: 峰值 < peak_k·σ 的 run 是噪声游走, 静默弃置 (不是"被丢弃的
-      笔画", 不计数) —— 先清场, 否则噪声碎 run 会当"桥墩"让合并传递性地连穿
-      整个悬空段;
-    ② 间隙合并: 幸存强 run 之间间隙 < merge_gap_s 的合并 (桥接笔画中途轻按+
-      噪声造成的短暂低压中断);
-    ③ 长度计数: 合并后短于 min_len_s 的才计入 n_dropped."""
-    mask = np.concatenate([[False], g_clean >= 3.0 * sigma, [False]])
+    (2026-07-31 三次修订, Task 5 评审驱动, 收敛版) 阈值 T = max(3σ, rel_peak ·
+    p99(g_clean)): 零相位砖墙滤波的旁瓣振铃随**信号**幅度缩放 (实测 185µT 笔画
+    在悬空段留下 4-7µT ≈ 2-4% 峰值的旁瓣), 任何纯噪声口径的阈值/幅度门都挡不住
+    它 —— 阈值必须同时随信号规模缩放, 旁瓣 (≤4%) 天然落在 5% 线下. 间隙 <
+    merge_gap_s 的相邻 run 合并 (桥接笔画中途短暂低压中断); 合并后短于
+    min_len_s 的计入 n_dropped."""
+    thresh = max(3.0 * sigma, rel_peak * float(np.percentile(g_clean, 99)))
+    mask = np.concatenate([[False], g_clean >= thresh, [False]])
     d = np.diff(mask.astype(int))
-    runs = [(int(a), int(b))
-            for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1))
-            if g_clean[a:b].max() >= peak_k * sigma]          # ① 幅度门
     merge_gap = int(merge_gap_s * fs)
     merged = []
-    for a, b in runs:                                          # ② 间隙合并
-        if merged and a - merged[-1][1] < merge_gap:
-            merged[-1] = (merged[-1][0], b)
+    for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1)):
+        if merged and int(a) - merged[-1][1] < merge_gap:
+            merged[-1] = (merged[-1][0], int(b))
         else:
-            merged.append((a, b))
+            merged.append((int(a), int(b)))
     min_len = int(min_len_s * fs)
-    segs = [r for r in merged if r[1] - r[0] >= min_len]       # ③ 长度计数
+    segs = [tuple(r) for r in merged if r[1] - r[0] >= min_len]
     return segs, int(len(merged) - len(segs))
 ```
 

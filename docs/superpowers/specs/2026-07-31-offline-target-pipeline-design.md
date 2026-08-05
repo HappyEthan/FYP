@@ -63,14 +63,15 @@ estimate_sigma(g_clean, fs=100.0, head_s=0.5) -> float
 # 首段悬空的 std；若首段明显非静止（std 超过一个宽松阈值，如 > 全段 std 的一半）→
 # 报错提示"录制需首尾悬空 ≥0.5s，或显式传 sigma"
 
-segment_strokes(g_clean, sigma, fs=100.0, min_len_s=0.3, merge_gap_s=0.15, peak_k=6.0)
+segment_strokes(g_clean, sigma, fs=100.0, min_len_s=0.3, merge_gap_s=0.15, rel_peak=0.05)
 #   -> (segs: list[tuple[int,int]], n_dropped)
-# 接触 = g ≥ 3σ 连续段。鲁棒性（2026-07-31 实施期修订，实测驱动）：滤波后噪声的
-# 相关时间 ~0.15s，悬空段与边界处噪声间歇性穿越 3σ，纯阈值切分会碎出大量低峰值
-# 短 run。三道门，**顺序关键**：① 幅度门在先——峰值 < peak_k·σ 的 run 是噪声游走，
-# 静默弃置不计数（先清场，否则噪声碎 run 会当"桥墩"让合并传递性连穿整个悬空段，
-# 实测会把两笔连成一整块）；② 幸存强 run 间隙 < merge_gap_s 的合并（桥接笔画中途
-# 短暂低压中断）；③ 合并后短于 min_len_s 的才计入 n_dropped（真正可疑的短笔画）。
+# （2026-07-31 实施期修订，三轮实测收敛）阈值 T = max(3σ, rel_peak·p99(g_clean))：
+# 零相位砖墙滤波的旁瓣振铃随**信号**幅度缩放（实测 185µT 笔画在悬空段留下 4–7µT
+# ≈ 2–4% 峰值的旁瓣），纯噪声口径的 3σ 阈值会在旁瓣上碎出成片伪 run，且任何
+# 噪声标度的幅度门都挡不住——阈值必须同时随信号规模缩放，旁瓣天然落在 5% 线下。
+# 间隙 < merge_gap_s 的相邻 run 合并（桥接笔画中途短暂低压中断）；合并后短于
+# min_len_s 的计入 n_dropped。演化记录：噪声抖动穿越（3σ 固定阈值的碎 run）→
+# 幅度门方案 → 旁瓣被发现随信号缩放 → 收敛为标度阈值。
 
 reparam_arclength(xy_seg, g_seg, M=200) -> (s, xy_s, g_s)
 # 累计弧长归一化 + 均匀 M 点重采样（np.interp）；总弧长 < 1 mm → 该笔丢弃并计数
