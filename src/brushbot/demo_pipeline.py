@@ -49,17 +49,29 @@ def estimate_sigma(g_clean, fs=FS, head_s=0.5):
     return sigma
 
 
-def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3):
-    """接触段切分: g >= 3σ 的连续区间 [(start, end)), 过短段丢弃并计数.
+def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3, merge_gap_s=0.15,
+                    rel_peak=0.05):
+    """接触段切分: g >= T 的连续区间 [(start, end)). 返回 (segs, n_dropped).
 
-    返回 (segs, n_dropped)."""
-    mask = np.concatenate([[False], g_clean >= 3.0 * sigma, [False]])
+    (2026-07-31 三次修订, Task 5 评审驱动, 收敛版) 阈值 T = max(3σ, rel_peak ·
+    p99(g_clean)): 零相位砖墙滤波的旁瓣振铃随**信号**幅度缩放 (实测 185µT 笔画
+    在悬空段留下 4-7µT ≈ 2-4% 峰值的旁瓣), 任何纯噪声口径的阈值/幅度门都挡不住
+    它 —— 阈值必须同时随信号规模缩放, 旁瓣 (≤4%) 天然落在 5% 线下. 间隙 <
+    merge_gap_s 的相邻 run 合并 (桥接笔画中途短暂低压中断); 合并后短于
+    min_len_s 的计入 n_dropped."""
+    thresh = max(3.0 * sigma, rel_peak * float(np.percentile(g_clean, 99)))
+    mask = np.concatenate([[False], g_clean >= thresh, [False]])
     d = np.diff(mask.astype(int))
-    starts = np.flatnonzero(d == 1)
-    ends = np.flatnonzero(d == -1)
+    merge_gap = int(merge_gap_s * fs)
+    merged = []
+    for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1)):
+        if merged and int(a) - merged[-1][1] < merge_gap:
+            merged[-1] = (merged[-1][0], int(b))
+        else:
+            merged.append((int(a), int(b)))
     min_len = int(min_len_s * fs)
-    segs = [(int(a), int(b)) for a, b in zip(starts, ends) if b - a >= min_len]
-    return segs, int(len(starts) - len(segs))
+    segs = [tuple(r) for r in merged if r[1] - r[0] >= min_len]
+    return segs, int(len(merged) - len(segs))
 
 
 def reparam_arclength(xy_seg, g_seg, M=200):

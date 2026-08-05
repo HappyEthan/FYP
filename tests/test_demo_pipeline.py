@@ -70,6 +70,19 @@ def test_segment_strokes_finds_runs_and_drops_short():
     assert dropped == 1
 
 
+def test_segment_strokes_merges_chatter_and_scales_threshold():
+    """(2026-07-31 三次修订) 阈值随信号规模缩放: 滤波旁瓣量级的游走不成 run;
+    强信号的边界抖动并入主段."""
+    sigma = 2.0                        # 3σ=6; p99≈200 → T=max(6, 10)=10
+    g = np.zeros(1000)
+    g[100:400] = 200.0
+    g[404:412] = 200.0                 # 边界抖动: 间隙 4 拍 < merge_gap → 并入主段
+    g[600:625] = 8.0                   # 旁瓣量级 (4% 峰值): 低于 T=10 → 不成 run
+    segs, dropped = segment_strokes(g, sigma, fs=FS)
+    assert segs == [(100, 412)]
+    assert dropped == 0
+
+
 _CAL_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
 _CAL_DB = np.array([0.0, 50.0, 100.0, 150.0, 250.0, 200.0])  # 故意乱序尾: 反查须容忍
 
@@ -129,8 +142,10 @@ def _geom_rms(st, lo=0.1, hi=0.9):
 
 
 def _on_true_grid(st, grid):
-    """恢复 g_press 重采样到几何真值 s 网格. 按 ts 排序后插值: 段边界残留的
-    悬空移动样本 (x 折返) 会破坏 ts 单调性, 排序 + [0.1,0.9] 网格裁剪将其排除."""
+    """恢复 g_press 重采样到几何真值 s 网格. argsort 是单调性防御: 强滤波
+    (如 fc=3) 下段边界残留的悬空移动样本会使 ts 折返, 乱序结点让 np.interp 出
+    垃圾; 本测试的 fc=10 下 ts 本就单调, 排序为 no-op. 残留样本的影响由
+    边界内缩 (build_plan trim) 和网格裁剪共同控制, 排序本身不构成排除机制."""
     ts = _true_s(st)
     idx = np.argsort(ts)
     return np.interp(grid, ts[idx], st.g_press[idx])
@@ -155,7 +170,8 @@ def test_build_plan_segments_and_recovers_truth():
     for st in plan.strokes:
         assert _geom_rms(st) <= 3.0
         assert (st.z_ff >= 0.0).all() and (st.z_ff <= 0.005).all()
-    assert plan.meta["sat_frac"] == 0.0
+    # (2026-07-31 恢复) 噪声毛刺由 segment_strokes 的合并+幅度门吸收, 不再污染丢弃计数
+    assert plan.meta["n_dropped_short"] == 0 and plan.meta["sat_frac"] == 0.0
 
 
 def test_speed_invariance():
