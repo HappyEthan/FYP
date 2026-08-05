@@ -5,7 +5,7 @@
 > 取代 `handoff-z-control.md`（其"Z 控制待开发"状态已过时）与 `handoff-filter.md`（滤波器已交付）中的相应章节。
 >
 > **分支/仓库状态（先读这个再动手）**：
-> - `master`：本文档所在，领先 origin 一大批提交（网络 TLS 曾故障），恢复后 `git push`。
+> - `master`：本文档所在，已与 origin 同步（2026-08-05 push；此前网络 TLS 故障积压的提交已清）。
 > - `feat/monitor-filter-ui`（HEAD `3b33196`）：监控窗口滤波 UI，评审通过但**待用户本机手动验收**（清单在 `docs/monitor-usage.md` 末尾 9+2 项），验收过再合 master。
 > - MuJoCo→监控 UDP 桥：spec 已写（`docs/superpowers/specs/2026-07-29-mujoco-udp-bridge-design.md`），**未实现**。
 
