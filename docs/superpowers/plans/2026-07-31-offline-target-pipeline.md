@@ -480,23 +480,29 @@ def segment_strokes(g_clean, sigma, fs=FS, min_len_s=0.3, merge_gap_s=0.15,
                     peak_k=6.0):
     """接触段切分: g >= 3σ 的连续区间 [(start, end)). 返回 (segs, n_dropped).
 
-    (2026-07-31 二次修订, Task 5 评审驱动) 滤波后噪声相关时间 ~0.15s, 接触边界处
-    g 缓慢穿越阈值, 噪声造成抖动穿越. 三道门: ① 间隙 < merge_gap_s 的相邻 run
-    合并 (边界抖动吸收进主段); ② 峰值 < peak_k·σ 的 run 是噪声游走, 静默弃置
-    (不是"被丢弃的笔画", 不计数); ③ 过幅度门但短于 min_len_s 的才计入 n_dropped."""
+    (2026-07-31 二次修订+顺序修正, Task 5 评审驱动) 滤波后噪声相关时间 ~0.15s,
+    悬空段与边界处噪声会间歇性穿越 3σ, 碎出大量低峰值短 run. 三道门**顺序关键**:
+    ① 幅度门在先: 峰值 < peak_k·σ 的 run 是噪声游走, 静默弃置 (不是"被丢弃的
+      笔画", 不计数) —— 先清场, 否则噪声碎 run 会当"桥墩"让合并传递性地连穿
+      整个悬空段;
+    ② 间隙合并: 幸存强 run 之间间隙 < merge_gap_s 的合并 (桥接笔画中途轻按+
+      噪声造成的短暂低压中断);
+    ③ 长度计数: 合并后短于 min_len_s 的才计入 n_dropped."""
     mask = np.concatenate([[False], g_clean >= 3.0 * sigma, [False]])
     d = np.diff(mask.astype(int))
+    runs = [(int(a), int(b))
+            for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1))
+            if g_clean[a:b].max() >= peak_k * sigma]          # ① 幅度门
     merge_gap = int(merge_gap_s * fs)
-    runs = []
-    for a, b in zip(np.flatnonzero(d == 1), np.flatnonzero(d == -1)):
-        if runs and a - runs[-1][1] < merge_gap:
-            runs[-1] = (runs[-1][0], int(b))
+    merged = []
+    for a, b in runs:                                          # ② 间隙合并
+        if merged and a - merged[-1][1] < merge_gap:
+            merged[-1] = (merged[-1][0], b)
         else:
-            runs.append((int(a), int(b)))
-    runs = [r for r in runs if g_clean[r[0]:r[1]].max() >= peak_k * sigma]
+            merged.append((a, b))
     min_len = int(min_len_s * fs)
-    segs = [r for r in runs if r[1] - r[0] >= min_len]
-    return segs, int(len(runs) - len(segs))
+    segs = [r for r in merged if r[1] - r[0] >= min_len]       # ③ 长度计数
+    return segs, int(len(merged) - len(segs))
 ```
 
 - [ ] **Step 4: 跑测试确认通过**

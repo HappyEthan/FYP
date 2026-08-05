@@ -66,11 +66,11 @@ estimate_sigma(g_clean, fs=100.0, head_s=0.5) -> float
 segment_strokes(g_clean, sigma, fs=100.0, min_len_s=0.3, merge_gap_s=0.15, peak_k=6.0)
 #   -> (segs: list[tuple[int,int]], n_dropped)
 # 接触 = g ≥ 3σ 连续段。鲁棒性（2026-07-31 实施期修订，实测驱动）：滤波后噪声的
-# 相关时间 ~0.15s，g 在接触边界缓慢穿越阈值时噪声造成抖动穿越，纯阈值切分会碎出
-# 大量短 run。三道门依次处理：① 间隙 < merge_gap_s 的相邻 run 合并（边界抖动吸收
-# 进主段）；② 合并后峰值 < peak_k·σ 的 run 是噪声游走，静默弃置——它们不是"被丢弃
-# 的笔画"，不计入 n_dropped；③ 过了幅度门但短于 min_len_s 的 run 才计入 n_dropped
-# （真正可疑的短笔画）。
+# 相关时间 ~0.15s，悬空段与边界处噪声间歇性穿越 3σ，纯阈值切分会碎出大量低峰值
+# 短 run。三道门，**顺序关键**：① 幅度门在先——峰值 < peak_k·σ 的 run 是噪声游走，
+# 静默弃置不计数（先清场，否则噪声碎 run 会当"桥墩"让合并传递性连穿整个悬空段，
+# 实测会把两笔连成一整块）；② 幸存强 run 间隙 < merge_gap_s 的合并（桥接笔画中途
+# 短暂低压中断）；③ 合并后短于 min_len_s 的才计入 n_dropped（真正可疑的短笔画）。
 
 reparam_arclength(xy_seg, g_seg, M=200) -> (s, xy_s, g_s)
 # 累计弧长归一化 + 均匀 M 点重采样（np.interp）；总弧长 < 1 mm → 该笔丢弃并计数
