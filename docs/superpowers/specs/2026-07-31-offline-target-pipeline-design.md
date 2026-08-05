@@ -124,12 +124,12 @@ build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None) -> StrokeP
 
 ## 6. 验收（四问四数字）
 
-| # | 问题 | 判据 |
-|---|---|---|
-| Q1 | 带噪变速录音里恢复的 g_press(s) 离真值多远？ | 逐笔 RMS ≤ 3 µT（≈零相位滤波残噪水平，量程 200 µT 的 1.5%） |
-| Q2 | 匀速 vs 变速示范的恢复结果差多少？ | 单测（fc=10 弱滤波，隔离耦合）互差 RMS ≤ 1 µT——纯考弧长重参数化；全管线 fc=3 的 E2E 互差**如实报告**（含"时域滤波×速度"固有耦合，预期 ~2–3 µT，sanity 上限 3.5 µT）（2026-07-31 实施期修订，见 §8.5） |
-| Q3 | 管线产出目标喂两臂，calib×0.8 下各偏多少？ | 闭环 RMS < 开环 RMS，方向与层 2 结论一致 |
-| Q4 | to_waypoints 能否被 B1 链路原样消费？ | OpenLoopController 实际驱动通过 |
+| # | 问题 | 判据 | 实测 |
+|---|---|---|---|
+| Q1 | 带噪变速录音里恢复的 g_press(s) 离真值多远？ | 逐笔 RMS ≤ 3 µT（≈零相位滤波残噪水平，量程 200 µT 的 1.5%） | 2.70 / 2.06 / 2.41 µT（≤3 ✓） |
+| Q2 | 匀速 vs 变速示范的恢复结果差多少？ | 单测（fc=10 弱滤波，隔离耦合）互差 RMS ≤ 1 µT——纯考弧长重参数化；全管线 fc=3 的 E2E 互差**如实报告**（含"时域滤波×速度"固有耦合，预期 ~2–3 µT，sanity 上限 3.5 µT）（2026-07-31 实施期修订，见 §8.5） | 单测（fc=10）0.37 / 0.40 µT（≤1 ✓，见 `tests/test_demo_pipeline.py::test_speed_invariance`）；全管线 fc=3 E2E 互差 2.57 / 1.68 / 2.26 µT（如实报告，落在预测的 ~2–3 µT 耦合带，sanity ≤3.5 ✓） |
+| Q3 | 管线产出目标喂两臂，calib×0.8 下各偏多少？ | 闭环 RMS < 开环 RMS，方向与层 2 结论一致 | 开环 17.57% vs 闭环 10.60%（closed < open ✓，方向与 Phase 1 层 2 一致） |
+| Q4 | to_waypoints 能否被 B1 链路原样消费？ | OpenLoopController 实际驱动通过 | 通过（`tests/test_strokeplan.py::test_waypoints_drive_openloop_controller`） |
 
 ## 7. 文件变动
 

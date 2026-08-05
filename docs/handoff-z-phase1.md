@@ -88,6 +88,8 @@ for dB_raw in stream:
 
 ### 3.2 离线目标曲线管线（前馈通路 + 开环 baseline，一石二鸟）
 
+> **状态更新（2026-07-31）：已完成。** 管线 `src/brushbot/demo_pipeline.py` + StrokePlan（`src/brushbot/strokeplan.py`）落地并通过端到端验收（四问数字见 `specs/2026-07-31-offline-target-pipeline-design.md` §6）。实施期三项实测驱动的设计修订已并入 spec：切分标度阈值（滤波旁瓣随信号缩放）、段边界内缩 0.5/fc、Q2 两级判据（时域滤波×速度耦合是管线固有属性）。真实示范录制协议仍待硬件（XY 来源倾向机械臂拖动示教；示范速度需接近执行速度——spec §8.5）。
+
 用户已确认的架构方向：示范录制的 raw ΔB → **离线零相位滤波**（`compare_filters.fft_lowpass` 现成可用）→ 干净 `g_press(s)` → 标定表反查 → `z_ff(t)` 前馈轨迹 → 进 `StrokePlan`。
 
 - 目标曲线用理想滤波是**正确的**（数实时（Real-Time）据完整，无因果性约束），实时滤波器只管反馈通路——两个滤波各司其职，别混。
