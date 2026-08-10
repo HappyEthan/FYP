@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""E2E 验收 (spec §6): 合成示范 -> 管线 -> 两臂对比.
+"""E2E 验收 (spec §6): 合成示范 -> 管线 -> 两臂对比. 判据为机器断言 (审计 A1).
 
 Q1 恢复精度 / Q2 速度解耦 / Q3 开环 vs 闭环 (calib×0.8). Q4 由
-tests/test_strokeplan.py::test_waypoints_drive_openloop_controller 回答.
+tests/test_strokeplan.py::test_waypoints_chain_writes_ink (链路级) 回答.
+pytest 属主: tests/test_target_pipeline_e2e.py. 直接运行时验收产物入库
+docs/acceptance/ (plan npz + 数字 JSON), 断言失败即非零退出.
 
 用法 (单行):
     python scripts/demo_target_pipeline.py
 """
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -28,7 +31,6 @@ FS = 100.0
 CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
 CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
 SEED = 42
-STROKE_DURATION_S = 3.0
 
 
 def _geom_rms(st, k, lo=0.1, hi=0.9):
@@ -44,7 +46,15 @@ def _on_grid(st, k, grid):
     return np.interp(grid, ts[idx], st.g_press[idx])
 
 
-def main():
+def run_acceptance(save_dir=None, make_plot=False, verbose=True):
+    """跑四问验收并**断言**判据 (Q1 ≤3µT / Q2 ≤3.5µT / Q3 闭环<开环).
+
+    save_dir 非 None 时落盘验收产物: plan_var.npz (StrokePlan) + acceptance.json.
+    返回数字 dict; 判据不过直接 AssertionError (脚本模式即非零退出)."""
+    def say(msg):
+        if verbose:
+            print(msg)
+
     csvs = sorted(p for p in (ROOT / "delta_b_v0_20260724").glob("*.csv")
                   if "idle" in p.stem)
     noise = V0NoiseSource(csvs, seed=SEED) if csvs else None
@@ -62,22 +72,25 @@ def main():
 
     # --- Q1: 恢复精度 (变速+V0 噪声 vs 真值, 逐笔几何对齐 RMS) ---
     q1 = [_geom_rms(st, k) for k, st in enumerate(plan.strokes)]
-    print("Q1 恢复精度: 逐笔 RMS = %s µT (判据 ≤3)" %
-          ", ".join("%.2f" % v for v in q1))
+    say("Q1 恢复精度: 逐笔 RMS = %s µT (判据 ≤3)" %
+        ", ".join("%.2f" % v for v in q1))
+    assert all(v <= 3.0 for v in q1), "Q1 恢复精度超判据 3µT: %s" % q1
 
     # --- Q2: 速度解耦 (几何真值网格上比) ---
     grid = np.linspace(0.1, 0.9, 200)
     q2 = [float(np.sqrt(np.mean((_on_grid(a, k, grid) - _on_grid(b, k, grid)) ** 2)))
           for k, (a, b) in enumerate(zip(plans["uni"].strokes, plans["var"].strokes))]
-    print("Q2 速度解耦(全管线 fc=3, 含时域滤波×速度耦合): 互差 RMS = %s µT"
-          " (如实报告, sanity ≤3.5; 纯重参数化判据 ≤1 由单测 fc=10 隔离回答)" %
-          ", ".join("%.2f" % v for v in q2))
+    say("Q2 速度解耦(全管线 fc=3, 含时域滤波×速度耦合): 互差 RMS = %s µT"
+        " (如实报告, sanity ≤3.5; 纯重参数化判据 ≤1 由单测 fc=10 隔离回答)" %
+        ", ".join("%.2f" % v for v in q2))
+    assert all(v <= 3.5 for v in q2), "Q2 互差超 sanity 上限 3.5µT: %s" % q2
 
-    # --- Q3: 两臂彩排 (calib×0.8) ---
-    g_d, _ = plan.to_gd_series(STROKE_DURATION_S)
+    # --- Q3: 两臂彩排 (calib×0.8); 回放时长用 meta 存储的示范实际时长 (R15),
+    #     开环臂 z 由存储 z_ff 字段生成 (R6: 两臂共享前馈由数据结构保证) ---
+    g_d, _ = plan.to_gd_series(None)
     sigma_f = (V0NoiseSource(csvs, seed=SEED).filtered_sigma(lambda: EMA(0.3))
                if csvs else 2.0)
-    z_open = 0.20 + np.asarray(calib_lookup_z(g_d, CALIB_Z, CALIB_DB), float)
+    z_open = plan.to_open_z_series(None, z_surface=0.20)
     results = {}
     for arm in ("open", "closed"):
         pl_noise = V0NoiseSource(csvs, seed=SEED) if csvs else None
@@ -93,9 +106,35 @@ def main():
             ctrl = ZController(CALIB_Z, CALIB_DB, noise_std=sigma_f)
             res = run_loop(ctrl, EMA(0.3), g_d, plant)
         results[arm] = res
-        print("Q3 %s: 接触段 RMS = %.2f%%" % (arm, rms_pct(res, sigma_f)))
+    q3 = {arm: float(rms_pct(results[arm], sigma_f)) for arm in ("open", "closed")}
+    for arm in ("open", "closed"):
+        say("Q3 %s: 接触段 RMS = %.2f%%" % (arm, q3[arm]))
+    assert q3["closed"] < q3["open"], \
+        "Q3 闭环 (%.2f%%) 未优于开环 (%.2f%%)" % (q3["closed"], q3["open"])
 
-    # --- 图: 三面板 (Q1 恢复对比 / Q2 两剖面重叠 / Q3 两臂跟踪) ---
+    numbers = {"q1_rms_uT": [round(v, 4) for v in q1],
+               "q2_rms_uT": [round(v, 4) for v in q2],
+               "q3_rms_pct": {k: round(v, 4) for k, v in q3.items()},
+               "stroke_durations_s": [round(d, 4)
+                                      for d in plan.meta["stroke_durations_s"]],
+               "criteria": {"q1_max_uT": 3.0, "q2_max_uT": 3.5,
+                            "q3": "closed < open",
+                            "q4": "tests/test_strokeplan.py::"
+                                  "test_waypoints_chain_writes_ink"},
+               "passed": True}
+    if save_dir is not None:
+        save_dir = Path(save_dir)
+        save_dir.mkdir(parents=True, exist_ok=True)
+        plan.save(save_dir / "plan_var.npz")
+        (save_dir / "acceptance.json").write_text(
+            json.dumps(numbers, indent=2, ensure_ascii=False) + "\n")
+        say("验收产物: %s" % save_dir)
+    if make_plot:
+        _plot(plan, plans, truths, g_d, results)
+    return numbers
+
+
+def _plot(plan, plans, truths, g_d, results):
     import matplotlib
     matplotlib.use("Agg")
     matplotlib.rcParams["font.sans-serif"] = [
@@ -129,6 +168,11 @@ def main():
     out_png.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_png, dpi=120)
     print("图:", out_png)
+
+
+def main():
+    run_acceptance(save_dir=ROOT / "docs" / "acceptance", make_plot=True,
+                   verbose=True)
 
 
 if __name__ == "__main__":

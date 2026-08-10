@@ -111,7 +111,7 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
     # 样本会伪造弧长 (实测 40mm 笔画被污染 17-21%); 收缩后段内每拍 XY 都真实在纸上.
     trim = int(round(0.5 * FS / fc))
     cal_max = float(np.max(calib_abs_dB))
-    strokes, n_dropped_arc, n_sat, n_tot = [], 0, 0, 0
+    strokes, durations, n_dropped_arc, n_sat, n_tot = [], [], 0, 0, 0
     for a, b in segs:
         a, b = a + trim, b - trim
         if b - a < int(0.1 * FS):              # 裁后过短 → 并入过短丢弃计数
@@ -127,9 +127,11 @@ def build_plan(demo, calib_z_mm, calib_abs_dB, fc=3.0, M=200, sigma=None):
         strokes.append(Stroke(s=s, xy=xy_s, g_press=g_s,
                               z_ff=np.asarray(calib_lookup_z(
                                   g_s, calib_z_mm, calib_abs_dB), float)))
+        durations.append((b - a) / FS)         # 裁后净接触时长 (spec §8.5 落点)
     sat_frac = n_sat / max(n_tot, 1)
     meta = {"fc": float(fc), "M": int(M), "sigma": float(sigma),
             "edge_trim_s": trim / FS,
+            "stroke_durations_s": durations,
             "n_dropped_short": int(n_dropped_short),
             "n_dropped_arc": int(n_dropped_arc), "sat_frac": float(sat_frac),
             "calib_fingerprint": [float(np.min(calib_z_mm)), float(np.max(calib_z_mm)),

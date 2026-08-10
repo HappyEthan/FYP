@@ -205,3 +205,18 @@ def test_build_plan_saturation_counted():
     assert plan.meta["sat_frac"] > 0.05
     for st in plan.strokes:
         assert st.z_ff.max() <= 0.002 + 1e-12           # 饱和到最大压深
+
+
+def test_build_plan_meta_stroke_durations():
+    """R15: build_plan 把逐笔实际接触时长 (边界内缩后) 写进 meta —
+    spec §8.5 "示范速度≈执行速度" 硬要求的落点, 回放不再靠调用方硬编码."""
+    demo, _, _ = _make_demo(speed_mod=0.5)
+    plan = build_plan(demo, _CAL_Z, _CAL_DB)
+    durs = plan.meta["stroke_durations_s"]
+    assert len(durs) == len(plan.strokes) == 2
+    trim = plan.meta["edge_trim_s"]
+    for d in durs:
+        assert 0.3 <= d <= 5.0            # 合成示范笔画量级, 且为裁剪后净时长
+    # 与 to_gd_series(None) 打通: 不传时长即按示范速度回放
+    g_d, _ = plan.to_gd_series(None)
+    assert len(g_d) == sum(int(round(d * 100.0)) + 50 for d in durs)
