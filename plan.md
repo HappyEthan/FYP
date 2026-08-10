@@ -97,13 +97,13 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 ## B0 · Python + PyBullet 仿真环境（现在就能起，不等硬件、不用 ROS）
 - [x] 搭 Python 环境（miniconda：numpy + pybullet）
 - [x] 拿 Elfin5 **URDF**（官方 `elfin_robot` 包 / 大族 3D 模型下载）→ PyBullet 直接 `loadURDF`
-- [x] 按 `docs/control-architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(PyBulletBackend) / `run.py`(循环)
+- [x] 按 `docs/architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(PyBulletBackend) / `run.py`(循环)
 - [x] PyBullet 里让 Elfin 动起来（读关节位姿 + `calculateInverseKinematics` 下发）
 - [ ] （实机阶段再做）写 `HuayanBackend`：`HRIF_Connect`→`HRIF_StartServo`→循环 `HRIF_PushServoP`(写)/`HRIF_ReadActTcpPos`(读)。注意 SDK `.so` 为 py3.6/3.7，可能需单独环境；servo 频率实机测
 
 ## B1 · 复现 CalliRewrite 开环写字（PyBullet 先行，不依赖触角）
 > **复现 CalliRewrite 的机械臂部分** = 开环位置控制、笔宽靠 `z=func(r)` 标定映射的笔高来凑。这既验证控制链路，也是对比实验的**开环基线**。此阶段 `controller` 退化为"只走 xy + 固定/给定 z"。
-> ⚠️ CalliRewrite 的 `RoboControl.py`(发送循环) **未开源**、Dobot DLL 仅 Windows/Dobot → 用自己的后端重写（细节见 `docs/callirewrite-arm-control.md`）。
+> ⚠️ CalliRewrite 的 `RoboControl.py`(发送循环) **未开源**、Dobot DLL 仅 Windows/Dobot → 用自己的后端重写（细节见 `docs/openloop-writing.md`）。
 - [x] PyBullet 里让 Elfin 走一条**直线**（验证控制链路）
 - [x] 写"读 `(x,y,z)` 控制点 npz → 逐点位姿设定值 → SimBackend 下发"的最小控制器（对标缺失的 `RoboControl.Control()`）
 - [x] 走一个字骨架的 xy 路径（z 悬空，或用 r→z 高度凑宽度复现 CalliRewrite）
@@ -112,12 +112,12 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 - [x]（可选）r→z 标定脚本：复现 CalliRewrite 的"画横线→量宽度→拟合分段线性"标定思路
 - [ ] （实机）**纸面标定**：示教三点定平面 → `z_surface`（固定纸夹具）
 
-> **B0/B1 交付报告：`docs/b0-b1-results.md`**。
+> **B0/B1 交付报告：`docs/openloop-writing.md`**。
 
 ## B2 · 导纳外环 + 触角反馈闭环（★核心，E1 过后）
 > 算法在 ① 纯算法层（`AdmittanceController.step`）——与环境无关。仿真里先用**合成 `g_meas`** / 刚性平面接触验证软件结构与稳定性；**真实触角物理必须真机**。实机下发：`HuayanBackend` 用 **`HRIF_PushServoP`** 流式推笛卡尔位姿（控制器自动逆解），连 IK 都不用自己写。备选/安全网：SDK **内置力控**（`SetForceControlState`+`SetMass/Damp/StiffParams`，用机器人腕部 F/T）。
 >
-> **状态（2026-07-31）**：控制器结构 + 滤波进环 + 增益标定已在**裸态仿真**完成（Z 控制 Phase 0/1，见 `docs/handoff-z-phase1.md`）——`ZController` 前馈 `z_ff`+PI 反馈、滤波选型（控制环定稿 EMA α=0.3）、增益无量纲化+出厂默认回填（kp=1.2077/ki=0.134）均已跑通并测试覆盖。**装配态复测（E0/E2）与真机接入仍待硬件**，以下勾选仅代表仿真态完成，非真机验证。
+> **状态（2026-07-31）**：控制器结构 + 滤波进环 + 增益标定已在**裸态仿真**完成（Z 控制 Phase 0/1，见 `docs/z-control.md`）——`ZController` 前馈 `z_ff`+PI 反馈、滤波选型（控制环定稿 EMA α=0.3）、增益无量纲化+出厂默认回填（kp=1.2077/ki=0.134）均已跑通并测试覆盖。**装配态复测（E0/E2）与真机接入仍待硬件**，以下勾选仅代表仿真态完成，非真机验证。
 - [ ] 定义 **StrokePlan 数据结构**（与队友对齐契约2）
 - [ ] 接**契约1**实时 `g_meas` 流（有线低延迟）
 - [ ] **机器人姿态下 re-baseline**：实测 Elfin 法兰/电机磁干扰对 B0 的影响，必要时扣背景磁场
@@ -147,7 +147,7 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 
 ## 近期下一步（Ethan，2026-07-31）
 
-> B0/B1/B2（裸态仿真部分）已完成，见上方勾选与 `docs/handoff-z-phase1.md`。以下按优先级排的真实待办：
+> B0/B1/B2（裸态仿真部分）已完成，见上方勾选与 `docs/z-control.md`。以下按优先级排的真实待办：
 
 1. **装配态 E0/E2 复测**：真机/装配到位后，重跑 E0（控制采样率静置噪声，装配态电机 EMI 会抬噪）与 E2（in-situ ΔB↔z 标定，产出真实 `z_ff`/`S(z)`）；用装配态数据复测滤波两口径选型（孤立指标 vs 控制环在环，当前均基于裸态数据，装配态复测前都勿定稿）。
 2. **§3.2 离线目标曲线管线**（下期）：`raw ΔB → fft_lowpass → 标定反查 → z_ff → StrokePlan`，把 Phase 1 的闭环验证接上真实笔画目标曲线。

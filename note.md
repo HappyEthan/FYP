@@ -171,28 +171,21 @@
 | **`HuayanRobot_Library_Python_V1.0.11.0.pdf`** | ★Elfin 官方 Python SDK 手册（实机控制的关键：连接/Servo/力控/IK-FK） |
 | `Elfin软件操作说明书V6.4.pdf` | Elfin 软件/示教器操作手册 |
 
-**本项目自产文档（`docs/`，按主题分组）：**
+**本项目自产文档（`docs/`，2026-08-10 精简：一模块一文档，过程文档在 `docs/archive/`）：**
 
 | 主题 | 文档 | 内容 |
 |---|---|---|
-| 总纲 | `docs/status-2026-07-31.md` | 阶段总结（控制器现状另见下方"控制"分组） |
-| 控制 | `docs/handoff-z-phase1.md` | Z 控制现状总纲，最新 |
-| 控制 | `docs/z-phase1-sweep.md` | 层1 增益扫描结果（Q1 滤波收益/Q2 稳定边界） |
-| 控制 | `docs/z-phase1-results.md` | 层2 开环 vs 闭环-P/PI 对比 + freeze 毛刺（Q3/Q4） |
-| 控制 | `docs/z-phase1-explained.md` | Phase 1 通俗版讲解 |
-| 控制 | `docs/deltaB-control.md` | ΔB 闭环控制原理/前提假设 |
-| 控制 | `docs/control-architecture.md` | 执行端控制架构：算法↔I/O 解耦、后端可插拔、代码骨架 |
-| 滤波 | `docs/filter-comparison.md` | 滤波器孤立指标选型报告（推荐 OneEuro mc=0.5 β=0.03） |
-| 滤波 | `docs/filter-tutorial.md` | 滤波器原理教程 |
-| 滤波 | `docs/filter-quickcheck.md` | 滤波器速查 |
-| 仿真 | `docs/mujoco-usage.md` | MuJoCo 触觉仿真使用说明 |
-| 仿真 | `docs/tactile-sim-usage.md` | 触觉仿真整体使用说明 |
-| 仿真 | `docs/tactile-fem-sim.md` | 触角磁学模型 + MuJoCo 接触仿真设计 |
-| 仿真 | `docs/b0-b1-results.md` | B0/B1 仿真开环写字交付报告 |
-| 数据 | `docs/deltab-v0-analysis.md` | V0 数据集分析（六件事：完整性/噪声底/基线/幅度/可分性/三轴结构） |
-| 数据 | `delta_b_v0_manifest.md`（根目录） | V0 数据集清单 |
-| 监控 | `docs/monitor-usage.md` | ΔB 实时监控窗口使用说明 |
+| 总纲 | `docs/status-2026-07-31.md` | 阶段总结 |
+| 审计 | `docs/review-2026-08-10.md` | B 阶段全仓审计（完成度/风险/后续计划） |
+| 架构 | `docs/architecture.md` | 代码地图 + 分层架构 + 文档指针 |
+| 控制 | `docs/z-control.md` | Z 控制 Phase 0/1：控制律、定稿数字、用法、局限 |
+| 滤波 | `docs/filter.md` | 两口径选型结论 + 各滤波器原理与用法 |
+| 监控 | `docs/monitor.md` | 监控窗口用法 + V0 数据集分析结论 |
+| 仿真 | `docs/tactile-sim.md` | MuJoCo/解析梁两条路线：用法 + 可信边界 |
+| 开环 | `docs/openloop-writing.md` | B0/B1 开环写字 + CalliRewrite 复现要点 |
+| 管线 | `docs/target-pipeline.md` | 示范→StrokePlan 离线管线：契约、验收、三项设计发现 |
 | 实验 | `docs/gate-experiments.md` | 门禁实验 E0–E5 完整说明（判据/步骤/产出） |
-| 其它 | `docs/callirewrite-arm-control.md` | CalliRewrite 开环写字技术细节（r→z 标定、process()、Dobot 下发、缺失件） |
+| 数据 | `delta_b_v0_manifest.md`（根目录） | V0 数据集清单 |
+| 存档 | `docs/archive/` | 被合并的 19 份过程/交接/报告原文（handoff-*、z-phase1-*、filter-* 等） |
 
 > ESP32 开发环境手册在 `~/esp32-brush-test/ESP32使用手册.md`（本机，非本仓库）。
