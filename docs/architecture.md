@@ -99,7 +99,8 @@
 | `docs/target-pipeline.md` | 离线目标管线：示范 CSV → StrokePlan |
 | `docs/gate-experiments.md` | 门禁实验（E0/E1/E4 等）设计与判据 |
 | `docs/status-2026-07-31.md` | 项目状态快照（08-05 更新） |
-| `docs/review-2026-08-10.md` | 全仓审计：完成度核验、高危风险清单、跨会话脱节 |
+| `docs/review-2026-08-10.md` | 全仓审计：完成度核验、风险论证、跨会话脱节（时点快照） |
+| `docs/risk-register.md` | **风险活清单**：审计风险的追踪状态与修复凭据，修一个勾一个 |
 | `docs/superpowers/specs/` | 各模块设计档案（monitor / z-control Phase 0/1 / filter / 离线管线 / 2026-08-05 runtime-integration 等） |
 
 ---
