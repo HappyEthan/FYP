@@ -62,10 +62,12 @@ class Baseline:
 
 
 class EMA:
-    """指数移动平均滤波器, 三通道独立.
+    """指数移动平均滤波器, 三通道独立. 亦为控制环定稿滤波器 (α=0.3).
 
     y_t = α·x_t + (1-α)·y_{t-1}
     首次 update 直接取输入值, 无冷启动跳变。
+    NaN 策略与 filter.py 一致: 含非有限值的样本原样透传且不更新内部状态
+    (EMA 有记忆, 不透传则一个坏样本永久毒化后续全部输出)。
     """
 
     def __init__(self, alpha: float = 0.3):
@@ -87,6 +89,9 @@ class EMA:
             raise ValueError("EMA.update() 需要 (3,) 或 (N,3) 数组, 当前形状: %s" % (x.shape,))
         out = np.empty_like(x)
         for i in range(len(x)):
+            if not np.all(np.isfinite(x[i])):
+                out[i] = x[i]          # NaN 透传, 状态不更新 (与 filter.py 策略一致)
+                continue
             if self._value is None:
                 self._value = x[i].copy()
             else:

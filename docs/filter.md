@@ -80,7 +80,7 @@ cd /home/ethan/FYP && python scripts/compare_filters.py <装配态csv路径...> 
 来自 2026-08-10 审计（详见 `docs/review-2026-08-10.md`）及既有边界：
 
 1. **两口径选型均基于裸态数据，装配态 E0 复测前都勿定稿**。裸态 σ=6.94 µT 是乐观下界；装配后电机 EMI、振动等会改变噪声谱形状，孤立指标口径（重跑 `compare_filters.py`）与控制环在环口径（重跑 Phase 1 扫描）**两个都要重跑，不预设结论**。
-2. **定稿的 EMA 实现归属倒置且违反 NaN 策略**：控制环主力滤波器 EMA 住在 `monitor/core.py`（GUI 包）而非 `filter.py`，被控制侧多处反向 import；且无 isfinite 分支——一个 NaN 样本永久毒化状态、之后输出恒 NaN，与 `filter.py` 的 NaN 透传策略不一致。后果链：断线补 NaN → EMA 恒 NaN → 闭环静默退化，全程无告警。待修：迁入 `filter.py` 并补 isfinite 透传分支 + EMA×NaN 链路测试。
+2. **定稿的 EMA 实现归属倒置**：控制环主力滤波器 EMA 住在 `monitor/core.py`（GUI 包）而非 `filter.py`，被控制侧多处反向 import——待迁入 `filter.py`（宜与 `feat/monitor-filter-ui` 合并同批做）。~~NaN 策略缺失~~ **已修（2026-08-10）**：EMA 现与 `filter.py` 策略一致（非有限样本原样透传、不更新内部状态，断流恢复后闭环自动复活），并补齐 EMA 单体 NaN 测试与 `run_loop`×EMA 整链恢复测试。
 3. **α=0.3 无单一常量源**：靠字面量在多处各写一遍同步，改参数极易漏改。待收敛为单一常量。
 4. 滤波器解决不了的两件事（职责边界，非缺陷）：50 Hz 工频恰在 Nyquist、混叠折回 DC，数学上无解，交固件 ODR/硬件层；机械臂运动的低频磁干扰与提按信号频谱重叠（都在 0–3 Hz），需差分测量（硬件方案）。
 5. 目标曲线与闭环测量活在两个频域基（fc=3 零相位砖墙 vs EMA α=0.3），该系统偏差已计入 Q3 误差但未单列为误差来源；`compare_z_arms.py --filter` 默认 OneEuro 与定稿 EMA 相反，装配态复测忘带参数会静默产出错误滤波臂的报告。
