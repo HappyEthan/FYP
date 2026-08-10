@@ -124,6 +124,88 @@ def test_step_tracks_constant():
     assert error < 0.05, f"steady-state error {error:.3f} > 0.05"
 
 
+# ---------------------------------------------------------------- 输出钳位
+# z_cmd 离开控制器前的两层安全钳（2026-08-10 审计 R1）：
+# 绝对位置钳 = 物理不变量（笔尖最深/最高），速率钳 = 动力学不变量（单拍跳变）。
+# 正常书写时两钳都不应咬合；只在异常（断线补零/数据污染/freeze 切换毛刺）时介入。
+
+
+def test_abs_clamp_bounds_depth_on_sensor_stuck_zero():
+    """传感器卡 0 + 目标满量程：压深被钳在 z_press_max（默认 = 标定量程+积分权限+1mm）。
+
+    无钳位时该场景 kp 项 + z_ff 会算出 ~11mm（标定量程仅 5mm）。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    assert ctrl.z_press_max == pytest.approx(0.005 + 3e-3 + 1e-3)  # 默认推导
+    for _ in range(100):
+        z_cmd = ctrl.step(np.zeros(3), 250.0)
+        assert z_cmd - Z_SURFACE <= ctrl.z_press_max + 1e-12
+
+
+def test_abs_clamp_bounds_depth_on_garbage_target():
+    """上游污染 g_d=1e4（无钳位时 ~246mm）：仍被钳在 z_press_max。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    z_cmd = ctrl.step(np.zeros(3), 1e4)
+    assert z_cmd - Z_SURFACE <= ctrl.z_press_max + 1e-12
+
+
+def test_abs_clamp_bounds_lift():
+    """反向大误差（测量异常大、目标 0）：抬笔不超过 z_lift_max。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    z_cmd = ctrl.step(np.array([2000.0, 0.0, 0.0]), 0.0)
+    assert z_cmd >= Z_SURFACE - ctrl.z_lift_max - 1e-12
+
+
+def test_rate_clamp_limits_single_step_jump():
+    """相邻两拍 z_cmd 之差 ≤ dz_step_max（默认 0.2mm/拍，即 Q4 毛刺判据）。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    z_prev = ctrl.step(np.array([120.0, 0.0, 0.0]), 120.0)  # 正常接触拍
+    z2 = ctrl.step(np.zeros(3), 250.0)                      # 突发大误差
+    assert abs(z2 - z_prev) <= ctrl.dz_step_max + 1e-12
+    # 持续大误差：每拍最多爬 dz_step_max，且始终不越绝对钳
+    z_last = z2
+    for _ in range(100):
+        z = ctrl.step(np.zeros(3), 250.0)
+        assert abs(z - z_last) <= ctrl.dz_step_max + 1e-12
+        assert z - Z_SURFACE <= ctrl.z_press_max + 1e-12
+        z_last = z
+
+
+def test_clamps_inactive_in_nominal_tracking():
+    """正常小误差跟踪时输出与无钳位公式逐位一致（钳位对标称行为零影响）。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=0.5, ki=0.0)
+    ctrl.step(np.array([148.0, 0.0, 0.0]), 150.0)
+    z2 = ctrl.step(np.array([149.0, 0.0, 0.0]), 150.0)
+    expected = 0.20 + 0.003 + 0.5 * ctrl.s_cal * 1.0  # surface + z_ff(150) + Kp·e
+    assert z2 == pytest.approx(expected)
+
+
+def test_nan_guard_output_finite_and_rate_clamped():
+    """g_d=NaN 走 guard 分支：输出必须有限（回退上一拍指令），且不跳变。
+
+    审计 R2：旧 guard 在 g_d=NaN 时 np.interp(nan) 返回 NaN——"安全 z_cmd" 实为 NaN。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    z1 = ctrl.step(np.array([120.0, 0.0, 0.0]), 120.0)
+    z2 = ctrl.step(np.array([120.0, 0.0, 0.0]), float("nan"))
+    assert np.isfinite(z2)
+    assert abs(z2 - z1) <= ctrl.dz_step_max + 1e-12
+    assert ctrl.frozen
+    # 首拍 g_d 就是 NaN（z_ff 反查得 NaN 且无历史可回退）→ 回退纸面高度
+    ctrl2 = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    z_first = ctrl2.step(np.array([120.0, 0.0, 0.0]), float("nan"))
+    assert np.isfinite(z_first)
+    assert z_first == pytest.approx(Z_SURFACE)
+
+
+def test_reset_clears_rate_clamp_history():
+    """reset 后视为新一段运行：首拍不受速率钳约束（允许直接落到目标附近）。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    ctrl.step(np.array([10.0, 0.0, 0.0]), 10.0)  # 悬空附近, z ≈ surface
+    ctrl.reset()
+    z = ctrl.step(np.array([100.0, 0.0, 0.0]), 250.0)
+    assert z - Z_SURFACE > 1e-3  # 未被 0.2mm/拍 速率钳拖住
+    assert z - Z_SURFACE <= ctrl.z_press_max + 1e-12  # 但绝对钳仍然有效
+
+
 def test_calib_lookup_z_matches_controller_and_vectorizes():
     from brushbot.z_control import calib_lookup_z
     ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
