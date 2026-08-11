@@ -14,6 +14,7 @@ from typing import Protocol
 
 import numpy as np
 
+from brushbot import config
 from brushbot.types import Command
 
 
@@ -152,7 +153,7 @@ class TactileExecutor:
     """
 
     def __init__(self, plan, ctrl, filt, sensor, backend, clock,
-                 stroke_duration_s: float, fs: float = 100.0,
+                 stroke_duration_s: float, fs: float = config.FS,
                  fixed_ori=(0.0, 0.0, 0.0), lift: float = 0.015,
                  stale_limit_s: float = 0.2, noise_std: float = None):
         self._ctrl = ctrl

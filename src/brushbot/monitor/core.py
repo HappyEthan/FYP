@@ -1,6 +1,8 @@
 """无 GUI 核心: 环形缓冲 + 基线 + 派生量. 禁止 import 任何 GUI 库."""
 import numpy as np
 
+from brushbot.filter import EMA   # noqa: F401  归属修正(R7): 正典在 filter.py, 此处 re-export 兼容旧 import
+
 
 class RingBuffer:
     """定长环形缓冲, O(1) 写入. 存 (t_s, Bx, By, Bz)."""
@@ -59,51 +61,6 @@ class Baseline:
     def apply(self, B: np.ndarray) -> np.ndarray:
         """原始 B → ΔB."""
         return np.asarray(B, dtype=float) - self.b0
-
-
-class EMA:
-    """指数移动平均滤波器, 三通道独立. 亦为控制环定稿滤波器 (α=0.3).
-
-    y_t = α·x_t + (1-α)·y_{t-1}
-    首次 update 直接取输入值, 无冷启动跳变。
-    NaN 策略与 filter.py 一致: 含非有限值的样本原样透传且不更新内部状态
-    (EMA 有记忆, 不透传则一个坏样本永久毒化后续全部输出)。
-    """
-
-    def __init__(self, alpha: float = 0.3):
-        if not 0.0 < alpha <= 1.0:
-            raise ValueError("alpha 必须在 (0, 1] 之间, 当前: %s" % alpha)
-        self.alpha = float(alpha)
-        self._value = None          # shape (3,), 首次 update 时初始化
-
-    def update(self, x: np.ndarray) -> np.ndarray:
-        """输入 (3,) 或 (N,3) 数组, 返回同形状平滑值.
-
-        批量输入 (N,3) 时: 对 N 个样本逐行迭代, 返回全部平滑后的序列。
-        单样本 (3,) 时: 返回平滑后的 (3,) 向量。
-        """
-        x = np.asarray(x, dtype=float)
-        if x.ndim == 1:
-            x = x.reshape(1, 3)
-        elif x.ndim != 2 or x.shape[1] != 3:
-            raise ValueError("EMA.update() 需要 (3,) 或 (N,3) 数组, 当前形状: %s" % (x.shape,))
-        out = np.empty_like(x)
-        for i in range(len(x)):
-            if not np.all(np.isfinite(x[i])):
-                out[i] = x[i]          # NaN 透传, 状态不更新 (与 filter.py 策略一致)
-                continue
-            if self._value is None:
-                self._value = x[i].copy()
-            else:
-                self._value = self.alpha * x[i] + (1.0 - self.alpha) * self._value
-            out[i] = self._value
-        if out.shape[0] == 1:
-            return out[0]
-        return out
-
-    def reset(self) -> None:
-        """清空状态, 下次 update 重新冷启动."""
-        self._value = None
 
 
 def derive(dB, gate: float) -> dict:

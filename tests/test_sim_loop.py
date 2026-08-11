@@ -232,3 +232,10 @@ def test_run_loop_nan_chain_with_ema_recovers():
     assert res["frozen"][49]                      # guard 接住
     assert np.isfinite(res["z_cmd"]).all()        # 输出全程有限
     assert np.isfinite(res["abs_f"][50:]).all()   # 恢复拍起滤波复活 (旧 EMA 在此永久 NaN)
+
+
+def test_run_loop_rejects_dt_fs_mismatch():
+    """R12: ctrl.dt 与 run_loop 时间轴 FS 不一致时 fail-loud (积分步长脱钩曾是静默错)."""
+    ctrl = ZController(_CAL_Z, _CAL_DB, dt=0.02)
+    with pytest.raises(ValueError, match="dt"):
+        run_loop(ctrl, None, np.full(10, 120.0), Plant(_CAL_Z, _CAL_DB))

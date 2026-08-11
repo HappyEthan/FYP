@@ -16,7 +16,7 @@
 
 - [~] **R5 · 闭环链绕开 backends 抽象 / HuayanBackend 契约只写了 write 半边** —— 部分推进（2026-08-10 上机日）：TactileExecutor（`runtime.py`）与 HuayanBackend（含 `read()`）已落地并真机验证（读位姿 / MoveL / PushServoP 3000+ 拍）。遗留收口：开环链"每拍两次 `read()` + `state.t` 驱动弧长"在真机上的契约复核；`State.g_meas` 死字段与 `backends/sim.py` 注释的口径统一。
 - [x] **R6 · `Stroke.z_ff` 端到端零消费** —— 已修 2026-08-10（P1 批）：新增 `StrokePlan.to_open_z_series()`（开环臂 z 由存储 z_ff 字段插值生成，与 `to_gd_series` 逐拍对齐），Q3 两臂彩排开环臂改用之；`to_waypoints` 修复后也真实消费 z_ff。等价锁测试 `test_open_z_equivalence_lock_linear_calib` 守住 lookup/interp 分叉——标定表转非线性时测试红，逼出"两臂前馈从哪来"的显式决策（与 R4 联动）。
-- [ ] **R7 · 滤波器归属倒置 + 双频域基**：EMA 住在 `monitor/core.py`（GUI 包）被控制侧 5+ 处反向 import，α=0.3 靠字面量多处同步；目标曲线（fc=3 零相位砖墙）与闭环测量（EMA，有滞后）活在两个频域基，该系统偏差已计入 Q3 的 10.60% 但未单列。修法：EMA 迁入 `filter.py` + 单一常量源（**宜与 `feat/monitor-filter-ui` 合并同批做**）；频域基差异在文档单列为误差来源。
+- [x] **R7 · 滤波器归属倒置 + 双频域基** —— 已修 2026-08-10（P2 批）：EMA 正典迁入 `filter.py`（`monitor/core.py` re-export 兼容全部旧 import，PR#1 的 FILTERS 工厂不受影响）；`CONTROL_EMA_ALPHA` 唯一常量源 + `make_control_filter()` 工厂，生产接线（run_tactile / E2E）已切换；频域基差异在 `docs/target-pipeline.md` 验收节单列为误差来源。
 - [ ] **R8 · 真实示范数据无生产者**：monitor 录制 5 列 vs 管线输入 7 列（含 `x_m,y_m`）不匹配；磁流×机械臂 FK 双源时间对齐/重采样层零代码——换真数据时最先撞墙处。**依赖录制协议落地**（拖动示教 + 硬件）。
 - [ ] **R9 · 出厂默认 ki=0.134 未全场景复跑**：9.47% / 116° / Q4 PASS 全是 ki=0/0.005 口径；出厂配置已知的唯一逐拍指标（多笔画 freeze 毛刺 0.2434mm）超 0.2mm 暂定上限。**可纯软件先跑**：`compare_z_arms.py --ki-pi 0.134` 全场景重跑，统一口径；毛刺物理危害等真机笔尖实测裁决（见 `docs/z-control.md` 开放项）。
 - [ ] **R10 · 参数回填与脚本默认值坑**：`z_control.py` `noise_std` 默认仍是裸态 7.0（run_loop 接线已用 `filtered_sigma()` 现算，但默认值与 kp/ki/noise_std 的属主断言测试仍缺）；`compare_z_arms.py --filter` 默认 OneEuro 与定稿 EMA 相反，复跑忘传参会静默产出错误滤波臂报告。
@@ -27,7 +27,7 @@
 ## 低危 / 工程卫生
 
 - [ ] **R11** "3σ" 接触门实为 |ΔB| 分布 ~5.3σ（σ 取三轴 std 的模再比标量范数），命名误导、起收笔时机偏保守。
-- [ ] **R12** 常量分叉：合成标定表字面量 3 份、`PAPER_Z=0.2` 3 份（`z_control`/`strokeplan` 不 import `config`）、采样率 5 处且 `run_loop` FS 与 `ctrl._dt` 无一致性校验。
+- [x] **R12** 常量分叉 —— 已修 2026-08-10（P2 批）：`config.FS` 为采样主频唯一定义（sim_loop/strokeplan/demo_pipeline/filter/runtime 全部引用）；`ZController` 默认 `z_surface=config.PAPER_Z`、`dt=1/config.FS`；合成线性标定表收敛为 `sim_loop.CALIB_Z_MM_LINEAR`/`CALIB_ABS_DB_LINEAR`（4 个脚本改引用，并在定义处标注 R4 直线警告）；`run_loop` 新增 `ctrl.dt`×FS 一致性 fail-loud 校验；钉住测试 `tests/test_constants.py`。
 - [ ] **R13** 切分门槛静默吞短笔画（fc=3 时 <约0.64s 整段消失，楷书"点"/快撇量级）；饱和/丢弃报警走 print，meta 的 `sat_frac`/`n_dropped` 无人检查。
 - [ ] **R14** p99 标度阈值隐含"笔画占录音 >1%"未记录（长闲置段录音会退化）；`estimate_sigma` 首段判据对含漂移的真实录音脆弱。
 - [x] **R15** `stroke_duration_s` 未持久化 —— 已修 2026-08-10（P1 批）：`build_plan` 把逐笔裁后净接触时长写入 `meta["stroke_durations_s"]`；`to_gd_series(None)`/`to_open_z_series(None)` 默认按存储时长回放（缺失则 fail-loud），显式标量/序列可覆盖；npz 带 `format_version=2`。
@@ -42,6 +42,6 @@
 
 1. ~~P0 安全三件套~~：R1 ✅ + R2 ✅（noise_std 属主测试归 R10，未清）
 2. ~~P1 StrokePlan 出口~~：R3 ✅ + R6 ✅ + A1 ✅ + R15 ✅（2026-08-10，`feat/z-cmd-clamp` 分支）
-3. **P2 合并窗口**：R7 + R12（趁 `feat/monitor-filter-ui` 合并做归属/常量收敛）
+3. ~~P2 归属/常量收敛~~：R7 ✅ + R12 ✅（2026-08-10；`feat/monitor-filter-ui` 已开 PR#1 待 GUI 手动验收，EMA re-export 保证其零冲击）
 4. **纯软件可先行**：R9（出厂增益复跑）、R11、R13、R14、R16、R17、R18、R19（skip→fail 部分）
 5. **等硬件**：R4（E2 标定）、R8（录制协议）、R5 收口（真机开环链复核）、**R20（真机 z 符号定点，首次接触实验前必须）**、R19 数据部分（装配态 E0）

@@ -17,7 +17,7 @@ import numpy as np
 
 from brushbot import config
 
-FS = 100.0
+FS = config.FS       # 采样主频: config 为唯一定义 (R12)
 FORMAT_VERSION = 2   # npz 格式版本: 2 = meta 含 stroke_durations_s (R15)
 
 

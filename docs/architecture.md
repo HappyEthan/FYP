@@ -35,7 +35,7 @@
 | `types.py` | `State` / `Command` 数据类，层间唯一传递物 | 公共 |
 | `run.py` | 开环通用运行循环（一拍两次 read：控制器输入 + 轨迹记录） | ③ |
 | `controller.py` | `OpenLoopController`：路点折线弧长匀速插值 | ① |
-| `filter.py` | 逐样本实时滤波器：2 阶 Butterworth IIR / One Euro（NaN 透传策略） | ① |
+| `filter.py` | 逐样本实时滤波器：EMA（控制环定稿，α 常量源 + `make_control_filter` 工厂）/ Butterworth / One Euro（NaN 透传策略） | ① |
 | `z_control.py` | `ZController`：Z 轴闭环（前馈 `calib_lookup_z` 反查 + PI + freeze/积分限幅） | ① |
 | `sim_loop.py` | 闭环仿真 harness：V0 噪声回放 + Plant + 唯一闭环路径 `run_loop` | ③（闭环链，自建 Plant） |
 | `strokeplan.py` | `StrokePlan`/`Stroke` 契约：开环/闭环共同前馈来源，含 save/load 与路点导出 | ① |
@@ -57,7 +57,7 @@
 | `calligraphy/calibration.py` | `func_brush`：笔宽 r → 笔高 z 分段线性标定 | ① |
 | `calligraphy/render.py` | 运动结束后离线渲染墨迹 PNG | ① |
 | `calligraphy/inkcanvas.py` | 实时墨迹画布（PIL，边写边刷进仿真贴图） | ① |
-| `monitor/core.py` | 监控无 GUI 核心：环形缓冲/基线/EMA/派生量（EMA 亦为控制环定稿滤波器） | 独立支线 |
+| `monitor/core.py` | 监控无 GUI 核心：环形缓冲/基线/派生量（EMA 已迁 `filter.py`，此处 re-export） | 独立支线 |
 | `monitor/sources.py` | 可插拔信号源（串口/仿真/回放），输出原始 B | 独立支线 |
 | `monitor/recorder.py` | 录制成 V0 数据集格式（CSV+JSON） | 独立支线 |
 | `monitor/window.py` | PyQtGraph 监控窗口（唯一允许 import GUI 库的模块） | 独立支线 |

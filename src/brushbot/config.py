@@ -7,6 +7,7 @@ _ELFIN5_URDF = os.path.join(os.path.dirname(__file__), "assets", "elfin5", "elfi
 ARM_URDF = _ELFIN5_URDF
 EEF_LINK = 9           # elfin_dummy_gripper (工具 TCP); 6 revolute=idx2..7, end_link=8, tcp=9
 PAPER_Z = 0.2          # 书写平面高度 (米), 选臂可达的中间高度; 仿真里纸是抽象 z 平面
+FS = 100.0             # 采样/控制主频 (Hz), 全项目唯一定义 (滤波/控制环/管线/回放共用)
 Z_TOUCH_REF = 0.009    # CalliRewrite z 帧里"刚触纸"的参考 z (func_brush 上端附近)
 # 笔杆垂直: roll=180° 使工具 Z 轴朝下。yaw 是自由参数(毛笔绕自身轴对称),
 # 选 90° 是因为 yaw=0 会把 J1/J4/J6 顶死在 ±180° 限位上(书写区余量 -3°,

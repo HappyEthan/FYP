@@ -23,8 +23,7 @@ from brushbot.z_control import ZController                     # noqa: E402
 from sweep_z_gains import (KI_GRID_DEFAULT as KI_GRID,           # noqa: E402  (同目录)
                            KP_GRID_DEFAULT as KP_GRID, run_cell)
 
-CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
+from brushbot.sim_loop import CALIB_Z_MM_LINEAR as CALIB_Z, CALIB_ABS_DB_LINEAR as CALIB_DB  # noqa: E402  单一定义源(R12)
 SEED = 42
 # 多笔画场景常量 (spec §3.4 二次修订, 2026-07-30): KP_GRID/KI_GRID 复用层1默认增益网格
 # (import 自 sweep_z_gains, 不再重复字面量); STROKE_S 由 synth_press 实际长度算出,

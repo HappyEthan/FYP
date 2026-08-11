@@ -8,6 +8,8 @@
 """
 import numpy as np
 
+from brushbot import config
+
 
 def calib_lookup_z(g, calib_z_mm, calib_abs_dB):
     """标定反查: 目标 |ΔB| (µT) -> 压深 offset (m). 全项目唯一实现.
@@ -26,8 +28,8 @@ class ZController:
     """整体 ΔB 标量跟踪控制器。"""
 
     def __init__(self, calib_z_mm: np.ndarray, calib_abs_dB: np.ndarray,
-                 dt: float = 0.01, kp: float = 1.2077, ki: float = 0.134,
-                 z_surface: float = 0.20, dz_margin: float = 3e-3,
+                 dt: float = 1.0 / config.FS, kp: float = 1.2077, ki: float = 0.134,
+                 z_surface: float = config.PAPER_Z, dz_margin: float = 3e-3,
                  noise_std: float = 7.0, z_press_max: float = None,
                  z_lift_max: float = 0.02, dz_step_max: float = 1e-3):
         """
@@ -162,6 +164,11 @@ class ZController:
     def z_surface(self) -> float:
         """纸面高度 (m)."""
         return self._z_surface
+
+    @property
+    def dt(self) -> float:
+        """控制周期 (s); run_loop 用它做 FS 一致性 fail-loud 校验."""
+        return self._dt
 
     @property
     def z_fb(self) -> float:

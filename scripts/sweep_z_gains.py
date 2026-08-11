@@ -28,8 +28,7 @@ from brushbot.sim_loop import (FS, Plant, V0NoiseSource, diverged, osc_index,  #
 from brushbot.z_control import ZController                     # noqa: E402
 from compare_filters import ema_freq_response                  # noqa: E402  (同目录)
 
-CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
+from brushbot.sim_loop import CALIB_Z_MM_LINEAR as CALIB_Z, CALIB_ABS_DB_LINEAR as CALIB_DB  # noqa: E402  单一定义源(R12)
 FILTERS = [
     ("none", None, None),
     ("EMA a=0.3", lambda: EMA(0.3), lambda f: ema_freq_response(0.3, f)),

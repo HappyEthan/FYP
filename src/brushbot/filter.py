@@ -1,12 +1,19 @@
-"""逐样本实时滤波器: 2 阶 Butterworth IIR 与 One Euro 自适应低通.
+"""逐样本实时滤波器: EMA / 2 阶 Butterworth IIR / One Euro 自适应低通.
 
 信号链: MLX90393 (100 Hz) → 滤波器 → ZController (外部组合, 控制环脚本接线).
-接口与 monitor/core.py:EMA 一致: update((3,)|(N,3)) → 同形状, reset().
+统一接口: update((3,)|(N,3)) → 同形状, reset().
 NaN 策略: 含非有限值的样本原样透传且不更新内部状态.
+EMA 为控制环定稿滤波器 (α=CONTROL_EMA_ALPHA, Phase 1 在环评估),
+2026-08-10 起归属本模块 (审计 R7); monitor.core 保留 re-export 兼容旧 import.
 
 见 docs/superpowers/specs/2026-07-29-filter-design.md
 """
 import numpy as np
+
+from brushbot import config
+
+# 控制环滤波器工作点 (Phase 1 层 1 定稿, 装配态复测前勿改): 唯一常量源
+CONTROL_EMA_ALPHA = 0.3
 
 
 def _validate(x):
@@ -23,7 +30,7 @@ def _validate(x):
 class ButterworthFilter:
     """2 阶 Butterworth IIR 低通 biquad, 三通道独立, 逐样本实时滤波."""
 
-    def __init__(self, fc: float, fs: float = 100.0):
+    def __init__(self, fc: float, fs: float = config.FS):
         if not 0.0 < fc < fs / 2.0:
             raise ValueError("fc 必须在 (0, fs/2) 之间, 当前: %s" % fc)
         self.fc = float(fc)
@@ -72,7 +79,7 @@ class OneEuroFilter:
     """
 
     def __init__(self, min_cutoff: float = 1.0, beta: float = 0.0,
-                 d_cutoff: float = 1.0, fs: float = 100.0):
+                 d_cutoff: float = 1.0, fs: float = config.FS):
         if min_cutoff <= 0.0 or d_cutoff <= 0.0:
             raise ValueError("min_cutoff/d_cutoff 必须 > 0, 当前: %s / %s"
                              % (min_cutoff, d_cutoff))
@@ -114,3 +121,45 @@ class OneEuroFilter:
     def reset(self) -> None:
         self._x = None
         self._dx = None
+
+
+class EMA:
+    """指数移动平均滤波器, 三通道独立. 控制环定稿滤波器 (α=0.3).
+
+    y_t = α·x_t + (1-α)·y_{t-1}
+    首次 update 直接取输入值, 无冷启动跳变。
+    NaN 策略: 含非有限值的样本原样透传且不更新内部状态
+    (EMA 有记忆, 不透传则一个坏样本永久毒化后续全部输出)。
+    2026-08-10 前住在 monitor/core.py (归属倒置, 审计 R7); 现迁入本模块,
+    monitor.core 保留 re-export。
+    """
+
+    def __init__(self, alpha: float = CONTROL_EMA_ALPHA):
+        if not 0.0 < alpha <= 1.0:
+            raise ValueError("alpha 必须在 (0, 1] 之间, 当前: %s" % alpha)
+        self.alpha = float(alpha)
+        self._value = None          # shape (3,), 首次 update 时初始化
+
+    def update(self, x: np.ndarray) -> np.ndarray:
+        """输入 (3,) 或 (N,3) 数组, 返回同形状平滑值."""
+        x, single = _validate(x)
+        out = np.empty_like(x)
+        for i in range(len(x)):
+            if not np.all(np.isfinite(x[i])):
+                out[i] = x[i]          # NaN 透传, 状态不更新
+                continue
+            if self._value is None:
+                self._value = x[i].copy()
+            else:
+                self._value = self.alpha * x[i] + (1.0 - self.alpha) * self._value
+            out[i] = self._value
+        return out[0] if single else out
+
+    def reset(self) -> None:
+        """清空状态, 下次 update 重新冷启动."""
+        self._value = None
+
+
+def make_control_filter() -> EMA:
+    """控制环滤波器工厂: 生产接线的唯一入口, 杜绝 α 字面量分叉 (审计 R7)."""
+    return EMA(CONTROL_EMA_ALPHA)

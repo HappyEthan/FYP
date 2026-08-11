@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from brushbot.backends.fake import FakeBackend                  # noqa: E402
 from brushbot.demo_pipeline import build_plan, load_demo        # noqa: E402
-from brushbot.monitor.core import EMA                           # noqa: E402
+from brushbot.filter import EMA, make_control_filter           # noqa: E402
 from brushbot.monitor.sources import ReplaySource               # noqa: E402
 from brushbot.runtime import (PlantLink, RealClock,             # noqa: E402
                               ReplaySensor, TactileExecutor)
@@ -33,8 +33,7 @@ from brushbot.z_control import ZController                      # noqa: E402
 from synth_demo import make_demo, write_demo_csv                # noqa: E402
 
 FS = 100.0
-CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
+from brushbot.sim_loop import CALIB_Z_MM_LINEAR as CALIB_Z, CALIB_ABS_DB_LINEAR as CALIB_DB  # noqa: E402  单一定义源(R12)
 SEED = 42
 STROKE_DURATION_S = 3.0
 
@@ -81,7 +80,7 @@ def run_sim(out_path):
     plant = Plant(CALIB_Z, CALIB_DB, z_surface=ctrl.z_surface,
                   noise=V0NoiseSource(csvs, seed=SEED + 1) if csvs else None)
     link = TracingLink(plant, z0=ctrl.z_surface)
-    ex = TactileExecutor(plan, ctrl, EMA(0.3), sensor=link, backend=link,
+    ex = TactileExecutor(plan, ctrl, make_control_filter(), sensor=link, backend=link,
                          clock=RealClock(fs=FS),
                          stroke_duration_s=STROKE_DURATION_S, fs=FS,
                          noise_std=noise_std)
@@ -105,7 +104,7 @@ def run_replay(csv_path, out_path):
     work = Path(tempfile.mkdtemp(prefix="run-tactile-"))
     plan = _sim_plan(None, work)
     ctrl = ZController(CALIB_Z, CALIB_DB)
-    ex = TactileExecutor(plan, ctrl, EMA(0.3), sensor=ReplaySensor(src),
+    ex = TactileExecutor(plan, ctrl, make_control_filter(), sensor=ReplaySensor(src),
                          backend=FakeBackend(dt=1.0 / FS),
                          clock=RealClock(fs=FS),
                          stroke_duration_s=STROKE_DURATION_S, fs=FS)

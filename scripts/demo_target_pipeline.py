@@ -23,13 +23,12 @@ from brushbot.demo_pipeline import build_plan, load_demo        # noqa: E402
 from brushbot.sim_loop import (Plant, V0NoiseSource, rms_pct,   # noqa: E402
                                run_loop)
 from brushbot.z_control import ZController, calib_lookup_z      # noqa: E402
-from brushbot.monitor.core import EMA                           # noqa: E402
+from brushbot.filter import make_control_filter                 # noqa: E402
 from synth_demo import (g_true_s, make_demo, true_s_on_path,    # noqa: E402
                         write_demo_csv)
 
 FS = 100.0
-CALIB_Z = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
-CALIB_DB = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
+from brushbot.sim_loop import CALIB_Z_MM_LINEAR as CALIB_Z, CALIB_ABS_DB_LINEAR as CALIB_DB  # noqa: E402  单一定义源(R12)
 SEED = 42
 
 
@@ -88,7 +87,7 @@ def run_acceptance(save_dir=None, make_plot=False, verbose=True):
     # --- Q3: 两臂彩排 (calib×0.8); 回放时长用 meta 存储的示范实际时长 (R15),
     #     开环臂 z 由存储 z_ff 字段生成 (R6: 两臂共享前馈由数据结构保证) ---
     g_d, _ = plan.to_gd_series(None)
-    sigma_f = (V0NoiseSource(csvs, seed=SEED).filtered_sigma(lambda: EMA(0.3))
+    sigma_f = (V0NoiseSource(csvs, seed=SEED).filtered_sigma(make_control_filter)
                if csvs else 2.0)
     z_open = plan.to_open_z_series(None, z_surface=0.20)
     results = {}
@@ -104,7 +103,7 @@ def run_acceptance(save_dir=None, make_plot=False, verbose=True):
                    "z_cmd": z_open, "frozen": g_d < 3.0 * sigma_f}
         else:
             ctrl = ZController(CALIB_Z, CALIB_DB, noise_std=sigma_f)
-            res = run_loop(ctrl, EMA(0.3), g_d, plant)
+            res = run_loop(ctrl, make_control_filter(), g_d, plant)
         results[arm] = res
     q3 = {arm: float(rms_pct(results[arm], sigma_f)) for arm in ("open", "closed")}
     for arm in ("open", "closed"):

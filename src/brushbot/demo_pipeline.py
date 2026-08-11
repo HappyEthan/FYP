@@ -5,11 +5,12 @@
 """
 import numpy as np
 
+from brushbot import config
 from brushbot.sim_loop import fft_lowpass
 from brushbot.strokeplan import Stroke, StrokePlan
 from brushbot.z_control import calib_lookup_z
 
-FS = 100.0
+FS = config.FS   # 采样主频: config 为唯一定义 (R12)
 DEMO_COLS = ("t_us", "t_s", "dBx_uT", "dBy_uT", "dBz_uT", "x_m", "y_m")
 
 
