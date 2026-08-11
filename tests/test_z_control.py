@@ -36,9 +36,23 @@ def test_z_ff_interpolation():
     assert ctrl._z_ff_lookup(150.0) == pytest.approx(0.003, rel=0.01)
 
 
+def test_s_cal_from_calib():
+    """S_cal = z 跨度 / |ΔB| 跨度 (m/µT)。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    assert ctrl.s_cal == pytest.approx(0.005 / 250.0)
+
+
+def test_kp_dimensionless_semantics():
+    """kp=0.5 表示每拍修正误差的 50%: 比例项 = kp·S_cal·e。"""
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=0.5, ki=0.0)
+    z_cmd = ctrl.step(np.array([100.0, 0.0, 0.0]), 150.0)  # e = 50, 未 freeze
+    expected = 0.20 + 0.003 + 0.5 * ctrl.s_cal * 50.0      # surface + z_ff(150) + Kp 项
+    assert z_cmd == pytest.approx(expected)
+
+
 def test_reset_clears_integrator():
     """reset 後反饋項歸零。"""
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=1.0)
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, ki=5.0)
     # Run a few steps to build up integrator
     for _ in range(50):
         ctrl.step(np.array([0.0, 0.0, 50.0]), 150.0)  # g_d=150 but meas only 50
@@ -87,23 +101,38 @@ def test_air_freezes_integrator():
 
 
 def test_step_tracks_constant():
-    """固定目標下閉環收斂到 ±5% 誤差。
+    """固定目標下閉環機制驗證：顯式温和增益 kp=0.3/ki=0.03 在理想瞬時 plant
+    （零延遲、零執行器滯後）上收斂到 ±5%。
 
-    NOTE: The brief specified kp=0.5, ki=0.2 but those values cause a limit cycle
-    because kp * 120 (max error) = 60 m, far exceeding the 5 mm calibration range.
-    Additionally, the original _plant() in the brief passed z_cmd (world frame,
-    ~0.20 m) as z_offset (0-5 mm), which saturated the plant at 250 uT always.
-    Tuned kp=1e-5, ki=0.0005 for stable convergence.
+    本測試考的是"閉環機制本身能收斂"，不考默認增益政策——Phase 1 回填後的默認值
+    (kp=1.2077/ki=0.134) 是在假設執行器滯後 (n_delay=2 拍、tau=0.05s) 的前提下由
+    層 1/層 2 掃描得出的工作點，套到本測試零滯後的理想瞬時 plant 上會單拍過衝出整
+    個標定量程觸發飽和式極限環，不收斂（不是機制壞了，是工作點的前提條件不滿足）。
+    默認增益在其設計前提（有延遲/滯後的真實 plant）下的收斂性由
+    `tests/test_sim_loop.py::test_run_loop_closed_loop_converges_constant`
+    （用 `sim_loop.Plant`，含 n_delay=2 拍傳輸延遲 + tau=0.05s 一階執行器）驗證。
+    （2026-07-30 Task 9 修訂）
     """
-    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=1e-5, ki=0.0005)
-    g_d = 120.0  # target |ΔB|
-    z_cmd = 0.0
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01, kp=0.3, ki=0.03)
+    g_d = 120.0
     dB_meas = np.zeros(3)
-
     for _ in range(300):
         z_cmd = ctrl.step(dB_meas, g_d)
         abs_meas = _plant(z_cmd, _CALIB_Z, _CALIB_DB)
         dB_meas = np.array([abs_meas, 0.0, 0.0])
-
     error = abs(g_d - np.linalg.norm(dB_meas)) / g_d
     assert error < 0.05, f"steady-state error {error:.3f} > 0.05"
+
+
+def test_calib_lookup_z_matches_controller_and_vectorizes():
+    from brushbot.z_control import calib_lookup_z
+    ctrl = ZController(_CALIB_Z, _CALIB_DB, dt=0.01)
+    for g in (-10.0, 0.0, 75.0, 150.0, 999.0):
+        assert calib_lookup_z(g, _CALIB_Z, _CALIB_DB) == pytest.approx(
+            ctrl._z_ff_lookup(g))
+    arr = calib_lookup_z(np.array([0.0, 150.0, 999.0]), _CALIB_Z, _CALIB_DB)
+    np.testing.assert_allclose(arr, [0.0, 0.003, 0.005])
+    # 非单调标定输入同样正确 (排序在函数内)
+    shuffled = np.array([2, 0, 4, 1, 5, 3])
+    assert calib_lookup_z(150.0, _CALIB_Z[shuffled], _CALIB_DB[shuffled]) \
+        == pytest.approx(0.003)

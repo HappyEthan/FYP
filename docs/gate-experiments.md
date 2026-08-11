@@ -2,7 +2,7 @@
 
 > **一句话**：真机到位后，用这几个实验回答"触角到底能不能拿来做闭环提按"。
 > **E1 是分水岭**——不过就不写正式触角闭环代码，改上 F/T 安全网。
-> 关联：`note.md §7/§8`、`plan.md A3`、`docs/deltaB-control.md §9`、`reference/执行方案-力控.md`。
+> 关联：`note.md §7/§8`、`plan.md A3`、`docs/archive/deltaB-control.md §9`、`reference/执行方案-力控.md`。
 
 ---
 
@@ -217,7 +217,7 @@ t,Bx,By,Bz
 
 ## 7. 诚实边界
 
-- 仿真（`docs/tactile-fem-sim.md`）复现的是**结构/趋势**，不是真机数值。
+- 仿真（`docs/tactile-sim.md`）复现的是**结构/趋势**，不是真机数值。
 - E0–E4 的判据数字（0.1s、3Hz、θ>60° 等）是**工程起点**，真机实测后按结果调整并写进 limitation。
 - 裸触角结论是**边界（上/下界）**，不是真值；除 kill test 外不可当结论用。
 - E5 的原始三轴一旦丢失就无法回溯——**采集端永远存原始 LSB**。

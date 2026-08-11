@@ -1,5 +1,7 @@
 # Handoff: Z 轴控制算法开发
 
+> ⚠️ **本文档已被取代（2026-07-31 归档）**：Z 控制 Phase 0/1 已完成，现状总纲见 docs/handoff-z-phase1.md（其 §1.1 硬件状态表与 §3 V0 数据资产部分本文仍有参考价值）。
+
 > 给下一个 session 的交接文档。
 > 状态：ΔB 监控窗口已完工；V0 数据集已采集/分析；**Z 控制算法待开发**。
 > 分支：`feat/deltab-monitor`（未 merge，18+ commits，40 tests green）

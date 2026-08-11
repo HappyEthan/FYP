@@ -24,6 +24,9 @@ FS = 100.0        # 采样率 Hz
 F_SIG = 3.0       # 目标信号带宽 Hz (提按动作)
 REF_FC = 3.0      # 动态跟踪参考: FFT 零相位截断频率 Hz
 SETTLE_TOL = 0.05
+STEP_AMP = 10.0   # 阶跃幅值 µT: 提按 ΔB 代表区间 10–30 µT 的下界 (非线性滤波器
+                  # settle 随幅值减小而变长, 下界=区间内最坏情形; 取中值/上界会让
+                  # 恰好压线的激进配置胜出, 推荐随幅值漂移). 1 µT 属小信号, 不代表提按.
 
 
 def load_csv(path):
@@ -72,12 +75,14 @@ def f3db(freq_fn):
     return float(f[idx[0]]) if len(idx) else float("nan")
 
 
-def step_settle_ms(make_filter, tol=SETTLE_TOL, n=500):
-    """阶跃响应进入并保持 ±tol 所需时间 (ms). 冷启动于 0, 样本 1 阶跃到 1."""
+def step_settle_ms(make_filter, tol=SETTLE_TOL, n=500, amp=STEP_AMP):
+    """阶跃响应进入并保持 ±tol·amp 所需时间 (ms). 冷启动于 0, 样本 1 阶跃到 amp.
+
+    amp 影响非线性滤波器 (OneEuro 自适应截止) 的结果, 线性滤波器与 amp 无关."""
     x = np.zeros((n, 3))
-    x[1:] = 1.0
+    x[1:] = amp
     y = make_filter().update(x)[:, 0]
-    bad = np.abs(y - 1.0) > tol
+    bad = np.abs(y - amp) > tol * amp
     last = int(np.max(np.nonzero(bad)[0])) if bad.any() else 0
     return last * 1000.0 / FS
 
@@ -91,9 +96,12 @@ def dynamic_rms(make_filter, dB):
 
 def build_configs():
     """全部对比配置. fc_ref: σ 对照用的 FFT 截断频率."""
-    cfgs = [{"label": "EMA a=0.3", "make": lambda: EMA(0.3),
-             "freq": lambda f: ema_freq_response(0.3, f),
-             "fc_ref": f3db(lambda f: ema_freq_response(0.3, f))}]
+    cfgs = []
+    for a in (0.05, 0.1, 0.2, 0.3, 0.5):
+        cfgs.append({"label": "EMA a=%g" % a,
+                     "make": (lambda a=a: EMA(a)),
+                     "freq": (lambda f, a=a: ema_freq_response(a, f)),
+                     "fc_ref": f3db(lambda f, a=a: ema_freq_response(a, f))})
     for fc in (5.0, 8.0, 10.0, 12.0):
         cfgs.append({"label": "Butter fc=%g" % fc,
                      "make": (lambda fc=fc: ButterworthFilter(fc)),
@@ -149,9 +157,7 @@ def recommend(rows):
 
 def make_figure(cfgs_sel, idle, out_png):
     """图: idle z 通道滤波对比 + 阶跃响应."""
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
+    plt = _plt()
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 4))
     t = idle["t"][:500]
@@ -163,13 +169,62 @@ def make_figure(cfgs_sel, idle, out_png):
     axes[0].legend(fontsize=8)
     n = 100
     x = np.zeros((n, 3))
-    x[1:] = 1.0
+    x[1:] = STEP_AMP
     ts = np.arange(n) * 1000.0 / FS
     for cfg in cfgs_sel:
-        axes[1].plot(ts, cfg["make"]().update(x)[:, 0], lw=1.0, label=cfg["label"])
+        axes[1].plot(ts, cfg["make"]().update(x)[:, 0] / STEP_AMP,
+                     lw=1.0, label=cfg["label"])
     axes[1].axhspan(0.95, 1.05, color="0.9")
-    axes[1].set(xlabel="t (ms)", ylabel="step response", title="阶跃响应")
+    axes[1].set(xlabel="t (ms)", ylabel="step response (norm.)",
+                title="阶跃响应 (%g µT, 归一化)" % STEP_AMP)
     axes[1].legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(out_png, dpi=120)
+
+
+def _plt():
+    """Agg 后端 + CJK 字体的 matplotlib.pyplot (中文标签不出方框)."""
+    import matplotlib
+    matplotlib.use("Agg")
+    matplotlib.rcParams["font.sans-serif"] = [
+        "Noto Sans CJK SC", "Noto Sans CJK HK", "Noto Sans CJK JP", "DejaVu Sans"]
+    matplotlib.rcParams["axes.unicode_minus"] = False
+    import matplotlib.pyplot as plt
+    return plt
+
+
+def make_pareto(rows, out_png):
+    """噪声-滞后 Pareto 散点: x=3Hz 相位滞后°, y=idle |σ| µT. 左下=最优方向.
+
+    颜色取 Okabe-Ito 无障碍色板; OneEuro 用空心标记 + 形状双编码,
+    因其相位为慢态线性化等效值, 与线性滤波器不可直接比相位.
+    """
+    plt = _plt()
+
+    families = [  # (前缀, 颜色, 标记, 实心)
+        ("EMA", "#0072B2", "o", True),
+        ("Butter", "#E69F00", "s", True),
+        ("OneEuro", "#009E73", "^", False),
+    ]
+    fig, ax = plt.subplots(figsize=(7.5, 5.5))
+    for prefix, color, marker, filled in families:
+        pts = [r for r in rows if r["label"].startswith(prefix)]
+        xs = [r["phase3_deg"] for r in pts]
+        ys = [r["sigma_norm"] for r in pts]
+        ax.scatter(xs, ys, s=70, marker=marker, zorder=3,
+                   facecolors=color if filled else "none",
+                   edgecolors=color, linewidths=1.6,
+                   label=prefix + ("" if filled else " (慢态等效相位)"))
+        for r in pts:  # 直接标注参数, 文字用中性墨色而非系列色
+            ax.annotate(r["label"].replace(prefix, "").strip(),
+                        (r["phase3_deg"], r["sigma_norm"]),
+                        textcoords="offset points", xytext=(6, 4),
+                        fontsize=7.5, color="#444444")
+    ax.set(xlabel="3 Hz 相位滞后 (°)", ylabel="idle |σ| (µT)",
+           title="噪声-滞后权衡 (左下为 Pareto 最优方向)")
+    ax.margins(x=0.14, y=0.08)   # 给右缘的直接标注留位置
+    ax.grid(True, color="0.9", lw=0.6, zorder=0)
+    ax.legend(fontsize=8, loc="upper right")
     fig.tight_layout()
     fig.savefig(out_png, dpi=120)
 
@@ -184,7 +239,7 @@ def write_report(rows, rec, runs, out_md, out_png):
         "",
         "## 对比矩阵",
         "",
-        "| 配置 | σx/σy/σz (µT) | \\|σ\\| (µT) | FFT 对照差 % | 3Hz 相位滞后° | 群延迟 ms | 阶跃±5% ms | 动态 RMS µT |",
+        "| 配置 | σx/σy/σz (µT) | \\|σ\\| (µT) | FFT 对照差 % | 3Hz 相位滞后° | 群延迟 ms | 阶跃(" + "%g" % STEP_AMP + "uT)±5% ms | 动态 RMS µT |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
@@ -196,9 +251,11 @@ def write_report(rows, rec, runs, out_md, out_png):
         "",
         "注: OneEuro 的相位/群延迟为慢态线性化等效值 (cutoff=min_cutoff), 快态滞后由动态 RMS 体现;",
         "FFT 对照差 % 的 <10% 验收判据适用于 2 阶 Butterworth (spec §7), 一阶滤波器 ENBW 更宽, 差异天然更大;",
-        "阶跃 settle 用 1 µT 单位阶跃测量; 对幅值相关的非线性滤波器 (OneEuro) 这是小信号最坏情形——",
-        "实际提按 ΔB 变化为数十 µT 量级, 代表性幅值下 OneEuro 的 settle 会显著变短",
-        "(实测 mc=0.5 b=0.03: 1 µT→380 ms, 10 µT→100 ms, 30 µT→50 ms), 本表 settle 数字不应单独用于淘汰 OneEuro.",
+        "阶跃 settle 用 %g µT 阶跃测量 = 提按 ΔB 代表区间 10–30 µT 的下界 (区间内最坏情形):" % STEP_AMP,
+        "OneEuro 为非线性滤波器, settle 随幅值减小而变长 (实测 mc=0.5 b=0.03: 1 µT→380 ms, 10 µT→100 ms,",
+        "30 µT→50 ms); 用中值/上界评会让恰好压 100ms 线的激进配置胜出, 推荐随幅值漂移 (10→30 µT 扫描",
+        "实测: mc=0.5 b=0.03 全程通过, mc=2 b=0.01 / mc=0.5 b=0.01 仅在 ≥20/30 µT 通过).",
+        "线性滤波器 (EMA/Butterworth) settle 与幅值无关. 1 µT 属小信号口径, 不代表提按动作.",
         "",
         "## 推荐",
         "",
@@ -227,6 +284,12 @@ def write_report(rows, rec, runs, out_md, out_png):
         "- 裸态数据为乐观下界, 装配态 E0 复测后须重跑本报告.",
         "",
         "![对比图](assets/filter-comparison.png)",
+        "",
+        "![噪声-滞后 Pareto](assets/filter-pareto.png)",
+        "",
+        "散点图读法: 左下角为 Pareto 最优方向; EMA α 扫描与 Butterworth fc 扫描各成一条权衡曲线,",
+        "同等相位滞后下更低的点降噪更强. OneEuro (空心三角) 的横坐标是慢态线性化等效值,",
+        "不能与线性滤波器直接比相位——其真实动态滞后见对比矩阵的动态 RMS 列.",
         "",
     ]
     Path(out_md).write_text("\n".join(lines), encoding="utf-8")
@@ -257,6 +320,7 @@ def main(argv=None):
     sel_labels = {rec["label"], "EMA a=0.3", "Butter fc=8"}
     make_figure([c for c in cfgs if c["label"] in sel_labels],
                 idle_runs[0], out_png)
+    make_pareto(rows, out_md.parent / "assets" / "filter-pareto.png")
     write_report(rows, rec, runs, out_md, out_png)
 
     for r in rows:

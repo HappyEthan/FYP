@@ -1,6 +1,6 @@
 """Z 轴闭环控制 Phase 0: 整体 ΔB 跟踪.
 
-控制律: z_cmd = z_surface + z_ff(|ΔB_d|) + Kp·e + Ki·∫e
+控制律: z_cmd = z_surface + z_ff(|ΔB_d|) + kp·S_cal·e + ki·S_cal·∫e
   e = |ΔB_d| − |ΔB_meas|
   前馈为主, 积分仅补残差.
 
@@ -9,11 +9,24 @@
 import numpy as np
 
 
+def calib_lookup_z(g, calib_z_mm, calib_abs_dB):
+    """标定反查: 目标 |ΔB| (µT) -> 压深 offset (m). 全项目唯一实现.
+
+    内部按 abs_dB 排序 (容忍非单调标定输入); 低于下界 -> 0.0, 超上界 -> 最大压深
+    (饱和保护). g 为标量返回 float, 为数组返回同形状数组.
+    ZController 与离线管线 (demo_pipeline) 共用本函数."""
+    abs_dB = np.asarray(calib_abs_dB, dtype=float)
+    z_m = np.asarray(calib_z_mm, dtype=float) / 1000.0
+    idx = np.argsort(abs_dB)
+    out = np.interp(g, abs_dB[idx], z_m[idx], left=0.0, right=float(z_m[idx][-1]))
+    return float(out) if np.isscalar(g) or np.ndim(g) == 0 else out
+
+
 class ZController:
     """整体 ΔB 标量跟踪控制器。"""
 
     def __init__(self, calib_z_mm: np.ndarray, calib_abs_dB: np.ndarray,
-                 dt: float = 0.01, kp: float = 0.5, ki: float = 0.1,
+                 dt: float = 0.01, kp: float = 1.2077, ki: float = 0.134,
                  z_surface: float = 0.20, dz_margin: float = 3e-3,
                  noise_std: float = 7.0):
         """
@@ -22,10 +35,18 @@ class ZController:
         calib_z_mm : (N,) 压深 mm (从接触起点起算)
         calib_abs_dB : (N,) 对应 |ΔB| μT
         dt : 控制周期 (s)
-        kp/ki : 比例/积分增益 (z 单位: m)
+        kp/ki : 无量纲增益，每拍将误差的该比例折算为压深修正。
+            默认值 = Phase 1 工作点（裸态仿真，`docs/z-phase1-sweep.md` /
+            `docs/z-phase1-results.md`）：
+            kp=1.2077 出自层 1 增益扫描，EMA a=0.3 臂 wp_P/wp_PI 工作点
+            （kp 网格第 8 点，精确值 1.2077485712993403，四舍五入 1.2077）；
+            ki=0.134 出自层 2 多笔画收敛场景推荐值（精确值 0.1341347897639862，
+            8×synth_press 连写 + calib_scale=0.8，收敛笔数=3，裕度合规候选中最快）。
+            ki 面向跨笔画自适应时间尺度（~3 笔收敛），不承诺单笔画内扰动抑制——
+            层 2 单笔画场景实测 PI≈P（积分时间常数 τ_i 远超单笔画窗口）。
         z_surface : 纸面高度 (m)
         dz_margin : 积分限幅 ±m
-        noise_std : 噪声标准差 (μT), 用于接触判定
+        noise_std : 噪声标准差 (μT), 全带宽裸态口径，接滤波后必须显式传滤波后 σ；用于接触判定
         """
         assert len(calib_z_mm) == len(calib_abs_dB) > 1
         # Sort by abs_dB so np.interp works correctly even with non-monotonic input
@@ -34,6 +55,14 @@ class ZController:
         sort_idx = np.argsort(abs_dB)
         self._calib_dB = abs_dB[sort_idx]
         self._z_offset_m = z_offset_m[sort_idx]
+        self._calib_z_mm_sorted = np.asarray(calib_z_mm, dtype=float)[sort_idx]
+
+        # Calculate calibration slope S_cal (m/µT)
+        db_span = float(self._calib_dB[-1] - self._calib_dB[0])   # 已升序
+        assert db_span > 0, "calib |dB| span must be > 0"
+        z_span = float(self._z_offset_m.max() - self._z_offset_m.min())
+        self._s_cal = z_span / db_span                            # m/µT
+
         self._dt = dt
         self._kp = kp
         self._ki = ki
@@ -45,9 +74,8 @@ class ZController:
         self._frozen = False
 
     def _z_ff_lookup(self, g_d: float) -> float:
-        """|ΔB| (μT) → z_offset (m). 超出标定范围则饱和."""
-        return float(np.interp(g_d, self._calib_dB, self._z_offset_m,
-                               left=0.0, right=self._z_offset_m[-1]))
+        """|ΔB| (μT) → z_offset (m). 委托 calib_lookup_z (全项目唯一反查实现)."""
+        return float(calib_lookup_z(g_d, self._calib_z_mm_sorted, self._calib_dB))
 
     def step(self, dB_meas: np.ndarray, g_d: float) -> float:
         """计算 z_cmd (m, 世界坐标).
@@ -81,10 +109,10 @@ class ZController:
 
         # Feedback (only integrate when not frozen)
         if not self._frozen:
-            self._z_fb += self._ki * e * self._dt
+            self._z_fb += self._ki * self._s_cal * e * self._dt
             self._z_fb = np.clip(self._z_fb, -self._dz_margin, self._dz_margin)
 
-        z_cmd = self._z_surface + z_ff + self._kp * e + self._z_fb
+        z_cmd = self._z_surface + z_ff + self._kp * self._s_cal * e + self._z_fb
         return float(z_cmd)
 
     def reset(self):
@@ -108,3 +136,8 @@ class ZController:
     @property
     def frozen(self) -> bool:
         return self._frozen
+
+    @property
+    def s_cal(self) -> float:
+        """标定斜率 (m/µT), 无量纲增益的换算因子."""
+        return self._s_cal

@@ -2,7 +2,7 @@
 
 > 定位：项目的**决策日志 + 上下文备忘**。和队友/导师同步、或隔一段时间回来续做时，先看这个文件。
 > 计划与任务清单见 `plan.md`；技术方案原文见 `reference/`。
-> 最近更新：2026-07-13
+> 最近更新：2026-07-31
 
 ---
 
@@ -114,6 +114,8 @@
 | E4 | **恒压深**横向拖行 | 拖拽混淆幅度 | 拖拽分量可按方向分离（θ>60°） | ⚠️ 指示性 |
 | **E5** | 标定数据集采集（可最先） | 给算法喂真数据 | 每笔画一段 `t,Bx,By,Bz` 原始三轴 + 标签 | ✅ 手动版 |
 
+> 裸态 E0 摸底已完成（V0 数据，见 `docs/deltab-v0-analysis.md`），装配态全部待做。
+
 > 装配还没就绪时，**先用裸触角跑 E1 + E3**（裸态给的是最有利的一面：带宽上界、迟滞下界）——
 > **裸态都不过，后面全免谈**，能省掉整条装配+标定台的投入。
 
@@ -134,6 +136,20 @@
   - 读华沿官方 **Python SDK 手册**（`reference/HuayanRobot_Library_Python_V1.0.11.0.pdf`）+ Elfin 软件操作说明书。**决定性发现：实机用华沿 Python SDK 即可，无需 ROS/Docker/EtherCAT**——之前所有 ROS 版本/Docker/EtherCAT 的纠结作废。关键接口：`HRIF_Connect`(TCP 10003)、`HRIF_StartServo`+`HRIF_PushServoP`(流式笛卡尔伺服，控制器自动逆解)、内置力控(`SetMass/Damp/StiffParams`)、`HRIF_GetInverseKin/ForwardKin`。注意点：SDK 自带仿真需连控制器→预硬件仍用 PyBullet；`.so` 为 py3.6/3.7；servo 频率上限待实机测。
   - 据此把 note/plan/`docs/control-architecture.md` 的实机后端从 "ROS" 改为 "华沿 Python SDK(`HuayanBackend`)"。两个华沿手册 PDF **放本地 `reference/` 但 gitignore**（厂商专有，不发布到公开仓库）。
   - **下一步**：不变——搭 Python+PyBullet 环境（B0）+ B1 开环写字；实机后端(`HuayanBackend`)等臂到位再写。
+- **约 07-21**
+  - 触觉仿真代码落地 `tactile/`：`antenna_model.py`（磁学半段，中线形变→磁偶极子→ΔB）、`contact_sim.py`（MuJoCo 接触涌现形变）、`separability.py`（压/拖可分性→喂 E4 判据）、`writing_tactile.py`（写字运动驱动合成 ΔB）、`mj_write.py`（全 MuJoCo 方案，Phase 1/2/4 可用，Phase 3 触角物理弯 ΔB 发散未根治）。
+  - 写 `docs/brushbot-code-guide.md`（B0+B1 代码逐文件导览）。
+- **约 07-23/24**
+  - ΔB 实时监控窗口 `monitor/`（core 无 GUI 环形缓冲+基线+派生量、sources 可插拔信号源、recorder 录 V0 格式、window PyQtGraph 窗口），见 `docs/monitor-usage.md`。
+  - V0 数据集采集：`delta_b_v0_20260724/`（+ 根目录 `delta_b_v0_manifest.md`）；分析管线 `scripts/analyze_deltab.py` → `docs/deltab-v0-analysis.md`。
+- **2026-07-28**
+  - Z 控制 Phase 0：`src/brushbot/z_control.py`（`ZController`，前馈 `z_ff(|ΔB_d|)` + 低增益 PI 反馈），落地见 `docs/handoff-z-control.md`。
+- **2026-07-29**
+  - 滤波器库 `filter.py`（Butterworth / OneEuro，逐样本实时接口）+ 选型管线 `scripts/compare_filters.py` → `docs/filter-comparison.md`（孤立指标推荐 OneEuro mc=0.5 β=0.03，显示/离线用）；配套 `docs/filter-tutorial.md`、`docs/filter-quickcheck.md`。
+- **2026-07-30**
+  - Z 控制 Phase 1 设计与实施：增益无量纲化（S_cal 折算）；`src/brushbot/sim_loop.py`（V0 真噪声回放 + Plant 延迟/执行器/扰动 + 唯一闭环路径 `run_loop`）；`scripts/sweep_z_gains.py`（层1 增益扫描，答 Q1 滤波收益/Q2 稳定边界）；`scripts/compare_z_arms.py`（层2 开环 vs 闭环-P vs 闭环-PI × 扰动场景，答 Q3/Q4）。
+- **2026-07-31**
+  - **Z 控制 Phase 1 完成并合入 master**：出厂默认增益 kp=1.2077 / ki=0.134（全部由数据回填）；控制环在环评估滤波定稿 **EMA α=0.3**（OneEuro 滞后压 kp，闭环 RMS 11.83% vs EMA 9.47%；相位裕度实测 116°+，旧"滤波延迟预算不可达"顾虑解除）。层2 关键结论：标定偏差 ±20% 下闭环-P 残留 ~45%（与 1/(1+kp) 理论吻合）、多笔画 ki=0.134 跨笔画收敛、漂移场景闭环被骗~55%（诚实负面对照）；freeze 毛刺 Q4 单笔画 PASS（0.194mm），多笔画 0.247mm 超线记开放项。测试基线 **130 项全绿**。详见 `docs/handoff-z-phase1.md`、`docs/z-phase1-sweep.md`、`docs/z-phase1-results.md`。
 
 ---
 
@@ -155,11 +171,21 @@
 | **`HuayanRobot_Library_Python_V1.0.11.0.pdf`** | ★Elfin 官方 Python SDK 手册（实机控制的关键：连接/Servo/力控/IK-FK） |
 | `Elfin软件操作说明书V6.4.pdf` | Elfin 软件/示教器操作手册 |
 
-**本项目自产文档（`docs/`）：**
+**本项目自产文档（`docs/`，2026-08-10 精简：一模块一文档，过程文档在 `docs/archive/`）：**
 
-| 文档 | 内容 |
-|---|---|
-| `docs/control-architecture.md` | 执行端控制架构：算法↔I/O 解耦、后端可插拔、Python 仿真→华沿 SDK 实机、代码骨架 |
-| `docs/callirewrite-arm-control.md` | CalliRewrite 开环写字技术细节（r→z 标定、process()、Dobot 下发、缺失件） |
+| 主题 | 文档 | 内容 |
+|---|---|---|
+| 总纲 | `docs/status-2026-07-31.md` | 阶段总结 |
+| 审计 | `docs/review-2026-08-10.md` | B 阶段全仓审计（完成度/风险/后续计划） |
+| 架构 | `docs/architecture.md` | 代码地图 + 分层架构 + 文档指针 |
+| 控制 | `docs/z-control.md` | Z 控制 Phase 0/1：控制律、定稿数字、用法、局限 |
+| 滤波 | `docs/filter.md` | 两口径选型结论 + 各滤波器原理与用法 |
+| 监控 | `docs/monitor.md` | 监控窗口用法 + V0 数据集分析结论 |
+| 仿真 | `docs/tactile-sim.md` | MuJoCo/解析梁两条路线：用法 + 可信边界 |
+| 开环 | `docs/openloop-writing.md` | B0/B1 开环写字 + CalliRewrite 复现要点 |
+| 管线 | `docs/target-pipeline.md` | 示范→StrokePlan 离线管线：契约、验收、三项设计发现 |
+| 实验 | `docs/gate-experiments.md` | 门禁实验 E0–E5 完整说明（判据/步骤/产出） |
+| 数据 | `delta_b_v0_manifest.md`（根目录） | V0 数据集清单 |
+| 存档 | `docs/archive/` | 被合并的 19 份过程/交接/报告原文（handoff-*、z-phase1-*、filter-* 等） |
 
 > ESP32 开发环境手册在 `~/esp32-brush-test/ESP32使用手册.md`（本机，非本仓库）。

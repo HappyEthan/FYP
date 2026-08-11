@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-07-24T14:45:46.942670+08:00",
+  "action": "circle_ccw",
+  "repetition": 1,
+  "valid": true,
+  "note": "PCB固定；观察视角逆时针；自由手V0",
+  "sensor": "MLX90393",
+  "board": "Seeed Studio XIAO ESP32-C3",
+  "port": "/dev/cu.usbmodem101",
+  "baud": 115200,
+  "units": {
+    "t_us": "us",
+    "t_s": "s",
+    "dBx_uT": "uT",
+    "dBy_uT": "uT",
+    "dBz_uT": "uT"
+  },
+  "delta_definition": "dB = B - B0",
+  "baseline_B0_uT": {
+    "Bx_uT": 241.827,
+    "By_uT": 695.39,
+    "Bz_uT": -5491.957
+  },
+  "display_smoothing_applied": false,
+  "recording_mode": "manual_markers",
+  "requested_duration_s": null,
+  "action_window_s": {
+    "start": 11.405708,
+    "end": 17.555708
+  },
+  "action_start_t_us": 13928130,
+  "action_end_t_us": 20078130,
+  "sample_count": 2057,
+  "measured_duration_s": 20.555708,
+  "mean_sample_rate_hz": 100.02087984515055,
+  "max_interval_us": 10001,
+  "csv_file": "20260724_144546_circle_ccw_r01.csv"
+}

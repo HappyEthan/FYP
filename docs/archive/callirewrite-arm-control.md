@@ -120,18 +120,20 @@ SetPTPCmd(api, ptpMode, x, y, z, rHead, isQueued=0)
 
 ---
 
-## 6. 映射到本项目（Elfin5 + ROS2）
+## 6. 映射到本项目（PyBullet 仿真 → 华沿 SDK 实机）
 
-| CalliRewrite（Dobot） | 你在 Elfin5 / ROS2 上 | 取舍 |
+> ROS2/Gazebo 路线已于 07-15 放弃，实际技术栈是纯 Python + PyBullet；下表按此更新（B1 已实际交付，见 `docs/b0-b1-results.md`）。
+
+| CalliRewrite（Dobot） | 你在本项目上 | 取舍 |
 |---|---|---|
-| `SetPTPCmd(MOVLXYZ,...)` 逐点直线 | 笛卡尔 `MoveL` / ros2_control 路点 | 🔁 换实现 |
-| `RoboControl.Control()` 发送循环 | 自己写"读 npz → 逐点开环下发"最小控制器 | ✍️ 重写(缺失件) |
-| `r→z` 标定 + `func_brush` | 同思路：画横线→量宽→拟合 `z(r)`；先给定 z 亦可 | ✅ 借方法 |
-| `process()` 起笔/回锋启发式 | 可先不要，直接走 xy+固定 z 验证链路；后续再谈笔法 | ⏭️ 可选 |
-| 开环、位置控宽度 | **先照做 = B1 开环基线** | ✅ 复现 |
-| —（无力觉） | **换成触觉力控提按 = B2 超越点** | 🚀 你的贡献 |
+| `SetPTPCmd(MOVLXYZ,...)` 逐点直线 | `OpenLoopController` 沿路点弧长插值 → `SimBackend` 用 PyBullet IK 逐步驱动（实机则 `HuayanBackend` 走华沿 SDK `HRIF_PushServoP`） | 🔁 换实现（已完成，B1） |
+| `RoboControl.Control()` 发送循环 | `run.py` 通用 read→step→write 循环，两端（Sim/实机）通用 | ✍️ 已重写（B1 产物） |
+| `r→z` 标定 + `func_brush` | 同思路：`calligraphy/calibration.py` 移植 `func_brush`（笔宽 r → 笔高 z） | ✅ 已借方法（B1） |
+| `process()` 起笔/回锋启发式 | `calligraphy/strokeseq.py` 的 `process()`，可先不要精细起笔/回锋，直接走 xy+固定 z 验证链路 | ⏭️ 可选 |
+| 开环、位置控宽度 | **已实现 = B1 开环基线**（PyBullet 仿真，`write_openloop.py`） | ✅ 复现完成 |
+| —（无力觉） | **换成触觉力控提按 = B2/Z 控制超越点**（Phase 0/1 已完成，见 `docs/handoff-z-phase1.md`） | 🚀 你的贡献 |
 
-**复现最短路径**：不碰他们 ML，先手工/合成一份 `(x,y,z)` 控制点 npz → 在 **Gazebo** 里用最小控制器逐点 `MoveL` 开环描出 → 得到 B1 开环基线与控制链路验证。
+**复现路径（已走完）**：手工/合成一份 `(x,y,z)` 控制点 npz → `OpenLoopController` + `SimBackend`（PyBullet）逐点开环描出 → 得到 B1 开环基线与控制链路验证。实机迁移只需换 `HuayanBackend`（华沿 SDK），算法层不动。
 
 ---
 

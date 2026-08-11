@@ -3,7 +3,7 @@
 > PyBullet 版见 `quick_start.md`。这份是 **MuJoCo** 版：同样是 Elfin5 写字，但跑在 MuJoCo 里，
 > 为的是往下接**末端物理触角 + 接触形变 → ΔB**（PyBullet 那套只做开环写字，不做触角物理）。
 >
-> 📖 **完整手册**（全部参数、场景构成、原理、踩坑记录）见 **`docs/mujoco-usage.md`**。
+> 📖 **完整手册**见 **`docs/tactile-sim.md`**（触觉仿真模块文档；踩坑记录原文在 `docs/archive/mujoco-usage.md`）。
 
 目标：**一条命令**弹出 MuJoCo 窗口，看机械臂一笔一划写字、笔尖落点留下墨迹点。
 
@@ -133,7 +133,7 @@ conda activate brushbot && python -m brushbot.tactile.mj_write contact 永 mj_co
 ΔB 爆表）。**静态落笔的接触弯是对的，连续写字的 ΔB 不可信**。原因与现状见 `mj_write.py` 模块 docstring。
 
 > 方向：改用**真实数据集**（一横 → 真实 ΔB 序列）做标定，合成 ΔB 只是没硬件时的替代。
-> 见 `docs/gate-experiments.md`（E5 数据采集）、`docs/tactile-fem-sim.md`。
+> 见 `docs/gate-experiments.md`（E5 数据采集）、`docs/tactile-sim.md`。
 
 ---
 

@@ -64,9 +64,11 @@ def test_dynamic_rms_lower_for_wider_band():
 def test_build_configs_complete():
     cfgs = build_configs()
     labels = [c["label"] for c in cfgs]
-    assert any("EMA" in s for s in labels)
+    assert sum("EMA" in s for s in labels) == 5   # α 扫描: 0.05/0.1/0.2/0.3/0.5
+    assert "EMA a=0.3" in labels                  # 监控窗口默认档必须在列
     assert sum("Butter" in s for s in labels) == 4
     assert sum("OneEuro" in s for s in labels) == 9
+    assert len(cfgs) == 18
     for c in cfgs:
         assert callable(c["make"]) and callable(c["freq"]) and c["fc_ref"] > 0.0
 
