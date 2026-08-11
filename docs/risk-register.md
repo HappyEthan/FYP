@@ -18,7 +18,7 @@
 - [x] **R6 · `Stroke.z_ff` 端到端零消费** —— 已修 2026-08-10（P1 批）：新增 `StrokePlan.to_open_z_series()`（开环臂 z 由存储 z_ff 字段插值生成，与 `to_gd_series` 逐拍对齐），Q3 两臂彩排开环臂改用之；`to_waypoints` 修复后也真实消费 z_ff。等价锁测试 `test_open_z_equivalence_lock_linear_calib` 守住 lookup/interp 分叉——标定表转非线性时测试红，逼出"两臂前馈从哪来"的显式决策（与 R4 联动）。
 - [x] **R7 · 滤波器归属倒置 + 双频域基** —— 已修 2026-08-10（P2 批）：EMA 正典迁入 `filter.py`（`monitor/core.py` re-export 兼容全部旧 import，PR#1 的 FILTERS 工厂不受影响）；`CONTROL_EMA_ALPHA` 唯一常量源 + `make_control_filter()` 工厂，生产接线（run_tactile / E2E）已切换；频域基差异在 `docs/target-pipeline.md` 验收节单列为误差来源。
 - [ ] **R8 · 真实示范数据无生产者**：monitor 录制 5 列 vs 管线输入 7 列（含 `x_m,y_m`）不匹配；磁流×机械臂 FK 双源时间对齐/重采样层零代码——换真数据时最先撞墙处。**依赖录制协议落地**（拖动示教 + 硬件）。
-- [ ] **R9 · 出厂默认 ki=0.134 未全场景复跑**：9.47% / 116° / Q4 PASS 全是 ki=0/0.005 口径；出厂配置已知的唯一逐拍指标（多笔画 freeze 毛刺 0.2434mm）超 0.2mm 暂定上限。**可纯软件先跑**：`compare_z_arms.py --ki-pi 0.134` 全场景重跑，统一口径；毛刺物理危害等真机笔尖实测裁决（见 `docs/z-control.md` 开放项）。
+- [x] **R9 · 出厂默认 ki=0.134 未全场景复跑** —— 已复跑 2026-08-10：`compare_z_arms.py --kp-p 1.2077 --ki-p 0 --kp-pi 1.2077 --ki-pi 0.134 --filter "EMA a=0.3"` → `docs/archive/z-phase1-results-factory.md`。出厂口径：baseline PI 9.52%（PI≈P 符合预期）、扰动残留 31.6–41%（均略优于 P）、drift 被骗 62%、相位裕度 115.6°（解析复算）、**Q4 单笔画 0.1937mm PASS 在出厂口径下同样成立**、多笔画 3 笔收敛复确认——所有结论方向与旧口径一致，无翻盘。遗留：多笔画毛刺 0.2434mm 仍为开放项（真机笔尖实测裁决）；`docs/z-control.md` 数字表已双口径回填。
 - [ ] **R10 · 参数回填与脚本默认值坑**：`z_control.py` `noise_std` 默认仍是裸态 7.0（run_loop 接线已用 `filtered_sigma()` 现算，但默认值与 kp/ki/noise_std 的属主断言测试仍缺）；`compare_z_arms.py --filter` 默认 OneEuro 与定稿 EMA 相反，复跑忘传参会静默产出错误滤波臂报告。
 - [x] **A1 · E2E 验收数字无机器断言、产物零留存**（来自 review §1）—— 已修 2026-08-10（P1 批）：脚本重构为 `run_acceptance()`（Q1≤3 / Q2≤3.5 / Q3 闭环<开环全部 assert，失败非零退出），pytest 属主 `tests/test_target_pipeline_e2e.py` 随套件回归；plan npz + acceptance.json 入库 `docs/acceptance/`。注意基线数字随 R15 口径修正更新：Q3 开环 18.12% vs 闭环 13.22%（旧 17.57/10.60 为硬编码 3.0s 时长口径）。
 
@@ -43,5 +43,5 @@
 1. ~~P0 安全三件套~~：R1 ✅ + R2 ✅（noise_std 属主测试归 R10，未清）
 2. ~~P1 StrokePlan 出口~~：R3 ✅ + R6 ✅ + A1 ✅ + R15 ✅（2026-08-10，`feat/z-cmd-clamp` 分支）
 3. ~~P2 归属/常量收敛~~：R7 ✅ + R12 ✅（2026-08-10；`feat/monitor-filter-ui` 已开 PR#1 待 GUI 手动验收，EMA re-export 保证其零冲击）
-4. **纯软件可先行**：R9（出厂增益复跑）、R11、R13、R14、R16、R17、R18、R19（skip→fail 部分）
+4. **纯软件可先行**：~~R9~~ ✅（2026-08-10 复跑无翻盘）、R10、R11、R13、R14、R16、R17、R18、R19（skip→fail 部分）
 5. **等硬件**：R4（E2 标定）、R8（录制协议）、R5 收口（真机开环链复核）、**R20（真机 z 符号定点，首次接触实验前必须）**、R19 数据部分（装配态 E0）
