@@ -109,10 +109,10 @@ log.append(...)                               # §3.4 全量
 
 ## 7. 验收（两问两数字）
 
-| # | 问题 | 判据 |
-|---|---|---|
-| R1 | Runtime 闭环语义 ≡ `run_loop`？ | 同 StrokePlan/Plant/seed 下 z_cmd 序列**逐位相等**（零容差）。过关即继承 Phase 1 全部验证结论 |
-| R2 | 真时钟 100Hz 跑得稳？ | 完整执行 ~10s StrokePlan：overrun 率 ≤1%、最大单拍抖动 ≤5ms（暂定值，平台相关；实测数字如实回填本表，超标时如实记录并给理由，不静默调判据） |
+| # | 问题 | 判据 | 实测（2026-08-10, 本机 Linux desktop） |
+|---|---|---|---|
+| R1 | Runtime 闭环语义 ≡ `run_loop`？ | 同 StrokePlan/Plant/seed 下 z_cmd 序列**逐位相等**（零容差）。过关即继承 Phase 1 全部验证结论 | ✅ **逐位相等**（`tests/test_runtime.py::TestAlignmentR1`，`np.array_equal` 零容差，含 freeze 穿越段；反证：EMA α 改 0.31 即不等，测试有辨别力） |
+| R2 | 真时钟 100Hz 跑得稳？ | 完整执行 ~10s StrokePlan：overrun 率 ≤1%、最大单拍抖动 ≤5ms（暂定值，平台相关；实测数字如实回填本表，超标时如实记录并给理由，不静默调判据） | ✅ `--sim` 1050 拍（10.5s）：**overrun 0（0.00%）、最大抖动 0.69ms**；接触段跟踪 RMS 11.5%（基线 ~9.5% 同量级）。`--replay` 附验：录音耗尽触发看门狗，恰在阈值拍抬笔中止 |
 
 ## 8. 文件变动
 

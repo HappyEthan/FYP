@@ -6,7 +6,15 @@ Phase 1 全部验证 (层1 增益扫描 / 层2 开环-闭环对比 / demo) 共�
 """
 import numpy as np
 
-FS = 100.0
+from brushbot import config
+
+FS = config.FS   # 采样/控制主频: config 为唯一定义 (R12)
+
+# 合成线性标定表 (0–5mm ↔ 0–250µT): 层1/层2/管线验收共用的唯一定义 (R12).
+# 注意这是**完美直线**——S_cal 割线≡局部斜率的隐含假设正来自它 (审计 R4),
+# E2 真实标定表到位后所有依赖此表的结论都要重审.
+CALIB_Z_MM_LINEAR = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+CALIB_ABS_DB_LINEAR = np.array([0.0, 50.0, 100.0, 150.0, 200.0, 250.0])
 
 
 def load_deltab_csv(path):
@@ -127,6 +135,11 @@ def run_loop(ctrl, filt, g_d, plant):
 
     滤波器实例整段连续运行, 永不 mid-run reset; NaN 原样透传到 ctrl guard.
     """
+    dt_ctrl = getattr(ctrl, "dt", None)
+    if dt_ctrl is not None and abs(dt_ctrl * FS - 1.0) > 1e-9:
+        raise ValueError(
+            "ctrl.dt=%g 与 run_loop 时间轴 FS=%g Hz 不一致 — 积分步长会与"
+            "时间轴静默脱钩 (R12)" % (dt_ctrl, FS))
     n = len(g_d)
     res = {k: np.empty(n) for k in
            ("g_d", "abs_f", "z_cmd", "z_ff", "z_fb", "z_act", "abs_true")}

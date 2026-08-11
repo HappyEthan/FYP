@@ -1,0 +1,28 @@
+{
+  "q1_rms_uT": [
+    2.6967,
+    2.0603,
+    2.4058
+  ],
+  "q2_rms_uT": [
+    2.5651,
+    1.6789,
+    2.2551
+  ],
+  "q3_rms_pct": {
+    "open": 18.1185,
+    "closed": 13.2223
+  },
+  "stroke_durations_s": [
+    2.66,
+    2.65,
+    2.65
+  ],
+  "criteria": {
+    "q1_max_uT": 3.0,
+    "q2_max_uT": 3.5,
+    "q3": "closed < open",
+    "q4": "tests/test_strokeplan.py::test_waypoints_chain_writes_ink"
+  },
+  "passed": true
+}

@@ -209,3 +209,33 @@ def test_metrics_contract():
     assert not diverged(res, 0.2, 0.005)
     bad = dict(res, z_cmd=np.array([0.2, 0.3, 0.2, 0.2]))
     assert diverged(bad, 0.2, 0.005)                      # 偏 0.1m > 2×5mm
+
+
+def test_run_loop_nan_chain_with_ema_recovers():
+    """定稿滤波器 EMA 的 NaN 链路: NaN 拍 freeze 且 z_cmd 有限, 恢复拍闭环复活.
+
+    审计 R2 盲区: 旧 NaN 链路测试只测 OneEuro; 旧 EMA 中一个 NaN 永久毒化状态,
+    此后 abs_f 恒 NaN → 闭环静默退化为 guard 兜底, 永不恢复."""
+    class _NaNPlant:
+        z_act, abs_true = 0.2, 0.0
+
+        def __init__(self):
+            self.k = 0
+
+        def step(self, z_cmd):
+            self.k += 1
+            return np.full(3, np.nan) if self.k == 50 else np.array([100.0, 0.0, 0.0])
+
+    ctrl = ZController(_CAL_Z, _CAL_DB)
+    res = run_loop(ctrl, EMA(0.3), np.full(100, 150.0), _NaNPlant())
+    assert np.isnan(res["abs_f"][49])            # NaN 拍原样透传到控制器
+    assert res["frozen"][49]                      # guard 接住
+    assert np.isfinite(res["z_cmd"]).all()        # 输出全程有限
+    assert np.isfinite(res["abs_f"][50:]).all()   # 恢复拍起滤波复活 (旧 EMA 在此永久 NaN)
+
+
+def test_run_loop_rejects_dt_fs_mismatch():
+    """R12: ctrl.dt 与 run_loop 时间轴 FS 不一致时 fail-loud (积分步长脱钩曾是静默错)."""
+    ctrl = ZController(_CAL_Z, _CAL_DB, dt=0.02)
+    with pytest.raises(ValueError, match="dt"):
+        run_loop(ctrl, None, np.full(10, 120.0), Plant(_CAL_Z, _CAL_DB))
