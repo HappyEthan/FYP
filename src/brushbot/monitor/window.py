@@ -9,7 +9,7 @@ import numpy as np
 import pyqtgraph as pg
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from brushbot.monitor.core import RingBuffer, Baseline, EMA, derive
+from brushbot.monitor.core import RingBuffer, Baseline, FILTERS, derive
 from brushbot.monitor.recorder import Recorder
 from brushbot.monitor import sources as S
 
@@ -17,6 +17,8 @@ BUF_SECONDS = 60
 RATE_HZ = 100
 WINDOWS_S = [2, 5, 10, 20]
 RATE_TOLERANCE = 0.02
+DEFAULT_FILTER = "EMA 0.3"
+TRAIL_S = 3.0            # XY 圆拖尾时长 (s)
 
 
 class MonitorWindow(QtWidgets.QMainWindow):
@@ -28,17 +30,15 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.src = None
         self.rb = RingBuffer(BUF_SECONDS * RATE_HZ)
         self.bl = Baseline()
-        self.ema = EMA(alpha=0.3)
+        self.filt = FILTERS[DEFAULT_FILTER]()
         self._src_mode = "回放"
         self._norm_radius = 0.0
-        self._xy_alpha = 0.06
-        self._prev_norm = None
         self._paused = False
-        self._pause_t0 = None
         self.rec = None
         self._rec_started_wall = None
         self._auto_baseline_s = None
         self._auto_baseline_ref_t = None
+        self._last_draw_state = None
 
         self._build_ui()
         self.timer = QtCore.QTimer(self)
@@ -71,16 +71,12 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.cb_win = QtWidgets.QComboBox()
         self.cb_win.addItems(["%ds" % w for w in WINDOWS_S]); self.cb_win.setCurrentIndex(1)
         bar.addWidget(self.cb_win)
-        bar.addWidget(QtWidgets.QLabel(" 滤波α "))
-        self.cb_alpha = QtWidgets.QComboBox()
-        self.cb_alpha.addItems(["0.05","0.10","0.20","0.30","0.50","0.70","1.00"])
-        self.cb_alpha.setCurrentIndex(3); self.cb_alpha.setFixedWidth(70)
-        bar.addWidget(self.cb_alpha)
-        bar.addWidget(QtWidgets.QLabel(" XYα "))
-        self.cb_xy_alpha = QtWidgets.QComboBox()
-        self.cb_xy_alpha.addItems(["0.03","0.06","0.12","0.20","0.35","0.55","0.80"])
-        self.cb_xy_alpha.setCurrentIndex(1); self.cb_xy_alpha.setFixedWidth(70)  # 0.06
-        bar.addWidget(self.cb_xy_alpha)
+        bar.addWidget(QtWidgets.QLabel(" 滤波 "))
+        self.cb_filter = QtWidgets.QComboBox()
+        self.cb_filter.addItems(list(FILTERS.keys()))
+        self.cb_filter.setCurrentText(DEFAULT_FILTER)
+        self.cb_filter.setFixedWidth(110)
+        bar.addWidget(self.cb_filter)
         bar.addWidget(QtWidgets.QLabel(" 倍速 "))
         self.cb_speed = QtWidgets.QComboBox()
         self.cb_speed.addItems(["0.25x","0.5x","1x","2x","4x","8x"])
@@ -96,9 +92,19 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.btn_src_serial.clicked.connect(lambda: self._set_src_mode("串口"))
         self.btn_src_replay.clicked.connect(lambda: self._set_src_mode("回放"))
         self.btn_src_synth.clicked.connect(lambda: self._set_src_mode("合成"))
-        self.cb_alpha.currentTextChanged.connect(self._set_alpha)
-        self.cb_xy_alpha.currentTextChanged.connect(self._set_xy_alpha)
+        self.cb_filter.currentTextChanged.connect(self._set_filter)
         self.cb_speed.currentTextChanged.connect(self._set_speed)
+
+        self.bar_prog = self.addToolBar("回放进度")
+        self.sl_prog = QtWidgets.QSlider(QtCore.Qt.Horizontal)
+        self.sl_prog.setRange(0, 1000)
+        self.lbl_prog = QtWidgets.QLabel(" 0.0 / 0.0 s ")
+        self.bar_prog.addWidget(self.sl_prog)
+        self.bar_prog.addWidget(self.lbl_prog)
+        self.bar_prog.setVisible(False)
+        self._prog_dragging = False
+        self.sl_prog.sliderPressed.connect(self._prog_press)
+        self.sl_prog.sliderReleased.connect(self._prog_release)
 
         pg.setConfigOptions(antialias=True, background="#0e1116", foreground="#c9d1d9")
 
@@ -112,6 +118,8 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.c_circle = self.p_xy.plot(np.cos(theta), np.sin(theta),
                                         pen=pg.mkPen("#484f58", width=1, style=QtCore.Qt.DashLine))
         self.c_vec = self.p_xy.plot(pen=pg.mkPen("#ff4d6d", width=2))
+        self.c_trail = self.p_xy.plot(pen=pg.mkPen((255, 77, 109, 75), width=1))
+        self.c_trail.setZValue(-1)
         self.c_pt = self.p_xy.plot(pen=None, symbol="o", symbolSize=12,
                                     symbolBrush="#ff4d6d", symbolPen=None)
         self.p_xy.disableAutoRange()
@@ -136,6 +144,13 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.cur_y = self.p_y.plot(pen=pg.mkPen("#ffa64a", width=1))
         self.cur_mag = self.p_mag.plot(pen=pg.mkPen("#3fb950", width=1.5))
         self.cur_z = self.p_z.plot(pen=pg.mkPen("#b6bfcc", width=1))
+        ghost_pen = pg.mkPen((139, 148, 158, 90), width=1)
+        self.cur_x_raw = self.p_x.plot(pen=ghost_pen)
+        self.cur_y_raw = self.p_y.plot(pen=ghost_pen)
+        self.cur_mag_raw = self.p_mag.plot(pen=ghost_pen)
+        self.cur_z_raw = self.p_z.plot(pen=ghost_pen)
+        for c in (self.cur_x_raw, self.cur_y_raw, self.cur_mag_raw, self.cur_z_raw):
+            c.setZValue(-1)
         for p in (self.p_x, self.p_y, self.p_mag, self.p_z):
             p.showGrid(x=True, y=True, alpha=0.3); p.setLabel("left", "uT")
             p.getViewBox().setAutoVisible(y=True)
@@ -182,10 +197,10 @@ class MonitorWindow(QtWidgets.QMainWindow):
     def _set_pause(self, paused: bool):
         self._paused = paused
         if paused:
-            self._pause_t0 = time.monotonic()
             self.btn_pause.setText("▶ 继续")
         else:
-            self._pause_t0 = None
+            if self.src is not None and hasattr(self.src, "seek"):
+                self.src.seek(self.src.progress)
             self.btn_pause.setText("⏸ 暂停")
 
     # ---- 源模式 / 控制同步 ----
@@ -213,18 +228,16 @@ class MonitorWindow(QtWidgets.QMainWindow):
         if self.src is not None and hasattr(self.src, "seek"):
             self.src.seek(0)
             self._norm_radius = 0.0
-            self._prev_norm = None
+            self.c_trail.setData([], [])
             self._paused = False; self.btn_pause.setChecked(False)
             # 立即清空 XY 图, 避免重放间歇残留上一个回放的最后位置
             self.c_pt.setData([], [])
             self.c_vec.setData([], [])
             self.statusBar().showMessage("已重放", 2000)
 
-    def _set_alpha(self, text: str):
-        self.ema = EMA(alpha=float(text))
-
-    def _set_xy_alpha(self, text: str):
-        self._xy_alpha = float(text)
+    def _set_filter(self, label: str):
+        make = FILTERS.get(label)
+        self.filt = None if make is None else make()
 
     def _set_speed(self, text: str):
         mult = float(text.replace("x", ""))
@@ -255,13 +268,13 @@ class MonitorWindow(QtWidgets.QMainWindow):
             return
         self.rb = RingBuffer(BUF_SECONDS * RATE_HZ)
         self.bl = Baseline()
-        self.ema = EMA(alpha=float(self.cb_alpha.currentText()))
+        self._set_filter(self.cb_filter.currentText())
         if isinstance(self.src, S.ReplaySource):
             self.bl.b0 = self.src.b0
         self.btn_conn.setText("断开")
         self.btn_restart.setEnabled(hasattr(self.src, "seek"))
         self._norm_radius = 0.0
-        self._prev_norm = None
+        self.c_trail.setData([], [])
         self._paused = False; self.btn_pause.setChecked(False)
         self._auto_baseline_s = 1.0
         self._auto_baseline_ref_t = None
@@ -349,20 +362,33 @@ class MonitorWindow(QtWidgets.QMainWindow):
                 elif now_t - self._auto_baseline_ref_t >= self._auto_baseline_s:
                     self._auto_baseline_s = None
                     self._take_baseline(update_b0=not isinstance(self.src, S.ReplaySource))
-        # 暂停时 read() 不调用, _t0 自动对轨, 恢复时无缝继续
+        # 暂停时 read() 不调用; 恢复时 _set_pause 里 seek(progress) 重锚 _t0, 不会 burst 补帧
         self._redraw()
         self._update_health()
+        self._update_progress()
 
     def _redraw(self):
         win_s = WINDOWS_S[self.cb_win.currentIndex()]
         t, B = self.rb.latest(win_s * RATE_HZ)
         if len(t) == 0:
             return
+        state = (self.rb.n_total, self.cb_filter.currentText(),
+                 self.cb_win.currentIndex(), self.p_mag.isVisible(),
+                 self.p_z.isVisible(), self.bl.ready,
+                 tuple(float(v) for v in self.bl.b0), float(self.bl.sigma_norm),
+                 self._paused)
+        if state == self._last_draw_state:
+            return
+        self._last_draw_state = state
         dB = self.bl.apply(B)
-        # EMA 平滑时间序列
-        self.ema.reset()
-        dB_smooth = self.ema.update(dB)
+        # 批量重滤(仅显示; 录制/门控/接触判定仍用原始 dB)
+        if self.filt is None:
+            dB_smooth = dB
+        else:
+            self.filt.reset()
+            dB_smooth = np.atleast_2d(self.filt.update(dB))  # 单样本帧防 (3,) 塌缩
         mag_xy = np.hypot(dB_smooth[:, 0], dB_smooth[:, 1])
+        mag_xy_raw = np.hypot(dB[:, 0], dB[:, 1])
 
         self.cur_x.setData(t, dB_smooth[:, 0])
         self.cur_y.setData(t, dB_smooth[:, 1])
@@ -370,27 +396,35 @@ class MonitorWindow(QtWidgets.QMainWindow):
             self.cur_mag.setData(t, mag_xy)
         if self.p_z.isVisible():
             self.cur_z.setData(t, dB_smooth[:, 2])
+        # 原始叠影(选"原始"时隐藏, 避免同一条线画两遍)
+        if self.filt is not None:
+            self.cur_x_raw.setData(t, dB[:, 0])
+            self.cur_y_raw.setData(t, dB[:, 1])
+            if self.p_mag.isVisible():
+                self.cur_mag_raw.setData(t, mag_xy_raw)
+            if self.p_z.isVisible():
+                self.cur_z_raw.setData(t, dB[:, 2])
+        else:
+            for c in (self.cur_x_raw, self.cur_y_raw, self.cur_mag_raw, self.cur_z_raw):
+                c.setData([], [])
 
         gate = 3.0 * self.bl.sigma_norm if self.bl.ready else float("inf")
         last = dB[-1]
         d = derive(last, gate)
-        # 归一化半径
-        mag_xy_raw = np.hypot(dB[:, 0], dB[:, 1])
+        # 归一化半径(基准仍取原始幅值最大值)
         if len(mag_xy_raw):
             self._norm_radius = max(self._norm_radius, float(mag_xy_raw.max()))
 
-        # —— 归一化 XY 圆 ——
+        # —— 归一化 XY 圆: 滤波后方向点 + 拖尾 ——
         if self._norm_radius > 1e-9:
-            nx, ny = last[0] / self._norm_radius, last[1] / self._norm_radius
-            if self._prev_norm is None:
-                self._prev_norm = (nx, ny)
-            a = self._xy_alpha
-            sx = a * nx + (1 - a) * self._prev_norm[0]
-            sy = a * ny + (1 - a) * self._prev_norm[1]
-            self._prev_norm = (sx, sy)
-            self.c_pt.setData([sx], [sy])
-            self.c_vec.setData([0.0, sx], [0.0, sy])
+            n_trail = min(len(dB_smooth), int(TRAIL_S * RATE_HZ))
+            tr = dB_smooth[-n_trail:] / self._norm_radius
+            self.c_trail.setData(tr[:, 0], tr[:, 1])
+            nx, ny = float(tr[-1, 0]), float(tr[-1, 1])
+            self.c_pt.setData([nx], [ny])
+            self.c_vec.setData([0.0, nx], [0.0, ny])
         else:
+            self.c_trail.setData([], [])
             self.c_pt.setData([], [])
             self.c_vec.setData([], [])
 
@@ -457,6 +491,27 @@ class MonitorWindow(QtWidgets.QMainWindow):
             parts.append("录制中 %.1fs" % (time.monotonic() - self._rec_started_wall))
         self.lbl_health.setText("  ·  ".join(parts))
         self.lbl_health.setStyleSheet("color: #d29922;" if off_nominal else "")
+
+    def _prog_press(self):
+        self._prog_dragging = True
+
+    def _prog_release(self):
+        self._prog_dragging = False
+        if self.src is not None and hasattr(self.src, "seek"):
+            self.src.seek(self.sl_prog.value() / 1000.0)
+
+    def _update_progress(self):
+        has_seek = self.src is not None and hasattr(self.src, "seek")
+        if self.bar_prog.isVisible() != has_seek:
+            self.bar_prog.setVisible(has_seek)
+        if not has_seek:
+            return
+        dur = self.src.duration_s
+        if not self._prog_dragging:
+            self.sl_prog.blockSignals(True)
+            self.sl_prog.setValue(int(self.src.progress * 1000))
+            self.sl_prog.blockSignals(False)
+        self.lbl_prog.setText(" %.1f / %.1f s " % (self.src.progress * dur, dur))
 
 
 def main(argv=None) -> int:

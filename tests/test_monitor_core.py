@@ -70,6 +70,22 @@ def test_derive_below_gate_returns_none_direction():
     assert d["theta_deg"] is None
 
 
+def test_filters_factory():
+    from brushbot.monitor.core import FILTERS
+    assert list(FILTERS.keys())[0] == "原始" and FILTERS["原始"] is None
+    assert "EMA 0.3" in FILTERS and len(FILTERS) == 5
+    x = np.random.default_rng(0).normal(size=(50, 3))
+    for label, make in FILTERS.items():
+        if make is None:
+            continue
+        f = make()
+        y = np.asarray(f.update(x))
+        assert y.shape == (50, 3), label
+        f.reset()
+        y2 = np.asarray(f.update(x))
+        assert np.allclose(y, y2), "%s reset 后不确定" % label
+
+
 # ---------------------------------------------------------------- EMA NaN 策略
 # EMA 是控制环定稿滤波器 (α=0.3), NaN 策略必须与 filter.py 一致:
 # 含非有限值的样本原样透传且不更新内部状态 (审计 R2: 旧实现一个 NaN 永久毒化).

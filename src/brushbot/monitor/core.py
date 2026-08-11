@@ -1,5 +1,6 @@
 """无 GUI 核心: 环形缓冲 + 基线 + 派生量. 禁止 import 任何 GUI 库."""
 import numpy as np
+from brushbot.filter import ButterworthFilter, OneEuroFilter
 
 from brushbot.filter import EMA   # noqa: F401  归属修正(R7): 正典在 filter.py, 此处 re-export 兼容旧 import
 
@@ -61,6 +62,17 @@ class Baseline:
     def apply(self, B: np.ndarray) -> np.ndarray:
         """原始 B → ΔB."""
         return np.asarray(B, dtype=float) - self.b0
+
+
+# 窗口滤波选择器工厂: label -> 无参构造函数; None = 原始不滤波.
+# 参数依据 docs/archive/filter-comparison.md 选型报告; EMA 实现在 brushbot.filter (R7).
+FILTERS = {
+    "原始": None,
+    "EMA 0.3": lambda: EMA(0.3),
+    "Butter 5Hz": lambda: ButterworthFilter(5.0),
+    "Butter 8Hz": lambda: ButterworthFilter(8.0),
+    "OneEuro": lambda: OneEuroFilter(0.5, 0.03),
+}
 
 
 def derive(dB, gate: float) -> dict:
