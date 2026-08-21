@@ -605,7 +605,7 @@ cd ~/elfin5-mujoco-ctrl
 python3 examples/demo_joint.py
 python3 examples/demo_cartesian.py
 ```
-Expected: `demo_joint` 打印最大跟随误差（几十 mrad 量级）；`demo_cartesian` 每点残差 < 20mm。
+Expected: `demo_joint` 打印最大跟随误差——**注意这是 PD 跟踪带宽的物理现实，百 mrad 级（kp=2000 + 肩关节 I≈90 kg·m² → ωn≈4.7 rad/s 欠阻尼，0.5Hz 近谐振，理论稳态误差 425–595 mrad，实测 ~250 mrad）**；`demo_cartesian` 每点残差 < 20mm（IK 每拍重解，实际 0mm 级）。
 
 - [ ] **Step 4: 提交**
 
