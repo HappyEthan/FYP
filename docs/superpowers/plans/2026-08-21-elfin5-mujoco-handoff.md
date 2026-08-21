@@ -34,7 +34,7 @@
 
 **Interfaces:**
 - Consumes: 无（第一批）。
-- Produces: 可 `pip install -e .` 的包骨架；`asset_path("elfin5.elfin5.urdf")` 定位资产的辅助函数（Task 2 用）。
+- Produces: 可 `pip install -e .` 的包骨架；`elfin.assets.asset_path(name)` 定位资产的辅助函数（Task 2/3/4 用）。
 
 - [ ] **Step 1: 建目录并 git init**
 
@@ -50,7 +50,21 @@ cp -r ~/FYP/src/brushbot/assets/elfin5 ~/elfin5-mujoco-ctrl/src/elfin/assets/elf
 ls ~/elfin5-mujoco-ctrl/src/elfin/assets/elfin5/meshes   # 应列出 7 个 .STL
 ```
 
-- [ ] **Step 3: 写 `pyproject.toml`**
+- **Step 3a: 写 `src/elfin/assets.py`**（跨平台定位资产，satisfies Global Constraint "绝不假设 cwd"；Task 2/3/4 都用它）
+
+```python
+"""定位 src/elfin/assets/ 下的机械臂资产（与 cwd 无关，跨平台）。"""
+import os
+
+_ASSET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "elfin5")
+
+
+def asset_path(name):
+    """返回 assets/elfin5/<name> 的绝对路径（不依赖 cwd）。"""
+    return os.path.join(_ASSET_DIR, name)
+```
+
+- [ ] **Step 4: 写 `pyproject.toml`**
 
 ```toml
 [project]
@@ -135,7 +149,7 @@ git add -A && git commit -m "chore: scaffold elfin5-sim repo — assets, pyproje
 - Test: `~/elfin5-mujoco-ctrl/tests/test_ik.py`
 
 **Interfaces:**
-- Consumes: 无（自足；加载 URDF 用 `mujoco.MjModel.from_xml_path` + 相对路径，见 Step 1 冒烟）。
+- Consumes: `elfin.assets.asset_path(name)`（Task 1 产出；测试加载 URDF 用它在任意 cwd 下定位）。
 - Produces:
   - `ARM_JOINTS: list[str]` = `["elfin_joint1", ..., "elfin_joint6"]`
   - `TIP_BODY: str` = `"elfin_link6"`
@@ -147,11 +161,12 @@ git add -A && git commit -m "chore: scaffold elfin5-sim repo — assets, pyproje
 # tests/test_ik.py
 import numpy as np
 import mujoco
+from elfin.assets import asset_path
 from elfin.ik import ik, ARM_JOINTS, TIP_BODY
 
 
 def _model():
-    return mujoco.MjModel.from_xml_path("src/elfin/assets/elfin5/elfin5.urdf")
+    return mujoco.MjModel.from_xml_path(asset_path("elfin5.urdf"))
 
 
 def test_ik_reaches_position_tool_z_down():
@@ -255,7 +270,7 @@ git add tests/test_ik.py src/elfin/ik.py && git commit -m "feat: jacobian DLS in
 **Interfaces:**
 - Consumes: `elfin.ik.ik`（Task 2 产出：`ik(model, data, target_pos, target_quat)` → `(resid, q)`）、`ARM_JOINTS`。
 - Produces:
-  - `robot.asset_path(name: str) -> str` — 定位 `assets/elfin5/<name>`，与 `cwd` 无关（用 `os.path` 相对本文件定位）。
+  - `asset_path`（来自 `elfin.assets`，Task 1）定位资产——供 `ElfSim._build` 加载 URDF。
   - `class ElfSim`：
     - `__init__(self, kp: float = 2000.0, kv: float = 200.0)` — 建模型、加 6 关节位置执行器、编译、建 `MjData`。
     - `reset(self, q: np.ndarray | None = None) -> None` — 复位到 `q`（默认零位）并清速度。
@@ -277,7 +292,7 @@ def _sim():
 
 
 def test_asset_path_is_cwd_independent():
-    from elfin.robot import asset_path
+    from elfin.assets import asset_path
     p = asset_path("elfin5.urdf")
     assert not p.startswith("src/") or True  # 不假设 cwd
     import os
@@ -328,19 +343,11 @@ Expected: FAIL `ModuleNotFoundError: No module named 'elfin.robot'`。
 """Elfin5 机械臂 MuJoCo 仿真壳：加载 URDF、加 6 关节位置执行器，
 暴露关节级 + 笛卡尔级双控制接口。仅依赖 numpy+mujoco。
 """
-import os
-
 import numpy as np
 import mujoco
 
+from elfin.assets import asset_path
 from elfin.ik import ARM_JOINTS, TIP_BODY, ik
-
-_ASSET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "elfin5")
-
-
-def asset_path(name):
-    """返回 assets/elfin5/<name> 的绝对路径（不依赖 cwd）。"""
-    return os.path.join(_ASSET_DIR, name)
 
 
 class ElfSim:
@@ -445,8 +452,9 @@ import sys
 import numpy as np
 import mujoco
 
+from elfin.assets import asset_path
 from elfin.ik import ARM_JOINTS, ik
-from elfin.robot import ElfSim, asset_path
+from elfin.robot import ElfSim
 
 
 def check(name, ok, detail=""):
@@ -622,7 +630,8 @@ git add examples/demo_joint.py examples/demo_cartesian.py && git commit -m "feat
 
 ```python
 """elfin — Elfin5 六轴机械臂 MuJoCo 仿真骨架（关节 + 笛卡尔双控制接口）."""
-from elfin.robot import ElfSim, asset_path
+from elfin.assets import asset_path
+from elfin.robot import ElfSim
 from elfin.ik import ik, ARM_JOINTS, TIP_BODY
 
 __all__ = ["ElfSim", "asset_path", "ik", "ARM_JOINTS", "TIP_BODY"]
