@@ -1,4 +1,5 @@
 import math
+import xmlrpc.client
 
 import pytest
 
@@ -164,6 +165,19 @@ class TestVendorSendAndRecv:
         c = client_with_reply(b"ReadActPos,OK,450.0,0.0,200.0,180.0,0.0,90.0,;")
         assert c.sendAndRecv("ReadActPos,0,;") == [
             "0", "450.0", "0.0", "200.0", "180.0", "0.0", "90.0"]
+
+    def test_fail_reply_returns_error_when_hrlog_raises(self):
+        # 真机 (Elfin E5, 2026-08-28): 该控制器 XML-RPC 未实现 HRLog 方法,
+        # sendAndRecv 在 Fail 分支调 sendHRLog 会抛 xmlrpc Fault, 掩盖真错误码.
+        # 日志上报是副作用, 必须不阻断错误返回.
+        c = client_with_reply(b"HRAppCmd,Fail,60000,;")
+
+        class FaultyRpc:
+            def HRLog(self, level, msg):
+                raise xmlrpc.client.Fault(-1, "HRLog: unknown method name")
+
+        c.rpcClient = FaultyRpc()
+        assert c.sendAndRecv("HRAppCmd,hr_gri_plugins,IsMoving,0,;") == ["60000"]
 
 
 # 真机实测 (Elfin E5, 2026-08-10) ReadActPos 回复共 24 段 payload:

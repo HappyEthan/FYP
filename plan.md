@@ -1,9 +1,9 @@
 # 项目计划 · 触觉毛笔书法机器人
 
-> 一句话：触觉毛笔 + Elfin5，用触觉形变闭环复现人类书写"提按"；先复现、后泛化。背景/决策见 `note.md`，方案原文见 `reference/`。
+> 一句话：触觉毛笔 + Elfin5，用触觉形变闭环复现人类书写的"提按"。背景/决策见 `note.md`，方案原文见 `reference/`。
 > 组织方式：**里程碑递增、核心优先**，不设硬 deadline。`[ ]` 未做 / `[~]` 进行中 / `[x]` 完成。
 > 分两部分：**A 硬件+数采（队友）** 与 **B 算法+模型（Ethan）**，两者以 `note.md §4` 的两个接口契约对齐。
-> 最近更新：2026-08-10
+> 最近更新：2026-08-24
 
 ---
 
@@ -14,10 +14,10 @@ A0 触觉毛笔硬件 ──► A1 双模固件+采集 ──► A2 信号处理
                                      │              ├─► (契约1: 实时g_meas流)
                        A3 门禁实验 E1–E4 ◄───────────┘        │
                           │  E1=分水岭                        ▼
-                          └──────────────► B2 导纳+触角反馈闭环 ──► B3 复现整合
+                          └──────────────► B2 触角反馈闭环 ──► B3 复现整合
 A4 示范采集(方式TBD) ──► (契约2: StrokePlan) ─────────────────────┘        │
                                                                           ▼
-B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► B4 模型泛化(升级项)
+B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 复现整合
 ```
 
 **关键门禁**：`E1` 未过之前不要写正式力控代码；`E1` 决定走"触角闭环"还是"F/T 安全网"。
@@ -87,12 +87,11 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 # B 部分 · 算法 + 模型（Ethan）
 
 > 目标：让 Elfin5 忠实复现 StrokePlan 的"路径 + 提按"，并证明"闭环触觉力控 > 开环位置控"。
-> 核心里程碑 = B2/B3；B4 模型是升级项。
-> **技术栈决策（07-15）**：**纯 Python + PyBullet 仿真**开发算法，**实机用华沿 Python SDK**（`CPS`/`HRIF_*`，TCP 连控制器）——**无需 ROS/Docker/EtherCAT**（已读官方 SDK 手册确认）。代码按"**算法 ↔ I/O 解耦、后端可插拔**"组织：① 纯算法层（环境无关）②后端(`PyBulletBackend`/`HuayanBackend`) ③运行循环 → 详见 `docs/control-architecture.md`。实机化 = 写一个 `HuayanBackend`（`HRIF_ReadActTcpPos` 读、`HRIF_StartServo`+`HRIF_PushServoP` 流式写，控制器自动逆解）+ 切 g_meas 来源，①③不动。
-> **实机化落地修正（08-10）**：SDK 实为**明文 TCP 文本协议**，官方纯 Python 源码版 `CPS.py` 已 vendor（`backends/vendor/`，打两补丁），**无 `.so`/Python 版本依赖**——07-15 担心的"py3.6/3.7 单独环境"问题不存在。上机日全链路验证：网络（第二口 192.168.0.10）、读位姿、MoveL（误差 <0.01mm）、PushServoP 流式伺服（3000+ 拍零报错）；伺服周期实验定参 `HUAYAN_SERVO_DT=20ms`+前瞻 50ms（滞后 40ms/RMS 0.071mm）。坑清单（IsMotionDone 不可靠、倍率不缩放伺服等）见记忆与 `examples/` 脚本注释。
+> 核心里程碑 = B2/B3。
+> 技术栈：纯 Python + PyBullet 仿真开发算法；实机用华沿明文 TCP SDK（`CPS.py` 已 vendor）。代码按"算法 ↔ I/O 解耦、后端可插拔"组织（纯算法层 / `PyBulletBackend`·`HuayanBackend` / 运行循环），详见 `docs/control-architecture.md`。实机化 = 写 `HuayanBackend`（`HRIF_ReadActTcpPos` 读、`HRIF_PushServoP` 流式写）+ 切 g_meas，算法层不动。伺服定参 `HUAYAN_SERVO_DT=20ms`+前瞻 50ms；坑清单见记忆与 `examples/` 注释。
 
 > **⚠️ 仿真能 / 不能验证什么**
-> - ✅ 仿真做得了：B1 开环写字全程、轨迹/`s→t`/坐标系/IK、B2 导纳外环**软件骨架**（用合成 `g_meas` 或刚性平面接触）。
+> - ✅ 仿真做得了：B1 开环写字全程、轨迹/`s→t`/坐标系/IK、B2 闭环**软件骨架**（用合成 `g_meas` 或刚性平面接触）。
 > - ❌ 仿真做不了：触角真实物理（迟滞/带宽/磁干扰）、**E1–E4 门禁**、真实提按复现与"闭环 vs 开环"对比、实机安全限幅 → **必须真机**。
 
 ## B0 · Python + PyBullet 仿真环境（现在就能起，不等硬件、不用 ROS）
@@ -100,7 +99,7 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 - [x] 拿 Elfin5 **URDF**（官方 `elfin_robot` 包 / 大族 3D 模型下载）→ PyBullet 直接 `loadURDF`
 - [x] 按 `docs/architecture.md` 搭三层骨架：`controller.py`(纯算法) / `backends.py`(PyBulletBackend) / `run.py`(循环)
 - [x] PyBullet 里让 Elfin 动起来（读关节位姿 + `calculateInverseKinematics` 下发）
-- [x] 写 `HuayanBackend`（2026-08-10，`feat/huayan-backend` 分支）：vendor 纯 Python `CPS.py`（明文 TCP，`.so` 不需要）+ TDD 后端 + 真机验证读/MoveL/流式伺服；servo 频率已实测定参（20ms）。上机工具四件套见 `examples/`
+- [x] 写 `HuayanBackend`：vendor 纯 Python `CPS.py` + TDD 后端 + 真机验证读/MoveL/流式伺服；伺服周期定参 20ms（上机工具见 `examples/`）
 
 ## B1 · 复现 CalliRewrite 开环写字（PyBullet 先行，不依赖触角）
 > **复现 CalliRewrite 的机械臂部分** = 开环位置控制、笔宽靠 `z=func(r)` 标定映射的笔高来凑。这既验证控制链路，也是对比实验的**开环基线**。此阶段 `controller` 退化为"只走 xy + 固定/给定 z"。
@@ -115,21 +114,18 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 
 > **B0/B1 交付报告：`docs/openloop-writing.md`**。
 
-## B2 · 导纳外环 + 触角反馈闭环（★核心，E1 过后）
-> 算法在 ① 纯算法层（`AdmittanceController.step`）——与环境无关。仿真里先用**合成 `g_meas`** / 刚性平面接触验证软件结构与稳定性；**真实触角物理必须真机**。实机下发：`HuayanBackend` 用 **`HRIF_PushServoP`** 流式推笛卡尔位姿（控制器自动逆解），连 IK 都不用自己写。备选/安全网：SDK **内置力控**（`SetForceControlState`+`SetMass/Damp/StiffParams`，用机器人腕部 F/T）。
->
-> **状态（2026-07-31）**：控制器结构 + 滤波进环 + 增益标定已在**裸态仿真**完成（Z 控制 Phase 0/1，见 `docs/z-control.md`）——`ZController` 前馈 `z_ff`+PI 反馈、滤波选型（控制环定稿 EMA α=0.3）、增益无量纲化+出厂默认回填（kp=1.2077/ki=0.134）均已跑通并测试覆盖。**装配态复测（E0/E2）与真机接入仍待硬件**，以下勾选仅代表仿真态完成，非真机验证。
-> **状态（2026-08-10）**：**执行链路两端已就绪**——`TactileExecutor` 定频闭环执行器按 spec 落地（R1 与 `run_loop` 逐位对齐、R2 真时钟 100Hz overrun 0/抖动 0.69ms，`runtime.py` + `scripts/run_tactile.py`），`HuayanBackend` 真机验证完毕。闭环上真机只差两块：**契约1 的 TactileSensor 串口源**（等队友固件）+ 把 HuayanBackend 注入 executor（接口已兼容）。
-- [ ] 定义 **StrokePlan 数据结构**（与队友对齐契约2）
+## B2 · 触角反馈闭环（★核心，E1 过后）
+> 算法在纯算法层（环境无关）：`ZController` = 前馈标定反查 `z_ff(g_d)` + 无量纲 PI 反馈，见 `docs/z-control.md`。裸态仿真已定稿：控制环滤波器 EMA α=0.3、kp=1.2077/ki=0.134、相位裕度 116°，**装配态复测待硬件**。仿真用合成 `g_meas` 验证结构与稳定性；**真实触角物理必须真机**。实机下发：`HuayanBackend` 用 `HRIF_PushServoP` 流式推笛卡尔位姿（控制器自动逆解）。备选/安全网：SDK 内置力控（腕部 F/T）。
+- [x] **StrokePlan 数据结构**（结构已落地；A4 真实示范接入待 A 侧）
 - [ ] 接**契约1**实时 `g_meas` 流（有线低延迟）
-- [ ] **机器人姿态下 re-baseline**：实测 Elfin 法兰/电机磁干扰对 B0 的影响，必要时扣背景磁场
-- [x] 先用**合成目标提按曲线** `g_d(s)` 把外环骨架跑通（不等真数据）——裸态仿真：V0 噪声回放当合成目标，`sim_loop.run_loop` 跑通
-- [x] **Runtime 执行链路 `TactileExecutor`**（2026-08-10）：定频闭环（可注入 Clock/Sensor/Backend）、空拍容忍、断线看门狗抬笔、TickLog 全量记录；R1 逐位对齐继承 Phase 1 全部验证，R2 时序验收过关（spec §7 已回填实测）
-- [ ] **A 级：恒定形变闭环**——大 m/大 d 二阶导纳缓冲抑纸面刚性振荡，对标论文 0.34N 量级
-- [x] **B 级：时变提按闭环**——控制律 `z_cmd = z_surface + z_ff(g_d) + Kv∫(g_d−g_meas)dt`（裸态仿真已实现为 `ZController`，装配态复测待硬件）
-  - [x] 前馈 `z_ff`：用 E2 标定曲线，扛快速提按（仿真态用合成/V0 标定曲线；真实 E2 装配态标定待做）
-  - [x] 反馈 `Kv`：**低增益慢积分**，只纠残差（先小，宁小勿大）——已回填 ki=0.134，多笔画场景验证收敛
-- [~] **安全**：~~`DZ_MAX`/最大形变限幅、`Z_MIN/Z_MAX`~~（2026-08-10 已落地：`ZController.step` 出口绝对位置钳+单步速率钳，见 `docs/z-control.md`）；Elfin 保护停止阈值、缓慢趋近+斜坡初始接触待真机
+- [ ] **机器人姿态下 re-baseline**：实测 Elfin 电机磁干扰对 B0 影响，必要时扣背景磁场
+- [x] **合成目标** `g_d(s)` 把闭环骨架跑通（V0 噪声回放当目标，`sim_loop.run_loop`）
+- [x] **Runtime `TactileExecutor`**：定频闭环（可注入 Clock/Sensor/Backend）、空拍容忍、断线看门狗抬笔、TickLog 全量记录（R1/R2 验收过关，spec §7 已回填）
+- [ ] **A 级：恒定形变闭环**——抑制纸面刚性振荡，对标论文 0.34N 量级
+- [x] **B 级：时变提按闭环**——`z_cmd = z_surface + z_ff(g_d) + kp·S_cal·e + 积分`（裸态仿真已验证；装配态复测待硬件）
+  - [x] 前馈 `z_ff`：E2 标定曲线反查（仿真用合成标定表；真实 E2 待做）
+  - [x] 反馈：低增益慢积分只纠残差（ki=0.134，多笔画收敛验证）
+- [x] **安全**：`ZController.step` 出口绝对位置钳+单步速率钳；Elfin 保护停止阈值、斜坡趋近待真机
 - [ ] 符号/坐标系核对（z 正向、形变正负一致——最常见 bug）
 
 ## B3 · 复现整合 + 核心对比实验
@@ -139,21 +135,10 @@ B1 Elfin位置伺服(可最先并行起步) ──► B2 ──► B3 ──► 
 - [ ] 评估三件套：字形 IoU/SSIM、提按复现误差(对标0.34N)、人眼评审
 - [ ]（若 E1 不过）**F/T 安全网**：独立力/力矩传感器跑力环，触角退回管接触状态/切笔画/偏移角
 
-## B4 · 模型泛化（升级项 / stretch）
-- [ ] StrokePlan 生产者：Transformer 字形→逐笔 Bézier 控制点 + 提按曲线 `g_press(s)`
-- [ ] 监督训练：空间 Chamfer/逐点误差 + 提按 MSE + 平滑/曲率先验
-- [ ] 数据增强：几何抖动 + **笔画重组**合成新字（治数据稀缺）
-- [ ] 泛化测试：留出字（训练没见过、笔画见过）验证立论
-- [ ] v2：笔锋姿态 `φ(s)`（Elfin 6-DOF 优势）、运笔节奏
-
 ---
 
-## 近期下一步（Ethan，2026-08-10）
+## 近期下一步（Ethan，2026-08-24）
 
-> 上机日成果：网络/读写链路/伺服定参/TactileExecutor 全落地（`feat/huayan-backend` 3 commits，188 测试绿）。离线目标管线（原待办 #2）已于 08-05 前完成。以下按优先级：
-
-1. **真机首写（B1 开环即可先行）**：`write_openloop` 换 `HuayanBackend` 空中试走 → 前置小项：纸面标定 `z_surface`（示教三点）、示教器抄"笔垂直"姿态常量进 config、笔尖工具坐标（B1 可先零）。闭环版另需契约1 串口源（等队友）。
-2. **装配态 E0/E2 复测**：真机/装配到位后，重跑 E0（控制采样率静置噪声，装配态电机 EMI 会抬噪）与 E2（in-situ ΔB↔z 标定，产出真实 `z_ff`/`S(z)`）；用装配态数据复测滤波两口径选型（装配态复测前都勿定稿）。
-3. **分支合并**：`feat/huayan-backend`（已提交未推、未合）与 `feat/monitor-filter-ui`（待手动验收）→ master；合后 push 远端。
-4. **MuJoCo → 监控 UDP 桥**：spec（2026-07-29）已写，尚未实现，用于把 `tactile/mj_write.py` 的合成 ΔB 接入 `monitor/` 实时窗口联调。
-5. 中期仍然：关注队友 **E1** 结果——它决定 B2 走触角闭环还是 F/T 安全网；真机门禁 E0–E5 全套跑完前，B2 真机验证/B3 复现整合都无法开始。
+1. **传感/滤波落地（前置）**：契约1 真实 `g_meas` 流（A1/A2 + ESP32-S3，滤波两口径沿用定稿）；装配态 E0/E2 复测，重审 S_cal 割线口径（R4）。
+2. **Transformer 示教-复刻**（spec：`docs/superpowers/specs/2026-08-24-transformer-teach-replicate-design.md`）：合成预训练 + CV 前端可先行、不卡传感；真实微调待传感流。
+3. **复刻侧 z 闭环装配态启用**：E2 真实标定后装回 `TactileExecutor`；等队友 E1 门禁结论（决定触角闭环 or F/T 安全网）。

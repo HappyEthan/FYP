@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "created_at": "2026-08-26T17:02:38.744585+08:00",
+  "port": "/dev/ttyACM0",
+  "baud": 115200,
+  "baseline_samples": 1007,
+  "circle_samples": 4107,
+  "bad_lines": 2,
+  "baseline_B0_uT": {
+    "Bx": -195.60074478649466,
+    "By": 747.4893247269117,
+    "Bz": 1013.8254756703079
+  },
+  "calibration": {
+    "method": "axis_aligned_percentile",
+    "percentile": 99.0,
+    "samples_used": 4107,
+    "Rx_uT": 403.65074478649467,
+    "Ry_uT": 416.90667527308835,
+    "x_gain": 1.0328400991644526,
+    "y_gain": 1.0,
+    "axis_ratio_before": 1.0328400991644526,
+    "axis_ratio_after": 1.0000000000000002
+  },
+  "application": {
+    "formula": "dBx_corrected = x_gain * (Bx - B0x)",
+    "dBy_formula": "dBy_corrected = By - B0y"
+  }
+}

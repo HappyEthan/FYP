@@ -2629,7 +2629,13 @@ class CPSClient(object):
     
     #
     def sendHRLog(self,nLevel,msg):
-        self.rpcClient.HRLog(int(nLevel),str(msg))
+        # 补丁: XML-RPC 日志上报是可选副作用, 部分控制器(Elfin E5)未实现 HRLog
+        # 方法, 原版直接调用会抛 xmlrpc Fault, 掩盖 sendAndRecv 的 Fail 路径上
+        # 真正的错误码 (2026-08-28 真机复现)。日志失败绝不允许阻断协议流程。
+        try:
+            self.rpcClient.HRLog(int(nLevel),str(msg))
+        except Exception:
+            pass
 
     # sendVarValue
     # No output 

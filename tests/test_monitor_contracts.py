@@ -35,7 +35,7 @@ def test_core_modules_do_not_import_gui():
     用子进程跑, 否则同一次 pytest 里别的测试 import 过 window 就会污染 sys.modules。
     """
     code = ("import sys, brushbot.monitor.core, brushbot.monitor.sources, "
-            "brushbot.monitor.recorder; "
+            "brushbot.monitor.recorder, brushbot.monitor.normconfig; "
             "print([m for m in sys.modules if m.startswith(('PyQt5', 'pyqtgraph'))])")
     out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
                          cwd=REPO, check=True)
