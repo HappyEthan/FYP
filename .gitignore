@@ -6,24 +6,34 @@ data/stroke_taxonomy/raw/
 # pixi environments
 .pixi/*
 !.pixi/config.toml
-# 华沿厂商专有手册: 本地保留, 不发布到公开仓库
-reference/HuayanRobot_Library_Python_V1.0.11.0.pdf
-reference/Elfin软件操作说明书V6.4.pdf
+
+# 参考资料只在本地保留，不同步到 Git
+reference/
+
 # SDD scratch (ledger/briefs/reports/diffs)
 .superpowers/
 # Make Me a Hanzi 数据集(外部, 30MB)
 data/makemeahanzi/
-# 生成的演示图/GIF (可由各模块 CLI 重生成)
-docs/assets/
+
+# docs 仅同步以下 7 个项目文档，其余内容只在本地保留
+docs/*
+!docs/filter.md
+!docs/handoff-e05-arm.md
+!docs/professor-intro.md
+!docs/monitor.md
+!docs/strokeplan-data-design.md
+!docs/tactile-sim.md
+!docs/transformer-strokeplan-implementation-roadmap.md
 
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
 
-# 监控窗口的录制输出
+# 传感器实测、标定、扫描与录制数据只在本地保留
 recordings/
-
-# 传感器归一化预设(含逐机校准值)
 configs/
+calibration/
+delta_b_v0_*/
+servo_scan_*/
 
 # 本地 AI 助手与工作区状态
 .agents/
@@ -31,9 +41,5 @@ configs/
 .claude/settings.local.json
 PROJECT_MEMORY.md
 
-# 真机标定原始采样（保留小型 JSON 摘要用于复现）
-calibration/**/*.csv
-
-# 公开仓库只保留文献链接与原创笔记，不分发 PDF 原文/厂商资料
-reference/**/*.pdf
+# 其他本地 PDF 资料
 physical_agent/**/*.pdf
