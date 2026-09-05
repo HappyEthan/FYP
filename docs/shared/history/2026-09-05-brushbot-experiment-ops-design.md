@@ -1,30 +1,30 @@
-# Brushbot Experiment Ops Skill Design
+# Brushbot 实验运维 Skill 设计
 
-Date: 2026-09-05
+日期：2026-09-05
 
-## Purpose
+## 目标
 
-Create a project-local Codex skill named `brushbot-experiment-ops` that helps plan, prepare, record, analyze, and review Brushbot experiments. Its immediate focus is the current sensor integration, calibration, and closed-loop writing work through M1, while its experiment records remain reusable for later template-transfer, Transformer, ablation, and system-evaluation work.
+创建一个名为 `brushbot-experiment-ops` 的项目级 Codex Skill，协助规划、准备、记录、分析和复盘 Brushbot 实验。近期重点是当前的传感器接入、标定以及截至 M1 的闭环写字工作；其实验记录同时应能复用于后续的模板迁移、Transformer、消融实验和系统评价。
 
-The skill is an experiment operations layer, not a source of scientific truth. It manages uncertainty and evidence without freezing provisional hardware assumptions into permanent instructions.
+该 Skill 是实验运维层，而不是科研结论的来源。它负责管理不确定性与证据，不会把暂定的硬件假设固化成永久指令。
 
-## Scope and Authority
+## 范围与权限
 
-The skill may:
+该 Skill 可以：
 
-- inspect the repository, plans, current implementation, and prior experiment records;
-- identify blockers and propose the smallest experiment that reduces a key uncertainty;
-- create and update local experiment records;
-- run repository tests, simulation, replay, and offline analysis commands;
-- summarize evidence, conflicts, failures, and recommended next steps.
+- 检查仓库、计划、当前实现和已有实验记录；
+- 识别阻塞点，并提出能够减少关键不确定性的最小实验；
+- 创建和更新本地实验记录；
+- 运行仓库测试、仿真、回放和离线分析命令；
+- 汇总证据、冲突、失败情况和后续建议。
 
-The skill may not start robot motion or perform a live hardware write without explicit authorization immediately before the operation. Authorization applies only to the named `run_id` and the presented command or motion scope. It is not reusable. The skill must not automatically retry robot motion after a failure.
+如果没有在操作前获得明确授权，该 Skill 不得启动机械臂运动或执行实时硬件写入。授权只对指定的 `run_id` 以及当时展示的命令或运动范围有效，不可复用。机械臂运动失败后，Skill 不得自动重试。
 
-Changes to milestone status or project direction in `plan.md` require explicit user confirmation. The skill does not write paper prose or convert provisional results into publication claims.
+修改 `plan.md` 中的里程碑状态或项目路线必须得到用户明确确认。该 Skill 不负责撰写论文，也不得把暂定结果包装为论文结论。
 
-## Location and Structure
+## 安装位置与目录结构
 
-Install the skill inside this repository:
+Skill 安装在当前项目仓库内：
 
 ```text
 .codex/skills/brushbot-experiment-ops/
@@ -46,79 +46,79 @@ Install the skill inside this repository:
     `-- test_init_experiment.py
 ```
 
-`SKILL.md` is a concise router containing the shared decision process, authority boundary, and rules for loading only the workflow reference relevant to the current experiment. Detailed procedures and schemas remain in references so unrelated material is not loaded for every request.
+`SKILL.md` 是简洁的路由入口，包含共用决策流程、权限边界，以及只加载当前实验所需工作流参考文件的规则。详细流程和数据格式放入参考文件，避免每次请求都加载无关内容。
 
-Automatic invocation remains enabled. The description should trigger on Brushbot experiment planning, data collection, sensor characterization, robot execution, closed-loop trials, experiment provenance, failure analysis, and evidence review, while excluding general paper writing.
+默认允许自动调用。Skill 描述应在以下情形触发：Brushbot 实验规划、数据采集、传感器表征、机械臂执行、闭环试验、实验溯源、失败分析和证据审查；一般性的论文写作不应触发该 Skill。
 
-## Sources of Truth and Uncertainty
+## 信息来源与不确定性管理
 
-The skill separates information into three layers:
+Skill 将信息分为三层：
 
-1. Stable contracts: non-negotiable project and safety invariants.
-2. Provisional defaults: current filter choices, gains, thresholds, and assumptions that must retain their evidence context and may change after hardware testing.
-3. Open questions: unresolved decisions represented as hypotheses and gates rather than silently selected answers.
+1. 稳定契约：不可随意改变的项目约束和安全不变量。
+2. 暂定默认值：当前滤波器选择、增益、阈值和假设；必须保留其证据背景，并允许在真机实验后更新。
+3. 开放问题：尚未解决的决策，应表示为假设和门禁，而不是静默选择一个答案。
 
-Experiment-specific claims use one of four labels: `confirmed`, `provisional`, `open`, or `contradicted`. If code, documentation, and recorded evidence disagree, the skill reports the conflict instead of silently choosing one. Current implementation is authoritative for software behavior; raw observations and execution logs are authoritative for what occurred in a particular run; neither simulation nor prose can establish unmeasured hardware behavior.
+具体实验结论使用以下四种标签之一：`confirmed`（已确认）、`provisional`（暂定）、`open`（开放）或 `contradicted`（存在矛盾）。如果代码、文档和实验记录相互冲突，Skill 应报告冲突，而不是自行选择其中一方。当前实现是软件实际行为的依据；原始观测和执行日志是某次运行实际发生情况的依据；仿真和文字说明均不能证明未经测量的硬件行为。
 
-Stable contracts include:
+稳定契约包括：
 
-- preserve raw `Bx`, `By`, and `Bz` samples;
-- keep planned `StrokePlan` data separate from actual `ExecutionLog` data;
-- never store `z_cmd` as a planned `StrokePlan` field;
-- associate plans, logs, calibration, images, metadata, and conclusions through `run_id`;
-- identify sensor and controller timing explicitly, with the current target of approximately 100 Hz sensing and 50 Hz robot control treated as a project contract until deliberately revised;
-- label simulation evidence as simulation evidence;
-- require real hardware evidence for bandwidth, hysteresis, magnetic interference, real brush-pressure effects, and robot safety claims.
+- 保留原始 `Bx`、`By` 和 `Bz` 样本；
+- 将计划数据 `StrokePlan` 与实际数据 `ExecutionLog` 分开；
+- 永远不把 `z_cmd` 存为 `StrokePlan` 的计划字段；
+- 使用 `run_id` 关联计划、日志、标定、图像、元数据和结论；
+- 明确记录传感器和控制器时序；当前约 100 Hz 传感、50 Hz 机械臂控制的目标在被有意修改之前视为项目契约；
+- 明确标注仿真证据；
+- 带宽、迟滞、磁干扰、真实毛笔提按效果和机械臂安全性必须由真实硬件证据支持。
 
-## Shared Experiment Lifecycle
+## 通用实验生命周期
 
-Every experiment follows this state flow:
-
-```text
-open question
--> hypothesis and predeclared decision criterion
--> run creation
--> preflight
--> execution
--> raw evidence preservation
--> analysis
--> observation / inference / decision separation
--> next smallest experiment
-```
-
-The manifest state is one of:
+每项实验遵循以下状态流：
 
 ```text
-planned -> ready -> running -> completed
-                          `-> aborted
-incomplete or unusable evidence -> invalid
+开放问题
+-> 假设和预先声明的决策判据
+-> 创建运行记录
+-> 执行前检查
+-> 执行
+-> 保存原始证据
+-> 分析
+-> 分离观察、推断和决策
+-> 下一项最小实验
 ```
 
-A run cannot become `ready` without an objective, execution mode, hypothesis or measurement question, decision criterion, required inputs, and expected artifacts. A hardware run additionally requires a completed safety preflight. A run is `completed` only after required artifacts and a result record exist; it is `aborted` when execution stopped but useful evidence remains, and `invalid` when the evidence cannot support the intended analysis.
+实验清单状态只能是：
 
-The skill prefers the smallest experiment that materially reduces the current critical uncertainty. It does not mechanically execute the full project roadmap.
+```text
+planned（已规划） -> ready（已就绪） -> running（运行中） -> completed（已完成）
+                                             `-> aborted（已中止）
+证据不完整或不可用 -> invalid（无效）
+```
 
-## Workflow Modules
+如果缺少实验目标、执行模式、假设或测量问题、决策判据、必要输入和预期产物，实验不得进入 `ready`。真机实验还必须完成安全预检。只有必要产物和结果记录都存在时，实验才能标记为 `completed`；执行中止但仍保留有效证据时标记为 `aborted`；证据无法支持预定分析时标记为 `invalid`。
 
-### Data Collection
+Skill 优先选择能够实质减少当前关键不确定性的最小实验，而不是机械地执行完整项目路线图。
 
-`data-collection.md` covers MLX90393 acquisition, USB or BLE capture, camera or human-demonstration capture, timestamp monotonicity, synchronization events, raw-field preservation, calibration references, missing samples, saturation, drift, dropouts, and dataset rejection criteria. It requires enough metadata to reproduce the capture conditions, including hardware configuration and paper, ink, brush, and session information when applicable.
+## 工作流模块
 
-### Gates and Calibration
+### 数据采集
 
-`gates-and-calibration.md` initially defines only the experiment-management framework: question, setup, controlled variables, input and output contracts, predeclared criterion, evidence label, and route decision. Existing E0-E5 material is referenced as a `provisional` draft and must not be treated as a final SOP or executed automatically. The module is designed to be replaced or refined when the sensor gate and calibration plan is redesigned, without changing the shared run schema.
+`data-collection.md` 覆盖 MLX90393 采集、USB 或 BLE 采集、相机或人类示范采集、时间戳单调性、同步事件、原始磁场保存、标定引用、样本缺失、饱和、漂移、断流和数据集剔除规则。该模块要求保存足够的信息以复现采集条件；适用时应包括硬件配置、纸张、墨液、毛笔和采集场次信息。
 
-### Robot Execution
+### 传感器门禁与标定
 
-`robot-execution.md` distinguishes simulation, replay, open-loop hardware, feedforward hardware, and tactile closed-loop hardware modes. Hardware preflight includes workspace and fixture clearance, paper frame and Z-direction confirmation, safe hover and lift poses, speed and per-step limits, sensor freshness, watchdog and emergency-stop behavior, command/log write availability, and the exact command requiring authorization. Failure closes safely, preserves available evidence, and does not trigger an automatic motion retry.
+`gates-and-calibration.md` 第一版只定义实验管理框架：问题、装置、受控变量、输入输出契约、预先声明的判据、证据标签和路线决策。现有 E0–E5 材料仅作为 `provisional` 草案引用，不得视为最终标准操作流程，也不得自动执行。后续重新设计传感器门禁与标定方案时，可以替换或细化该模块，而不改变共用的运行记录格式。
 
-### System Evaluation
+### 机械臂执行
 
-`system-evaluation.md` defines controlled comparisons using the same input plan and documented conditions. It supports fixed-Z, calibrated-feedforward, and tactile-closed-loop comparisons, and later template-transfer, Transformer, visual evaluation, and ablation experiments. It requires run-level grouping and leakage-safe dataset splits where learned models are involved.
+`robot-execution.md` 区分仿真、回放、真机开环、真机标定前馈和真机触觉闭环模式。真机预检包括工作空间及夹具间隙、纸面坐标系与 Z 方向、安全悬停和抬笔位、速度与单步限幅、传感器数据新鲜度、看门狗和急停行为、命令与日志写入能力，以及需要授权的准确命令。发生故障时应安全停止、保留已有证据，并且不得自动重试机械臂运动。
 
-## Experiment Artifact Contract
+### 系统对照与评价
 
-The initializer creates:
+`system-evaluation.md` 定义在输入计划和实验条件一致时进行的受控对比。它支持固定 Z、标定前馈和触觉闭环对比，也支持后续的模板迁移、Transformer、视觉评价和消融实验。涉及学习模型时，必须按运行分组，并采用不会发生数据泄漏的数据集划分。
+
+## 实验产物契约
+
+初始化脚本创建以下结构：
 
 ```text
 experiments/<run_id>/
@@ -132,78 +132,78 @@ experiments/<run_id>/
 `-- result.md
 ```
 
-The default `run_id` format is `YYYYMMDD-HHMMSS_<slug>`. The slug uses lowercase ASCII letters, digits, and hyphens. The initializer rejects an existing run directory rather than overwriting it.
+默认 `run_id` 格式为 `YYYYMMDD-HHMMSS_<slug>`。其中 slug 只使用小写 ASCII 字母、数字和连字符。如果运行目录已经存在，初始化脚本必须拒绝覆盖。
 
-`manifest.json` records at least:
+`manifest.json` 至少记录：
 
-- schema version, run ID, creation time, status, and experiment type;
-- objective, hypothesis or measurement question, and decision criterion;
-- execution mode: `simulation`, `replay`, `bench`, or `hardware`;
-- controlled variables, independent variables, dependent variables, and comparison group;
-- expected inputs and artifacts;
-- Git commit and dirty-worktree flag;
-- configuration and calibration references;
-- source-run relationships and external artifact references;
-- one-time hardware authorization metadata when applicable.
+- 格式版本、运行 ID、创建时间、状态和实验类型；
+- 实验目标、假设或测量问题，以及决策判据；
+- 执行模式：`simulation`、`replay`、`bench` 或 `hardware`；
+- 受控变量、自变量、因变量和对照组；
+- 预期输入和产物；
+- Git 提交和工作区是否存在未提交修改；
+- 配置与标定引用；
+- 来源运行关系和外部产物引用；
+- 适用时的一次性真机授权元数据。
 
-`commands.jsonl` is append-only at the workflow level and records timestamp, command, execution mode, exit status, and referenced outputs. Secrets and environment dumps are excluded. Hardware authorization is recorded for auditability but never interpreted as permission for another command or run.
+在工作流层面，`commands.jsonl` 采用只追加方式，记录时间戳、命令、执行模式、退出状态和相关输出。不得记录密钥或完整环境变量。真机授权记录只用于审计，绝不能解释为对其他命令或运行的授权。
 
-`raw/` is immutable by analysis steps. `processed/` and `analysis/` outputs must identify their raw input, configuration, and generating command. Large artifacts may remain in an established data location if the manifest records a repository-relative or explicitly resolved path plus a checksum.
+分析步骤不得修改 `raw/`。`processed/` 和 `analysis/` 中的产物必须指明其原始输入、配置和生成命令。大型产物可以保留在既有数据位置，但实验清单必须记录仓库相对路径或明确解析后的路径，并保存校验值。
 
-`result.md` separates:
+`result.md` 分开记录：
 
-- observations;
-- analysis and inferences;
-- decision against the predeclared criterion;
-- anomalies and limitations;
-- evidence label;
-- recommended next experiment.
+- 观察结果；
+- 分析与推断；
+- 对照预先声明判据得到的决策；
+- 异常与局限；
+- 证据标签；
+- 推荐的下一项实验。
 
-## Initializer Behavior
+## 初始化脚本行为
 
-`scripts/init_experiment.py` uses only the Python standard library. It creates the run package, writes valid initial JSON and Markdown records, captures the current Git commit and dirty state when available, and prints the created run path. It does not execute an experiment, move hardware, modify `plan.md`, or infer a scientific conclusion.
+`scripts/init_experiment.py` 只使用 Python 标准库。它负责创建实验记录包、写入有效的初始 JSON 和 Markdown 文件、在可用时记录当前 Git 提交和工作区状态，并输出新建运行目录的路径。它不会执行实验、驱动硬件、修改 `plan.md` 或推断科研结论。
 
-Required CLI inputs are the experiment slug, experiment type, execution mode, objective, and decision criterion. An optional explicit timestamp supports deterministic tests. The script validates enumerations and identifiers before creating files, refuses path traversal and duplicate run directories, and cleans up only files it created if initialization fails before completion.
+命令行必填参数包括实验 slug、实验类型、执行模式、实验目标和决策判据。可选的显式时间戳用于确定性测试。脚本必须先验证枚举值和标识符，再创建文件；必须拒绝路径穿越和重复运行目录；如果初始化尚未完成就失败，只能清理本次由它创建的文件。
 
-## Failure Handling
+## 失败处理
 
-The skill fails closed for live hardware. Missing or failed critical preflight items, non-monotonic sensor timestamps, stale feedback, inability to write required logs, non-finite control signals, or violated safety limits prevent or abort execution according to the robot runtime's safe-stop path.
+涉及实时硬件时，Skill 必须采用失败关闭策略。如果关键预检项缺失或失败、传感器时间戳不单调、反馈过期、必要日志无法写入、控制信号不是有限数值或安全限幅被违反，应阻止执行或按照机械臂运行时的安全停止路径中止运行。
 
-An interrupted run remains in the ledger. The skill records the last known phase, preserves available data, and classifies the run as `aborted` or `invalid`. It does not delete failed runs, rewrite raw data, conceal contradictory outcomes, relax a criterion after observing results, or repeat motion without new authorization.
+被中断的实验仍保留在台账中。Skill 应记录最后已知阶段，保留现有数据，并将实验分类为 `aborted` 或 `invalid`。它不得删除失败实验、改写原始数据、隐藏相互矛盾的结果、观察结果后放宽判据，也不得在未获得新授权时重复机械臂运动。
 
-## Validation Strategy
+## 验证策略
 
-Skill creation follows a documentation TDD cycle:
+Skill 创建过程遵循面向文档的测试驱动循环：
 
-1. Run isolated, non-hardware pressure scenarios without the skill and record relevant failures.
-2. Implement the minimum skill guidance and initializer needed to address observed failures.
-3. Re-run equivalent scenarios with the skill and inspect decisions and generated artifacts.
-4. Refine only where a demonstrated loophole remains.
+1. 在不加载该 Skill 的隔离环境中运行无硬件压力场景，并记录相关失败。
+2. 实现能够处理这些失败的最小 Skill 指令和初始化脚本。
+3. 加载 Skill 后重新运行等价场景，并检查其决策与生成产物。
+4. 只针对已证实仍存在的漏洞进行改进。
 
-Behavior scenarios include:
+行为测试场景包括：
 
-- a vague request to "do the next experiment" must surface current uncertainty and propose a bounded experiment;
-- a request to run E2 immediately must not treat the provisional E0-E5 draft as a final SOP;
-- a hardware command must stop for run-scoped authorization after preflight;
-- a passed simulation must not be reported as hardware validation;
-- a data-capture run must retain raw three-axis magnetic data and quality metadata;
-- a dropout or logging failure must preserve evidence and must not cause an automatic robot retry.
+- 面对“做下一个实验”这种模糊请求时，必须指出当前不确定性并提出边界明确的实验；
+- 面对立即执行 E2 的请求时，不得把暂定的 E0–E5 草案当作最终标准操作流程；
+- 真机命令必须在完成预检后，为当前运行申请限定范围的授权；
+- 仿真通过不得表述为真机验证通过；
+- 数据采集实验必须保留原始三轴磁场数据和质量元数据；
+- 断流或日志写入失败时必须保留证据，且不得自动重试机械臂运动。
 
-Script tests run in a temporary directory and cover valid creation, required fields, deterministic IDs, duplicate rejection, invalid identifiers and enum values, path-traversal rejection, Git metadata fallback, and non-overwrite behavior. Skill structure is checked with the bundled `quick_validate.py`. No behavioral validation may command real hardware.
+脚本测试在临时目录中运行，覆盖正常创建、必填字段、确定性 ID、重复目录拒绝、非法标识符和枚举值、路径穿越拒绝、Git 元数据降级处理，以及不覆盖行为。Skill 结构使用配套的 `quick_validate.py` 检查。所有行为验证均不得向真实硬件发送命令。
 
-## Non-Goals
+## 非目标
 
-The first version does not provide a general laboratory information management system, automatically schedule experiments, redesign the sensor gates, choose final hardware thresholds, operate the robot without confirmation, alter the robot runtime, train a model, or draft the conference paper. It provides reusable records and workflow guidance that those later activities can use.
+第一版不提供通用实验室信息管理系统，不自动安排实验，不重新设计传感器门禁，不决定最终硬件阈值，不在未经确认时操作机械臂，不修改机械臂运行时，不训练模型，也不撰写会议论文。它提供可供这些后续活动复用的实验记录和工作流指导。
 
-## Acceptance Criteria
+## 验收标准
 
-The design is complete when:
+满足以下条件时，设计对应的实现才算完成：
 
-- the project-local skill validates and is discoverable;
-- each of the four experiment types routes to the correct focused reference;
-- the initializer produces the agreed experiment package without overwriting existing data;
-- provisional and confirmed knowledge are visibly separated;
-- simulation and hardware claims remain separated;
-- hardware execution cannot proceed through the skill without run-scoped authorization and a completed safety preflight;
-- raw magnetic data and experiment provenance are preserved;
-- pressure tests demonstrate the intended behavior without touching live hardware.
+- 项目级 Skill 通过验证并可被发现；
+- 四类实验都能路由到正确且聚焦的参考文件；
+- 初始化脚本能够创建约定的实验记录包，且不会覆盖已有数据；
+- 暂定知识与已确认知识有明显区分；
+- 仿真结论与真机结论始终分开；
+- 没有当前运行范围内的明确授权和已完成的安全预检时，Skill 无法推进真机执行；
+- 原始磁场数据和实验溯源信息得到保留；
+- 压力测试证明预期行为，并且整个验证过程不接触真实硬件。
