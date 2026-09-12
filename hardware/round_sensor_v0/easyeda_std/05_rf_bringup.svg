@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="1560" viewBox="1800 1260 1740 1560">
+<rect width="3600" height="2900" fill="white"/>
+<text x="1800" y="1320" fill="#243746" font-size="37.324" font-family="Arial,sans-serif" text-anchor="start">ROUND SENSOR / SCH-A1 / 05 RF + BATTERY + DEBUG</text>
+<text x="1800" y="1360" fill="#243746" font-size="19.995" font-family="Arial,sans-serif" text-anchor="start">Ceramic antenna option | cell/NTC interface | recovery pads</text>
+<rect x="1800" y="1400" width="1740" height="1400" stroke="#94A8B6" fill="none"/>
+<text x="1820" y="1430" fill="#243746" font-size="23.994" font-family="Arial,sans-serif" text-anchor="start">05  RF / BRING-UP / BUILD NOTES</text>
+<text x="1820" y="1455" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">No PCB footprints bound in SCH-A1; geometry studies do not cover this revision</text>
+<polyline points="2080 1570 2035 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2035" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">RF_ANT</text>
+<polyline points="2420 1570 2465 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2465" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<polyline points="2420 1600 2465 1600" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2465" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<polyline points="2420 1630 2465 1630" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2465" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">ANT_TUNE</text>
+<rect x="2100" y="1540" width="300" height="120" stroke="#A00000" fill="#FFFDF2"/>
+<text x="2100" y="1510" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">ANT1</text>
+<text x="2100" y="1530" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">2450AT18D0100001E</text>
+<path d="M 2080 1570 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2104" y="1574" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">FEED</text>
+<text x="2090.0" y="1566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2420 1570 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2396" y="1574" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="2410.0" y="1566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<path d="M 2420 1600 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2396" y="1604" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="2410.0" y="1596" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
+<path d="M 2420 1630 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2396" y="1634" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">TUNE/GND</text>
+<text x="2410.0" y="1626" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">4</text>
+<polyline points="2020 1750 1975 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1975" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">RF_SOC</text>
+<polyline points="2100 1750 2145 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2145" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">RF_ANT</text>
+<text x="2040" y="1710" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R30</text>
+<text x="2040" y="1730" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">0R / RF series</text>
+<rect x="2040" y="1743" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2020 1750 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2030.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2100 1750 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2090.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2610 1750 2565 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2565" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">RF_SOC</text>
+<polyline points="2690 1750 2735 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2735" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2630" y="1710" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C30</text>
+<text x="2630" y="1730" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">DNP / RF tune</text>
+<polyline points="2646 1740 2646 1760" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2654 1740 2654 1760" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2630 1750 2646 1750" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2654 1750 2670 1750" stroke="#A00000" fill="none" stroke-width="1"/>
+<path d="M 2610 1750 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2620.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2690 1750 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2680.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="3150 1750 3105 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3105" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">RF_ANT</text>
+<polyline points="3230 1750 3275 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3275" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3170" y="1710" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C31</text>
+<text x="3170" y="1730" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">DNP / RF tune</text>
+<polyline points="3186 1740 3186 1760" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3194 1740 3194 1760" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3170 1750 3186 1750" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3194 1750 3210 1750" stroke="#A00000" fill="none" stroke-width="1"/>
+<path d="M 3150 1750 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3160.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 3230 1750 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3220.0" y="1746" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2020 1860 1975 1860" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1975" y="1857" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">ANT_TUNE</text>
+<polyline points="2100 1860 2145 1860" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2145" y="1857" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2040" y="1820" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R31</text>
+<text x="2040" y="1840" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">0R / tune option</text>
+<rect x="2040" y="1853" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2020 1860 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2030.0" y="1856" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2100 1860 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2090.0" y="1856" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<text x="1840" y="1940" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">Use 50 ohm feed; matching values require the actual PCB, enclosure, battery and hand grip.</text>
+<text x="1840" y="1963" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">Antenna keepout applies through the board stack and to components on BOTH sides.</text>
+<polyline points="3040 1550 2995 1550" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2995" y="1547" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
+<polyline points="3040 1580 2995 1580" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2995" y="1577" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<polyline points="3040 1610 2995 1610" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2995" y="1607" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">NTC_PACK</text>
+<rect x="3060" y="1520" width="230" height="120" stroke="#A00000" fill="#FFFDF2"/>
+<text x="3060" y="1490" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">J2</text>
+<text x="3060" y="1510" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">PROTECTED_1S_BATTERY</text>
+<path d="M 3040 1550 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3064" y="1554" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">PACK+</text>
+<text x="3050.0" y="1546" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 3040 1580 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3064" y="1584" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">PACK-</text>
+<text x="3050.0" y="1576" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<path d="M 3040 1610 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3064" y="1614" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">CELL_NTC</text>
+<text x="3050.0" y="1606" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
+<polyline points="2020 2070 1975 2070" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1975" y="2067" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">TS_CELL</text>
+<polyline points="2100 2070 2145 2070" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2145" y="2067" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">NTC_PACK</text>
+<text x="2040" y="2030" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R16</text>
+<text x="2040" y="2050" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">DNP / TS series TBD</text>
+<rect x="2040" y="2063" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2020 2070 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2030.0" y="2066" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2100 2070 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2090.0" y="2066" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2610 2070 2565 2070" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2565" y="2067" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">NTC_PACK</text>
+<polyline points="2690 2070 2735 2070" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2735" y="2067" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2630" y="2030" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R17</text>
+<text x="2630" y="2050" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">DNP / TS parallel TBD</text>
+<rect x="2630" y="2063" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2610 2070 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2620.0" y="2066" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2690 2070 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2680.0" y="2066" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<text x="1840" y="2140" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R16 is OPEN as delivered: charging is inhibited. Choose the battery and NTC network before fitting it.</text>
+<polyline points="2040 2290 1995 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1995" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VBUS_BASE</text>
+<polyline points="2300 2290 2345 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2345" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VBUS_PRESENT_N</text>
+<polyline points="2300 2320 2345 2320" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2345" y="2317" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<rect x="2060" y="2260" width="220" height="90" stroke="#A00000" fill="#FFFDF2"/>
+<text x="2060" y="2230" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">Q2</text>
+<text x="2060" y="2250" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">MMBT3904</text>
+<path d="M 2040 2290 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2064" y="2294" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">BASE</text>
+<text x="2050.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2300 2290 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2276" y="2294" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">COLLECTOR</text>
+<text x="2290.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
+<path d="M 2300 2320 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2276" y="2324" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">EMITTER</text>
+<text x="2290.0" y="2316" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2590 2290 2545 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2545" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
+<polyline points="2670 2290 2715 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2715" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VBUS_BASE</text>
+<text x="2610" y="2250" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R23</text>
+<text x="2610" y="2270" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
+<rect x="2610" y="2283" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2590 2290 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2600.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2670 2290 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2660.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="3130 2290 3085 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3085" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VBUS_BASE</text>
+<polyline points="3210 2290 3255 2290" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3255" y="2287" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3150" y="2250" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R24</text>
+<text x="3150" y="2270" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
+<rect x="3150" y="2283" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 3130 2290 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3140.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 3210 2290 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3200.0" y="2286" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2590 2400 2545 2400" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2545" y="2397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<polyline points="2670 2400 2715 2400" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2715" y="2397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VBUS_PRESENT_N</text>
+<text x="2610" y="2360" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R25</text>
+<text x="2610" y="2380" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
+<rect x="2610" y="2393" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 2590 2400 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2600.0" y="2396" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2670 2400 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2660.0" y="2396" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="3130 2400 3085 2400" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3085" y="2397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<polyline points="3210 2400 3255 2400" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3255" y="2397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">BOOT_N</text>
+<text x="3150" y="2360" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R8</text>
+<text x="3150" y="2380" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
+<rect x="3150" y="2393" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 3130 2400 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3140.0" y="2396" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 3210 2400 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3200.0" y="2396" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="2040 2540 1995 2540" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1995" y="2537" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<polyline points="2040 2570 1995 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1995" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<polyline points="2040 2600 1995 2600" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1995" y="2597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">MCU_EN</text>
+<polyline points="2330 2540 2375 2540" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2375" y="2537" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">BOOT_N</text>
+<polyline points="2330 2570 2375 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2375" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">UART_TX</text>
+<polyline points="2330 2600 2375 2600" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2375" y="2597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">UART_RX</text>
+<rect x="2060" y="2510" width="250" height="120" stroke="#A00000" fill="#FFFDF2"/>
+<text x="2060" y="2480" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">J3</text>
+<text x="2060" y="2500" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">POGO_RECOVERY</text>
+<path d="M 2040 2540 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2064" y="2544" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2050.0" y="2536" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2040 2570 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2064" y="2574" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">3V3</text>
+<text x="2050.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<path d="M 2040 2600 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2064" y="2604" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">EN</text>
+<text x="2050.0" y="2596" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
+<path d="M 2330 2540 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2306" y="2544" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">BOOT</text>
+<text x="2320.0" y="2536" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">4</text>
+<path d="M 2330 2570 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2306" y="2574" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">UART_TX</text>
+<text x="2320.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">5</text>
+<path d="M 2330 2600 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2306" y="2604" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">UART_RX</text>
+<text x="2320.0" y="2596" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">6</text>
+<polyline points="2590 2570 2545 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2545" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<polyline points="2670 2570 2715 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2715" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2610" y="2530" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C20</text>
+<text x="2610" y="2550" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">22uF / 10V</text>
+<polyline points="2626 2560 2626 2580" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2634 2560 2634 2580" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2610 2570 2626 2570" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="2634 2570 2650 2570" stroke="#A00000" fill="none" stroke-width="1"/>
+<path d="M 2590 2570 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2600.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 2670 2570 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="2660.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<polyline points="3130 2570 3085 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3085" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<polyline points="3210 2570 3255 2570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="3255" y="2567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3150" y="2530" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C21</text>
+<text x="3150" y="2550" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100nF / 10V</text>
+<polyline points="3166 2560 3166 2580" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3174 2560 3174 2580" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3150 2570 3166 2570" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="3174 2570 3190 2570" stroke="#A00000" fill="none" stroke-width="1"/>
+<path d="M 3130 2570 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3140.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 3210 2570 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="3200.0" y="2566" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<text x="1840" y="2700" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">GPIO7 reads VBUS_PRESENT_N. Firmware must detach USB when VBUS is absent and handle USB suspend.</text>
+<text x="1840" y="2723" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">GPIO6 battery ADC is intentionally unconnected pending switched sensing; no off-state back-power path.</text>
+<text x="1840" y="2746" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">Cell protection remains required. Brownout / low-battery cutoff and USB-only boot need bench verification.</text>
+<text x="1800" y="2860" fill="#AA3333" font-size="21.328" font-family="Arial,sans-serif" text-anchor="start">SCHEMATIC REVIEW REV SCH-A1 | Footprints / PCB / RF tuning / cell NTC / hardware tests pending</text>
+</svg>

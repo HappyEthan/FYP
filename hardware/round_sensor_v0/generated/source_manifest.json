@@ -1,0 +1,38 @@
+{
+  "antenna-2450at18d.pdf": {
+    "bytes": 1245733,
+    "sha256": "0035b5c49959b4a720f6f907c75169d929a62e000cae85d7c347df56f36f9eac"
+  },
+  "bq24074.pdf": {
+    "bytes": 3731445,
+    "sha256": "05585ca0112a74b0ad1ef22f3cc30e92c1cdce50430d32605a00f4c3b57b7435"
+  },
+  "esp32-s3-pico-1.pdf": {
+    "bytes": 774379,
+    "sha256": "44daca9121111a9c7df437e18c3c153258a20e68fe57fcd3bd9be593ad162979"
+  },
+  "imu.kicad_mod": {
+    "bytes": 4345,
+    "sha256": "e78b6004d7b0ad6e304d1b4b67f331f9f4a5e7e9446fd85711432a5b8a41b5f6"
+  },
+  "mlx90393.pdf": {
+    "bytes": 800847,
+    "sha256": "b622dfc463eeb13cee8397ad3f01a5df2d8c506197fdb37154845449845cbfa2"
+  },
+  "tlv755p.pdf": {
+    "bytes": 3072276,
+    "sha256": "c0fe7be9fea4e4c8d933142f59758f7a951e195a45ca4e7e17684153da018cbb"
+  },
+  "tpd2eusb30a.pdf": {
+    "bytes": 2257950,
+    "sha256": "a2c0dd845043a5bbfe610f673879c29e38649544385dea51dbe0a4c49df39136"
+  },
+  "usb4105.kicad_mod": {
+    "bytes": 6860,
+    "sha256": "3b8d7da3cae5114ec83022a759a78925113bc2eeec100ea447594f6d8687e4b8"
+  },
+  "usb4105.pdf": {
+    "bytes": 164547,
+    "sha256": "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5"
+  }
+}

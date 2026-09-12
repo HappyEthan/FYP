@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>圆形传感板 SCH-A1 原理图</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;color:#233844;background:#edf2f4;margin:0;padding:24px}
+h1{font-size:24px;margin:0} p{margin:8px 0}nav{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+button,a{font:inherit}button{background:white;border:1px solid #a5b9c4;border-radius:5px;padding:6px 14px;cursor:pointer}
+button.active{background:#204f67;color:white}figure{margin:0;background:white;border:1px solid #bcc9cf;padding:10px;overflow:auto}
+img{display:block;width:100%;height:auto}a{color:#17567c}small{color:#5c4a23}
+</style>
+<h1>圆形传感板原理图 · SCH-A1</h1>
+<p>嘉立创 EDA 标准版格式 · 55 个元件 · 229 个引脚 · 36 个网络</p>
+<p><a href="round_sensor_SCH_A1.json" download>下载标准版 JSON</a> · <a href="round_sensor_SCH_A1.svg">查看整张矢量图</a> · <a href="README.md">使用说明</a></p>
+<small>本地预览。编辑器导入验证尚未完成；未绑定 PCB 封装。R16 默认不装，电池 NTC 定值后才能启用充电。</small>
+<nav>
+<button data-src="01_mcu.svg" class="active">主控</button>
+<button data-src="02_sensors.svg">IMU 与磁传感器</button>
+<button data-src="03_usb.svg">USB-C</button>
+<button data-src="04_power.svg">电源与充电</button>
+<button data-src="05_rf_bringup.svg">天线、电池与调试</button>
+</nav>
+<figure><img id="drawing" src="01_mcu.svg" alt="主控原理图"></figure>
+<script>
+document.querySelectorAll('button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active');document.getElementById('drawing').src=b.dataset.src;
+ document.getElementById('drawing').alt=b.textContent+'原理图';
+});
+</script></html>

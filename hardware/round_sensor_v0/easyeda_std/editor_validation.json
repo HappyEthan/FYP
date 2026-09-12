@@ -1,0 +1,43 @@
+{
+  "editor": "嘉立创EDA标准版网页版",
+  "ui_language": "简体中文",
+  "site": "https://lceda.cn/editor",
+  "observed_at_utc": "2026-09-12T12:00:07Z",
+  "source_file": "round_sensor_SCH_A1_multi.json",
+  "source_files": [
+    "round_sensor_SCH_A1_01_MCU.json",
+    "round_sensor_SCH_A1_02_SENSORS.json",
+    "round_sensor_SCH_A1_03_USB.json",
+    "round_sensor_SCH_A1_04_POWER.json",
+    "round_sensor_SCH_A1_05_RF_BATTERY_DEBUG.json"
+  ],
+  "import_verified": true,
+  "multi_sheet_import_verified": true,
+  "document_name": "round_sensor_SCH_A1",
+  "sheet_count": 5,
+  "sheet_names": [
+    "01_MCU",
+    "02_SENSORS",
+    "03_USB",
+    "04_POWER",
+    "05_RF_BATTERY_DEBUG"
+  ],
+  "previous_single_sheet_name": "Sheet_1",
+  "previous_single_sheet_deleted": true,
+  "render_verified": true,
+  "render_observations": [
+    "工程树及页签只显示五个功能页，不再包含旧的整页 Sheet_1",
+    "01_MCU、02_SENSORS、03_USB、04_POWER、05_RF_BATTERY_DEBUG 均由编辑器成功读取"
+  ],
+  "integrated_erc_refreshed": true,
+  "component_count": 55,
+  "named_net_count": 36,
+  "valid_net_count": 36,
+  "erc_error_count": 0,
+  "erc_observation": "删除旧 Sheet_1 后，设计管理器显示元件(55)、网络(36/36)，未出现感叹号或错误条目。",
+  "saved_to_cloud_project": true,
+  "cloud_workspace": "个人",
+  "cloud_project_title": "round_sensor_SCH_A1",
+  "current_document_id": "42f6e03521014c9fa5759ac5a8963ba2",
+  "previous_single_sheet_document_id": "443a8d6b3aec407a9b79d907c9b2383a"
+}
