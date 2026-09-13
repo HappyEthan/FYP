@@ -179,9 +179,10 @@ class SensorMonitorService:
                 times = (t - t[-1]).tolist()
                 xs = (values[:, 0] - baseline.b0[0]).tolist() if baseline.ready else values[:, 0].tolist()
                 ys = (values[:, 1] - baseline.b0[1]).tolist() if baseline.ready else values[:, 1].tolist()
+                bxy = np.hypot(np.asarray(xs, dtype=float), np.asarray(ys, dtype=float)).tolist()
             else:
                 current = np.zeros(3)
-                times, xs, ys = [], [], []
+                times, xs, ys, bxy = [], [], [], []
             pressure_bxy = float(np.hypot(current[0], current[1]))
             gate = 3.0 * baseline.sigma_norm if baseline.ready else float("inf")
             contact = bool(gate > 0 and derive(current, gate)["mag_xy"] >= gate) if np.isfinite(gate) else False
@@ -201,7 +202,7 @@ class SensorMonitorService:
                 "contact": contact,
                 "xy": {"x": float(current[0]), "y": float(current[1])},
                 "pressure_bxy_uT": pressure_bxy,
-                "series": {"t": times, "x": xs, "y": ys},
+                "series": {"t": times, "x": xs, "y": ys, "bxy": bxy},
                 "display": {"xy_radius_uT": 400,
                             "channels": {"x": "ΔBx", "y": "ΔBy"},
                             "series_units": "µT", "time_units": "s"},

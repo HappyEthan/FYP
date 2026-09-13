@@ -74,6 +74,7 @@ def test_sensor_service_connects_and_exposes_xy_and_signal_history():
         assert snap["xy"]["x"] == 11.0
         assert snap["xy"]["y"] == 22.0
         assert snap["pressure_bxy_uT"] == np.hypot(11.0, 22.0)
+        assert snap["series"]["bxy"] == pytest.approx([np.hypot(10.0, 20.0), np.hypot(11.0, 22.0)])
         assert snap["display"]["xy_radius_uT"] == 400
         assert snap["display"]["channels"] == {"x": "ΔBx", "y": "ΔBy"}
     finally:
@@ -224,5 +225,6 @@ def test_sensor_snapshot_can_limit_history_for_realtime_transport():
         snap = svc.snapshot(max_points=5)
         assert len(snap["series"]["x"]) == 5
         assert len(snap["series"]["y"]) == 5
+        assert len(snap["series"]["bxy"]) == 5
     finally:
         svc.close()

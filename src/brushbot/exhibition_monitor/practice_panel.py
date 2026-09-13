@@ -10,6 +10,8 @@ from .theme import COLORS
 
 
 _STATUS_TEXT = {
+    "idle_wait_start": "等待开始",
+    "ready_wait_s_down": "等待 S 落笔",
     "idle_wait_s_down": "等待 S 下笔",
     "s_writing": "正在书写 S",
     "s_paused": "S 已暂停",
@@ -33,15 +35,16 @@ class PracticePanel(QtWidgets.QGroupBox):
         layout = QtWidgets.QVBoxLayout(self)
         layout.setSpacing(10)
 
-        self.generate_button = QtWidgets.QPushButton("生成 SZ", objectName="generate-sz")
+        self.start_button = QtWidgets.QPushButton("开始写字", objectName="start-writing")
+        self.generate_button = self.start_button
         self.reset_button = QtWidgets.QPushButton("重新开始", objectName="reset-practice")
-        layout.addWidget(self.generate_button)
+        layout.addWidget(self.start_button)
         layout.addWidget(self.reset_button)
 
         self.status_label = QtWidgets.QLabel("等待开始", objectName="practice-status")
         self.status_label.setStyleSheet(f"color: {COLORS['ink']}; font-weight: 700;")
         layout.addWidget(self.status_label)
-        self.pressure_label = QtWidgets.QLabel("压力：— µT", objectName="practice-pressure")
+        self.pressure_label = QtWidgets.QLabel("当前压力：—", objectName="practice-pressure")
         layout.addWidget(self.pressure_label)
         self.progress_label = QtWidgets.QLabel("进度：0%", objectName="practice-progress")
         layout.addWidget(self.progress_label)
@@ -57,7 +60,7 @@ class PracticePanel(QtWidgets.QGroupBox):
         except (TypeError, ValueError):
             pressure = None
         self.pressure_label.setText(
-            f"压力：{pressure:.1f} µT" if pressure is not None and math.isfinite(pressure) else "压力：— µT"
+            f"当前压力：{pressure:.1f}" if pressure is not None and math.isfinite(pressure) else "当前压力：—"
         )
         try:
             progress = max(0.0, min(1.0, float(getattr(state, "progress", 0.0))))

@@ -2,7 +2,13 @@ import pytest
 from PyQt5 import QtWidgets
 
 from brushbot.exhibition_monitor.pressure_practice import PracticeState
-from brushbot.exhibition_monitor.sz_template import load_sz_template, polyline_at_progress
+from brushbot.exhibition_monitor.sz_template import (
+    jittered_point,
+    layout_sz,
+    load_sz_template,
+    polyline_at_progress,
+    stamp_brush,
+)
 from brushbot.exhibition_monitor.sz_canvas import SZCanvas
 
 
@@ -66,3 +72,32 @@ def test_canvas_empty_state_keeps_frame_and_status(qtbot):
     assert geometry["frame"] is True
     assert geometry["status"] == "等待开始"
     assert geometry["template"] == load_sz_template()
+
+
+def test_layout_puts_s_and_z_in_separate_left_to_right_boxes():
+    boxes = layout_sz(load_sz_template(), (0.0, 0.0, 1000.0, 400.0), gutter=80.0)
+    assert boxes["S"][2] > 0
+    assert boxes["Z"][0] > boxes["S"][2]
+    assert boxes["S"][1] == pytest.approx(boxes["Z"][1])
+
+
+def test_xy_jitter_uses_plot_orientation_and_is_clamped():
+    point = jittered_point((100.0, 100.0), (100.0, 0.0), jitter_gain=1.0, max_offset=12.0)
+    assert point == pytest.approx((112.0, 100.0))
+    point = jittered_point((100.0, 100.0), (0.0, 100.0), jitter_gain=1.0, max_offset=12.0)
+    assert point == pytest.approx((100.0, 88.0))
+
+
+def test_stamp_brush_interpolates_a_thick_path():
+    points = stamp_brush((0.0, 0.0), (30.0, 0.0), brush_width=18.0)
+    assert points[0] == (0.0, 0.0)
+    assert points[-1] == (30.0, 0.0)
+    assert len(points) >= 3
+
+
+def test_canvas_uses_a_nonzero_plan_band_width(qtbot):
+    canvas = SZCanvas()
+    qtbot.addWidget(canvas)
+    geometry = canvas.visible_geometry()
+    assert geometry["plan_width"] > 0
+    assert geometry["ink_width"] > 0

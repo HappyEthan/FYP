@@ -128,7 +128,7 @@ def test_window_contains_sz_canvas_and_generate_reset_controls(qtbot):
     window = ExhibitionWindow(gateway=FakeGateway())
     qtbot.addWidget(window)
     assert window.sz_canvas is not None
-    assert window.practice_panel.generate_button.text() == "生成 SZ"
+    assert window.practice_panel.start_button.text() == "开始写字"
     assert window.practice_panel.reset_button.text() == "重新开始"
 
 
@@ -145,7 +145,7 @@ def test_sensor_snapshot_drives_s_progress_and_pressure_label(qtbot):
     now[0] = 0.28
     callback(_sensor(300.0))
     QtWidgets.QApplication.processEvents()
-    assert window.practice_panel.pressure_label.text().startswith("压力：")
+    assert window.practice_panel.pressure_label.text().startswith("当前压力：")
     assert window.engine.state.status == "s_writing"
     assert window.engine.state.progress > 0.0
     assert window.sz_canvas.practice_state == window.engine.state

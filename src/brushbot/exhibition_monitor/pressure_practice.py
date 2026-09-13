@@ -45,6 +45,8 @@ class PracticeState:
     pen_down: bool
     pressure_bxy_uT: float | None
     pause_remaining_s: float
+    session_started: bool = False
+    page_active: bool = True
 
 
 class PressurePracticeEngine:
@@ -62,15 +64,40 @@ class PressurePracticeEngine:
         self.reset()
 
     def reset(self) -> None:
-        self._status = "idle_wait_s_down"
+        self._status = "idle_wait_start"
         self._active_letter: str | None = "S"
         self._progress = 0.0
+        self._session_started = False
+        self._page_active = True
         self._stable_down = False
         self._candidate_down: bool | None = None
         self._candidate_since: float | None = None
         self._last_update_s: float | None = None
         self._pause_until_s: float | None = None
         self._pressure: float | None = None
+
+    def start_session(self, now_s: float) -> PracticeState:
+        """Arm a fresh S/Z session; pressure must still trigger the first stroke."""
+        self._status = "ready_wait_s_down"
+        self._active_letter = "S"
+        self._progress = 0.0
+        self._session_started = True
+        self._stable_down = False
+        self._candidate_down = None
+        self._candidate_since = None
+        self._last_update_s = float(now_s)
+        self._pause_until_s = None
+        self._pressure = None
+        return self.state
+
+    def set_page_active(self, active: bool, now_s: float | None = None) -> PracticeState:
+        """Pause path-time integration while the writing page is hidden."""
+        self._page_active = bool(active)
+        if now_s is not None:
+            self._last_update_s = float(now_s)
+        elif not self._page_active and self._last_update_s is None:
+            self._last_update_s = 0.0
+        return self.state
 
     @property
     def state(self) -> PracticeState:
@@ -85,6 +112,8 @@ class PressurePracticeEngine:
             pen_down=self._stable_down,
             pressure_bxy_uT=self._pressure,
             pause_remaining_s=remaining,
+            session_started=self._session_started,
+            page_active=self._page_active,
         )
 
     def update(self, pressure_bxy_uT: float | None, now_s: float) -> PracticeState:
@@ -100,6 +129,9 @@ class PressurePracticeEngine:
 
         self._update_pen_state(float(pressure_bxy_uT), now_s)
 
+        if not self._page_active:
+            return self.state
+
         if self._status == "s_finished_pause":
             if self._pause_until_s is not None and now_s >= self._pause_until_s:
                 self._status = "wait_z_down" if not self._stable_down else "wait_z_up"
@@ -108,7 +140,9 @@ class PressurePracticeEngine:
                 self._pause_until_s = None
             return self.state
 
-        if self._status == "idle_wait_s_down":
+        if self._status in ("idle_wait_start", "ready_wait_s_down"):
+            if self._status == "idle_wait_start":
+                return self.state
             if self._stable_down:
                 self._status = "s_writing"
             return self.state

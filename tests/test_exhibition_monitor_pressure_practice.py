@@ -23,6 +23,7 @@ def up(engine, t):
 
 
 def start_s(engine):
+    engine.start_session(0.0)
     engine.update(150.0, 0.0)
     return engine.update(150.0, 0.08)
 
@@ -37,8 +38,10 @@ def finish_s(engine):
 
 def test_first_down_starts_s_and_pressure_controls_speed():
     engine = PressurePracticeEngine(TEMPLATE)
-    assert engine.state.status == "idle_wait_s_down"
-    assert engine.update(150.0, 0.0).status == "idle_wait_s_down"
+    assert engine.state.status == "idle_wait_start"
+    assert engine.update(150.0, 0.0).status == "idle_wait_start"
+    engine.start_session(0.0)
+    assert engine.update(150.0, 0.0).status == "ready_wait_s_down"
     assert engine.update(150.0, 0.08).status == "s_writing"
     state = engine.update(300.0, 0.18)
     assert state.progress == pytest.approx(0.08)
@@ -124,6 +127,7 @@ def test_default_config_and_boundary_pressure_are_deterministic():
     config = PracticeConfig()
     assert config.threshold_uT == 100.0
     engine = PressurePracticeEngine(TEMPLATE, config)
+    engine.start_session(0.0)
     engine.update(110.0, 0.0)
     assert engine.update(110.0, 0.08).status == "s_writing"
     state = engine.update(100.0, 0.18)
@@ -157,3 +161,43 @@ def test_default_config_and_boundary_pressure_are_deterministic():
 def test_practice_config_rejects_unsafe_ranges(kwargs):
     with pytest.raises(ValueError):
         PracticeConfig(**kwargs)
+
+
+def test_start_session_is_required_and_reset_returns_to_idle():
+    engine = PressurePracticeEngine(TEMPLATE)
+    assert engine.update(300.0, 1.0).progress == 0.0
+    assert engine.state.session_started is False
+    engine.start_session(1.0)
+    assert engine.state.status == "ready_wait_s_down"
+    assert engine.state.session_started is True
+    engine.reset()
+    assert engine.state.status == "idle_wait_start"
+    assert engine.state.session_started is False
+
+
+def test_inactive_page_freezes_progress_and_active_page_resumes():
+    engine = PressurePracticeEngine(TEMPLATE)
+    engine.start_session(0.0)
+    engine.update(150.0, 0.0)
+    engine.update(150.0, 0.08)
+    before = engine.update(300.0, 0.18).progress
+    engine.set_page_active(False)
+    engine.update(300.0, 10.0)
+    assert engine.state.progress == pytest.approx(before)
+    assert engine.state.page_active is False
+    engine.set_page_active(True)
+    resumed = engine.update(300.0, 10.1)
+    assert resumed.progress == pytest.approx(before + 0.08)
+    assert resumed.page_active is True
+
+
+def test_page_reentry_does_not_consume_hidden_time_without_a_snapshot():
+    engine = PressurePracticeEngine(TEMPLATE)
+    engine.start_session(0.0)
+    engine.update(150.0, 0.0)
+    engine.update(150.0, 0.08)
+    before = engine.update(300.0, 0.18).progress
+    engine.set_page_active(False, 10.0)
+    engine.set_page_active(True, 10.0)
+    resumed = engine.update(300.0, 10.1)
+    assert resumed.progress == pytest.approx(before + 0.08)
