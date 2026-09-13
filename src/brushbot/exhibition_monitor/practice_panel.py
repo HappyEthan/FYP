@@ -28,7 +28,7 @@ class PracticePanel(QtWidgets.QGroupBox):
     """Display practice state; the state machine remains owned by the window."""
 
     def __init__(self, parent=None):
-        super().__init__("SZ 临摹", parent)
+        super().__init__("书写控制", parent)
         self._build_ui()
 
     def _build_ui(self):

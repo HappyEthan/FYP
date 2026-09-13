@@ -151,6 +151,24 @@ def test_default_config_and_boundary_pressure_are_deterministic():
     assert state.status == "s_writing"
 
 
+def test_writing_state_uses_raw_pressure_even_when_plot_smoothing_is_configured():
+    engine = PressurePracticeEngine(
+        TEMPLATE,
+        PracticeConfig(
+            debounce_s=0.08,
+            smoothing_window=5,
+            smoothing_alpha=0.2,
+            min_speed=0.8,
+            max_speed=0.8,
+        ),
+    )
+    engine.start_session(0.0)
+    engine.update(250.0, 0.0)
+    state = engine.update(250.0, 0.08)
+    assert state.status == "s_writing"
+    assert state.pressure_bxy_uT == pytest.approx(250.0)
+
+
 @pytest.mark.parametrize(
     "kwargs",
     [

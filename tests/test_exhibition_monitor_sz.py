@@ -75,6 +75,12 @@ def test_canvas_empty_state_keeps_frame_and_status(qtbot):
     assert geometry["template"] == load_sz_template()
 
 
+def test_canvas_does_not_add_sz_prompt_to_canvas_header(qtbot):
+    canvas = SZCanvas()
+    qtbot.addWidget(canvas)
+    assert not canvas.visible_geometry()["status"].startswith("SZ")
+
+
 def test_layout_puts_s_and_z_in_separate_left_to_right_boxes():
     boxes = layout_sz(load_sz_template(), (0.0, 0.0, 1000.0, 400.0), gutter=80.0)
     assert boxes["S"][2] > 0

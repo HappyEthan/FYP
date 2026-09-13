@@ -4,9 +4,6 @@ from dataclasses import dataclass
 import math
 from typing import Mapping, Sequence
 
-from .pressure_smoothing import PressureSmoother
-
-
 @dataclass(frozen=True)
 class PracticeConfig:
     threshold_uT: float = 200.0
@@ -83,10 +80,6 @@ class PressurePracticeEngine:
         self._last_update_s: float | None = None
         self._pause_until_s: float | None = None
         self._pressure: float | None = None
-        self._smoother = PressureSmoother(
-            window=self.config.smoothing_window,
-            alpha=self.config.smoothing_alpha,
-        )
 
     def start_session(self, now_s: float) -> PracticeState:
         """Arm a fresh S/Z session; pressure must still trigger the first stroke."""
@@ -100,10 +93,6 @@ class PressurePracticeEngine:
         self._last_update_s = float(now_s)
         self._pause_until_s = None
         self._pressure = None
-        self._smoother = PressureSmoother(
-            window=self.config.smoothing_window,
-            alpha=self.config.smoothing_alpha,
-        )
         return self.state
 
     def set_page_active(self, active: bool, now_s: float | None = None) -> PracticeState:
@@ -141,7 +130,9 @@ class PressurePracticeEngine:
             raw_pressure = None
         if valid and not math.isfinite(raw_pressure):
             valid = False
-        self._pressure = self._smoother.update(raw_pressure) if valid else None
+        # Writing responsiveness intentionally follows the raw Bxy sample.
+        # The display curve owns smoothing; it must not add latency to pen state.
+        self._pressure = raw_pressure if valid else None
         valid = self._pressure is not None
         if not valid:
             self._last_update_s = now_s

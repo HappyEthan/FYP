@@ -229,7 +229,7 @@ class SZCanvas(QtWidgets.QWidget):
             painter.setBrush(QtGui.QColor(COLORS["current_ink"]))
             painter.drawEllipse(QtCore.QPointF(*point), self.BRUSH_WIDTH / 2.0, self.BRUSH_WIDTH / 2.0)
         painter.setPen(QtGui.QColor(COLORS["ink"]))
-        painter.drawText(QtCore.QPointF(rect.left(), 26), f"SZ  {geometry['status']}")
+        painter.drawText(QtCore.QPointF(rect.left(), 26), geometry["status"])
         painter.drawText(QtCore.QPointF(rect.right() - 80, 26), f"{geometry['progress']:.0%}")
 
     def _draw_paths(self, painter, paths, color, width):

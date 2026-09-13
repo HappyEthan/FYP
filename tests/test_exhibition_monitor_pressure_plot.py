@@ -27,6 +27,11 @@ def test_pressure_plot_empty_state_has_no_unit_label(qtbot):
     qtbot.addWidget(plot)
     assert plot.title_text == "压力变化"
     assert "µT" not in plot.visible_text()
+    assert "0" in plot.visible_text()
+    assert "200" in plot.visible_text()
+    assert "800" in plot.visible_text()
+    assert plot.PRESSURE_THRESHOLD == 200.0
+    assert (plot.Y_MIN, plot.Y_MAX) == (0.0, 800.0)
     assert plot._values == []
 
 
