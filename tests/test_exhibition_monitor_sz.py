@@ -130,3 +130,13 @@ def test_canvas_does_not_bridge_ink_between_s_and_z_boxes(qtbot):
     canvas.set_practice_state(PracticeState("z_writing", "Z", 0.1, True, 150.0, 0.0, True, True))
     geometry = canvas.visible_geometry()
     assert geometry["ink"]["Z"][0][0] >= geometry["boxes"]["Z"][0]
+
+
+def test_canvas_keeps_plan_caps_inside_the_frame(qtbot):
+    canvas = SZCanvas()
+    qtbot.addWidget(canvas)
+    geometry = canvas.visible_geometry()
+    frame = canvas._plot_rect()
+    margin = geometry["plan_width"] / 2.0
+    assert geometry["boxes"]["S"][1] >= frame.top() + margin
+    assert geometry["boxes"]["S"][3] <= frame.bottom() - margin

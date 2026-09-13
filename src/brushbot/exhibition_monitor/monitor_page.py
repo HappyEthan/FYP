@@ -32,4 +32,3 @@ class MonitorPage(QtWidgets.QWidget):
 
         self.connection_panel = ConnectionPanel(store, gateway)
         root.addWidget(self.connection_panel, 1)
-

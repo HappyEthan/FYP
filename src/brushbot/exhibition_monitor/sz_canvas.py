@@ -76,9 +76,10 @@ class SZCanvas(QtWidgets.QWidget):
 
     def _boxes(self) -> dict[str, tuple[float, float, float, float]]:
         rect = self._plot_rect()
+        margin = self.PLAN_WIDTH / 2.0
         return layout_sz(
             self.template,
-            (rect.left(), rect.top(), rect.right(), rect.bottom()),
+            (rect.left(), rect.top() + margin, rect.right(), rect.bottom() - margin),
             gutter=max(24.0, rect.width() * 0.08),
         )
 
