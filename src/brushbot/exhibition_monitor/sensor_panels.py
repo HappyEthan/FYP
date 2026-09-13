@@ -222,6 +222,7 @@ class SignalPlot(pg.PlotWidget):
             self.waiting_label.setVisible(True)
             self.plotItem.setXRange(-1.0, 0.0, padding=0.0)
             self.plotItem.setYRange(-1.0, 1.0, padding=0.0)
+            self.waiting_label.setPos(-0.5, 0.0)
             return
 
         self.waiting_label.setVisible(False)

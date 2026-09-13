@@ -4,9 +4,29 @@ from __future__ import annotations
 
 from copy import deepcopy
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtCore, QtWidgets
 
 from .state_store import ExhibitionStateStore
+
+
+class _CallSignals(QtCore.QObject):
+    finished = QtCore.pyqtSignal(object, int, object)
+    failed = QtCore.pyqtSignal(object, object)
+
+
+class _CallRunnable(QtCore.QRunnable):
+    def __init__(self, token, operation, signals):
+        super().__init__()
+        self.token = token
+        self.operation = operation
+        self.signals = signals
+
+    def run(self):  # noqa: D401 - QRunnable callback
+        try:
+            status, payload = self.operation()
+            self.signals.finished.emit(self.token, int(status), payload)
+        except Exception as exc:  # pragma: no cover - exercised by gateway failures
+            self.signals.failed.emit(self.token, exc)
 
 
 class ConnectionPanel(QtWidgets.QGroupBox):
@@ -17,6 +37,7 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         self.store = store
         self.gateway = gateway
         self.sensor: dict | None = None
+        self._pending_calls = {}
         self._build_ui()
         self.store.changed.connect(self._on_store_changed)
         self._on_store_changed()
@@ -97,34 +118,64 @@ class ConnectionPanel(QtWidgets.QGroupBox):
     def _publish(self, status: int, payload: dict) -> None:
         if not isinstance(payload, dict):
             payload = {"connected": False, "error": "网关返回了无效状态"}
-        sensor = payload.get("sensor") if isinstance(payload.get("sensor"), dict) else payload
+        incoming = payload.get("sensor") if isinstance(payload.get("sensor"), dict) else payload
+        latest = self.store.snapshot() or {}
+        existing = latest.get("sensor") if isinstance(latest, dict) else None
+        sensor = deepcopy(existing) if isinstance(existing, dict) else {}
+        sensor.update(deepcopy(incoming))
+        # Command responses may be compact or stale.  Never replace a live
+        # stream's history with a response that omits (or resets) its series.
+        if isinstance(existing, dict) and "series" in existing:
+            sensor["series"] = deepcopy(existing["series"])
         if status >= 400:
             sensor = dict(sensor)
             sensor.setdefault("connected", bool((self.sensor or {}).get("connected")))
             sensor["error"] = sensor.get("error") or payload.get("error") or f"请求失败 ({status})"
         self.store.update_snapshot({"sensor": sensor})
 
+    def _start_call(self, action, operation):
+        token = object()
+        signals = _CallSignals()
+        signals.finished.connect(self._on_call_finished)
+        signals.failed.connect(self._on_call_failed)
+        worker = _CallRunnable(token, operation, signals)
+        worker.setAutoDelete(False)
+        self._pending_calls[token] = (action, signals, worker)
+        QtCore.QThreadPool.globalInstance().start(worker)
+
+    @QtCore.pyqtSlot(object, int, object)
+    def _on_call_finished(self, token, status, payload):
+        pending = self._pending_calls.pop(token, None)
+        if pending is None:
+            return
+        self._publish(status, payload)
+
+    @QtCore.pyqtSlot(object, object)
+    def _on_call_failed(self, token, exc):
+        pending = self._pending_calls.pop(token, None)
+        if pending is None:
+            return
+        action = pending[0]
+        current = dict(self.sensor or {})
+        current["error"] = str(exc)
+        if action == "baseline":
+            current["baseline_running"] = False
+        self.apply_sensor(current)
+
     def _connect_sensor(self):
+        port = self.port_edit.text().strip()
         try:
-            port = self.port_edit.text().strip()
             baud = int(self.baud_combo.currentText())
-            status, payload = self.gateway.connect_sensor(port, baud)
-            self._publish(status, payload)
-        except Exception as exc:
-            self.apply_sensor({"connected": False, "error": str(exc)})
+        except ValueError:
+            self.apply_sensor({"connected": False, "error": "波特率无效"})
+            return
+        self._start_call("connect", lambda: self.gateway.connect_sensor(port, baud))
 
     def _disconnect_sensor(self):
-        try:
-            status, payload = self.gateway.disconnect_sensor()
-            self._publish(status, payload)
-        except Exception as exc:
-            self.apply_sensor({"connected": False, "error": str(exc)})
+        self._start_call("disconnect", self.gateway.disconnect_sensor)
 
     def _take_baseline(self):
-        try:
-            status, payload = self.gateway.take_baseline()
-            self._publish(status, payload)
-        except Exception as exc:
-            current = dict(self.sensor or {})
-            current["error"] = str(exc)
-            self.apply_sensor(current)
+        current = dict(self.sensor or {})
+        current["baseline_running"] = True
+        self.apply_sensor(current)
+        self._start_call("baseline", self.gateway.take_baseline)

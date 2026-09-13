@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import time
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
@@ -70,6 +71,14 @@ class FakeGateway:
         return 202, {"connected": True, "baseline_running": True}
 
 
+class SlowBaselineGateway(FakeGateway):
+    def take_baseline(self):
+        self.calls.append(("baseline-start",))
+        time.sleep(0.15)
+        self.calls.append(("baseline-done",))
+        return 202, {"connected": True, "baseline_running": True}
+
+
 def test_connection_panel_uses_gateway_and_applies_sensor_state(app):
     store = ExhibitionStateStore()
     gateway = FakeGateway()
@@ -77,8 +86,23 @@ def test_connection_panel_uses_gateway_and_applies_sensor_state(app):
     panel.findChild(QtWidgets.QLineEdit, "serial-port").setText("/dev/test")
     panel.findChild(QtWidgets.QComboBox, "serial-baud").setCurrentText("9600")
     panel.findChild(QtWidgets.QPushButton, "connect-sensor").click()
+    deadline = time.monotonic() + 1.0
+    while time.monotonic() < deadline and len(gateway.calls) < 1:
+        app.processEvents()
+        time.sleep(0.005)
+    app.processEvents()
     panel.findChild(QtWidgets.QPushButton, "baseline").click()
+    deadline = time.monotonic() + 1.0
+    while time.monotonic() < deadline and len(gateway.calls) < 2:
+        app.processEvents()
+        time.sleep(0.005)
+    app.processEvents()
     panel.findChild(QtWidgets.QPushButton, "disconnect-sensor").click()
+
+    deadline = time.monotonic() + 1.0
+    while time.monotonic() < deadline and len(gateway.calls) < 3:
+        app.processEvents()
+        time.sleep(0.005)
 
     assert gateway.calls == [
         ("connect", "/dev/test", 9600),
@@ -100,3 +124,48 @@ def test_connection_panel_uses_gateway_and_applies_sensor_state(app):
     assert panel.error_label.text() == "bad frame"
     assert panel.findChild(QtWidgets.QPushButton, "baseline").isEnabled() is False
 
+
+def test_baseline_request_does_not_block_gui_and_preserves_latest_series(app):
+    store = ExhibitionStateStore()
+    gateway = SlowBaselineGateway()
+    panel = ConnectionPanel(store, gateway)
+    store.update_snapshot(
+        {
+            "sensor": {
+                "connected": True,
+                "series": {"t": [0.0, 1.0], "x": [2.0, 3.0], "y": [4.0, 5.0]},
+                "xy": {"x": 3.0, "y": 5.0},
+            }
+        }
+    )
+    started = time.monotonic()
+    panel.findChild(QtWidgets.QPushButton, "baseline").click()
+    elapsed = time.monotonic() - started
+    assert elapsed < 0.08
+
+    deadline = time.monotonic() + 1.0
+    while time.monotonic() < deadline and ("baseline-start",) not in gateway.calls:
+        app.processEvents()
+        time.sleep(0.005)
+    assert gateway.calls == [("baseline-start",)]
+    while time.monotonic() < deadline and ("baseline-done",) not in gateway.calls:
+        app.processEvents()
+        time.sleep(0.005)
+    app.processEvents()
+    assert ("baseline-done",) in gateway.calls
+    assert store.snapshot()["sensor"]["series"] == {
+        "t": [0.0, 1.0], "x": [2.0, 3.0], "y": [4.0, 5.0]
+    }
+
+
+def test_empty_signal_plot_places_waiting_text_inside_frame(app):
+    plot = SignalPlot("x")
+    plot.resize(320, 180)
+    plot.set_series([], [])
+    app.processEvents()
+    x, y = plot.waiting_label.pos().x(), plot.waiting_label.pos().y()
+    xmin, xmax = plot.plotItem.viewRange()[0]
+    ymin, ymax = plot.plotItem.viewRange()[1]
+    assert xmin <= x <= xmax
+    assert ymin <= y <= ymax
+    assert plot.waiting_label.isVisible()
