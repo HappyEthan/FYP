@@ -141,6 +141,11 @@ def test_default_config_and_boundary_pressure_are_deterministic():
         {"threshold_uT": math.nan},
         {"down_threshold_uT": math.inf},
         {"up_threshold_uT": -math.inf},
+        {"debounce_s": -0.01},
+        {"inter_letter_pause_s": -0.01},
+        {"up_threshold_uT": 100.0},
+        {"down_threshold_uT": 100.0},
+        {"up_threshold_uT": 110.0, "down_threshold_uT": 120.0},
     ],
 )
 def test_practice_config_rejects_unsafe_ranges(kwargs):

@@ -36,6 +36,7 @@ class SensorMonitorService:
         self._baseline_running = False
         self._baseline_started = 0.0
         self._baseline_samples = []
+        self._session_generation = 0
         self._stop = threading.Event()
         self._thread = None
 
@@ -44,6 +45,8 @@ class SensorMonitorService:
         if not port:
             raise ValueError("port is required")
         self.disconnect()
+        with self._lock:
+            self._session_generation += 1
         try:
             source = self.source_factory(port, int(baud))
             source.start()
@@ -60,6 +63,7 @@ class SensorMonitorService:
             self._error = None
             self._history.clear()
             self._baseline = Baseline()
+            self._baseline_samples = []
             self._stop.clear()
             self._thread = threading.Thread(target=self._poll_loop,
                                              name="exhibition-sensor", daemon=True)
@@ -73,6 +77,7 @@ class SensorMonitorService:
             self._connected = False
             self._baseline_running = False
             self._stop.set()
+            self._session_generation += 1
         if thread and thread is not threading.current_thread():
             thread.join(timeout=1.0)
         if source is not None:
@@ -95,14 +100,18 @@ class SensorMonitorService:
             self._baseline_running = True
             self._baseline_started = time.monotonic()
             self._baseline_samples = []
+            generation = self._session_generation
             thread = threading.Thread(target=self._baseline_worker,
+                                       args=(generation,),
                                        name="exhibition-baseline", daemon=True)
             thread.start()
             return self.snapshot()
 
-    def _baseline_worker(self):
+    def _baseline_worker(self, generation):
         time.sleep(max(self.baseline_duration_s, 0.0))
         with self._lock:
+            if generation != self._session_generation or not self._baseline_running:
+                return
             rows = list(self._baseline_samples)
             self._baseline_samples = []
             self._baseline_running = False
@@ -145,6 +154,7 @@ class SensorMonitorService:
                         self._error = str(exc)
                         self._connected = False
                         self._baseline_running = False
+                        self._session_generation += 1
                         self._stop.set()
                 if failed_source is not None:
                     try:

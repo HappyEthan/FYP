@@ -20,12 +20,16 @@ class PracticeConfig:
         thresholds = (self.threshold_uT, self.down_threshold_uT, self.up_threshold_uT)
         if not all(math.isfinite(float(value)) for value in thresholds):
             raise ValueError("pressure thresholds must be finite")
+        if self.up_threshold_uT >= self.threshold_uT or self.threshold_uT >= self.down_threshold_uT:
+            raise ValueError("thresholds must satisfy up < threshold < down")
         if not math.isfinite(float(self.fast_pressure_uT)) or self.fast_pressure_uT <= self.threshold_uT:
             raise ValueError("fast_pressure_uT must exceed threshold_uT")
         if not math.isfinite(float(self.min_speed)) or not math.isfinite(float(self.max_speed)):
             raise ValueError("speeds must be finite")
         if self.min_speed < 0.0 or self.max_speed < self.min_speed:
             raise ValueError("speeds must satisfy max_speed >= min_speed >= 0")
+        if self.debounce_s < 0.0 or self.inter_letter_pause_s < 0.0:
+            raise ValueError("timings must be non-negative")
 
 
 @dataclass(frozen=True)

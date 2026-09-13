@@ -148,6 +148,37 @@ def test_sensor_service_poll_failure_stops_and_detaches_source():
         svc.close()
 
 
+def test_old_baseline_worker_cannot_commit_after_disconnect_and_reconnect():
+    old_source = FakeSource([])
+    new_pre = {"sensor_t_us": 0, "B_uT": [10.0, 20.0, 30.0], "source_kind": "serial"}
+    new_during = {"sensor_t_us": 10000, "B_uT": [100.0, 200.0, 300.0], "source_kind": "serial"}
+    new_source = PhaseSource(new_pre, new_during)
+    sources = iter((old_source, new_source))
+    svc = SensorMonitorService(source_factory=lambda p, b: next(sources),
+                               poll_interval=0.001, baseline_duration_s=0.03)
+    try:
+        svc.connect("old", 115200)
+        svc.start_baseline()
+        old_token = svc._session_generation
+        time.sleep(0.005)
+        svc.disconnect()
+        svc.connect("new", 115200)
+        for _ in range(100):
+            if svc.snapshot()["series"]["x"]:
+                break
+            time.sleep(0.002)
+        new_source.phase = "baseline"
+        svc.start_baseline()
+        svc._baseline_worker(old_token)
+        for _ in range(150):
+            if svc.snapshot()["baseline_ready"]:
+                break
+            time.sleep(0.002)
+        assert np.allclose(svc.snapshot()["baseline"], [100.0, 200.0, 300.0])
+    finally:
+        svc.close()
+
+
 def test_sensor_snapshot_exposes_bxy_pressure_from_current_xy():
     frames = [{"sensor_t_us": 0, "B_uT": [3.0, 4.0, 9.0], "source_kind": "serial"}]
     source = FakeSource(frames)
