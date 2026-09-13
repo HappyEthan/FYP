@@ -151,14 +151,19 @@ class ExhibitionGateway:
 
             if self._stop.wait(self.reconnect_delay_s):
                 break
-            try:
-                _status, snapshot = self.get_status()
-                if isinstance(snapshot, dict):
+            # A stream may only be reopened after a successful status refresh.
+            # Keep retrying that refresh while disconnected; do not fall back
+            # to the outer loop, which would establish a stream too early.
+            while not self._stop.is_set():
+                try:
+                    status, snapshot = self.get_status()
+                    if status != 200 or not isinstance(snapshot, dict):
+                        raise RuntimeError("status refresh failed")
                     on_snapshot(snapshot)
-            except Exception:
-                # A failed status refresh must not bypass the prescribed
-                # status-before-stream order; retry it on the next cycle.
-                continue
+                    break
+                except Exception:
+                    if self._stop.wait(self.reconnect_delay_s):
+                        return
 
     @staticmethod
     def _close_socket(socket) -> None:

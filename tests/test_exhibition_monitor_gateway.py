@@ -177,3 +177,30 @@ def test_close_is_idempotent_and_unblocks_receiver_within_one_second():
     assert time.monotonic() - started < 1.0
     assert socket.closed.is_set()
     assert gateway.stream_running is False
+
+
+def test_reconnect_does_not_open_stream_until_status_refresh_succeeds():
+    first = FakeWebSocket([OSError("disconnected")])
+    opened = []
+
+    class FailingHttp:
+        def request(self, method, path, body=None):
+            raise OSError("status unavailable")
+
+    def open_websocket(url, timeout):
+        opened.append((url, timeout))
+        return first
+
+    gateway = ExhibitionGateway(
+        "http://monitor.local:8765",
+        reconnect_delay_s=0.001,
+        http=FailingHttp(),
+        websocket_factory=open_websocket,
+    )
+    gateway.start_stream(lambda _snapshot: None)
+    try:
+        wait_until(lambda: len(opened) == 1)
+        time.sleep(0.03)
+        assert len(opened) == 1
+    finally:
+        gateway.close()
