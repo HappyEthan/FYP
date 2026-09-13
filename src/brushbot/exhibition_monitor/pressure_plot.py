@@ -12,8 +12,9 @@ class PressurePlot(QtWidgets.QWidget):
     """Render a unit-free rolling pressure trend without another plot engine."""
 
     Y_MIN = 0.0
-    Y_MAX = 800.0
+    Y_MAX = 1400.0
     PRESSURE_THRESHOLD = 200.0
+    RECOMMENDED_PRESSURE_HIGH = 1000.0
 
     def __init__(self, *, window_s: float = 8.0, smoothing_window: int = 3,
                  smoothing_alpha: float = 0.20, parent=None):
@@ -28,7 +29,7 @@ class PressurePlot(QtWidgets.QWidget):
         self._values: list[float] = []
 
     def visible_text(self) -> str:
-        return "压力变化 0 200 800 时间"
+        return "压力变化 0 200 1000 1400 时间"
 
     def set_series(self, times, values) -> None:
         pairs = smooth_pressure_series(
@@ -56,25 +57,30 @@ class PressurePlot(QtWidgets.QWidget):
         painter.setPen(QtGui.QPen(QtGui.QColor(COLORS["secondary"]), 1))
         painter.drawRect(rect)
 
-        # Keep the scale readable: the user can immediately see that 200 is
-        # the pressure boundary, while samples above it remain in the plot.
+        # Keep the scale readable: 200–1000 is the recommended pressure band.
         threshold_ratio = (self.PRESSURE_THRESHOLD - self.Y_MIN) / (self.Y_MAX - self.Y_MIN)
         threshold_y = rect.bottom() - rect.height() * threshold_ratio
+        recommended_ratio = (self.RECOMMENDED_PRESSURE_HIGH - self.Y_MIN) / (self.Y_MAX - self.Y_MIN)
+        recommended_y = rect.bottom() - rect.height() * recommended_ratio
         pressure_region = QtCore.QRectF(
-            rect.left(), rect.top(), rect.width(), max(0.0, threshold_y - rect.top())
+            rect.left(), recommended_y, rect.width(), max(0.0, threshold_y - recommended_y)
         )
-        painter.fillRect(pressure_region, QtGui.QColor(181, 107, 47, 22))
+        painter.fillRect(pressure_region, QtGui.QColor(45, 156, 134, 34))
         threshold_pen = QtGui.QPen(QtGui.QColor(COLORS["accent"]), 1, QtCore.Qt.DashLine)
         painter.setPen(threshold_pen)
         painter.drawLine(QtCore.QPointF(rect.left(), threshold_y), QtCore.QPointF(rect.right(), threshold_y))
+        upper_pen = QtGui.QPen(QtGui.QColor(COLORS["secondary"]), 1, QtCore.Qt.DashLine)
+        painter.setPen(upper_pen)
+        painter.drawLine(QtCore.QPointF(rect.left(), recommended_y), QtCore.QPointF(rect.right(), recommended_y))
         painter.setPen(QtGui.QColor(COLORS["ink"]))
         painter.drawText(QtCore.QPointF(rect.left(), 20.0), self.title_text)
         painter.drawText(QtCore.QPointF(rect.left(), rect.bottom() + 20.0), "时间")
-        painter.drawText(QtCore.QPointF(8.0, rect.top() + 5.0), "800")
+        painter.drawText(QtCore.QPointF(8.0, rect.top() + 5.0), "1400")
+        painter.drawText(QtCore.QPointF(8.0, recommended_y + 5.0), "1000")
         painter.drawText(QtCore.QPointF(8.0, threshold_y + 5.0), "200")
         painter.drawText(QtCore.QPointF(8.0, rect.bottom()), "0")
         painter.setPen(QtGui.QColor(COLORS["accent"]))
-        painter.drawText(QtCore.QPointF(rect.right() - 54.0, rect.top() + 18.0), "有压力")
+        painter.drawText(QtCore.QPointF(rect.right() - 70.0, recommended_y + 18.0), "合理压力")
         painter.setPen(QtGui.QColor(COLORS["secondary"]))
         painter.drawText(QtCore.QPointF(rect.right() - 54.0, rect.bottom() - 6.0), "无压力")
         if len(self._values) < 1:

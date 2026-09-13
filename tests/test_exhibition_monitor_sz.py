@@ -102,11 +102,11 @@ def test_stamp_brush_interpolates_a_thick_path():
     assert len(points) >= 3
 
 
-def test_canvas_uses_a_wide_hidden_jitter_limit(qtbot):
+def test_canvas_uses_a_tighter_hidden_jitter_limit(qtbot):
     canvas = SZCanvas()
     qtbot.addWidget(canvas)
     geometry = canvas.visible_geometry()
-    assert geometry["jitter_limit"] >= 40.0
+    assert 40.0 <= geometry["jitter_limit"] <= 50.0
     assert geometry["ink_width"] > 0
 
 
