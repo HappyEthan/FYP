@@ -7,6 +7,10 @@ COLORS = {
     "primary": "#2d9c86",
     "secondary": "#74b8a7",
     "accent": "#b56b2f",
+    "template_gray": "#b7b8ad",
+    "completed_ink": "#203f38",
+    "current_ink": "#2d9c86",
+    "pause_hint": "#b56b2f",
 }
 
 
