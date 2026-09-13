@@ -49,7 +49,12 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         if isinstance(previous_sensor, dict) and isinstance(incoming_sensor, dict):
             sensor = deepcopy(previous_sensor)
             sensor.update(deepcopy(incoming_sensor))
-            if "series" not in incoming_sensor and "series" in previous_sensor:
+            incoming_series = incoming_sensor.get("series")
+            if (
+                "series" not in incoming_sensor
+                or not isinstance(incoming_series, dict)
+                or not incoming_series
+            ) and "series" in previous_sensor:
                 sensor["series"] = deepcopy(previous_sensor["series"])
             if "sensor" in snapshot:
                 snapshot = dict(snapshot)

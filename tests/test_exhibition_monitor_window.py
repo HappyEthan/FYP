@@ -75,6 +75,23 @@ def test_stream_snapshot_refreshes_all_views_and_close_is_idempotent(qtbot):
     assert gateway.close_calls == 1
 
 
+def test_error_snapshot_keeps_last_series_and_sets_orange_status(qtbot):
+    gateway = FakeGateway()
+    window = ExhibitionWindow(gateway=gateway)
+    qtbot.addWidget(window)
+    gateway.start_calls[0]({"sensor": {"connected": True, "series": {"t": [1], "x": [2], "y": [3]}}})
+    gateway.start_calls[0]({"sensor": {"connected": False, "error": "stream lost", "series": None}})
+    QtWidgets.QApplication.processEvents()
+    assert window.x_plot._times == [1.0]
+    assert window.x_plot._values == [2.0]
+    assert window.y_plot._values == [3.0]
+    assert window.heading_status.text() == "连接失败"
+    assert "#b56b2f" in window.heading_status.styleSheet()
+    gateway.start_calls[0]({"sensor": {"error": "still lost", "series": {}}})
+    QtWidgets.QApplication.processEvents()
+    assert window.x_plot._values == [2.0]
+
+
 def test_monitor_imports_do_not_pull_serial_or_robot_modules():
     import ast
     from pathlib import Path
