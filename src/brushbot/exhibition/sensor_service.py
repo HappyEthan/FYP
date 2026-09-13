@@ -35,6 +35,7 @@ class SensorMonitorService:
         self._baseline = Baseline()
         self._baseline_running = False
         self._baseline_started = 0.0
+        self._baseline_samples = []
         self._stop = threading.Event()
         self._thread = None
 
@@ -93,6 +94,7 @@ class SensorMonitorService:
                 return self.snapshot()
             self._baseline_running = True
             self._baseline_started = time.monotonic()
+            self._baseline_samples = []
             thread = threading.Thread(target=self._baseline_worker,
                                        name="exhibition-baseline", daemon=True)
             thread.start()
@@ -101,7 +103,8 @@ class SensorMonitorService:
     def _baseline_worker(self):
         time.sleep(max(self.baseline_duration_s, 0.0))
         with self._lock:
-            rows = list(self._history)
+            rows = list(self._baseline_samples)
+            self._baseline_samples = []
             self._baseline_running = False
             if not rows:
                 self._error = "baseline requires sensor samples"
@@ -129,11 +132,26 @@ class SensorMonitorService:
                     for frame in frames or []:
                         b = tuple(float(v) for v in frame["B_uT"])
                         t = float(frame.get("sensor_t_us", 0)) / 1e6
-                        self._history.append((t, b))
+                        row = (t, b)
+                        self._history.append(row)
+                        if self._baseline_running:
+                            self._baseline_samples.append(row)
             except Exception as exc:
+                failed_source = None
                 with self._lock:
-                    self._error = str(exc)
-                    self._connected = False
+                    if self._source is source:
+                        failed_source = self._source
+                        self._source = None
+                        self._error = str(exc)
+                        self._connected = False
+                        self._baseline_running = False
+                        self._stop.set()
+                if failed_source is not None:
+                    try:
+                        failed_source.stop()
+                    except Exception as stop_exc:
+                        with self._lock:
+                            self._error = str(stop_exc)
                 return
 
     def snapshot(self, max_points=None):

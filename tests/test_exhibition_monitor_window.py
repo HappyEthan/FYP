@@ -32,8 +32,7 @@ def _sensor(pressure, *, connected=True, baseline_ready=True, error=None):
         "xy": {"x": pressure, "y": 0.0},
         "series": {"t": [], "x": [], "y": []},
     }
-    if error:
-        payload["error"] = error
+    payload["error"] = error
     return {"sensor": payload}
 
 
@@ -194,6 +193,26 @@ def test_sensor_disconnect_freezes_sz_progress(qtbot):
     callback(_sensor(None, connected=False, baseline_ready=False, error="stream lost"))
     assert window.engine.state.progress == pytest.approx(progress)
     assert "暂停" in window.practice_panel.status_label.text()
+
+
+def test_sensor_disconnect_gap_does_not_consume_practice_clock(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    callback = gateway.start_calls[0]
+    callback(_sensor(150.0))
+    now[0] = 0.08
+    callback(_sensor(150.0))
+    now[0] = 0.28
+    callback(_sensor(300.0))
+    before = window.engine.state.progress
+    now[0] = 10.0
+    callback(_sensor(None, connected=False, baseline_ready=False, error="stream lost"))
+    now[0] = 10.1
+    callback(_sensor(300.0))
+    assert window.engine.state.progress == pytest.approx(before + 0.08)
 
 
 def test_sensor_error_with_valid_pressure_freezes_sz_progress(qtbot):

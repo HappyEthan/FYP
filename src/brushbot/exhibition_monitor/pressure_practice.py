@@ -16,6 +16,17 @@ class PracticeConfig:
     min_speed: float = 0.05
     max_speed: float = 0.80
 
+    def __post_init__(self):
+        thresholds = (self.threshold_uT, self.down_threshold_uT, self.up_threshold_uT)
+        if not all(math.isfinite(float(value)) for value in thresholds):
+            raise ValueError("pressure thresholds must be finite")
+        if not math.isfinite(float(self.fast_pressure_uT)) or self.fast_pressure_uT <= self.threshold_uT:
+            raise ValueError("fast_pressure_uT must exceed threshold_uT")
+        if not math.isfinite(float(self.min_speed)) or not math.isfinite(float(self.max_speed)):
+            raise ValueError("speeds must be finite")
+        if self.min_speed < 0.0 or self.max_speed < self.min_speed:
+            raise ValueError("speeds must satisfy max_speed >= min_speed >= 0")
+
 
 @dataclass(frozen=True)
 class PracticeState:
@@ -71,6 +82,7 @@ class PressurePracticeEngine:
         valid = pressure_bxy_uT is not None and math.isfinite(pressure_bxy_uT)
         self._pressure = pressure_bxy_uT if valid else None
         if not valid:
+            self._last_update_s = now_s
             return self.state
 
         previous = self._last_update_s
@@ -130,6 +142,10 @@ class PressurePracticeEngine:
                 self._active_letter = "Z"
                 self._pause_until_s = None
         return self.state
+
+    def invalidate_clock(self, now_s: float) -> None:
+        """Drop elapsed integration time without changing visible practice progress."""
+        self._last_update_s = float(now_s)
 
     def _update_pen_state(self, pressure: float, now_s: float) -> None:
         if pressure >= self.config.down_threshold_uT:

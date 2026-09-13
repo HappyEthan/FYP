@@ -33,6 +33,25 @@ class FakeSource:
         return [frame]
 
 
+class PhaseSource(FakeSource):
+    def __init__(self, pre_frame, baseline_frame):
+        super().__init__([pre_frame])
+        self.phase = "pre"
+        self.baseline_frame = baseline_frame
+
+    def read_frames(self):
+        if self.phase == "pre" and self.frames:
+            return super().read_frames()
+        if self.phase == "baseline":
+            return [self.baseline_frame]
+        return []
+
+
+class BrokenSource(FakeSource):
+    def read_frames(self):
+        raise OSError("read failed")
+
+
 def test_sensor_service_connects_and_exposes_xy_and_signal_history():
     frames = [
         {"sensor_t_us": 0, "B_uT": [10.0, 20.0, 30.0], "source_kind": "serial"},
@@ -82,6 +101,49 @@ def test_sensor_service_baseline_uses_monitor_baseline_and_contact_gate():
         assert np.allclose(snap["baseline"], [100.0, 200.0, 300.0])
         assert snap["pressure_bxy_uT"] == 0.0
         assert snap["contact"] is False
+    finally:
+        svc.close()
+
+
+def test_sensor_service_baseline_excludes_samples_before_request():
+    pre = {"sensor_t_us": 0, "B_uT": [10.0, 20.0, 30.0], "source_kind": "serial"}
+    during = {"sensor_t_us": 10000, "B_uT": [100.0, 200.0, 300.0], "source_kind": "serial"}
+    source = PhaseSource(pre, during)
+    svc = SensorMonitorService(source_factory=lambda p, b: source,
+                               poll_interval=0.001, baseline_duration_s=0.03)
+    try:
+        svc.connect("fake", 115200)
+        for _ in range(100):
+            if svc.snapshot()["series"]["x"]:
+                break
+            time.sleep(0.002)
+        source.phase = "baseline"
+        assert svc.start_baseline()["baseline_running"] is True
+        for _ in range(100):
+            if svc.snapshot()["baseline_ready"]:
+                break
+            time.sleep(0.002)
+        assert np.allclose(svc.snapshot()["baseline"], [100.0, 200.0, 300.0])
+    finally:
+        svc.close()
+
+
+def test_sensor_service_poll_failure_stops_and_detaches_source():
+    source = BrokenSource([])
+    svc = SensorMonitorService(source_factory=lambda p, b: source,
+                               poll_interval=0.001)
+    try:
+        svc.connect("fake", 115200)
+        for _ in range(100):
+            snap = svc.snapshot()
+            if not snap["connected"]:
+                break
+            time.sleep(0.002)
+        snap = svc.snapshot()
+        assert source.stopped is True
+        assert snap["connected"] is False
+        assert snap["sample_rate_hz"] == 0.0
+        assert snap["bad_lines"] == 0
     finally:
         svc.close()
 

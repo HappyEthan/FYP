@@ -111,13 +111,13 @@ def test_invalid_pressure_does_not_advance_progress():
     assert engine.update(300.0, 11.1).progress > before
 
 
-def test_invalid_pressure_does_not_advance_integration_clock():
+def test_invalid_pressure_resets_integration_clock_for_recovery():
     engine = PressurePracticeEngine(TEMPLATE)
     start_s(engine)
     before = engine.update(300.0, 0.18).progress
     engine.update(None, 1.0)
     after = engine.update(300.0, 1.1)
-    assert after.progress == pytest.approx(before + 0.16)
+    assert after.progress == pytest.approx(before + 0.08)
 
 
 def test_default_config_and_boundary_pressure_are_deterministic():
@@ -128,3 +128,21 @@ def test_default_config_and_boundary_pressure_are_deterministic():
     assert engine.update(110.0, 0.08).status == "s_writing"
     state = engine.update(100.0, 0.18)
     assert state.status == "s_writing"
+
+
+@pytest.mark.parametrize(
+    "kwargs",
+    [
+        {"fast_pressure_uT": 100.0},
+        {"fast_pressure_uT": 99.0},
+        {"min_speed": -0.01},
+        {"max_speed": -0.01},
+        {"min_speed": 0.5, "max_speed": 0.4},
+        {"threshold_uT": math.nan},
+        {"down_threshold_uT": math.inf},
+        {"up_threshold_uT": -math.inf},
+    ],
+)
+def test_practice_config_rejects_unsafe_ranges(kwargs):
+    with pytest.raises(ValueError):
+        PracticeConfig(**kwargs)

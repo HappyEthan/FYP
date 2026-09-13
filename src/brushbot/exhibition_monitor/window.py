@@ -206,15 +206,18 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
 
         if not self._practice_started:
             return
+        now_s = self._practice_now()
         connected = bool(sensor.get("connected"))
         baseline_ready = bool(sensor.get("baseline_ready"))
         pressure = self._pressure_from_sensor(sensor)
         valid = connected and baseline_ready and not sensor.get("error") and pressure is not None
         if valid:
-            self._last_practice_state = self.engine.update(pressure, self._practice_now())
+            self._last_practice_state = self.engine.update(pressure, now_s)
             self.sz_canvas.set_practice_state(self._last_practice_state)
             self.practice_panel.apply_state(self._last_practice_state)
             return
+
+        self.engine.invalidate_clock(now_s)
 
         if sensor.get("error"):
             self.practice_panel.set_hold_status(f"练习暂停：{sensor.get('error')}")
