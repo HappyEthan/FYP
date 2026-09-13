@@ -28,8 +28,13 @@ class PracticeConfig:
             raise ValueError("speeds must be finite")
         if self.min_speed < 0.0 or self.max_speed < self.min_speed:
             raise ValueError("speeds must satisfy max_speed >= min_speed >= 0")
-        if self.debounce_s < 0.0 or self.inter_letter_pause_s < 0.0:
-            raise ValueError("timings must be non-negative")
+        if (
+            not math.isfinite(float(self.debounce_s))
+            or not math.isfinite(float(self.inter_letter_pause_s))
+            or self.debounce_s < 0.0
+            or self.inter_letter_pause_s < 0.0
+        ):
+            raise ValueError("timings must be finite and non-negative")
 
 
 @dataclass(frozen=True)
