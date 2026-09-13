@@ -18,7 +18,7 @@ class NavigationRail(QtWidgets.QFrame):
         title.setStyleSheet("font-size: 18px; font-weight: 700;")
         layout.addWidget(title)
         self.monitor_button = QtWidgets.QPushButton("磁场监控", objectName="nav-monitor")
-        self.writing_button = QtWidgets.QPushButton("SZ 写字", objectName="nav-writing")
+        self.writing_button = QtWidgets.QPushButton("写字", objectName="nav-writing")
         layout.addWidget(self.monitor_button)
         layout.addWidget(self.writing_button)
         layout.addStretch()
