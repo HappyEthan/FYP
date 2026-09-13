@@ -194,3 +194,39 @@ def test_sensor_disconnect_freezes_sz_progress(qtbot):
     callback(_sensor(None, connected=False, baseline_ready=False, error="stream lost"))
     assert window.engine.state.progress == pytest.approx(progress)
     assert "暂停" in window.practice_panel.status_label.text()
+
+
+def test_sensor_error_with_valid_pressure_freezes_sz_progress(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    callback = gateway.start_calls[0]
+    callback(_sensor(150.0))
+    now[0] = 0.08
+    callback(_sensor(150.0))
+    now[0] = 0.28
+    callback(_sensor(300.0))
+    progress = window.engine.state.progress
+    now[0] = 1.0
+    callback(_sensor(300.0, error="frame error"))
+    assert window.engine.state.progress == pytest.approx(progress)
+    assert "暂停" in window.practice_panel.status_label.text()
+
+
+def test_post_close_snapshot_callback_cannot_mutate_practice_state(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    callback = gateway.start_calls[0]
+    callback(_sensor(150.0))
+    now[0] = 0.08
+    callback(_sensor(150.0))
+    before = window.engine.state
+    window.close()
+    now[0] = 20.0
+    callback(_sensor(300.0))
+    assert window.engine.state == before

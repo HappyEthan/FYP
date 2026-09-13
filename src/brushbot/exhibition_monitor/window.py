@@ -59,6 +59,8 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
 
     def _on_snapshot(self, snapshot: dict) -> None:
         """Publish a gateway snapshot while retaining history on errors."""
+        if self._closed:
+            return
         if not isinstance(snapshot, dict):
             return
         latest = self.store.snapshot() or {}
@@ -176,6 +178,8 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         return value if math.isfinite(value) else None
 
     def _refresh_sensor_views(self):
+        if self._closed:
+            return
         snapshot = self.store.snapshot() or {}
         sensor = snapshot.get("sensor") if isinstance(snapshot, dict) else None
         if not isinstance(sensor, dict) and isinstance(snapshot, dict) and "connected" in snapshot:
@@ -205,7 +209,7 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         connected = bool(sensor.get("connected"))
         baseline_ready = bool(sensor.get("baseline_ready"))
         pressure = self._pressure_from_sensor(sensor)
-        valid = connected and baseline_ready and pressure is not None
+        valid = connected and baseline_ready and not sensor.get("error") and pressure is not None
         if valid:
             self._last_practice_state = self.engine.update(pressure, self._practice_now())
             self.sz_canvas.set_practice_state(self._last_practice_state)
