@@ -68,14 +68,14 @@ class PressurePracticeEngine:
         )
 
     def update(self, pressure_bxy_uT: float | None, now_s: float) -> PracticeState:
-        previous = self._last_update_s
-        self._last_update_s = now_s
-        dt = 0.0 if previous is None else min(0.2, max(0.0, now_s - previous))
-
         valid = pressure_bxy_uT is not None and math.isfinite(pressure_bxy_uT)
         self._pressure = pressure_bxy_uT if valid else None
         if not valid:
             return self.state
+
+        previous = self._last_update_s
+        self._last_update_s = now_s
+        dt = 0.0 if previous is None else min(0.2, max(0.0, now_s - previous))
 
         self._update_pen_state(float(pressure_bxy_uT), now_s)
 

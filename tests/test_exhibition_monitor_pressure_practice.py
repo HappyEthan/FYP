@@ -111,6 +111,15 @@ def test_invalid_pressure_does_not_advance_progress():
     assert engine.update(300.0, 11.1).progress > before
 
 
+def test_invalid_pressure_does_not_advance_integration_clock():
+    engine = PressurePracticeEngine(TEMPLATE)
+    start_s(engine)
+    before = engine.update(300.0, 0.18).progress
+    engine.update(None, 1.0)
+    after = engine.update(300.0, 1.1)
+    assert after.progress == pytest.approx(before + 0.16)
+
+
 def test_default_config_and_boundary_pressure_are_deterministic():
     config = PracticeConfig()
     assert config.threshold_uT == 100.0
