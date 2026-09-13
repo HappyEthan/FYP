@@ -123,6 +123,10 @@ def test_connection_panel_uses_gateway_and_applies_sensor_state(app):
     assert panel.detail_label.text() == "/dev/test · 100.0 Hz · 坏帧 2"
     assert panel.error_label.text() == "bad frame"
     assert panel.findChild(QtWidgets.QPushButton, "baseline").isEnabled() is False
+    panel.apply_sensor({"connected": True, "contact": True})
+    assert panel.contact_label.text() == "接触"
+    panel.apply_sensor({"connected": True, "contact": False})
+    assert panel.contact_label.text() == "离开"
 
 
 def test_baseline_request_does_not_block_gui_and_preserves_latest_series(app):

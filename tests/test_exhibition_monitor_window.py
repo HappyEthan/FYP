@@ -54,7 +54,7 @@ def test_monitor_controls_fit_1366_layout(qtbot):
     window.resize(1366, 768)
     window.show()
     QtWidgets.QApplication.processEvents()
-    for object_name in ("xy-plot", "serial-port", "connect-sensor", "capture-baseline"):
+    for object_name in ("xy-plot", "serial-port", "connect-sensor", "baseline"):
         widget = window.findChild(QtWidgets.QWidget, object_name)
         assert widget is not None and widget.isVisible(), object_name
         assert window.rect().contains(widget.geometry().center())
@@ -90,6 +90,15 @@ def test_error_snapshot_keeps_last_series_and_sets_orange_status(qtbot):
     gateway.start_calls[0]({"sensor": {"error": "still lost", "series": {}}})
     QtWidgets.QApplication.processEvents()
     assert window.x_plot._values == [2.0]
+
+
+def test_none_series_snapshot_does_not_crash_refresh(qtbot):
+    gateway = FakeGateway()
+    window = ExhibitionWindow(gateway=gateway)
+    qtbot.addWidget(window)
+    gateway.start_calls[0]({"sensor": {"connected": True, "series": None}})
+    QtWidgets.QApplication.processEvents()
+    assert window.x_plot._values == []
 
 
 def test_monitor_imports_do_not_pull_serial_or_robot_modules():

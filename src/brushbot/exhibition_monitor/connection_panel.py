@@ -38,6 +38,7 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         self.gateway = gateway
         self.sensor: dict | None = None
         self._pending_calls = {}
+        self._pool = QtCore.QThreadPool(self)
         self._build_ui()
         self.store.changed.connect(self._on_store_changed)
         self._on_store_changed()
@@ -76,13 +77,9 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         self.error_label.setWordWrap(True)
         self.error_label.setStyleSheet("color: #b56b2f;")
         layout.addWidget(self.error_label)
+        self.contact_label = QtWidgets.QLabel("离开", objectName="contact-status")
+        layout.addWidget(self.contact_label)
         layout.addStretch()
-
-        # Task 1 exposed this spelling; retain a visible compatibility alias
-        # while the canonical Task 3 button is named ``baseline``.
-        self.legacy_baseline_button = QtWidgets.QPushButton("获取基线", objectName="capture-baseline")
-        self.legacy_baseline_button.clicked.connect(self._take_baseline)
-        layout.addWidget(self.legacy_baseline_button)
 
     def _on_store_changed(self):
         snapshot = self.store.snapshot()
@@ -97,6 +94,7 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         connected = bool(current.get("connected"))
         running = bool(current.get("baseline_running"))
         error = str(current.get("error") or "")
+        self.contact_label.setText("接触" if current.get("contact") else "离开")
         self.status_label.setText("已连接" if connected else ("连接失败" if error else "未连接"))
         if connected:
             port = current.get("port") or ""
@@ -111,9 +109,7 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         self.port_edit.setEnabled(not connected)
         self.baud_combo.setEnabled(not connected)
         self.baseline_button.setEnabled(connected and not running)
-        self.legacy_baseline_button.setEnabled(connected and not running)
         self.baseline_button.setText("取基线中" if running else "获取基线")
-        self.legacy_baseline_button.setText(self.baseline_button.text())
 
     def _publish(self, status: int, payload: dict) -> None:
         if not isinstance(payload, dict):
@@ -141,7 +137,14 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         worker = _CallRunnable(token, operation, signals)
         worker.setAutoDelete(False)
         self._pending_calls[token] = (action, signals, worker)
-        QtCore.QThreadPool.globalInstance().start(worker)
+        self._pool.start(worker)
+
+    def close(self):
+        """Stop accepting UI updates and wait briefly for command workers."""
+        self._pending_calls.clear()
+        self._pool.clear()
+        self._pool.waitForDone(1000)
+        super().close()
 
     @QtCore.pyqtSlot(object, int, object)
     def _on_call_finished(self, token, status, payload):

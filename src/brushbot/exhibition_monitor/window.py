@@ -126,6 +126,8 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         self.xy_plot.set_sensor_snapshot(sensor)
         sensor = sensor or {}
         series = sensor.get("series", {}) if isinstance(sensor, dict) else {}
+        if not isinstance(series, dict):
+            series = {}
         self.x_plot.set_series(series.get("t", []), series.get("x", []))
         self.y_plot.set_series(series.get("t", []), series.get("y", []))
 
@@ -145,6 +147,8 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         self._closed = True
         if self.timer.isActive():
             self.timer.stop()
+        if self.connection_panel is not None:
+            self.connection_panel.close()
         gateway = self.gateway
         if gateway is not None:
             close = getattr(gateway, "close", None)
