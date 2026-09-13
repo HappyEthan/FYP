@@ -139,9 +139,9 @@ def test_sensor_snapshot_drives_s_progress_and_pressure_label(qtbot):
     qtbot.addWidget(window)
     window.practice_panel.generate_button.click()
     callback = gateway.start_calls[0]
-    callback(_sensor(150.0))
-    now[0] = 0.08
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
+    now[0] = 0.12
+    callback(_sensor(250.0))
     now[0] = 0.28
     callback(_sensor(300.0))
     QtWidgets.QApplication.processEvents()
@@ -156,10 +156,10 @@ def test_s_completion_waits_one_second_before_accepting_new_z_down(qtbot):
     now = [0.0]
     window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
     qtbot.addWidget(window)
+    window.engine.config = PracticeConfig(min_speed=1.0, max_speed=1.0, debounce_s=0.08, smoothing_window=1, smoothing_alpha=1.0)
     window.practice_panel.generate_button.click()
-    window.engine.config = PracticeConfig(min_speed=1.0, max_speed=1.0)
     callback = gateway.start_calls[0]
-    for timestamp, pressure in ((0.0, 150.0), (0.08, 150.0), (0.28, 300.0), (0.48, 300.0), (0.68, 300.0), (0.88, 300.0), (1.08, 300.0)):
+    for timestamp, pressure in ((0.0, 250.0), (0.08, 250.0), (0.28, 300.0), (0.48, 300.0), (0.68, 300.0), (0.88, 300.0), (1.08, 300.0)):
         now[0] = timestamp
         callback(_sensor(pressure))
     assert window.engine.state.status == "s_finished_pause"
@@ -170,9 +170,9 @@ def test_s_completion_waits_one_second_before_accepting_new_z_down(qtbot):
     callback(_sensor(0.0))
     assert window.engine.state.status == "wait_z_down"
     now[0] = 2.16
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 2.24
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     assert window.engine.state.status == "z_writing"
 
 
@@ -183,9 +183,9 @@ def test_sensor_disconnect_freezes_sz_progress(qtbot):
     qtbot.addWidget(window)
     window.practice_panel.generate_button.click()
     callback = gateway.start_calls[0]
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.08
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.28
     callback(_sensor(300.0))
     progress = window.engine.state.progress
@@ -200,11 +200,18 @@ def test_sensor_disconnect_gap_does_not_consume_practice_clock(qtbot):
     now = [0.0]
     window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
     qtbot.addWidget(window)
+    window.engine.config = PracticeConfig(
+        min_speed=0.8,
+        max_speed=0.8,
+        debounce_s=0.08,
+        smoothing_window=1,
+        smoothing_alpha=1.0,
+    )
     window.practice_panel.generate_button.click()
     callback = gateway.start_calls[0]
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.08
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.28
     callback(_sensor(300.0))
     before = window.engine.state.progress
@@ -220,11 +227,18 @@ def test_sensor_error_with_valid_pressure_freezes_sz_progress(qtbot):
     now = [0.0]
     window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
     qtbot.addWidget(window)
+    window.engine.config = PracticeConfig(
+        min_speed=0.8,
+        max_speed=0.8,
+        debounce_s=0.08,
+        smoothing_window=1,
+        smoothing_alpha=1.0,
+    )
     window.practice_panel.generate_button.click()
     callback = gateway.start_calls[0]
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.08
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.28
     callback(_sensor(300.0))
     progress = window.engine.state.progress
@@ -241,9 +255,9 @@ def test_post_close_snapshot_callback_cannot_mutate_practice_state(qtbot):
     qtbot.addWidget(window)
     window.practice_panel.generate_button.click()
     callback = gateway.start_calls[0]
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     now[0] = 0.08
-    callback(_sensor(150.0))
+    callback(_sensor(250.0))
     before = window.engine.state
     window.close()
     now[0] = 20.0

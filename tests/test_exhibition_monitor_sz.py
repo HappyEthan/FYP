@@ -43,24 +43,25 @@ def test_polyline_progress_splits_completed_and_active_points_by_arc_length():
     assert polyline_at_progress(points, 1.0) == (points, ())
 
 
-def test_canvas_starts_with_gray_template_and_no_completed_path(qtbot):
+def test_canvas_keeps_template_internal_and_starts_visually_blank(qtbot):
     canvas = SZCanvas()
     qtbot.addWidget(canvas)
     geometry = canvas.visible_geometry()
     assert geometry["template"] == load_sz_template()
-    assert geometry["completed"] == {}
+    assert geometry["planned"] == {}
+    assert geometry["path_visible"] is False
+    assert geometry["ink"] == {}
     assert geometry["active_letter"] == "S"
     assert geometry["colors"]["template"] != geometry["colors"]["completed"]
 
 
-def test_canvas_turns_completed_prefix_black_and_keeps_future_gray(qtbot):
+def test_canvas_records_only_the_jittered_ink_trace(qtbot):
     canvas = SZCanvas()
     qtbot.addWidget(canvas)
-    canvas.set_practice_state(PracticeState("s_writing", "S", 0.5, True, 180.0, 0.0))
+    canvas.set_practice_state(PracticeState("s_writing", "S", 0.5, True, 220.0, 0.0, True, True))
     geometry = canvas.visible_geometry()
-    assert geometry["completed"]["S"]
-    assert geometry["active"]["S"]
-    assert geometry["template"]["Z"] == load_sz_template()["Z"]
+    assert geometry["ink"]["S"]
+    assert geometry["planned"] == {}
     assert geometry["colors"]["completed"] == "#203f38"
 
 
@@ -95,11 +96,11 @@ def test_stamp_brush_interpolates_a_thick_path():
     assert len(points) >= 3
 
 
-def test_canvas_uses_a_nonzero_plan_band_width(qtbot):
+def test_canvas_uses_a_wide_hidden_jitter_limit(qtbot):
     canvas = SZCanvas()
     qtbot.addWidget(canvas)
     geometry = canvas.visible_geometry()
-    assert geometry["plan_width"] > 0
+    assert geometry["jitter_limit"] >= 40.0
     assert geometry["ink_width"] > 0
 
 
@@ -132,11 +133,10 @@ def test_canvas_does_not_bridge_ink_between_s_and_z_boxes(qtbot):
     assert geometry["ink"]["Z"][0][0] >= geometry["boxes"]["Z"][0]
 
 
-def test_canvas_keeps_plan_caps_inside_the_frame(qtbot):
+def test_canvas_keeps_hidden_letter_boxes_inside_the_frame(qtbot):
     canvas = SZCanvas()
     qtbot.addWidget(canvas)
     geometry = canvas.visible_geometry()
     frame = canvas._plot_rect()
-    margin = geometry["plan_width"] / 2.0
-    assert geometry["boxes"]["S"][1] >= frame.top() + margin
-    assert geometry["boxes"]["S"][3] <= frame.bottom() - margin
+    assert geometry["boxes"]["S"][1] >= frame.top()
+    assert geometry["boxes"]["S"][3] <= frame.bottom()

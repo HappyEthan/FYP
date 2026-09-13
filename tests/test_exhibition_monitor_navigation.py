@@ -65,9 +65,9 @@ def test_writing_page_requires_start_and_resumes_after_navigation(qtbot):
     callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 300.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
     assert window.engine.state.progress == 0.0
     window.writing_page.start_button.click()
-    callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 150.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
-    now[0] = 0.08
-    callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 150.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
+    callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 250.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
+    now[0] = 0.12
+    callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 250.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
     now[0] = 0.28
     callback({"sensor": {"connected": True, "baseline_ready": True, "pressure_bxy_uT": 300.0, "xy": {"x": 3.0, "y": 4.0}, "series": {"t": [], "x": [], "y": [], "bxy": []}}})
     before = window.engine.state.progress

@@ -22,7 +22,8 @@ class SZCanvas(QtWidgets.QWidget):
     PLAN_WIDTH = 28.0
     INK_WIDTH = 18.0
     BRUSH_WIDTH = 20.0
-    JITTER_GAIN = 0.08
+    JITTER_LIMIT_FRACTION = 0.30
+    XY_DISPLAY_RADIUS = 400.0
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -107,6 +108,27 @@ class SZCanvas(QtWidgets.QWidget):
         point = current[0] if current else self.template[letter][-1]
         return self._map(point, boxes[letter])
 
+    def _jittered_for_state(self, state, boxes):
+        letter = getattr(state, "active_letter", None)
+        center = self._center_for_state(state, boxes)
+        if center is None or letter not in boxes:
+            return None, 0.0
+        box = boxes[letter]
+        span = min(box[2] - box[0], box[3] - box[1])
+        limit = max(0.0, span * self.JITTER_LIMIT_FRACTION)
+        point = jittered_point(
+            center,
+            self.sensor_xy,
+            jitter_gain=limit / self.XY_DISPLAY_RADIUS,
+            max_offset=limit,
+        )
+        half_brush = self.BRUSH_WIDTH / 2.0
+        point = (
+            min(max(point[0], box[0] + half_brush), box[2] - half_brush),
+            min(max(point[1], box[1] + half_brush), box[3] - half_brush),
+        )
+        return point, limit
+
     def _capture_brush_sample(self, state) -> None:
         if state is None or not getattr(state, "session_started", False):
             return
@@ -114,11 +136,9 @@ class SZCanvas(QtWidgets.QWidget):
         if letter not in self.template or getattr(state, "status", "") not in {"s_writing", "z_writing"}:
             return
         boxes = self._boxes()
-        center = self._center_for_state(state, boxes)
-        if center is None:
+        point, _limit = self._jittered_for_state(state, boxes)
+        if point is None:
             return
-        max_offset = max(0.0, self.PLAN_WIDTH / 2.0 - self.BRUSH_WIDTH / 2.0)
-        point = jittered_point(center, self.sensor_xy, jitter_gain=self.JITTER_GAIN, max_offset=max_offset)
         previous = self._last_brush_point if self._last_brush_letter == letter else None
         if previous is None or previous != point:
             self._ink_paths.setdefault(letter, []).extend(stamp_brush(previous or point, point, self.BRUSH_WIDTH))
@@ -131,6 +151,8 @@ class SZCanvas(QtWidgets.QWidget):
         progress = float(getattr(state, "progress", 0.0) or 0.0) if state is not None else 0.0
         status = self._status_text(getattr(state, "status", None) if state is not None else None)
         boxes = self._boxes()
+        default_span = min(boxes["S"][2] - boxes["S"][0], boxes["S"][3] - boxes["S"][1])
+        jitter_limit = default_span * self.JITTER_LIMIT_FRACTION
         completed: dict[str, tuple] = {}
         active: dict[str, tuple] = {}
         if state is not None and active_letter in self.template:
@@ -146,14 +168,14 @@ class SZCanvas(QtWidgets.QWidget):
         point = self._last_brush_point
         if state is not None and getattr(state, "session_started", False):
             if getattr(state, "status", "") in {"s_writing", "z_writing"} or point is None:
-                point = self._center_for_state(state, boxes)
-                if point is not None:
-                    max_offset = max(0.0, self.PLAN_WIDTH / 2.0 - self.BRUSH_WIDTH / 2.0)
-                    point = jittered_point(point, self.sensor_xy, jitter_gain=self.JITTER_GAIN, max_offset=max_offset)
+                point, jitter_limit = self._jittered_for_state(state, boxes)
+            else:
+                _current, jitter_limit = self._jittered_for_state(state, boxes)
         return {
             "frame": True,
             "template": dict(self.template),
-            "planned": self._mapped_paths(self.template, boxes),
+            "planned": {},
+            "path_visible": False,
             "boxes": boxes,
             "completed": completed_mapped or {},
             "active": active_mapped or {},
@@ -165,6 +187,7 @@ class SZCanvas(QtWidgets.QWidget):
             "pause_remaining_s": float(getattr(state, "pause_remaining_s", 0.0) or 0.0) if state is not None else 0.0,
             "plan_width": self.PLAN_WIDTH,
             "ink_width": self.INK_WIDTH,
+            "jitter_limit": jitter_limit,
             "colors": {
                 "template": COLORS["template_gray"],
                 "completed": COLORS["completed_ink"],
@@ -199,10 +222,7 @@ class SZCanvas(QtWidgets.QWidget):
         painter.setPen(frame_pen)
         painter.setBrush(QtCore.Qt.NoBrush)
         painter.drawRect(rect)
-        self._draw_paths(painter, geometry["planned"], COLORS["template_gray"], geometry["plan_width"])
         self._draw_paths(painter, geometry["ink"], COLORS["completed_ink"], geometry["ink_width"])
-        self._draw_paths(painter, geometry["completed"], COLORS["completed_ink"], geometry["ink_width"])
-        self._draw_paths(painter, geometry["active"], COLORS["current_ink"], geometry["ink_width"])
         point = geometry["point"]
         if point is not None:
             painter.setPen(QtCore.Qt.NoPen)

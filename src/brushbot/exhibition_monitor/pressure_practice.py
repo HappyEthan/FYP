@@ -4,17 +4,21 @@ from dataclasses import dataclass
 import math
 from typing import Mapping, Sequence
 
+from .pressure_smoothing import PressureSmoother
+
 
 @dataclass(frozen=True)
 class PracticeConfig:
-    threshold_uT: float = 100.0
-    down_threshold_uT: float = 110.0
-    up_threshold_uT: float = 90.0
-    debounce_s: float = 0.08
+    threshold_uT: float = 200.0
+    down_threshold_uT: float = 210.0
+    up_threshold_uT: float = 180.0
+    debounce_s: float = 0.12
     inter_letter_pause_s: float = 1.0
-    fast_pressure_uT: float = 300.0
-    min_speed: float = 0.05
-    max_speed: float = 0.80
+    fast_pressure_uT: float = 400.0
+    min_speed: float = 0.02
+    max_speed: float = 0.30
+    smoothing_window: int = 3
+    smoothing_alpha: float = 0.20
 
     def __post_init__(self):
         thresholds = (self.threshold_uT, self.down_threshold_uT, self.up_threshold_uT)
@@ -35,6 +39,10 @@ class PracticeConfig:
             or self.inter_letter_pause_s < 0.0
         ):
             raise ValueError("timings must be finite and non-negative")
+        if self.smoothing_window < 1 or self.smoothing_window % 2 == 0:
+            raise ValueError("smoothing_window must be a positive odd integer")
+        if not math.isfinite(float(self.smoothing_alpha)) or not 0.0 < self.smoothing_alpha <= 1.0:
+            raise ValueError("smoothing_alpha must be finite and in (0, 1]")
 
 
 @dataclass(frozen=True)
@@ -75,6 +83,10 @@ class PressurePracticeEngine:
         self._last_update_s: float | None = None
         self._pause_until_s: float | None = None
         self._pressure: float | None = None
+        self._smoother = PressureSmoother(
+            window=self.config.smoothing_window,
+            alpha=self.config.smoothing_alpha,
+        )
 
     def start_session(self, now_s: float) -> PracticeState:
         """Arm a fresh S/Z session; pressure must still trigger the first stroke."""
@@ -88,6 +100,10 @@ class PressurePracticeEngine:
         self._last_update_s = float(now_s)
         self._pause_until_s = None
         self._pressure = None
+        self._smoother = PressureSmoother(
+            window=self.config.smoothing_window,
+            alpha=self.config.smoothing_alpha,
+        )
         return self.state
 
     def set_page_active(self, active: bool, now_s: float | None = None) -> PracticeState:
@@ -117,8 +133,16 @@ class PressurePracticeEngine:
         )
 
     def update(self, pressure_bxy_uT: float | None, now_s: float) -> PracticeState:
-        valid = pressure_bxy_uT is not None and math.isfinite(pressure_bxy_uT)
-        self._pressure = pressure_bxy_uT if valid else None
+        valid = pressure_bxy_uT is not None
+        try:
+            raw_pressure = float(pressure_bxy_uT)
+        except (TypeError, ValueError):
+            valid = False
+            raw_pressure = None
+        if valid and not math.isfinite(raw_pressure):
+            valid = False
+        self._pressure = self._smoother.update(raw_pressure) if valid else None
+        valid = self._pressure is not None
         if not valid:
             self._last_update_s = now_s
             return self.state
@@ -127,7 +151,7 @@ class PressurePracticeEngine:
         self._last_update_s = now_s
         dt = 0.0 if previous is None else min(0.2, max(0.0, now_s - previous))
 
-        self._update_pen_state(float(pressure_bxy_uT), now_s)
+        self._update_pen_state(float(self._pressure), now_s)
 
         if not self._page_active:
             return self.state
@@ -169,7 +193,7 @@ class PressurePracticeEngine:
             self._status = "s_paused" if self._active_letter == "S" else "z_paused"
             return self.state
 
-        pressure = float(pressure_bxy_uT)
+        pressure = float(self._pressure)
         normalized = max(0.0, min(1.0, (pressure - self.config.threshold_uT) / (
             self.config.fast_pressure_uT - self.config.threshold_uT
         )))

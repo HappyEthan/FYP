@@ -35,6 +35,13 @@ def test_pressure_plot_filters_invalid_values_and_keeps_recent_window(qtbot):
     qtbot.addWidget(plot)
     plot.set_series([0.0, 1.0, 3.0, 4.0], [10.0, float("nan"), 20.0, 30.0])
     assert plot._times == [3.0, 4.0]
-    assert plot._values == [20.0, 30.0]
+    assert plot._values == pytest.approx([11.0, 12.8])
     assert plot._times[0] >= 2.0
     assert "Bxy" not in plot.visible_text()
+
+
+def test_pressure_plot_suppresses_a_single_large_spike(qtbot):
+    plot = PressurePlot()
+    qtbot.addWidget(plot)
+    plot.set_series([0.0, 0.1, 0.2, 0.3, 0.4], [180.0, 190.0, 500.0, 190.0, 180.0])
+    assert max(plot._values) < 300.0

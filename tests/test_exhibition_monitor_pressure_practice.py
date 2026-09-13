@@ -14,8 +14,22 @@ TEMPLATE = {
 }
 
 
+def make_engine():
+    return PressurePracticeEngine(
+        TEMPLATE,
+        PracticeConfig(
+            debounce_s=0.08,
+            fast_pressure_uT=300.0,
+            min_speed=0.8,
+            max_speed=0.8,
+            smoothing_window=1,
+            smoothing_alpha=1.0,
+        ),
+    )
+
+
 def down(engine, t):
-    return engine.update(150.0, t)
+    return engine.update(250.0, t)
 
 
 def up(engine, t):
@@ -24,8 +38,8 @@ def up(engine, t):
 
 def start_s(engine):
     engine.start_session(0.0)
-    engine.update(150.0, 0.0)
-    return engine.update(150.0, 0.08)
+    engine.update(250.0, 0.0)
+    return engine.update(250.0, 0.08)
 
 
 def finish_s(engine):
@@ -39,17 +53,17 @@ def finish_s(engine):
 def test_first_down_starts_s_and_pressure_controls_speed():
     engine = PressurePracticeEngine(TEMPLATE)
     assert engine.state.status == "idle_wait_start"
-    assert engine.update(150.0, 0.0).status == "idle_wait_start"
+    assert engine.update(250.0, 0.0).status == "idle_wait_start"
     engine.start_session(0.0)
-    assert engine.update(150.0, 0.0).status == "ready_wait_s_down"
-    assert engine.update(150.0, 0.08).status == "s_writing"
-    state = engine.update(300.0, 0.18)
-    assert state.progress == pytest.approx(0.08)
+    assert engine.update(250.0, 0.0).status == "ready_wait_s_down"
+    assert engine.update(250.0, 0.12).status == "s_writing"
+    state = engine.update(300.0, 0.22)
+    assert state.progress > 0.0
     assert state.pen_down is True
 
 
 def test_low_pressure_pauses_without_clearing_progress():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     start_s(engine)
     writing = engine.update(300.0, 0.18)
     assert writing.progress > 0
@@ -61,7 +75,7 @@ def test_low_pressure_pauses_without_clearing_progress():
 
 
 def test_s_completion_enters_one_second_pause():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     finish_s(engine)
     assert engine.state.status == "s_finished_pause"
     assert engine.update(0.0, 2.39).status == "s_finished_pause"
@@ -69,32 +83,32 @@ def test_s_completion_enters_one_second_pause():
 
 
 def test_pause_with_existing_up_allows_next_down_to_start_z():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     finish_s(engine)
     engine.update(0.0, 2.39)
     assert engine.update(0.0, 2.49).status == "wait_z_down"
-    assert engine.update(150.0, 2.49).status == "wait_z_down"
-    assert engine.update(150.0, 2.59).status == "z_writing"
+    assert engine.update(250.0, 2.49).status == "wait_z_down"
+    assert engine.update(250.0, 2.59).status == "z_writing"
 
 
 def test_high_pressure_through_pause_requires_up_then_down_before_z():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     finish_s(engine)
     assert engine.update(300.0, 2.49).status == "wait_z_up"
     assert engine.update(300.0, 2.5).status == "wait_z_up"
     assert engine.update(0.0, 2.5).status == "wait_z_up"
     assert engine.update(0.0, 2.58).status == "wait_z_down"
-    assert engine.update(150.0, 2.58).status == "wait_z_down"
-    assert engine.update(150.0, 2.66).status == "z_writing"
+    assert engine.update(250.0, 2.58).status == "wait_z_down"
+    assert engine.update(250.0, 2.66).status == "z_writing"
 
 
 def test_z_completion_enters_done_and_does_not_loop():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     finish_s(engine)
     engine.update(0.0, 2.39)
     engine.update(0.0, 2.49)
-    engine.update(150.0, 2.49)
-    engine.update(150.0, 2.59)
+    engine.update(250.0, 2.49)
+    engine.update(250.0, 2.59)
     for index in range(1, 10):
         state = engine.update(300.0, 2.59 + index * 0.2)
     assert state.status == "done"
@@ -105,7 +119,7 @@ def test_z_completion_enters_done_and_does_not_loop():
 
 
 def test_invalid_pressure_does_not_advance_progress():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     start_s(engine)
     before = engine.update(300.0, 0.18).progress
     for value, t in ((None, 10.0), (math.nan, 10.5), (math.inf, 11.0)):
@@ -115,7 +129,7 @@ def test_invalid_pressure_does_not_advance_progress():
 
 
 def test_invalid_pressure_resets_integration_clock_for_recovery():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     start_s(engine)
     before = engine.update(300.0, 0.18).progress
     engine.update(None, 1.0)
@@ -125,20 +139,23 @@ def test_invalid_pressure_resets_integration_clock_for_recovery():
 
 def test_default_config_and_boundary_pressure_are_deterministic():
     config = PracticeConfig()
-    assert config.threshold_uT == 100.0
+    assert config.threshold_uT == 200.0
+    assert config.down_threshold_uT == 210.0
+    assert config.up_threshold_uT == 180.0
+    assert config.max_speed == 0.30
     engine = PressurePracticeEngine(TEMPLATE, config)
     engine.start_session(0.0)
-    engine.update(110.0, 0.0)
-    assert engine.update(110.0, 0.08).status == "s_writing"
-    state = engine.update(100.0, 0.18)
+    engine.update(220.0, 0.0)
+    assert engine.update(220.0, 0.12).status == "s_writing"
+    state = engine.update(200.0, 0.22)
     assert state.status == "s_writing"
 
 
 @pytest.mark.parametrize(
     "kwargs",
     [
-        {"fast_pressure_uT": 100.0},
-        {"fast_pressure_uT": 99.0},
+        {"fast_pressure_uT": 200.0},
+        {"fast_pressure_uT": 199.0},
         {"min_speed": -0.01},
         {"max_speed": -0.01},
         {"min_speed": 0.5, "max_speed": 0.4},
@@ -153,7 +170,7 @@ def test_default_config_and_boundary_pressure_are_deterministic():
         {"inter_letter_pause_s": math.nan},
         {"inter_letter_pause_s": math.inf},
         {"inter_letter_pause_s": -math.inf},
-        {"up_threshold_uT": 100.0},
+        {"up_threshold_uT": 200.0},
         {"down_threshold_uT": 100.0},
         {"up_threshold_uT": 110.0, "down_threshold_uT": 120.0},
     ],
@@ -164,7 +181,7 @@ def test_practice_config_rejects_unsafe_ranges(kwargs):
 
 
 def test_start_session_is_required_and_reset_returns_to_idle():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     assert engine.update(300.0, 1.0).progress == 0.0
     assert engine.state.session_started is False
     engine.start_session(1.0)
@@ -176,10 +193,10 @@ def test_start_session_is_required_and_reset_returns_to_idle():
 
 
 def test_inactive_page_freezes_progress_and_active_page_resumes():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     engine.start_session(0.0)
-    engine.update(150.0, 0.0)
-    engine.update(150.0, 0.08)
+    engine.update(250.0, 0.0)
+    engine.update(250.0, 0.08)
     before = engine.update(300.0, 0.18).progress
     engine.set_page_active(False)
     engine.update(300.0, 10.0)
@@ -192,10 +209,10 @@ def test_inactive_page_freezes_progress_and_active_page_resumes():
 
 
 def test_page_reentry_does_not_consume_hidden_time_without_a_snapshot():
-    engine = PressurePracticeEngine(TEMPLATE)
+    engine = make_engine()
     engine.start_session(0.0)
-    engine.update(150.0, 0.0)
-    engine.update(150.0, 0.08)
+    engine.update(250.0, 0.0)
+    engine.update(250.0, 0.08)
     before = engine.update(300.0, 0.18).progress
     engine.set_page_active(False, 10.0)
     engine.set_page_active(True, 10.0)

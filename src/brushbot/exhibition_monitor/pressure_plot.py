@@ -2,19 +2,21 @@
 
 from __future__ import annotations
 
-import math
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from .theme import COLORS
+from .pressure_smoothing import smooth_pressure_series
 
 
 class PressurePlot(QtWidgets.QWidget):
     """Render a unit-free rolling pressure trend without another plot engine."""
 
-    def __init__(self, *, window_s: float = 8.0, parent=None):
+    def __init__(self, *, window_s: float = 8.0, smoothing_window: int = 3,
+                 smoothing_alpha: float = 0.20, parent=None):
         super().__init__(parent)
         self.window_s = max(0.5, float(window_s))
+        self.smoothing_window = int(smoothing_window)
+        self.smoothing_alpha = float(smoothing_alpha)
         self.setObjectName("pressure-plot")
         self.setMinimumSize(420, 130)
         self.title_text = "压力变化"
@@ -25,14 +27,12 @@ class PressurePlot(QtWidgets.QWidget):
         return "压力变化 时间"
 
     def set_series(self, times, values) -> None:
-        pairs = []
-        for time_value, value in zip(times or [], values or []):
-            try:
-                time_value, value = float(time_value), float(value)
-            except (TypeError, ValueError):
-                continue
-            if math.isfinite(time_value) and math.isfinite(value):
-                pairs.append((time_value, value))
+        pairs = smooth_pressure_series(
+            times,
+            values,
+            window=self.smoothing_window,
+            alpha=self.smoothing_alpha,
+        )
         if pairs:
             latest = pairs[-1][0]
             pairs = [pair for pair in pairs if pair[0] >= latest - self.window_s]
