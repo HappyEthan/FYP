@@ -8,6 +8,7 @@ import pytest
 pytest.importorskip("PyQt5")
 from PyQt5 import QtWidgets
 
+from brushbot.exhibition_monitor.pressure_practice import PracticeConfig
 from brushbot.exhibition_monitor.window import ExhibitionWindow
 
 
@@ -21,6 +22,19 @@ class FakeGateway:
 
     def close(self):
         self.close_calls += 1
+
+
+def _sensor(pressure, *, connected=True, baseline_ready=True, error=None):
+    payload = {
+        "connected": connected,
+        "baseline_ready": baseline_ready,
+        "pressure_bxy_uT": pressure,
+        "xy": {"x": pressure, "y": 0.0},
+        "series": {"t": [], "x": [], "y": []},
+    }
+    if error:
+        payload["error"] = error
+    return {"sensor": payload}
 
 
 @pytest.fixture
@@ -109,3 +123,74 @@ def test_monitor_imports_do_not_pull_serial_or_robot_modules():
     tree = ast.parse(source.read_text())
     imports = [node.module or "" for node in ast.walk(tree) if isinstance(node, ast.ImportFrom)]
     assert not any("serial" in name.lower() or "cps" in name.lower() or "robot" in name.lower() for name in imports)
+
+
+def test_window_contains_sz_canvas_and_generate_reset_controls(qtbot):
+    window = ExhibitionWindow(gateway=FakeGateway())
+    qtbot.addWidget(window)
+    assert window.sz_canvas is not None
+    assert window.practice_panel.generate_button.text() == "生成 SZ"
+    assert window.practice_panel.reset_button.text() == "重新开始"
+
+
+def test_sensor_snapshot_drives_s_progress_and_pressure_label(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    callback = gateway.start_calls[0]
+    callback(_sensor(150.0))
+    now[0] = 0.08
+    callback(_sensor(150.0))
+    now[0] = 0.28
+    callback(_sensor(300.0))
+    QtWidgets.QApplication.processEvents()
+    assert window.practice_panel.pressure_label.text().startswith("压力：")
+    assert window.engine.state.status == "s_writing"
+    assert window.engine.state.progress > 0.0
+    assert window.sz_canvas.practice_state == window.engine.state
+
+
+def test_s_completion_waits_one_second_before_accepting_new_z_down(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    window.engine.config = PracticeConfig(min_speed=1.0, max_speed=1.0)
+    callback = gateway.start_calls[0]
+    for timestamp, pressure in ((0.0, 150.0), (0.08, 150.0), (0.28, 300.0), (0.48, 300.0), (0.68, 300.0), (0.88, 300.0), (1.08, 300.0)):
+        now[0] = timestamp
+        callback(_sensor(pressure))
+    assert window.engine.state.status == "s_finished_pause"
+    now[0] = 1.98
+    callback(_sensor(0.0))
+    assert window.engine.state.status == "s_finished_pause"
+    now[0] = 2.08
+    callback(_sensor(0.0))
+    assert window.engine.state.status == "wait_z_down"
+    now[0] = 2.16
+    callback(_sensor(150.0))
+    now[0] = 2.24
+    callback(_sensor(150.0))
+    assert window.engine.state.status == "z_writing"
+
+
+def test_sensor_disconnect_freezes_sz_progress(qtbot):
+    gateway = FakeGateway()
+    now = [0.0]
+    window = ExhibitionWindow(gateway=gateway, clock=lambda: now[0])
+    qtbot.addWidget(window)
+    window.practice_panel.generate_button.click()
+    callback = gateway.start_calls[0]
+    callback(_sensor(150.0))
+    now[0] = 0.08
+    callback(_sensor(150.0))
+    now[0] = 0.28
+    callback(_sensor(300.0))
+    progress = window.engine.state.progress
+    now[0] = 20.0
+    callback(_sensor(None, connected=False, baseline_ready=False, error="stream lost"))
+    assert window.engine.state.progress == pytest.approx(progress)
+    assert "暂停" in window.practice_panel.status_label.text()

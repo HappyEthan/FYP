@@ -14,6 +14,8 @@ pytest.importorskip("PyQt5")
 from PyQt5 import QtCore, QtWidgets
 
 from brushbot.exhibition_monitor.connection_panel import ConnectionPanel
+from brushbot.exhibition_monitor.practice_panel import PracticePanel
+from brushbot.exhibition_monitor.pressure_practice import PracticeState
 from brushbot.exhibition_monitor.sensor_panels import SignalPlot, XYPlot
 from brushbot.exhibition_monitor.state_store import ExhibitionStateStore
 
@@ -173,3 +175,16 @@ def test_empty_signal_plot_places_waiting_text_inside_frame(app):
     assert xmin <= x <= xmax
     assert ymin <= y <= ymax
     assert plot.waiting_label.isVisible()
+
+
+def test_connection_panel_defaults_to_acm0(app):
+    panel = ConnectionPanel(ExhibitionStateStore(), FakeGateway())
+    assert panel.port_edit.text() == "/dev/ttyACM0"
+
+
+def test_practice_panel_shows_pressure_and_state(app):
+    panel = PracticePanel()
+    panel.apply_state(PracticeState("s_writing", "S", 0.25, True, 180.0, 0.0))
+    assert "书写 S" in panel.status_label.text()
+    assert "180.0" in panel.pressure_label.text()
+    assert "25%" in panel.progress_label.text()

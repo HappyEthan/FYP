@@ -2,23 +2,41 @@
 
 from PyQt5 import QtCore, QtWidgets
 from copy import deepcopy
+import math
+import time
 
 from .connection_panel import ConnectionPanel
 from .gateway import ExhibitionGateway
+from .practice_panel import PracticePanel
+from .pressure_practice import PressurePracticeEngine
 from .sensor_panels import SignalPlot, XYPlot
 from .state_store import ExhibitionStateStore
+from .sz_canvas import SZCanvas
+from .sz_template import load_sz_template
 from .theme import stylesheet
 
 
 class ExhibitionWindow(QtWidgets.QMainWindow):
     """The only exhibition client page; hardware transport is injected later."""
 
-    def __init__(self, gateway=None, *, backend_url="http://127.0.0.1:8765", offline=False):
+    def __init__(
+        self,
+        gateway=None,
+        *,
+        backend_url="http://127.0.0.1:8765",
+        offline=False,
+        clock=None,
+    ):
         super().__init__()
         self.gateway = gateway if gateway is not None else ExhibitionGateway(backend_url)
         self.backend_url = backend_url
         self.offline = offline
+        self._clock = clock or time.monotonic
         self.store = ExhibitionStateStore(self)
+        self.template = load_sz_template()
+        self.engine = PressurePracticeEngine(self.template)
+        self._practice_started = False
+        self._last_practice_state = self.engine.state
         self._monitor_page = None
         self._stream_started = False
         self._closed = False
@@ -85,6 +103,10 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         plots_layout = QtWidgets.QVBoxLayout(plots)
         plots_layout.setContentsMargins(0, 0, 0, 0)
         plots_layout.setSpacing(10)
+        self.sz_canvas = SZCanvas()
+        self.sz_canvas.setObjectName("sz-canvas")
+        self.sz_canvas.setMinimumSize(620, 260)
+        plots_layout.addWidget(self.sz_canvas, 2)
         self.xy_plot = XYPlot()
         self.xy_plot.setMinimumSize(620, 330)
         plots_layout.addWidget(self.xy_plot, 3)
@@ -97,14 +119,61 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         plots_layout.addLayout(signal_row, 1)
         body.addWidget(plots, 3)
 
+        controls = QtWidgets.QVBoxLayout()
+        self.practice_panel = PracticePanel()
+        self.practice_panel.generate_button.clicked.connect(self._generate_practice)
+        self.practice_panel.reset_button.clicked.connect(self._reset_practice)
+        controls.addWidget(self.practice_panel)
         self.connection_panel = ConnectionPanel(self.store, self.gateway)
-        body.addWidget(self.connection_panel, 1)
+        controls.addWidget(self.connection_panel)
+        controls.addStretch()
+        control_widget = QtWidgets.QWidget()
+        control_widget.setLayout(controls)
+        body.addWidget(control_widget, 1)
         root.addLayout(body, 1)
         self.setCentralWidget(page)
         self._monitor_page = page
         self.timer = QtCore.QTimer(self)
         self.store.changed.connect(self._refresh_sensor_views)
         self._refresh_sensor_views()
+
+    def _generate_practice(self):
+        self.template = load_sz_template()
+        self.engine.template = self.template
+        self.engine.reset()
+        self._practice_started = True
+        self._last_practice_state = self.engine.state
+        self.sz_canvas.set_template(self.template)
+        self.sz_canvas.set_practice_state(self._last_practice_state)
+        self.practice_panel.apply_state(self._last_practice_state)
+
+    def _reset_practice(self):
+        self.engine.reset()
+        self._last_practice_state = self.engine.state
+        self.sz_canvas.reset()
+        self.practice_panel.apply_state(self._last_practice_state)
+
+    def _practice_now(self) -> float:
+        try:
+            return float(self._clock())
+        except Exception:
+            return time.monotonic()
+
+    @staticmethod
+    def _pressure_from_sensor(sensor: dict):
+        if "pressure_bxy_uT" in sensor:
+            value = sensor.get("pressure_bxy_uT")
+        else:
+            xy = sensor.get("xy")
+            try:
+                value = math.hypot(float(xy["x"]), float(xy["y"]))
+            except (AttributeError, KeyError, TypeError, ValueError):
+                return None
+        try:
+            value = float(value)
+        except (TypeError, ValueError):
+            return None
+        return value if math.isfinite(value) else None
 
     def _refresh_sensor_views(self):
         snapshot = self.store.snapshot() or {}
@@ -131,6 +200,27 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         self.x_plot.set_series(series.get("t", []), series.get("x", []))
         self.y_plot.set_series(series.get("t", []), series.get("y", []))
 
+        if not self._practice_started:
+            return
+        connected = bool(sensor.get("connected"))
+        baseline_ready = bool(sensor.get("baseline_ready"))
+        pressure = self._pressure_from_sensor(sensor)
+        valid = connected and baseline_ready and pressure is not None
+        if valid:
+            self._last_practice_state = self.engine.update(pressure, self._practice_now())
+            self.sz_canvas.set_practice_state(self._last_practice_state)
+            self.practice_panel.apply_state(self._last_practice_state)
+            return
+
+        if sensor.get("error"):
+            self.practice_panel.set_hold_status(f"练习暂停：{sensor.get('error')}")
+        elif not connected:
+            self.practice_panel.set_hold_status("练习暂停：未连接")
+        elif not baseline_ready:
+            self.practice_panel.set_hold_status("练习暂停：等待基线")
+        else:
+            self.practice_panel.set_hold_status("练习暂停：等待有效压力")
+
     def show_monitor(self) -> None:
         """Display the sole manual monitor page."""
         if self.centralWidget() is not self._monitor_page:
@@ -156,6 +246,3 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
                 close()
         self.gateway = None
         super().closeEvent(event)
-        app = QtWidgets.QApplication.instance()
-        if app is not None:
-            app.quit()
