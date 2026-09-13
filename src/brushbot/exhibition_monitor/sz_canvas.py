@@ -141,10 +141,11 @@ class SZCanvas(QtWidgets.QWidget):
         active_mapped = self._mapped_paths(active, boxes)
         point = self._last_brush_point
         if state is not None and getattr(state, "session_started", False):
-            point = self._center_for_state(state, boxes)
-            if point is not None:
-                max_offset = max(0.0, self.PLAN_WIDTH / 2.0 - self.BRUSH_WIDTH / 2.0)
-                point = jittered_point(point, self.sensor_xy, jitter_gain=self.JITTER_GAIN, max_offset=max_offset)
+            if getattr(state, "status", "") in {"s_writing", "z_writing"} or point is None:
+                point = self._center_for_state(state, boxes)
+                if point is not None:
+                    max_offset = max(0.0, self.PLAN_WIDTH / 2.0 - self.BRUSH_WIDTH / 2.0)
+                    point = jittered_point(point, self.sensor_xy, jitter_gain=self.JITTER_GAIN, max_offset=max_offset)
         return {
             "frame": True,
             "template": dict(self.template),
