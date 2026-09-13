@@ -2,6 +2,10 @@
 
 from PyQt5 import QtCore, QtWidgets
 
+from .connection_panel import ConnectionPanel
+from .gateway import ExhibitionGateway
+from .sensor_panels import SignalPlot, XYPlot
+from .state_store import ExhibitionStateStore
 from .theme import stylesheet
 
 
@@ -10,9 +14,10 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
 
     def __init__(self, gateway=None, *, backend_url="http://127.0.0.1:8765", offline=False):
         super().__init__()
-        self.gateway = gateway
+        self.gateway = gateway if gateway is not None else ExhibitionGateway(backend_url)
         self.backend_url = backend_url
         self.offline = offline
+        self.store = ExhibitionStateStore(self)
         self._monitor_page = None
         self.setWindowTitle("Brushbot · 人工监控")
         self.setMinimumSize(1100, 680)
@@ -32,40 +37,56 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         title.setObjectName("title")
         heading.addWidget(title)
         heading.addStretch()
-        status = QtWidgets.QLabel("离线空数据框架" if self.offline else "等待连接")
-        status.setObjectName("status")
-        heading.addWidget(status)
+        self.heading_status = QtWidgets.QLabel("离线空数据框架" if self.offline else "等待连接")
+        self.heading_status.setObjectName("status")
+        heading.addWidget(self.heading_status)
         root.addLayout(heading)
 
         body = QtWidgets.QHBoxLayout()
         body.setSpacing(14)
-        plot = QtWidgets.QFrame(objectName="xy-plot")
-        plot.setMinimumSize(620, 420)
-        plot.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        plot_layout = QtWidgets.QVBoxLayout(plot)
-        plot_layout.addWidget(QtWidgets.QLabel("XY 触觉轨迹"))
-        plot_layout.addStretch()
-        plot_hint = QtWidgets.QLabel("暂无采样数据")
-        plot_hint.setAlignment(QtCore.Qt.AlignCenter)
-        plot_layout.addWidget(plot_hint)
-        plot_layout.addStretch()
-        body.addWidget(plot, 3)
+        plots = QtWidgets.QWidget()
+        plots_layout = QtWidgets.QVBoxLayout(plots)
+        plots_layout.setContentsMargins(0, 0, 0, 0)
+        plots_layout.setSpacing(10)
+        self.xy_plot = XYPlot()
+        self.xy_plot.setMinimumSize(620, 330)
+        plots_layout.addWidget(self.xy_plot, 3)
+        signal_row = QtWidgets.QHBoxLayout()
+        signal_row.setSpacing(10)
+        self.x_plot = SignalPlot("x")
+        self.y_plot = SignalPlot("y")
+        signal_row.addWidget(self.x_plot)
+        signal_row.addWidget(self.y_plot)
+        plots_layout.addLayout(signal_row, 1)
+        body.addWidget(plots, 3)
 
-        controls = QtWidgets.QGroupBox("串口与基线")
-        controls_layout = QtWidgets.QVBoxLayout(controls)
-        port = QtWidgets.QLineEdit("/dev/ttyUSB0", objectName="serial-port")
-        port.setPlaceholderText("串口设备")
-        controls_layout.addWidget(port)
-        connect = QtWidgets.QPushButton("连接传感器", objectName="connect-sensor")
-        controls_layout.addWidget(connect)
-        baseline = QtWidgets.QPushButton("获取基线", objectName="capture-baseline")
-        controls_layout.addWidget(baseline)
-        controls_layout.addStretch()
-        body.addWidget(controls, 1)
+        self.connection_panel = ConnectionPanel(self.store, self.gateway)
+        body.addWidget(self.connection_panel, 1)
         root.addLayout(body, 1)
         self.setCentralWidget(page)
         self._monitor_page = page
         self.timer = QtCore.QTimer(self)
+        self.store.changed.connect(self._refresh_sensor_views)
+        self._refresh_sensor_views()
+
+    def _refresh_sensor_views(self):
+        snapshot = self.store.snapshot() or {}
+        sensor = snapshot.get("sensor") if isinstance(snapshot, dict) else None
+        if not isinstance(sensor, dict) and isinstance(snapshot, dict) and "connected" in snapshot:
+            sensor = snapshot
+        if sensor is None:
+            self.heading_status.setText("离线空数据框架" if self.offline else "等待连接")
+        elif sensor.get("connected"):
+            self.heading_status.setText("已连接")
+        elif sensor.get("error"):
+            self.heading_status.setText("连接失败")
+        else:
+            self.heading_status.setText("未连接")
+        self.xy_plot.set_sensor_snapshot(sensor)
+        sensor = sensor or {}
+        series = sensor.get("series", {}) if isinstance(sensor, dict) else {}
+        self.x_plot.set_series(series.get("t", []), series.get("x", []))
+        self.y_plot.set_series(series.get("t", []), series.get("y", []))
 
     def show_monitor(self) -> None:
         """Display the sole manual monitor page."""
