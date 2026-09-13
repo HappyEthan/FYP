@@ -5,7 +5,7 @@ requires-python = ">=3.10"
 dependencies = ["numpy", "pybullet", "pillow", "matplotlib", "mujoco"]
 
 [project.optional-dependencies]
-monitor = ["pyqtgraph>=0.13", "PyQt5>=5.15", "pyserial>=3.5"]
+monitor = ["pyqtgraph>=0.13", "PyQt5>=5.15", "pyserial>=3.5", "websocket-client>=1.7"]
 
 [build-system]
 requires = ["setuptools>=61"]
