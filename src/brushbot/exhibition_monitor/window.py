@@ -1,6 +1,7 @@
 """Single-page manual monitor window with an injectable gateway seam."""
 
 from PyQt5 import QtCore, QtWidgets
+from copy import deepcopy
 
 from .connection_panel import ConnectionPanel
 from .gateway import ExhibitionGateway
@@ -19,12 +20,43 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         self.offline = offline
         self.store = ExhibitionStateStore(self)
         self._monitor_page = None
+        self._stream_started = False
+        self._closed = False
         self.setWindowTitle("Brushbot · 人工监控")
         self.setMinimumSize(1100, 680)
         self.resize(1366, 768)
         self.setStyleSheet(stylesheet())
         self._build_monitor_page()
         self.show_monitor()
+        self._start_stream()
+
+    def _start_stream(self) -> None:
+        """Start the single gateway stream owned by this window."""
+        if self.offline or self._stream_started:
+            return
+        start_stream = getattr(self.gateway, "start_stream", None)
+        if callable(start_stream):
+            start_stream(self._on_snapshot)
+            self._stream_started = True
+
+    def _on_snapshot(self, snapshot: dict) -> None:
+        """Publish a gateway snapshot while retaining history on errors."""
+        if not isinstance(snapshot, dict):
+            return
+        latest = self.store.snapshot() or {}
+        incoming_sensor = snapshot.get("sensor") if isinstance(snapshot.get("sensor"), dict) else snapshot
+        previous_sensor = latest.get("sensor") if isinstance(latest, dict) else None
+        if isinstance(previous_sensor, dict) and isinstance(incoming_sensor, dict):
+            sensor = deepcopy(previous_sensor)
+            sensor.update(deepcopy(incoming_sensor))
+            if "series" not in incoming_sensor and "series" in previous_sensor:
+                sensor["series"] = deepcopy(previous_sensor["series"])
+            if "sensor" in snapshot:
+                snapshot = dict(snapshot)
+                snapshot["sensor"] = sensor
+            else:
+                snapshot = sensor
+        self.store.update_snapshot(snapshot)
 
     def _build_monitor_page(self):
         page = QtWidgets.QWidget(objectName="monitor-page")
@@ -82,6 +114,10 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
             self.heading_status.setText("连接失败")
         else:
             self.heading_status.setText("未连接")
+        self.heading_status.setStyleSheet(
+            "color: #b56b2f; font-weight: 700;" if isinstance(sensor, dict) and sensor.get("error")
+            else ""
+        )
         self.xy_plot.set_sensor_snapshot(sensor)
         sensor = sensor or {}
         series = sensor.get("series", {}) if isinstance(sensor, dict) else {}
@@ -98,6 +134,10 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         return self.centralWidget() is self._monitor_page and self._monitor_page is not None
 
     def closeEvent(self, event):
+        if self._closed:
+            event.accept()
+            return
+        self._closed = True
         if self.timer.isActive():
             self.timer.stop()
         gateway = self.gateway
@@ -107,3 +147,6 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
                 close()
         self.gateway = None
         super().closeEvent(event)
+        app = QtWidgets.QApplication.instance()
+        if app is not None:
+            app.quit()

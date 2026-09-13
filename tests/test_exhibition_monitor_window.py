@@ -12,8 +12,15 @@ from brushbot.exhibition_monitor.window import ExhibitionWindow
 
 
 class FakeGateway:
+    def __init__(self):
+        self.start_calls = []
+        self.close_calls = 0
+
+    def start_stream(self, callback):
+        self.start_calls.append(callback)
+
     def close(self):
-        self.closed = True
+        self.close_calls += 1
 
 
 @pytest.fixture
@@ -30,13 +37,15 @@ def qtbot():
 
 
 def test_app_starts_directly_on_manual_monitor(qtbot):
-    window = ExhibitionWindow(gateway=FakeGateway())
+    gateway = FakeGateway()
+    window = ExhibitionWindow(gateway=gateway)
     qtbot.addWidget(window)
     window.show()
     QtWidgets.QApplication.processEvents()
     assert window.is_monitor_page()
     assert window.minimumWidth() >= 1100
     assert window.findChild(QtWidgets.QPushButton, "connect-sensor") is not None
+    assert len(gateway.start_calls) == 1
 
 
 def test_monitor_controls_fit_1366_layout(qtbot):
@@ -49,3 +58,28 @@ def test_monitor_controls_fit_1366_layout(qtbot):
         widget = window.findChild(QtWidgets.QWidget, object_name)
         assert widget is not None and widget.isVisible(), object_name
         assert window.rect().contains(widget.geometry().center())
+
+
+def test_stream_snapshot_refreshes_all_views_and_close_is_idempotent(qtbot):
+    gateway = FakeGateway()
+    window = ExhibitionWindow(gateway=gateway)
+    qtbot.addWidget(window)
+    snapshot = {"sensor": {"connected": True, "series": {"t": [1], "x": [2], "y": [3]}}}
+    gateway.start_calls[0](snapshot)
+    QtWidgets.QApplication.processEvents()
+    assert window.xy_plot.sensor_snapshot == snapshot["sensor"]
+    assert window.x_plot._times == [1.0]
+    assert window.y_plot._values == [3]
+    window.close()
+    window.close()
+    assert gateway.close_calls == 1
+
+
+def test_monitor_imports_do_not_pull_serial_or_robot_modules():
+    import ast
+    from pathlib import Path
+
+    source = Path(__file__).parents[1] / "src/brushbot/exhibition_monitor/window.py"
+    tree = ast.parse(source.read_text())
+    imports = [node.module or "" for node in ast.walk(tree) if isinstance(node, ast.ImportFrom)]
+    assert not any("serial" in name.lower() or "cps" in name.lower() or "robot" in name.lower() for name in imports)
