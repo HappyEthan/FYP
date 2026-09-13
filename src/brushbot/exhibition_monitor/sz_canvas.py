@@ -31,6 +31,7 @@ class SZCanvas(QtWidgets.QWidget):
         self.sensor_xy = (0.0, 0.0)
         self._ink_paths: dict[str, list[tuple[float, float]]] = {"S": [], "Z": []}
         self._last_brush_point: tuple[float, float] | None = None
+        self._last_brush_letter: str | None = None
         self.setMinimumSize(620, 330)
         self.setObjectName("sz-canvas")
 
@@ -63,6 +64,7 @@ class SZCanvas(QtWidgets.QWidget):
     def reset_ink(self) -> None:
         self._ink_paths = {"S": [], "Z": []}
         self._last_brush_point = None
+        self._last_brush_letter = None
 
     def reset(self) -> None:
         self.practice_state = None
@@ -116,10 +118,11 @@ class SZCanvas(QtWidgets.QWidget):
             return
         max_offset = max(0.0, self.PLAN_WIDTH / 2.0 - self.BRUSH_WIDTH / 2.0)
         point = jittered_point(center, self.sensor_xy, jitter_gain=self.JITTER_GAIN, max_offset=max_offset)
-        previous = self._last_brush_point
+        previous = self._last_brush_point if self._last_brush_letter == letter else None
         if previous is None or previous != point:
             self._ink_paths.setdefault(letter, []).extend(stamp_brush(previous or point, point, self.BRUSH_WIDTH))
         self._last_brush_point = point
+        self._last_brush_letter = letter
 
     def visible_geometry(self) -> dict:
         state = self.practice_state

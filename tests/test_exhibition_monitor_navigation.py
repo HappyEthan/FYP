@@ -39,12 +39,17 @@ def test_navigation_switches_pages_without_restarting_gateway(qtbot):
     window = ExhibitionWindow(gateway=gateway)
     qtbot.addWidget(window)
     assert window.is_monitor_page()
+    assert window.navigation.monitor_button.isChecked()
+    assert not window.navigation.writing_button.isChecked()
     assert window.navigation.monitor_button.text() == "磁场监控"
     assert window.navigation.writing_button.text() == "SZ 写字"
     window.navigation.writing_button.click()
     assert window.is_writing_page()
+    assert window.navigation.writing_button.isChecked()
+    assert not window.navigation.monitor_button.isChecked()
     window.navigation.monitor_button.click()
     assert window.is_monitor_page()
+    assert window.navigation.monitor_button.isChecked()
     assert len(gateway.start_calls) == 1
     assert gateway.close_calls == 0
 

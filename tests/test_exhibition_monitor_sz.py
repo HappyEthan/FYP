@@ -121,3 +121,12 @@ def test_canvas_freezes_brush_point_during_pressure_pause(qtbot):
     canvas.set_sensor_xy(100.0, 0.0)
     canvas.set_practice_state(PracticeState("s_paused", "S", 0.4, False, 0.0, 0.0, True, True))
     assert canvas.visible_geometry()["point"] == writing_point
+
+
+def test_canvas_does_not_bridge_ink_between_s_and_z_boxes(qtbot):
+    canvas = SZCanvas()
+    qtbot.addWidget(canvas)
+    canvas.set_practice_state(PracticeState("s_writing", "S", 0.9, True, 150.0, 0.0, True, True))
+    canvas.set_practice_state(PracticeState("z_writing", "Z", 0.1, True, 150.0, 0.0, True, True))
+    geometry = canvas.visible_geometry()
+    assert geometry["ink"]["Z"][0][0] >= geometry["boxes"]["Z"][0]

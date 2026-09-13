@@ -29,10 +29,11 @@ class NavigationRail(QtWidgets.QFrame):
         self.writing_button.clicked.connect(lambda: self.page_requested.emit("writing"))
 
     def set_current(self, page: str) -> None:
+        for button in (self.monitor_button, self.writing_button):
+            button.setCheckable(True)
         self.monitor_button.setChecked(page == "monitor")
         self.writing_button.setChecked(page == "writing")
         for button in (self.monitor_button, self.writing_button):
-            button.setCheckable(True)
             button.setStyleSheet(
                 f"background: {COLORS['accent'] if button.isChecked() else COLORS['primary']};"
             )
