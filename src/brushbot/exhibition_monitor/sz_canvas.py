@@ -108,9 +108,7 @@ class SZCanvas(QtWidgets.QWidget):
         if state is None or not getattr(state, "session_started", False):
             return
         letter = getattr(state, "active_letter", None)
-        if letter not in self.template or getattr(state, "status", "") not in {
-            "s_writing", "s_paused", "s_finished_pause", "z_writing", "z_paused", "done"
-        }:
+        if letter not in self.template or getattr(state, "status", "") not in {"s_writing", "z_writing"}:
             return
         boxes = self._boxes()
         center = self._center_for_state(state, boxes)

@@ -101,3 +101,12 @@ def test_canvas_uses_a_nonzero_plan_band_width(qtbot):
     geometry = canvas.visible_geometry()
     assert geometry["plan_width"] > 0
     assert geometry["ink_width"] > 0
+
+
+def test_canvas_does_not_leave_new_ink_while_pressure_pause_is_active(qtbot):
+    canvas = SZCanvas()
+    qtbot.addWidget(canvas)
+    canvas.set_sensor_xy(100.0, 0.0)
+    canvas.set_practice_state(PracticeState("s_paused", "S", 0.4, False, 0.0, 0.0, True, True))
+    geometry = canvas.visible_geometry()
+    assert geometry["ink"] == {}
