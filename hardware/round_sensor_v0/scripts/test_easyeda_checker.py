@@ -40,8 +40,8 @@ class ConnectivityCheckerTest(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,"unconnected without NC"):self.check()
 
     def test_rail_short_rejected(self):
-        # C20 at (2630,2570) has 3V3 on its left and GND on its right.
-        self.docs["05_RF_BATTERY_DEBUG"]["shape"].append("W~2590 2570 2670 2570~#008800~1~0~none~ggeFAULT~0")
+        # C20 at (2450,2670) has 3V3 on its left and GND on its right.
+        self.docs["05_RF_BATTERY_DEBUG"]["shape"].append("W~2410 2670 2490 2670~#008800~1~0~none~ggeFAULT~0")
         with self.assertRaisesRegex(AssertionError,"Conflicting labels"):self.check()
 
     def test_swapped_mcu_usb_labels_rejected(self):

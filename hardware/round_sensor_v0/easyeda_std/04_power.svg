@@ -1,42 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1560" viewBox="60 1260 1680 1560">
 <rect width="3600" height="2900" fill="white"/>
-<text x="60" y="1320" fill="#243746" font-size="37.324" font-family="Arial,sans-serif" text-anchor="start">ROUND SENSOR / SCH-A1 / 04 POWER</text>
-<text x="60" y="1360" fill="#243746" font-size="19.995" font-family="Arial,sans-serif" text-anchor="start">Protected 1S battery | about 2 h target | charge disabled by default</text>
+<text x="60" y="1320" fill="#243746" font-size="37.324" font-family="Arial,sans-serif" text-anchor="start">圆形传感器 / SCH-A2 / 04 电源</text>
+<text x="60" y="1360" fill="#243746" font-size="19.995" font-family="Arial,sans-serif" text-anchor="start">带保护的单节锂电池 | 目标续航约 2 小时 | 使用电池包 NTC 独立充电</text>
 <rect x="60" y="1400" width="1680" height="1400" stroke="#94A8B6" fill="none"/>
-<text x="80" y="1430" fill="#243746" font-size="23.994" font-family="Arial,sans-serif" text-anchor="start">04  BATTERY / POWER PATH / CHARGING</text>
-<text x="80" y="1455" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">Charge disabled by default; NTC link DNP until the cell and temperature network are approved</text>
-<polyline points="320 1570 275 1570" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">TS_CELL</text>
-<polyline points="320 1600 275 1600" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
-<polyline points="320 1630 275 1630" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
-<polyline points="320 1660 275 1660" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CE_N</text>
-<polyline points="320 1690 275 1690" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1687" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN2</text>
-<polyline points="320 1720 275 1720" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1717" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN1</text>
-<polyline points="320 1750 275 1750" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">PGOOD_N</text>
-<polyline points="320 1780 275 1780" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1777" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="320 1810 275 1810" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="275" y="1807" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="660 1570 705 1570" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CHG_N</text>
-<polyline points="660 1600 705 1600" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VSYS</text>
-<polyline points="660 1630 705 1630" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VSYS</text>
-<polyline points="660 1660 705 1660" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">ILIM_SET</text>
-<polyline points="660 1690 705 1690" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1687" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
+<text x="80" y="1430" fill="#243746" font-size="23.994" font-family="Arial,sans-serif" text-anchor="start">04  电池、电源路径与充电</text>
+<text x="80" y="1455" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">接入 USB 且检测到有效 10 kΩ NTC 时默认允许充电；GPIO 拉高可禁止充电</text>
 <path d="M657,1717 L663,1723 M663,1717 L657,1723" stroke="#CC0000" stroke-width="1" fill="none"/>
 <path d="M657,1747 L663,1753 M663,1747 L657,1753" stroke="#CC0000" stroke-width="1" fill="none"/>
-<polyline points="660 1780 705 1780" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="705" y="1777" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">ISET_SET</text>
 <rect x="340" y="1540" width="300" height="300" stroke="#A00000" fill="#FFFDF2"/>
 <text x="340" y="1510" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">U4</text>
 <text x="340" y="1530" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">BQ24074RGTR</text>
@@ -91,16 +61,6 @@
 <path d="M 660 1780 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="636" y="1784" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">ISET</text>
 <text x="650.0" y="1776" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">16</text>
-<polyline points="1160 1570 1115 1570" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1115" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
-<polyline points="1160 1600 1115 1600" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1115" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">REG_EN</text>
-<polyline points="1160 1630 1115 1630" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1115" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="1160 1660 1115 1660" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1115" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="1460 1570 1505 1570" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1505" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">3V3</text>
 <path d="M1457,1597 L1463,1603 M1463,1597 L1457,1603" stroke="#CC0000" stroke-width="1" fill="none"/>
 <path d="M1457,1627 L1463,1633 M1463,1627 L1457,1633" stroke="#CC0000" stroke-width="1" fill="none"/>
 <rect x="1180" y="1540" width="260" height="150" stroke="#A00000" fill="#FFFDF2"/>
@@ -127,51 +87,28 @@
 <path d="M 1460 1630 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="1436" y="1634" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">NC</text>
 <text x="1450.0" y="1626" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">5</text>
-<polyline points="1190 1760 1145 1760" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1145" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
-<polyline points="1270 1760 1315 1760" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1315" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">REG_EN</text>
-<text x="1210" y="1720" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">SW1</text>
-<text x="1210" y="1740" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">POWER / SPST</text>
-<polyline points="1210 1760 1246 1748" stroke="#A00000" fill="none" stroke-width="1"/>
-<polyline points="1246 1760 1250 1760" stroke="#A00000" fill="none" stroke-width="1"/>
-<path d="M 1190 1760 h 20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1200.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
-<path d="M 1270 1760 h -20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1260.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="1190 1850 1145 1850" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1145" y="1847" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">REG_EN</text>
-<polyline points="1270 1850 1315 1850" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1315" y="1847" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
-<text x="1210" y="1810" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R20</text>
-<text x="1210" y="1830" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
-<rect x="1210" y="1843" width="40" height="14" stroke="#A00000" fill="none"/>
-<path d="M 1190 1850 h 20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1200.0" y="1846" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
-<path d="M 1270 1850 h -20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1260.0" y="1846" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="1130 2020 1085 2020" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1085" y="2017" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CE_BASE</text>
-<polyline points="1370 2020 1415 2020" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1415" y="2017" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CE_N</text>
-<polyline points="1370 2050 1415 2050" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1415" y="2047" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
-<rect x="1150" y="1990" width="200" height="90" stroke="#A00000" fill="#FFFDF2"/>
-<text x="1150" y="1960" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">Q1</text>
-<text x="1150" y="1980" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">MMBT3904</text>
-<path d="M 1130 2020 h 20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1154" y="2024" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="start">BASE</text>
-<text x="1140.0" y="2016" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
-<path d="M 1370 2020 h -20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1346" y="2024" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">COLLECTOR</text>
-<text x="1360.0" y="2016" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
-<path d="M 1370 2050 h -20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="1346" y="2054" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">EMITTER</text>
-<text x="1360.0" y="2046" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 1970 215 1970" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
-<polyline points="340 1970 385 1970" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="1030" y="1720" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">SW1</text>
+<text x="1030" y="1740" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">电源 / 单刀单掷</text>
+<polyline points="1030 1760 1066 1748" stroke="#A00000" fill="none" stroke-width="1"/>
+<polyline points="1066 1760 1070 1760" stroke="#A00000" fill="none" stroke-width="1"/>
+<path d="M 1010 1760 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1020.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 1090 1760 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1080.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<text x="1430" y="1720" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R19</text>
+<text x="1430" y="1740" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k / 1%</text>
+<rect x="1430" y="1753" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 1410 1760 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1420.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 1490 1760 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1480.0" y="1756" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
+<text x="1210" y="1830" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R20</text>
+<text x="1210" y="1850" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">1M / 1%</text>
+<rect x="1210" y="1863" width="40" height="14" stroke="#A00000" fill="none"/>
+<path d="M 1190 1870 h 20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1200.0" y="1866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
+<path d="M 1270 1870 h -20" stroke="#880000" stroke-width="1" fill="none"/>
+<text x="1260.0" y="1866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
 <text x="280" y="1930" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C6</text>
 <text x="280" y="1950" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">1uF / 16V</text>
 <polyline points="296 1960 296 1980" stroke="#A00000" fill="none" stroke-width="1"/>
@@ -182,10 +119,6 @@
 <text x="270.0" y="1966" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 340 1970 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="330.0" y="1966" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="710 1970 665 1970" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="665" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
-<polyline points="790 1970 835 1970" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="835" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="730" y="1930" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C7</text>
 <text x="730" y="1950" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10uF / 10V</text>
 <polyline points="746 1960 746 1980" stroke="#A00000" fill="none" stroke-width="1"/>
@@ -196,10 +129,6 @@
 <text x="720.0" y="1966" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 790 1970 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="780.0" y="1966" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 2080 215 2080" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
-<polyline points="340 2080 385 2080" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="280" y="2040" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C8</text>
 <text x="280" y="2060" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10uF / 10V</text>
 <polyline points="296 2070 296 2090" stroke="#A00000" fill="none" stroke-width="1"/>
@@ -210,10 +139,6 @@
 <text x="270.0" y="2076" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 340 2080 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="330.0" y="2076" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="710 2080 665 2080" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="665" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
-<polyline points="790 2080 835 2080" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="835" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="730" y="2040" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C9</text>
 <text x="730" y="2060" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">1uF / 10V</text>
 <polyline points="746 2070 746 2090" stroke="#A00000" fill="none" stroke-width="1"/>
@@ -224,10 +149,6 @@
 <text x="720.0" y="2076" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 790 2080 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="780.0" y="2076" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 2230 215 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
-<polyline points="340 2230 385 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="280" y="2190" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">C10</text>
 <text x="280" y="2210" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">1uF / 10V</text>
 <polyline points="296 2220 296 2240" stroke="#A00000" fill="none" stroke-width="1"/>
@@ -238,10 +159,6 @@
 <text x="270.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 340 2230 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="330.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="780 2230 735 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="735" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">ILIM_SET</text>
-<polyline points="860 2230 905 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="905" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="800" y="2190" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R9</text>
 <text x="800" y="2210" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">3.24k / 1%</text>
 <rect x="800" y="2223" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -249,10 +166,6 @@
 <text x="790.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 860 2230 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="850.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="1350 2230 1305 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1305" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">ISET_SET</text>
-<polyline points="1430 2230 1475 2230" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1475" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="1370" y="2190" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R10</text>
 <text x="1370" y="2210" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">8.66k / 1%</text>
 <rect x="1370" y="2223" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -260,21 +173,13 @@
 <text x="1360.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 1430 2230 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="1420.0" y="2226" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 2340 215 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
-<polyline points="340 2340 385 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CE_N</text>
 <text x="280" y="2300" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R11</text>
-<text x="280" y="2320" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
+<text x="280" y="2320" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
 <rect x="280" y="2333" width="40" height="14" stroke="#A00000" fill="none"/>
 <path d="M 260 2340 h 20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="270.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 340 2340 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="330.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="780 2340 735 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="735" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN1</text>
-<polyline points="860 2340 905 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="905" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="800" y="2300" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R12</text>
 <text x="800" y="2320" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
 <rect x="800" y="2333" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -282,10 +187,6 @@
 <text x="790.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 860 2340 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="850.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="1350 2340 1305 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1305" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN2</text>
-<polyline points="1430 2340 1475 2340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1475" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="1370" y="2300" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R13</text>
 <text x="1370" y="2320" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
 <rect x="1370" y="2333" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -293,32 +194,20 @@
 <text x="1360.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 1430 2340 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="1420.0" y="2336" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 2450 215 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
-<polyline points="340 2450 385 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">PGOOD_N</text>
 <text x="280" y="2410" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R14</text>
-<text x="280" y="2430" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
+<text x="280" y="2430" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
 <rect x="280" y="2443" width="40" height="14" stroke="#A00000" fill="none"/>
 <path d="M 260 2450 h 20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="270.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 340 2450 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="330.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="780 2450 735 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="735" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
-<polyline points="860 2450 905 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="905" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CHG_N</text>
 <text x="800" y="2410" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R15</text>
-<text x="800" y="2430" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
+<text x="800" y="2430" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">100k</text>
 <rect x="800" y="2443" width="40" height="14" stroke="#A00000" fill="none"/>
 <path d="M 780 2450 h 20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="790.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 860 2450 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="850.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="1350 2450 1305 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1305" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHARGE_ALLOW</text>
-<polyline points="1430 2450 1475 2450" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="1475" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CE_BASE</text>
 <text x="1370" y="2410" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R21</text>
 <text x="1370" y="2430" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">10k</text>
 <rect x="1370" y="2443" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -326,18 +215,120 @@
 <text x="1360.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 1430 2450 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="1420.0" y="2446" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="260 2560 215 2560" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="215" y="2557" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CE_BASE</text>
-<polyline points="340 2560 385 2560" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="385" y="2557" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
-<text x="280" y="2520" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R22</text>
-<text x="280" y="2540" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">47k</text>
-<rect x="280" y="2553" width="40" height="14" stroke="#A00000" fill="none"/>
-<path d="M 260 2560 h 20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="270.0" y="2556" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
-<path d="M 340 2560 h -20" stroke="#880000" stroke-width="1" fill="none"/>
-<text x="330.0" y="2556" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<text x="90" y="2680" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">ISET about 103 mA typical; confirm cell rating and tolerances. BAT/OUT caps require DC-bias review.</text>
-<text x="90" y="2703" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">EN2 EN1: 00 = USB100; 01 = USB500 after host permits; 11 = suspend. No automatic 500 mA assumption.</text>
-<text x="90" y="2726" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">Switch OFF turns off 3V3 and disables charge. It does not disconnect the battery protection/charger.</text>
+<text x="90" y="2680" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">ISET 典型值约 103 mA；需确认电芯额定充电电流与器件容差。BAT/OUT 电容需复核直流偏压降容。</text>
+<text x="90" y="2703" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">EN2 EN1：00 = USB100；主机允许后 01 = USB500；11 = 挂起。不得默认自动使用 500 mA。</text>
+<text x="90" y="2726" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">开关关闭后 3V3 断电，但充电仍可独立进行。CHARGE_DISABLE 拉高可由固件选择性禁止充电。</text>
+<polyline points="320 1570 275 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1600 275 1600" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1630 275 1630" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1660 275 1660" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1690 275 1690" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1720 275 1720" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1750 275 1750" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1780 275 1780" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="320 1810 275 1810" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1570 705 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1600 705 1600" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1630 705 1630" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1660 705 1660" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1690 705 1690" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="660 1780 705 1780" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1160 1570 1115 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1160 1600 1115 1600" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1160 1630 1115 1630" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1160 1660 1115 1660" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1460 1570 1505 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1010 1760 965 1760" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1090 1760 1135 1760" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1410 1760 1365 1760" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1490 1760 1535 1760" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1190 1870 1145 1870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1270 1870 1315 1870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="260 1970 215 1970" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="340 1970 385 1970" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="710 1970 665 1970" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="790 1970 835 1970" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="260 2080 215 2080" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="340 2080 385 2080" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="710 2080 665 2080" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="790 2080 835 2080" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="260 2230 215 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="340 2230 385 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="780 2230 735 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="860 2230 905 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1350 2230 1305 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1430 2230 1475 2230" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="260 2340 215 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="340 2340 385 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="780 2340 735 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="860 2340 905 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1350 2340 1305 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1430 2340 1475 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="260 2450 215 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="340 2450 385 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="780 2450 735 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="860 2450 905 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1350 2450 1305 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1430 2450 1475 2450" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="275" y="1777" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="275" y="1807" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="1115" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="1115" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="1315" y="1867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="385" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="835" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="385" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="835" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="385" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="905" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="1475" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="385" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="905" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="1475" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="705" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VSYS</text>
+<text x="705" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">VSYS</text>
+<text x="1115" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
+<text x="965" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
+<text x="215" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
+<text x="665" y="2077" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">VSYS</text>
+<text x="1505" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">3V3</text>
+<text x="215" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<text x="215" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<text x="735" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">3V3</text>
+<text x="275" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
+<text x="275" y="1627" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
+<text x="665" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">BAT_P</text>
+<polyline points="215 2340 210 2340 210 1660 275 1660" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1475 2450 1475 2365 215 2365 215 2340" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="275" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CE_N</text>
+<text x="215" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CE_N</text>
+<text x="1475" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CE_N</text>
+<polyline points="1535 1760 1535 1700 1110 1700 1110 1600 1115 1600" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="1145 1870 1145 1700" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1115" y="1597" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">REG_EN</text>
+<text x="1535" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">REG_EN</text>
+<text x="1145" y="1867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">REG_EN</text>
+<polyline points="735 2340 735 2255 265 2255 265 1720 275 1720" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="275" y="1717" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN1</text>
+<text x="735" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN1</text>
+<polyline points="1305 2340 910 2340 910 1850 325 1850 325 1695 275 1695 275 1690" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="275" y="1687" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN2</text>
+<text x="1305" y="2337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHG_EN2</text>
+<polyline points="905 2450 905 2370 205 2370 205 1530 705 1530 705 1570" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="705" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CHG_N</text>
+<text x="905" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CHG_N</text>
+<polyline points="735 2230 735 2250 785 2250 785 2315 855 2315 855 2345 1355 2345 1355 1895 915 1895 915 1660 705 1660" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="705" y="1657" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">ILIM_SET</text>
+<text x="735" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">ILIM_SET</text>
+<text x="705" y="1777" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">ISET_SET</text>
+<text x="1305" y="2227" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">ISET_SET</text>
+<text x="275" y="1747" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">PGOOD_N</text>
+<text x="385" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">PGOOD_N</text>
+<polyline points="1365 1760 1195 1760 1195 1875 1135 1875 1135 1760" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="1135" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">PWR_SW_ON</text>
+<text x="1365" y="1757" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">PWR_SW_ON</text>
+<text x="705" y="1687" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
+<text x="215" y="1967" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
+<text x="1305" y="2447" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CHARGE_DISABLE</text>
+<text x="275" y="1567" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">TS_CELL</text>
 </svg>

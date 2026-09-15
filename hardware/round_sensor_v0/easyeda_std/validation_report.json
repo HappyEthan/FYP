@@ -1,12 +1,13 @@
 {
   "status": "PASS_LOCAL_SERIALIZED_CONNECTIVITY",
-  "sha256": "966f79a5cfa4ba51870d18a0374de5159e4a7f4594a0fdb873a4266dd5b5834e",
+  "revision": "SCH-A2",
+  "sha256": "de9a911fb535f11dc029778b19819f68aa802f87a6b0271a8537e1ce5f17862b",
   "source_sha256": {
-    "01_MCU": "b5e3c8c74d86035aa9e80218efe2972aa4a0c99b61b436ce676c18f35d62b2e6",
-    "02_SENSORS": "634071bf7d5446708934d2eb62d3d54f7fc0fdee724ad86ded2b16501f707826",
-    "03_USB": "febc8e46bd6e17ace065325368d40f57a4a46a174c9a9b31f492398fc009776d",
-    "04_POWER": "5d0b39b4a4365707d7565770f9b0eb8aad50315f576d18584ef7e17212146888",
-    "05_RF_BATTERY_DEBUG": "3ba7aa405acc0c44a14d61c0284ccbd75d0b44c5bab6819dcb6cada232b25998"
+    "01_MCU": "27071cab0affddda4ac5dc8c5ec1b95851fe0212782be42d80e11023ca2a2363",
+    "02_SENSORS": "5bbefc58cb2f53d69d86909221b5f75aa6e86f0a54870b850596721e3a2eacf9",
+    "03_USB": "46322c7da65ea136784bd6e1344ade6454cb6d1cd8c1cf61d14b6fd99b0f3246",
+    "04_POWER": "3de6caad805ba32c47a4ae2c1e722a10e5657206dd8ea3a380b4fe30512c5f87",
+    "05_RF_BATTERY_DEBUG": "86787e5f725952525093bd0331077a212e95e392e0b1bc562fa70bf482585c17"
   },
   "sheet_count": 5,
   "sheet_names": [
@@ -16,71 +17,64 @@
     "04_POWER",
     "05_RF_BATTERY_DEBUG"
   ],
-  "components": 55,
-  "pins": 229,
-  "named_nets": 36,
+  "components": 60,
+  "pins": 241,
+  "named_nets": 37,
   "intentional_no_connects": 43,
-  "checked_reference_pins": 72,
+  "checked_reference_pins": 78,
   "checks": [
     "all electrical pin dots match their declared coordinates",
-    "all pins wire to expected net labels or have explicit no-connect markers",
+    "all pins join the expected physical wire component, a net label, or an explicit no-connect marker",
     "no conflicting labels share a wire",
     "five-sheet geometry is isolated by page while same-name labels merge globally",
-    "USB orientation, sensor modes, PSRAM reservations, charge CE isolation and power pin mapping checked",
-    "R16/R17 DNP and separate CC pull-down values checked"
+    "USB orientation, sensor modes, PSRAM reservations, autonomous charge control and power pin mapping checked",
+    "103AT-2 pack NTC link, U7 USB/UV divider values and separate CC pull-down values checked"
   ],
   "editor_import_verified": true,
   "editor_render_verified": true,
   "editor_erc_run": true,
   "editor_erc_error_count": 0,
   "editor_validation": {
-    "editor": "\u5609\u7acb\u521bEDA\u6807\u51c6\u7248\u7f51\u9875\u7248",
-    "ui_language": "\u7b80\u4f53\u4e2d\u6587",
-    "site": "https://lceda.cn/editor",
-    "observed_at_utc": "2026-09-12T12:00:07Z",
-    "source_file": "round_sensor_SCH_A1_multi.json",
-    "source_files": [
-      "round_sensor_SCH_A1_01_MCU.json",
-      "round_sensor_SCH_A1_02_SENSORS.json",
-      "round_sensor_SCH_A1_03_USB.json",
-      "round_sensor_SCH_A1_04_POWER.json",
-      "round_sensor_SCH_A1_05_RF_BATTERY_DEBUG.json"
-    ],
-    "import_verified": true,
-    "multi_sheet_import_verified": true,
-    "document_name": "round_sensor_SCH_A1",
-    "sheet_count": 5,
-    "sheet_names": [
+    "\u7f16\u8f91\u5668": "\u5609\u7acb\u521bEDA\u6807\u51c6\u7248\u684c\u9762\u7aef",
+    "\u754c\u9762\u8bed\u8a00": "\u7b80\u4f53\u4e2d\u6587",
+    "\u7f16\u8f91\u5668\u7248\u672c": "6.5.51",
+    "\u6838\u5bf9\u65f6\u95f4": "2026-09-15T17:28:36+08:00",
+    "\u6e90\u6587\u4ef6": "round_sensor_SCH_A2_WIRED_multi.json",
+    "\u4e91\u7aef\u5de5\u7a0b\u540d": "\u5706\u5f62\u4f20\u611f\u5668_SCH_A2_\u4e2d\u6587\u6700\u7ec8\u7248",
+    "\u5df2\u4fdd\u5b58\u81f3\u4e2a\u4eba\u5de5\u4f5c\u533a": true,
+    "\u539f\u7406\u56fe\u9875\u6570": 5,
+    "\u9875\u9762\u540d\u79f0": [
       "01_MCU",
       "02_SENSORS",
       "03_USB",
       "04_POWER",
       "05_RF_BATTERY_DEBUG"
     ],
-    "previous_single_sheet_name": "Sheet_1",
-    "previous_single_sheet_deleted": true,
-    "render_verified": true,
-    "render_observations": [
-      "\u5de5\u7a0b\u6811\u53ca\u9875\u7b7e\u53ea\u663e\u793a\u4e94\u4e2a\u529f\u80fd\u9875\uff0c\u4e0d\u518d\u5305\u542b\u65e7\u7684\u6574\u9875 Sheet_1",
-      "01_MCU\u300102_SENSORS\u300103_USB\u300104_POWER\u300105_RF_BATTERY_DEBUG \u5747\u7531\u7f16\u8f91\u5668\u6210\u529f\u8bfb\u53d6"
-    ],
-    "integrated_erc_refreshed": true,
-    "component_count": 55,
-    "named_net_count": 36,
-    "valid_net_count": 36,
-    "erc_error_count": 0,
-    "erc_observation": "\u5220\u9664\u65e7 Sheet_1 \u540e\uff0c\u8bbe\u8ba1\u7ba1\u7406\u5668\u663e\u793a\u5143\u4ef6(55)\u3001\u7f51\u7edc(36/36)\uff0c\u672a\u51fa\u73b0\u611f\u53f9\u53f7\u6216\u9519\u8bef\u6761\u76ee\u3002",
-    "saved_to_cloud_project": true,
-    "cloud_workspace": "\u4e2a\u4eba",
-    "cloud_project_title": "round_sensor_SCH_A1",
-    "current_document_id": "42f6e03521014c9fa5759ac5a8963ba2",
-    "previous_single_sheet_document_id": "443a8d6b3aec407a9b79d907c9b2383a"
+    "\u4e2d\u6587\u6807\u9898\u4e0e\u8bf4\u660e\u5df2\u9010\u9875\u68c0\u67e5": true,
+    "\u540c\u9875\u8fde\u7eed\u5bfc\u7ebf\u5df2\u68c0\u67e5": true,
+    "\u5143\u4ef6\u6570\u91cf": 60,
+    "\u547d\u540d\u7f51\u7edc\u6570\u91cf": 37,
+    "\u6709\u6548\u7f51\u7edc\u6570\u91cf": 37,
+    "\u8bbe\u8ba1\u7ba1\u7406\u5668\u7ed3\u679c": "\u5143\u4ef6 60\uff0c\u7f51\u7edc 37/37",
+    "\u53ef\u89c1\u9519\u8bef\u6761\u76ee": 0,
+    "\u5c01\u88c5\u7ba1\u7406\u5668\u6761\u76ee\u6570": 60,
+    "\u5df2\u7ed1\u5b9a\u5c01\u88c5": 60,
+    "\u672a\u7ed1\u5b9a\u5c01\u88c5": 0,
+    "\u672c\u5de5\u7a0b\u5df2\u521b\u5efaPCB": false,
+    "\u6838\u5bf9\u8fb9\u754c": "\u5df2\u786e\u8ba4\u4e2d\u6587\u4e94\u9875\u539f\u7406\u56fe\u6210\u529f\u4fdd\u5b58\u3001\u540c\u9875\u5bfc\u7ebf\u53ef\u89c1\u3001\u8bbe\u8ba1\u7ba1\u7406\u5668\u4e3a 37/37 \u4e2a\u7f51\u7edc\u4e14\u5c01\u88c5\u7ba1\u7406\u5668\u6709 60 \u4e2a\u5df2\u7ed1\u5b9a\u6761\u76ee\u3002\u5c1a\u672a\u5b8c\u6210\u672c\u5de5\u7a0b\u7684 PCB \u5e03\u5c40\u5e03\u7ebf\u3001PCB DRC\u3001Gerber\u3001\u5c04\u9891\u8c03\u8c10\u3001\u70ed\u9a8c\u8bc1\u3001\u7535\u6c60\u7eed\u822a\u3001\u673a\u68b0\u88c5\u914d\u548c\u5b9e\u7269\u6d4b\u8bd5\u3002"
   },
   "footprints_bound": false,
+  "nominal_thresholds_V": {
+    "vsys_cutoff_falling": 3.476,
+    "vsys_restart_rising": 3.682,
+    "vbus_valid_assert_rising": 4.6,
+    "vbus_valid_release_falling": 4.537
+  },
   "limitations": [
     "No PCB/DRC/RF/thermal/runtime validation",
     "Standard-edition integrated ERC does not replace footprint, datasheet or manufacturability review",
-    "NTC network and cell selection unresolved; charging physically inhibited by open R16"
+    "Battery cell selection remains unresolved; only a protected pack with a 10 k 103AT-2-compatible NTC may enable charging",
+    "U7 nominal thresholds still require tolerance analysis and hardware validation"
   ],
   "nets": {
     "RF_SOC": [
@@ -112,7 +106,7 @@
       "C10.1",
       "R14.1",
       "R15.1",
-      "R25.1",
+      "R28.1",
       "R8.1",
       "J3.2",
       "C20.1",
@@ -149,12 +143,12 @@
       "U1.10",
       "U3.4"
     ],
-    "VBUS_PRESENT_N": [
+    "VBUS_VALID_N": [
       "U1.12",
-      "Q2.3",
-      "R25.2"
+      "U7.1",
+      "R28.2"
     ],
-    "CHARGE_ALLOW": [
+    "CHARGE_DISABLE": [
       "U1.15",
       "R21.1"
     ],
@@ -224,7 +218,6 @@
       "U5.3",
       "U5.7",
       "R20.2",
-      "Q1.2",
       "C6.2",
       "C7.2",
       "C8.2",
@@ -232,9 +225,9 @@
       "C10.2",
       "R9.2",
       "R10.2",
+      "R11.2",
       "R12.2",
       "R13.2",
-      "R22.2",
       "ANT1.2",
       "ANT1.3",
       "C30.2",
@@ -242,8 +235,12 @@
       "R31.2",
       "J2.2",
       "R17.2",
-      "Q2.2",
+      "U7.5",
       "R24.2",
+      "R27.2",
+      "C22.2",
+      "C23.2",
+      "C24.2",
       "J3.1",
       "C20.2",
       "C21.2"
@@ -256,7 +253,7 @@
       "D1.1",
       "U4.13",
       "C6.1",
-      "R23.1"
+      "R26.1"
     ],
     "CC1": [
       "J1.A5",
@@ -292,8 +289,8 @@
     ],
     "CE_N": [
       "U4.4",
-      "Q1.3",
-      "R11.2"
+      "R11.1",
+      "R21.2"
     ],
     "VSYS": [
       "U4.10",
@@ -302,7 +299,9 @@
       "SW1.1",
       "C8.1",
       "C9.1",
-      "R11.1"
+      "U7.2",
+      "R23.1",
+      "C22.1"
     ],
     "ILIM_SET": [
       "U4.12",
@@ -314,13 +313,14 @@
     ],
     "REG_EN": [
       "U5.4",
-      "SW1.2",
-      "R20.1"
+      "R19.2",
+      "R20.1",
+      "U7.6",
+      "R25.1"
     ],
-    "CE_BASE": [
-      "Q1.1",
-      "R21.2",
-      "R22.1"
+    "PWR_SW_ON": [
+      "SW1.2",
+      "R19.1"
     ],
     "RF_ANT": [
       "ANT1.1",
@@ -336,10 +336,18 @@
       "R16.2",
       "R17.1"
     ],
-    "VBUS_BASE": [
-      "Q2.1",
+    "UV_SENSE": [
+      "U7.4",
       "R23.2",
-      "R24.1"
+      "R24.1",
+      "R25.2",
+      "C24.1"
+    ],
+    "VBUS_SENSE": [
+      "U7.3",
+      "R26.2",
+      "R27.1",
+      "C23.1"
     ]
   },
   "no_connects": [

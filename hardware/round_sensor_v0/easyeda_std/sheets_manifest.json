@@ -1,12 +1,12 @@
 {
-  "revision": "SCH-A1",
+  "revision": "SCH-A2",
   "sheet_count": 5,
-  "cross_page_rule": "Same-name net labels are global in one EasyEDA Standard multi-page schematic",
+  "cross_page_rule": "同一份嘉立创 EDA 标准版多页原理图中，同名网络标签为全局连接",
   "sheets": [
     {
       "name": "01_MCU",
-      "file": "round_sensor_SCH_A1_01_MCU.json",
-      "title": "01  ESP32-S3 MINIMUM SYSTEM",
+      "file": "round_sensor_SCH_A2_01_MCU.json",
+      "title": "01  ESP32-S3 最小系统",
       "refs": [
         "U1",
         "R7",
@@ -15,7 +15,7 @@
       "nets": [
         "3V3",
         "BOOT_N",
-        "CHARGE_ALLOW",
+        "CHARGE_DISABLE",
         "CHG_EN1",
         "CHG_EN2",
         "CHG_N",
@@ -31,13 +31,13 @@
         "UART_TX",
         "USB_DM_SOC",
         "USB_DP_SOC",
-        "VBUS_PRESENT_N"
+        "VBUS_VALID_N"
       ]
     },
     {
       "name": "02_SENSORS",
-      "file": "round_sensor_SCH_A1_02_SENSORS.json",
-      "title": "02  I2C SENSORS",
+      "file": "round_sensor_SCH_A2_02_SENSORS.json",
+      "title": "02  I2C 传感器",
       "refs": [
         "U2",
         "C2",
@@ -59,8 +59,8 @@
     },
     {
       "name": "03_USB",
-      "file": "round_sensor_SCH_A1_03_USB.json",
-      "title": "03  USB-C DATA + ESD",
+      "file": "round_sensor_SCH_A2_03_USB.json",
+      "title": "03  USB-C 数据与 ESD 防护",
       "refs": [
         "J1",
         "U6",
@@ -85,14 +85,14 @@
     },
     {
       "name": "04_POWER",
-      "file": "round_sensor_SCH_A1_04_POWER.json",
-      "title": "04  BATTERY / POWER PATH / CHARGING",
+      "file": "round_sensor_SCH_A2_04_POWER.json",
+      "title": "04  电池、电源路径与充电",
       "refs": [
         "U4",
         "U5",
         "SW1",
+        "R19",
         "R20",
-        "Q1",
         "C6",
         "C7",
         "C8",
@@ -105,15 +105,13 @@
         "R13",
         "R14",
         "R15",
-        "R21",
-        "R22"
+        "R21"
       ],
       "nets": [
         "3V3",
         "BAT_P",
-        "CE_BASE",
         "CE_N",
-        "CHARGE_ALLOW",
+        "CHARGE_DISABLE",
         "CHG_EN1",
         "CHG_EN2",
         "CHG_N",
@@ -121,6 +119,7 @@
         "ILIM_SET",
         "ISET_SET",
         "PGOOD_N",
+        "PWR_SW_ON",
         "REG_EN",
         "TS_CELL",
         "USB_5V",
@@ -129,8 +128,8 @@
     },
     {
       "name": "05_RF_BATTERY_DEBUG",
-      "file": "round_sensor_SCH_A1_05_RF_BATTERY_DEBUG.json",
-      "title": "05  RF / BATTERY / BRING-UP",
+      "file": "round_sensor_SCH_A2_05_RF_BATTERY_DEBUG.json",
+      "title": "05  射频、电池与调试",
       "refs": [
         "ANT1",
         "R30",
@@ -140,10 +139,16 @@
         "J2",
         "R16",
         "R17",
-        "Q2",
+        "U7",
         "R23",
         "R24",
         "R25",
+        "R26",
+        "R27",
+        "R28",
+        "C22",
+        "C23",
+        "C24",
         "R8",
         "J3",
         "C20",
@@ -157,14 +162,17 @@
         "GND",
         "MCU_EN",
         "NTC_PACK",
+        "REG_EN",
         "RF_ANT",
         "RF_SOC",
         "TS_CELL",
         "UART_RX",
         "UART_TX",
         "USB_5V",
-        "VBUS_BASE",
-        "VBUS_PRESENT_N"
+        "UV_SENSE",
+        "VBUS_SENSE",
+        "VBUS_VALID_N",
+        "VSYS"
       ]
     }
   ]

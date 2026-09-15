@@ -5,7 +5,7 @@
     "package_candidate": "LGA-56 + EP / 7x7 mm",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Pins 28,38-42 internal PSRAM; 29 output rail not tied to 3V3; unused straps use documented defaults",
+    "notes": "28\u300138 \u81f3 42 \u811a\u4e3a\u5185\u90e8 PSRAM\uff1b29 \u811a\u8f93\u51fa\u7535\u6e90\u4e0d\u5f97\u8fde\u63a5 3V3\uff1b\u672a\u4f7f\u7528\u7684\u542f\u52a8\u914d\u7f6e\u811a\u91c7\u7528\u6570\u636e\u624b\u518c\u9ed8\u8ba4\u72b6\u6001",
     "sheet": "01_MCU"
   },
   {
@@ -32,7 +32,7 @@
     "package_candidate": "UTDFN-8 + EP / 2.5x2 mm",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "7-bit I2C 0x10; exposed pad assigned 9 for later footprint mapping",
+    "notes": "7 \u4f4d I2C \u5730\u5740\u4e3a 0x10\uff1b\u88f8\u9732\u710a\u76d8\u7f16\u53f7\u8bbe\u4e3a 9\uff0c\u4f9b\u540e\u7eed\u5c01\u88c5\u6620\u5c04",
     "sheet": "02_SENSORS"
   },
   {
@@ -59,7 +59,7 @@
     "package_candidate": "LGA-14 / 2.5x3 mm",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Mode 1; address 0x6A",
+    "notes": "\u6a21\u5f0f 1\uff1b\u5730\u5740 0x6A",
     "sheet": "02_SENSORS"
   },
   {
@@ -104,7 +104,7 @@
     "package_candidate": "USB-C 16 signal contacts + SH",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Four shell anchors share footprint pad SH; USB2 signal contacts paired by net",
+    "notes": "\u56db\u4e2a\u5916\u58f3\u56fa\u5b9a\u811a\u5171\u7528\u5c01\u88c5\u710a\u76d8 SH\uff1bUSB 2.0 \u4fe1\u53f7\u89e6\u70b9\u6309\u7f51\u7edc\u6210\u5bf9\u8fde\u63a5",
     "sheet": "03_USB"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
     "ref": "R3",
-    "value": "22R initial",
+    "value": "22\u03a9 \u521d\u59cb\u503c",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -145,7 +145,7 @@
   },
   {
     "ref": "R4",
-    "value": "22R initial",
+    "value": "22\u03a9 \u521d\u59cb\u503c",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -158,7 +158,7 @@
     "package_candidate": "X1SON DPY-2 / 0402",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+    "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
     "sheet": "03_USB"
   },
   {
@@ -167,7 +167,7 @@
     "package_candidate": "X1SON DPY-2 / 0402",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+    "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
     "sheet": "03_USB"
   },
   {
@@ -176,7 +176,7 @@
     "package_candidate": "X1SON DPY-2 / 0402",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+    "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
     "sheet": "03_USB"
   },
   {
@@ -185,7 +185,7 @@
     "package_candidate": "VQFN-16 + EP / RGT 3x3 mm",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "NTC network unapproved; TMR/ITERM open = default timer/termination; protected 4.2 V cell required",
+    "notes": "\u76f4\u63a5\u8fde\u63a5\u517c\u5bb9 103AT-2 \u7684\u7535\u6c60\u5305 NTC\uff1bTMR/ITERM \u60ac\u7a7a\u8868\u793a\u91c7\u7528\u9ed8\u8ba4\u8ba1\u65f6\u4e0e\u7ec8\u6b62\u8bbe\u7f6e\uff1b\u5fc5\u987b\u4f7f\u7528\u5e26\u4fdd\u62a4\u7684 4.2 V \u7535\u82af",
     "sheet": "04_POWER"
   },
   {
@@ -194,34 +194,34 @@
     "package_candidate": "WSON DRV-6 + EP / 2x2 mm",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "No boost; battery low-voltage behavior and dropout need testing",
+    "notes": "\u65e0\u5347\u538b\u529f\u80fd\uff1bVSYS \u4f4e\u4e8e\u5173\u65ad\u9608\u503c\u65f6\uff0cU7 \u5c06 REG_EN \u62c9\u4f4e",
     "sheet": "04_POWER"
   },
   {
     "ref": "SW1",
-    "value": "POWER / SPST",
-    "package_candidate": "Mechanical switch or wired switch pads",
+    "value": "\u7535\u6e90 / \u5355\u5200\u5355\u63b7",
+    "package_candidate": "\u673a\u68b0\u5f00\u5173\u6216\u5916\u63a5\u5f00\u5173\u710a\u76d8",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Opens LDO EN only; battery still attached to charger",
+    "notes": "\u4ec5\u65ad\u5f00\u7cfb\u7edf\u4f7f\u80fd\u8def\u5f84\uff1b\u7535\u6c60\u4ecd\u4e0e\u5145\u7535\u5668\u4fdd\u6301\u8fde\u63a5",
+    "sheet": "04_POWER"
+  },
+  {
+    "ref": "R19",
+    "value": "100k / 1%",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "\u9650\u5236\u6b20\u538b\u5173\u65ad\u671f\u95f4 U7 OUTA \u7684\u704c\u7535\u6d41",
     "sheet": "04_POWER"
   },
   {
     "ref": "R20",
-    "value": "100k",
+    "value": "1M / 1%",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
     "notes": "",
-    "sheet": "04_POWER"
-  },
-  {
-    "ref": "Q1",
-    "value": "MMBT3904",
-    "package_candidate": "SOT-23 / B1 E2 C3",
-    "footprint_bound": false,
-    "fitted": true,
-    "notes": "CHARGE_ALLOW high enables charging only if BQ input and TS permit",
     "sheet": "04_POWER"
   },
   {
@@ -289,7 +289,7 @@
   },
   {
     "ref": "R11",
-    "value": "10k",
+    "value": "100k",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -316,7 +316,7 @@
   },
   {
     "ref": "R14",
-    "value": "10k",
+    "value": "100k",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -325,7 +325,7 @@
   },
   {
     "ref": "R15",
-    "value": "10k",
+    "value": "100k",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -335,15 +335,6 @@
   {
     "ref": "R21",
     "value": "10k",
-    "package_candidate": "0402 / metric 1005",
-    "footprint_bound": false,
-    "fitted": true,
-    "notes": "",
-    "sheet": "04_POWER"
-  },
-  {
-    "ref": "R22",
-    "value": "47k",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -361,7 +352,7 @@
   },
   {
     "ref": "R30",
-    "value": "0R / RF series",
+    "value": "0\u03a9 / \u5c04\u9891\u4e32\u8054",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -370,7 +361,7 @@
   },
   {
     "ref": "C30",
-    "value": "DNP / RF tune",
+    "value": "\u4e0d\u88c5\u914d / \u5c04\u9891\u8c03\u8c10",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": false,
@@ -379,7 +370,7 @@
   },
   {
     "ref": "C31",
-    "value": "DNP / RF tune",
+    "value": "\u4e0d\u88c5\u914d / \u5c04\u9891\u8c03\u8c10",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": false,
@@ -388,52 +379,52 @@
   },
   {
     "ref": "R31",
-    "value": "0R / tune option",
+    "value": "0\u03a9 / \u8c03\u8c10\u9884\u7559",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "May replace with L/C after RF review",
+    "notes": "\u5c04\u9891\u5ba1\u67e5\u540e\u53ef\u66ff\u6362\u4e3a\u7535\u611f\u6216\u7535\u5bb9",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
     "ref": "J2",
-    "value": "PROTECTED_1S_BATTERY",
-    "package_candidate": "3 solder pads / pitch and pad size TBD",
+    "value": "\u5e26\u4fdd\u62a4\u7684\u5355\u8282\u9502\u7535\u6c60",
+    "package_candidate": "3 \u4e2a\u710a\u76d8\uff1b\u95f4\u8ddd\u548c\u710a\u76d8\u5c3a\u5bf8\u5f85\u5b9a",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "350-400 mAh budget; real cell NTC between pins 3 and 2; no fixed-resistor temperature bypass",
+    "notes": "\u5bb9\u91cf\u9884\u7b97 350 \u81f3 400 mAh\uff1b\u771f\u5b9e\u7535\u82af NTC \u63a5\u5728 3\u30012 \u811a\u4e4b\u95f4\uff1b\u4e0d\u5f97\u7528\u56fa\u5b9a\u7535\u963b\u7ed5\u8fc7\u6e29\u5ea6\u68c0\u6d4b",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
     "ref": "R16",
-    "value": "DNP / TS series TBD",
+    "value": "0\u03a9 / 1%",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
-    "fitted": false,
-    "notes": "Fit only after cell NTC curve and charge temperature calculation",
+    "fitted": true,
+    "notes": "\u4ec5\u5f53\u5e26\u4fdd\u62a4\u7535\u6c60\u5305\u5185\u7f6e 10 k\u03a9\u3001\u517c\u5bb9 103AT-2 \u4e14\u8fde\u63a5\u81f3 PACK- \u7684 NTC \u65f6\u88c5\u914d",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
     "ref": "R17",
-    "value": "DNP / TS parallel TBD",
+    "value": "\u4e0d\u88c5\u914d / TS \u5e76\u8054\u9884\u7559",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": false,
-    "notes": "Parallel adjustment only with actual cell NTC; not a standalone TS bypass",
+    "notes": "\u4ec5\u9884\u7559\u7528\u4e8e\u7ecf\u8fc7\u8ba1\u7b97\u7684\u5145\u7535\u6e29\u5ea6\u7a97\u53e3\u6269\u5c55",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
-    "ref": "Q2",
-    "value": "MMBT3904",
-    "package_candidate": "SOT-23 / B1 E2 C3",
+    "ref": "U7",
+    "value": "TLV6700DSER",
+    "package_candidate": "WSON DSE-6 / 1.5x1.5 mm / LCSC C2876178",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "",
+    "notes": "OUTA \u901a\u8fc7\u5916\u90e8\u8fdf\u6ede\u76f4\u63a5\u63a7\u5236 LDO \u4f7f\u80fd\uff1bOUTB \u4e3a\u4f4e\u7535\u5e73\u6709\u6548\u7684 USB \u6709\u6548\u4fe1\u53f7\u3002\u88c5\u914d\u524d\u91cd\u65b0\u786e\u8ba4\u7acb\u521b\u5546\u57ce\u5e93\u5b58",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
     "ref": "R23",
-    "value": "100k",
+    "value": "407k / 1%",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -442,7 +433,7 @@
   },
   {
     "ref": "R24",
-    "value": "100k",
+    "value": "49.9k / 1%",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
@@ -451,11 +442,65 @@
   },
   {
     "ref": "R25",
-    "value": "10k",
+    "value": "8.2M / 1%",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "\u6b63\u53cd\u9988\u8fdf\u6ede\uff1aSW1 \u95ed\u5408\u65f6\u6807\u79f0\u5173\u65ad\u7ea6 3.48 V\uff0c\u6062\u590d\u7ea6 3.68 V",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "R26",
+    "value": "1.05M / 1%",
     "package_candidate": "0402 / metric 1005",
     "footprint_bound": false,
     "fitted": true,
     "notes": "",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "R27",
+    "value": "100k / 1%",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "R28",
+    "value": "100k",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "C22",
+    "value": "100nF / 10V",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "C23",
+    "value": "1nF / 10V",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "\u6bd4\u8f83\u5668\u8f93\u5165\u6ee4\u6ce2\uff1b\u9700\u9a8c\u8bc1 USB \u62d4\u51fa\u68c0\u6d4b\u65f6\u95f4\u4ecd\u5c0f\u4e8e 3 ms",
+    "sheet": "05_RF_BATTERY_DEBUG"
+  },
+  {
+    "ref": "C24",
+    "value": "10nF / 10V",
+    "package_candidate": "0402 / metric 1005",
+    "footprint_bound": false,
+    "fitted": true,
+    "notes": "\u6291\u5236\u77ed\u65f6\u7535\u6e90\u77ac\u53d8\uff1b\u4e0d\u80fd\u66ff\u4ee3\u50a8\u80fd\u7535\u5bb9",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
@@ -469,11 +514,11 @@
   },
   {
     "ref": "J3",
-    "value": "POGO_RECOVERY",
-    "package_candidate": "6 probe pads; not a pin header",
+    "value": "\u6062\u590d\u4e0b\u8f7d\u6d4b\u8bd5\u70b9",
+    "package_candidate": "6 \u4e2a\u63a2\u9488\u710a\u76d8\uff1b\u4e0d\u662f\u6392\u9488",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "Ground BOOT while resetting EN to recover download mode; do not inject external 3V3 into LDO",
+    "notes": "\u590d\u4f4d EN \u65f6\u5c06 BOOT \u63a5\u5730\u53ef\u8fdb\u5165\u6062\u590d\u4e0b\u8f7d\u6a21\u5f0f\uff1b\u4e0d\u5f97\u4ece\u5916\u90e8\u5411 LDO \u8f93\u51fa\u7aef\u6ce8\u5165 3V3",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {
@@ -482,7 +527,7 @@
     "package_candidate": "0805 / metric 2012",
     "footprint_bound": false,
     "fitted": true,
-    "notes": "SiP bulk reserve; capacitance under 3.3 V bias must be checked",
+    "notes": "SiP \u50a8\u80fd\u7535\u5bb9\uff1b\u5fc5\u987b\u6838\u5bf9 3.3 V \u76f4\u6d41\u504f\u538b\u4e0b\u7684\u5b9e\u9645\u5bb9\u91cf",
     "sheet": "05_RF_BATTERY_DEBUG"
   },
   {

@@ -1,5 +1,5 @@
 {
-  "revision": "SCH-A1",
+  "revision": "SCH-A2",
   "components": [
     {
       "ref": "U1",
@@ -7,7 +7,7 @@
       "package_candidate": "LGA-56 + EP / 7x7 mm",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Pins 28,38-42 internal PSRAM; 29 output rail not tied to 3V3; unused straps use documented defaults",
+      "notes": "28\u300138 \u81f3 42 \u811a\u4e3a\u5185\u90e8 PSRAM\uff1b29 \u811a\u8f93\u51fa\u7535\u6e90\u4e0d\u5f97\u8fde\u63a5 3V3\uff1b\u672a\u4f7f\u7528\u7684\u542f\u52a8\u914d\u7f6e\u811a\u91c7\u7528\u6570\u636e\u624b\u518c\u9ed8\u8ba4\u72b6\u6001",
       "sheet": "01_MCU",
       "pins": [
         {
@@ -112,7 +112,7 @@
         {
           "number": "12",
           "name": "GPIO7",
-          "net": "VBUS_PRESENT_N",
+          "net": "VBUS_VALID_N",
           "x": 330,
           "y": 640,
           "side": "L",
@@ -139,7 +139,7 @@
         {
           "number": "15",
           "name": "GPIO10",
-          "net": "CHARGE_ALLOW",
+          "net": "CHARGE_DISABLE",
           "x": 330,
           "y": 730,
           "side": "L",
@@ -589,7 +589,7 @@
       "package_candidate": "UTDFN-8 + EP / 2.5x2 mm",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "7-bit I2C 0x10; exposed pad assigned 9 for later footprint mapping",
+      "notes": "7 \u4f4d I2C \u5730\u5740\u4e3a 0x10\uff1b\u88f8\u9732\u710a\u76d8\u7f16\u53f7\u8bbe\u4e3a 9\uff0c\u4f9b\u540e\u7eed\u5c01\u88c5\u6620\u5c04",
       "sheet": "02_SENSORS",
       "pins": [
         {
@@ -739,7 +739,7 @@
       "package_candidate": "LGA-14 / 2.5x3 mm",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Mode 1; address 0x6A",
+      "notes": "\u6a21\u5f0f 1\uff1b\u5730\u5740 0x6A",
       "sheet": "02_SENSORS",
       "pins": [
         {
@@ -992,7 +992,7 @@
       "package_candidate": "USB-C 16 signal contacts + SH",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Four shell anchors share footprint pad SH; USB2 signal contacts paired by net",
+      "notes": "\u56db\u4e2a\u5916\u58f3\u56fa\u5b9a\u811a\u5171\u7528\u5c01\u88c5\u710a\u76d8 SH\uff1bUSB 2.0 \u4fe1\u53f7\u89e6\u70b9\u6309\u7f51\u7edc\u6210\u5bf9\u8fde\u63a5",
       "sheet": "03_USB",
       "pins": [
         {
@@ -1248,7 +1248,7 @@
     },
     {
       "ref": "R3",
-      "value": "22R initial",
+      "value": "22\u03a9 \u521d\u59cb\u503c",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -1277,7 +1277,7 @@
     },
     {
       "ref": "R4",
-      "value": "22R initial",
+      "value": "22\u03a9 \u521d\u59cb\u503c",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -1310,7 +1310,7 @@
       "package_candidate": "X1SON DPY-2 / 0402",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+      "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
       "sheet": "03_USB",
       "pins": [
         {
@@ -1339,7 +1339,7 @@
       "package_candidate": "X1SON DPY-2 / 0402",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+      "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
       "sheet": "03_USB",
       "pins": [
         {
@@ -1368,7 +1368,7 @@
       "package_candidate": "X1SON DPY-2 / 0402",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Bidirectional ESD; pins interchangeable; no PD/CC overvoltage controller",
+      "notes": "\u53cc\u5411 ESD \u4fdd\u62a4\uff1b\u4e24\u811a\u53ef\u4e92\u6362\uff1b\u672a\u914d\u7f6e PD/CC \u8fc7\u538b\u63a7\u5236\u5668",
       "sheet": "03_USB",
       "pins": [
         {
@@ -1397,7 +1397,7 @@
       "package_candidate": "VQFN-16 + EP / RGT 3x3 mm",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "NTC network unapproved; TMR/ITERM open = default timer/termination; protected 4.2 V cell required",
+      "notes": "\u76f4\u63a5\u8fde\u63a5\u517c\u5bb9 103AT-2 \u7684\u7535\u6c60\u5305 NTC\uff1bTMR/ITERM \u60ac\u7a7a\u8868\u793a\u91c7\u7528\u9ed8\u8ba4\u8ba1\u65f6\u4e0e\u7ec8\u6b62\u8bbe\u7f6e\uff1b\u5fc5\u987b\u4f7f\u7528\u5e26\u4fdd\u62a4\u7684 4.2 V \u7535\u82af",
       "sheet": "04_POWER",
       "pins": [
         {
@@ -1561,7 +1561,7 @@
       "package_candidate": "WSON DRV-6 + EP / 2x2 mm",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "No boost; battery low-voltage behavior and dropout need testing",
+      "notes": "\u65e0\u5347\u538b\u529f\u80fd\uff1bVSYS \u4f4e\u4e8e\u5173\u65ad\u9608\u503c\u65f6\uff0cU7 \u5c06 REG_EN \u62c9\u4f4e",
       "sheet": "04_POWER",
       "pins": [
         {
@@ -1631,18 +1631,47 @@
     },
     {
       "ref": "SW1",
-      "value": "POWER / SPST",
-      "package_candidate": "Mechanical switch or wired switch pads",
+      "value": "\u7535\u6e90 / \u5355\u5200\u5355\u63b7",
+      "package_candidate": "\u673a\u68b0\u5f00\u5173\u6216\u5916\u63a5\u5f00\u5173\u710a\u76d8",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Opens LDO EN only; battery still attached to charger",
+      "notes": "\u4ec5\u65ad\u5f00\u7cfb\u7edf\u4f7f\u80fd\u8def\u5f84\uff1b\u7535\u6c60\u4ecd\u4e0e\u5145\u7535\u5668\u4fdd\u6301\u8fde\u63a5",
       "sheet": "04_POWER",
       "pins": [
         {
           "number": "1",
           "name": "1",
           "net": "VSYS",
-          "x": 1190,
+          "x": 1010,
+          "y": 1760,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "PWR_SW_ON",
+          "x": 1090,
+          "y": 1760,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "R19",
+      "value": "100k / 1%",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "\u9650\u5236\u6b20\u538b\u5173\u65ad\u671f\u95f4 U7 OUTA \u7684\u704c\u7535\u6d41",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "PWR_SW_ON",
+          "x": 1410,
           "y": 1760,
           "side": "L",
           "electrical": 0
@@ -1651,7 +1680,7 @@
           "number": "2",
           "name": "2",
           "net": "REG_EN",
-          "x": 1270,
+          "x": 1490,
           "y": 1760,
           "side": "R",
           "electrical": 0
@@ -1660,7 +1689,7 @@
     },
     {
       "ref": "R20",
-      "value": "100k",
+      "value": "1M / 1%",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -1672,7 +1701,7 @@
           "name": "1",
           "net": "REG_EN",
           "x": 1190,
-          "y": 1850,
+          "y": 1870,
           "side": "L",
           "electrical": 0
         },
@@ -1681,47 +1710,9 @@
           "name": "2",
           "net": "GND",
           "x": 1270,
-          "y": 1850,
+          "y": 1870,
           "side": "R",
           "electrical": 0
-        }
-      ]
-    },
-    {
-      "ref": "Q1",
-      "value": "MMBT3904",
-      "package_candidate": "SOT-23 / B1 E2 C3",
-      "footprint_bound": false,
-      "fitted": true,
-      "notes": "CHARGE_ALLOW high enables charging only if BQ input and TS permit",
-      "sheet": "04_POWER",
-      "pins": [
-        {
-          "number": "1",
-          "name": "BASE",
-          "net": "CE_BASE",
-          "x": 1130,
-          "y": 2020,
-          "side": "L",
-          "electrical": 1
-        },
-        {
-          "number": "3",
-          "name": "COLLECTOR",
-          "net": "CE_N",
-          "x": 1370,
-          "y": 2020,
-          "side": "R",
-          "electrical": 2
-        },
-        {
-          "number": "2",
-          "name": "EMITTER",
-          "net": "GND",
-          "x": 1370,
-          "y": 2050,
-          "side": "R",
-          "electrical": 4
         }
       ]
     },
@@ -1930,7 +1921,7 @@
     },
     {
       "ref": "R11",
-      "value": "10k",
+      "value": "100k",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -1940,7 +1931,7 @@
         {
           "number": "1",
           "name": "1",
-          "net": "VSYS",
+          "net": "CE_N",
           "x": 260,
           "y": 2340,
           "side": "L",
@@ -1949,7 +1940,7 @@
         {
           "number": "2",
           "name": "2",
-          "net": "CE_N",
+          "net": "GND",
           "x": 340,
           "y": 2340,
           "side": "R",
@@ -2017,7 +2008,7 @@
     },
     {
       "ref": "R14",
-      "value": "10k",
+      "value": "100k",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -2046,7 +2037,7 @@
     },
     {
       "ref": "R15",
-      "value": "10k",
+      "value": "100k",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -2085,7 +2076,7 @@
         {
           "number": "1",
           "name": "1",
-          "net": "CHARGE_ALLOW",
+          "net": "CHARGE_DISABLE",
           "x": 1350,
           "y": 2450,
           "side": "L",
@@ -2094,38 +2085,9 @@
         {
           "number": "2",
           "name": "2",
-          "net": "CE_BASE",
+          "net": "CE_N",
           "x": 1430,
           "y": 2450,
-          "side": "R",
-          "electrical": 0
-        }
-      ]
-    },
-    {
-      "ref": "R22",
-      "value": "47k",
-      "package_candidate": "0402 / metric 1005",
-      "footprint_bound": false,
-      "fitted": true,
-      "notes": "",
-      "sheet": "04_POWER",
-      "pins": [
-        {
-          "number": "1",
-          "name": "1",
-          "net": "CE_BASE",
-          "x": 260,
-          "y": 2560,
-          "side": "L",
-          "electrical": 0
-        },
-        {
-          "number": "2",
-          "name": "2",
-          "net": "GND",
-          "x": 340,
-          "y": 2560,
           "side": "R",
           "electrical": 0
         }
@@ -2180,7 +2142,7 @@
     },
     {
       "ref": "R30",
-      "value": "0R / RF series",
+      "value": "0\u03a9 / \u5c04\u9891\u4e32\u8054",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -2209,7 +2171,7 @@
     },
     {
       "ref": "C30",
-      "value": "DNP / RF tune",
+      "value": "\u4e0d\u88c5\u914d / \u5c04\u9891\u8c03\u8c10",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": false,
@@ -2238,7 +2200,7 @@
     },
     {
       "ref": "C31",
-      "value": "DNP / RF tune",
+      "value": "\u4e0d\u88c5\u914d / \u5c04\u9891\u8c03\u8c10",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": false,
@@ -2267,11 +2229,11 @@
     },
     {
       "ref": "R31",
-      "value": "0R / tune option",
+      "value": "0\u03a9 / \u8c03\u8c10\u9884\u7559",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "May replace with L/C after RF review",
+      "notes": "\u5c04\u9891\u5ba1\u67e5\u540e\u53ef\u66ff\u6362\u4e3a\u7535\u611f\u6216\u7535\u5bb9",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
@@ -2296,11 +2258,11 @@
     },
     {
       "ref": "J2",
-      "value": "PROTECTED_1S_BATTERY",
-      "package_candidate": "3 solder pads / pitch and pad size TBD",
+      "value": "\u5e26\u4fdd\u62a4\u7684\u5355\u8282\u9502\u7535\u6c60",
+      "package_candidate": "3 \u4e2a\u710a\u76d8\uff1b\u95f4\u8ddd\u548c\u710a\u76d8\u5c3a\u5bf8\u5f85\u5b9a",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "350-400 mAh budget; real cell NTC between pins 3 and 2; no fixed-resistor temperature bypass",
+      "notes": "\u5bb9\u91cf\u9884\u7b97 350 \u81f3 400 mAh\uff1b\u771f\u5b9e\u7535\u82af NTC \u63a5\u5728 3\u30012 \u811a\u4e4b\u95f4\uff1b\u4e0d\u5f97\u7528\u56fa\u5b9a\u7535\u963b\u7ed5\u8fc7\u6e29\u5ea6\u68c0\u6d4b",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
@@ -2334,11 +2296,11 @@
     },
     {
       "ref": "R16",
-      "value": "DNP / TS series TBD",
+      "value": "0\u03a9 / 1%",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
-      "fitted": false,
-      "notes": "Fit only after cell NTC curve and charge temperature calculation",
+      "fitted": true,
+      "notes": "\u4ec5\u5f53\u5e26\u4fdd\u62a4\u7535\u6c60\u5305\u5185\u7f6e 10 k\u03a9\u3001\u517c\u5bb9 103AT-2 \u4e14\u8fde\u63a5\u81f3 PACK- \u7684 NTC \u65f6\u88c5\u914d",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
@@ -2363,11 +2325,11 @@
     },
     {
       "ref": "R17",
-      "value": "DNP / TS parallel TBD",
+      "value": "\u4e0d\u88c5\u914d / TS \u5e76\u8054\u9884\u7559",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": false,
-      "notes": "Parallel adjustment only with actual cell NTC; not a standalone TS bypass",
+      "notes": "\u4ec5\u9884\u7559\u7528\u4e8e\u7ecf\u8fc7\u8ba1\u7b97\u7684\u5145\u7535\u6e29\u5ea6\u7a97\u53e3\u6269\u5c55",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
@@ -2391,9 +2353,74 @@
       ]
     },
     {
-      "ref": "Q2",
-      "value": "MMBT3904",
-      "package_candidate": "SOT-23 / B1 E2 C3",
+      "ref": "U7",
+      "value": "TLV6700DSER",
+      "package_candidate": "WSON DSE-6 / 1.5x1.5 mm / LCSC C2876178",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "OUTA \u901a\u8fc7\u5916\u90e8\u8fdf\u6ede\u76f4\u63a5\u63a7\u5236 LDO \u4f7f\u80fd\uff1bOUTB \u4e3a\u4f4e\u7535\u5e73\u6709\u6548\u7684 USB \u6709\u6548\u4fe1\u53f7\u3002\u88c5\u914d\u524d\u91cd\u65b0\u786e\u8ba4\u7acb\u521b\u5546\u57ce\u5e93\u5b58",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "2",
+          "name": "VDD",
+          "net": "VSYS",
+          "x": 1880,
+          "y": 2240,
+          "side": "L",
+          "electrical": 4
+        },
+        {
+          "number": "5",
+          "name": "GND",
+          "net": "GND",
+          "x": 1880,
+          "y": 2270,
+          "side": "L",
+          "electrical": 4
+        },
+        {
+          "number": "4",
+          "name": "INA+ / UV",
+          "net": "UV_SENSE",
+          "x": 1880,
+          "y": 2300,
+          "side": "L",
+          "electrical": 1
+        },
+        {
+          "number": "6",
+          "name": "OUTA / UV",
+          "net": "REG_EN",
+          "x": 2220,
+          "y": 2240,
+          "side": "R",
+          "electrical": 2
+        },
+        {
+          "number": "3",
+          "name": "INB- / VBUS",
+          "net": "VBUS_SENSE",
+          "x": 2220,
+          "y": 2270,
+          "side": "R",
+          "electrical": 1
+        },
+        {
+          "number": "1",
+          "name": "OUTB / VBUS",
+          "net": "VBUS_VALID_N",
+          "x": 2220,
+          "y": 2300,
+          "side": "R",
+          "electrical": 2
+        }
+      ]
+    },
+    {
+      "ref": "R23",
+      "value": "407k / 1%",
+      "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
       "notes": "",
@@ -2401,36 +2428,85 @@
       "pins": [
         {
           "number": "1",
-          "name": "BASE",
-          "net": "VBUS_BASE",
-          "x": 2040,
-          "y": 2290,
+          "name": "1",
+          "net": "VSYS",
+          "x": 2530,
+          "y": 2230,
           "side": "L",
-          "electrical": 1
-        },
-        {
-          "number": "3",
-          "name": "COLLECTOR",
-          "net": "VBUS_PRESENT_N",
-          "x": 2300,
-          "y": 2290,
-          "side": "R",
-          "electrical": 2
+          "electrical": 0
         },
         {
           "number": "2",
-          "name": "EMITTER",
-          "net": "GND",
-          "x": 2300,
-          "y": 2320,
+          "name": "2",
+          "net": "UV_SENSE",
+          "x": 2610,
+          "y": 2230,
           "side": "R",
-          "electrical": 4
+          "electrical": 0
         }
       ]
     },
     {
-      "ref": "R23",
-      "value": "100k",
+      "ref": "R24",
+      "value": "49.9k / 1%",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "UV_SENSE",
+          "x": 3070,
+          "y": 2230,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND",
+          "x": 3150,
+          "y": 2230,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "R25",
+      "value": "8.2M / 1%",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "\u6b63\u53cd\u9988\u8fdf\u6ede\uff1aSW1 \u95ed\u5408\u65f6\u6807\u79f0\u5173\u65ad\u7ea6 3.48 V\uff0c\u6062\u590d\u7ea6 3.68 V",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "REG_EN",
+          "x": 2530,
+          "y": 2340,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "UV_SENSE",
+          "x": 2610,
+          "y": 2340,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "R26",
+      "value": "1.05M / 1%",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -2441,24 +2517,53 @@
           "number": "1",
           "name": "1",
           "net": "USB_5V",
-          "x": 2590,
-          "y": 2290,
+          "x": 3070,
+          "y": 2340,
           "side": "L",
           "electrical": 0
         },
         {
           "number": "2",
           "name": "2",
-          "net": "VBUS_BASE",
-          "x": 2670,
-          "y": 2290,
+          "net": "VBUS_SENSE",
+          "x": 3150,
+          "y": 2340,
           "side": "R",
           "electrical": 0
         }
       ]
     },
     {
-      "ref": "R24",
+      "ref": "R27",
+      "value": "100k / 1%",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "VBUS_SENSE",
+          "x": 2530,
+          "y": 2450,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND",
+          "x": 2610,
+          "y": 2450,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "R28",
       "value": "100k",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
@@ -2469,26 +2574,26 @@
         {
           "number": "1",
           "name": "1",
-          "net": "VBUS_BASE",
-          "x": 3130,
-          "y": 2290,
+          "net": "3V3",
+          "x": 3070,
+          "y": 2450,
           "side": "L",
           "electrical": 0
         },
         {
           "number": "2",
           "name": "2",
-          "net": "GND",
-          "x": 3210,
-          "y": 2290,
+          "net": "VBUS_VALID_N",
+          "x": 3150,
+          "y": 2450,
           "side": "R",
           "electrical": 0
         }
       ]
     },
     {
-      "ref": "R25",
-      "value": "10k",
+      "ref": "C22",
+      "value": "100nF / 10V",
       "package_candidate": "0402 / metric 1005",
       "footprint_bound": false,
       "fitted": true,
@@ -2498,18 +2603,76 @@
         {
           "number": "1",
           "name": "1",
-          "net": "3V3",
-          "x": 2590,
-          "y": 2400,
+          "net": "VSYS",
+          "x": 2410,
+          "y": 2560,
           "side": "L",
           "electrical": 0
         },
         {
           "number": "2",
           "name": "2",
-          "net": "VBUS_PRESENT_N",
-          "x": 2670,
-          "y": 2400,
+          "net": "GND",
+          "x": 2490,
+          "y": 2560,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "C23",
+      "value": "1nF / 10V",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "\u6bd4\u8f83\u5668\u8f93\u5165\u6ee4\u6ce2\uff1b\u9700\u9a8c\u8bc1 USB \u62d4\u51fa\u68c0\u6d4b\u65f6\u95f4\u4ecd\u5c0f\u4e8e 3 ms",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "VBUS_SENSE",
+          "x": 2860,
+          "y": 2560,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND",
+          "x": 2940,
+          "y": 2560,
+          "side": "R",
+          "electrical": 0
+        }
+      ]
+    },
+    {
+      "ref": "C24",
+      "value": "10nF / 10V",
+      "package_candidate": "0402 / metric 1005",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "\u6291\u5236\u77ed\u65f6\u7535\u6e90\u77ac\u53d8\uff1b\u4e0d\u80fd\u66ff\u4ee3\u50a8\u80fd\u7535\u5bb9",
+      "sheet": "05_RF_BATTERY_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "net": "UV_SENSE",
+          "x": 3210,
+          "y": 2560,
+          "side": "L",
+          "electrical": 0
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "net": "GND",
+          "x": 3290,
+          "y": 2560,
           "side": "R",
           "electrical": 0
         }
@@ -2528,8 +2691,8 @@
           "number": "1",
           "name": "1",
           "net": "3V3",
-          "x": 3130,
-          "y": 2400,
+          "x": 3210,
+          "y": 2670,
           "side": "L",
           "electrical": 0
         },
@@ -2537,8 +2700,8 @@
           "number": "2",
           "name": "2",
           "net": "BOOT_N",
-          "x": 3210,
-          "y": 2400,
+          "x": 3290,
+          "y": 2670,
           "side": "R",
           "electrical": 0
         }
@@ -2546,18 +2709,18 @@
     },
     {
       "ref": "J3",
-      "value": "POGO_RECOVERY",
-      "package_candidate": "6 probe pads; not a pin header",
+      "value": "\u6062\u590d\u4e0b\u8f7d\u6d4b\u8bd5\u70b9",
+      "package_candidate": "6 \u4e2a\u63a2\u9488\u710a\u76d8\uff1b\u4e0d\u662f\u6392\u9488",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "Ground BOOT while resetting EN to recover download mode; do not inject external 3V3 into LDO",
+      "notes": "\u590d\u4f4d EN \u65f6\u5c06 BOOT \u63a5\u5730\u53ef\u8fdb\u5165\u6062\u590d\u4e0b\u8f7d\u6a21\u5f0f\uff1b\u4e0d\u5f97\u4ece\u5916\u90e8\u5411 LDO \u8f93\u51fa\u7aef\u6ce8\u5165 3V3",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
           "number": "1",
           "name": "GND",
           "net": "GND",
-          "x": 2040,
+          "x": 1880,
           "y": 2540,
           "side": "L",
           "electrical": 0
@@ -2566,7 +2729,7 @@
           "number": "2",
           "name": "3V3",
           "net": "3V3",
-          "x": 2040,
+          "x": 1880,
           "y": 2570,
           "side": "L",
           "electrical": 0
@@ -2575,7 +2738,7 @@
           "number": "3",
           "name": "EN",
           "net": "MCU_EN",
-          "x": 2040,
+          "x": 1880,
           "y": 2600,
           "side": "L",
           "electrical": 0
@@ -2584,7 +2747,7 @@
           "number": "4",
           "name": "BOOT",
           "net": "BOOT_N",
-          "x": 2330,
+          "x": 2170,
           "y": 2540,
           "side": "R",
           "electrical": 0
@@ -2593,7 +2756,7 @@
           "number": "5",
           "name": "UART_TX",
           "net": "UART_TX",
-          "x": 2330,
+          "x": 2170,
           "y": 2570,
           "side": "R",
           "electrical": 0
@@ -2602,7 +2765,7 @@
           "number": "6",
           "name": "UART_RX",
           "net": "UART_RX",
-          "x": 2330,
+          "x": 2170,
           "y": 2600,
           "side": "R",
           "electrical": 0
@@ -2615,15 +2778,15 @@
       "package_candidate": "0805 / metric 2012",
       "footprint_bound": false,
       "fitted": true,
-      "notes": "SiP bulk reserve; capacitance under 3.3 V bias must be checked",
+      "notes": "SiP \u50a8\u80fd\u7535\u5bb9\uff1b\u5fc5\u987b\u6838\u5bf9 3.3 V \u76f4\u6d41\u504f\u538b\u4e0b\u7684\u5b9e\u9645\u5bb9\u91cf",
       "sheet": "05_RF_BATTERY_DEBUG",
       "pins": [
         {
           "number": "1",
           "name": "1",
           "net": "3V3",
-          "x": 2590,
-          "y": 2570,
+          "x": 2410,
+          "y": 2670,
           "side": "L",
           "electrical": 0
         },
@@ -2631,8 +2794,8 @@
           "number": "2",
           "name": "2",
           "net": "GND",
-          "x": 2670,
-          "y": 2570,
+          "x": 2490,
+          "y": 2670,
           "side": "R",
           "electrical": 0
         }
@@ -2651,8 +2814,8 @@
           "number": "1",
           "name": "1",
           "net": "3V3",
-          "x": 3130,
-          "y": 2570,
+          "x": 2860,
+          "y": 2670,
           "side": "L",
           "electrical": 0
         },
@@ -2660,8 +2823,8 @@
           "number": "2",
           "name": "2",
           "net": "GND",
-          "x": 3210,
-          "y": 2570,
+          "x": 2940,
+          "y": 2670,
           "side": "R",
           "electrical": 0
         }
@@ -2698,7 +2861,7 @@
       "C10.1",
       "R14.1",
       "R15.1",
-      "R25.1",
+      "R28.1",
       "R8.1",
       "J3.2",
       "C20.1",
@@ -2735,12 +2898,12 @@
       "U1.10",
       "U3.4"
     ],
-    "VBUS_PRESENT_N": [
+    "VBUS_VALID_N": [
       "U1.12",
-      "Q2.3",
-      "R25.2"
+      "U7.1",
+      "R28.2"
     ],
-    "CHARGE_ALLOW": [
+    "CHARGE_DISABLE": [
       "U1.15",
       "R21.1"
     ],
@@ -2810,7 +2973,6 @@
       "U5.3",
       "U5.7",
       "R20.2",
-      "Q1.2",
       "C6.2",
       "C7.2",
       "C8.2",
@@ -2818,9 +2980,9 @@
       "C10.2",
       "R9.2",
       "R10.2",
+      "R11.2",
       "R12.2",
       "R13.2",
-      "R22.2",
       "ANT1.2",
       "ANT1.3",
       "C30.2",
@@ -2828,8 +2990,12 @@
       "R31.2",
       "J2.2",
       "R17.2",
-      "Q2.2",
+      "U7.5",
       "R24.2",
+      "R27.2",
+      "C22.2",
+      "C23.2",
+      "C24.2",
       "J3.1",
       "C20.2",
       "C21.2"
@@ -2842,7 +3008,7 @@
       "D1.1",
       "U4.13",
       "C6.1",
-      "R23.1"
+      "R26.1"
     ],
     "CC1": [
       "J1.A5",
@@ -2878,8 +3044,8 @@
     ],
     "CE_N": [
       "U4.4",
-      "Q1.3",
-      "R11.2"
+      "R11.1",
+      "R21.2"
     ],
     "VSYS": [
       "U4.10",
@@ -2888,7 +3054,9 @@
       "SW1.1",
       "C8.1",
       "C9.1",
-      "R11.1"
+      "U7.2",
+      "R23.1",
+      "C22.1"
     ],
     "ILIM_SET": [
       "U4.12",
@@ -2900,13 +3068,14 @@
     ],
     "REG_EN": [
       "U5.4",
-      "SW1.2",
-      "R20.1"
+      "R19.2",
+      "R20.1",
+      "U7.6",
+      "R25.1"
     ],
-    "CE_BASE": [
-      "Q1.1",
-      "R21.2",
-      "R22.1"
+    "PWR_SW_ON": [
+      "SW1.2",
+      "R19.1"
     ],
     "RF_ANT": [
       "ANT1.1",
@@ -2922,10 +3091,18 @@
       "R16.2",
       "R17.1"
     ],
-    "VBUS_BASE": [
-      "Q2.1",
+    "UV_SENSE": [
+      "U7.4",
       "R23.2",
-      "R24.1"
+      "R24.1",
+      "R25.2",
+      "C24.1"
+    ],
+    "VBUS_SENSE": [
+      "U7.3",
+      "R26.2",
+      "R27.1",
+      "C23.1"
     ]
   }
 }

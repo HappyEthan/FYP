@@ -63,22 +63,37 @@ def main():
     local_names=defaultdict(set)
     for point,names in labels.items():local_names[find(point)].update(names)
     assert all(len(v)==1 for v in local_names.values()),"Conflicting labels shorted by wires"
+    expected={c["ref"]+"."+p["number"]:p["net"] for c in manifest["components"] for p in c["pins"]}
+    pins_by_root=defaultdict(list)
+    for endpoint,point in pins.items():pins_by_root[find(point)].append(endpoint)
     actual={};floating=[]
     for endpoint,point in pins.items():
         names=local_names[find(point)]
         assert not (names and point in nc),(endpoint,"connected pin marked NC")
-        assert names or point in nc,(endpoint,"unconnected without NC")
-        actual[endpoint]=next(iter(names)) if names else None
-        if not names:floating.append(endpoint)
-    expected={c["ref"]+"."+p["number"]:p["net"] for c in manifest["components"] for p in c["pins"]}
+        if point in nc:
+            actual[endpoint]=None
+            floating.append(endpoint)
+            continue
+        if names:
+            actual[endpoint]=next(iter(names))
+            continue
+        root=find(point)
+        connected_pins=pins_by_root[root]
+        expected_names={expected[p] for p in connected_pins}
+        assert len(connected_pins)>=2,(endpoint,"unconnected without NC")
+        assert None not in expected_names and len(expected_names)==1,(connected_pins,"unlabelled wire joins conflicting expected nets")
+        actual[endpoint]=next(iter(expected_names))
     assert actual==expected,{k:(expected.get(k),actual.get(k)) for k in expected.keys()|actual.keys() if expected.get(k)!=actual.get(k)}
     reference={"U1.25":"USB_DM_SOC","U1.26":"USB_DP_SOC","U1.6":"I2C_SDA","U1.7":"I2C_SCL",
+       "U1.12":"VBUS_VALID_N","U1.15":"CHARGE_DISABLE",
        "U2.1":"I2C_SCL","U2.2":"I2C_SDA","U2.7":"3V3","U2.8":"MLX_INT","U2.3":None,
        "U3.1":"GND","U3.2":"GND","U3.3":"GND","U3.12":"3V3","U3.13":"I2C_SCL","U3.14":"I2C_SDA",
        "U4.1":"TS_CELL","U4.4":"CE_N","U4.5":"CHG_EN2","U4.6":"CHG_EN1","U4.13":"USB_5V",
        "U4.14":None,"U4.15":None,"U4.16":"ISET_SET","U4.17":"GND","U5.6":"VSYS","U5.4":"REG_EN",
-       "U5.1":"3V3","U5.3":"GND","U5.7":"GND","Q1.1":"CE_BASE","Q1.2":"GND","Q1.3":"CE_N",
-       "Q2.1":"VBUS_BASE","Q2.2":"GND","Q2.3":"VBUS_PRESENT_N","R11.1":"VSYS","R11.2":"CE_N"}
+       "U5.1":"3V3","U5.3":"GND","U5.7":"GND","U7.1":"VBUS_VALID_N","U7.2":"VSYS",
+       "U7.3":"VBUS_SENSE","U7.4":"UV_SENSE","U7.5":"GND","U7.6":"REG_EN",
+       "R11.1":"CE_N","R11.2":"GND","R19.1":"PWR_SW_ON","R19.2":"REG_EN",
+       "R21.1":"CHARGE_DISABLE","R21.2":"CE_N"}
     for n in [2,3,20,46,55,56]:reference[f"U1.{n}"]="3V3"
     for n in [28,29,30,31,32,33,34,35,38,39,40,41,42,53,54]:reference[f"U1.{n}"]=None
     for key,net in reference.items():assert actual[key]==net,(key,net,actual[key])
@@ -88,42 +103,67 @@ def main():
     assert actual["J1.A5"]=="CC1" and actual["J1.B5"]=="CC2"
     values={c["ref"]:c for c in manifest["components"]}
     assert values["R1"]["value"]==values["R2"]["value"]=="5.1k / 1%"
-    assert not values["R16"]["fitted"] and not values["R17"]["fitted"]
+    assert values["R16"]["fitted"] and not values["R17"]["fitted"]
     assert values["R10"]["value"]=="8.66k / 1%"
+    assert values["R23"]["value"]=="407k / 1%"
+    assert values["R24"]["value"]=="49.9k / 1%"
+    assert values["R25"]["value"]=="8.2M / 1%"
+    assert values["R26"]["value"]=="1.05M / 1%"
+    assert values["R27"]["value"]=="100k / 1%"
+    # Nominal TLV6700 thresholds. OUTA-low clamps REG_EN for restart; the
+    # high-impedance state includes the R19/R20 enable divider and R25 feedback.
+    r19,r20,r23,r24,r25,r26,r27=100e3,1e6,407e3,49.9e3,8.2e6,1.05e6,100e3
+    a=1/r19+1/r20+1/r25; b=-1/r25; c=b; d=1/r23+1/r24+1/r25
+    e=1/r19; f=1/r23; determinant=a*d-b*c
+    uv_high_gain=(a*f-c*e)/determinant
+    uv_low_gain=(1/r23)/(1/r23+1/r24+1/r25)
+    thresholds={
+      "vsys_cutoff_falling":0.3945/uv_high_gain,
+      "vsys_restart_rising":0.4000/uv_low_gain,
+      "vbus_valid_assert_rising":0.4000*(r26+r27)/r27,
+      "vbus_valid_release_falling":0.3945*(r26+r27)/r27,
+    }
+    assert 3.45 < thresholds["vsys_cutoff_falling"] < 3.51
+    assert 3.65 < thresholds["vsys_restart_rising"] < 3.71
+    assert 4.55 < thresholds["vbus_valid_assert_rising"] < 4.65
+    assert 4.50 < thresholds["vbus_valid_release_falling"] < 4.57
     recovered=defaultdict(list)
     for endpoint,net in actual.items():
         if net is not None:recovered[net].append(endpoint)
     assert all(len(p)>=2 for p in recovered.values()),"Single-pin named net"
-    editor_path=ROOT/"editor_validation.json"
-    editor=json.loads(editor_path.read_text()) if editor_path.exists() else {}
-    if editor:
-        expected_files=[s["file"] for s in sheets_manifest["sheets"]]
-        if editor.get("multi_sheet_import_verified"):
-            assert editor["source_files"]==expected_files
-            assert editor["sheet_names"]==[s["name"] for s in sheets_manifest["sheets"]]
-        else:
-            assert editor["source_file"]=="round_sensor_SCH_A1.json"
-        assert editor["component_count"]==len(refs)
-        assert editor["named_net_count"]==len(recovered)
-        assert editor["valid_net_count"]==len(recovered)
+    revision=manifest["revision"]
+    current_editor_path=ROOT/"editor_validation_SCH_A2_CN_FINAL.json"
+    editor=json.loads(current_editor_path.read_text()) if current_editor_path.exists() else {}
+    editor_is_current=bool(editor and editor.get("源文件")=="round_sensor_SCH_A2_WIRED_multi.json")
+    if editor_is_current:
+        assert editor["原理图页数"]==len(docs)
+        assert editor["页面名称"]==[s["name"] for s in sheets_manifest["sheets"]]
+        assert editor["元件数量"]==len(refs)
+        assert editor["命名网络数量"]==len(recovered)
+        assert editor["有效网络数量"]==len(recovered)
+        assert editor["已绑定封装"]==len(refs)
+        assert editor["未绑定封装"]==0
     combined_hash=hashlib.sha256(b"".join(raw_by_sheet[name] for name in raw_by_sheet)).hexdigest()
-    report=dict(status="PASS_LOCAL_SERIALIZED_CONNECTIVITY",sha256=combined_hash,
+    report=dict(status="PASS_LOCAL_SERIALIZED_CONNECTIVITY",revision=revision,sha256=combined_hash,
       source_sha256={name:hashlib.sha256(raw).hexdigest() for name,raw in raw_by_sheet.items()},
       sheet_count=len(docs),sheet_names=[name for name,_ in docs],
       components=len(refs),pins=len(pins),named_nets=len(recovered),intentional_no_connects=len(floating),
       checked_reference_pins=len(reference)+14,checks=["all electrical pin dots match their declared coordinates",
-      "all pins wire to expected net labels or have explicit no-connect markers","no conflicting labels share a wire",
+      "all pins join the expected physical wire component, a net label, or an explicit no-connect marker","no conflicting labels share a wire",
       "five-sheet geometry is isolated by page while same-name labels merge globally",
-      "USB orientation, sensor modes, PSRAM reservations, charge CE isolation and power pin mapping checked",
-      "R16/R17 DNP and separate CC pull-down values checked"],
-      editor_import_verified=bool(editor.get("import_verified",False)),
-      editor_render_verified=bool(editor.get("render_verified",False)),
-      editor_erc_run=bool(editor.get("integrated_erc_refreshed",False)),
-      editor_erc_error_count=editor.get("erc_error_count"),
-      editor_validation=editor or None,footprints_bound=False,
+      "USB orientation, sensor modes, PSRAM reservations, autonomous charge control and power pin mapping checked",
+      "103AT-2 pack NTC link, U7 USB/UV divider values and separate CC pull-down values checked"],
+      editor_import_verified=bool(editor_is_current and editor.get("已保存至个人工作区",False)),
+      editor_render_verified=bool(editor_is_current and editor.get("中文标题与说明已逐页检查",False)),
+      editor_erc_run=bool(editor_is_current and editor.get("设计管理器结果")),
+      editor_erc_error_count=editor.get("可见错误条目") if editor_is_current else None,
+      editor_validation=editor if editor_is_current else None,
+      footprints_bound=False,
+      nominal_thresholds_V={key:round(value,3) for key,value in thresholds.items()},
       limitations=["No PCB/DRC/RF/thermal/runtime validation",
       "Standard-edition integrated ERC does not replace footprint, datasheet or manufacturability review",
-      "NTC network and cell selection unresolved; charging physically inhibited by open R16"],
+      "Battery cell selection remains unresolved; only a protected pack with a 10 k 103AT-2-compatible NTC may enable charging",
+      "U7 nominal thresholds still require tolerance analysis and hardware validation"],
       nets=dict(recovered),no_connects=floating)
     (ROOT/"validation_report.json").write_text(json.dumps(report,indent=2)+"\n")
     print(json.dumps({k:report[k] for k in ["status","components","pins","named_nets","intentional_no_connects"]}))

@@ -1,42 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="1340" viewBox="2360 20 1180 1340">
 <rect width="3600" height="2900" fill="white"/>
-<text x="2360" y="65" fill="#243746" font-size="37.324" font-family="Arial,sans-serif" text-anchor="start">ROUND SENSOR / SCH-A1 / 03 USB</text>
-<text x="2360" y="105" fill="#243746" font-size="19.995" font-family="Arial,sans-serif" text-anchor="start">Side-entry USB-C data/power | USB 2.0 device, no PD</text>
+<text x="2360" y="65" fill="#243746" font-size="37.324" font-family="Arial,sans-serif" text-anchor="start">圆形传感器 / SCH-A2 / 03 USB</text>
+<text x="2360" y="105" fill="#243746" font-size="19.995" font-family="Arial,sans-serif" text-anchor="start">侧向插入 USB-C 数据与供电接口 | USB 2.0 设备，不支持 PD</text>
 <rect x="2360" y="160" width="1180" height="1180" stroke="#94A8B6" fill="none"/>
-<text x="2380" y="190" fill="#243746" font-size="23.994" font-family="Arial,sans-serif" text-anchor="start">03  USB-C DATA + ESD</text>
-<text x="2380" y="215" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">USB 2.0 device / no PD; independent CC pull-downs; USB VBUS detection</text>
-<polyline points="2530 310 2485 310" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="2530 340 2485 340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
-<polyline points="2530 370 2485 370" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="367" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
-<polyline points="2530 400 2485 400" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
-<polyline points="2530 430 2485 430" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="427" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
+<text x="2380" y="190" fill="#243746" font-size="23.994" font-family="Arial,sans-serif" text-anchor="start">03  USB-C 数据与 ESD 防护</text>
+<text x="2380" y="215" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">USB 2.0 设备，不支持 PD；CC1、CC2 分别下拉；检测 USB VBUS</text>
 <path d="M2527,457 L2533,463 M2533,457 L2527,463" stroke="#CC0000" stroke-width="1" fill="none"/>
-<polyline points="2530 490 2485 490" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="487" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
-<polyline points="2530 520 2485 520" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2485" y="517" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
-<polyline points="2840 310 2885 310" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
-<polyline points="2840 340 2885 340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
-<polyline points="2840 370 2885 370" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="367" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CC2</text>
-<polyline points="2840 400 2885 400" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DP</text>
-<polyline points="2840 430 2885 430" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="427" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DM</text>
 <path d="M2837,457 L2843,463 M2843,457 L2837,463" stroke="#CC0000" stroke-width="1" fill="none"/>
-<polyline points="2840 490 2885 490" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="487" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
-<polyline points="2840 520 2885 520" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="517" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
-<polyline points="2840 550 2885 550" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2885" y="547" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <rect x="2550" y="280" width="270" height="300" stroke="#A00000" fill="#FFFDF2"/>
 <text x="2550" y="250" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">J1</text>
 <text x="2550" y="270" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">USB4105-GF-A-060</text>
@@ -91,12 +61,6 @@
 <path d="M 2840 550 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2816" y="554" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">SHIELD</text>
 <text x="2830.0" y="546" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">SH</text>
-<polyline points="3180 310 3135 310" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3135" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
-<polyline points="3180 340 3135 340" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3135" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
-<polyline points="3430 310 3475 310" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3475" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <rect x="3200" y="280" width="210" height="90" stroke="#A00000" fill="#FFFDF2"/>
 <text x="3200" y="250" fill="#243746" font-size="17.329" font-family="Arial,sans-serif" text-anchor="start">U6</text>
 <text x="3200" y="270" fill="#243746" font-size="15.995999999999999" font-family="Arial,sans-serif" text-anchor="start">TPD2EUSB30ADRTR</text>
@@ -109,10 +73,6 @@
 <path d="M 3430 310 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="3406" y="314" fill="#000000" font-size="11.997" font-family="Arial,sans-serif" text-anchor="end">GND</text>
 <text x="3420.0" y="306" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">3</text>
-<polyline points="2600 740 2555 740" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2555" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
-<polyline points="2680 740 2725 740" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2725" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="2620" y="700" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R1</text>
 <text x="2620" y="720" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">5.1k / 1%</text>
 <rect x="2620" y="733" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -120,10 +80,6 @@
 <text x="2610.0" y="736" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 2680 740 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2670.0" y="736" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="3120 740 3075 740" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3075" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC2</text>
-<polyline points="3200 740 3245 740" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3245" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="3140" y="700" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R2</text>
 <text x="3140" y="720" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">5.1k / 1%</text>
 <rect x="3140" y="733" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -131,32 +87,20 @@
 <text x="3130.0" y="736" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 3200 740 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="3190.0" y="736" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="2600 870 2555 870" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2555" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
-<polyline points="2680 870 2725 870" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2725" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DP_SOC</text>
 <text x="2620" y="830" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R3</text>
-<text x="2620" y="850" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">22R initial</text>
+<text x="2620" y="850" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">22Ω 初始值</text>
 <rect x="2620" y="863" width="40" height="14" stroke="#A00000" fill="none"/>
 <path d="M 2600 870 h 20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2610.0" y="866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 2680 870 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2670.0" y="866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="3120 870 3075 870" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3075" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
-<polyline points="3200 870 3245 870" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3245" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DM_SOC</text>
 <text x="3140" y="830" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">R4</text>
-<text x="3140" y="850" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">22R initial</text>
+<text x="3140" y="850" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">22Ω 初始值</text>
 <rect x="3140" y="863" width="40" height="14" stroke="#A00000" fill="none"/>
 <path d="M 3120 870 h 20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="3130.0" y="866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 3200 870 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="3190.0" y="866" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="2600 1000 2555 1000" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2555" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
-<polyline points="2680 1000 2725 1000" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2725" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="2620" y="960" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">D1</text>
 <text x="2620" y="980" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
 <rect x="2620" y="993" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -164,10 +108,6 @@
 <text x="2610.0" y="996" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 2680 1000 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2670.0" y="996" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="3120 1000 3075 1000" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3075" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
-<polyline points="3200 1000 3245 1000" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="3245" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="3140" y="960" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">D2</text>
 <text x="3140" y="980" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
 <rect x="3140" y="993" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -175,10 +115,6 @@
 <text x="3130.0" y="996" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 3200 1000 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="3190.0" y="996" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<polyline points="2600 1130 2555 1130" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2555" y="1127" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC2</text>
-<polyline points="2680 1130 2725 1130" stroke="#008800" fill="none" stroke-width="1"/>
-<text x="2725" y="1127" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
 <text x="2620" y="1090" fill="#243746" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">D3</text>
 <text x="2620" y="1110" fill="#243746" font-size="13.33" font-family="Arial,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
 <rect x="2620" y="1123" width="40" height="14" stroke="#A00000" fill="none"/>
@@ -186,6 +122,76 @@
 <text x="2610.0" y="1126" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">1</text>
 <path d="M 2680 1130 h -20" stroke="#880000" stroke-width="1" fill="none"/>
 <text x="2670.0" y="1126" fill="#000000" font-size="9.331" font-family="Arial,sans-serif" text-anchor="middle">2</text>
-<text x="2390" y="1240" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">VBUS is 5 V only; see Q2 for isolated VBUS detection.</text>
-<text x="2390" y="1263" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">USB-only cold start under the 100 mA pre-enumeration limit requires testing.</text>
+<text x="2390" y="1240" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">VBUS 仅为 5 V；U7 进行带阈值检测，避免向未上电 GPIO 反向供电。</text>
+<text x="2390" y="1263" fill="#805023" font-size="14.663" font-family="Arial,sans-serif" text-anchor="start">仅使用 USB 冷启动时，能否满足枚举前 100 mA 限流要求需要实测。</text>
+<polyline points="2530 310 2485 310" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 340 2485 340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 370 2485 370" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 400 2485 400" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 430 2485 430" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 490 2485 490" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2530 520 2485 520" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 310 2885 310" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 340 2885 340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 370 2885 370" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 400 2885 400" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 430 2885 430" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 490 2885 490" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 520 2885 520" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2840 550 2885 550" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3180 310 3135 310" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3180 340 3135 340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3430 310 3475 310" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2600 740 2555 740" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2680 740 2725 740" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3120 740 3075 740" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3200 740 3245 740" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2600 870 2555 870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2680 870 2725 870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3120 870 3075 870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3200 870 3245 870" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2600 1000 2555 1000" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2680 1000 2725 1000" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3120 1000 3075 1000" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3200 1000 3245 1000" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2600 1130 2555 1130" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2680 1130 2725 1130" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2485" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="2485" y="517" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">GND</text>
+<text x="2885" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2885" y="517" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2885" y="547" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3475" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2725" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3245" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2725" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="3245" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2725" y="1127" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">GND</text>
+<text x="2485" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
+<text x="2485" y="487" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
+<text x="2885" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
+<text x="2885" y="487" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_5V</text>
+<text x="2555" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_5V</text>
+<polyline points="2885 430 2890 430 2890 270 2480 270 2480 430 2485 430" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3135 340 2890 340" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3075 870 3070 870 3070 340" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2485" y="427" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
+<text x="2885" y="427" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DM</text>
+<text x="3135" y="337" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
+<text x="3075" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DM</text>
+<polyline points="2885 400 2885 425 2830 425 2830 590 2535 590 2535 405 2485 405 2485 400" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="3135 310 3135 265 2475 265 2475 435 2535 435" stroke="#008800" fill="none" stroke-width="1"/>
+<polyline points="2555 870 2550 870 2550 590" stroke="#008800" fill="none" stroke-width="1"/>
+<text x="2485" y="397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
+<text x="2885" y="397" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DP</text>
+<text x="3135" y="307" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
+<text x="2555" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">USB_DP</text>
+<text x="2485" y="367" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
+<text x="2555" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
+<text x="3075" y="997" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC1</text>
+<text x="2885" y="367" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">CC2</text>
+<text x="3075" y="737" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC2</text>
+<text x="2555" y="1127" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="end">CC2</text>
+<text x="3245" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DM_SOC</text>
+<text x="2725" y="867" fill="#006A49" font-size="12" font-family="Arial,sans-serif" text-anchor="start">USB_DP_SOC</text>
 </svg>
