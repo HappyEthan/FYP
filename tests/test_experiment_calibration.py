@@ -211,6 +211,17 @@ def test_summarize_ladder_marks_a_truncated_run_bad(tmp_path):
     assert any("monotonic" in note for note in summary["quality"]["notes"])
 
 
+def test_summarize_ladder_notes_inferred_rung_count_without_timeline(tmp_path):
+    # 没有 timeline.npz（旧 run 或测试夹具）时，档数只能从实测趟号推导；若 run 实际被截断，
+    # 推得的档数会低估且无从辨认。摘要必须如实注明档数来源，而不是让它看起来像可信的编译期档数。
+    folder = _write_run(tmp_path / "run")
+    summary = summarize_ladder(str(folder))
+    assert summary["steps"] == 3
+    assert any("inferred from recorded visits" in note
+               and "truncated" in note
+               for note in summary["quality"]["notes"])
+
+
 def test_summarize_ladder_flags_non_monotonic(tmp_path):
     # dBxy 幅值是模长（hypot），恒非负，用负 per_mm 会得到单调递增的模长 [0,500,1000]。
     # 要构造非单调必须让中档幅值整体更高：档幅值 [0,800,500]，中档比最深档还高。

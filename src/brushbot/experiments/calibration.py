@@ -175,8 +175,12 @@ def _read_measure_rows(folder: Path, amplitudes: dict, contact_z_mm):
     return samples, all_actual
 
 
-def _read_planned_rung_count(folder: Path, observed_half: int) -> int:
-    """Return the rung count compiled into the ladder's planning timeline.
+def _read_planned_rung_count(folder: Path, observed_half: int) -> tuple[int, bool]:
+    """Return (rung count, from_plan) for the ladder run in ``folder``.
+
+    ``from_plan`` is True when the count is read from the compiled planning
+    timeline, False when it had to be inferred from the ``observed_half``
+    visits and is therefore not trustworthy.
 
     The recorder writes ``timeline.npz`` (keys t_s/s/phase/pose_m_rad/g_ref_uT/
     depth_ff_m) to the run directory before the run starts; its ``phase`` array
@@ -187,18 +191,19 @@ def _read_planned_rung_count(folder: Path, observed_half: int) -> int:
     happened.
 
     Falls back to the observed-visit derivation when the timeline is absent
-    (older runs, and the unit-test fixtures do not write one).
+    (older runs, and the unit-test fixtures do not write one), unreadable, or
+    holds no ``measure_`` leg; callers must treat such a count as provisional.
     """
     timeline_path = folder / "timeline.npz"
     if not timeline_path.exists():
         # 旧 run 或测试夹具没有 timeline.npz：退回"从实测档号推"的老逻辑。
-        return observed_half
+        return observed_half, False
     try:
         with np.load(timeline_path, allow_pickle=False) as timeline:
             phases = timeline["phase"]
     except (KeyError, OSError, ValueError):
         # 打不开或缺 phase 键时当 timeline 不存在处理，避免静默异常。
-        return observed_half
+        return observed_half, False
     highest = -1
     for phase in phases:
         # 只统计 measure_* 相位；approach/lift/transit 不算。
@@ -213,9 +218,9 @@ def _read_planned_rung_count(folder: Path, observed_half: int) -> int:
             highest = index
     if highest < 0:
         # timeline 里找不到任何 measure 相位（反常）：退回实测推导。
-        return observed_half
+        return observed_half, False
     # 档数 = 最大趟号 + 1 整除 2：measure_00..measure_{2N-1} 对应 N 档。
-    return (highest + 1) // 2
+    return (highest + 1) // 2, True
 
 
 def summarize_ladder(run_dir: str) -> dict:
@@ -240,7 +245,7 @@ def summarize_ladder(run_dir: str) -> dict:
     # 缺失的升程越过了 max(visits)，half 会算小、把 visit 0（0 mm）和 visit 5（14.3 mm）
     # 错配进同一档还静默少报档数。编译期 timeline.npz 记录了引擎计划要跑的全部趟，
     # 以它推导才是真档数；缺档保持 NaN，让坏数据自己暴露。
-    half = _read_planned_rung_count(folder, observed_half)
+    half, from_plan = _read_planned_rung_count(folder, observed_half)
 
     def _reduce(visit_list, field, reducer):
         values = [s[field] for visit in visit_list if visit in by_visit
@@ -282,6 +287,11 @@ def summarize_ladder(run_dir: str) -> dict:
         for earlier, later in zip(amplitudes_in_order, amplitudes_in_order[1:])
     )
     notes = []
+    if not from_plan:
+        # 档数没有来自编译期 timeline.npz 时不可信：若 run 在升程被截断，实测趟号会少算档数，
+        # 而缺 timeline 的情况下无法辨认，必须如实注明，避免被当成可信档数消费。
+        notes.append("rung-count: inferred from recorded visits rather than the compiled plan; "
+                     "may undercount if the run was truncated")
     if not monotonic:
         notes.append("monotonic: rung amplitudes are not strictly increasing")
     # 阈值 100 µT 的依据：计划里记录的历史实测静态噪声底是 20–39 µT，100 µT 是
