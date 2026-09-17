@@ -82,11 +82,9 @@ def validate_calibration(table: dict, context: dict) -> dict:
     return copy.deepcopy(table)
 
 
-def summarize_scan(run_dir: str) -> dict:
-    """Join cruise control rows to valid magnetic samples by sample sequence."""
-    folder = Path(run_dir)
-    manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
-    sensors = {}
+def _read_sensor_amplitudes(folder: Path) -> dict:
+    """Map each valid sample seq to hypot(dBx, dBy)."""
+    amplitudes = {}
     with (folder / "sensor.csv").open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if str(row.get("valid", "")).lower() not in {"1", "true"}:
@@ -97,7 +95,15 @@ def summarize_scan(run_dir: str) -> dict:
             except (KeyError, TypeError, ValueError):
                 continue
             if math.isfinite(dx) and math.isfinite(dy):
-                sensors[seq] = float(math.hypot(dx, dy))
+                amplitudes[seq] = float(math.hypot(dx, dy))
+    return amplitudes
+
+
+def summarize_scan(run_dir: str) -> dict:
+    """Join cruise control rows to valid magnetic samples by sample sequence."""
+    folder = Path(run_dir)
+    manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
+    sensors = _read_sensor_amplitudes(folder)
 
     setup_path = folder / "setup.json"
     setup = json.loads(setup_path.read_text(encoding="utf-8")) if setup_path.exists() else {}
@@ -131,4 +137,119 @@ def summarize_scan(run_dir: str) -> dict:
         "position_basis": "actual_pose" if pairs and all_actual else "command_based",
         "approved": False,
         "pairs": pairs,
+    }
+
+
+def _read_measure_rows(folder: Path, amplitudes: dict, contact_z_mm):
+    samples = []
+    all_actual = True
+    with (folder / "control.jsonl").open(encoding="utf-8") as handle:
+        for line in handle:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            phase = str(row.get("phase", ""))
+            if not phase.startswith("measure_"):
+                continue
+            try:
+                visit = int(phase.split("_", 1)[1])
+                seq = int(row["sample_seq"])
+            except (IndexError, KeyError, TypeError, ValueError):
+                continue
+            if seq not in amplitudes:
+                continue
+            commanded = 1000.0 * float(row.get("depth_ff_m", 0.0))
+            actual = row.get("actual_pose_m_rad")
+            if (row.get("actual_pose_available") and actual is not None
+                    and contact_z_mm is not None):
+                measured = float(contact_z_mm) - float(actual[2]) * 1000.0
+            else:
+                all_actual = False
+                measured = commanded
+            samples.append({
+                "visit": visit, "depth_cmd_mm": commanded,
+                "depth_meas_mm": float(measured),
+                "amplitude_uT": amplitudes[seq],
+                "host_ns": int(row.get("host_ns", 0)),
+            })
+    return samples, all_actual
+
+
+def summarize_ladder(run_dir: str) -> dict:
+    """Join ladder measure legs to valid magnetic samples and group them by rung."""
+    folder = Path(run_dir)
+    manifest = json.loads((folder / "manifest.json").read_text(encoding="utf-8"))
+    setup_path = folder / "setup.json"
+    setup = json.loads(setup_path.read_text(encoding="utf-8")) if setup_path.exists() else {}
+    contact_z_mm = setup.get("contact_z_mm")
+    amplitudes = _read_sensor_amplitudes(folder)
+    samples, all_actual = _read_measure_rows(folder, amplitudes, contact_z_mm)
+
+    by_visit: dict[int, list] = {}
+    for sample in samples:
+        by_visit.setdefault(sample["visit"], []).append(sample)
+    visits = sorted(by_visit)
+    # 档数由最大档号推出，而不是由"实际出现的档数"推出。若某一趟一个有效样本都没有，
+    # len(visits)//2 会让降程/升程的分界左移，把不同深度的档配到一起并静默少报档数；
+    # 用最大档号则缺失的档会得到空 rung（幅值 NaN、monotonic 判 False），坏数据自己暴露。
+    half = (max(visits) + 1) // 2 if visits else 0
+
+    def _reduce(visit_list, field, reducer):
+        values = [s[field] for visit in visit_list if visit in by_visit
+                  for s in by_visit[visit]]
+        return float(reducer(values)) if values else float("nan")
+
+    rungs = []
+    # 按档号配对而非 zip：升程的档序与降程相反，第 index 档的升程是第 (2*half-1-index) 趟。
+    # 用 zip 会在任一趟缺失时静默截断，把档位错配。
+    for index in range(half):
+        down_visit = index
+        up_visit = 2 * half - 1 - index
+        pool = [visit for visit in (down_visit, up_visit) if visit in by_visit]
+        down_amp = _reduce([down_visit], "amplitude_uT", np.mean)
+        up_amp = _reduce([up_visit], "amplitude_uT", np.mean)
+        rungs.append({
+            "index": index,
+            "depth_cmd_mm": _reduce(pool, "depth_cmd_mm", np.median),
+            "depth_actual_median_mm": (
+                _reduce(pool, "depth_meas_mm", np.median) if all_actual else None),
+            "amplitude_down_uT": down_amp,
+            "amplitude_up_uT": up_amp,
+            "amplitude_uT": float(np.mean([down_amp, up_amp])),
+            "n": sum(len(by_visit[visit]) for visit in pool),
+            "hysteresis_uT": float(up_amp - down_amp),
+        })
+
+    if samples:
+        first, last = samples[0], samples[-1]
+        span_s = (last["host_ns"] - first["host_ns"]) / 1e9
+        total = last["amplitude_uT"] - first["amplitude_uT"]
+        per_minute = (total / span_s * 60.0) if span_s > 0 else 0.0
+    else:
+        total, per_minute = 0.0, 0.0
+
+    amplitudes_in_order = [rung["amplitude_uT"] for rung in rungs]
+    monotonic = all(
+        later > earlier
+        for earlier, later in zip(amplitudes_in_order, amplitudes_in_order[1:])
+    )
+    notes = []
+    if not monotonic:
+        notes.append("monotonic: rung amplitudes are not strictly increasing")
+    origin_ok = None
+    if rungs:
+        origin_ok = abs(rungs[0]["amplitude_uT"]) < 100.0
+        if not origin_ok:
+            notes.append("origin: depth-0 amplitude is far above the static floor")
+
+    return {
+        "run_id": manifest.get("run_id", folder.name),
+        "feature": "dBxy_norm_uT",
+        "source": "measured",
+        "position_basis": "actual_pose" if samples and all_actual else "command_based",
+        "approved": False,
+        "steps": len(rungs),
+        "rungs": rungs,
+        "drift": {"total_uT": float(total), "per_minute_uT": float(per_minute)},
+        "quality": {"monotonic": monotonic, "origin_ok": origin_ok, "notes": notes},
     }
