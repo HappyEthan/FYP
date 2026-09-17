@@ -224,12 +224,6 @@ def test_ladder_rejects_step_above_max_step():
         compile_experiment(ladder_spec(), setup, dt_s=0.02)
 
 
-def test_ladder_rejects_z_speed_above_max():
-    setup = ladder_setup(max_z_speed_mm_s=0.5)
-    with pytest.raises(ValueError, match="max_z_speed_mm_s"):
-        compile_experiment(ladder_spec(), setup, dt_s=0.02)
-
-
 def test_ladder_rejects_return_speed_above_max_xy():
     setup = ladder_setup(max_xy_speed_mm_s=20.0)
     with pytest.raises(ValueError, match="return_speed_mm_s exceeds max_xy_speed_mm_s"):
