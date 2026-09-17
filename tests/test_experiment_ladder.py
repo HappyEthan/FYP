@@ -51,6 +51,13 @@ def test_ladder_accepts_four_axes(axis):
     assert validate_experiment(spec)["path"]["axis"] == axis
 
 
+def test_ladder_rejects_non_string_axis():
+    spec = ladder_spec()
+    spec["path"]["axis"] = ["+x"]
+    with pytest.raises(ValueError, match="axis must be one of"):
+        validate_experiment(spec)
+
+
 def test_ladder_rejects_unknown_axis():
     spec = ladder_spec()
     spec["path"]["axis"] = "diagonal"

@@ -114,7 +114,8 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
                   "steps", "order", "transit_z_mm")
         _require_keys(path, fields, "path.", errors)
         _reject_unknown(path, set(fields), "path.", errors)
-        if path.get("axis") not in {"+x", "-x", "+y", "-y"}:
+        axis = path.get("axis")
+        if not isinstance(axis, str) or axis not in {"+x", "-x", "+y", "-y"}:
             errors.append("path.axis must be one of +x, -x, +y, -y")
         _finite_number(path.get("travel_mm"), "travel_mm", errors, positive=True)
         _finite_number(path.get("depth_from_mm"), "depth_from_mm", errors, nonnegative=True)
