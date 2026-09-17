@@ -75,8 +75,15 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
     errors: list[str] = []
     if not isinstance(data, dict):
         raise ValueError("experiment must be a JSON object")
-    _require_keys(data, ("version", "name", "path", "motion", "z", "control"), "", errors)
-    _reject_unknown(data, {"version", "name", "_comment", "path", "motion", "z", "control"}, "", errors)
+    path = _mapping(data.get("path"), "path", errors)
+    is_ladder = path.get("kind") == "ladder"
+    required = ["version", "name", "path", "motion", "control"]
+    allowed = {"version", "name", "_comment", "path", "motion", "control"}
+    if not is_ladder:
+        required.append("z")
+        allowed.add("z")
+    _require_keys(data, tuple(required), "", errors)
+    _reject_unknown(data, allowed, "", errors)
 
     if data.get("version") != 1:
         errors.append("version must be 1")
@@ -85,7 +92,6 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
     if "_comment" in data and not isinstance(data["_comment"], str):
         errors.append("_comment must be a string")
 
-    path = _mapping(data.get("path"), "path", errors)
     kind = path.get("kind")
     if kind == "line":
         _require_keys(path, ("kind", "delta_xy_mm"), "path.", errors)
@@ -103,8 +109,28 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
         _finite_number(path.get("radius_mm"), "radius_mm", errors, positive=True)
         if not isinstance(path.get("clockwise"), bool):
             errors.append("clockwise must be boolean")
+    elif kind == "ladder":
+        fields = ("kind", "axis", "travel_mm", "depth_from_mm", "depth_to_mm",
+                  "steps", "order", "transit_z_mm")
+        _require_keys(path, fields, "path.", errors)
+        _reject_unknown(path, set(fields), "path.", errors)
+        if path.get("axis") not in {"+x", "-x", "+y", "-y"}:
+            errors.append("path.axis must be one of +x, -x, +y, -y")
+        _finite_number(path.get("travel_mm"), "travel_mm", errors, positive=True)
+        _finite_number(path.get("depth_from_mm"), "depth_from_mm", errors, nonnegative=True)
+        _finite_number(path.get("depth_to_mm"), "depth_to_mm", errors, nonnegative=True)
+        _finite_number(path.get("transit_z_mm"), "transit_z_mm", errors, positive=True)
+        steps = path.get("steps")
+        if isinstance(steps, bool) or not isinstance(steps, int) or steps < 2:
+            errors.append("path.steps must be an integer >= 2")
+        if path.get("order") != "down_then_up":
+            errors.append("path.order must be down_then_up")
+        pair = (path.get("depth_from_mm"), path.get("depth_to_mm"))
+        if all(isinstance(value, (int, float)) and not isinstance(value, bool)
+               for value in pair) and float(pair[0]) >= float(pair[1]):
+            errors.append("depth_from_mm must be below depth_to_mm")
     else:
-        errors.append("path.kind must be line or circle")
+        errors.append("path.kind must be line, circle or ladder")
 
     motion = _mapping(data.get("motion"), "motion", errors)
     _require_keys(motion, ("speed_mm_s", "accel_mm_s2"), "motion.", errors)
@@ -113,11 +139,12 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
     if motion.get("accel_mm_s2") is not None:
         _finite_number(motion.get("accel_mm_s2"), "accel_mm_s2", errors, positive=True)
 
-    z = _mapping(data.get("z"), "z", errors)
-    _require_keys(z, ("start_tcp_z_mm", "end_tcp_z_mm"), "z.", errors)
-    _reject_unknown(z, {"start_tcp_z_mm", "end_tcp_z_mm"}, "z.", errors)
-    _finite_number(z.get("start_tcp_z_mm"), "start_tcp_z_mm", errors)
-    _finite_number(z.get("end_tcp_z_mm"), "end_tcp_z_mm", errors)
+    if not is_ladder:
+        z = _mapping(data.get("z"), "z", errors)
+        _require_keys(z, ("start_tcp_z_mm", "end_tcp_z_mm"), "z.", errors)
+        _reject_unknown(z, {"start_tcp_z_mm", "end_tcp_z_mm"}, "z.", errors)
+        _finite_number(z.get("start_tcp_z_mm"), "start_tcp_z_mm", errors)
+        _finite_number(z.get("end_tcp_z_mm"), "end_tcp_z_mm", errors)
 
     control = _mapping(data.get("control"), "control", errors)
     if not isinstance(control.get("enabled"), bool):
