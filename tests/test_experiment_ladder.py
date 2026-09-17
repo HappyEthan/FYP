@@ -253,3 +253,34 @@ def test_ladder_timeline_starts_at_zero_is_strictly_increasing_and_dt_bounded():
     step = np.diff(t_s)
     assert np.all(step > 0.0)
     assert np.max(step) <= 0.02 + 1e-9
+
+
+from pathlib import Path
+
+from brushbot.experiments.config import load_experiment, validate_installation
+
+REPO = Path(__file__).resolve().parents[1]
+
+
+def test_shipped_ladder_experiment_is_valid():
+    checked = load_experiment(REPO / "configs/experiments/z_ladder_x.json")
+    assert checked["path"]["kind"] == "ladder"
+    assert checked["path"]["steps"] == 8
+    assert checked["path"]["depth_to_mm"] == pytest.approx(20.0)
+    assert checked["path"]["transit_z_mm"] == pytest.approx(50.0)
+    assert checked["control"]["enabled"] is False
+
+
+def test_installation_template_is_not_executable():
+    import json
+    template = json.loads(
+        (REPO / "configs/installations/template.json").read_text(encoding="utf-8"))
+    with pytest.raises(ValueError, match="verified must be true"):
+        validate_installation(template, hardware=True)
+
+
+def test_installation_template_preview_is_accepted():
+    import json
+    template = json.loads(
+        (REPO / "configs/installations/template.json").read_text(encoding="utf-8"))
+    assert validate_installation(template, hardware=False)["verified"] is False

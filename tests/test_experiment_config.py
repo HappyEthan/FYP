@@ -142,6 +142,7 @@ def test_loading_templates_is_standard_json_and_has_no_hardware_import():
         "horizontal_hold.json",
         "vertical_hold.json",
         "circle_hold.json",
+        "z_ladder_x.json",
     }
     assert {p.name for p in TEMPLATES.glob("*.json")} == names
     for name in names:

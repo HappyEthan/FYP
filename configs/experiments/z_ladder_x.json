@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "z_ladder_x",
+  "_comment": "Z 标定梯子：8 档压深 0-20 mm，升降两遍共 16 趟。contact_z_mm 与各段速度来自 installation，本文件不填写。行程与速度尚未在真机验证。",
+  "path": {
+    "kind": "ladder",
+    "axis": "+x",
+    "travel_mm": 100.0,
+    "depth_from_mm": 0.0,
+    "depth_to_mm": 20.0,
+    "steps": 8,
+    "order": "down_then_up",
+    "transit_z_mm": 50.0
+  },
+  "motion": {"speed_mm_s": 10.0, "accel_mm_s2": null},
+  "control": {"enabled": false}
+}

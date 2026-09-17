@@ -15,15 +15,12 @@ reference/
 # Make Me a Hanzi 数据集(外部, 30MB)
 data/makemeahanzi/
 
-# docs 仅同步以下 7 个项目文档，其余内容只在本地保留
+# docs 默认全部只在本地保存
 docs/*
-!docs/filter.md
-!docs/handoff-e05-arm.md
-!docs/professor-intro.md
-!docs/monitor.md
-!docs/strokeplan-data-design.md
-!docs/tactile-sim.md
-!docs/transformer-strokeplan-implementation-roadmap.md
+
+# 只有同步目录允许 Git 跟踪
+!docs/同步/
+!docs/同步/**
 
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
@@ -35,11 +32,25 @@ calibration/
 delta_b_v0_*/
 servo_scan_*/
 
+# 版本化实验模板与安装表单/说明属于源码；实测 installation 仍只在本地保留
+!configs/
+configs/*
+!configs/experiments/
+!configs/experiments/*.json
+!configs/installations/
+configs/installations/*
+!configs/installations/template.json
+!configs/installations/README.md
+
 # 本地 AI 助手与工作区状态
 .agents/
 .codex/
+.claude/skills/
 .claude/settings.local.json
+AGENTS.md
+memory/
 PROJECT_MEMORY.md
+writing/
 
 # 其他本地 PDF 资料
 physical_agent/**/*.pdf
