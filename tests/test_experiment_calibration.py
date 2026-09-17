@@ -302,3 +302,40 @@ def test_split_ladder_passes_rejects_run_without_control_rows(tmp_path):
     (folder / "control.jsonl").write_text("", encoding="utf-8")
     with pytest.raises(ValueError, match="no control rows"):
         split_ladder_passes(str(folder), str(tmp_path / "passes"))
+
+
+def test_split_ladder_passes_bridges_gaps_and_drops_leading_samples(tmp_path):
+    # 前向填充的要害在于 control 行的 sample_seq 并不连续（传感器 250-333 Hz、控制 50 Hz），
+    # 而且可能有磁样本早于第一条 control 行。上面几条测试用的都是均匀夹具，测不到这两点——
+    # 若哪天游标逻辑回归，样本会被整段错配到相邻趟，而测试仍然全绿。
+    folder = tmp_path / "run"
+    folder.mkdir()
+    (folder / "setup.json").write_text(json.dumps({"contact_z_mm": 40.0}), encoding="utf-8")
+    (folder / "manifest.json").write_text(json.dumps({"run_id": "r1"}), encoding="utf-8")
+    # control 行的 sample_seq 刻意留出间隔：2、5、9。
+    controls = ((2, "measure_00", 0.040), (5, "measure_01", 0.030), (9, "measure_02", 0.020))
+    with (folder / "control.jsonl").open("w", encoding="utf-8") as handle:
+        for seq, phase, z_m in controls:
+            handle.write(json.dumps({
+                "sample_seq": seq, "phase": phase,
+                "depth_ff_m": 0.040 - z_m,
+                "actual_pose_available": True,
+                "actual_pose_m_rad": [0.0, 0.0, z_m, 0.0, 0.0, 0.0],
+            }) + "\n")
+    with (folder / "sensor.csv").open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=["seq", "dBx_uT", "dBy_uT", "valid"])
+        writer.writeheader()
+        for seq in range(1, 11):
+            writer.writerow({"seq": seq, "dBx_uT": 1.0, "dBy_uT": 0.0, "valid": "1"})
+
+    written = split_ladder_passes(str(folder), str(tmp_path / "passes"))
+    buckets = {}
+    for path in written:
+        with path.open(newline="", encoding="utf-8") as handle:
+            buckets[path.name] = [int(row["seq"]) for row in csv.DictReader(handle)]
+    # seq 1 早于所有 control 行 -> 丢弃；每条样本归最近的 sample_seq <= 它的那一拍。
+    assert buckets == {
+        "pass_00.csv": [2, 3, 4],
+        "pass_01.csv": [5, 6, 7, 8],
+        "pass_02.csv": [9, 10],
+    }
