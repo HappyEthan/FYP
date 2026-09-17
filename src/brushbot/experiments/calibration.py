@@ -175,6 +175,49 @@ def _read_measure_rows(folder: Path, amplitudes: dict, contact_z_mm):
     return samples, all_actual
 
 
+def _read_planned_rung_count(folder: Path, observed_half: int) -> int:
+    """Return the rung count compiled into the ladder's planning timeline.
+
+    The recorder writes ``timeline.npz`` (keys t_s/s/phase/pose_m_rad/g_ref_uT/
+    depth_ff_m) to the run directory before the run starts; its ``phase`` array
+    covers every leg the engine planned to run (approach/measure/lift/transit),
+    whether or not the run ever got there. Deriving the rung count from the
+    highest planned ``measure_NN`` index keeps a truncated run from silently
+    mis-pairing the descending visits with the ascending ones that never
+    happened.
+
+    Falls back to the observed-visit derivation when the timeline is absent
+    (older runs, and the unit-test fixtures do not write one).
+    """
+    timeline_path = folder / "timeline.npz"
+    if not timeline_path.exists():
+        # 旧 run 或测试夹具没有 timeline.npz：退回"从实测档号推"的老逻辑。
+        return observed_half
+    try:
+        with np.load(timeline_path, allow_pickle=False) as timeline:
+            phases = timeline["phase"]
+    except (KeyError, OSError, ValueError):
+        # 打不开或缺 phase 键时当 timeline 不存在处理，避免静默异常。
+        return observed_half
+    highest = -1
+    for phase in phases:
+        # 只统计 measure_* 相位；approach/lift/transit 不算。
+        name = str(phase)
+        if not name.startswith("measure_"):
+            continue
+        try:
+            index = int(name.split("_", 1)[1])
+        except ValueError:
+            continue
+        if index > highest:
+            highest = index
+    if highest < 0:
+        # timeline 里找不到任何 measure 相位（反常）：退回实测推导。
+        return observed_half
+    # 档数 = 最大趟号 + 1 整除 2：measure_00..measure_{2N-1} 对应 N 档。
+    return (highest + 1) // 2
+
+
 def summarize_ladder(run_dir: str) -> dict:
     """Join ladder measure legs to valid magnetic samples and group them by rung."""
     folder = Path(run_dir)
@@ -189,10 +232,15 @@ def summarize_ladder(run_dir: str) -> dict:
     for sample in samples:
         by_visit.setdefault(sample["visit"], []).append(sample)
     visits = sorted(by_visit)
-    # 档数由最大档号推出，而不是由"实际出现的档数"推出。若某一趟一个有效样本都没有，
-    # len(visits)//2 会让降程/升程的分界左移，把不同深度的档配到一起并静默少报档数；
-    # 用最大档号则缺失的档会得到空 rung（幅值 NaN、monotonic 判 False），坏数据自己暴露。
-    half = (max(visits) + 1) // 2 if visits else 0
+    # 档数由档号推出而不是由"实际出现的档数"推出：若某一趟一个有效样本都没有，
+    # len(visits)//2 会让降程/升程的分界左移，把不同深度的档配到一起并静默少报档数。
+    # 用最大档号则缺失的档得到空 rung（幅值 NaN、monotonic 判 False），坏数据自己暴露。
+    observed_half = (max(visits) + 1) // 2 if visits else 0
+    # 但实测档号只覆盖"已经发生"的部分。运行被截断（急停/掉电/传感器丢失/人工停止）时，
+    # 缺失的升程越过了 max(visits)，half 会算小、把 visit 0（0 mm）和 visit 5（14.3 mm）
+    # 错配进同一档还静默少报档数。编译期 timeline.npz 记录了引擎计划要跑的全部趟，
+    # 以它推导才是真档数；缺档保持 NaN，让坏数据自己暴露。
+    half = _read_planned_rung_count(folder, observed_half)
 
     def _reduce(visit_list, field, reducer):
         values = [s[field] for visit in visit_list if visit in by_visit
@@ -236,10 +284,14 @@ def summarize_ladder(run_dir: str) -> dict:
     notes = []
     if not monotonic:
         notes.append("monotonic: rung amplitudes are not strictly increasing")
+    # 阈值 100 µT 的依据：计划里记录的历史实测静态噪声底是 20–39 µT，100 µT 是
+    # 刻意放宽、远在噪声底之上的界。depth-0 幅值是 NaN（该档两次都没采到有效样本）
+    # 时什么也没测到，报 None 而不是误报"高于静态噪声底"。
     origin_ok = None
     if rungs:
-        origin_ok = abs(rungs[0]["amplitude_uT"]) < 100.0
-        if not origin_ok:
+        first_amp = rungs[0]["amplitude_uT"]
+        origin_ok = None if math.isnan(first_amp) else abs(first_amp) < 100.0
+        if origin_ok is False:
             notes.append("origin: depth-0 amplitude is far above the static floor")
 
     return {

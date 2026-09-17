@@ -97,7 +97,7 @@ def test_scan_summary_is_explicitly_command_based_without_actual_pose(tmp_path):
 
 def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
                drift_per_s=0.0, use_actual=True, skip_visit=None,
-               amp_per_visit=None):
+               amp_per_visit=None, timeline_steps=None, stop_after_visit=None):
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "manifest.json").write_text(
@@ -112,6 +112,8 @@ def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
     seq = 0
     t_s = 0.0
     for visit, depth in enumerate(visits):
+        if stop_after_visit is not None and visit > stop_after_visit:
+            break
         if visit == skip_visit:
             continue
         for _ in range(4):
@@ -140,6 +142,22 @@ def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
     with (folder / "control.jsonl").open("w", encoding="utf-8") as handle:
         for row in rows:
             handle.write(json.dumps(row) + "\n")
+    if timeline_steps is not None:
+        # 模仿 recorder 写入 key 全集，phase 展开为每趟的 approach/measure/lift/transit。
+        legs = []
+        for v in range(2 * timeline_steps):
+            legs.append(f"approach_{v:02d}")
+            legs.append(f"measure_{v:02d}")
+            legs.append(f"lift_{v:02d}")
+            legs.append(f"transit_{v:02d}")
+        n_tl = len(legs)
+        np.savez(folder / "timeline.npz",
+                 t_s=np.linspace(0.0, 10.0, n_tl),
+                 s=np.linspace(0.0, 10.0, n_tl),
+                 phase=np.asarray(legs, dtype="U12"),
+                 pose_m_rad=np.zeros((n_tl, 6)),
+                 g_ref_uT=np.zeros((n_tl, 3)),
+                 depth_ff_m=np.linspace(0.0, 0.02, n_tl))
     return folder
 
 
@@ -168,10 +186,29 @@ def test_summarize_ladder_pairs_down_with_up_at_the_same_depth(tmp_path):
 
 
 def test_summarize_ladder_detects_drift(tmp_path):
+    # 夹具首尾两个样本都在 depth 0，深度贡献完全抵消；端点间漂移增量应正好是
+    # drift_per_s * span_s。只断言 > 0 太弱（换了错误的漂移定义也能过），这里钉死
+    # 端点定义：per_minute_uT 必须精确等于 drift_per_s * 60。
     folder = _write_run(tmp_path / "run", drift_per_s=1.0)
     summary = summarize_ladder(str(folder))
-    assert summary["drift"]["total_uT"] > 0
-    assert summary["drift"]["per_minute_uT"] > 0
+    assert summary["drift"]["total_uT"] == pytest.approx(0.46, rel=1e-9)
+    assert summary["drift"]["per_minute_uT"] == pytest.approx(1.0 * 60.0, rel=1e-9)
+
+
+def test_summarize_ladder_marks_a_truncated_run_bad(tmp_path):
+    # 8 档（16 趟）梯子在升程开始前被截断，只录到 visit 5（control.jsonl 停在第 6 趟）。
+    # 修复前从"实际出现的最大趟号"推档数会得到 half=3，把 visit 0（0 mm）配 visit 5
+    # （14.3 mm），每档中位深度都 7.14 mm、steps 报 3、monotonic 可能仍为 True——
+    # 静默产生错误的标定曲线。修复后应从编译期 timeline.npz 取档数：steps 报 8，
+    # 缺了升程的档幅值全为 NaN、monotonic 判 False，坏数据自己暴露。
+    folder = _write_run(tmp_path / "run", steps=8, timeline_steps=8,
+                        stop_after_visit=5)
+    summary = summarize_ladder(str(folder))
+    assert summary["steps"] == 8
+    assert summary["rungs"][0]["depth_cmd_mm"] == pytest.approx(0.0)
+    assert all(math.isnan(rung["amplitude_uT"]) for rung in summary["rungs"])
+    assert summary["quality"]["monotonic"] is False
+    assert any("monotonic" in note for note in summary["quality"]["notes"])
 
 
 def test_summarize_ladder_flags_non_monotonic(tmp_path):
