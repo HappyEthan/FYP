@@ -193,3 +193,47 @@ def make_rig(*, recorder_root=None, closed_loop=False, deadband_uT=0.0):
     engine.prepare(spec, setup)
     return FakeRig(
         engine, arm, hub, source, clock, spec, setup, start_pose, root)
+
+
+def make_ladder_rig(*, recorder_root=None, contact_z_mm=40.0, steps=2):
+    """Synthetic ladder rig: no hardware, no robot library."""
+    setup = {
+        "origin_x_mm": 100.0, "origin_y_mm": 200.0,
+        "wait_z_mm": 60.0, "contact_z_mm": float(contact_z_mm),
+        "vertical_rpy_rad": [0.0, 0.0, 0.0],
+        "orientation_tolerance_rad": 0.01, "pose_tolerance_mm": 0.5,
+        "workspace_min_mm": [0.0, 0.0, 0.0],
+        "workspace_max_mm": [400.0, 400.0, 100.0],
+        "max_depth_mm": 30.0, "max_xy_speed_mm_s": 50.0,
+        "max_z_speed_mm_s": 20.0, "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0, "approach_speed_mm_s": 10.0,
+        "return_speed_mm_s": 50.0,
+        "baseline_window_s": 0.04, "baseline_timeout_s": 1.0,
+        "baseline_min_samples": 3, "baseline_max_std_uT": [0.1, 0.1, 0.1],
+        "baseline_max_drift_uT_s": 0.1, "sensor_max_age_s": 0.05,
+        "max_tick_lateness_s": 0.05, "stop_timeout_s": 1.0,
+        "filter": {"kind": "ema", "alpha": 0.3},
+    }
+    spec = {
+        "version": 1, "name": "ladder",
+        "path": {
+            "kind": "ladder", "axis": "+x", "travel_mm": 4.0,
+            "depth_from_mm": 0.0, "depth_to_mm": 4.0,
+            "steps": int(steps), "order": "down_then_up",
+            "transit_z_mm": 50.0,
+        },
+        "motion": {"speed_mm_s": 20.0, "accel_mm_s2": 200.0},
+        "control": {"enabled": False},
+    }
+    clock = FakeClock()
+    arm = FakeArm((0.1, 0.2, 0.06, 0.0, 0.0, 0.0))
+    arm.clock = clock
+    source = FakeMagneticSource(arm, clock, contact_z_mm=contact_z_mm)
+    hub = SampleHub(source, clock.now_ns)
+    root = Path(recorder_root or tempfile.mkdtemp(prefix="brushbot-fake-ladder-"))
+    engine = ExperimentEngine(
+        arm, hub, lambda snapshots: RunRecorder(str(root), snapshots), clock,
+    )
+    engine.prepare(spec, setup)
+    return FakeRig(
+        engine, arm, hub, source, clock, spec, setup, arm.pose, root)

@@ -284,3 +284,45 @@ def test_installation_template_preview_is_accepted():
     template = json.loads(
         (REPO / "configs/installations/template.json").read_text(encoding="utf-8"))
     assert validate_installation(template, hardware=False)["verified"] is False
+
+
+from brushbot.experiments.calibration import summarize_ladder
+from brushbot.experiments.fake import make_ladder_rig
+
+
+def test_ladder_rig_completes_and_summarizes(tmp_path):
+    rig = make_ladder_rig(recorder_root=str(tmp_path))
+    rig.engine.start()
+    rig.advance_until("END_WAIT", max_steps=4000)
+    assert rig.saved_status == "completed"
+    summary = summarize_ladder(rig.engine.snapshot()["run_dir"])
+    assert summary["position_basis"] == "actual_pose"
+    assert summary["quality"]["monotonic"] is True
+    assert summary["quality"]["origin_ok"] is True
+    assert len(summary["rungs"]) == 2
+
+
+def test_ladder_rig_amplitudes_grow_with_depth(tmp_path):
+    rig = make_ladder_rig(recorder_root=str(tmp_path))
+    rig.engine.start()
+    rig.advance_until("END_WAIT", max_steps=4000)
+    summary = summarize_ladder(rig.engine.snapshot()["run_dir"])
+    amplitudes = [rung["amplitude_uT"] for rung in summary["rungs"]]
+    assert amplitudes[0] < amplitudes[1]
+
+
+def test_ladder_timeline_never_lets_the_engine_skip_more_than_one_tick():
+    # 引擎按 elapsed = k*dt 对时间轴做 searchsorted 取索引。时间轴的采样时刻与引擎的 elapsed
+    # 各自带浮点误差，两者网格对不齐时某一拍可能同时跨过两个样本——引擎的 deadline_miss 判据
+    # 正是按"最多 2 个样本"来容忍这个伪影的。这条测试直接模拟引擎的取索引过程。
+    # 只断言"最大间隔 <= dt"抓不到这个 bug：梯子有 0.02 的均匀网格时同样会让一拍跨过两个样本
+    # （实测 228 次），而最大间隔始终是 0.02。
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    t_s = compiled["t_s"]
+    dt_s = 0.02
+    last = 0
+    for tick in range(1, int(t_s[-1] / dt_s) + 3):
+        index = min(int(np.searchsorted(t_s, tick * dt_s, side="right") - 1), len(t_s) - 1)
+        index = max(index, 0)
+        assert float(t_s[index]) - float(t_s[last]) <= 2.5 * dt_s
+        last = index
