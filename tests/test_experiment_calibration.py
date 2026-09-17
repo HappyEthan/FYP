@@ -249,3 +249,56 @@ def test_summarize_ladder_keeps_rung_count_when_a_leg_has_no_samples(tmp_path):
     assert summary["steps"] == 3
     assert math.isnan(summary["rungs"][1]["amplitude_uT"])
     assert summary["quality"]["monotonic"] is False
+
+
+from brushbot.experiments.calibration import split_ladder_passes
+
+
+def test_split_ladder_passes_writes_one_file_per_visit(tmp_path):
+    folder = _write_run(tmp_path / "run")
+    written = split_ladder_passes(str(folder), str(tmp_path / "passes"))
+    assert [path.name for path in written] == [
+        "pass_00.csv", "pass_01.csv", "pass_02.csv",
+        "pass_03.csv", "pass_04.csv", "pass_05.csv",
+    ]
+    with (tmp_path / "passes/pass_00.csv").open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    assert len(rows) == 4
+    assert {row["phase"] for row in rows} == {"measure_00"}
+    assert float(rows[0]["depth_actual_mm"]) == pytest.approx(0.0)
+
+
+def test_split_ladder_passes_forward_fills_the_pose(tmp_path):
+    folder = _write_run(tmp_path / "run")
+    written = split_ladder_passes(str(folder), str(tmp_path / "passes"))
+    with written[2].open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    assert {row["pose_source"] for row in rows} == {"actual_pose"}
+    assert float(rows[0]["z_mm"]) == pytest.approx(20.0)
+    assert float(rows[0]["depth_actual_mm"]) == pytest.approx(20.0)
+
+
+def test_split_ladder_passes_marks_command_fallback(tmp_path):
+    folder = _write_run(tmp_path / "run", use_actual=False)
+    written = split_ladder_passes(str(folder), str(tmp_path / "passes"))
+    with written[0].open(newline="", encoding="utf-8") as handle:
+        rows = list(csv.DictReader(handle))
+    assert {row["pose_source"] for row in rows} == {"command_based"}
+    assert rows[0]["z_mm"] == ""
+    assert rows[0]["depth_actual_mm"] == ""
+
+
+def test_split_ladder_passes_defaults_to_passes_subfolder(tmp_path):
+    folder = _write_run(tmp_path / "run")
+    written = split_ladder_passes(str(folder))
+    assert written[0].parent == folder / "passes"
+
+
+def test_split_ladder_passes_rejects_run_without_control_rows(tmp_path):
+    folder = tmp_path / "run"
+    folder.mkdir()
+    (folder / "manifest.json").write_text(json.dumps({"run_id": "r1"}), encoding="utf-8")
+    (folder / "sensor.csv").write_text("seq\n1\n", encoding="utf-8")
+    (folder / "control.jsonl").write_text("", encoding="utf-8")
+    with pytest.raises(ValueError, match="no control rows"):
+        split_ladder_passes(str(folder), str(tmp_path / "passes"))

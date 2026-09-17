@@ -315,3 +315,103 @@ def summarize_ladder(run_dir: str) -> dict:
         "drift": {"total_uT": float(total), "per_minute_uT": float(per_minute)},
         "quality": {"monotonic": monotonic, "origin_ok": origin_ok, "notes": notes},
     }
+
+
+_PASS_FIELDS = (
+    "seq", "sensor_t_us", "host_rx_ns",
+    "Bx_uT", "By_uT", "Bz_uT", "dBx_uT", "dBy_uT", "dBz_uT", "valid",
+    "phase", "x_mm", "y_mm", "z_mm",
+    "depth_cmd_mm", "depth_actual_mm", "pose_source",
+)
+_PASS_PREFIXES = ("approach_", "measure_", "lift_", "transit_")
+
+
+def _sample_seq(row: dict) -> int:
+    try:
+        return int(row.get("sample_seq", -1))
+    except (TypeError, ValueError):
+        return -1
+
+
+def _visit_index(phase: str):
+    if not phase.startswith(_PASS_PREFIXES):
+        return None
+    try:
+        return int(phase.split("_", 1)[1])
+    except (IndexError, ValueError):
+        return None
+
+
+def split_ladder_passes(run_dir: str, output_dir: str | None = None) -> list[Path]:
+    """Split one ladder run into one analysis-ready CSV per visited pass.
+
+    Every magnetic sample inherits the phase and pose of the control tick that
+    covers it. The calibration path does not read these files; they exist so a
+    single pass can be opened on its own.
+    """
+    folder = Path(run_dir)
+    setup_path = folder / "setup.json"
+    setup = json.loads(setup_path.read_text(encoding="utf-8")) if setup_path.exists() else {}
+    contact_z_mm = setup.get("contact_z_mm")
+
+    control_rows = []
+    with (folder / "control.jsonl").open(encoding="utf-8") as handle:
+        for line in handle:
+            if line.strip():
+                control_rows.append(json.loads(line))
+    if not control_rows:
+        raise ValueError("run has no control rows")
+    control_rows.sort(key=_sample_seq)
+
+    target = Path(output_dir) if output_dir else folder / "passes"
+    target.mkdir(parents=True, exist_ok=True)
+
+    buckets: dict[int, list[dict]] = {}
+    cursor = -1
+    with (folder / "sensor.csv").open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            try:
+                seq = int(row["seq"])
+            except (KeyError, TypeError, ValueError):
+                continue
+            while (cursor + 1 < len(control_rows)
+                   and _sample_seq(control_rows[cursor + 1]) <= seq):
+                cursor += 1
+            if cursor < 0:
+                continue
+            control = control_rows[cursor]
+            phase = str(control.get("phase", ""))
+            visit = _visit_index(phase)
+            if visit is None:
+                continue
+            actual = control.get("actual_pose_m_rad")
+            available = bool(control.get("actual_pose_available")) and actual is not None
+            z_mm = float(actual[2]) * 1000.0 if available else None
+            buckets.setdefault(visit, []).append({
+                "seq": seq,
+                "sensor_t_us": row.get("sensor_t_us"),
+                "host_rx_ns": row.get("host_rx_ns"),
+                "Bx_uT": row.get("Bx_uT"), "By_uT": row.get("By_uT"),
+                "Bz_uT": row.get("Bz_uT"),
+                "dBx_uT": row.get("dBx_uT"), "dBy_uT": row.get("dBy_uT"),
+                "dBz_uT": row.get("dBz_uT"), "valid": row.get("valid"),
+                "phase": phase,
+                "x_mm": float(actual[0]) * 1000.0 if available else None,
+                "y_mm": float(actual[1]) * 1000.0 if available else None,
+                "z_mm": z_mm,
+                "depth_cmd_mm": 1000.0 * float(control.get("depth_ff_m", 0.0)),
+                "depth_actual_mm": (
+                    float(contact_z_mm) - z_mm
+                    if available and contact_z_mm is not None else None),
+                "pose_source": "actual_pose" if available else "command_based",
+            })
+
+    written = []
+    for visit in sorted(buckets):
+        path = target / f"pass_{visit:02d}.csv"
+        with path.open("w", newline="", encoding="utf-8") as handle:
+            writer = csv.DictWriter(handle, fieldnames=_PASS_FIELDS)
+            writer.writeheader()
+            writer.writerows(buckets[visit])
+        written.append(path)
+    return written
