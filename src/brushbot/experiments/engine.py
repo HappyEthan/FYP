@@ -203,6 +203,17 @@ class ExperimentEngine:
         if index > self._last_plan_index + 1 or lateness > float(self._setup["max_tick_lateness_s"]):
             self._begin_abort("deadline_miss")
             return
+        actual_pose = None
+        actual_rx_ns = None
+        try:
+            state = self.arm.read_state()
+            if state.get("available"):
+                actual_pose = [float(value) for value in state["tcp_pose"]]
+                actual_rx_ns = int(state.get("request_end_ns") or now)
+        except Exception:
+            # 单拍读位姿失败不应终止整轮扫描；该拍标记为不可用即可。
+            actual_pose = None
+            actual_rx_ns = None
         pose = self._compiled["pose_m_rad"][index].copy()
         depth_ff = float(self._compiled["depth_ff_m"][index])
         depth_fb = 0.0
@@ -238,8 +249,9 @@ class ExperimentEngine:
             "x_cmd_m": float(pose[0]), "y_cmd_m": float(pose[1]),
             "z_cmd_m": float(pose[2]), "rx_cmd_rad": float(pose[3]),
             "ry_cmd_rad": float(pose[4]), "rz_cmd_rad": float(pose[5]),
-            "actual_pose_available": False, "actual_pose_m_rad": None,
-            "actual_rx_ns": None, "lateness_s": lateness,
+            "actual_pose_available": actual_pose is not None,
+            "actual_pose_m_rad": actual_pose,
+            "actual_rx_ns": actual_rx_ns, "lateness_s": lateness,
             "limit_active": bool(getattr(self.controller, "limit_active", False)),
         })
         self._last_plan_index = index

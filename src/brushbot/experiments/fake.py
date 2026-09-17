@@ -15,13 +15,20 @@ from brushbot.z_control import ZController
 class FakeArm:
     backend_kind = "synthetic"
 
-    def __init__(self, pose=(0.1, 0.2, 0.06, 1.0, 2.0, 3.0), fsm=33):
+    def __init__(self, pose=(0.1, 0.2, 0.06, 1.0, 2.0, 3.0), fsm=33, clock=None):
         self.pose = tuple(float(value) for value in pose)
         self.fsm = int(fsm)
+        self.clock = clock
         self.calls = []
 
     def read_state(self):
-        return {"tcp_pose": self.pose, "fsm": self.fsm, "available": True}
+        return {
+            "tcp_pose": self.pose,
+            "fsm": self.fsm,
+            "available": True,
+            "request_start_ns": 0 if self.clock is None else self.clock.now_ns(),
+            "request_end_ns": 0 if self.clock is None else self.clock.now_ns(),
+        }
 
     def move_pose(self, pose, speed_mm_s):
         self.pose = tuple(float(value) for value in pose)
@@ -165,8 +172,9 @@ def make_rig(*, recorder_root=None, closed_loop=False, deadband_uT=0.0):
         "control": control,
     }
     start_pose = (0.1, 0.2, 0.06, 1.0, 2.0, 3.0)
-    arm = FakeArm(start_pose)
     clock = FakeClock()
+    arm = FakeArm(start_pose)
+    arm.clock = clock
     source = FakeMagneticSource(arm, clock)
     hub = SampleHub(source, clock.now_ns)
     root = Path(recorder_root or tempfile.mkdtemp(prefix="brushbot-fake-runs-"))

@@ -1,8 +1,18 @@
 import copy
+import json
+from pathlib import Path
 
 import pytest
 
 from brushbot.experiments.fake import make_rig
+
+
+def _control_rows(run_dir):
+    path = Path(run_dir) / "control.jsonl"
+    return [
+        json.loads(line)
+        for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
+    ]
 
 
 def test_prepare_is_pure_and_start_requires_verified_wait_pose(tmp_path):
@@ -110,3 +120,50 @@ def test_communication_fault_never_sends_automatic_lift_or_resumes(tmp_path):
     for _ in range(5):
         rig.advance()
     assert rig.arm.calls == calls_after_fault
+
+
+def test_control_rows_record_actual_pose(tmp_path):
+    rig = make_rig(recorder_root=str(tmp_path))
+    rig.engine.start()
+    rig.advance_until("END_WAIT")
+    rows = _control_rows(rig.engine.snapshot()["run_dir"])
+    assert rows, "expected at least one control row"
+    assert all(row["actual_pose_available"] is True for row in rows)
+    assert all(row["actual_pose_m_rad"] is not None for row in rows)
+    assert all(row["actual_rx_ns"] is not None for row in rows)
+
+
+def test_actual_pose_is_the_pose_commanded_on_the_previous_tick(tmp_path):
+    # 引擎每拍先读实际位姿、再下发命令，所以第 i 拍记录的是第 i-1 拍下发的位置。
+    rig = make_rig(recorder_root=str(tmp_path))
+    rig.engine.start()
+    rig.advance_until("END_WAIT")
+    rows = _control_rows(rig.engine.snapshot()["run_dir"])
+    for previous, row in zip(rows, rows[1:]):
+        expected = [
+            previous["x_cmd_m"], previous["y_cmd_m"], previous["z_cmd_m"],
+            previous["rx_cmd_rad"], previous["ry_cmd_rad"], previous["rz_cmd_rad"],
+        ]
+        assert row["actual_pose_m_rad"] == pytest.approx(expected)
+
+
+def test_pose_read_failure_does_not_abort_the_run(tmp_path, monkeypatch):
+    rig = make_rig(recorder_root=str(tmp_path))
+    rig.engine.start()
+    original = rig.arm.read_state
+    calls = {"n": 0}
+
+    def flaky():
+        calls["n"] += 1
+        # 只在 RUN 阶段注入故障：APPROACH 阶段的读取没有保护，
+        # 打在那里会触发 FAULT，验不到"运行中读失败不中止"。
+        if rig.engine.state == "RUN" and calls["n"] % 2 == 0:
+            raise RuntimeError("network hiccup")
+        return original()
+
+    monkeypatch.setattr(rig.arm, "read_state", flaky)
+    rig.advance_until("END_WAIT")
+    rows = _control_rows(rig.engine.snapshot()["run_dir"])
+    assert any(row["actual_pose_available"] is False for row in rows)
+    assert any(row["actual_pose_available"] is True for row in rows)
+    assert rig.saved_status == "completed"
