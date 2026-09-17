@@ -99,3 +99,139 @@ def test_ladder_rejects_unknown_path_field():
     spec["path"]["radius_mm"] = 5.0
     with pytest.raises(ValueError, match="unknown field path.radius_mm"):
         validate_experiment(spec)
+
+
+import numpy as np
+
+from brushbot.experiments.trajectory import (
+    _ladder_depths,
+    compile_experiment,
+)
+
+
+def ladder_setup(**overrides):
+    setup = {
+        "origin_x_mm": 100.0,
+        "origin_y_mm": 200.0,
+        "wait_z_mm": 60.0,
+        "contact_z_mm": 40.0,
+        "vertical_rpy_rad": [0.0, 0.0, 0.0],
+        "orientation_tolerance_rad": 0.01,
+        "workspace_min_mm": [0.0, 0.0, 0.0],
+        "workspace_max_mm": [300.0, 400.0, 100.0],
+        "max_depth_mm": 25.0,
+        "max_xy_speed_mm_s": 25.0,
+        "max_z_speed_mm_s": 10.0,
+        "max_accel_mm_s2": 50.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 2.0,
+        "return_speed_mm_s": 30.0,
+    }
+    setup.update(overrides)
+    return setup
+
+
+def test_ladder_depths_goes_down_then_up():
+    path = ladder_spec()["path"]
+    depths = _ladder_depths(path)
+    assert len(depths) == 16
+    assert depths[0] == pytest.approx(0.0)
+    assert depths[7] == pytest.approx(20.0)
+    assert depths[8] == pytest.approx(20.0)
+    assert depths[-1] == pytest.approx(0.0)
+    for depth in (0.0, 20.0):
+        assert depths.count(depth) == 2
+
+
+def test_ladder_compiles_sixteen_visits_and_four_phases_each():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phases = set(compiled["phase"])
+    for visit in range(16):
+        for prefix in ("approach", "measure", "lift", "transit"):
+            assert f"{prefix}_{visit:02d}" in phases
+
+
+def test_ladder_phase_dtype_keeps_full_names():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    assert compiled["phase"].dtype.itemsize >= 11 * 4
+    assert "approach_00" in set(compiled["phase"])
+    assert "transit_15" in set(compiled["phase"])
+
+
+def test_ladder_measure_legs_hold_constant_depth():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phase = compiled["phase"]
+    z_mm = compiled["pose_m_rad"][:, 2] * 1000.0
+    for visit in range(16):
+        mask = phase == f"measure_{visit:02d}"
+        assert mask.sum() > 1
+        assert np.ptp(z_mm[mask]) < 1e-9
+
+
+def test_ladder_measure_legs_step_down_then_up():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phase = compiled["phase"]
+    z_mm = compiled["pose_m_rad"][:, 2] * 1000.0
+    depths = [
+        ladder_setup()["contact_z_mm"] - float(z_mm[phase == f"measure_{v:02d}"].mean())
+        for v in range(16)
+    ]
+    assert depths[:8] == pytest.approx(np.linspace(0.0, 20.0, 8))
+    assert depths[8:] == pytest.approx(np.linspace(20.0, 0.0, 8))
+
+
+def test_ladder_xy_is_constant_during_approach_and_lift():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phase = compiled["phase"]
+    xy_mm = compiled["pose_m_rad"][:, :2] * 1000.0
+    for visit in range(16):
+        for prefix in ("approach", "lift"):
+            mask = phase == f"{prefix}_{visit:02d}"
+            assert np.ptp(xy_mm[mask], axis=0).max() < 1e-9
+
+
+def test_ladder_never_goes_below_deepest_depth():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    z_mm = compiled["pose_m_rad"][:, 2] * 1000.0
+    assert z_mm.min() == pytest.approx(20.0)
+    assert z_mm.max() == pytest.approx(50.0)
+
+
+def test_ladder_rejects_depth_beyond_max_depth():
+    spec = ladder_spec()
+    spec["path"]["depth_to_mm"] = 30.0
+    with pytest.raises(ValueError, match="exceeds max_depth_mm"):
+        compile_experiment(spec, ladder_setup(), dt_s=0.02)
+
+
+def test_ladder_rejects_transit_below_a_depth():
+    spec = ladder_spec()
+    spec["path"]["transit_z_mm"] = 30.0
+    with pytest.raises(ValueError, match="transit_z_mm must be above"):
+        compile_experiment(spec, ladder_setup(), dt_s=0.02)
+
+
+def test_ladder_rejects_workspace_violation():
+    spec = ladder_spec()
+    spec["path"]["travel_mm"] = 500.0
+    with pytest.raises(ValueError, match="outside workspace"):
+        compile_experiment(spec, ladder_setup(), dt_s=0.02)
+
+
+def test_ladder_rejects_step_above_max_step():
+    setup = ladder_setup(max_step_mm=0.1)
+    with pytest.raises(ValueError, match="exceeds max_step_mm"):
+        compile_experiment(ladder_spec(), setup, dt_s=0.02)
+
+
+def test_ladder_rejects_z_speed_above_max():
+    setup = ladder_setup(max_z_speed_mm_s=0.5)
+    with pytest.raises(ValueError, match="max_z_speed_mm_s"):
+        compile_experiment(ladder_spec(), setup, dt_s=0.02)
+
+
+def test_ladder_depth_ff_is_zero_above_contact():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phase = compiled["phase"]
+    transit = np.char.startswith(phase.astype(str), "transit")
+    assert np.all(compiled["depth_ff_m"][transit] == 0.0)

@@ -96,6 +96,146 @@ def _workspace_check(points_mm: np.ndarray, setup: dict) -> None:
         raise ValueError("trajectory or route is outside workspace")
 
 
+_LADDER_AXES = {
+    "+x": (1.0, 0.0), "-x": (-1.0, 0.0),
+    "+y": (0.0, 1.0), "-y": (0.0, -1.0),
+}
+
+
+def _ladder_depths(path: dict) -> list[float]:
+    """Expand a depth ladder into the visited sequence (down then up)."""
+    steps = int(path["steps"])
+    low = float(path["depth_from_mm"])
+    high = float(path["depth_to_mm"])
+    down = [low + (high - low) * index / (steps - 1) for index in range(steps)]
+    return down + list(reversed(down))
+
+
+def _leg_samples(xy0, xy1, z0, z1, speed_mm_s: float, accel_mm_s2: float,
+                 dt_s: float):
+    """Sample one leg with a symmetric trapezoidal profile.
+
+    Reuses ``time_law`` so every leg is dt-spaced and acceleration-limited,
+    exactly like the line and circle experiments. Without the ramps the leg
+    boundaries would be instantaneous velocity steps, which shake the arm.
+    """
+    start_xy = np.asarray(xy0, dtype=float)
+    end_xy = np.asarray(xy1, dtype=float)
+    span = max(float(np.linalg.norm(end_xy - start_xy)), abs(float(z1) - float(z0)))
+    if span <= 0:
+        return start_xy[None, :].copy(), np.array([float(z0)]), np.array([0.0])
+    law = time_law(span, speed_mm_s, accel_mm_s2, dt_s)
+    fraction = law["s"]
+    xy = start_xy[None, :] + (end_xy - start_xy)[None, :] * fraction[:, None]
+    z = float(z0) + (float(z1) - float(z0)) * fraction
+    return xy, z, law["t_s"]
+
+
+def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float) -> dict:
+    """Compile a ladder experiment into one timed multi-pass plan."""
+    _required_setup(setup, ("approach_speed_mm_s", "return_speed_mm_s"))
+    path = checked["path"]
+    travel = _positive(path["travel_mm"], "travel_mm")
+    transit_z = float(path["transit_z_mm"])
+    measure_speed = _positive(checked["motion"]["speed_mm_s"], "speed_mm_s")
+    approach_speed = _positive(setup["approach_speed_mm_s"], "approach_speed_mm_s")
+    return_speed = _positive(setup["return_speed_mm_s"], "return_speed_mm_s")
+    contact_z = float(setup["contact_z_mm"])
+    max_depth = _positive(setup["max_depth_mm"], "max_depth_mm")
+    max_z_speed = _positive(setup["max_z_speed_mm_s"], "max_z_speed_mm_s")
+    direction = np.asarray(_LADDER_AXES[path["axis"]], dtype=float)
+    origin = np.asarray([setup["origin_x_mm"], setup["origin_y_mm"]], dtype=float)
+    orientation = np.asarray(setup["vertical_rpy_rad"], dtype=float)
+    if orientation.shape != (3,) or not np.isfinite(orientation).all():
+        raise ValueError("vertical_rpy_rad must be three finite radians")
+
+    depths = _ladder_depths(path)
+    if max(depths) > max_depth + 1e-9:
+        raise ValueError("ladder depth exceeds max_depth_mm")
+    for depth in depths:
+        if contact_z - depth > transit_z + 1e-9:
+            raise ValueError("transit_z_mm must be above every ladder depth")
+
+    start_xy = origin.copy()
+    end_xy = origin + direction * travel
+    xy_parts: list[np.ndarray] = []
+    z_parts: list[np.ndarray] = []
+    t_parts: list[np.ndarray] = []
+    phase_parts: list[np.ndarray] = []
+    elapsed = 0.0
+    for visit, depth in enumerate(depths):
+        work_z = contact_z - depth
+        legs = (
+            (f"approach_{visit:02d}", start_xy, start_xy, transit_z, work_z, approach_speed),
+            (f"measure_{visit:02d}", start_xy, end_xy, work_z, work_z, measure_speed),
+            (f"lift_{visit:02d}", end_xy, end_xy, work_z, transit_z, approach_speed),
+            (f"transit_{visit:02d}", end_xy, start_xy, transit_z, transit_z, return_speed),
+        )
+        for name, xy0, xy1, z0, z1, speed in legs:
+            leg_xy, leg_z, leg_t = _leg_samples(
+                xy0, xy1, z0, z1, speed, accel_budget, dt_s)
+            if t_parts:
+                leg_xy, leg_z, leg_t = leg_xy[1:], leg_z[1:], leg_t[1:]
+            xy_parts.append(leg_xy)
+            z_parts.append(leg_z)
+            t_parts.append(leg_t + elapsed)
+            phase_parts.append(np.full(len(leg_t), name, dtype="U12"))
+            elapsed += float(leg_t[-1])
+
+    xy_mm = np.vstack(xy_parts)
+    tcp_z_mm = np.concatenate(z_parts)
+    t_s = np.concatenate(t_parts)
+    phase = np.concatenate(phase_parts)
+    depth_mm = np.clip(contact_z - tcp_z_mm, 0.0, max_depth)
+
+    poses = np.column_stack([
+        xy_mm / 1000.0,
+        tcp_z_mm / 1000.0,
+        np.repeat(orientation[None, :], len(t_s), axis=0),
+    ])
+    _workspace_check(poses[:, :3] * 1000.0, setup)
+    steps_mm = np.linalg.norm(np.diff(poses[:, :3], axis=0), axis=1) * 1000.0
+    if len(steps_mm) and np.max(steps_mm) > _positive(setup["max_step_mm"], "max_step_mm") + 1e-9:
+        raise ValueError("trajectory exceeds max_step_mm")
+    z_rates = np.abs(np.diff(tcp_z_mm)) / np.maximum(np.diff(t_s), 1e-12)
+    if len(z_rates) and np.max(z_rates) > max_z_speed + 1e-9:
+        raise ValueError("trajectory exceeds max_z_speed_mm_s")
+
+    distance = np.linalg.norm(np.diff(xy_mm, axis=0), axis=1)
+    travelled = np.concatenate([[0.0], np.cumsum(distance)])
+    total = float(travelled[-1])
+    s = travelled / total if total > 0 else np.zeros(len(t_s))
+
+    if checked["control"]["enabled"]:
+        g_ref = np.full(len(t_s), float(checked["control"]["target_uT"]))
+        control_mode = "dBxy_magnitude"
+    else:
+        g_ref = np.full(len(t_s), np.nan)
+        control_mode = "off"
+    depth_m = depth_mm / 1000.0
+    stroke = Stroke(s=s.copy(), xy=poses[:, :2].copy(),
+                    g_press=g_ref.copy(), z_ff=depth_m.copy())
+    plan = StrokePlan(
+        strokes=[stroke],
+        meta={
+            "control_mode": control_mode,
+            "stroke_durations_s": [float(t_s[-1])],
+            "time_law": "ladder_constant_depth_passes",
+        },
+    )
+    return {
+        "plan": plan,
+        "t_s": t_s,
+        "s": s,
+        "phase": phase,
+        "pose_m_rad": poses,
+        "g_ref_uT": g_ref,
+        "depth_ff_m": depth_m,
+        "spec_snapshot": copy.deepcopy(checked),
+        "setup_snapshot": copy.deepcopy(setup),
+    }
+
+
 def compile_experiment(spec: dict, setup: dict, dt_s: float = 0.02) -> dict:
     """Compile one validated JSON experiment into one timed StrokePlan."""
     checked = validate_experiment(spec, executable=True)
@@ -117,6 +257,8 @@ def compile_experiment(spec: dict, setup: dict, dt_s: float = 0.02) -> dict:
         raise ValueError("accel_mm_s2 exceeds max_accel_mm_s2")
 
     path = checked["path"]
+    if path["kind"] == "ladder":
+        return _compile_ladder(checked, setup, dt_s, accel_budget)
     if path["kind"] == "line":
         delta = np.asarray(path["delta_xy_mm"], dtype=float)
         length = float(np.linalg.norm(delta))
