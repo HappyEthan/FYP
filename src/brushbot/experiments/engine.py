@@ -200,7 +200,15 @@ class ExperimentEngine:
         index = min(int(np.searchsorted(timeline, elapsed, side="right") - 1), len(timeline) - 1)
         index = max(index, 0)
         lateness = elapsed - float(timeline[index])
-        if index > self._last_plan_index + 1 or lateness > float(self._setup["max_tick_lateness_s"]):
+        # 判据看"计划时间推进了多少"，而不是索引差值，并且要容忍两个样本。
+        # 时间轴的采样时刻与引擎的 elapsed 各自带浮点误差：梯子的样本落在精确的 0.02 网格上，
+        # 但整体与 elapsed 的 k*0.02 网格有约 1e-15 的偏移。于是一拍之内可能同时跨过两个样本
+        # ——索引差 2、计划时间推进 2*dt，而对齐偏移只有 1e-15 量级。用索引判（或按 1.5*dt 判
+        # 计划时间）都会把这种噪声当成掉队，实测在 27389 个样本上误判 228 次，整轮扫描被误杀。
+        # 取 2.5*dt 恰好：容忍对齐伪影（最多 2 个样本 = 2*dt），而真正漏掉一拍（3 个样本 = 3*dt）
+        # 仍会中止。持续掉队另由下面的 lateness 判据负责。
+        planned_ahead = float(timeline[index]) - float(timeline[self._last_plan_index])
+        if planned_ahead > 2.5 * self.dt_s or lateness > float(self._setup["max_tick_lateness_s"]):
             self._begin_abort("deadline_miss")
             return
         actual_pose = None
