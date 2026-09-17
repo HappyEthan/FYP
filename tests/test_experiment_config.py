@@ -158,3 +158,12 @@ def test_json_nan_constant_is_rejected(tmp_path):
     path.write_text('{"version": 1, "value": NaN}', encoding="utf-8")
     with pytest.raises(ValueError, match="NaN"):
         load_experiment(path)
+
+
+def test_installation_readme_documents_every_required_field():
+    # README 的引言声称覆盖全部必需字段。若漏写，操作员照它填完仍会被硬件校验逐项拒绝，
+    # 而文档本身看不出漏了什么——所以这里钉住"声称完整就必须真的完整"。
+    from brushbot.experiments.config import _INSTALLATION_FIELDS
+
+    text = (ROOT / "configs" / "installations" / "README.md").read_text(encoding="utf-8")
+    assert [f for f in _INSTALLATION_FIELDS if f not in text] == []
