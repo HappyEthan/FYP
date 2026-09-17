@@ -120,7 +120,7 @@ def ladder_setup(**overrides):
         "workspace_min_mm": [0.0, 0.0, 0.0],
         "workspace_max_mm": [300.0, 400.0, 100.0],
         "max_depth_mm": 25.0,
-        "max_xy_speed_mm_s": 25.0,
+        "max_xy_speed_mm_s": 30.0,
         "max_z_speed_mm_s": 10.0,
         "max_accel_mm_s2": 50.0,
         "max_step_mm": 2.0,
@@ -230,8 +230,32 @@ def test_ladder_rejects_z_speed_above_max():
         compile_experiment(ladder_spec(), setup, dt_s=0.02)
 
 
+def test_ladder_rejects_return_speed_above_max_xy():
+    setup = ladder_setup(max_xy_speed_mm_s=20.0)
+    with pytest.raises(ValueError, match="return_speed_mm_s exceeds max_xy_speed_mm_s"):
+        compile_experiment(ladder_spec(), setup, dt_s=0.02)
+
+
+def test_ladder_rejects_approach_speed_above_max_z():
+    setup = ladder_setup(max_z_speed_mm_s=1.0)
+    with pytest.raises(ValueError, match="approach_speed_mm_s exceeds max_z_speed_mm_s"):
+        compile_experiment(ladder_spec(), setup, dt_s=0.02)
+
+
 def test_ladder_depth_ff_is_zero_above_contact():
     compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
     phase = compiled["phase"]
     transit = np.char.startswith(phase.astype(str), "transit")
     assert np.all(compiled["depth_ff_m"][transit] == 0.0)
+
+
+def test_ladder_timeline_starts_at_zero_is_strictly_increasing_and_dt_bounded():
+    # 引擎按时间轴推进：索引不得跨拍前进（engine.py 的 deadline_miss），
+    # 因此 t_s 必须从 0 开始、严格递增、且最大步长不超过 dt_s。
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    t_s = compiled["t_s"]
+    assert len(t_s) > 2
+    assert t_s[0] == pytest.approx(0.0)
+    step = np.diff(t_s)
+    assert np.all(step > 0.0)
+    assert np.max(step) <= 0.02 + 1e-9

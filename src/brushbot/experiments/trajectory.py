@@ -143,6 +143,14 @@ def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float
     contact_z = float(setup["contact_z_mm"])
     max_depth = _positive(setup["max_depth_mm"], "max_depth_mm")
     max_z_speed = _positive(setup["max_z_speed_mm_s"], "max_z_speed_mm_s")
+    max_xy_speed = _positive(setup["max_xy_speed_mm_s"], "max_xy_speed_mm_s")
+    # 回程段在 XY 平面运动、接近/抬笔段在 Z 轴运动，都不能越过 installation 声明的速度上限；
+    # 上限由 compile_experiment 的 _required_setup 保证存在。编译期直接拒绝而非静默收敛，
+    # 防止产出"比声明的上限跑得更快"的轨迹。
+    if return_speed > max_xy_speed:
+        raise ValueError("return_speed_mm_s exceeds max_xy_speed_mm_s")
+    if approach_speed > max_z_speed:
+        raise ValueError("approach_speed_mm_s exceeds max_z_speed_mm_s")
     direction = np.asarray(_LADDER_AXES[path["axis"]], dtype=float)
     origin = np.asarray([setup["origin_x_mm"], setup["origin_y_mm"]], dtype=float)
     orientation = np.asarray(setup["vertical_rpy_rad"], dtype=float)
