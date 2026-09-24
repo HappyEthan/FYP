@@ -25,8 +25,9 @@ def load(folder):
         d = np.genfromtxt(csv, delimiter=",", names=True)
         B = np.c_[d["dBx_uT"], d["dBy_uT"], d["dBz_uT"]]
         w = j.get("action_window_s") or {}
+        label = j.get("action") or os.path.splitext(os.path.basename(csv))[0]
         recs.append(dict(
-            action=j["action"],
+            action=label,
             t=[round(float(v), 4) for v in d["t_s"]],
             x=[round(float(v), 2) for v in B[:, 0]],
             y=[round(float(v), 2) for v in B[:, 1]],
@@ -138,7 +139,7 @@ canvas{width:100%;display:block;border-radius:5px;cursor:crosshair}
     </div>
   </div>
   <p class="hint">数据：真机 MLX90393 @100 Hz，ΔB = B − B0（每段自带基线）。单位 µT。
-  分析见 <span class="mono">docs/deltab-v0-analysis.md</span>。</p>
+  分析见 <span class="mono">docs/01-monitor-filter/sensor-v0-results.md</span>。</p>
 </div>
 <script>
 const DATA = __DATA__;

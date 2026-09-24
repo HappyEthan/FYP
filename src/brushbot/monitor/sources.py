@@ -92,6 +92,18 @@ class ArraySource:
             self._i += 1
         return out
 
+    def read_frames(self) -> list:
+        """实验采样接口；调用方不得与 ``read`` 交替消费同一实例。"""
+        kind = "replay" if self.name.startswith("replay:") else "synthetic"
+        return [
+            {
+                "sensor_t_us": int(round(t_s * 1e6)),
+                "B_uT": [bx, by, bz],
+                "source_kind": kind,
+            }
+            for t_s, bx, by, bz in self.read()
+        ]
+
 
 class SerialSource:
     """pyserial 串口源. 固件格式 't_us,Bx,By,Bz' @115200."""
@@ -103,6 +115,8 @@ class SerialSource:
         self._buf = b""
         self._t0_us = None
         self.bad_lines = 0
+        self.bytes_received = 0
+        self.lines_seen = 0
 
     def start(self) -> None:
         import serial                       # 延迟导入: 没插硬件也能 import 本模块
@@ -110,6 +124,8 @@ class SerialSource:
         self._buf = b""
         self._t0_us = None
         self.bad_lines = 0
+        self.bytes_received = 0
+        self.lines_seen = 0
 
     def stop(self) -> None:
         if self._ser is not None:
@@ -121,28 +137,55 @@ class SerialSource:
         return {"name": "serial", "nominal_rate_hz": 100.0, "units": "uT",
                 "port": self.port, "baud": self.baud}
 
-    def read(self) -> list:
-        """非阻塞读, 按行解析; 正确处理跨包截断的半行."""
+    @property
+    def diagnostics(self) -> dict:
+        return {"bytes_received": self.bytes_received,
+                "lines_seen": self.lines_seen,
+                "bad_lines": self.bad_lines}
+
+    def _read_frames(self) -> list:
         if self._ser is None:
             return []
-        self._buf += self._ser.read(4096)
+        chunk = self._ser.read(4096)
+        self.bytes_received += len(chunk)
+        self._buf += chunk
         out = []
         while b"\n" in self._buf:
             raw, self._buf = self._buf.split(b"\n", 1)
+            self.lines_seen += 1
             rec = parse_serial_line(raw.decode("utf-8", errors="replace"))
             if rec is None:
                 if raw.strip() and not raw.strip().startswith(b"#"):
                     self.bad_lines += 1
                 continue
             t_us, bx, by, bz = rec
+            out.append({
+                "sensor_t_us": t_us,
+                "host_rx_ns": time.monotonic_ns(),
+                "B_uT": [bx, by, bz],
+                "source_kind": "serial",
+            })
+        return out
+
+    def read_frames(self) -> list:
+        """非阻塞读取实验帧，保留固件原始微秒时间戳。"""
+        return self._read_frames()
+
+    def read(self) -> list:
+        """旧 monitor 接口：把原始设备时间转换为相对秒。"""
+        out = []
+        for frame in self._read_frames():
+            t_us = frame["sensor_t_us"]
             if self._t0_us is None:
                 self._t0_us = t_us
+            bx, by, bz = frame["B_uT"]
             out.append(((t_us - self._t0_us) / 1e6, bx, by, bz))
         return out
 
 
 def load_v0_record(csv_path: str) -> dict:
     """读一对 V0 CSV+JSON. CSV 存的是 ΔB, 这里加回 B0 还原成原始 B."""
+    csv_path = os.fspath(csv_path)
     js_path = csv_path[:-4] + ".json" if csv_path.endswith(".csv") else csv_path + ".json"
     if not os.path.exists(js_path):
         raise FileNotFoundError("缺少配套 JSON: %s" % js_path)
@@ -170,36 +213,3 @@ class ReplaySource(ArraySource):
         d = super().info
         d["action"] = self.meta.get("action")
         return d
-
-
-def synth_writing_B(n: int = 600, rate_hz: float = 100.0,
-                    b0=(270.0, 710.0, -5500.0), peak_uT: float = 400.0) -> ArraySource:
-    """合成信号源: 构造一段"落笔-横拖-抬笔"轨迹 → 合成 ΔB → 叠加标称 B0 得原始 B.
-
-    不依赖字形数据集与 PyBullet, 确定性可测。
-
-    注意单位: tactile_from_trace() 输出的是该触觉模型的**任意内部单位**,
-    量纲上与真实磁场(µT)毫无关系——直接拿它当 µT 用会比真机数据小 ~7 个
-    数量级(峰值 ~1e-4 vs 真实数据集的 ~461 µT), 录出来的 CSV 用 "%.3f" 格式化
-    后全部四舍五入成 0.000。这里显式把整段合成轨迹的峰值 |ΔB| 缩放到 peak_uT
-    (默认 400 µT, 真实数据集量级), 使合成信号成为一段"看起来合理的信号",
-    而不是任何物理量的预测——它只用于联调/演示/无硬件测试, 不代表真实传感器响应。
-    """
-    from brushbot import config
-    from brushbot.tactile.writing_tactile import tactile_from_trace
-
-    k = np.arange(n)
-    # 前 15% 悬空, 中间落笔并横向匀速拖行, 末 15% 抬笔
-    down = (k > 0.15 * n) & (k < 0.85 * n)
-    z = np.where(down, config.PAPER_Z - 0.0015, config.PAPER_Z + 0.01)
-    x = config.CHAR_ORIGIN[0] + np.linspace(-0.015, 0.015, n)
-    y = np.full(n, config.CHAR_ORIGIN[1], dtype=float)
-    trace = np.c_[x, y, z]
-    dB, _ = tactile_from_trace(trace)
-    dB = np.asarray(dB, dtype=float)
-    peak = np.abs(dB).max()
-    if peak > 1e-9:                     # 防止全零轨迹除零; 全零时不缩放, 仍是全零
-        dB = dB * (peak_uT / peak)
-    B_raw = dB + np.asarray(b0, dtype=float)
-    t = k / float(rate_hz)
-    return ArraySource(t, B_raw, name="synth:writing", rate_hz=rate_hz)

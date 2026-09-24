@@ -1,7 +1,9 @@
 import numpy as np
 import pytest
-from brushbot.monitor.core import (EMA, RingBuffer, Baseline, derive,
-                                   normalize_symmetric, fit_whitening, filter_bad_frames)
+from brushbot.monitor.core import (
+    EMA, RingBuffer, Baseline, derive, frame_quality_mask,
+    robust_symmetric_limit,
+)
 
 
 def test_ringbuffer_keeps_latest_when_overflowing():
@@ -20,6 +22,35 @@ def test_ringbuffer_latest_clamps_to_available():
     rb.append(0.0, (1.0, 2.0, 3.0))
     t, B = rb.latest(5)
     assert t.shape == (1,) and B.shape == (1, 3)
+
+
+def test_ringbuffer_latest_seconds_uses_timestamps_not_nominal_rate():
+    rb = RingBuffer(capacity=1000)
+    for i in range(700):                    # 350 Hz, 2 seconds
+        rb.append(i / 350.0, (i, i, i))
+    t, B = rb.latest_seconds(1.0)
+    assert t[-1] - t[0] == pytest.approx(1.0, abs=1/350)
+    assert 349 <= len(t) <= 351
+    assert B[-1, 0] == 699
+
+
+def test_frame_quality_rejects_test2_style_dropouts_and_keeps_sustained_signal():
+    stable = np.array([30.0, -1030.0, -4200.0])
+    # Isolated transport glitches: zero registers, -1-count-like values, duplicated bad word.
+    samples = np.array([
+        stable, [76.65, -0.15, -0.242], stable,
+        stable, [0.0, 0.0, 0.0], stable,
+        stable, [21.75, -4240.65, -6841.582], stable,
+        [30.0, -2500.0, -6500.0], [30.0, -2500.0, -6500.0],
+    ])
+    mask = frame_quality_mask(samples)
+    assert np.where(~mask)[0].tolist() == [1, 4, 7]
+    assert mask[-2:].all(), "持续的大幅物理变化不应被孤立毛刺规则删除"
+
+
+def test_robust_symmetric_limit_ignores_invalid_values():
+    values = np.array([-30.0, 20.0, np.nan, 40.0])
+    assert robust_symmetric_limit(values, floor=50.0) == pytest.approx(50.0)
 
 
 def test_baseline_take_and_apply():
@@ -90,170 +121,6 @@ def test_ema_nan_passthrough_state_not_poisoned():
     ref.update(np.array([10.0, 0.0, 0.0]))
     y_ref = ref.update(np.array([10.0, 0.0, 0.0]))
     np.testing.assert_allclose(y_after, y_ref)
-
-
-# ---------------------------------------------------------------- 每轴归一化
-
-
-def test_normalize_symmetric_zero_at_center():
-    """对称 ±R: ΔB=0(零点/基线) 必须落在圆心 0."""
-    R = 100.0
-    got = normalize_symmetric(np.array([0.0, 0.0]), [R, R])
-    np.testing.assert_allclose(got, [0.0, 0.0])
-
-
-def test_normalize_symmetric_map_full_to_edge():
-    """对称 ±R: 满压 ±R 各到 ±1 边缘, 超出被截断."""
-    R = np.array([100.0, 50.0])
-    got = normalize_symmetric(np.array([[100.0, 50.0], [-100.0, -50.0], [1000.0, 1000.0]]), R)
-    np.testing.assert_allclose(got[0], [1.0, 1.0])
-    np.testing.assert_allclose(got[1], [-1.0, -1.0])
-    np.testing.assert_allclose(got[2], [1.0, 1.0])  # 超界截断
-
-
-def test_normalize_symmetric_per_axis_radius():
-    """每轴对称半径独立: x 半径大, y 半径小."""
-    R = np.array([200.0, 50.0])          # 不对称半径
-    dB = np.array([[-100.0, 25.0]])       # ΔBx=-0.5R, ΔBy=+0.5R
-    got = normalize_symmetric(dB, R)
-    np.testing.assert_allclose(got, [[-0.5, 0.5]])
-
-
-def test_normalize_symmetric_zero_radius():
-    """R<=0 → 全 0, 无除零."""
-    got = normalize_symmetric(np.array([5.0, -5.0]), [0.0, 0.0])
-    np.testing.assert_allclose(got, [0.0, 0.0])
-
-
-def test_baseline_normalize_xy_symmetric():
-    bl = Baseline()
-    dB = np.array([[0.0, 0.0, 0.0], [20.0, -10.0, 0.0]])  # 零点 + 满压
-    bl.set_norm_radius([40.0, 20.0])
-    assert bl.norm_ready is True
-    n = bl.normalize_xy(dB)
-    np.testing.assert_allclose(n[0], [0.0, 0.0])     # 零点 → 圆心
-    np.testing.assert_allclose(n[1], [0.5, -0.5])    # 满压 → 半径一半
-
-
-def test_baseline_normalize_xy_zero_point_is_center_even_asym():
-    """正负满压不对称时, 用较大半径, 零点仍在圆心(核心需求)."""
-    bl = Baseline()
-    # +X 满压 ΔBx=+100, −X 满压 ΔBx=−140 → 半径取 140
-    bl.set_norm_radius([max(100, 140), max(80, 50)])   # R=(140, 80)
-    dB = np.array([[0.0, 0.0, 0.0], [100.0, 80.0, 0.0], [-140.0, -50.0, 0.0]])
-    n = bl.normalize_xy(dB)
-    np.testing.assert_allclose(n[0], [0.0, 0.0])              # 零点圆心
-    np.testing.assert_allclose(n[1], [100/140, 80/80])        # +X 压 → 不到边缘
-    np.testing.assert_allclose(n[2], [-1.0, -50/80])          # −X 满压 → 恰好左边缘
-
-
-def test_baseline_normalize_xy_overall_radius():
-    """单一整体半径(每轴同值 R): 物理转圈最远端(幅= R)落到圆边缘, 与轴向无关."""
-    bl = Baseline()
-    R = 100.0
-    bl.set_norm_radius([R, R])                    # 整体半径
-    # 任意方向, 只要 |ΔBxy| = R 就到圆边缘
-    dB = np.array([[60.0, 80.0, 0.0]])             # hypot = 100 = R
-    n = bl.normalize_xy(dB)
-    assert np.allclose(n[0], [0.6, 0.8])
-    assert np.hypot(*n[0]) == pytest.approx(1.0)   # 幅值=1 → 恰好圆边缘
-    # 对角方向也验证
-    d2 = np.array([[-70.71, -70.71, 0.0]])         # hypot ≈ 100
-    n2 = bl.normalize_xy(d2)
-    assert np.hypot(*n2[0]) == pytest.approx(1.0, abs=1e-3)
-
-
-def test_baseline_normalize_xy_fallback_legacy():
-    bl = Baseline()
-    dB = np.array([[50.0, -40.0, 0.0]])
-    n = bl.normalize_xy(dB, fallback_radius=100.0)
-    np.testing.assert_allclose(n[0], [0.5, -0.4])
-    # 无半径 → 全 0
-    n0 = bl.normalize_xy(dB)
-    np.testing.assert_allclose(n0, [[0.0, 0.0]])
-
-
-def test_baseline_clear_norm():
-    bl = Baseline()
-    bl.set_norm_matrix(np.eye(2), 40.0)
-    bl.clear_norm()
-    assert bl.norm_ready is False
-    n = bl.normalize_xy(np.array([[10.0, 10.0, 0.0]]), fallback_radius=20.0)
-    np.testing.assert_allclose(n, [[0.5, 0.5]])
-
-
-# ---------------------------------------------------------------- 椭圆白化(各向同性化)
-
-
-def test_fit_whitening_circle_identity():
-    """输入已是圆(各向同性) → 白化后方差应各向同性(cov≈I)."""
-    rng = np.random.default_rng(0)
-    th = rng.uniform(0, 2 * np.pi, 4000)
-    d = np.column_stack([np.cos(th), np.sin(th)]) * 300.0   # 正圆 R=300
-    W, R = fit_whitening(d)
-    # 白化后应各向同性: cov≈I, R 为白化后基准幅度(>0)
-    assert R > 0
-    # 白化后应接近各向同性: cov ≈ I
-    whitened = d @ W.T
-    Cw = np.cov(whitened.T)
-    ev = np.linalg.eigh(Cw)[0]
-    assert ev[0] > 0
-    ratio = np.sqrt(ev[1] / ev[0])
-    assert ratio < 1.5, f"圆输入被错误放大各向异性: 比 {ratio:.2f}"
-
-
-def test_fit_whitening_ellipse_isotropizes():
-    """椭圆输入(各向异性) → 白化后方差各向同性(长短比≈1)."""
-    rng = np.random.default_rng(1)
-    th = rng.uniform(0, 2 * np.pi, 8000)
-    # 构造各向异性: x 轴放大 2 倍 → 椭圆长短比≈2
-    d = np.column_stack([2.0 * np.cos(th), 1.0 * np.sin(th)]) * 200.0
-    W, R = fit_whitening(d)
-    # 白化后样本应该是圆(各向同性)
-    whitened = d @ W.T
-    Cw = np.cov(whitened.T)
-    ev = np.linalg.eigh(Cw)[0]
-    ratio = np.sqrt(ev[1] / max(ev[0], 1e-12))
-    assert ratio < 1.2, f"白化后仍各向异性: 长短比 {ratio:.2f}"
-    # 点应落在单位圆内(R 内), 且 R≈各向同性半径
-    assert R > 0
-
-
-def test_baseline_normalize_xy_whitened():
-    """Baseline.set_norm_matrix(W,R) → normalize_xy 用白化矩阵."""
-    rng = np.random.default_rng(2)
-    th = rng.uniform(0, 2 * np.pi, 6000)
-    d = np.column_stack([2.0 * np.cos(th), 1.0 * np.sin(th)]) * 200.0
-    bl = Baseline()
-    W, R = fit_whitening(d)
-    bl.set_norm_matrix(W, R)
-    assert bl.norm_ready is True
-    # 等幅物理形变(沿各方向) → 归一化后点到圆心距离应近似恒定(圆)
-    test_th = np.linspace(0, 2 * np.pi, 64)
-    ring = np.column_stack([2.0 * np.cos(test_th), 1.0 * np.sin(test_th)]) * 200.0
-    n = bl.normalize_xy(np.column_stack([ring, np.zeros(len(ring))]))
-    dist = np.hypot(n[:, 0], n[:, 1])
-    # 各方向距离应该较一致(变异系数小), 大部分≈1(p99半径, 允许个别略超)
-    assert dist.max() < 1.05
-    cv = dist.std() / max(dist.mean(), 1e-9)
-    assert cv < 0.3, f"各向异性未矫正, 距离变异系数 {cv:.2f}"
-
-
-def test_filter_bad_frames_removes_spikes():
-    """坏帧滤波: 个别爆表毛刺被剔除, 正常样本保留."""
-    good = np.array([[300.0, 100.0], [-200.0, 300.0], [150.0, -150.0]])
-    spike = np.array([[695250.0, 500.0]])      # 离群毛刺
-    sample = np.vstack([good, spike])
-    clean, mask = filter_bad_frames(sample)
-    assert len(clean) == len(good)
-    assert mask.tolist() == [True, True, True, False]
-    np.testing.assert_allclose(clean, good)
-
-
-def test_filter_bad_frames_keeps_clean():
-    d = np.array([[10.0, 20.0], [30.0, 40.0], [15.0, 25.0]])
-    clean, mask = filter_bad_frames(d)
-    assert mask.all()
 
 
 def test_ema_nan_batch_rows_isolated():

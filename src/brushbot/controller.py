@@ -2,7 +2,7 @@ import numpy as np
 from brushbot.types import Command
 
 class OpenLoopController:
-    """开环: 沿 (x,y,z) 路点折线按弧长匀速插值出目标位姿。B1 用。"""
+    """开环：沿 (x,y,z) 路点折线按弧长匀速插值出目标位姿。"""
     def __init__(self, waypoints, speed, fixed_ori):
         self.wp = np.asarray(waypoints, dtype=float)   # (N,3)
         seg = np.linalg.norm(np.diff(self.wp, axis=0), axis=1)

@@ -1,7 +1,7 @@
 """离线目标曲线管线: 示范 CSV (ΔB+XY 同步) -> StrokePlan.
 
 纪律 (与实时链路相反): 离线数据必须干净 -- 坏数据当场报错, 不透传.
-见 docs/superpowers/specs/2026-07-31-offline-target-pipeline-design.md
+见 docs/02-strokeplan/archive/v2-pipeline.md
 """
 import numpy as np
 

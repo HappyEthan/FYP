@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "horizontal_hold",
+  "_comment": "闭环预览模板；磁目标、增益与标定文件必须来自同安装条件下的实测审核。",
+  "path": {"kind": "line", "delta_xy_mm": [40, 0]},
+  "motion": {"speed_mm_s": 5, "accel_mm_s2": null},
+  "z": {"start_tcp_z_mm": 40, "end_tcp_z_mm": 40},
+  "control": {"enabled": true, "target_uT": null, "deadband_uT": 0, "kp": null, "ki": null, "calibration_file": null}
+}

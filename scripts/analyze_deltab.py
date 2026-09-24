@@ -26,7 +26,8 @@ def load(folder):
             continue
         d = np.genfromtxt(csv, delimiter=",", names=True)
         b0 = j["baseline_B0_uT"]
-        recs.append(dict(action=j["action"], t=d["t_s"],
+        label = j.get("action") or os.path.splitext(os.path.basename(csv))[0]
+        recs.append(dict(action=label, t=np.atleast_1d(d["t_s"]),
                          B=np.c_[d["dBx_uT"], d["dBy_uT"], d["dBz_uT"]],
                          win=j.get("action_window_s"),
                          B0=np.array([b0["Bx_uT"], b0["By_uT"], b0["Bz_uT"]]),
@@ -52,6 +53,16 @@ def band_noise(x, fs, fcs):
         Y = X.copy(); Y[f > fc] = 0
         out.append(float(np.std(np.fft.irfft(Y, n=len(x)))))
     return np.array(out)
+
+
+def act_window_samples(record):
+    """Return the legacy marked interval, or the full unmarked new recording."""
+    window = record["win"]
+    if not window:
+        return record["B"]
+    mask = ((record["t"] >= window["start"])
+            & (record["t"] <= window["end"]))
+    return record["B"][mask]
 
 
 def analyze(folder, out_png="deltab_v0_analysis.png"):
@@ -89,7 +100,9 @@ def analyze(folder, out_png="deltab_v0_analysis.png"):
     # 各动作的动作前静止段, 交叉验证噪声
     print("  各记录动作前静止段 σ (交叉验证):")
     for r in acts:
-        w = r["win"]; pre = r["B"][r["t"] < max(w["start"] - 0.5, 0.5)]
+        w = r["win"]
+        pre = (r["B"][r["t"] < max(w["start"] - 0.5, 0.5)]
+               if w else np.empty((0, 3)))
         if len(pre) > 50:
             s = pre.std(axis=0)
             print("     %-12s σ=(%.2f, %.2f, %.2f) uT  (N=%d)" % (r["action"], *s, len(pre)))
@@ -119,7 +132,8 @@ def analyze(folder, out_png="deltab_v0_analysis.png"):
               % (*sl, *(np.array(sl) * 10)))
     print("  动作后回零残差 (动作结束后 1s 起的均值, 应接近 0):")
     for r in acts:
-        w = r["win"]; post = r["B"][r["t"] > w["end"] + 1.0]
+        w = r["win"]
+        post = r["B"][r["t"] > w["end"] + 1.0] if w else np.empty((0, 3))
         if len(post) > 30:
             m = post.mean(axis=0)
             print("     %-12s (%.1f, %.1f, %.1f) uT   |·|=%.1f" % (r["action"], *m, np.linalg.norm(m)))
@@ -129,7 +143,7 @@ def analyze(folder, out_png="deltab_v0_analysis.png"):
     sig_noise = np.linalg.norm(idle["B"].std(axis=0)) if idle is not None else np.nan
     print("  %-12s %10s %10s %10s %8s" % ("action", "|ΔB|peak", "|ΔBxy|peak", "|ΔBz|peak", "SNR"))
     for r in acts:
-        w = r["win"]; m = (r["t"] >= w["start"]) & (r["t"] <= w["end"]); Bw = r["B"][m]
+        Bw = act_window_samples(r)
         pk = np.linalg.norm(Bw, axis=1).max()
         pxy = np.hypot(Bw[:, 0], Bw[:, 1]).max(); pz = np.abs(Bw[:, 2]).max()
         print("  %-12s %10.1f %10.1f %10.1f %8.0fx" % (r["action"], pk, pxy, pz, pk / sig_noise))
@@ -138,8 +152,7 @@ def analyze(folder, out_png="deltab_v0_analysis.png"):
     print("\n[E] 方向可分性 (E4 关心的量)")
 
     def act_win(r):
-        w = r["win"]; m = (r["t"] >= w["start"]) & (r["t"] <= w["end"])
-        return r["B"][m]
+        return act_window_samples(r)
 
     def mean_dir(r):
         """动作平均响应方向: 对幅值加权(大幅值样本更代表动作方向)."""
@@ -203,7 +216,9 @@ def _figure(recs, idle, acts, act_win, mean_dir, area_vec, out_png):
         ax.plot(t, B[:, 0], lw=0.7, label="dBx")
         ax.plot(t, B[:, 1], lw=0.7, label="dBy")
         ax.plot(t, B[:, 2], lw=0.8, color="k", label="dBz")
-        w = r["win"]; ax.axvspan(w["start"], w["end"], color="orange", alpha=0.15)
+        w = r["win"]
+        if w:
+            ax.axvspan(w["start"], w["end"], color="orange", alpha=0.15)
         ax.set_title(r["action"], fontsize=10); ax.set_xlabel("t (s)")
         if i == 0:
             ax.set_ylabel("ΔB (uT)"); ax.legend(fontsize=6)

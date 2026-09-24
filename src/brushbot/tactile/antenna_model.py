@@ -1,6 +1,6 @@
 """P0 · 触角磁学半段 — 中线形变 → 磁偶极子链 → 传感器处 ΔB (纯 numpy).
 
-无需实体触角、无需 SOFA. 见 docs/tactile-fem-sim.md §2/§4.
+无需实体触角、无需 SOFA. 见 docs/06-mujoco-simulation-platform/archive/fem-design.md §2/§4.
 
 思路: 把触角磁化段离散成沿中线的一串点磁偶极子(矩沿局部切线).
 触角弯曲 → 偶极子位置+朝向都变 → 固定传感器处的 B 变 → ΔB = B - B0.

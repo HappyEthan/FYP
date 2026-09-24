@@ -2,7 +2,12 @@ import time
 
 import numpy as np
 import pytest
-from brushbot.monitor.sources import parse_serial_line, ArraySource
+from brushbot.monitor.sources import parse_serial_line, ArraySource, SerialSource
+
+
+def test_monitor_sources_do_not_offer_synthetic_source():
+    import brushbot.monitor.sources as sources
+    assert not hasattr(sources, "synth_writing_B")
 
 
 def test_parse_serial_line_good():
@@ -50,6 +55,65 @@ def test_array_source_read_is_incremental():
     # 同一个样本不能被读到两次
     assert len(first) + len(second) <= 4
     assert src.info["name"] == "array"
+
+
+def test_array_source_experiment_frames_are_labelled_and_preserve_time():
+    src = ArraySource([0.0], [[1.0, 2.0, 3.0]], name="synthetic:test")
+    src.start()
+    frames = src.read_frames()
+    src.stop()
+    assert frames == [{
+        "sensor_t_us": 0,
+        "B_uT": [1.0, 2.0, 3.0],
+        "source_kind": "synthetic",
+    }]
+
+
+def test_serial_read_frames_preserves_raw_sensor_timestamp():
+    class FakeSerial:
+        def __init__(self):
+            self.payload = b"2522423,11,22,33\n"
+
+        def read(self, _size):
+            payload, self.payload = self.payload, b""
+            return payload
+
+    src = SerialSource()
+    src._ser = FakeSerial()
+    frame = src.read_frames()[0]
+    assert frame["sensor_t_us"] == 2522423
+    assert frame["B_uT"] == [11.0, 22.0, 33.0]
+    assert frame["source_kind"] == "serial"
+    assert isinstance(frame["host_rx_ns"], int)
+
+
+def test_serial_source_reports_empty_and_malformed_input_counts():
+    class FakeSerial:
+        def __init__(self):
+            self.payloads = [b"", b"header\n", b"123,1,2,3\n"]
+
+        def read(self, _size):
+            return self.payloads.pop(0)
+
+    src = SerialSource()
+    src._ser = FakeSerial()
+    assert src.read_frames() == []
+    assert src.read_frames() == []
+    assert len(src.read_frames()) == 1
+    assert src.diagnostics == {
+        "bytes_received": len(b"header\n123,1,2,3\n"),
+        "lines_seen": 2,
+        "bad_lines": 1,
+    }
+
+
+def test_legacy_and_experiment_modes_use_separate_source_instances():
+    legacy = ArraySource([0.0], [[1.0, 2.0, 3.0]])
+    experiment = ArraySource([0.0], [[1.0, 2.0, 3.0]])
+    legacy.start()
+    experiment.start()
+    assert legacy.read() == [(0.0, 1.0, 2.0, 3.0)]
+    assert experiment.read_frames()[0]["B_uT"] == [1.0, 2.0, 3.0]
 
 
 def test_array_source_seek():
@@ -114,24 +178,3 @@ def test_replay_source_roundtrips_to_original_delta(tmp_path):
     bl = Baseline()
     bl.b0 = src.b0                       # 用记录自带的基线扣回去
     assert np.allclose(bl.apply(raw), dB)   # 应与原 CSV 的 ΔB 逐点一致
-
-
-from brushbot.monitor.sources import synth_writing_B
-
-
-def test_synth_writing_B_produces_streamable_source():
-    src = synth_writing_B(n=200, rate_hz=100.0)
-    assert src.info["n_samples"] == 200
-    src.start()
-    got = []
-    for _ in range(2000):
-        got.extend(src.read())
-        if src.done:
-            break
-        time.sleep(0.001)
-    src.stop()
-    assert len(got) == 200
-    B = np.array([[g[1], g[2], g[3]] for g in got])
-    assert np.isfinite(B).all()
-    # 应当围绕标称 B0 波动, 且确实有变化(不是常数)
-    assert B.std(axis=0).max() > 0.0
