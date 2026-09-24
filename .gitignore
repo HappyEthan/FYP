@@ -15,8 +15,17 @@ reference/
 # Make Me a Hanzi 数据集(外部, 30MB)
 data/makemeahanzi/
 
-# docs 全部只在本地保存
+# docs 仅跟踪八个项目目录与总导航；其他资料和资源留在本地
 docs/*
+!docs/README.md
+!docs/01-monitor-filter/
+!docs/02-strokeplan/
+!docs/03-transformer/
+!docs/04-robot-control/
+!docs/05-data-acquisition/
+!docs/06-mujoco-simulation-platform/
+!docs/07-image-to-strokeplan-baseline/
+!docs/08-system-evaluation/
 
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
