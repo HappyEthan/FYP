@@ -67,6 +67,9 @@ class RobotResourceLock:
 class ElfinExperimentArm:
     """Protocol adapter around an explicitly injected ``HuayanRobot`` instance."""
 
+    # 三次同步 HRIF 查询（TCP、关节、FSM）可能超过 20 ms；Servo 运行中禁止调用。
+    realtime_state_reads = False
+
     def __init__(self, robot, setup: dict, *, transport_timeout_s,
                  clock_ns=time.monotonic_ns):
         if (transport_timeout_s is None or isinstance(transport_timeout_s, bool)

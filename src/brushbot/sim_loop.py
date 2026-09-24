@@ -2,7 +2,7 @@
 
 Phase 1 全部验证 (层1 增益扫描 / 层2 开环-闭环对比 / demo) 共享 run_loop,
 开环对照臂 = 同一路径、增益置零. 纯 numpy, 无 GUI/MuJoCo 依赖.
-见 docs/superpowers/specs/2026-07-30-z-control-phase1-design.md
+见 docs/04-robot-control/archive/z-control-design.md
 """
 import numpy as np
 

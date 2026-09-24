@@ -41,7 +41,7 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         self._writing_visible = False
         self._stream_started = False
         self._closed = False
-        self.setWindowTitle("Brushbot · 书写监控")
+        self.setWindowTitle("智能毛笔系统")
         self.setMinimumSize(1180, 720)
         self.resize(1366, 768)
         self.setStyleSheet(stylesheet())
@@ -56,7 +56,7 @@ class ExhibitionWindow(QtWidgets.QMainWindow):
         root.setSpacing(12)
 
         heading = QtWidgets.QHBoxLayout()
-        title = QtWidgets.QLabel("磁触觉书写上位机")
+        title = QtWidgets.QLabel("智能毛笔系统")
         title.setObjectName("title")
         heading.addWidget(title)
         heading.addStretch()

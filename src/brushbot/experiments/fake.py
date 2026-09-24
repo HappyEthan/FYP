@@ -14,6 +14,7 @@ from brushbot.z_control import ZController
 
 class FakeArm:
     backend_kind = "synthetic"
+    realtime_state_reads = True
 
     def __init__(self, pose=(0.1, 0.2, 0.06, 1.0, 2.0, 3.0), fsm=33, clock=None):
         self.pose = tuple(float(value) for value in pose)
@@ -125,7 +126,8 @@ class FakeRig:
 
     def advance(self):
         self.clock.advance(0.02)
-        if self.engine.state not in {"READY", "END_WAIT", "ABORTED", "FAULT"}:
+        if self.engine.state not in {
+                "READY", "WAIT_OPERATOR", "END_WAIT", "ABORTED", "FAULT"}:
             self.hub.poll_once()
         return self.engine.step()
 
@@ -195,7 +197,8 @@ def make_rig(*, recorder_root=None, closed_loop=False, deadband_uT=0.0):
         engine, arm, hub, source, clock, spec, setup, start_pose, root)
 
 
-def make_ladder_rig(*, recorder_root=None, contact_z_mm=40.0, steps=2):
+def make_ladder_rig(*, recorder_root=None, contact_z_mm=40.0, steps=2,
+                    pause_every_passes=None):
     """Synthetic ladder rig: no hardware, no robot library."""
     setup = {
         "origin_x_mm": 100.0, "origin_y_mm": 200.0,
@@ -225,6 +228,8 @@ def make_ladder_rig(*, recorder_root=None, contact_z_mm=40.0, steps=2):
         "motion": {"speed_mm_s": 20.0, "accel_mm_s2": 200.0},
         "control": {"enabled": False},
     }
+    if pause_every_passes is not None:
+        spec["path"]["pause_every_passes"] = int(pause_every_passes)
     clock = FakeClock()
     arm = FakeArm((0.1, 0.2, 0.06, 0.0, 0.0, 0.0))
     arm.clock = clock

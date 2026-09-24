@@ -19,7 +19,7 @@ import numpy as np
 
 _SENSOR_FIELDS = (
     "seq", "sensor_t_us", "host_rx_ns", "Bx_uT", "By_uT", "Bz_uT",
-    "dBx_uT", "dBy_uT", "dBz_uT", "valid", "invalid_reason",
+    "dBx_uT", "dBy_uT", "dBz_uT", "baseline_id", "valid", "invalid_reason",
 )
 _STREAM_FILES = {
     "sensor": "sensor.csv",
@@ -75,9 +75,13 @@ def _process_exists(pid) -> bool:
 class RunRecorder:
     """Write three append-only streams and atomically finalize a run manifest."""
 
-    def __init__(self, root: str, snapshots: dict, *, queue_size: int = 4096):
+    def __init__(self, root: str, snapshots: dict, *, queue_size: int = 4096,
+                 started_at: datetime | None = None):
         if isinstance(queue_size, bool) or not isinstance(queue_size, int) or queue_size < 1:
             raise ValueError("queue_size must be a positive integer")
+        self._started_at = started_at or datetime.now(timezone.utc)
+        if self._started_at.tzinfo is None:
+            raise ValueError("started_at must include a timezone")
         self.root = Path(root)
         self.root.mkdir(parents=True, exist_ok=True)
         self._recover_interrupted()
@@ -93,7 +97,7 @@ class RunRecorder:
             "run_id": self.run_id,
             "status": "running",
             "reason": "",
-            "started_at": _utc_now(),
+            "started_at": self._started_at.isoformat(),
             "finished_at": None,
             "writer_pid": os.getpid(),
             "sha256": {},
@@ -101,7 +105,10 @@ class RunRecorder:
             "adapter": _json_safe(snapshots.get("adapter")),
             "execution_environment": str(
                 snapshots.get("execution_environment", "unspecified")),
+            "baselines": [],
         }
+        if snapshots.get("brush_id") is not None:
+            self._manifest["brush_id"] = str(snapshots["brush_id"])
         self._write_snapshots(dict(snapshots))
         _atomic_json(self.run_dir / "manifest.json", self._manifest)
 
@@ -128,7 +135,7 @@ class RunRecorder:
             _atomic_json(manifest_path, manifest)
 
     def _create_run_dir(self):
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
+        stamp = self._started_at.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
         for _ in range(100):
             run_id = f"{stamp}-{secrets.token_hex(3)}"
             folder = self.root / run_id
@@ -249,18 +256,24 @@ class RunRecorder:
         """Persist the frozen B0 and the sequence after which it applies."""
         if self._finished:
             raise RuntimeError("recorder is already finished")
-        if "baseline" in self._manifest:
-            raise RuntimeError("baseline metadata is already recorded")
+        expected_id = len(self._manifest["baselines"])
         try:
             b0 = np.asarray(metadata["B0_uT"], dtype=float)
             last_seq = int(metadata["last_seq"])
+            baseline_id = int(metadata.get("baseline_id", expected_id))
         except (KeyError, TypeError, ValueError) as exc:
             raise ValueError("baseline requires B0_uT and last_seq") from exc
-        if b0.shape != (3,) or not np.isfinite(b0).all() or last_seq < 0:
-            raise ValueError("baseline B0_uT/last_seq is invalid")
+        if (b0.shape != (3,) or not np.isfinite(b0).all()
+                or last_seq < 0 or baseline_id < 0):
+            raise ValueError("baseline baseline_id/B0_uT/last_seq is invalid")
+        if baseline_id != expected_id:
+            raise ValueError(f"baseline_id must be {expected_id}")
         baseline = _json_safe(dict(metadata))
+        baseline["baseline_id"] = baseline_id
         baseline["applies_after_seq"] = last_seq
-        self._manifest["baseline"] = baseline
+        self._manifest["baselines"].append(baseline)
+        if "baseline" not in self._manifest:
+            self._manifest["baseline"] = baseline
         _atomic_json(self.run_dir / "manifest.json", self._manifest)
 
     def finish(self, status: str, reason: str = "") -> str:

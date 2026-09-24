@@ -32,16 +32,17 @@ class SampleHub:
     """The sole consumer of a source, with non-destructive subscriber cursors."""
 
     def __init__(self, source, clock_ns: Callable[[], int], *, control_filter=None,
-                 max_samples: int = 100_000):
+                 max_samples: int = 100_000,
+                 abort_on_invalid_running_sample: bool = False):
         if max_samples < 1:
             raise ValueError("max_samples must be positive")
         self.source = source
         self.clock_ns = clock_ns
         self._rows = deque(maxlen=int(max_samples))
-        self._max_samples = int(max_samples)
         self._seq = 0
         self._last_sensor_t_us = None
         self._baseline = None
+        self._baseline_id = -1
         self._baseline_start_seq = None
         self._policy = {}
         self._control_filter = control_filter
@@ -49,6 +50,7 @@ class SampleHub:
         self._latest_control_row = None
         self._running = False
         self.fault = None
+        self.abort_on_invalid_running_sample = bool(abort_on_invalid_running_sample)
 
     @property
     def baseline_ready(self) -> bool:
@@ -62,8 +64,6 @@ class SampleHub:
         self._running = bool(running)
 
     def _append(self, row: dict) -> None:
-        if len(self._rows) == self._max_samples:
-            self.fault = "sample_buffer_overflow"
         self._rows.append(row)
 
     def poll_once(self) -> list:
@@ -102,6 +102,8 @@ class SampleHub:
                 self.fault = reason
             elif isinstance(sensor_t_us, (int, np.integer)):
                 self._last_sensor_t_us = int(sensor_t_us)
+            if not valid and self._running and self.abort_on_invalid_running_sample:
+                self.fault = "sensor_invalid"
 
             b_list = values.tolist() if values.shape == (3,) else [None, None, None]
             row = {
@@ -115,12 +117,14 @@ class SampleHub:
                 "dBx_uT": None,
                 "dBy_uT": None,
                 "dBz_uT": None,
+                "baseline_id": None,
                 "valid": bool(valid),
                 "invalid_reason": reason,
                 "source_kind": frame.get("source_kind", "unknown"),
             }
             if valid and self._baseline is not None:
                 delta = values - self._baseline
+                row["baseline_id"] = self._baseline_id
                 row["dBx_uT"], row["dBy_uT"], row["dBz_uT"] = (
                     float(delta[0]), float(delta[1]), float(delta[2]))
                 filtered = np.asarray(self._control_filter.update(delta), dtype=float)
@@ -131,10 +135,30 @@ class SampleHub:
         return added
 
     def take_since(self, seq: int) -> list:
-        """Return samples after a cursor without consuming any shared data."""
-        return [copy.deepcopy(row) for row in self._rows if row["seq"] > int(seq)]
+        """Return retained samples after a cursor; fail if required rows were overwritten."""
+        cursor = int(seq)
+        if self._rows and cursor < self._rows[0]["seq"] - 1:
+            raise RuntimeError("sample_buffer_overflow")
+        # 订阅者通常只取上一拍之后的新尾部。反向遍历会在遇到 cursor 时立即停止，
+        # 因此每拍成本与新增样本数相关，而不是与整场实验累计的历史长度相关。
+        rows = []
+        for row in reversed(self._rows):
+            if row["seq"] <= cursor:
+                break
+            rows.append(copy.deepcopy(row))
+        rows.reverse()
+        return rows
 
-    def set_baseline(self, samples: list, policy: dict) -> dict:
+    def begin_baseline(self) -> None:
+        """Clear the active offset so baseline-acquisition rows have no delta."""
+        if self._running:
+            raise RuntimeError("cannot take baseline while running")
+        self._baseline = None
+        self._baseline_start_seq = None
+        self._latest_filtered = None
+        self._latest_control_row = None
+
+    def set_baseline(self, samples: list, policy: dict, *, enforce_quality: bool = True) -> dict:
         """Validate and freeze B0; baseline rows themselves keep empty deltas."""
         if self._running:
             raise RuntimeError("cannot take baseline while running")
@@ -160,16 +184,19 @@ class SampleHub:
             raise ValueError("baseline contains invalid samples")
         std = values.std(axis=0)
         limits = np.asarray(policy["baseline_max_std_uT"], dtype=float)
-        if limits.shape != (3,) or not np.isfinite(limits).all() or np.any(std > limits):
-            raise ValueError("baseline standard deviation exceeds limit")
+        if enforce_quality:
+            if limits.shape != (3,) or not np.isfinite(limits).all() or np.any(std > limits):
+                raise ValueError("baseline standard deviation exceeds limit")
         times = (np.asarray([row["host_rx_ns"] for row in valid], dtype=float) - start_ns) / 1e9
         if duration_s > 0:
             slopes = np.array([np.polyfit(times, values[:, axis], 1)[0] for axis in range(3)])
         else:
             slopes = np.full(3, np.inf)
         drift_limit = float(policy["baseline_max_drift_uT_s"])
-        if not math.isfinite(drift_limit) or drift_limit < 0 or np.any(np.abs(slopes) > drift_limit + 1e-9):
-            raise ValueError("baseline drift exceeds limit")
+        if enforce_quality:
+            if (not math.isfinite(drift_limit) or drift_limit < 0
+                    or np.any(np.abs(slopes) > drift_limit + 1e-9)):
+                raise ValueError("baseline drift exceeds limit")
 
         baseline = values.mean(axis=0)
         filt = self._control_filter or _make_filter(policy["filter"])
@@ -178,11 +205,13 @@ class SampleHub:
             filt.update(value - baseline)
         self._control_filter = filt
         self._baseline = baseline
+        self._baseline_id += 1
         self._baseline_start_seq = max(int(row["seq"]) for row in valid)
         self._policy = copy.deepcopy(policy)
         self._latest_filtered = None
         self._latest_control_row = None
         return {
+            "baseline_id": self._baseline_id,
             "B0_uT": baseline.tolist(),
             "std_uT": std.tolist(),
             "drift_uT_s": slopes.tolist(),

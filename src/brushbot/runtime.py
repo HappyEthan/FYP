@@ -1,6 +1,6 @@
 """Runtime 集成: 时钟世界的执行组件。
 
-设计: docs/superpowers/specs/2026-08-05-runtime-integration-design.md
+设计: docs/04-robot-control/archive/z-control-design.md
 本模块当前只有 Clock 部分 (§3.1); TactileExecutor/TickLog 按 spec 后续补齐。
 
 Clock 契约: tick() 阻塞到下一拍边界, 返回 (t_now_s, overrun)。

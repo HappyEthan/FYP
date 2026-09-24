@@ -15,18 +15,17 @@ reference/
 # Make Me a Hanzi 数据集(外部, 30MB)
 data/makemeahanzi/
 
-# docs 默认全部只在本地保存
+# docs 全部只在本地保存
 docs/*
-
-# 只有同步目录允许 Git 跟踪
-!docs/同步/
-!docs/同步/**
 
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
 
 # 传感器实测、标定、扫描与录制数据只在本地保留
 recordings/
+runs/
+poster/
+proposal report.pdf
 configs/
 calibration/
 delta_b_v0_*/

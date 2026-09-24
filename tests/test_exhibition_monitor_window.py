@@ -46,7 +46,10 @@ def qtbot():
 
     bot = Bot()
     bot.app = app
-    return bot
+    yield bot
+    if hasattr(bot, "widget"):
+        bot.widget.close()
+        app.processEvents()
 
 
 def test_app_starts_directly_on_manual_monitor(qtbot):

@@ -3,12 +3,13 @@
 
 用法 (单行):
     python scripts/compare_filters.py
-    python scripts/compare_filters.py path/to/*.csv --out docs/filter-comparison.md
+    python scripts/compare_filters.py path/to/*.csv --out docs/01-monitor-filter/filter-comparison.md
 
 默认跑 delta_b_v0_20260724/ 全部数据. 装配态 E0 数据到位后, 用装配态 CSV
 重跑同一命令即可重新选型 (spec §4).
 """
 import argparse
+import os
 import sys
 from pathlib import Path
 
@@ -229,7 +230,15 @@ def make_pareto(rows, out_png):
     fig.savefig(out_png, dpi=120)
 
 
-def write_report(rows, rec, runs, out_md, out_png):
+def _markdown_relpath(target, report_dir):
+    """返回从报告目录到资源文件的 POSIX 风格相对路径。"""
+    return Path(os.path.relpath(target, start=report_dir)).as_posix()
+
+
+def write_report(rows, rec, runs, out_md, out_png, out_pareto):
+    report_dir = Path(out_md).parent
+    comparison_link = _markdown_relpath(out_png, report_dir)
+    pareto_link = _markdown_relpath(out_pareto, report_dir)
     lines = [
         "# 滤波器对比报告 (脚本生成)",
         "",
@@ -283,9 +292,9 @@ def write_report(rows, rec, runs, out_md, out_png):
         "- 机械臂运动低频磁场漂移与提按信号频谱重叠 — 交差分测量方案 (deltaB-control.md §8.1).",
         "- 裸态数据为乐观下界, 装配态 E0 复测后须重跑本报告.",
         "",
-        "![对比图](assets/filter-comparison.png)",
+        "![对比图](%s)" % comparison_link,
         "",
-        "![噪声-滞后 Pareto](assets/filter-pareto.png)",
+        "![噪声-滞后 Pareto](%s)" % pareto_link,
         "",
         "散点图读法: 左下角为 Pareto 最优方向; EMA α 扫描与 Butterworth fc 扫描各成一条权衡曲线,",
         "同等相位滞后下更低的点降噪更强. OneEuro (空心三角) 的横坐标是慢态线性化等效值,",
@@ -298,7 +307,10 @@ def write_report(rows, rec, runs, out_md, out_png):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("csvs", nargs="*", help="ΔB CSV; 默认 delta_b_v0_20260724/ 全部")
-    ap.add_argument("--out", default=str(ROOT / "docs" / "filter-comparison.md"))
+    ap.add_argument(
+        "--out",
+        default=str(ROOT / "docs" / "01-monitor-filter" / "experiments" / "filter-comparison.md"),
+    )
     args = ap.parse_args(argv)
 
     paths = [Path(p) for p in args.csvs] or sorted(
@@ -315,13 +327,17 @@ def main(argv=None):
     rec = recommend(rows)
 
     out_md = Path(args.out)
-    out_png = out_md.parent / "assets" / "filter-comparison.png"
-    out_png.parent.mkdir(parents=True, exist_ok=True)
+    asset_dir = (
+        ROOT / "docs" / "assets" / "01-monitor-filter" / "generated" / "filter"
+    )
+    asset_dir.mkdir(parents=True, exist_ok=True)
+    out_png = asset_dir / "filter-comparison.png"
+    out_pareto = asset_dir / "filter-pareto.png"
     sel_labels = {rec["label"], "EMA a=0.3", "Butter fc=8"}
     make_figure([c for c in cfgs if c["label"] in sel_labels],
                 idle_runs[0], out_png)
-    make_pareto(rows, out_md.parent / "assets" / "filter-pareto.png")
-    write_report(rows, rec, runs, out_md, out_png)
+    make_pareto(rows, out_pareto)
+    write_report(rows, rec, runs, out_md, out_png, out_pareto)
 
     for r in rows:
         print("%-22s |σ|=%.2f fftΔ=%+.1f%% φ3=%.1f° gd=%.1fms settle=%.0fms rms=%.2f"

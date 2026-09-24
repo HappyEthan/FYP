@@ -177,9 +177,14 @@ def test_empty_signal_plot_places_waiting_text_inside_frame(app):
     assert plot.waiting_label.isVisible()
 
 
-def test_connection_panel_defaults_to_acm0(app):
+def test_connection_panel_uses_serial_port_default(app, monkeypatch):
+    monkeypatch.setattr(
+        "brushbot.exhibition_monitor.connection_panel.default_serial_port",
+        lambda: "/dev/ttyUSB7",
+    )
     panel = ConnectionPanel(ExhibitionStateStore(), FakeGateway())
-    assert panel.port_edit.text() == "/dev/ttyACM0"
+    assert panel.port_edit.text() == "/dev/ttyUSB7"
+    assert panel.findChild(QtWidgets.QLabel, "pressure") is None
 
 
 def test_practice_panel_shows_pressure_and_state(app):

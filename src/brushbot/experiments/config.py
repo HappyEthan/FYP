@@ -78,7 +78,9 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
     path = _mapping(data.get("path"), "path", errors)
     is_ladder = path.get("kind") == "ladder"
     required = ["version", "name", "path", "motion", "control"]
-    allowed = {"version", "name", "_comment", "path", "motion", "control"}
+    allowed = {
+        "version", "name", "_comment", "run_label", "path", "motion", "control",
+    }
     if not is_ladder:
         required.append("z")
         allowed.add("z")
@@ -91,6 +93,10 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
         errors.append("name must be a non-empty string")
     if "_comment" in data and not isinstance(data["_comment"], str):
         errors.append("_comment must be a string")
+    if ("run_label" in data
+            and (not isinstance(data["run_label"], str)
+                 or not data["run_label"].strip())):
+        errors.append("run_label must be a non-empty string")
 
     kind = path.get("kind")
     if kind == "line":
@@ -110,10 +116,13 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
         if not isinstance(path.get("clockwise"), bool):
             errors.append("clockwise must be boolean")
     elif kind == "ladder":
-        fields = ("kind", "axis", "travel_mm", "depth_from_mm", "depth_to_mm",
-                  "steps", "order", "transit_z_mm")
-        _require_keys(path, fields, "path.", errors)
-        _reject_unknown(path, set(fields), "path.", errors)
+        required_fields = ("kind", "axis", "travel_mm", "depth_from_mm",
+                           "depth_to_mm", "steps", "order", "transit_z_mm")
+        allowed_fields = {
+            *required_fields, "pause_every_passes", "pause_z_mm", "wetting",
+        }
+        _require_keys(path, required_fields, "path.", errors)
+        _reject_unknown(path, allowed_fields, "path.", errors)
         axis = path.get("axis")
         if not isinstance(axis, str) or axis not in {"+x", "-x", "+y", "-y"}:
             errors.append("path.axis must be one of +x, -x, +y, -y")
@@ -121,11 +130,70 @@ def validate_experiment(data: dict, *, executable: bool = False) -> dict:
         _finite_number(path.get("depth_from_mm"), "depth_from_mm", errors, nonnegative=True)
         _finite_number(path.get("depth_to_mm"), "depth_to_mm", errors, nonnegative=True)
         _finite_number(path.get("transit_z_mm"), "transit_z_mm", errors, positive=True)
+        if path.get("pause_z_mm") is not None:
+            _finite_number(path.get("pause_z_mm"), "pause_z_mm", errors, positive=True)
         steps = path.get("steps")
         if isinstance(steps, bool) or not isinstance(steps, int) or steps < 2:
             errors.append("path.steps must be an integer >= 2")
-        if path.get("order") != "down_then_up":
-            errors.append("path.order must be down_then_up")
+        pause_every = path.get("pause_every_passes")
+        if (pause_every is not None
+                and (isinstance(pause_every, bool)
+                     or not isinstance(pause_every, int)
+                     or pause_every < 1)):
+            errors.append("path.pause_every_passes must be a positive integer")
+        if path.get("pause_z_mm") is not None and pause_every is None:
+            errors.append("path.pause_z_mm requires pause_every_passes")
+        if path.get("wetting") is not None:
+            wetting = _mapping(path.get("wetting"), "path.wetting", errors)
+            wetting_fields = {
+                "every_paths", "x_mm", "y_mm", "cup_rim_z_mm",
+                "safe_z_mm", "dip_z_mm", "dwell_s", "settle_s",
+            }
+            _require_keys(wetting, tuple(sorted(wetting_fields)), "path.wetting.", errors)
+            _reject_unknown(wetting, wetting_fields, "path.wetting.", errors)
+            wet_every = wetting.get("every_paths")
+            if (isinstance(wet_every, bool) or not isinstance(wet_every, int)
+                    or wet_every < 1):
+                errors.append("path.wetting.every_paths must be a positive integer")
+            for field in (
+                    "x_mm", "y_mm", "cup_rim_z_mm", "safe_z_mm", "dip_z_mm"):
+                _finite_number(wetting.get(field), f"path.wetting.{field}", errors)
+            for field in ("dwell_s", "settle_s"):
+                _finite_number(
+                    wetting.get(field), f"path.wetting.{field}", errors,
+                    nonnegative=True)
+            safe_z = wetting.get("safe_z_mm")
+            dip_z = wetting.get("dip_z_mm")
+            if (isinstance(safe_z, (int, float)) and not isinstance(safe_z, bool)
+                    and isinstance(dip_z, (int, float)) and not isinstance(dip_z, bool)
+                    and math.isfinite(float(safe_z)) and math.isfinite(float(dip_z))
+                    and float(safe_z) <= float(dip_z)):
+                errors.append(
+                    "path.wetting.safe_z_mm must be above path.wetting.dip_z_mm")
+            cup_rim_z = wetting.get("cup_rim_z_mm")
+            if (isinstance(safe_z, (int, float)) and not isinstance(safe_z, bool)
+                    and isinstance(cup_rim_z, (int, float))
+                    and not isinstance(cup_rim_z, bool)
+                    and math.isfinite(float(safe_z))
+                    and math.isfinite(float(cup_rim_z))
+                    and float(safe_z) <= float(cup_rim_z)):
+                errors.append(
+                    "path.wetting.safe_z_mm must be above "
+                    "path.wetting.cup_rim_z_mm")
+            if (isinstance(dip_z, (int, float)) and not isinstance(dip_z, bool)
+                    and isinstance(cup_rim_z, (int, float))
+                    and not isinstance(cup_rim_z, bool)
+                    and math.isfinite(float(dip_z))
+                    and math.isfinite(float(cup_rim_z))
+                    and float(dip_z) >= float(cup_rim_z)):
+                errors.append(
+                    "path.wetting.dip_z_mm must be below "
+                    "path.wetting.cup_rim_z_mm")
+            if pause_every is not None or path.get("pause_z_mm") is not None:
+                errors.append(
+                    "path.wetting cannot be combined with manual pause fields")
+        if path.get("order") not in {"down_then_up", "one_way"}:
+            errors.append("path.order must be down_then_up or one_way")
         pair = (path.get("depth_from_mm"), path.get("depth_to_mm"))
         if all(isinstance(value, (int, float)) and not isinstance(value, bool)
                for value in pair) and float(pair[0]) >= float(pair[1]):

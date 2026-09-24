@@ -29,7 +29,7 @@
 | `baseline_max_std_uT` | 基线三轴标准差上限 | 实测静置噪声后确定 |
 | `baseline_max_drift_uT_s` | 基线漂移速率上限 | 实测静置漂移后确定 |
 | `sensor_max_age_s` | 传感器样本最大年龄 | 按控制周期确定 |
-| `max_tick_lateness_s` | 单拍最大迟到 | **须先量 `HRIF_ReadActTcpPos` 单次耗时**，见下 |
+| `max_tick_lateness_s` | 单拍最大迟到 | 根据 RUN 中实际调用与现场调度测量；当前 RUN 不逐拍调用 `HRIF_ReadActTcpPos`，见下 |
 | `stop_timeout_s` | 停止超时 | 按现场确定 |
 | `gripper_width_mm` / `gripper_speed` / `gripper_force` | 夹持参数 | 按已标定的夹笔参数 |
 | `filter` | 控制滤波配置 | 与标定表必须一致 |
@@ -42,9 +42,8 @@
 - `wait_z_mm`：候选 `130`
 - `workspace_min_mm` / `workspace_max_mm`：候选 X `[-400, 100]`、Y `[400, 600]`、Z `[17, 130]`
 
-`contact_z_mm` 历史候选为 `40`，但历史脚本用的是别的值：`scripts/static_z_scan.py:27`
-的 `START_Z_MM = 36.0`、`scripts/four_direction_z_ramp.py:24` 的 `ENTRY_Z_MM = 30.0`，
-与 `40` 三者不一致。**必须实测确认，不得沿用历史数字。**
+`contact_z_mm` 的历史候选曾出现 `30`、`36` 和 `40` 三个互相冲突的值。
+这些数字仅保留为风险记录；**必须实测确认，不得沿用历史数字。**
 
 ## 梯子实验对 installation 的额外要求
 
@@ -72,13 +71,8 @@
 
 设好 `max_accel_mm_s2` 后建议先 `compile_experiment` 编译一次确认不报错再上机。
 
-## 上机前必须完成的两项测量
+## 上机前必须核对的两件事
 
-1. **`HRIF_ReadActTcpPos` 单次耗时。** RUN 阶段引擎每拍（50 Hz）读一次实际位姿。
-   判据不是"单次调用是否超过 `max_tick_lateness_s`"：`lateness` 是**累积**量
-   （实际经过时间 − 该拍的计划时间），偶发一次慢读不会中止，只有持续慢于计划节拍才会触发
-   `deadline_miss`。**本计划的引擎没有降频读取的实现**——若实测确实超预算，需要先改引擎
-   （例如降为每 N 拍读一次），不能靠调大 `max_tick_lateness_s` 掩盖：那只是允许整轮扫描
-   真实地慢于计划，各档驻留时间与传感采样数随之改变，标定条件不再一致。
+1. **RUN 阶段的节拍与位姿证据。** 当前真机适配器将 `realtime_state_reads` 设为 `False`；引擎在 50 Hz Servo 循环内不调用 `read_state()`。因此 `control.jsonl` 逐拍保存命令位姿，`actual_pose_available` 通常为 `false`，不能据此声称取得了实际 TCP Z。`PushServoP` 仍在同一循环中同步等待网络回复，当前 `transport_timeout_s` 未设置到底层 socket；`max_tick_lateness_s` 只能在调用返回后检测迟到，不能保证某次网络调用不会阻塞。若正式标定要求实际 TCP Z，应另行确定不阻塞伺服周期的采集与时间对齐办法，并核对精度；不能仅把命令 Z 改名为实际 Z。
 2. **`contact_z_mm` 实测。** 梯子第 0 档的幅值应接近静置底噪（历史实测量级
    20–39 μT）；明显偏高说明该值标低，整条曲线不可用。

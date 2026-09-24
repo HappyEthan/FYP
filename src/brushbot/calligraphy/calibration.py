@@ -1,5 +1,5 @@
 def func_brush(radii: float) -> float:
-    """CalliRewrite 毛笔 r->z 标定曲线 (米). 见 docs/callirewrite-arm-control.md."""
+    """CalliRewrite 毛笔 r->z 标定曲线 (米). 见 reference/2024_CalliRewrite_精读.md."""
     r = radii
     if 0 <= r <= 7.72667536e-04:
         return -5.9701493 * (r - 7.72667536e-04) + 4.34974603e-03

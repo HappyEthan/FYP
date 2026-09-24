@@ -13,7 +13,7 @@ import numpy as np
 import pytest
 
 from brushbot.monitor.recorder import Recorder
-from brushbot.monitor.sources import SerialSource, synth_writing_B
+from brushbot.monitor.sources import ArraySource, SerialSource
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
 
@@ -35,7 +35,7 @@ def test_core_modules_do_not_import_gui():
     用子进程跑, 否则同一次 pytest 里别的测试 import 过 window 就会污染 sys.modules。
     """
     code = ("import sys, brushbot.monitor.core, brushbot.monitor.sources, "
-            "brushbot.monitor.recorder, brushbot.monitor.normconfig; "
+            "brushbot.monitor.recorder; "
             "print([m for m in sys.modules if m.startswith(('PyQt5', 'pyqtgraph'))])")
     out = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True,
                          cwd=REPO, check=True)
@@ -94,54 +94,38 @@ def test_serial_source_times_are_relative_to_first_sample():
 
 # ---------- 契约 3: 录制出来的东西必须能被分析脚本真正跑通 ----------
 
-def _record_synth(tmp_path, action, marks=None, n=120):
-    """用合成源灌一段进 Recorder 并落盘. marks=(start_s, stop_s) 或 None."""
-    src = synth_writing_B(n=n, rate_hz=100.0)
+def _record_array(tmp_path, n=120):
+    """Use a deterministic offline array; no monitor synthetic source is involved."""
+    t = np.arange(n, dtype=float) / 100.0
+    delta = np.column_stack([
+        100.0 * np.sin(2 * np.pi * t),
+        80.0 * np.cos(2 * np.pi * t),
+        20.0 * np.sin(4 * np.pi * t),
+    ])
     b0 = np.array([270.0, 710.0, -5500.0])
-    rec = Recorder(str(tmp_path), action, b0, src.info)
+    src = ArraySource(t, delta + b0, rate_hz=100.0, name="offline-array")
+    rec = Recorder(str(tmp_path), b0, src.info)
     for k in range(n):
-        t_s = k / 100.0
-        raw = src._B[k]                      # 直接取数组, 不必等墙钟
-        rec.add(t_s, raw - b0)
-    if marks is not None:
-        rec.mark_start(marks[0]); rec.mark_stop(marks[1])
+        rec.add(t[k], src._B[k] - b0)
     return rec.finish()
 
 
-def test_synth_recording_is_not_all_zeros(tmp_path):
-    """合成 ΔB 必须落在真实量级上.
-
-    曾经的 bug: 触觉模型的任意单位被直接当 µT 用, 峰值 ~1e-4 µT,
-    经 '%.3f' 格式化后整份 CSV 全是 0.000 —— 图上却看不出来(自动缩放)。
-    """
-    csv_path, _ = _record_synth(tmp_path, "synth_scale")
-    d = np.genfromtxt(csv_path, delimiter=",", names=True)
-    dB = np.c_[d["dBx_uT"], d["dBy_uT"], d["dBz_uT"]]
-    peak = float(np.abs(dB).max())
-    assert peak > 1.0, "录出来的 ΔB 峰值只有 %g µT, 基本等于全零" % peak
-    assert peak <= 400.0 * 1.01
-
-
-def test_synth_recording_is_labelled_synthetic(tmp_path):
-    """合成数据不得冒充真硬件采集 —— 否则数据集里混进假样本且无从分辨."""
-    _, json_path = _record_synth(tmp_path, "synth_label")
-    meta = json.load(open(json_path, encoding="utf-8"))
-    assert meta["sensor"] == "synthetic"
-    assert meta["board"] is None
-
-
-@pytest.mark.parametrize("marks", [None, (0.3, 0.8), (0.8, 0.3), (-5.0, 99.0)])
-def test_recording_is_consumable_by_analyzer(tmp_path, marks):
-    """★ 端到端: 录制 → analyze() 必须跑通.
-
-    marks 覆盖: 没标记 / 正常 / 顺序颠倒 / 越界。四种都必须产出合法动作窗,
-    否则 analyze_deltab.py 会 TypeError(None 不可下标) 或对空数组 .max()。
-    """
-    _record_synth(tmp_path, "roundtrip", marks=marks)
+def test_new_recording_is_consumable_without_fabricated_action_window(tmp_path):
+    csv_path, _ = _record_array(tmp_path)
     analyze = _load_analyzer()
-    out_png = tmp_path / "out.png"
-    analyze.analyze(str(tmp_path), str(out_png))     # 不抛异常即通过
     recs = analyze.load(str(tmp_path))
-    w = recs[0]["win"]
-    assert w is not None
-    assert 0.0 <= w["start"] < w["end"] <= recs[0]["t"][-1] + 1e-9
+    assert recs[0]["action"] == pathlib.Path(csv_path).stem
+    assert recs[0]["win"] is None
+
+
+def test_legacy_action_and_window_are_preserved(tmp_path):
+    csv_path, json_path = _record_array(tmp_path)
+    meta = json.loads(pathlib.Path(json_path).read_text(encoding="utf-8"))
+    meta["action"] = "line_lr"
+    meta["action_window_s"] = {"start": 0.2, "end": 0.8}
+    pathlib.Path(json_path).write_text(json.dumps(meta), encoding="utf-8")
+
+    rec = _load_analyzer().load(str(tmp_path))[0]
+    assert pathlib.Path(csv_path).exists()
+    assert rec["action"] == "line_lr"
+    assert rec["win"] == {"start": 0.2, "end": 0.8}

@@ -4,7 +4,7 @@
 压向地面 → 接触力把触角顶弯(形变不是手掰的, 是撞出来的). 每步读各段世界
 位置 → 转到触角根部(传感器)局部系 → sensor_B (P0, 不改) → ΔB.
 
-见 docs/tactile-fem-sim.md. 用 MuJoCo 作为 SOFA 的回退(§5): 更真实接触、
+见 docs/06-mujoco-simulation-platform/archive/fem-design.md. 用 MuJoCo 作为 SOFA 的回退(§5): 更真实接触、
 pip 秒装、无显示可跑; 磁学半段与引擎解耦, 原样复用。
 """
 import numpy as np

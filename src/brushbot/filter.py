@@ -6,7 +6,7 @@ NaN 策略: 含非有限值的样本原样透传且不更新内部状态.
 EMA 为控制环定稿滤波器 (α=CONTROL_EMA_ALPHA, Phase 1 在环评估),
 2026-08-10 起归属本模块 (审计 R7); monitor.core 保留 re-export 兼容旧 import.
 
-见 docs/superpowers/specs/2026-07-29-filter-design.md
+见 docs/01-monitor-filter/archive/filter-history.md
 """
 import numpy as np
 

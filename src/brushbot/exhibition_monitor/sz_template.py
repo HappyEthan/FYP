@@ -1,4 +1,4 @@
-"""Stable normalized S/Z writing templates and arc-length helpers."""
+"""Stable normalized two-stroke writing templates and arc-length helpers."""
 
 from __future__ import annotations
 
@@ -9,21 +9,15 @@ Point = tuple[float, float]
 
 
 _TEMPLATE: dict[str, tuple[Point, ...]] = {
-    # Both paths are ordered in the direction a brush would naturally write.
-    "S": (
-        (0.78, 0.14), (0.62, 0.06), (0.38, 0.06), (0.20, 0.16),
-        (0.18, 0.30), (0.30, 0.40), (0.52, 0.46), (0.72, 0.54),
-        (0.82, 0.66), (0.76, 0.82), (0.58, 0.94), (0.34, 0.94),
-        (0.16, 0.84),
-    ),
-    "Z": (
-        (0.18, 0.12), (0.82, 0.12), (0.18, 0.88), (0.82, 0.88),
-    ),
+    # Compatibility keys remain S/Z, while the visible practice is now two
+    # simple strokes: first horizontal, then vertical.
+    "S": ((0.08, 0.50), (0.92, 0.50)),
+    "Z": ((0.50, 0.08), (0.50, 0.92)),
 }
 
 
 def load_sz_template() -> dict[str, tuple[Point, ...]]:
-    """Return a fresh, normalized S-then-Z template mapping."""
+    """Return a fresh, normalized horizontal-then-vertical template mapping."""
     return {letter: tuple(points) for letter, points in _TEMPLATE.items()}
 
 
@@ -90,6 +84,93 @@ def stamp_brush(previous: Point, current: Point, brush_width: float) -> tuple[Po
         )
         for index in range(count + 1)
     )
+
+
+def calligraphic_outline(
+    points: Sequence[Point], width: float, *, stroke: str = "horizontal"
+) -> tuple[Point, ...]:
+    """Build a sampled, asymmetrical brush outline around a centerline.
+
+    The profiles are traced from a regular-script long horizontal and hanging-
+    needle vertical: the entry has a small pressed shoulder, the shaft settles
+    into a stable body, and the exit progressively lifts to a sharp tip.  The
+    two sides intentionally use slightly different widths/forward offsets so
+    the result is not a mathematically symmetric capsule.
+    """
+    source = tuple((float(x), float(y)) for x, y in points)
+    if not source:
+        return ()
+    if len(source) == 1:
+        half = max(0.0, float(width)) / 2.0
+        x, y = source[0]
+        return ((x - half, y), (x, y - half), (x + half, y), (x, y + half))
+    if stroke == "horizontal":
+        profile = (
+            (0.00, 0.62, 0.48, -0.10, -0.03),
+            (0.04, 0.92, 0.80, -0.04, -0.01),
+            (0.10, 1.00, 0.96, -0.01, 0.00),
+            (0.18, 0.96, 0.94, 0.00, 0.00),
+            (0.30, 0.90, 0.88, 0.00, 0.00),
+            (0.45, 0.88, 0.86, 0.00, 0.00),
+            (0.60, 0.90, 0.90, 0.00, 0.00),
+            (0.74, 0.86, 0.82, 0.01, 0.02),
+            (0.86, 0.68, 0.56, 0.02, 0.04),
+            (0.94, 0.32, 0.25, 0.04, 0.06),
+            (1.00, 0.02, 0.02, 0.06, 0.08),
+        )
+    else:
+        profile = (
+            (0.00, 0.66, 0.52, -0.04, -0.02),
+            (0.04, 0.92, 0.80, -0.02, 0.00),
+            (0.10, 1.00, 0.94, 0.00, 0.00),
+            (0.18, 0.96, 0.92, 0.00, 0.00),
+            (0.32, 0.90, 0.88, 0.00, 0.00),
+            (0.48, 0.88, 0.86, 0.00, 0.00),
+            (0.64, 0.88, 0.86, 0.00, 0.00),
+            (0.76, 0.82, 0.78, 0.01, 0.02),
+            (0.86, 0.60, 0.50, 0.03, 0.04),
+            (0.94, 0.24, 0.18, 0.06, 0.07),
+            (1.00, 0.015, 0.015, 0.09, 0.10),
+        )
+    lengths = [math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(source, source[1:])]
+    total = sum(lengths)
+    if total <= 0.0:
+        return calligraphic_outline((source[0],), width)
+
+    def at_fraction(fraction: float) -> tuple[Point, Point]:
+        target = total * max(0.0, min(1.0, fraction))
+        travelled = 0.0
+        for index, length in enumerate(lengths):
+            if travelled + length >= target or index == len(lengths) - 1:
+                start, end = source[index], source[index + 1]
+                ratio = 0.0 if length == 0.0 else (target - travelled) / length
+                point = (start[0] + ratio * (end[0] - start[0]), start[1] + ratio * (end[1] - start[1]))
+                tangent = (end[0] - start[0], end[1] - start[1])
+                magnitude = math.hypot(*tangent) or 1.0
+                return point, (tangent[0] / magnitude, tangent[1] / magnitude)
+            travelled += length
+        return source[-1], (0.0, 1.0)
+
+    left, right = [], []
+    for fraction, left_factor, right_factor, left_lead, right_lead in profile:
+        point, tangent = at_fraction(fraction)
+        normal = (-tangent[1], tangent[0])
+        brush_width = max(0.0, float(width))
+        left_radius = brush_width * left_factor / 2.0
+        right_radius = brush_width * right_factor / 2.0
+        left.append(
+            (
+                point[0] + tangent[0] * brush_width * left_lead + normal[0] * left_radius,
+                point[1] + tangent[1] * brush_width * left_lead + normal[1] * left_radius,
+            )
+        )
+        right.append(
+            (
+                point[0] + tangent[0] * brush_width * right_lead - normal[0] * right_radius,
+                point[1] + tangent[1] * brush_width * right_lead - normal[1] * right_radius,
+            )
+        )
+    return tuple(left + list(reversed(right)))
 
 
 def polyline_at_progress(

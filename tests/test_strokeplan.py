@@ -139,7 +139,7 @@ def test_gd_series_structure():
 
 
 def test_waypoints_drive_openloop_controller():
-    """B1 兼容 (形状级快测): OpenLoopController 原样消费 to_waypoints."""
+    """OpenLoopController 可直接消费旧 V2 to_waypoints。"""
     from brushbot.controller import OpenLoopController
     from brushbot.types import State
     ctrl = OpenLoopController(_plan2().to_waypoints(), speed=0.02,
@@ -148,33 +148,3 @@ def test_waypoints_drive_openloop_controller():
         cmd = ctrl.step(State(tcp_pose=(0, 0, 0, 0, 0, 0), g_meas=0.0, t=i * 0.01))
         x, y, z = cmd.tcp_pose[:3]
         assert np.isfinite([x, y, z]).all() and 0.18 <= z <= 0.22
-
-
-def test_waypoints_chain_writes_ink():
-    """Q4 链路级 (审计 R3): to_waypoints → OpenLoopController → Scene/IK → 真的落墨.
-
-    旧形状级测试对 z 符号矛盾与不可达坐标完全盲 (笔画只走 1cm、绕过 IK)。
-    本测试过完整 B1 链路, 断言笔尖确实压到纸面之下且字落在 CHAR_ORIGIN 附近."""
-    from brushbot import config
-    from brushbot.backends.sim import SimBackend, ZeroTactile
-    from brushbot.controller import OpenLoopController
-    from brushbot.run import run
-    from brushbot.scene import Scene
-    m = 20
-    s = np.linspace(0.0, 1.0, m)
-    st = Stroke(s=s, xy=np.column_stack([np.linspace(0.0, 0.04, m), np.zeros(m)]),
-                g_press=np.full(m, 150.0), z_ff=np.full(m, 0.003))
-    wps = StrokePlan(strokes=[st], meta={}).to_waypoints()
-    sc = Scene(gui=False)
-    sc.load()
-    sc.set_joints(sc.ik(wps[0], config.FIXED_ORI))
-    for _ in range(240):
-        sc.step()
-    ctrl = OpenLoopController(wps, speed=0.05, fixed_ori=config.FIXED_ORI)
-    trace = []
-    run(SimBackend(sc, ZeroTactile(), substeps=4), ctrl,
-        on_tick=lambda state: trace.append(state.tcp_pose[:3]))
-    sc.close()
-    down = [(x, y) for (x, y, z) in trace if z <= config.PAPER_Z - 0.001]
-    assert len(down) > 5, "笔尖从未压到纸面之下 — z 符号或帧变换错误"
-    assert abs(float(np.mean([p[0] for p in down])) - config.CHAR_ORIGIN[0]) < 0.05

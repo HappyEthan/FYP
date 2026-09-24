@@ -103,11 +103,13 @@ _LADDER_AXES = {
 
 
 def _ladder_depths(path: dict) -> list[float]:
-    """Expand a depth ladder into the visited sequence (down then up)."""
+    """Expand a depth ladder into its configured one-way or round-trip visits."""
     steps = int(path["steps"])
     low = float(path["depth_from_mm"])
     high = float(path["depth_to_mm"])
     down = [low + (high - low) * index / (steps - 1) for index in range(steps)]
+    if path["order"] == "one_way":
+        return down
     return down + list(reversed(down))
 
 
@@ -131,12 +133,26 @@ def _leg_samples(xy0, xy1, z0, z1, speed_mm_s: float, accel_mm_s2: float,
     return xy, z, law["t_s"]
 
 
+def _hold_samples(xy, z, duration_s: float, dt_s: float):
+    """Sample a stationary dwell without introducing a zero-duration motion leg."""
+    duration = float(duration_s)
+    if duration <= 0:
+        return np.asarray(xy, dtype=float)[None, :], np.array([float(z)]), np.array([0.0])
+    t = np.arange(0.0, duration, float(dt_s), dtype=float)
+    if len(t) == 0 or not math.isclose(float(t[-1]), duration, abs_tol=1e-12):
+        t = np.append(t, duration)
+    points = np.repeat(np.asarray(xy, dtype=float)[None, :], len(t), axis=0)
+    return points, np.full(len(t), float(z)), t
+
+
 def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float) -> dict:
     """Compile a ladder experiment into one timed multi-pass plan."""
     _required_setup(setup, ("approach_speed_mm_s", "return_speed_mm_s"))
     path = checked["path"]
     travel = _positive(path["travel_mm"], "travel_mm")
     transit_z = float(path["transit_z_mm"])
+    pause_z = float(path.get("pause_z_mm", transit_z))
+    wetting = path.get("wetting")
     measure_speed = _positive(checked["motion"]["speed_mm_s"], "speed_mm_s")
     approach_speed = _positive(setup["approach_speed_mm_s"], "approach_speed_mm_s")
     return_speed = _positive(setup["return_speed_mm_s"], "return_speed_mm_s")
@@ -163,6 +179,25 @@ def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float
     for depth in depths:
         if contact_z - depth > transit_z + 1e-9:
             raise ValueError("transit_z_mm must be above every ladder depth")
+    if pause_z < transit_z - 1e-9:
+        raise ValueError("pause_z_mm must be at or above transit_z_mm")
+
+    wet_visits = []
+    if wetting is not None:
+        wet_safe_z = float(wetting["safe_z_mm"])
+        wet_dip_z = float(wetting["dip_z_mm"])
+        if wet_safe_z < transit_z - 1e-9:
+            raise ValueError("wetting.safe_z_mm must be at or above transit_z_mm")
+        wet_visits = list(range(0, len(depths), int(wetting["every_paths"])))
+        wet_xy = np.asarray([wetting["x_mm"], wetting["y_mm"]], dtype=float)
+        wet_dwell_s = float(wetting["dwell_s"])
+        wet_settle_s = float(wetting["settle_s"])
+
+    pause_every = path.get("pause_every_passes")
+    pause_next_visits = (
+        list(range(int(pause_every), len(depths), int(pause_every)))
+        if pause_every is not None else [])
+    pause_completed_visits = {next_visit - 1 for next_visit in pause_next_visits}
 
     start_xy = origin.copy()
     end_xy = origin + direction * travel
@@ -173,27 +208,79 @@ def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float
     elapsed = 0.0
     for visit, depth in enumerate(depths):
         work_z = contact_z - depth
-        legs = (
-            (f"approach_{visit:02d}", start_xy, start_xy, transit_z, work_z, approach_speed),
-            (f"measure_{visit:02d}", start_xy, end_xy, work_z, work_z, measure_speed),
-            (f"lift_{visit:02d}", end_xy, end_xy, work_z, transit_z, approach_speed),
-            (f"transit_{visit:02d}", end_xy, start_xy, transit_z, transit_z, return_speed),
-        )
-        for name, xy0, xy1, z0, z1, speed in legs:
-            leg_xy, leg_z, leg_t = _leg_samples(
-                xy0, xy1, z0, z1, speed, accel_budget, dt_s)
+        legs = []
+        if visit in wet_visits:
+            wet_start_z = wet_safe_z if visit == 0 else transit_z
+            legs.extend([
+                (f"wet_rise_{visit:02d}", start_xy, start_xy,
+                 wet_start_z, wet_safe_z, approach_speed, None),
+                (f"wet_transfer_out_{visit:02d}", start_xy, wet_xy,
+                 wet_safe_z, wet_safe_z, return_speed, None),
+                (f"wet_dip_{visit:02d}", wet_xy, wet_xy,
+                 wet_safe_z, wet_dip_z, approach_speed, None),
+                (f"wet_dwell_{visit:02d}", wet_xy, wet_xy,
+                 wet_dip_z, wet_dip_z, 0.0, wet_dwell_s),
+                (f"wet_lift_{visit:02d}", wet_xy, wet_xy,
+                 wet_dip_z, wet_safe_z, approach_speed, None),
+                (f"wet_transfer_back_{visit:02d}", wet_xy, start_xy,
+                 wet_safe_z, wet_safe_z, return_speed, None),
+                (f"wet_settle_{visit:02d}", start_xy, start_xy,
+                 wet_safe_z, wet_safe_z, 0.0, wet_settle_s),
+                (f"wet_lower_{visit:02d}", start_xy, start_xy,
+                 wet_safe_z, transit_z, approach_speed, None),
+            ])
+        legs.extend([
+            (f"approach_{visit:02d}", start_xy, start_xy,
+             transit_z, work_z, approach_speed, None),
+            (f"measure_{visit:02d}", start_xy, end_xy,
+             work_z, work_z, measure_speed, None),
+            (f"lift_{visit:02d}", end_xy, end_xy,
+             work_z, transit_z, approach_speed, None),
+            (f"transit_{visit:02d}", end_xy, start_xy,
+             transit_z, transit_z, return_speed, None),
+        ])
+        if visit in pause_completed_visits and pause_z > transit_z:
+            legs.extend([
+                (f"pause_lift_{visit:02d}", start_xy, start_xy,
+                 transit_z, pause_z, approach_speed, None),
+                (f"pause_lower_{visit:02d}", start_xy, start_xy,
+                 pause_z, transit_z, approach_speed, None),
+            ])
+        for name, xy0, xy1, z0, z1, speed, hold_s in legs:
+            if hold_s is not None and hold_s <= 0:
+                continue
+            if hold_s is None:
+                leg_xy, leg_z, leg_t = _leg_samples(
+                    xy0, xy1, z0, z1, speed, accel_budget, dt_s)
+            else:
+                leg_xy, leg_z, leg_t = _hold_samples(xy0, z0, hold_s, dt_s)
             if t_parts:
                 leg_xy, leg_z, leg_t = leg_xy[1:], leg_z[1:], leg_t[1:]
             xy_parts.append(leg_xy)
             z_parts.append(leg_z)
             t_parts.append(leg_t + elapsed)
-            phase_parts.append(np.full(len(leg_t), name, dtype="U12"))
+            phase_parts.append(np.full(len(leg_t), name, dtype="U32"))
             elapsed += float(leg_t[-1])
 
     xy_mm = np.vstack(xy_parts)
     tcp_z_mm = np.concatenate(z_parts)
     t_s = np.concatenate(t_parts)
     phase = np.concatenate(phase_parts)
+    pause_after_indices: list[int] = []
+    for next_visit in pause_next_visits:
+        completed_visit = next_visit - 1
+        pause_phase = (f"pause_lift_{completed_visit:02d}"
+                       if pause_z > transit_z else f"transit_{completed_visit:02d}")
+        matches = np.flatnonzero(phase == pause_phase)
+        if len(matches):
+            pause_after_indices.append(int(matches[-1]))
+    automatic_rebaseline_after_indices: list[int] = []
+    for visit in wet_visits:
+        marker_phase = (f"wet_settle_{visit:02d}" if wet_settle_s > 0
+                        else f"wet_transfer_back_{visit:02d}")
+        matches = np.flatnonzero(phase == marker_phase)
+        if len(matches):
+            automatic_rebaseline_after_indices.append(int(matches[-1]))
     depth_mm = np.clip(contact_z - tcp_z_mm, 0.0, max_depth)
 
     poses = np.column_stack([
@@ -239,6 +326,10 @@ def _compile_ladder(checked: dict, setup: dict, dt_s: float, accel_budget: float
         "pose_m_rad": poses,
         "g_ref_uT": g_ref,
         "depth_ff_m": depth_m,
+        "pause_after_indices": pause_after_indices,
+        "pause_next_visits": pause_next_visits,
+        "automatic_rebaseline_after_indices": automatic_rebaseline_after_indices,
+        "automatic_rebaseline_next_visits": wet_visits,
         "spec_snapshot": copy.deepcopy(checked),
         "setup_snapshot": copy.deepcopy(setup),
     }

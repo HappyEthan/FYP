@@ -13,7 +13,7 @@
      → watch_write()  (mode "watch")
 
 后续方向: 改用真实数据集(一横→真实 ΔB 序列)做标定, 合成 ΔB 只是没硬件时的替代.
-见 docs/tactile-fem-sim.md.
+见 docs/06-mujoco-simulation-platform/archive/fem-design.md.
 """
 import numpy as np
 import mujoco

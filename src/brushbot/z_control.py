@@ -4,7 +4,7 @@
   e = |ΔB_d| − |ΔB_meas|
   前馈为主, 积分仅补残差.
 
-见 docs/superpowers/specs/2026-07-28-z-control-phase0-design.md
+见 docs/04-robot-control/archive/z-control-design.md
 """
 import numpy as np
 
@@ -31,22 +31,17 @@ class ZController:
                  dt: float = 1.0 / config.FS, kp: float = 1.2077, ki: float = 0.134,
                  z_surface: float = config.PAPER_Z, dz_margin: float = 3e-3,
                  noise_std: float = 7.0, z_press_max: float = None,
-                 z_lift_max: float = 0.02, dz_step_max: float = 1e-3):
+                 z_lift_max: float = 0.02, dz_step_max: float = 1e-3,
+                 deadband_uT: float = 0.0):
         """
         Parameters
         ----------
         calib_z_mm : (N,) 压深 mm (从接触起点起算)
         calib_abs_dB : (N,) 对应 |ΔB| μT
         dt : 控制周期 (s)
-        kp/ki : 无量纲增益，每拍将误差的该比例折算为压深修正。
-            默认值 = Phase 1 工作点（裸态仿真，`docs/z-phase1-sweep.md` /
-            `docs/z-phase1-results.md`）：
-            kp=1.2077 出自层 1 增益扫描，EMA a=0.3 臂 wp_P/wp_PI 工作点
-            （kp 网格第 8 点，精确值 1.2077485712993403，四舍五入 1.2077）；
-            ki=0.134 出自层 2 多笔画收敛场景推荐值（精确值 0.1341347897639862，
-            8×synth_press 连写 + calib_scale=0.8，收敛笔数=3，裕度合规候选中最快）。
-            ki 面向跨笔画自适应时间尺度（~3 笔收敛），不承诺单笔画内扰动抑制——
-            层 2 单笔画场景实测 PI≈P（积分时间常数 τ_i 远超单笔画窗口）。
+        kp/ki : 误差到压深的比例/积分增益。默认数字来自早期裸态仿真，
+            不作为当前 StrokePlan 真机参数；现行单笔反馈入口显式使用 ki=0。
+            控制思路见 docs/04-robot-control/archive/z-control-design.md。
         z_surface : 纸面高度 (m)
         dz_margin : 积分限幅 ±m
         noise_std : 噪声标准差 (μT), 全带宽裸态口径，接滤波后必须显式传滤波后 σ；用于接触判定
@@ -81,6 +76,9 @@ class ZController:
         self._z_surface = z_surface
         self._dz_margin = dz_margin
         self._noise_std = noise_std
+        if not np.isfinite(deadband_uT) or deadband_uT < 0:
+            raise ValueError("deadband_uT must be finite and >= 0")
+        self._deadband_uT = float(deadband_uT)
 
         if z_press_max is None:
             z_press_max = float(self._z_offset_m.max()) + dz_margin + 1e-3
@@ -91,6 +89,7 @@ class ZController:
         self._z_fb = 0.0
         self._frozen = False
         self._z_prev = None
+        self._limit_active = False
 
     def _z_ff_lookup(self, g_d: float) -> float:
         """|ΔB| (μT) → z_offset (m). 委托 calib_lookup_z (全项目唯一反查实现)."""
@@ -150,11 +149,51 @@ class ZController:
         z_cmd = self._z_surface + z_ff + self._kp * self._s_cal * e + self._z_fb
         return self._clamp(z_cmd)
 
+    def step_magnitude(self, a_meas_uT: float, a_ref_uT: float, *,
+                       depth_ff_m: float) -> float:
+        """Track the explicit 2-D magnetic magnitude using positive-down depth.
+
+        The caller computes ``hypot(dBx, dBy)`` and supplies the same frozen
+        feedforward depth used by the open-loop arm.  Experiment code constructs
+        this controller with ``z_surface=0`` so the return value is depth itself.
+        """
+        values = np.asarray([a_meas_uT, a_ref_uT, depth_ff_m], dtype=float)
+        if not np.isfinite(values).all():
+            raise ValueError("magnitude control inputs must be finite")
+        measured, reference, depth_ff = map(float, values)
+        error = reference - measured
+        error_band = np.sign(error) * max(abs(error) - self._deadband_uT, 0.0)
+        proportional = self._kp * self._s_cal * error_band
+
+        integral_candidate = self._z_fb
+        if error_band != 0.0:
+            integral_candidate += self._ki * self._s_cal * error_band * self._dt
+            integral_candidate = float(np.clip(
+                integral_candidate, -self._dz_margin, self._dz_margin))
+
+        raw_candidate = self._z_surface + depth_ff + proportional + integral_candidate
+        lower = self._z_surface - self._z_lift_max
+        upper = self._z_surface + self._z_press_max
+        if self._z_prev is not None:
+            lower = max(lower, self._z_prev - self._dz_step_max)
+            upper = min(upper, self._z_prev + self._dz_step_max)
+        pushes_deeper_limit = error_band > 0 and raw_candidate > upper
+        pushes_lift_limit = error_band < 0 and raw_candidate < lower
+        if not (pushes_deeper_limit or pushes_lift_limit):
+            self._z_fb = integral_candidate
+
+        raw = self._z_surface + depth_ff + proportional + self._z_fb
+        command = self._clamp(raw)
+        self._limit_active = not np.isclose(command, raw, rtol=0.0, atol=1e-15)
+        self._frozen = error_band == 0.0
+        return command
+
     def reset(self):
         """重置积分器与速率钳历史 (视为新一段运行, 首拍不受速率钳约束)."""
         self._z_fb = 0.0
         self._frozen = False
         self._z_prev = None
+        self._limit_active = False
 
     @property
     def z_ff(self) -> float:
@@ -197,3 +236,7 @@ class ZController:
     def dz_step_max(self) -> float:
         """单步速率钳 (m/拍)."""
         return self._dz_step_max
+
+    @property
+    def limit_active(self) -> bool:
+        return self._limit_active

@@ -175,7 +175,8 @@ def _read_measure_rows(folder: Path, amplitudes: dict, contact_z_mm):
     return samples, all_actual
 
 
-def _read_planned_rung_count(folder: Path, observed_half: int) -> tuple[int, bool]:
+def _read_planned_rung_count(
+        folder: Path, observed_half: int, *, one_way: bool = False) -> tuple[int, bool]:
     """Return (rung count, from_plan) for the ladder run in ``folder``.
 
     ``from_plan`` is True when the count is read from the compiled planning
@@ -219,8 +220,8 @@ def _read_planned_rung_count(folder: Path, observed_half: int) -> tuple[int, boo
     if highest < 0:
         # timeline 里找不到任何 measure 相位（反常）：退回实测推导。
         return observed_half, False
-    # 档数 = 最大趟号 + 1 整除 2：measure_00..measure_{2N-1} 对应 N 档。
-    return (highest + 1) // 2, True
+    # 单向批次一趟就是一档；往返梯子则 measure_00..measure_{2N-1} 对应 N 档。
+    return (highest + 1 if one_way else (highest + 1) // 2), True
 
 
 def summarize_ladder(run_dir: str) -> dict:
@@ -230,6 +231,12 @@ def summarize_ladder(run_dir: str) -> dict:
     setup_path = folder / "setup.json"
     setup = json.loads(setup_path.read_text(encoding="utf-8")) if setup_path.exists() else {}
     contact_z_mm = setup.get("contact_z_mm")
+    resolved_path = folder / "resolved.json"
+    if resolved_path.exists():
+        resolved = json.loads(resolved_path.read_text(encoding="utf-8"))
+    else:
+        resolved = {}
+    one_way = resolved.get("path", {}).get("order") == "one_way"
     amplitudes = _read_sensor_amplitudes(folder)
     samples, all_actual = _read_measure_rows(folder, amplitudes, contact_z_mm)
 
@@ -240,12 +247,14 @@ def summarize_ladder(run_dir: str) -> dict:
     # 档数由档号推出而不是由"实际出现的档数"推出：若某一趟一个有效样本都没有，
     # len(visits)//2 会让降程/升程的分界左移，把不同深度的档配到一起并静默少报档数。
     # 用最大档号则缺失的档得到空 rung（幅值 NaN、monotonic 判 False），坏数据自己暴露。
-    observed_half = (max(visits) + 1) // 2 if visits else 0
+    observed_half = ((max(visits) + 1) if one_way
+                     else (max(visits) + 1) // 2) if visits else 0
     # 但实测档号只覆盖"已经发生"的部分。运行被截断（急停/掉电/传感器丢失/人工停止）时，
     # 缺失的升程越过了 max(visits)，half 会算小、把 visit 0（0 mm）和 visit 5（14.3 mm）
     # 错配进同一档还静默少报档数。编译期 timeline.npz 记录了引擎计划要跑的全部趟，
     # 以它推导才是真档数；缺档保持 NaN，让坏数据自己暴露。
-    half, from_plan = _read_planned_rung_count(folder, observed_half)
+    half, from_plan = _read_planned_rung_count(
+        folder, observed_half, one_way=one_way)
 
     def _reduce(visit_list, field, reducer):
         values = [s[field] for visit in visit_list if visit in by_visit
@@ -257,10 +266,12 @@ def summarize_ladder(run_dir: str) -> dict:
     # 用 zip 会在任一趟缺失时静默截断，把档位错配。
     for index in range(half):
         down_visit = index
-        up_visit = 2 * half - 1 - index
-        pool = [visit for visit in (down_visit, up_visit) if visit in by_visit]
+        up_visit = None if one_way else 2 * half - 1 - index
+        pool = [visit for visit in (down_visit, up_visit)
+                if visit is not None and visit in by_visit]
         down_amp = _reduce([down_visit], "amplitude_uT", np.mean)
-        up_amp = _reduce([up_visit], "amplitude_uT", np.mean)
+        up_amp = None if one_way else _reduce([up_visit], "amplitude_uT", np.mean)
+        amplitude = down_amp if one_way else float(np.mean([down_amp, up_amp]))
         rungs.append({
             "index": index,
             "depth_cmd_mm": _reduce(pool, "depth_cmd_mm", np.median),
@@ -268,9 +279,9 @@ def summarize_ladder(run_dir: str) -> dict:
                 _reduce(pool, "depth_meas_mm", np.median) if all_actual else None),
             "amplitude_down_uT": down_amp,
             "amplitude_up_uT": up_amp,
-            "amplitude_uT": float(np.mean([down_amp, up_amp])),
+            "amplitude_uT": amplitude,
             "n": sum(len(by_visit[visit]) for visit in pool),
-            "hysteresis_uT": float(up_amp - down_amp),
+            "hysteresis_uT": None if one_way else float(up_amp - down_amp),
         })
 
     if samples:
@@ -287,6 +298,8 @@ def summarize_ladder(run_dir: str) -> dict:
         for earlier, later in zip(amplitudes_in_order, amplitudes_in_order[1:])
     )
     notes = []
+    if one_way:
+        notes.append("one-way: each rung contains one independent path; hysteresis is not defined")
     if not from_plan:
         # 档数没有来自编译期 timeline.npz 时不可信：若 run 在升程被截断，实测趟号会少算档数，
         # 而缺 timeline 的情况下无法辨认，必须如实注明，避免被当成可信档数消费。

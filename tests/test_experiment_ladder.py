@@ -16,11 +16,36 @@ def ladder_spec(**overrides):
             "steps": 8,
             "order": "down_then_up",
             "transit_z_mm": 50.0,
+            "pause_every_passes": 4,
+            "pause_z_mm": 100.0,
         },
         "motion": {"speed_mm_s": 10.0, "accel_mm_s2": None},
         "control": {"enabled": False},
     }
     spec.update(overrides)
+    return spec
+
+
+def wetting_block(**overrides):
+    wetting = {
+        "every_paths": 1,
+        "x_mm": -300.0,
+        "y_mm": 500.0,
+        "cup_rim_z_mm": 100.0,
+        "safe_z_mm": 120.0,
+        "dip_z_mm": 50.0,
+        "dwell_s": 1.0,
+        "settle_s": 0.5,
+    }
+    wetting.update(overrides)
+    return wetting
+
+
+def wetting_ladder_spec(**overrides):
+    spec = ladder_spec()
+    spec["path"].pop("pause_every_passes")
+    spec["path"].pop("pause_z_mm")
+    spec["path"]["wetting"] = wetting_block(**overrides)
     return spec
 
 
@@ -80,6 +105,89 @@ def test_ladder_rejects_single_step():
         validate_experiment(spec)
 
 
+@pytest.mark.parametrize("value", [0, -1, 1.5, True])
+def test_ladder_rejects_invalid_pause_interval(value):
+    spec = ladder_spec()
+    spec["path"]["pause_every_passes"] = value
+    with pytest.raises(ValueError, match="pause_every_passes must be a positive integer"):
+        validate_experiment(spec)
+
+
+def test_ladder_accepts_automatic_wetting_block():
+    spec = wetting_ladder_spec()
+
+    checked = validate_experiment(spec)
+
+    assert checked["path"]["wetting"] == wetting_block()
+
+
+def test_ladder_rejects_unknown_automatic_wetting_field():
+    spec = wetting_ladder_spec(radius_mm=20.0)
+
+    with pytest.raises(ValueError, match="unknown field path.wetting.radius_mm"):
+        validate_experiment(spec)
+
+
+@pytest.mark.parametrize("value", [0, -1, 1.5, True])
+def test_ladder_rejects_invalid_automatic_wetting_interval(value):
+    spec = wetting_ladder_spec(every_paths=value)
+
+    with pytest.raises(ValueError, match="wetting.every_paths must be a positive integer"):
+        validate_experiment(spec)
+
+
+@pytest.mark.parametrize(
+    "field", ["x_mm", "y_mm", "cup_rim_z_mm", "safe_z_mm", "dip_z_mm"])
+def test_ladder_rejects_non_finite_automatic_wetting_coordinates(field):
+    spec = wetting_ladder_spec(**{field: float("nan")})
+
+    with pytest.raises(ValueError, match=f"wetting.{field} must be finite"):
+        validate_experiment(spec)
+
+
+@pytest.mark.parametrize("field", ["dwell_s", "settle_s"])
+def test_ladder_rejects_negative_automatic_wetting_durations(field):
+    spec = wetting_ladder_spec(**{field: -0.1})
+
+    with pytest.raises(ValueError, match=f"wetting.{field} must be >= 0"):
+        validate_experiment(spec)
+
+
+def test_ladder_requires_automatic_wetting_safe_z_above_dip_z():
+    spec = wetting_ladder_spec(safe_z_mm=50.0, dip_z_mm=50.0)
+
+    with pytest.raises(
+            ValueError,
+            match="path.wetting.safe_z_mm must be above path.wetting.dip_z_mm"):
+        validate_experiment(spec)
+
+
+def test_ladder_requires_automatic_wetting_safe_z_above_cup_rim():
+    spec = wetting_ladder_spec(safe_z_mm=100.0, cup_rim_z_mm=100.0)
+
+    with pytest.raises(
+            ValueError,
+            match="path.wetting.safe_z_mm must be above path.wetting.cup_rim_z_mm"):
+        validate_experiment(spec)
+
+
+def test_ladder_requires_automatic_wetting_dip_z_below_cup_rim():
+    spec = wetting_ladder_spec(dip_z_mm=100.0, cup_rim_z_mm=100.0)
+
+    with pytest.raises(
+            ValueError,
+            match="path.wetting.dip_z_mm must be below path.wetting.cup_rim_z_mm"):
+        validate_experiment(spec)
+
+
+def test_ladder_rejects_combining_manual_pause_and_automatic_wetting():
+    spec = ladder_spec()
+    spec["path"]["wetting"] = wetting_block()
+
+    with pytest.raises(ValueError, match="wetting cannot be combined with manual pause"):
+        validate_experiment(spec)
+
+
 def test_ladder_rejects_unknown_order():
     spec = ladder_spec()
     spec["path"]["order"] = "up_then_down"
@@ -131,6 +239,69 @@ def ladder_setup(**overrides):
     return setup
 
 
+def test_one_way_ladder_compiles_safe_wetting_before_every_path():
+    spec = wetting_ladder_spec()
+    spec["path"].update({
+        "travel_mm": 200.0,
+        "steps": 5,
+        "order": "one_way",
+        "transit_z_mm": 50.0,
+    })
+    setup = ladder_setup(
+        origin_x_mm=-200.0,
+        origin_y_mm=500.0,
+        wait_z_mm=130.0,
+        workspace_min_mm=[-400.0, 400.0, 0.0],
+        workspace_max_mm=[100.0, 600.0, 150.0],
+        max_z_speed_mm_s=13.0,
+        approach_speed_mm_s=13.0,
+        return_speed_mm_s=13.0,
+    )
+
+    compiled = compile_experiment(spec, setup)
+    phases = compiled["phase"]
+    poses_mm = compiled["pose_m_rad"][:, :3] * 1000.0
+
+    assert compiled["automatic_rebaseline_next_visits"] == [0, 1, 2, 3, 4]
+    assert len(compiled["automatic_rebaseline_after_indices"]) == 5
+    for visit in range(5):
+        suffix = f"{visit:02d}"
+        for prefix in (
+                "wet_rise_", "wet_transfer_out_", "wet_dip_", "wet_dwell_",
+                "wet_lift_", "wet_transfer_back_", "wet_settle_", "wet_lower_"):
+            assert f"{prefix}{suffix}" in phases
+        measure = poses_mm[phases == f"measure_{suffix}"]
+        assert measure[0] == pytest.approx(
+            [-200.0, 500.0, measure[0, 2]], abs=0.05)
+        assert measure[-1] == pytest.approx([0.0, 500.0, measure[-1, 2]])
+        for prefix in ("wet_transfer_out_", "wet_transfer_back_"):
+            transfer = poses_mm[phases == f"{prefix}{suffix}"]
+            assert transfer[:, 2] == pytest.approx(120.0)
+        dip = poses_mm[phases == f"wet_dip_{suffix}"]
+        assert dip[:, 0] == pytest.approx(-300.0)
+        assert dip[:, 1] == pytest.approx(500.0)
+        assert dip[-1, 2] == pytest.approx(50.0)
+        dwell = poses_mm[phases == f"wet_dwell_{suffix}"]
+        assert np.allclose(dwell, [-300.0, 500.0, 50.0])
+        settle = poses_mm[phases == f"wet_settle_{suffix}"]
+        assert np.allclose(settle, [-200.0, 500.0, 120.0])
+    assert not any(str(phase).endswith("_05") for phase in phases)
+
+
+def test_automatic_wetting_allows_zero_dwell_and_settle_times():
+    spec = wetting_ladder_spec(
+        x_mm=0.0, y_mm=200.0, cup_rim_z_mm=80.0,
+        safe_z_mm=100.0, dip_z_mm=50.0,
+        dwell_s=0.0, settle_s=0.0)
+    spec["path"]["order"] = "one_way"
+
+    compiled = compile_experiment(spec, ladder_setup())
+
+    assert len(compiled["automatic_rebaseline_after_indices"]) == 8
+    assert not any(str(phase).startswith("wet_dwell_") for phase in compiled["phase"])
+    assert not any(str(phase).startswith("wet_settle_") for phase in compiled["phase"])
+
+
 def test_ladder_depths_goes_down_then_up():
     path = ladder_spec()["path"]
     depths = _ladder_depths(path)
@@ -143,12 +314,52 @@ def test_ladder_depths_goes_down_then_up():
         assert depths.count(depth) == 2
 
 
+def test_one_way_ladder_visits_each_configured_depth_once():
+    path = ladder_spec()["path"]
+    path["order"] = "one_way"
+
+    assert _ladder_depths(path) == pytest.approx(
+        [0.0, 20.0 / 7, 40.0 / 7, 60.0 / 7, 80.0 / 7,
+         100.0 / 7, 120.0 / 7, 20.0])
+
+    compiled = compile_experiment(ladder_spec(path=path), ladder_setup(), dt_s=0.02)
+    assert sorted({phase for phase in compiled["phase"] if phase.startswith("measure_")}) == [
+        f"measure_{visit:02d}" for visit in range(8)
+    ]
+
+
 def test_ladder_compiles_sixteen_visits_and_four_phases_each():
     compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
     phases = set(compiled["phase"])
     for visit in range(16):
         for prefix in ("approach", "measure", "lift", "transit"):
             assert f"{prefix}_{visit:02d}" in phases
+
+
+def test_ladder_pause_boundaries_follow_completed_high_returns_and_skip_final_pass():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    indices = compiled["pause_after_indices"]
+
+    assert [compiled["phase"][index] for index in indices] == [
+        "pause_lift_03", "pause_lift_07", "pause_lift_11",
+    ]
+    assert compiled["pause_next_visits"] == [4, 8, 12]
+    for index in indices:
+        pose_mm = compiled["pose_m_rad"][index, :3] * 1000.0
+        assert pose_mm == pytest.approx([100.0, 200.0, 100.0])
+
+
+def test_ladder_resumes_from_pause_height_with_a_smooth_vertical_lower():
+    compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
+    phase = compiled["phase"]
+    pose_mm = compiled["pose_m_rad"][:, :3] * 1000.0
+
+    lower = pose_mm[phase == "pause_lower_03"]
+
+    assert lower[0, :2] == pytest.approx([100.0, 200.0])
+    assert 99.0 < lower[0, 2] < 100.0
+    assert lower[-1] == pytest.approx([100.0, 200.0, 50.0])
+    assert np.all(np.diff(lower[:, 2]) <= 1e-9)
 
 
 def test_ladder_phase_dtype_keeps_full_names():
@@ -194,7 +405,7 @@ def test_ladder_never_goes_below_deepest_depth():
     compiled = compile_experiment(ladder_spec(), ladder_setup(), dt_s=0.02)
     z_mm = compiled["pose_m_rad"][:, 2] * 1000.0
     assert z_mm.min() == pytest.approx(20.0)
-    assert z_mm.max() == pytest.approx(50.0)
+    assert z_mm.max() == pytest.approx(100.0)
 
 
 def test_ladder_rejects_depth_beyond_max_depth():
@@ -265,8 +476,12 @@ REPO = Path(__file__).resolve().parents[1]
 def test_shipped_ladder_experiment_is_valid():
     checked = load_experiment(REPO / "configs/experiments/z_ladder_x.json")
     assert checked["path"]["kind"] == "ladder"
-    assert checked["path"]["steps"] == 8
-    assert checked["path"]["depth_to_mm"] == pytest.approx(20.0)
+    assert checked["path"]["steps"] == 5
+    assert checked["path"]["travel_mm"] == pytest.approx(200.0)
+    assert checked["path"]["pause_every_passes"] == 4
+    assert checked["path"]["depth_from_mm"] == pytest.approx(9.0)
+    assert checked["path"]["depth_to_mm"] == pytest.approx(13.0)
+    assert checked["path"]["order"] == "one_way"
     assert checked["path"]["transit_z_mm"] == pytest.approx(50.0)
     assert checked["control"]["enabled"] is False
 

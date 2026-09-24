@@ -97,7 +97,8 @@ def test_scan_summary_is_explicitly_command_based_without_actual_pose(tmp_path):
 
 def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
                drift_per_s=0.0, use_actual=True, skip_visit=None,
-               amp_per_visit=None, timeline_steps=None, stop_after_visit=None):
+               amp_per_visit=None, timeline_steps=None, stop_after_visit=None,
+               order="down_then_up"):
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "manifest.json").write_text(
@@ -106,7 +107,9 @@ def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
         json.dumps({"contact_z_mm": contact_z_mm}), encoding="utf-8")
 
     depths = list(np.linspace(0.0, 20.0, steps))
-    visits = depths + list(reversed(depths))
+    visits = depths if order == "one_way" else depths + list(reversed(depths))
+    (folder / "resolved.json").write_text(
+        json.dumps({"path": {"order": order}}), encoding="utf-8")
     rows = []
     sensors = []
     seq = 0
@@ -145,7 +148,8 @@ def _write_run(folder, *, contact_z_mm=40.0, steps=3, amplitude_per_mm=50.0,
     if timeline_steps is not None:
         # 模仿 recorder 写入 key 全集，phase 展开为每趟的 approach/measure/lift/transit。
         legs = []
-        for v in range(2 * timeline_steps):
+        visit_count = timeline_steps if order == "one_way" else 2 * timeline_steps
+        for v in range(visit_count):
             legs.append(f"approach_{v:02d}")
             legs.append(f"measure_{v:02d}")
             legs.append(f"lift_{v:02d}")
@@ -173,6 +177,20 @@ def test_summarize_ladder_reports_each_rung(tmp_path):
         [0.0, 10.0, 20.0])
     assert summary["rungs"][0]["amplitude_uT"] == pytest.approx(0.0, abs=1e-6)
     assert summary["rungs"][2]["amplitude_uT"] == pytest.approx(1000.0, rel=1e-6)
+
+
+def test_summarize_one_way_ladder_keeps_each_visit_as_one_rung(tmp_path):
+    folder = _write_run(
+        tmp_path / "run", steps=5, order="one_way", timeline_steps=5)
+
+    summary = summarize_ladder(str(folder))
+
+    assert summary["steps"] == 5
+    assert [rung["depth_cmd_mm"] for rung in summary["rungs"]] == pytest.approx(
+        [0.0, 5.0, 10.0, 15.0, 20.0])
+    assert [rung["n"] for rung in summary["rungs"]] == [4, 4, 4, 4, 4]
+    assert all(rung["amplitude_up_uT"] is None for rung in summary["rungs"])
+    assert all(rung["hysteresis_uT"] is None for rung in summary["rungs"])
 
 
 def test_summarize_ladder_pairs_down_with_up_at_the_same_depth(tmp_path):

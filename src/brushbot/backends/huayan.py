@@ -2,7 +2,7 @@
 
 单位纪律: 对外 (State/Command) 一律 SI (米/弧度), HRIF 线上格式 (毫米/度)
 只存在于本模块的换算函数里。姿态角 Rx/Ry/Rz 与 roll/pitch/yaw 的对应关系
-未上机验证, B1 阶段建议姿态用示教器抄录的常量直通 (见 docs)。
+未上机验证；历史开环阶段建议姿态用示教器抄录的常量直通（见文档）。
 """
 import math
 import time
@@ -29,7 +29,7 @@ class HuayanBackend:
         self.lookahead = lookahead
         self.tool_coord = list(tool_coord)   # 毫米/度, 示教器标定值直接抄入
         self.user_coord = list(user_coord)
-        self.tactile = tactile               # None -> g_meas 恒 0 (B1 开环)
+        self.tactile = tactile               # None -> g_meas 恒 0（纯开环）
         self._clock = clock if clock is not None else time.monotonic
         self._t0 = self._clock()
 

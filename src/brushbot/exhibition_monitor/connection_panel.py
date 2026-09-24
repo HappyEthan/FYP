@@ -7,6 +7,7 @@ from copy import deepcopy
 from PyQt5 import QtCore, QtWidgets
 
 from .state_store import ExhibitionStateStore
+from .serial_port import default_serial_port
 
 
 class _CallSignals(QtCore.QObject):
@@ -48,7 +49,7 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         layout.setSpacing(10)
 
         layout.addWidget(QtWidgets.QLabel("串口设备"))
-        self.port_edit = QtWidgets.QLineEdit("/dev/ttyACM0", objectName="serial-port")
+        self.port_edit = QtWidgets.QLineEdit(default_serial_port(), objectName="serial-port")
         self.port_edit.setPlaceholderText("串口设备")
         layout.addWidget(self.port_edit)
 
@@ -79,8 +80,6 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         layout.addWidget(self.error_label)
         self.contact_label = QtWidgets.QLabel("离开", objectName="contact-status")
         layout.addWidget(self.contact_label)
-        self.pressure_label = QtWidgets.QLabel("压力：— µT", objectName="pressure")
-        layout.addWidget(self.pressure_label)
         layout.addStretch()
 
     def _on_store_changed(self):
@@ -97,14 +96,6 @@ class ConnectionPanel(QtWidgets.QGroupBox):
         running = bool(current.get("baseline_running"))
         error = str(current.get("error") or "")
         self.contact_label.setText("接触" if current.get("contact") else "离开")
-        pressure = current.get("pressure_bxy_uT")
-        try:
-            pressure = float(pressure)
-        except (TypeError, ValueError):
-            pressure = None
-        self.pressure_label.setText(
-            f"压力：{pressure:.1f} µT" if pressure is not None else "压力：— µT"
-        )
         self.status_label.setText("已连接" if connected else ("连接失败" if error else "未连接"))
         if connected:
             port = current.get("port") or ""

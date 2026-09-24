@@ -1,6 +1,6 @@
 def process(seq, r2z, alpha=0.04, beta=0.5):
     """CalliRewrite (p_t,x,y,r) 笔序 -> 米制 (x,y,z) 路点. 楷书入锋; 见
-    docs/callirewrite-arm-control.md. 端口自 load_data_try.py。"""
+    reference/2024_CalliRewrite_精读.md. 端口自 load_data_try.py。"""
     xs, ys, zs = [], [], []
     n = len(seq)
     has_new_stroke = any(p_t == 1 for p_t, _, _, _ in seq)

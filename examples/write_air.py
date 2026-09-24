@@ -37,7 +37,7 @@ from brushbot.controller import OpenLoopController
 from brushbot.runtime import RealClock
 from brushbot.types import Command, State
 
-# 与 write_hanzi.DEFAULT_GRAPHICS 同一路径; 不 import 它以免连带加载 PyBullet
+# 字形数据路径独立于已移除的仿真写字入口。
 _REPO = os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.abspath(brushbot.__file__))))
 DEFAULT_GRAPHICS = os.path.join(_REPO, "data", "makemeahanzi", "graphics.txt")

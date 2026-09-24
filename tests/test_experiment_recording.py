@@ -94,6 +94,25 @@ def test_baseline_metadata_records_first_applicable_sample(tmp_path):
     assert manifest["baseline"]["applies_after_seq"] == 100
 
 
+def test_multiple_baselines_are_kept_in_order_with_effective_visit(tmp_path):
+    recorder = RunRecorder(str(tmp_path), {"experiment": {"version": 1}})
+    recorder.record_baseline({
+        "baseline_id": 0, "B0_uT": [10.0, 20.0, 30.0],
+        "first_seq": 1, "last_seq": 3, "effective_visit": 0,
+    })
+    recorder.record_baseline({
+        "baseline_id": 1, "B0_uT": [11.0, 21.0, 31.0],
+        "first_seq": 50, "last_seq": 52, "effective_visit": 4,
+    })
+    folder = Path(recorder.finish("completed"))
+    manifest = json.loads((folder / "manifest.json").read_text())
+
+    assert [item["baseline_id"] for item in manifest["baselines"]] == [0, 1]
+    assert manifest["baselines"][1]["effective_visit"] == 4
+    assert manifest["baselines"][1]["applies_after_seq"] == 52
+    assert manifest["baseline"] == manifest["baselines"][0]
+
+
 def test_json_streams_convert_non_finite_values_to_null(tmp_path):
     recorder = RunRecorder(str(tmp_path), {"experiment": {"version": 1}})
     recorder.write("control", {

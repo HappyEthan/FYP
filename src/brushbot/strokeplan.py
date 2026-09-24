@@ -1,14 +1,16 @@
-"""StrokePlan: 离线目标管线的输出契约, 开环/闭环两臂的共同前馈来源.
+"""Legacy V2 with embedded depth. New target-only V3: brushbot.target_strokeplan.
+
+StrokePlan: 离线目标管线的旧输出契约, 开环/闭环两臂的共同前馈来源.
 
 Stroke 单位纪律: xy/z_ff 为米 (SI), g_press 为 µT (带后缀量纲); s 为归一化弧长.
 
 z 帧纪律 (审计 R3 修正, 2026-08-10):
-- `to_waypoints` 输出 **B1/物理世界帧** (z 向上为正): 压笔 = z_surface − z_ff
-  (纸面下), 抬笔 = z_surface + lift (纸面上) —— 与 write_openloop/render 一致.
+- `to_waypoints` 输出**旧 V2 物理世界帧**（z 向上为正）：压笔 = z_surface − z_ff
+  (纸面下), 抬笔 = z_surface + lift (纸面上)；此处只描述旧 V2 坐标约定.
 - `to_gd_series`/`to_open_z_series` 服务 **压深正向帧** (z_surface + 压深,
   ZController/sim_loop/TactileExecutor 的内部约定). 真机接入时两帧的符号定点
   见 docs/risk-register.md R20.
-见 docs/superpowers/specs/2026-07-31-offline-target-pipeline-design.md
+见 docs/02-strokeplan/archive/v2-pipeline.md
 """
 import json
 from dataclasses import dataclass, field
@@ -77,7 +79,7 @@ class StrokePlan:
                      origin=config.CHAR_ORIGIN):
         """开环路点 (CalliRewrite 式 baseline): 每笔 悬空进入 -> M 点 -> 抬笔.
 
-        B1/物理世界帧: 压笔 z = z_surface − z_ff (纸面下), 抬笔 = z_surface + lift.
+        旧 V2 物理世界帧：压笔 z = z_surface − z_ff（纸面下），抬笔 = z_surface + lift。
         origin 把示范 xy 的包围盒中心平移到该点 (默认 config.CHAR_ORIGIN 保证臂
         可达; None = 保留示范原始坐标). 输出裸 (x,y,z) 列表 (米),
         OpenLoopController 零改动消费."""

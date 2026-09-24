@@ -65,6 +65,26 @@ def test_two_subscribers_do_not_consume_each_others_samples():
     assert [row["seq"] for row in hub.take_since(0)] == [1, 2]
 
 
+def test_take_since_checks_only_the_new_tail_for_a_recent_cursor():
+    class CountingRow(dict):
+        reads = 0
+
+        def __getitem__(self, key):
+            if key == "seq":
+                type(self).reads += 1
+            return super().__getitem__(key)
+
+    hub = SampleHub(QueueSource([]), clock_ns=lambda: 0, max_samples=20_000)
+    hub._rows.extend(CountingRow(seq=seq) for seq in range(1, 10_001))
+    CountingRow.reads = 0
+
+    rows = hub.take_since(9_999)
+
+    assert [row["seq"] for row in rows] == [10_000]
+    # One extra lookup checks whether the cursor predates the retained window.
+    assert CountingRow.reads <= 4
+
+
 def test_polling_continues_when_display_takes_no_samples():
     source = QueueSource([
         [_frame(1, [1, 1, 1])],
@@ -74,6 +94,34 @@ def test_polling_continues_when_display_takes_no_samples():
     hub.poll_once()
     hub.poll_once()  # display is paused: no take_since call between polls
     assert [row["seq"] for row in hub.take_since(0)] == [1, 2]
+
+
+def test_history_rolls_without_fault_when_reader_keeps_up():
+    source = QueueSource([[_frame(seq, [1, 2, 3])]
+                          for seq in range(1, 9)])
+    hub = SampleHub(source, clock_ns=lambda: 10, max_samples=3)
+    cursor = 0
+
+    for expected in range(1, 9):
+        hub.poll_once()
+        rows = hub.take_since(cursor)
+        assert [row["seq"] for row in rows] == [expected]
+        cursor = rows[-1]["seq"]
+
+    assert hub.fault is None
+    assert [row["seq"] for row in hub._rows] == [6, 7, 8]
+
+
+def test_reader_is_told_when_its_cursor_was_overwritten():
+    source = QueueSource([[_frame(seq, [1, 2, 3])
+                           for seq in range(1, 6)]])
+    hub = SampleHub(source, clock_ns=lambda: 10, max_samples=3)
+    hub.poll_once()
+
+    assert hub.fault is None
+    with pytest.raises(RuntimeError, match="sample_buffer_overflow"):
+        hub.take_since(1)
+    assert [row["seq"] for row in hub.take_since(2)] == [3, 4, 5]
 
 
 def test_qualified_baseline_is_frozen_and_applied_to_future_samples():
@@ -86,9 +134,30 @@ def test_qualified_baseline_is_frozen_and_applied_to_future_samples():
     hub = SampleHub(source, clock_ns=lambda: 0)
     baseline_rows = hub.poll_once()
     result = hub.set_baseline(baseline_rows, _policy())
+    assert result["baseline_id"] == 0
     assert result["B0_uT"] == pytest.approx([10, 20, 30])
     row = hub.poll_once()[0]
+    assert row["baseline_id"] == 0
     assert [row["dBx_uT"], row["dBy_uT"], row["dBz_uT"]] == pytest.approx([2, 4, 6])
+
+
+def test_diagnostic_rebaseline_records_quality_without_rejecting_noise_or_drift():
+    rows = [
+        {"seq": i + 1, "sensor_t_us": i * 10_000,
+         "host_rx_ns": i * 10_000_000,
+         "B_uT": [10.0 + 10.0 * i, 20.0 - 5.0 * i, 30.0],
+         "valid": True}
+        for i in range(3)
+    ]
+    hub = SampleHub(QueueSource([]), clock_ns=lambda: 0)
+
+    first = hub.set_baseline(rows, _policy(), enforce_quality=False)
+    second = hub.set_baseline(rows, _policy(), enforce_quality=False)
+
+    assert first["baseline_id"] == 0
+    assert second["baseline_id"] == 1
+    assert first["std_uT"][0] > _policy()["baseline_max_std_uT"][0]
+    assert abs(first["drift_uT_s"][0]) > _policy()["baseline_max_drift_uT_s"]
 
 
 @pytest.mark.parametrize(
