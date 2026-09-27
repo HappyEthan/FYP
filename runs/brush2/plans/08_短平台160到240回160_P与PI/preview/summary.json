@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/short_plateau_p_pi_160_240_v1/plateau_160_240_160.npz",
+  "sha256": "51a24e0645e4d464261692c4c4a85dcc6fa221e3b9c53862068e8c7a94ae1e31",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 1501,
+      "length_mm": 299.99999999999994,
+      "duration_s": 30.0,
+      "peak_xy_speed_mm_s": 10.000000000002487,
+      "target_range_uT": [
+        160.0,
+        240.0
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

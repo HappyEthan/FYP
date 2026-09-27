@@ -1,0 +1,111 @@
+{
+  "calibration_id": "ladder-863a81844b03dcae",
+  "plans": [
+    {
+      "name": "01_gradual_press",
+      "target_range_uT": [
+        60,
+        200
+      ],
+      "stroke_duration_s": 20.2,
+      "cruise_speed_mm_s": 10.0,
+      "source_sha256": "d91e39e421ea05e8803b14c3d4c321f41f92d02ca6bd660c7bdbd20334efa9db",
+      "offline_compile": "passed",
+      "total_duration_s": 60.74,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ]
+    },
+    {
+      "name": "02_single_arch",
+      "target_range_uT": [
+        60,
+        200
+      ],
+      "stroke_duration_s": 20.2,
+      "cruise_speed_mm_s": 10.0,
+      "source_sha256": "54ca90c7273372fe336b39db132c2f1f33af1ccfc4c776f20c14e2ed1a866a17",
+      "offline_compile": "passed",
+      "total_duration_s": 60.02,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ]
+    },
+    {
+      "name": "03_double_wave",
+      "target_range_uT": [
+        60,
+        200
+      ],
+      "stroke_duration_s": 20.2,
+      "cruise_speed_mm_s": 10.0,
+      "source_sha256": "a104041a26dbd0a8b63f01c803c1ee22a7a5c7168b5aa84d55d0b66e2ca2952d",
+      "offline_compile": "passed",
+      "total_duration_s": 60.02,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ]
+    },
+    {
+      "name": "04_smooth_levels",
+      "target_range_uT": [
+        60,
+        200
+      ],
+      "stroke_duration_s": 20.2,
+      "cruise_speed_mm_s": 10.0,
+      "source_sha256": "e3d84e4eaa71b2834e834ae6f36a598c890352626d80ddac5d9225f3bba66973",
+      "offline_compile": "rejected",
+      "reason": "acceleration limit; revise targets/time explicitly"
+    }
+  ],
+  "validation": "offline only; no robot connected",
+  "fourth_profile_note": "Original remains rejected and preserved. Use the separate wide_transitions revision, offline compiled with unchanged limits.",
+  "selected_for_first_trial": [
+    "01_gradual_press",
+    "02_single_arch",
+    "03_double_wave"
+  ],
+  "deferred": [
+    "04_smooth_levels"
+  ],
+  "fourth_profile_peak_acceleration_mm_s2": 242.44377120724928,
+  "acceleration_limit_mm_s2": 200.0,
+  "fourth_profile_revision": {
+    "file": "04_smooth_levels_wide_transitions.npz",
+    "transition_intervals_mm": [
+      [
+        15,
+        60
+      ],
+      [
+        75,
+        120
+      ],
+      [
+        135,
+        180
+      ]
+    ],
+    "plateau_targets_uT": [
+      60,
+      130,
+      200,
+      95
+    ],
+    "peak_acceleration_mm_s2": 98.3437991301274,
+    "offline_compile": "passed",
+    "original_preserved": true,
+    "validation_report": "additional_trials_validation.json",
+    "requested_by_user": "Execute fourth profile with reasonable acceleration; keep one stroke per invocation."
+  },
+  "current_execution_plans": [
+    "01_gradual_press",
+    "02_single_arch",
+    "03_double_wave",
+    "04_smooth_levels_wide_transitions"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "scope": "offline PI command replay only; no hardware",
+  "cases": [
+    {
+      "stroke": 1,
+      "artificial_error_uT": -60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 1,
+      "artificial_error_uT": 0.0,
+      "max_feedback_mm": 0.0,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 1,
+      "artificial_error_uT": 20.0,
+      "max_feedback_mm": 0.7999301170533873,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 1,
+      "artificial_error_uT": 60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 2,
+      "artificial_error_uT": -60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 2,
+      "artificial_error_uT": 0.0,
+      "max_feedback_mm": 0.0,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 2,
+      "artificial_error_uT": 20.0,
+      "max_feedback_mm": 0.7999301170533873,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 2,
+      "artificial_error_uT": 60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 3,
+      "artificial_error_uT": -60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 3,
+      "artificial_error_uT": 0.0,
+      "max_feedback_mm": 0.0,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 3,
+      "artificial_error_uT": 20.0,
+      "max_feedback_mm": 0.7999301170533873,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 3,
+      "artificial_error_uT": 60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 4,
+      "artificial_error_uT": -60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 4,
+      "artificial_error_uT": 0.0,
+      "max_feedback_mm": 0.0,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 4,
+      "artificial_error_uT": 20.0,
+      "max_feedback_mm": 0.7999301170533873,
+      "final_integral_mm": 0.0
+    },
+    {
+      "stroke": 4,
+      "artificial_error_uT": 60.0,
+      "max_feedback_mm": 0.8,
+      "final_integral_mm": 0.0
+    }
+  ]
+}

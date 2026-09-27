@@ -47,7 +47,7 @@ def _read_run(folder: Path):
                 steady.setdefault(visit, []).append(amplitude)
     return {
         "folder": folder,
-        "id": folder.name.rsplit("__", 1)[-1],
+        "id": manifest["run_id"].rsplit("-", 1)[-1],
         "status": manifest.get("status"),
         "expected_visits": set(range(int(resolved["path"]["steps"]))),
         "signature": signature,

@@ -1,0 +1,166 @@
+{
+  "run": 9,
+  "stroke": 2,
+  "angle_unit": "degree",
+  "reference": "+X=0, +Y=90, -Y=-90",
+  "statistic": "per-bin sample median, all valid moving samples including turns",
+  "time_origin": "measure_01 start",
+  "arclength": "command path accumulated distance from stroke start",
+  "actual_heading": "asynchronous TCP interpolated to sensor time, centered 0.2s displacement",
+  "estimated_heading": "wrap(90-phi), empirical mapping; phi=atan2(EMA dBy, EMA dBx)",
+  "bins": [
+    {
+      "arc_mm": [
+        15,
+        90
+      ],
+      "n": 375,
+      "time_s": [
+        3.0600078109999984,
+        10.540044587999994
+      ],
+      "theta": 7.198825513229341,
+      "command_theta": 6.897427557771559,
+      "phi": 111.63097233032539,
+      "estimate_90_minus_phi_deg": -21.630972330325392,
+      "ema_dBx_uT": -76.50874769457344,
+      "ema_dBy_uT": 194.37909121462604
+    },
+    {
+      "arc_mm": [
+        90,
+        100
+      ],
+      "n": 63,
+      "time_s": [
+        10.560041468999998,
+        11.800012071999994
+      ],
+      "theta": 6.836062410855801,
+      "command_theta": 6.897427557747076,
+      "phi": 107.71160172431877,
+      "estimate_90_minus_phi_deg": -17.71160172431877,
+      "ema_dBx_uT": -67.83247740429539,
+      "ema_dBy_uT": 213.23827591342632
+    },
+    {
+      "arc_mm": [
+        100,
+        105
+      ],
+      "n": 63,
+      "time_s": [
+        11.820094905999994,
+        13.060075993999995
+      ],
+      "theta": -8.694803462095757,
+      "command_theta": -7.765166018456436,
+      "phi": 106.64528734397915,
+      "estimate_90_minus_phi_deg": -16.645287343979135,
+      "ema_dBx_uT": -63.356965450759105,
+      "ema_dBy_uT": 211.51497100429123
+    },
+    {
+      "arc_mm": [
+        105,
+        110
+      ],
+      "n": 60,
+      "time_s": [
+        13.080006449999999,
+        14.260087711999994
+      ],
+      "theta": -46.74397664591226,
+      "command_theta": -49.39863177626425,
+      "phi": 107.73991331247089,
+      "estimate_90_minus_phi_deg": -17.73991331247089,
+      "ema_dBx_uT": -66.97260844378755,
+      "ema_dBy_uT": 210.20245650986226
+    },
+    {
+      "arc_mm": [
+        110,
+        115
+      ],
+      "n": 43,
+      "time_s": [
+        14.280000814999994,
+        15.120097085999994
+      ],
+      "theta": -49.283028793603805,
+      "command_theta": -49.398705354995535,
+      "phi": 118.35098533568822,
+      "estimate_90_minus_phi_deg": -28.35098533568822,
+      "ema_dBx_uT": -111.19999590761839,
+      "ema_dBy_uT": 210.13398358910246
+    },
+    {
+      "arc_mm": [
+        115,
+        120
+      ],
+      "n": 73,
+      "time_s": [
+        15.140181801999994,
+        16.580004476999996
+      ],
+      "theta": -82.81621239136517,
+      "command_theta": -86.55245726698976,
+      "phi": 120.86755650452916,
+      "estimate_90_minus_phi_deg": -30.867556504529148,
+      "ema_dBx_uT": -120.07368739455825,
+      "ema_dBy_uT": 200.99826752974948
+    },
+    {
+      "arc_mm": [
+        120,
+        130
+      ],
+      "n": 50,
+      "time_s": [
+        16.600089794999995,
+        17.580000856999995
+      ],
+      "theta": -90.03375675533768,
+      "command_theta": -90.0,
+      "phi": 134.1710370316543,
+      "estimate_90_minus_phi_deg": -44.17103703165428,
+      "ema_dBx_uT": -151.18503544110607,
+      "ema_dBy_uT": 164.2252011967285
+    },
+    {
+      "arc_mm": [
+        130,
+        140
+      ],
+      "n": 50,
+      "time_s": [
+        17.600087357,
+        18.580118342
+      ],
+      "theta": -90.23946284428575,
+      "command_theta": -90.0,
+      "phi": 145.44040019857016,
+      "estimate_90_minus_phi_deg": -55.440400198570146,
+      "ema_dBx_uT": -150.65246501792853,
+      "ema_dBy_uT": 104.33951041323351
+    },
+    {
+      "arc_mm": [
+        140,
+        145
+      ],
+      "n": 25,
+      "time_s": [
+        18.600033267999997,
+        19.080005385
+      ],
+      "theta": -90.37897503892485,
+      "command_theta": -90.0,
+      "phi": 147.53263799720722,
+      "estimate_90_minus_phi_deg": -57.53263799720722,
+      "ema_dBx_uT": -141.83649427264402,
+      "ema_dBy_uT": 88.99244152210517
+    }
+  ]
+}

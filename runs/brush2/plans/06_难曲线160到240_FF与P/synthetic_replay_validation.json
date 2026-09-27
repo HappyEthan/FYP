@@ -1,0 +1,25 @@
+{
+  "hardware_evidence": false,
+  "simulation_only_override": {
+    "baseline_min_samples": 80
+  },
+  "reason": "Fake source is 50 Hz; real 400-sample requirement stays unchanged in trial settings.",
+  "results": [
+    {
+      "mode": "feedforward",
+      "state": "END_WAIT",
+      "measurement_rows": 2001,
+      "feedback_calls": 0,
+      "max_correction_mm": 0.0,
+      "synthetic_run_dir": "/tmp/brushbot-nonlinear-hard-replay-jgtwador/2026-09-25/16-56-44__hard_feedforward__0acb06"
+    },
+    {
+      "mode": "p",
+      "state": "END_WAIT",
+      "measurement_rows": 2001,
+      "feedback_calls": 2001,
+      "max_correction_mm": 0.4,
+      "synthetic_run_dir": "/tmp/brushbot-nonlinear-hard-replay-jgtwador/2026-09-25/16-56-45__hard_p__fbe15e"
+    }
+  ]
+}

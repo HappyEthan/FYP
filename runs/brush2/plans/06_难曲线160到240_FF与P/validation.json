@@ -1,0 +1,52 @@
+{
+  "target_range_uT": [
+    160.0,
+    240.0
+  ],
+  "measurement_duration_s": 40.0,
+  "measurement_length_mm": 400.0,
+  "total_paper_travel_mm": 450.0,
+  "cruise_speed_mm_s": 10.0,
+  "measurement_x_mm": [
+    -331.0,
+    69.0
+  ],
+  "paper_x_mm": [
+    -370.0,
+    80.00000000000001
+  ],
+  "nominal_measurement_z_mm": [
+    26.89430597459763,
+    30.091535656483607
+  ],
+  "p_worst_amplitude_z_mm": [
+    26.49430597459763,
+    30.491535656483606
+  ],
+  "full_duration_s": 131.98,
+  "max_nominal_z_speed_mm_s": 4.97162132679016,
+  "max_nominal_accel_mm_s2": 59.8599700189599,
+  "max_target_rate_uT_s": 99.98814878024547,
+  "ff_p_nominal_paths_identical": true,
+  "p_profile": {
+    "kp": 2.0,
+    "ki": 0.0,
+    "max_correction_mm": 0.4,
+    "max_correction_speed_mm_s": 5.0,
+    "max_correction_accel_mm_s2": 70.0,
+    "taper_ticks": 25
+  },
+  "p_global_scaling_mm_per_uT": 0.039837157223774275,
+  "p_effective_mm_per_uT": 0.07967431444754855,
+  "p_static_amplitude_cap_error_uT": 5.020438553799284,
+  "full_target_sha256": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482",
+  "hardware_executed": false,
+  "run_order": [
+    "feedforward repeat1",
+    "p repeat1",
+    "p repeat2",
+    "feedforward repeat2"
+  ],
+  "note": "ABBA order reduces linear order drift; two repeats do not remove wetting/contact variation. Dynamic P commands are bounded online, not predicted by this nominal compile."
+}

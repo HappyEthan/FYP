@@ -1,0 +1,28 @@
+{
+  "renamed": {
+    "ry15_rz0_suite_60_200_v1": "ry15_rz0_suite_60_200_v1",
+    "ry15_rz0_slow_sweep_ff_20260925_v1": "05_慢扫非线性前馈表",
+    "nonlinear_ff_p_hard_160_240_v1": "06_难曲线160到240_FF与P",
+    "short_plateau_p_pi_160_240_v1": "08_短平台160到240回160_P与PI",
+    "short_plateau_ki_scan_v1": "09_短平台Ki扫描",
+    "zhong_stationary_pi_fast_transit_v3": "10_中字原地进笔_快速转场",
+    "zhong_directional_reverse5_v5": "11_中字方向姿态_逆向进笔5mm",
+    "zhong_connected_soft_entry_v6": "11_中字连接优化_柔和起笔",
+    "zhong_bottom_extend25_v10": "11_中字底横延长25mm_实测第8次",
+    "zhong_bottom_extend30_v11": "11_中字底横延长30mm_实测第9次",
+    "zhong_negative_y_up_v12": "12_中字朝负Y_正X为右",
+    "zhong_negative_y_up_mirror_x_v13": "12_中字朝负Y_负X为右"
+  },
+  "retired": [
+    "ry15_rz0_constant80_trial_v1",
+    "ry15_rz0_feedforward_v1_user_corrected",
+    "zhong_directional_continuous_v4",
+    "zhong_overlap_wider_left_v7",
+    "zhong_start_forward5_overlap15_v8",
+    "zhong_start_forward5_v8",
+    "zhong_stationary_pi_fast_transit_v2",
+    "zhong_stationary_pi_v1",
+    "zhong_straight_right_longer_bottom_v9"
+  ],
+  "note": "Historical paths in JSON and NPZ are provenance, not rewritten. Retired originals are in the local pre-cleanup backup."
+}

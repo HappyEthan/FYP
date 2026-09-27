@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/ry15_rz0_suite_60_200_v1/04_smooth_levels_wide_transitions.npz",
+  "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 1011,
+      "length_mm": 200.0,
+      "duration_s": 20.2,
+      "peak_xy_speed_mm_s": 10.000000000001776,
+      "target_range_uT": [
+        60.0,
+        200.0
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

@@ -15,7 +15,8 @@ def sample_stroke(stroke, table, dt_s=.02):
     if duration/dt_s>1_000_000:
         raise ValueError('trajectory too long')
     # Preserve physical tick spacing. A non-grid terminal time is held at the next tick.
-    ticks=np.arange(int(np.ceil(duration/dt_s))+1)*dt_s
+    # A nominal grid endpoint such as 510*.04 must not round up an extra tick.
+    ticks=np.arange(int(np.ceil(duration/dt_s-1e-9))+1)*dt_s
     xy=np.column_stack([np.interp(ticks,stroke.t,np.asarray(stroke.xy)[:,i]) for i in range(2)])
     g=np.interp(ticks,stroke.t,stroke.g_target)
     return ticks,xy,g,lookup_depth_m(table,g)
@@ -35,7 +36,13 @@ def _transit(start,end,speed,accel,dt):
     return start+(end-start)*np.clip(d/distance,0,1)[:,None]
 
 
-def compile_target_plan(plan,table,settings,*,dt_s=.02):
+def compile_target_plan(plan,table,settings,*,dt_s=.02,assume_direction_invariant=False):
+    """Compile XY under an explicit trial assumption; other limits still apply.
+
+    The opt-in does not extend the measured support recorded in the table.
+    """
+    if type(assume_direction_invariant) is not bool:
+        raise ValueError('assume_direction_invariant must be boolean')
     plan.validate()
     validate_context(plan,table,settings)
     if dt_s != .02:
@@ -68,7 +75,7 @@ def compile_target_plan(plan,table,settings,*,dt_s=.02):
 
     for index,stroke in enumerate(plan.strokes):
         xy=np.asarray(stroke.xy,float)
-        if np.any(np.diff(xy[:,0]) < -1e-12) or np.ptp(xy[:,1])>1e-9:
+        if not assume_direction_invariant and (np.any(np.diff(xy[:,0]) < -1e-12) or np.ptp(xy[:,1])>1e-9):
             raise ValueError('only +X straight strokes supported')
         speed=np.linalg.norm(np.diff(xy,axis=0),axis=1)/np.diff(stroke.t)*1000
         if speed.max()>table['speed_mm_s']+1e-6:

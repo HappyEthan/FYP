@@ -1,0 +1,55 @@
+{
+  "character": "中",
+  "source_run": "/home/ethan/FYP/runs/brush2/2026-09-25/10_中字连续方向姿态/raw/20-23-08_中_整字_方向姿态_pi_第3次",
+  "control": {
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional"
+  },
+  "validation": "offline compilation only; terminal extensions are an empirical overlap trial, not a calibrated brush-tip offset",
+  "duration_s": 135.44,
+  "compiled_limits": {
+    "XY speed": 79.96349757612069,
+    "Z speed": 59.997440049151805,
+    "step": 1.5992699515224138,
+    "acceleration": 165.67272163077513,
+    "angular speed": 19.974173665172824,
+    "angular acceleration": 35.02225550790636
+  },
+  "first_body_extra_target_uT": 20.0,
+  "first_body_equivalent_extra_depth_mm_range": [
+    0.6397864114051407,
+    0.8018278870274963
+  ],
+  "stroke2_end_y_reference_extension_mm": 15.0,
+  "stroke2_right_descent_x_paper_mm": 202.56396951732594,
+  "stroke2_end_y_paper_mm": 2.1921321856993337,
+  "stroke3_tail_extension_mm": 25.0,
+  "terminal_target_uT": 160.0,
+  "stroke3_start_trim_mm": 11.0,
+  "stroke4_head_x_span_mm": 2.0,
+  "entry_policy": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  }
+}

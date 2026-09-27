@@ -1,0 +1,166 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.13, pytest-9.1.1, pluggy-1.6.0
+rootdir: /home/ethan/FYP
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.12.1
+collected 796 items
+
+tests/test_calibration.py ..                                             [  0%]
+tests/test_cartesian_return.py ............                              [  1%]
+tests/test_compare_filters.py ...........                                [  3%]
+tests/test_constants.py .....                                            [  3%]
+tests/test_controller.py ...                                             [  4%]
+tests/test_demo_pipeline.py .............                                [  5%]
+tests/test_docs_layout.py .....................                          [  8%]
+tests/test_execute_strokeplan.py ...                                     [  8%]
+tests/test_exhibition_api.py .........                                   [  9%]
+tests/test_exhibition_monitor_gateway.py .....                           [ 10%]
+tests/test_exhibition_monitor_navigation.py ..                           [ 10%]
+tests/test_exhibition_monitor_panels.py .......                          [ 11%]
+tests/test_exhibition_monitor_pressure_plot.py ...                       [ 12%]
+tests/test_exhibition_monitor_pressure_practice.py ..................... [ 14%]
+...........                                                              [ 16%]
+tests/test_exhibition_monitor_pressure_smoothing.py ...                  [ 16%]
+tests/test_exhibition_monitor_sz.py .......................              [ 19%]
+tests/test_exhibition_monitor_window.py .............                    [ 20%]
+tests/test_exhibition_preview.py ..                                      [ 21%]
+tests/test_exhibition_robot_service.py ......                            [ 21%]
+tests/test_exhibition_sensor_service.py ........                         [ 22%]
+tests/test_experiment_acquisition.py ..................                  [ 25%]
+tests/test_experiment_adapter.py .........                               [ 26%]
+tests/test_experiment_calibration.py .......................             [ 29%]
+tests/test_experiment_config.py ............                             [ 30%]
+tests/test_experiment_control.py .......                                 [ 31%]
+tests/test_experiment_engine.py ......................                   [ 34%]
+tests/test_experiment_integration.py ...                                 [ 34%]
+tests/test_experiment_ipc.py .......                                     [ 35%]
+tests/test_experiment_ladder.py ........................................ [ 40%]
+.....................                                                    [ 43%]
+tests/test_experiment_recording.py .................                     [ 45%]
+tests/test_experiment_service.py ......                                  [ 46%]
+tests/test_experiment_trajectory.py ...........                          [ 47%]
+tests/test_filter.py ....................                                [ 50%]
+tests/test_gripper.py .............                                      [ 51%]
+tests/test_hanzi.py ......                                               [ 52%]
+tests/test_huayan_backend.py ..................                          [ 54%]
+tests/test_measured_strokeplan.py ........                               [ 55%]
+tests/test_merge_ladder_runs.py ....                                     [ 56%]
+tests/test_monitor_cartesian_return.py ..                                [ 56%]
+tests/test_monitor_contracts.py ......                                   [ 57%]
+tests/test_monitor_control.py .                                          [ 57%]
+tests/test_monitor_core.py ............                                  [ 58%]
+tests/test_monitor_experiments.py ...                                    [ 59%]
+tests/test_monitor_firmware.py .                                         [ 59%]
+tests/test_monitor_recorder.py .......                                   [ 60%]
+tests/test_monitor_sources.py ...................                        [ 62%]
+tests/test_monitor_window.py .......                                     [ 63%]
+tests/test_nonlinear_ff_scan_cli.py ...............                      [ 65%]
+tests/test_organize_runs.py ..                                           [ 65%]
+tests/test_record_hanzi_openloop.py ..........                           [ 66%]
+tests/test_render.py ..                                                  [ 67%]
+tests/test_return_to_origin.py F...FF                                    [ 67%]
+tests/test_run.py ..                                                     [ 68%]
+tests/test_run_ladder_experiment.py ....................                 [ 70%]
+tests/test_runtime.py ................                                   [ 72%]
+tests/test_short_plateau_pi_experiment.py ....                           [ 73%]
+tests/test_sim_loop.py sssss.....s.s.......                              [ 75%]
+tests/test_slow_press_plan.py ..                                         [ 76%]
+tests/test_smoke.py .                                                    [ 76%]
+tests/test_strokeplan.py ..........                                      [ 77%]
+tests/test_strokeplan_experiment.py ....................                 [ 79%]
+tests/test_strokeplan_feedback.py ...........                            [ 81%]
+tests/test_strokeplan_operator_scripts.py .........                      [ 82%]
+tests/test_strokeplan_pi_feedback.py ..............                      [ 84%]
+tests/test_strokeplan_rotational_entry.py .................              [ 86%]
+tests/test_strokeseq.py ..                                               [ 86%]
+tests/test_target_feedforward.py ..................                      [ 88%]
+tests/test_target_strokeplan.py ..................                       [ 91%]
+tests/test_target_tools.py ...                                           [ 91%]
+tests/test_tcp_pose_capture.py .....                                     [ 92%]
+tests/test_types.py ..                                                   [ 92%]
+tests/test_windows_packaging.py ....                                     [ 92%]
+tests/test_z_control.py ................                                 [ 94%]
+tests/test_z_identification.py ......................................    [ 99%]
+tests/test_z_identification_analysis.py ...                              [100%]
+
+=================================== FAILURES ===================================
+______ test_confirmed_return_sends_one_direct_move_to_code_defined_origin ______
+
+    def test_confirmed_return_sends_one_direct_move_to_code_defined_origin():
+        script = _load_script()
+        arm = FakeArm((-0.15, 0.45, 0.02, 1.0, 2.0, 3.0))
+        output = []
+    
+        code = script.execute_return(
+            arm, _setup(), input_fn=lambda _prompt: "",
+            output_fn=output.append, sleep=lambda _seconds: None)
+    
+        assert code == 0
+>       assert arm.pose == pytest.approx(
+            (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+E       assert (-0.37, 0.5, ...77991494, 0.0) == approx((-0.2 ....0 ± 1.0e-12))
+E         
+E         comparison failed. Mismatched elements: 1 / 6:
+E         Max absolute difference: 0.16999999999999998
+E         Max relative difference: 0.45945945945945943
+E         Index | Obtained | Expected      
+E         0     | -0.37    | -0.2 ± 2.0e-07
+
+tests/test_return_to_origin.py:50: AssertionError
+______ test_main_uses_hardcoded_connection_defaults_without_cli_arguments ______
+
+    def test_main_uses_hardcoded_connection_defaults_without_cli_arguments():
+        script = _load_script()
+        arm = FakeArm((-0.15, 0.45, 0.02, 1.0, 2.0, 3.0))
+        connections = []
+    
+        def connect(ip, gid, tcp_name):
+            connections.append((ip, gid, tcp_name))
+            return arm
+    
+        code = script.main(
+            input_fn=lambda _prompt: "", output_fn=lambda _line: None,
+            sleep=lambda _seconds: None, connect_arm=connect)
+    
+        assert code == 0
+        assert connections == [("192.168.0.10", 1, "TCP_brush")]
+>       assert arm.pose == pytest.approx(
+            (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+E       assert (-0.37, 0.5, ...77991494, 0.0) == approx((-0.2 ....0 ± 1.0e-12))
+E         
+E         comparison failed. Mismatched elements: 1 / 6:
+E         Max absolute difference: 0.16999999999999998
+E         Max relative difference: 0.45945945945945943
+E         Index | Obtained | Expected      
+E         0     | -0.37    | -0.2 ± 2.0e-07
+
+tests/test_return_to_origin.py:122: AssertionError
+______________ test_main_allows_return_from_140_mm_high_position _______________
+
+    def test_main_allows_return_from_140_mm_high_position():
+        """Catch a return envelope whose Z ceiling regresses below 140 mm."""
+        script = _load_script()
+        arm = FakeArm((-0.299991, 0.5, 0.139902, 0.0, 0.0, 0.0))
+    
+        code = script.main(
+            input_fn=lambda _prompt: "", output_fn=lambda _line: None,
+            sleep=lambda _seconds: None, connect_arm=lambda _ip, _gid, _tcp: arm)
+    
+        assert code == 0
+>       assert arm.pose == pytest.approx(
+            (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+E       assert (-0.37, 0.5, ...77991494, 0.0) == approx((-0.2 ....0 ± 1.0e-12))
+E         
+E         comparison failed. Mismatched elements: 1 / 6:
+E         Max absolute difference: 0.16999999999999998
+E         Max relative difference: 0.45945945945945943
+E         Index | Obtained | Expected      
+E         0     | -0.37    | -0.2 ± 2.0e-07
+
+tests/test_return_to_origin.py:139: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_return_to_origin.py::test_confirmed_return_sends_one_direct_move_to_code_defined_origin
+FAILED tests/test_return_to_origin.py::test_main_uses_hardcoded_connection_defaults_without_cli_arguments
+FAILED tests/test_return_to_origin.py::test_main_allows_return_from_140_mm_high_position
+================== 3 failed, 786 passed, 7 skipped in 38.86s ===================

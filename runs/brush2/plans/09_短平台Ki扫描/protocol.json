@@ -1,0 +1,65 @@
+{
+  "measurement_s": 30.0,
+  "measurement_mm": 300.0,
+  "paper_travel_mm": 350.0,
+  "trajectory_duration_s": 112.60000000000001,
+  "metric_time_origin": "first measure_00 sample; seconds; window endpoints inclusive",
+  "plateau_windows_s": {
+    "first_160": [
+      5.0,
+      7.0
+    ],
+    "deep_240": [
+      16.0,
+      18.0
+    ],
+    "return_160": [
+      27.0,
+      29.0
+    ]
+  },
+  "transition_windows_s": {
+    "rise": [
+      8.0,
+      16.0
+    ],
+    "return": [
+      19.0,
+      27.0
+    ]
+  },
+  "metrics": [
+    "signed mean error target-minus-measurement",
+    "MAE",
+    "fraction abs(error)<=20 uT",
+    "P95 abs(error)",
+    "P/I correction and output limiting fractions"
+  ],
+  "source_dir": "/home/ethan/FYP/runs/brush2/plans/short_plateau_p_pi_160_240_v1",
+  "source_sha256": {
+    "plateau_160_240_160.npz": "51a24e0645e4d464261692c4c4a85dcc6fa221e3b9c53862068e8c7a94ae1e31",
+    "feedforward.json": "cee10fe9c50f5790121f02aa5eb10551dba96c665f1c46713c8aa502efdf5299",
+    "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+    "entry_profile.json": "ea116f644ef8ffe7b44105404019899d8e5ece4f7ac8f35c11a0499ab53d4d2c",
+    "pi_profile.json": "f64fa80c668b800d633bc65dd9684f9e627973d839f90906f6d4f28c446e0b7d",
+    "protocol.json": "3df697eac9aadfd4dfa2963dde8220e8f1439b6c6e14f9dea9d625293548628b"
+  },
+  "name": "short_plateau_ki_scan_v1",
+  "ki_sequence": [
+    0.05,
+    0.025,
+    0.1,
+    0.1,
+    0.025,
+    0.05
+  ],
+  "repetitions_per_ki": 2,
+  "primary_score": "For each run, equal-weight mean MAE across the three predeclared 2 s plateau windows; then equal-weight mean across the two runs of each Ki.",
+  "selection_rule": {
+    "reference_ki": 0.05,
+    "practical_tie_uT": 2.0,
+    "tie_rule": "Engineering tie threshold, not statistical significance: favor smaller Ki if plateau score differs by <=2 uT and return/full-path metrics are comparable.",
+    "guardrails": "Compare individual records and worst run; do not accept lower plateau MAE with systematic degradation of 19..27 s return recovery, severe deviations or actuator behavior.",
+    "scope": "Best candidate within 0.025/0.05/0.1 under the existing cap and dynamics; not an unconstrained/global optimum."
+  }
+}

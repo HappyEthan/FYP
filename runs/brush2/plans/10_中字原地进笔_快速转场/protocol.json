@@ -1,0 +1,146 @@
+{
+  "character": "中",
+  "size_mm": 180.0,
+  "stroke_count": 4,
+  "assumption": "same magnetic target maps to the same depth for every XY direction",
+  "source_calibration_support": {
+    "directions": [
+      "+x"
+    ],
+    "speed_mm_s": 10.0
+  },
+  "entry": "Ry30 -> Z36 -> rotate in place to Ry15 -> load at fixed XY -> write",
+  "source_dir": "runs/brush2/plans/zhong_stationary_pi_fast_transit_v2",
+  "source_sha256": {
+    "feedforward.json": "4633c62b3e4fca006792755281e716996aeacd3a733fee7531b698242cca9142",
+    "settings.json": "269bbb54a08783d85df798ddf13220b34622d223fc77f5363d0cbb8384359ba5",
+    "pi_profile.json": "f64fa80c668b800d633bc65dd9684f9e627973d839f90906f6d4f28c446e0b7d"
+  },
+  "wait_pose_mm_deg": [
+    -370.0,
+    500.0,
+    130.0,
+    0.0,
+    14.999999999999998,
+    0.0
+  ],
+  "glyph_center_base_mm": [
+    -230.0,
+    500.0
+  ],
+  "validation": "V3 reload and offline trajectory compilation; no hardware",
+  "strokes": [
+    {
+      "index": 1,
+      "name": "左竖",
+      "length_mm": 65.04332480190058,
+      "measurement_s": 6.72,
+      "total_trajectory_s": 37.36,
+      "g_range_uT": [
+        130.0,
+        209.99999985238264
+      ],
+      "nominal_z_range_mm": [
+        27.86937006604591,
+        31.88043659013881
+      ],
+      "compiled_limits": {
+        "XY speed": 55.0804343069333,
+        "Z speed": 29.973565055497335,
+        "step": 1.1016086861386658,
+        "acceleration": 80.96319386521542,
+        "angular speed": 18.74777789629616,
+        "angular acceleration": 38.46684444444701
+      }
+    },
+    {
+      "index": 2,
+      "name": "横折",
+      "length_mm": 154.57158368633895,
+      "measurement_s": 15.66,
+      "total_trajectory_s": 49.52,
+      "g_range_uT": [
+        130.0,
+        230.0
+      ],
+      "nominal_z_range_mm": [
+        27.23075936570194,
+        31.88043659013881
+      ],
+      "compiled_limits": {
+        "XY speed": 59.82599645162411,
+        "Z speed": 29.973565055497335,
+        "step": 1.1965199290324822,
+        "acceleration": 51.202129910284114,
+        "angular speed": 18.74777789629616,
+        "angular acceleration": 38.46684444444701
+      }
+    },
+    {
+      "index": 3,
+      "name": "下横",
+      "length_mm": 99.8428394251355,
+      "measurement_s": 10.200000000000001,
+      "total_trajectory_s": 44.800000000000004,
+      "g_range_uT": [
+        140.0,
+        214.99997663205795
+      ],
+      "nominal_z_range_mm": [
+        27.643286032440123,
+        31.414068380718906
+      ],
+      "compiled_limits": {
+        "XY speed": 59.83674313893747,
+        "Z speed": 29.973565055497335,
+        "step": 1.1967348627787493,
+        "acceleration": 96.30402812585426,
+        "angular speed": 18.74777789629616,
+        "angular acceleration": 38.46684444444701
+      }
+    },
+    {
+      "index": 4,
+      "name": "中竖",
+      "length_mm": 187.79812591196625,
+      "measurement_s": 18.98,
+      "total_trajectory_s": 55.92,
+      "g_range_uT": [
+        100.0,
+        209.99999991618807
+      ],
+      "nominal_z_range_mm": [
+        27.86937006275749,
+        33.245521672601456
+      ],
+      "compiled_limits": {
+        "XY speed": 59.97440793551567,
+        "Z speed": 29.973565055497335,
+        "step": 1.1994881587103134,
+        "acceleration": 50.033810053229416,
+        "angular speed": 18.74777789629616,
+        "angular acceleration": 38.46684444444701
+      }
+    }
+  ],
+  "limitations": [
+    "Magnetic targets are heuristic, not recovered from the font or measured demonstrations.",
+    "Rounded corners approximate the sparse medians; no outline reconstruction is claimed.",
+    "Direction invariance and stationary loading are trial assumptions.",
+    "Endpoint targets stay inside the table; lift is a separate motion phase.",
+    "Each stroke is an independent recorded invocation, returning to the same wait pose.",
+    "Source approval is not inherited for this new hardware experiment."
+  ],
+  "execution_authorization": {
+    "status": "user_requested_faster_transit_enabled",
+    "scope": "zhong_stationary_pi_fast_transit_v3; one RUN for the whole character or one selected stroke",
+    "physical_execution_performed": false
+  },
+  "speed_revision": {
+    "source": "runs/brush2/plans/zhong_stationary_pi_fast_transit_v2",
+    "transit_speed_mm_s": 30.0,
+    "return_speed_mm_s": 60.0,
+    "writing_and_contact_arrays_identical": true,
+    "pi_profile_identical": true
+  }
+}

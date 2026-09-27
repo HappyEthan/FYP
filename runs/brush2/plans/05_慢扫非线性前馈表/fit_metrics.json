@@ -1,0 +1,30 @@
+{
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482",
+  "source_folders": [
+    "14-28-57_连续下压_Z38到24mm_单程30s_第2次",
+    "15-02-32_连续下压_Z38到24mm_单程30s_第3次"
+  ],
+  "knots": 41,
+  "depth_support_mm": [
+    5.0,
+    15.0
+  ],
+  "z_support_mm": [
+    25.0,
+    35.0
+  ],
+  "amplitude_support_uT": [
+    72.5172479409567,
+    323.53917563092085
+  ],
+  "source_repeat_mae_uT": 2.135052744215843,
+  "source_repeat_p95_uT": 4.326527391691258,
+  "source_repeat_max_uT": 6.502450168030833,
+  "pooled_fit_mae_uT": 1.0675263721079216,
+  "pooled_fit_note": "In-sample deviation from the two-run mean; not target tracking error.",
+  "knot_gain_range_uT_per_mm": [
+    12.623747147099607,
+    71.57080996313698
+  ],
+  "validation": "Schema, strict monotonicity, units, endpoint round-trip and out-of-range rejection checked offline. No hardware validation."
+}

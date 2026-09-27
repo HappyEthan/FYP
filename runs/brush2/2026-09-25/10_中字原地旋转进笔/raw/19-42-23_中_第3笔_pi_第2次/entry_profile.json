@@ -1,0 +1,13 @@
+{
+  "mode": "stationary",
+  "assume_direction_invariant": true,
+  "entry_contact_z_mm": 36.0,
+  "entry_ry_deg": 30.0,
+  "rotate_s": 3.0,
+  "load_s": 3.0,
+  "post_lift_hold_s": 2.0,
+  "angular_speed_deg_s": 20.0,
+  "angular_accel_deg_s2": 40.0,
+  "transit_speed_mm_s": 30.0,
+  "air_rotate_s": 1.5
+}

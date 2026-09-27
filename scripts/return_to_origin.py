@@ -16,7 +16,7 @@ GRIPPER_GID = 1
 TCP_NAME = "TCP_brush"
 
 # 目标位置：mm；目标姿态：degree。
-ORIGIN_X_MM = -200.0
+ORIGIN_X_MM = -370.0
 ORIGIN_Y_MM = 500.0
 ORIGIN_Z_MM = 130.0
 ORIGIN_RX_DEG = 0.0

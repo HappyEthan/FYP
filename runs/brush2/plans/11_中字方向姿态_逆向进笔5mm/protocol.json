@@ -1,0 +1,102 @@
+{
+  "character": "中",
+  "stroke_count": 4,
+  "baseline_count": 1,
+  "duration_s": 140.18,
+  "compiled_limits": {
+    "XY speed": 79.96349757612069,
+    "Z speed": 59.997440049151805,
+    "step": 1.5992699515224138,
+    "acceleration": 103.34182382117085,
+    "angular speed": 19.9741736651725,
+    "angular acceleration": 39.286917898848266
+  },
+  "entry_policy": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "source_dir": "/home/ethan/FYP/runs/brush2/plans/zhong_stationary_pi_fast_transit_v3",
+  "validation": "offline compilation only; no hardware",
+  "table_assumption": "same response-to-depth table at different writing directions and tilt azimuths",
+  "strokes": [
+    {
+      "index": 1,
+      "measurement_s": 8.02,
+      "initial_heading_deg": -36.60707481260637,
+      "entry_rpy_deg": [
+        18.997961792027244,
+        23.663972125145563,
+        4.015176502229474
+      ],
+      "initial_writing_rpy_deg": [
+        9.078239407488022,
+        11.991430811097771,
+        0.9554526608715986
+      ],
+      "max_xy_speed_mm_s": 10.000000000000849
+    },
+    {
+      "index": 2,
+      "measurement_s": 21.94,
+      "initial_heading_deg": -32.27564431458001,
+      "entry_rpy_deg": [
+        17.134582616562074,
+        25.00797783751579,
+        3.8270490934687733
+      ],
+      "initial_writing_rpy_deg": [
+        8.142783284606558,
+        12.640242151910778,
+        0.9033685057623393
+      ],
+      "max_xy_speed_mm_s": 10.000000000003233
+    },
+    {
+      "index": 3,
+      "measurement_s": 12.48,
+      "initial_heading_deg": 46.974934010882784,
+      "entry_rpy_deg": [
+        -22.883390163748366,
+        19.947509974839374,
+        -4.076790424490922
+      ],
+      "initial_writing_rpy_deg": [
+        -11.083087043284612,
+        10.171604605507834,
+        -0.9894336034314357
+      ],
+      "max_xy_speed_mm_s": 10.000000000002423
+    },
+    {
+      "index": 4,
+      "measurement_s": 21.54,
+      "initial_heading_deg": -12.528807709153421,
+      "entry_rpy_deg": [
+        7.13882943873625,
+        29.215351681936664,
+        1.862793687769629
+      ],
+      "initial_writing_rpy_deg": [
+        3.3266508331829177,
+        14.634724740817832,
+        0.4272965240919534
+      ],
+      "max_xy_speed_mm_s": 10.000000000001736
+    }
+  ]
+}

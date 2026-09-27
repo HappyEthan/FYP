@@ -58,6 +58,8 @@ def resolve_p_profile(profile: dict | None, setup: dict) -> dict:
 class StrokePlanPFeedback:
     """Shape the controller's depth request and check each final TCP command."""
 
+    resolve_profile = staticmethod(resolve_p_profile)
+
     def __init__(self, table: dict, setup: dict, dt_s: float, *, measure_ticks: int,
                  profile: dict | None = None):
         if dt_s != .02 or measure_ticks < 2:
@@ -65,7 +67,7 @@ class StrokePlanPFeedback:
         self.dt_s = float(dt_s)
         self.setup = setup
         self.measure_ticks = int(measure_ticks)
-        self.profile = resolve_p_profile(profile, setup)
+        self.profile = self.resolve_profile(profile, setup)
         self.max_correction_m = self.profile['max_correction_mm'] / 1000.
         self.max_correction_speed_m_s = self.profile['max_correction_speed_mm_s'] / 1000.
         self.max_correction_accel_m_s2 = self.profile['max_correction_accel_mm_s2'] / 1000.
@@ -86,6 +88,30 @@ class StrokePlanPFeedback:
         self.previous_correction = 0.
         self.previous_correction_step = 0.
         self.calls = 0
+
+    def _raw_correction(self, depth_ff, a_ref, a_control):
+        requested_depth = self.controller.step_magnitude(
+            a_control, a_ref, depth_ff_m=depth_ff)
+        self.calls += 1
+        reasons = ['controller_depth'] if self.controller.limit_active else []
+        return requested_depth - depth_ff, reasons
+
+    def _constrain_request(self, raw, lower, upper):
+        return raw
+
+    def _nonmeasurement(self):
+        pass
+
+    def _correction_envelope(self, tick):
+        remaining = self.measure_ticks - 1 - tick
+        edge = min(tick, remaining)
+        cap = self.max_correction_m * min(1., edge / self.taper_ticks)
+        # Reserve enough distance to arrive at correction=0 and then stay at
+        # zero on the first nonmeasurement tick. In particular, the penultimate
+        # correction cannot exceed one acceleration increment (a * dt**2).
+        stop_cap = (self.max_correction_accel_m_s2 * self.dt_s**2
+                    * remaining * (remaining + 1) / 2)
+        return min(cap, stop_cap)
 
     def command(self, measure_tick: int, feedforward_pose, *, depth_ff_m: float,
                 a_ref_uT: float | None, a_control_uT: float):
@@ -109,14 +135,8 @@ class StrokePlanPFeedback:
             if not math.isclose(nominal[2], self.contact_z_m - depth_ff,
                                 abs_tol=1e-9):
                 raise RuntimeError('depth_limit')
-            requested_depth = self.controller.step_magnitude(
-                a_control_uT, a_ref_uT, depth_ff_m=depth_ff)
-            self.calls += 1
-            raw = requested_depth - depth_ff
-            if self.controller.limit_active:
-                reasons.append('controller_depth')
-            edge = min(measure_tick, self.measure_ticks - 1 - measure_tick)
-            envelope = self.max_correction_m * min(1., edge / self.taper_ticks)
+            raw, reasons = self._raw_correction(depth_ff, a_ref_uT, a_control_uT)
+            envelope = self._correction_envelope(measure_tick)
             intervals = [(-envelope, envelope, 'feedback_amplitude')]
             if self.previous is not None:
                 delta = self.max_correction_speed_m_s * self.dt_s
@@ -135,9 +155,7 @@ class StrokePlanPFeedback:
                     math.ceil(self.max_correction_speed_m_s * self.dt_s / delta) + 1)
                 braking_low, braking_high = -math.inf, math.inf
                 for ahead in range(1, horizon + 1):
-                    future_edge = min(measure_tick + ahead,
-                                      self.measure_ticks - 1 - measure_tick - ahead)
-                    future_cap = self.max_correction_m * min(1., future_edge / self.taper_ticks)
+                    future_cap = self._correction_envelope(measure_tick + ahead)
                     span = delta * ahead * (ahead + 1) / 2
                     offset = ahead * self.previous_correction
                     braking_low = max(braking_low,
@@ -158,11 +176,14 @@ class StrokePlanPFeedback:
             upper = min(item[1] for item in intervals)
             if lower > upper + 1e-12:
                 raise RuntimeError('feedback_envelope_limit')
+            raw = self._constrain_request(raw, lower, upper)
             correction = min(max(raw, lower), upper)
             for low, high, name in intervals:
                 if raw < low - 1e-12 or raw > high + 1e-12:
                     reasons.append(name)
             command[2] = nominal[2] - correction
+        else:
+            self._nonmeasurement()
         self._check_final(command)
         self.before_previous = None if self.previous is None else self.previous.copy()
         self.previous = command.copy()

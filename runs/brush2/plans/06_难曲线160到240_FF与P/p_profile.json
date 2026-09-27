@@ -1,0 +1,8 @@
+{
+  "kp": 2.0,
+  "ki": 0.0,
+  "max_correction_mm": 0.4,
+  "max_correction_speed_mm_s": 5.0,
+  "max_correction_accel_mm_s2": 70.0,
+  "taper_ticks": 25
+}

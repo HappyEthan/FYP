@@ -1,0 +1,15 @@
+{
+  "source_run": "runs/brush2/2026-09-25/09_中字原地旋转进笔/raw/19-35-36_中_第3笔_pi_第1次",
+  "samples_replayed": 7355,
+  "original_invalid_seq": [
+    7352,
+    7353,
+    7354,
+    7355
+  ],
+  "counter_before_us": 4294963739,
+  "counter_after_us": 443,
+  "modular_delta_us": 4000,
+  "all_samples_valid_after_fix": true,
+  "scope": "Recorded raw sensor replay through baseline, filtering and control-sample checks; no robot execution"
+}

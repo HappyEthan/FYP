@@ -87,6 +87,23 @@ def test_serial_read_frames_preserves_raw_sensor_timestamp():
     assert isinstance(frame["host_rx_ns"], int)
 
 
+def test_serial_uint32_rollover_reaches_experiment_hub_without_invalidating_samples():
+    from brushbot.experiments.acquisition import SampleHub
+
+    class FakeSerial:
+        def read(self, _size):
+            return b'4294963739,1,2,3\n443,1,2,3\n4443,1,2,3\n'
+
+    src = SerialSource()
+    src._ser = FakeSerial()
+    hub = SampleHub(src, clock_ns=time.monotonic_ns, abort_on_invalid_running_sample=True)
+    hub.set_running(True)
+    rows = hub.poll_once()
+    assert [r['sensor_t_us'] for r in rows] == [4294963739, 443, 4443]
+    assert all(r['valid'] for r in rows)
+    assert hub.fault is None
+
+
 def test_serial_source_reports_empty_and_malformed_input_counts():
     class FakeSerial:
         def __init__(self):

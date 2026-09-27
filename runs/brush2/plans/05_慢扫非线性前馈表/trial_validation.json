@@ -1,0 +1,57 @@
+{
+  "plans": [
+    {
+      "name": "01_gradual_160_240",
+      "plan": "/home/ethan/FYP/runs/brush2/plans/ry15_rz0_slow_sweep_ff_20260925_v1/01_gradual_160_240.npz",
+      "target_range_uT": [
+        160.0,
+        240.0
+      ],
+      "length_mm": 400.0,
+      "cruise_speed_mm_s": 10.0,
+      "measurement_duration_s": 40.2,
+      "full_duration_s": 101.34,
+      "commanded_z_range_mm": [
+        26.89430597459763,
+        30.091535656483607
+      ],
+      "x_range_mm": [
+        -370.0,
+        30.00000000000003
+      ],
+      "max_z_speed_mm_s": 10.000000000001673,
+      "max_acceleration_mm_s2": 50.000000000188784,
+      "offline_compile": "passed",
+      "entry_mode": "existing executor: fixed Ry15 vertical lowering; not Z36 rotational entry",
+      "sha256": "09ee4313684dafe88d344f2948036319420d259c3f8e5be7bc5f117223fd627f"
+    },
+    {
+      "name": "02_arch_160_240_160",
+      "plan": "/home/ethan/FYP/runs/brush2/plans/ry15_rz0_slow_sweep_ff_20260925_v1/02_arch_160_240_160.npz",
+      "target_range_uT": [
+        160.0,
+        240.0
+      ],
+      "length_mm": 400.0,
+      "cruise_speed_mm_s": 10.0,
+      "measurement_duration_s": 40.2,
+      "full_duration_s": 101.02,
+      "commanded_z_range_mm": [
+        26.89430597459763,
+        30.091535656483607
+      ],
+      "x_range_mm": [
+        -370.0,
+        30.00000000000003
+      ],
+      "max_z_speed_mm_s": 10.000000000001673,
+      "max_acceleration_mm_s2": 50.000000000188784,
+      "offline_compile": "passed",
+      "entry_mode": "existing executor: fixed Ry15 vertical lowering; not Z36 rotational entry",
+      "sha256": "a19405e2357d790c8be7e1c5c952c48c062f36bb3bbf5f29adf76e43b141f8ef"
+    }
+  ],
+  "hardware_executed": false,
+  "table_execution_approved": false,
+  "transients_execution_approved": false
+}
