@@ -48,10 +48,10 @@ def test_confirmed_return_sends_one_direct_move_to_code_defined_origin():
 
     assert code == 0
     assert arm.pose == pytest.approx(
-        (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+        (-0.37, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
     move_poses = [call["pose"] for call in arm.calls if call["action"] == "move_pose"]
     assert move_poses == pytest.approx([
-        (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0),
+        (-0.37, 0.5, 0.13, 0.0, math.radians(15.0), 0.0),
     ])
     assert not any("安全路线" in line for line in output)
     assert any("COMPLETED" in line for line in output)
@@ -120,7 +120,7 @@ def test_main_uses_hardcoded_connection_defaults_without_cli_arguments():
     assert code == 0
     assert connections == [("192.168.0.10", 1, "TCP_brush")]
     assert arm.pose == pytest.approx(
-        (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+        (-0.37, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
     move_calls = [call for call in arm.calls if call["action"] == "move_pose"]
     assert move_calls
     assert all(call["speed_mm_s"] == pytest.approx(30.0) for call in move_calls)
@@ -137,5 +137,5 @@ def test_main_allows_return_from_140_mm_high_position():
 
     assert code == 0
     assert arm.pose == pytest.approx(
-        (-0.2, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
+        (-0.37, 0.5, 0.13, 0.0, math.radians(15.0), 0.0))
     assert [call["action"] for call in arm.calls] == ["move_pose"]
