@@ -100,6 +100,16 @@ def test_non_grid_endpoint_is_held_not_time_scaled():
     assert xy[-1,0]==.01
 
 
+def test_exact_grid_endpoint_does_not_gain_a_tick_from_float_roundoff():
+    from brushbot.target_strokeplan import Stroke
+    from brushbot.strokeplan_compile import sample_stroke
+    st = Stroke(np.array([0., 1.]), np.array([[0., 0.], [.01, 0.]]),
+                np.array([0., 510 * .04]), np.array([30., 30.]))
+    ts, _, _, _ = sample_stroke(st, table(), .02)
+    assert len(ts) == 1021
+    assert ts[-1] == pytest.approx(20.4)
+
+
 @pytest.mark.parametrize('mutation',['orientation','filter','mount','outside','direction','workspace','speed'])
 def test_compile_rejects_incompatible_or_unsafe_inputs(mutation):
     from scripts.generate_strokeplan import generate

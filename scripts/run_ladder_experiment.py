@@ -61,6 +61,12 @@ DEFAULT_RUN_ROOT = REPO_ROOT / "runs" / BRUSH_ID
 EXPERIMENT_RY_DEG = 15.0
 Z_START_MM = 36.0
 RUN_LABEL = "brush2_full_rx-15_rz270"
+ORIENTATION_NAMES = {
+    "brush2_full_ry15": "姿态Ry正15",
+    "brush2_full_rx15_rz90": "姿态Rx正15_Rz90",
+    "brush2_full_ry-15_rz180": "姿态Ry负15_Rz180",
+    "brush2_full_rx-15_rz270": "姿态Rx负15_Rz270",
+}
 Z_END_MM = 24.0
 Z_LEVEL_COUNT = 8
 TRAVEL_MM = 200.0
@@ -253,9 +259,10 @@ class MonotonicClock:
 
 
 class DatedLadderRecorder(RunRecorder):
-    """Write a run directly in Shanghai-date/HH-MM-SS__label__short-id."""
+    """Write a run under the Shanghai date, optionally in an experiment/raw group."""
 
-    def __init__(self, root: Path, snapshots: dict):
+    def __init__(self, root: Path, snapshots: dict, *, experiment_folder=None,
+                 folder_label=None):
         snapshots = {**snapshots, "brush_id": BRUSH_ID}
         started_at = datetime.now(timezone.utc)
         local_start = started_at.astimezone(ZoneInfo("Asia/Shanghai"))
@@ -263,31 +270,59 @@ class DatedLadderRecorder(RunRecorder):
         label = str(resolved.get("run_label") or resolved.get("name") or "run")
         label = re.sub(r'[\\/:*?"<>|\x00-\x1f]+', "-", label.strip())
         label = re.sub(r"\s+", "-", label)
-        self._brief = re.sub(r"-+", "-", label).strip("-._")[:80] or "run"
+        self._grouped = experiment_folder is not None
+        if self._grouped:
+            if (not isinstance(experiment_folder, str) or not experiment_folder
+                    or experiment_folder in {".", ".."}
+                    or re.search(r'[\\/:*?"<>|\x00-\x1f]', experiment_folder)
+                    or not isinstance(folder_label, str) or not folder_label
+                    or folder_label in {".", ".."}
+                    or re.search(r'[\\/:*?"<>|\x00-\x1f]', folder_label)):
+                raise ValueError("invalid experiment folder or run folder label")
+            label = folder_label
+        elif folder_label is not None:
+            raise ValueError("folder label requires an experiment folder")
+        self._brief = re.sub(r"-+", "-", label).strip("-._")[:100] or "run"
         self._local_start = local_start
-        super().__init__(str(Path(root) / f"{local_start:%Y-%m-%d}"),
+        parent = Path(root) / f"{local_start:%Y-%m-%d}"
+        if self._grouped:
+            parent = parent / experiment_folder / "raw"
+        super().__init__(str(parent),
                          snapshots, started_at=started_at)
 
     def _create_run_dir(self):
         stamp = self._started_at.astimezone(timezone.utc).strftime(
             "%Y%m%dT%H%M%S.%fZ")
+        repeat = 1
+        if self._grouped:
+            pattern = re.compile(rf"_" + re.escape(self._brief) + r"_第(\d+)次$")
+            repeat = max((int(match.group(1)) for path in self.root.iterdir()
+                          if path.is_dir() and (match := pattern.search(path.name))),
+                         default=0) + 1
         for _ in range(100):
             short = secrets.token_hex(3)
             run_id = f"{stamp}-{short}"
-            folder = self.root / f"{self._local_start:%H-%M-%S}__{self._brief}__{short}"
+            if self._grouped:
+                folder = self.root / f"{self._local_start:%H-%M-%S}_{self._brief}_第{repeat}次"
+            else:
+                folder = self.root / f"{self._local_start:%H-%M-%S}__{self._brief}__{short}"
             try:
                 folder.mkdir()
             except FileExistsError:
+                repeat += 1
                 continue
             return run_id, folder
         raise RuntimeError("could not allocate unique experiment run_id")
 
 
-def build_experiment_stack(*, spec, setup, arm, source, root, clock, dt_s=0.02):
+def build_experiment_stack(*, spec, setup, arm, source, root, clock, dt_s=0.02,
+                           experiment_folder=None, run_folder_label=None):
     """拼装采样中枢与引擎并 prepare。不连接任何硬件，便于用假设备驱动测试。"""
     hub = SampleHub(source, clock.now_ns)
     engine = ExperimentEngine(
-        arm, hub, lambda snapshots: DatedLadderRecorder(root, snapshots),
+        arm, hub, lambda snapshots: DatedLadderRecorder(
+            root, snapshots, experiment_folder=experiment_folder,
+            folder_label=run_folder_label),
         clock, dt_s=dt_s)
     engine.prepare(spec, setup)
     return engine, hub
@@ -549,7 +584,10 @@ def main(argv=None) -> int:
                   *(math.degrees(value) for value in captured_rpy)))
         engine, hub = build_experiment_stack(
             spec=spec, setup=setup, arm=arm, source=source,
-            root=Path(args.run_root), clock=clock)
+            root=Path(args.run_root), clock=clock,
+            experiment_folder="01_四方向阶梯实验",
+            run_folder_label=ORIENTATION_NAMES.get(
+                spec["run_label"], spec["run_label"]))
         print("已就绪。启动位置不限；取 baseline 时请保持笔尖离纸静止。"
               "随后将从当前位置直接 MoveL 到第一段轨迹起点，请确认直线路径无遮挡。"
               "Ctrl+C 会走抬笔中止。")

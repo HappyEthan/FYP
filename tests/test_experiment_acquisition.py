@@ -235,6 +235,32 @@ def test_timestamp_rollback_faults_instead_of_stitching_samples():
     assert hub.fault == "sensor_time_rollback"
 
 
+def test_declared_uint32_timer_wrap_preserves_raw_time_and_valid_stream():
+    # Exact consecutive device times from the aborted 中 stroke: delta = 4000 us.
+    source = QueueSource([[_frame(t, [1, 2, 3]) for t in [4294963739, 443, 4443]]])
+    source.sensor_time_modulus_us = 2**32
+    hub = SampleHub(source, clock_ns=lambda: 100, abort_on_invalid_running_sample=True)
+    hub.set_running(True)
+    rows = hub.poll_once()
+    assert [r['sensor_t_us'] for r in rows] == [4294963739, 443, 4443]
+    assert all(r['valid'] for r in rows)
+    assert hub.fault is None
+
+
+@pytest.mark.parametrize('times, declared', [
+    ([20000, 10000], True), ([4000, 4000], True),
+    ([4294963739, 443], False), ([4292967296, 443], True),
+])
+def test_wrap_support_does_not_accept_resets_duplicates_or_undeclared_clocks(times, declared):
+    source = QueueSource([[_frame(t, [1, 2, 3]) for t in times]])
+    if declared:
+        source.sensor_time_modulus_us = 2**32
+    hub = SampleHub(source, clock_ns=lambda: 100)
+    rows = hub.poll_once()
+    assert rows[-1]['valid'] is False
+    assert hub.fault == 'sensor_time_rollback'
+
+
 def test_frames_after_timestamp_rollback_do_not_reenter_valid_stream():
     source = QueueSource([[
         _frame(20, [1, 2, 3]),

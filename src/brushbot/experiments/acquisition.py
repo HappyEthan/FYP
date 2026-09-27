@@ -97,9 +97,19 @@ class SampleHub:
                 self.fault = reason
             elif (self._last_sensor_t_us is not None
                   and int(sensor_t_us) <= self._last_sensor_t_us):
-                valid = False
-                reason = "sensor_time_rollback"
-                self.fault = reason
+                # Accept only a declared uint32 clock crossing its boundary
+                # with a short forward interval. Preserve raw time in the log;
+                # freshness and baseline timing still use host monotonic time.
+                modulus = getattr(self.source, 'sensor_time_modulus_us', None)
+                wrapped = (modulus == 2**32
+                           and 0 <= int(sensor_t_us) < self._last_sensor_t_us < modulus
+                           and 0 < int(sensor_t_us)+modulus-self._last_sensor_t_us <= 1_000_000)
+                if wrapped:
+                    self._last_sensor_t_us = int(sensor_t_us)
+                else:
+                    valid = False
+                    reason = "sensor_time_rollback"
+                    self.fault = reason
             elif isinstance(sensor_t_us, (int, np.integer)):
                 self._last_sensor_t_us = int(sensor_t_us)
             if not valid and self._running and self.abort_on_invalid_running_sample:

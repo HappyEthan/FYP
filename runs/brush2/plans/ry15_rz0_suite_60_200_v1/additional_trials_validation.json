@@ -1,0 +1,60 @@
+{
+  "validation": "Offline compiled command trajectory only; no hardware executed.",
+  "dt_s": 0.02,
+  "acceleration_limit_mm_s2": 200.0,
+  "inputs_sha256": {
+    "feedforward.json": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+    "settings.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c"
+  },
+  "plans": [
+    {
+      "name": "02_single_arch",
+      "sha256": "8c350d266d62f0073467ddb823c49f0b0c06fa4f9022bf39f56fad250d82bf6f",
+      "offline_compile": "passed",
+      "stroke_duration_s": 20.2,
+      "total_duration_s": 60.02,
+      "peak_acceleration_mm_s2": 54.46992488325996,
+      "peak_xy_speed_mm_s": 10.000000000001673,
+      "peak_z_speed_mm_s": 10.000000000001673,
+      "peak_step_mm": 0.2062116800757371,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ],
+      "measure_samples": 1011
+    },
+    {
+      "name": "03_double_wave",
+      "sha256": "96ba35cf1fb6484826f0b67c7a88b9ee5cf49ae5d10ffc3dc91b536b84876157",
+      "offline_compile": "passed",
+      "stroke_duration_s": 20.2,
+      "total_duration_s": 60.02,
+      "peak_acceleration_mm_s2": 106.13715236531054,
+      "peak_xy_speed_mm_s": 10.000000000001673,
+      "peak_z_speed_mm_s": 10.000000000001673,
+      "peak_step_mm": 0.22346590126228605,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ],
+      "measure_samples": 1011
+    },
+    {
+      "name": "04_smooth_levels_wide_transitions",
+      "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+      "offline_compile": "passed",
+      "stroke_duration_s": 20.2,
+      "total_duration_s": 60.160000000000004,
+      "peak_acceleration_mm_s2": 98.3437991301274,
+      "peak_xy_speed_mm_s": 10.000000000001673,
+      "peak_z_speed_mm_s": 10.000000000001673,
+      "peak_step_mm": 0.2255927297525448,
+      "writing_z_range_mm": [
+        27.900748512458954,
+        35.05432982455245
+      ],
+      "measure_samples": 1011
+    }
+  ],
+  "original_fourth_still_rejected": true
+}

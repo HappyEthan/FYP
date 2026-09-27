@@ -1,0 +1,173 @@
+{
+  "results": [
+    {
+      "kp": 0.25,
+      "cap_mm": 0.4,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.4,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.4,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.4,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.8,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.8,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.8,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.25,
+      "cap_mm": 0.8,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.4,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.4,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.4,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.4,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.8,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.8,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.8,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 0.5,
+      "cap_mm": 0.8,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.4,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.4,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.4,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.4,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.8,
+      "source_run": "17-06-09_难曲线160到240_纯前馈_第1次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.8,
+      "source_run": "17-20-00_难曲线160到240_前馈加P2_修正0.4mm_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.8,
+      "source_run": "17-26-10_难曲线160到240_前馈加P2_修正0.4mm_第3次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    },
+    {
+      "kp": 1.0,
+      "cap_mm": 0.8,
+      "source_run": "17-29-38_难曲线160到240_纯前馈_第2次",
+      "commands": 6600,
+      "result": "command_checks_passed"
+    }
+  ],
+  "note": "Recorded-signal replay checks command feasibility only, not changed closed-loop response. No hardware."
+}

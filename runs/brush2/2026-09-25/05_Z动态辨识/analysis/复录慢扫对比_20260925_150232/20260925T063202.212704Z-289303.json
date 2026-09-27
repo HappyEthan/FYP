@@ -1,0 +1,1077 @@
+{
+  "run_id": "20260925T063202.212704Z-289303",
+  "run_directory": "/home/ethan/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/14-32-02_下压回升_Z38到24mm_单程15s_第1次",
+  "execution_environment": "hardware",
+  "profile": {
+    "angular_accel_deg_s2": 20.0,
+    "angular_speed_deg_s": 10.0,
+    "depth_max_mm": 16.0,
+    "depth_min_mm": 2.0,
+    "endpoint_hold_s": 3.0,
+    "entry_contact_z_mm": 38.0,
+    "entry_ry_deg": 30.0,
+    "mode": "sweep-cycle",
+    "post_lift_hold_s": 2.0,
+    "rotate_s": 3.0,
+    "slide_settle_s": 3.0,
+    "speed_mm_s": 10.0,
+    "sweep_end_z_mm": 24.0,
+    "sweep_s": 15.0,
+    "travel_mm": 450.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "source_sha256": {
+    "identification.json": "14dc9dc1b224e1b0cfb9e48d7ca16efe213aa962c3648e3ab2ac94ebe49f1b1d",
+    "segments.json": "e4fa35e29135fee2df6da024106bc3a89910d164ccf6cd6a5fd7741a875d6037",
+    "resolved.json": "83bc9e4b33aa270f9766cc583250165f553254ffbcc495aeaac4e33b846515c5",
+    "settings.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+    "control.jsonl": "036d7ba767c2644a628d3f93dd2547b2e617b1f6f5fd4ef3856b2f462756ca3e",
+    "sensor.csv": "e71610c64f64d91f89bb8cef951c86872aec0535cf9c42b09107a4ce824182c2",
+    "actual_tcp_meta.json": "aac62d57d19bcd4373c17f2c2ad9cf3877b4073803eb6c4eadb888db811f9249",
+    "actual_tcp.csv": "f9765ea3252c87dc922fada86ff3ecba4845b9ad78b9e3b16b3bdbb199700054"
+  },
+  "plateaus": [],
+  "transitions": [],
+  "sweep_curves": [
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 2.0,
+      "depth_mean_mm": 2.065753325537559,
+      "magnetic_mean_uT": 77.49231164248124,
+      "magnetic_std_uT": 4.606757915183052,
+      "samples": 97
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 2.25,
+      "depth_mean_mm": 2.3678585558956833,
+      "magnetic_mean_uT": 66.21410403150946,
+      "magnetic_std_uT": 1.9087051376909123,
+      "samples": 28
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 2.5,
+      "depth_mean_mm": 2.620366679796878,
+      "magnetic_mean_uT": 63.86474522788901,
+      "magnetic_std_uT": 2.5514104794766044,
+      "samples": 20
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 2.75,
+      "depth_mean_mm": 2.871094455165435,
+      "magnetic_mean_uT": 60.16446031768604,
+      "magnetic_std_uT": 2.3055058105430732,
+      "samples": 17
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 3.0,
+      "depth_mean_mm": 3.1188930743035086,
+      "magnetic_mean_uT": 58.751739739870956,
+      "magnetic_std_uT": 1.5026579043280313,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 3.25,
+      "depth_mean_mm": 3.372736227020142,
+      "magnetic_mean_uT": 58.57916938443682,
+      "magnetic_std_uT": 1.7072565004535958,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 3.5,
+      "depth_mean_mm": 3.6328627024516993,
+      "magnetic_mean_uT": 58.812640467931466,
+      "magnetic_std_uT": 2.6500179784146582,
+      "samples": 12
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 3.75,
+      "depth_mean_mm": 3.8824816786326335,
+      "magnetic_mean_uT": 58.76553268448734,
+      "magnetic_std_uT": 2.1576349780205617,
+      "samples": 11
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 4.0,
+      "depth_mean_mm": 4.125799860858627,
+      "magnetic_mean_uT": 60.31908499609782,
+      "magnetic_std_uT": 1.378433971334264,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 4.25,
+      "depth_mean_mm": 4.370830355827927,
+      "magnetic_mean_uT": 61.19135656361043,
+      "magnetic_std_uT": 2.3558467657626108,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 4.5,
+      "depth_mean_mm": 4.628212034783007,
+      "magnetic_mean_uT": 62.7313367510852,
+      "magnetic_std_uT": 1.5365917877942858,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 4.75,
+      "depth_mean_mm": 4.883558174620686,
+      "magnetic_mean_uT": 64.3407567650657,
+      "magnetic_std_uT": 1.8460454397295067,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 5.0,
+      "depth_mean_mm": 5.134876304250704,
+      "magnetic_mean_uT": 65.81997226623751,
+      "magnetic_std_uT": 0.7451497395846877,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 5.25,
+      "depth_mean_mm": 5.380038855000291,
+      "magnetic_mean_uT": 70.50146237616721,
+      "magnetic_std_uT": 2.5218106596849204,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 5.5,
+      "depth_mean_mm": 5.617437645247248,
+      "magnetic_mean_uT": 73.89181486205513,
+      "magnetic_std_uT": 2.923665194896558,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 5.75,
+      "depth_mean_mm": 5.8762907427202355,
+      "magnetic_mean_uT": 76.38239218047057,
+      "magnetic_std_uT": 3.571387973498448,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 6.0,
+      "depth_mean_mm": 6.125489196838558,
+      "magnetic_mean_uT": 81.2361461671353,
+      "magnetic_std_uT": 2.4030702104412938,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 6.25,
+      "depth_mean_mm": 6.363940152510262,
+      "magnetic_mean_uT": 84.80748809517738,
+      "magnetic_std_uT": 2.8335092501883197,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 6.5,
+      "depth_mean_mm": 6.622803129200313,
+      "magnetic_mean_uT": 88.49372448422038,
+      "magnetic_std_uT": 2.696767182017149,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 6.75,
+      "depth_mean_mm": 6.8693405769994005,
+      "magnetic_mean_uT": 94.21098066438951,
+      "magnetic_std_uT": 3.007869701997938,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 7.0,
+      "depth_mean_mm": 7.119329076015835,
+      "magnetic_mean_uT": 96.76753302927582,
+      "magnetic_std_uT": 2.715382917329331,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 7.25,
+      "depth_mean_mm": 7.372237854799697,
+      "magnetic_mean_uT": 97.97736089037994,
+      "magnetic_std_uT": 1.761573388046395,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 7.5,
+      "depth_mean_mm": 7.627794034472254,
+      "magnetic_mean_uT": 100.63089535769248,
+      "magnetic_std_uT": 1.692902069254148,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 7.75,
+      "depth_mean_mm": 7.885488433307546,
+      "magnetic_mean_uT": 102.04077775021264,
+      "magnetic_std_uT": 2.6382482654305126,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 8.0,
+      "depth_mean_mm": 8.127638691106768,
+      "magnetic_mean_uT": 105.34941686698463,
+      "magnetic_std_uT": 3.3553678901179844,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 8.25,
+      "depth_mean_mm": 8.371002767672206,
+      "magnetic_mean_uT": 110.0187107702775,
+      "magnetic_std_uT": 2.228457457800032,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 8.5,
+      "depth_mean_mm": 8.615242673230785,
+      "magnetic_mean_uT": 114.63877662106079,
+      "magnetic_std_uT": 2.4141275314121065,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 8.75,
+      "depth_mean_mm": 8.860018582236831,
+      "magnetic_mean_uT": 119.18157288342981,
+      "magnetic_std_uT": 2.0602840627611196,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 9.0,
+      "depth_mean_mm": 9.122483740542773,
+      "magnetic_mean_uT": 122.87419462561661,
+      "magnetic_std_uT": 1.3946575301749138,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 9.25,
+      "depth_mean_mm": 9.384757326769217,
+      "magnetic_mean_uT": 124.65779888455631,
+      "magnetic_std_uT": 2.707362444790469,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 9.5,
+      "depth_mean_mm": 9.628997232327794,
+      "magnetic_mean_uT": 124.99416188605275,
+      "magnetic_std_uT": 1.239488645190912,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 9.75,
+      "depth_mean_mm": 9.872361308893236,
+      "magnetic_mean_uT": 127.6355589906769,
+      "magnetic_std_uT": 2.56397547895512,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 10.0,
+      "depth_mean_mm": 10.114511566692453,
+      "magnetic_mean_uT": 130.7954313263717,
+      "magnetic_std_uT": 1.1317037599933415,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 10.25,
+      "depth_mean_mm": 10.37220596552775,
+      "magnetic_mean_uT": 132.13535015420086,
+      "magnetic_std_uT": 2.1502883567337574,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 10.5,
+      "depth_mean_mm": 10.627762145200307,
+      "magnetic_mean_uT": 135.95012183825332,
+      "magnetic_std_uT": 2.3116179687730094,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 10.75,
+      "depth_mean_mm": 10.880670923984162,
+      "magnetic_mean_uT": 142.89498298408813,
+      "magnetic_std_uT": 2.509352379635236,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 11.0,
+      "depth_mean_mm": 11.130659423000603,
+      "magnetic_mean_uT": 146.22240837573858,
+      "magnetic_std_uT": 1.9224521638322978,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 11.25,
+      "depth_mean_mm": 11.37719687079969,
+      "magnetic_mean_uT": 154.47846483558442,
+      "magnetic_std_uT": 4.027139594456529,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 11.5,
+      "depth_mean_mm": 11.63605984748974,
+      "magnetic_mean_uT": 158.1834418818626,
+      "magnetic_std_uT": 3.8726412630457028,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 11.75,
+      "depth_mean_mm": 11.874510803161442,
+      "magnetic_mean_uT": 163.90823683941449,
+      "magnetic_std_uT": 1.63928367928197,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 12.0,
+      "depth_mean_mm": 12.123709257279767,
+      "magnetic_mean_uT": 165.8273273430361,
+      "magnetic_std_uT": 2.7567296160883155,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 12.25,
+      "depth_mean_mm": 12.382562354752753,
+      "magnetic_mean_uT": 171.68899728667384,
+      "magnetic_std_uT": 3.880224067334217,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 12.5,
+      "depth_mean_mm": 12.61996114499971,
+      "magnetic_mean_uT": 182.27628504645645,
+      "magnetic_std_uT": 3.5509595666099267,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 12.75,
+      "depth_mean_mm": 12.865123695749297,
+      "magnetic_mean_uT": 187.9043663091569,
+      "magnetic_std_uT": 2.671048542670425,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 13.0,
+      "depth_mean_mm": 13.116441825379317,
+      "magnetic_mean_uT": 197.6673045931226,
+      "magnetic_std_uT": 3.1455252703191166,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 13.25,
+      "depth_mean_mm": 13.371787965216996,
+      "magnetic_mean_uT": 209.80453628255464,
+      "magnetic_std_uT": 3.7766451754579853,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 13.5,
+      "depth_mean_mm": 13.629169644172075,
+      "magnetic_mean_uT": 225.86706524964598,
+      "magnetic_std_uT": 2.9310290881418752,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 13.75,
+      "depth_mean_mm": 13.874200139141374,
+      "magnetic_mean_uT": 238.15391688356553,
+      "magnetic_std_uT": 2.8652012496109602,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 14.0,
+      "depth_mean_mm": 14.117518321367367,
+      "magnetic_mean_uT": 250.76930185810758,
+      "magnetic_std_uT": 2.859402925117457,
+      "samples": 11
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 14.25,
+      "depth_mean_mm": 14.367137297548298,
+      "magnetic_mean_uT": 264.7736883125274,
+      "magnetic_std_uT": 3.888492473304805,
+      "samples": 12
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 14.5,
+      "depth_mean_mm": 14.627263772979859,
+      "magnetic_mean_uT": 271.20626237282437,
+      "magnetic_std_uT": 2.1034660240217637,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 14.75,
+      "depth_mean_mm": 14.881106925696495,
+      "magnetic_mean_uT": 281.1699250972973,
+      "magnetic_std_uT": 5.245075841070936,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 15.0,
+      "depth_mean_mm": 15.128905544834568,
+      "magnetic_mean_uT": 305.57296212923177,
+      "magnetic_std_uT": 9.52921614782978,
+      "samples": 17
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 15.25,
+      "depth_mean_mm": 15.379633320203126,
+      "magnetic_mean_uT": 332.82690819648883,
+      "magnetic_std_uT": 8.975968492132605,
+      "samples": 20
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 15.5,
+      "depth_mean_mm": 15.632141444104318,
+      "magnetic_mean_uT": 357.0837388241957,
+      "magnetic_std_uT": 6.832217556209895,
+      "samples": 28
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 15.75,
+      "depth_mean_mm": 15.934246674462443,
+      "magnetic_mean_uT": 397.0046062309797,
+      "magnetic_std_uT": 10.205014996537972,
+      "samples": 97
+    },
+    {
+      "segment": "sweep_down",
+      "direction": "press",
+      "depth_bin_lower_mm": 16.0,
+      "depth_mean_mm": 16.0,
+      "magnetic_mean_uT": 409.3490988628995,
+      "magnetic_std_uT": 0.0,
+      "samples": 1
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 2.0,
+      "depth_mean_mm": 2.065082373236156,
+      "magnetic_mean_uT": 93.26403227111958,
+      "magnetic_std_uT": 4.30034637853535,
+      "samples": 98
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 2.25,
+      "depth_mean_mm": 2.367858555895684,
+      "magnetic_mean_uT": 91.04010691260518,
+      "magnetic_std_uT": 2.8249252119057187,
+      "samples": 28
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 2.5,
+      "depth_mean_mm": 2.6203666797968763,
+      "magnetic_mean_uT": 92.93399847454491,
+      "magnetic_std_uT": 2.9827962171445273,
+      "samples": 20
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 2.75,
+      "depth_mean_mm": 2.8710944551654345,
+      "magnetic_mean_uT": 94.43424469327543,
+      "magnetic_std_uT": 2.912012843382672,
+      "samples": 17
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 3.0,
+      "depth_mean_mm": 3.118893074303508,
+      "magnetic_mean_uT": 97.84910562083122,
+      "magnetic_std_uT": 2.5601391845519297,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 3.25,
+      "depth_mean_mm": 3.372736227020145,
+      "magnetic_mean_uT": 101.11126902841133,
+      "magnetic_std_uT": 2.264474830219774,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 3.5,
+      "depth_mean_mm": 3.632862702451701,
+      "magnetic_mean_uT": 106.33795730791381,
+      "magnetic_std_uT": 1.8315468905059284,
+      "samples": 12
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 3.75,
+      "depth_mean_mm": 3.882481678632635,
+      "magnetic_mean_uT": 109.53044971809885,
+      "magnetic_std_uT": 1.037299160870407,
+      "samples": 11
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 4.0,
+      "depth_mean_mm": 4.125799860858629,
+      "magnetic_mean_uT": 109.81034930979597,
+      "magnetic_std_uT": 2.474016300537599,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 4.25,
+      "depth_mean_mm": 4.370830355827927,
+      "magnetic_mean_uT": 115.36783452384475,
+      "magnetic_std_uT": 1.7007472259282892,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 4.5,
+      "depth_mean_mm": 4.628212034783007,
+      "magnetic_mean_uT": 118.29856978253834,
+      "magnetic_std_uT": 2.2856522063849316,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 4.75,
+      "depth_mean_mm": 4.883558174620687,
+      "magnetic_mean_uT": 122.97683403257277,
+      "magnetic_std_uT": 2.607409710624909,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 5.0,
+      "depth_mean_mm": 5.134876304250705,
+      "magnetic_mean_uT": 127.22720806794408,
+      "magnetic_std_uT": 2.4449895386559346,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 5.25,
+      "depth_mean_mm": 5.38003885500029,
+      "magnetic_mean_uT": 132.0257018800249,
+      "magnetic_std_uT": 2.2704083895154685,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 5.5,
+      "depth_mean_mm": 5.617437645247249,
+      "magnetic_mean_uT": 137.0859452783933,
+      "magnetic_std_uT": 2.594471679789616,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 5.75,
+      "depth_mean_mm": 5.8762907427202355,
+      "magnetic_mean_uT": 141.56431689940408,
+      "magnetic_std_uT": 3.3966546962916797,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 6.0,
+      "depth_mean_mm": 6.12548919683856,
+      "magnetic_mean_uT": 144.80820346127396,
+      "magnetic_std_uT": 2.151647532434165,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 6.25,
+      "depth_mean_mm": 6.363940152510262,
+      "magnetic_mean_uT": 149.31113235073823,
+      "magnetic_std_uT": 1.420942936102483,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 6.5,
+      "depth_mean_mm": 6.622803129200313,
+      "magnetic_mean_uT": 157.34526903035473,
+      "magnetic_std_uT": 2.8448103683082175,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 6.75,
+      "depth_mean_mm": 6.869340576999401,
+      "magnetic_mean_uT": 162.0416175219102,
+      "magnetic_std_uT": 2.6597099979369188,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 7.0,
+      "depth_mean_mm": 7.119329076015838,
+      "magnetic_mean_uT": 168.00483367319214,
+      "magnetic_std_uT": 3.2640321960382024,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 7.25,
+      "depth_mean_mm": 7.372237854799697,
+      "magnetic_mean_uT": 177.49527707316332,
+      "magnetic_std_uT": 2.026305898972411,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 7.5,
+      "depth_mean_mm": 7.627794034472252,
+      "magnetic_mean_uT": 185.41218738058757,
+      "magnetic_std_uT": 2.868514043933001,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 7.75,
+      "depth_mean_mm": 7.885488433307549,
+      "magnetic_mean_uT": 193.04680227934085,
+      "magnetic_std_uT": 1.8253238422026428,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 8.0,
+      "depth_mean_mm": 8.127638691106766,
+      "magnetic_mean_uT": 199.22182170101414,
+      "magnetic_std_uT": 2.622030861241556,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 8.25,
+      "depth_mean_mm": 8.37100276767221,
+      "magnetic_mean_uT": 206.8906178327536,
+      "magnetic_std_uT": 1.9189493719099344,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 8.5,
+      "depth_mean_mm": 8.615242673230787,
+      "magnetic_mean_uT": 213.30793850162516,
+      "magnetic_std_uT": 2.639087671005669,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 8.75,
+      "depth_mean_mm": 8.860018582236831,
+      "magnetic_mean_uT": 217.41146080977958,
+      "magnetic_std_uT": 1.997944004067998,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 9.0,
+      "depth_mean_mm": 9.122483740542775,
+      "magnetic_mean_uT": 221.18429575055592,
+      "magnetic_std_uT": 1.8367144688177313,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 9.25,
+      "depth_mean_mm": 9.384757326769217,
+      "magnetic_mean_uT": 223.36965254387914,
+      "magnetic_std_uT": 1.7261002353400445,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 9.5,
+      "depth_mean_mm": 9.628997232327794,
+      "magnetic_mean_uT": 224.75163348897075,
+      "magnetic_std_uT": 2.271454254002164,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 9.75,
+      "depth_mean_mm": 9.872361308893234,
+      "magnetic_mean_uT": 226.98675370938832,
+      "magnetic_std_uT": 1.275548431478934,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 10.0,
+      "depth_mean_mm": 10.114511566692455,
+      "magnetic_mean_uT": 231.84801818664772,
+      "magnetic_std_uT": 1.9693124679765304,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 10.25,
+      "depth_mean_mm": 10.372205965527748,
+      "magnetic_mean_uT": 233.06036732360195,
+      "magnetic_std_uT": 2.6151966431585825,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 10.5,
+      "depth_mean_mm": 10.627762145200306,
+      "magnetic_mean_uT": 238.75744368561573,
+      "magnetic_std_uT": 1.679935909441259,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 10.75,
+      "depth_mean_mm": 10.880670923984162,
+      "magnetic_mean_uT": 244.08311393951294,
+      "magnetic_std_uT": 1.5375974655530504,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 11.0,
+      "depth_mean_mm": 11.130659423000603,
+      "magnetic_mean_uT": 248.08881968818463,
+      "magnetic_std_uT": 2.084131631413417,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 11.25,
+      "depth_mean_mm": 11.37719687079969,
+      "magnetic_mean_uT": 248.058974879297,
+      "magnetic_std_uT": 2.703776785405598,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 11.5,
+      "depth_mean_mm": 11.636059847489738,
+      "magnetic_mean_uT": 247.73456272715833,
+      "magnetic_std_uT": 2.911894772285297,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 11.75,
+      "depth_mean_mm": 11.874510803161444,
+      "magnetic_mean_uT": 249.50616953770398,
+      "magnetic_std_uT": 1.6140067233624262,
+      "samples": 7
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 12.0,
+      "depth_mean_mm": 12.123709257279765,
+      "magnetic_mean_uT": 250.25921529844607,
+      "magnetic_std_uT": 2.5567618121472684,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 12.25,
+      "depth_mean_mm": 12.382562354752753,
+      "magnetic_mean_uT": 249.66854621791367,
+      "magnetic_std_uT": 1.8003605572422607,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 12.5,
+      "depth_mean_mm": 12.61996114499971,
+      "magnetic_mean_uT": 251.77614538676391,
+      "magnetic_std_uT": 1.319708587738781,
+      "samples": 8
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 12.75,
+      "depth_mean_mm": 12.865123695749299,
+      "magnetic_mean_uT": 252.9297238629983,
+      "magnetic_std_uT": 1.7052273077658326,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 13.0,
+      "depth_mean_mm": 13.116441825379317,
+      "magnetic_mean_uT": 255.2204560597955,
+      "magnetic_std_uT": 2.8431354226392807,
+      "samples": 9
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 13.25,
+      "depth_mean_mm": 13.371787965216996,
+      "magnetic_mean_uT": 258.1723868902923,
+      "magnetic_std_uT": 2.3941814487942494,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 13.5,
+      "depth_mean_mm": 13.629169644172075,
+      "magnetic_mean_uT": 262.2987891747678,
+      "magnetic_std_uT": 2.476145100399984,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 13.75,
+      "depth_mean_mm": 13.874200139141374,
+      "magnetic_mean_uT": 270.7626604788924,
+      "magnetic_std_uT": 2.2348251862232615,
+      "samples": 10
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 14.0,
+      "depth_mean_mm": 14.117518321367369,
+      "magnetic_mean_uT": 276.49124473536517,
+      "magnetic_std_uT": 3.308936892986682,
+      "samples": 11
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 14.25,
+      "depth_mean_mm": 14.367137297548302,
+      "magnetic_mean_uT": 290.99939104736717,
+      "magnetic_std_uT": 5.730645317605476,
+      "samples": 12
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 14.5,
+      "depth_mean_mm": 14.627263772979859,
+      "magnetic_mean_uT": 313.60714284967435,
+      "magnetic_std_uT": 7.297215453204952,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 14.75,
+      "depth_mean_mm": 14.881106925696495,
+      "magnetic_mean_uT": 332.203324246112,
+      "magnetic_std_uT": 4.31139221515806,
+      "samples": 14
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 15.0,
+      "depth_mean_mm": 15.128905544834568,
+      "magnetic_mean_uT": 344.269792533296,
+      "magnetic_std_uT": 3.513763943732628,
+      "samples": 17
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 15.25,
+      "depth_mean_mm": 15.379633320203126,
+      "magnetic_mean_uT": 355.28132424591985,
+      "magnetic_std_uT": 4.869697419043778,
+      "samples": 20
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 15.5,
+      "depth_mean_mm": 15.632141444104317,
+      "magnetic_mean_uT": 372.664758359788,
+      "magnetic_std_uT": 6.086825385169643,
+      "samples": 28
+    },
+    {
+      "segment": "sweep_up",
+      "direction": "lift",
+      "depth_bin_lower_mm": 15.75,
+      "depth_mean_mm": 15.934246674462443,
+      "magnetic_mean_uT": 401.75273932099566,
+      "magnetic_std_uT": 9.73286474887433,
+      "samples": 97
+    }
+  ],
+  "actual_tcp_capture": {
+    "source": "HRIF_ReadActTcpPos (independent connection)",
+    "clock": "host_monotonic_ns",
+    "units": "metres_and_radians",
+    "requested_interval_s": 0.1,
+    "samples": 1299,
+    "valid_samples": 1299,
+    "invalid_samples": 0,
+    "max_read_duration_ms": 17.778372,
+    "worker_stopped": true,
+    "worker_error": null
+  },
+  "method": {
+    "sweep_depth_bin_mm": 0.25,
+    "note": "Descriptive command-depth response by direction; no static gain or delay fit."
+  },
+  "limitations": [
+    "Sweep curves include dynamic lag, XY position, wetting and contact-history effects.",
+    "Binned spread is within-run variation, not between-run repeatability or confidence.",
+    "Compare only matching speed profiles; smooth sweep speed varies through the stroke.",
+    "Use local perturbations to identify dynamics; do not treat a sweep curve as validated feedforward.",
+    "Two repetitions provide an initial comparison, not a held-out validation set."
+  ]
+}

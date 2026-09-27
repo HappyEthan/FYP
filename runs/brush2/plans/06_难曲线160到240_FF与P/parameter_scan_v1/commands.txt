@@ -1,0 +1,35 @@
+# 第1笔：A组，第1次，Kp=0.25，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.25 --max-correction-mm 0.4 --execute
+
+# 第2笔：B组，第1次，Kp=0.25，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.25 --max-correction-mm 0.8 --execute
+
+# 第3笔：C组，第1次，Kp=0.5，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.5 --max-correction-mm 0.4 --execute
+
+# 第4笔：D组，第1次，Kp=0.5，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.5 --max-correction-mm 0.8 --execute
+
+# 第5笔：E组，第1次，Kp=1，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 1 --max-correction-mm 0.4 --execute
+
+# 第6笔：F组，第1次，Kp=1，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 1 --max-correction-mm 0.8 --execute
+
+# 第7笔：F组，第2次，Kp=1，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 1 --max-correction-mm 0.8 --execute
+
+# 第8笔：E组，第2次，Kp=1，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 1 --max-correction-mm 0.4 --execute
+
+# 第9笔：D组，第2次，Kp=0.5，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.5 --max-correction-mm 0.8 --execute
+
+# 第10笔：C组，第2次，Kp=0.5，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.5 --max-correction-mm 0.4 --execute
+
+# 第11笔：B组，第2次，Kp=0.25，修正±0.8 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.25 --max-correction-mm 0.8 --execute
+
+# 第12笔：A组，第2次，Kp=0.25，修正±0.4 mm
+PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --p-dynamics smooth --kp 0.25 --max-correction-mm 0.4 --execute

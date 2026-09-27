@@ -1,0 +1,50 @@
+{
+  "measurement_s": 30.0,
+  "measurement_mm": 300.0,
+  "paper_travel_mm": 350.0,
+  "trajectory_duration_s": 112.60000000000001,
+  "sequence": [
+    "P1",
+    "PI1",
+    "PI2",
+    "P2"
+  ],
+  "metric_time_origin": "first measure_00 sample; seconds; window endpoints inclusive",
+  "plateau_windows_s": {
+    "first_160": [
+      5.0,
+      7.0
+    ],
+    "deep_240": [
+      16.0,
+      18.0
+    ],
+    "return_160": [
+      27.0,
+      29.0
+    ]
+  },
+  "transition_windows_s": {
+    "rise": [
+      8.0,
+      16.0
+    ],
+    "return": [
+      19.0,
+      27.0
+    ]
+  },
+  "metrics": [
+    "signed mean error target-minus-measurement",
+    "MAE",
+    "fraction abs(error)<=20 uT",
+    "P95 abs(error)",
+    "P/I correction and output limiting fractions"
+  ],
+  "source_dir": "/home/ethan/FYP/runs/brush2/plans/nonlinear_ff_p_hard_160_240_v1",
+  "source_sha256": {
+    "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+    "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+    "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19"
+  }
+}

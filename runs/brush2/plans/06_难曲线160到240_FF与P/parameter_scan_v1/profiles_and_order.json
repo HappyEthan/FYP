@@ -1,0 +1,68 @@
+{
+  "profiles": {
+    "A": {
+      "kp": 0.25,
+      "ki": 0.0,
+      "max_correction_mm": 0.4,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    },
+    "B": {
+      "kp": 0.25,
+      "ki": 0.0,
+      "max_correction_mm": 0.8,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    },
+    "C": {
+      "kp": 0.5,
+      "ki": 0.0,
+      "max_correction_mm": 0.4,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    },
+    "D": {
+      "kp": 0.5,
+      "ki": 0.0,
+      "max_correction_mm": 0.8,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    },
+    "E": {
+      "kp": 1.0,
+      "ki": 0.0,
+      "max_correction_mm": 0.4,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    },
+    "F": {
+      "kp": 1.0,
+      "ki": 0.0,
+      "max_correction_mm": 0.8,
+      "max_correction_speed_mm_s": 2.0,
+      "max_correction_accel_mm_s2": 30.0,
+      "taper_ticks": 50
+    }
+  },
+  "order": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "F",
+    "E",
+    "D",
+    "C",
+    "B",
+    "A"
+  ],
+  "repeats": 2,
+  "hardware_executed_by_agent": false
+}

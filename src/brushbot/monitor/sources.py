@@ -108,6 +108,9 @@ class ArraySource:
 class SerialSource:
     """pyserial 串口源. 固件格式 't_us,Bx,By,Bz' @115200."""
 
+    # Firmware emits the raw uint32 micros() counter, including its rollover.
+    sensor_time_modulus_us = 2**32
+
     def __init__(self, port: str = "/dev/ttyUSB0", baud: int = 115200):
         self.port = port
         self.baud = baud

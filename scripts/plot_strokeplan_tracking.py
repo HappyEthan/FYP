@@ -22,6 +22,12 @@ PROFILES = (
     ("03_double_wave", "03 Double wave"),
     ("04_smooth_levels_wide_transitions", "04 Wide transitions"),
 )
+TARGET_NAMES = {
+    "01_gradual_press": "渐进压笔",
+    "02_single_arch": "单拱",
+    "03_double_wave": "双波",
+    "04_smooth_levels_wide_transitions": "宽过渡",
+}
 
 
 def _load_run(folder: Path, profile: str, control_mode: str) -> dict:
@@ -29,13 +35,14 @@ def _load_run(folder: Path, profile: str, control_mode: str) -> dict:
     if manifest.get("status") != "completed" or manifest.get("execution_environment") != "hardware":
         raise ValueError(f"expected completed hardware run: {folder}")
     label = f"strokeplan_p_{profile}" if control_mode == "p" else f"strokeplan_{profile}"
-    if f"__{label}__" not in folder.name:
+    resolved = json.loads((folder / "resolved.json").read_text(encoding="utf-8"))
+    if resolved["run_label"] != label:
         raise ValueError(f"unexpected run label: {folder}")
     for name in ("strokeplan.npz", "feedforward.json", "settings.json", "resolved.json"):
         digest = hashlib.sha256((folder / name).read_bytes()).hexdigest()
         if digest != manifest["sha256"][name]:
             raise ValueError(f"snapshot hash mismatch: {folder / name}")
-    control = json.loads((folder / "resolved.json").read_text(encoding="utf-8"))["control"]
+    control = resolved["control"]
     if control_mode == "p":
         if not control.get("enabled") or control.get("mode") != "p":
             raise ValueError(f"expected P feedback run: {folder}")
@@ -64,7 +71,6 @@ def _load_run(folder: Path, profile: str, control_mode: str) -> dict:
     return {
         "folder": folder,
         "run_id": manifest["run_id"],
-        "short_id": folder.name.rsplit("__", 1)[-1],
         "x_mm": x_mm,
         "target": target,
         "observed": observed,
@@ -95,7 +101,7 @@ def _plot_overview(grouped: list[list[dict]], output: Path, control_mode: str) -
             ax.plot(run["x_mm"], run["observed"], color=colors[i], lw=1.9,
                     label="Recorded filtered response")
             metrics = run["metrics"]
-            ax.set_title(f"{title} | repeat {j+1} · {run['short_id']}", loc="left", fontsize=11)
+            ax.set_title(f"{title} | repeat {j+1} · {run['folder'].name[:8]}", loc="left", fontsize=11)
             ax.text(0.02, 0.95,
                     f"MAE {metrics['mae_uT']:.1f}  ·  median |error| {metrics['median_abs_error_uT']:.1f}"
                     f"  ·  P90 {metrics['p90_abs_error_uT']:.1f} µT",
@@ -130,7 +136,7 @@ def _plot_errors(grouped: list[list[dict]], output: Path, control_mode: str) -> 
             ax = axes[i, j]
             ax.axhline(0, color="0.25", ls="--", lw=1)
             ax.plot(run["x_mm"], run["error"], color=colors[i], lw=1.5)
-            ax.set_title(f"{title} | repeat {j+1} · {run['short_id']}", loc="left", fontsize=11)
+            ax.set_title(f"{title} | repeat {j+1} · {run['folder'].name[:8]}", loc="left", fontsize=11)
             ax.text(0.02, 0.95, f"Mean signed error {run['metrics']['mean_signed_error_uT']:+.1f} µT",
                     transform=ax.transAxes, va="top", fontsize=8.5,
                     bbox={"facecolor": "white", "alpha": 0.85, "edgecolor": "none"})
@@ -168,7 +174,7 @@ def _plot_detail(run: dict, title: str, repeat: int, color, output: Path) -> Non
     err_ax.set_ylim(-100, 180)
     err_ax.grid(True, alpha=0.22)
     m = run["metrics"]
-    fig.suptitle(f"{title} | repeat {repeat} · {run['short_id']} | MAE {m['mae_uT']:.1f} µT · "
+    fig.suptitle(f"{title} | repeat {repeat} · {run['folder'].name[:8]} | MAE {m['mae_uT']:.1f} µT · "
                  f"median |error| {m['median_abs_error_uT']:.1f} µT · P90 {m['p90_abs_error_uT']:.1f} µT",
                  fontsize=13)
     fig.subplots_adjust(top=0.89, bottom=0.09, left=0.10, right=0.98, hspace=0.15)
@@ -178,19 +184,35 @@ def _plot_detail(run: dict, title: str, repeat: int, color, output: Path) -> Non
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--run-dir", type=Path, default=Path("runs/brush2/2026-09-24"))
+    parser.add_argument("--run-dir", type=Path, help="experiment raw directory")
     parser.add_argument("--control-mode", choices=("feedforward", "p"),
                         default="feedforward")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+    if args.run_dir is None:
+        group = "02_P反馈与增益扫描" if args.control_mode == "p" else "01_四目标纯前馈"
+        args.run_dir = Path("runs/brush2/archive/2026-09-24") / group / "raw"
     if args.output is None:
-        name = "strokeplan_p_tracking_8" if args.control_mode == "p" else "strokeplan_tracking_8"
-        args.output = args.run_dir.parent / "combined" / args.run_dir.name / name
+        name = "四目标P跟随" if args.control_mode == "p" else "四目标跟随"
+        args.output = args.run_dir.parent / "analysis" / name
 
     grouped = []
     for profile, _ in PROFILES:
         label = f"strokeplan_p_{profile}" if args.control_mode == "p" else f"strokeplan_{profile}"
-        folders = sorted(args.run_dir.glob(f"*__{label}__*/manifest.json"))
+        folders = []
+        for path in args.run_dir.glob("*/manifest.json"):
+            resolved = json.loads((path.parent / "resolved.json").read_text())
+            control = resolved["control"]
+            if resolved["run_label"] != label:
+                continue
+            if args.control_mode == "p" and (
+                    control["kp"] != .05 or
+                    (control["max_correction_mm"],
+                     control["max_correction_speed_mm_s"],
+                     control["max_correction_accel_mm_s2"]) != (.2, 2., 40.)):
+                continue
+            folders.append(path)
+        folders.sort()
         if len(folders) != 2:
             raise ValueError(f"expected two runs for {profile}, found {len(folders)}")
         grouped.append([_load_run(folder.parent, profile, args.control_mode)
@@ -199,14 +221,14 @@ def main() -> None:
         controls = [run["control"] for runs in grouped for run in runs]
         if any(control != controls[0] for control in controls[1:]):
             raise ValueError("P run profiles differ; do not combine as one condition")
-    args.output.mkdir(parents=True, exist_ok=args.control_mode == "feedforward")
+    args.output.mkdir(parents=True, exist_ok=True)
     _plot_overview(grouped, args.output / "target_vs_measured_overview.png", args.control_mode)
     _plot_errors(grouped, args.output / "signed_error_overview.png", args.control_mode)
     colors = plt.cm.viridis(np.linspace(0.12, 0.85, len(PROFILES)))
     summary = []
     for i, ((profile, title), runs) in enumerate(zip(PROFILES, grouped)):
         for j, run in enumerate(runs, 1):
-            filename = f"{profile}__repeat_{j}__{run['short_id']}.png"
+            filename = f"{TARGET_NAMES[profile]}_第{j}次.png"
             shown_title = f"FF + P | {title}" if args.control_mode == "p" else title
             _plot_detail(run, shown_title, j, colors[i], args.output / filename)
             summary.append({"profile": profile, "repeat": j, "run_id": run["run_id"],

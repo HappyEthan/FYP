@@ -1,0 +1,274 @@
+"""Unified, parameter-grouped analysis of all nine frozen hardware records."""
+from pathlib import Path
+import csv
+import hashlib
+import importlib.util
+import json
+
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+OUT = Path(__file__).resolve().parent
+ROOT = OUT.parent
+SOURCE = ROOT.parent/'06_非线性前馈难曲线对比/analysis/nonlinear_ff_p_selected_20260925/analyze.py'
+spec = importlib.util.spec_from_file_location('measurement_audit', SOURCE)
+base = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(base)
+PREFIXES = ['17-55-48', '17-58-54', '18-04-04', '18-06-53', '18-09-15',
+            '18-11-48', '18-14-14', '18-25-53', '18-28-26']
+CONDITIONS = [(kp, cap) for kp in [.25, .5, 1.] for cap in [.4, .8]]
+COLORS = ['#2563eb', '#c2410c']
+
+
+def save(fig, name):
+    fig.savefig(OUT/(name+'.png'), dpi=175)
+    fig.savefig(OUT/(name+'.svg'))
+    plt.close(fig)
+
+
+def main():
+    folders = sorted(p for p in (ROOT/'raw').iterdir() if (p/'manifest.json').exists())
+    assert [p.name[:8] for p in folders] == PREFIXES, 'Input inventory changed; review scope explicitly.'
+    runs = [base.load(p) for p in folders]
+    assert all(r['audit']['eligible'] for r in runs)
+    common = ['strokeplan.npz', 'feedforward.json', 'settings.json', 'entry_profile.json']
+    assert len({tuple(r['audit']['hashes'][k] for k in common) for r in runs}) == 1
+    groups = {}
+    for label, (kp, cap) in zip('ABCDEF', CONDITIONS):
+        rr = [r for r in runs if (r['audit']['control']['kp'],
+              r['audit']['control']['max_correction_mm']) == (kp, cap)]
+        assert rr
+        for i, r in enumerate(rr, 1):
+            r['id'] = label+str(i)
+            c = r['audit']['control']
+            assert (c['ki'], c['max_correction_speed_mm_s'],
+                    c['max_correction_accel_mm_s2'], c['taper_ticks']) == (0., 2., 30., 50)
+            assert np.array_equal(r['g'], runs[0]['g'])
+        e = np.concatenate([r['e'] for r in rr])
+        maes = [r['metrics']['mae_uT'] for r in rr]
+        groups[label] = dict(kp=kp, cap_mm=cap, n=len(rr), ids=[r['id'] for r in rr],
+            mean_mae_uT=float(np.mean(maes)), min_mae_uT=min(maes), max_mae_uT=max(maes),
+            pooled_p95_abs_uT=float(np.percentile(abs(e), 95)),
+            within20_pct=float(np.mean(abs(e)<=20)*100),
+            mean_severe50_s=float(np.mean([r['metrics']['severe50_s'] for r in rr])),
+            mean_cap_pct=float(np.mean([r['metrics']['amplitude_cap_pct'] for r in rr])),
+            bias_range_uT=[min(r['metrics']['bias_uT'] for r in rr), max(r['metrics']['bias_uT'] for r in rr)],
+            between_record_curve_mae_uT=(float(np.mean(abs(rr[0]['y']-rr[1]['y']))) if len(rr)==2 else None))
+    ordered = sorted(runs, key=lambda r: r['id'])
+    group_runs = {k: [r for r in ordered if r['id'].startswith(k)] for k in groups}
+    summary = dict(scope='All 9 complete hardware records, grouped by 6 parameter conditions; no exclusions.',
+        method='Full measure_00, 0..40 s, 2001 points per record; recorded EMA alpha=.3; error=measured-target. No trimming, smoothing, time shift, or baseline refit.',
+        aggregation='Mean MAE and mean durations are record-weighted. P95 pools absolute errors, not averaged curves. Each record has equal sample count.',
+        severe_duration='Left endpoint classification of each 20 ms interval; no fictitious interval after t=40.',
+        inference='Descriptive only: n=1 or 2 per condition; no independent-sample significance inferred from 2001 correlated time samples.',
+        common_input_sha256={k:runs[0]['audit']['hashes'][k] for k in common},
+        analysis_dependency_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+        groups=groups, runs=[dict(id=r['id'], **r['audit'], metrics=r['metrics'], segments=r['segments']) for r in ordered])
+    (OUT/'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2)+'\n')
+    with (OUT/'逐笔指标.csv').open('w', newline='', encoding='utf-8-sig') as f:
+        w = csv.DictWriter(f, fieldnames=['id', 'kp', 'cap_mm', 'source_folder', *ordered[0]['metrics']])
+        w.writeheader()
+        for r in ordered:
+            c = r['audit']['control']
+            w.writerow(dict(id=r['id'], kp=c['kp'], cap_mm=c['max_correction_mm'],
+                            source_folder=r['folder'].name, **r['metrics']))
+    with (OUT/'参数组指标.csv').open('w', newline='', encoding='utf-8-sig') as f:
+        keys = ['kp','cap_mm','n','mean_mae_uT','min_mae_uT','max_mae_uT',
+                'pooled_p95_abs_uT','within20_pct','mean_severe50_s','mean_cap_pct']
+        w = csv.DictWriter(f, fieldnames=['group', *keys]); w.writeheader()
+        for k, v in groups.items(): w.writerow(dict(group=k, **{key:v[key] for key in keys}))
+
+    # Show every measured curve, not only group averages.
+    fig, axes = plt.subplots(3, 2, figsize=(14, 11), sharex=True, sharey=True, layout='constrained')
+    lower = min(r['y'].min() for r in runs)-8
+    upper = max(r['y'].max() for r in runs)+8
+    for ax, (key, v) in zip(axes.flat, groups.items()):
+        rr = group_runs[key]; t, g = rr[0]['t'], rr[0]['g']
+        ax.fill_between(t, g-20, g+20, color='#94a3b8', alpha=.2)
+        ax.plot(t, g, '--', color='#111827', lw=1.4, label='目标 ±20 µT')
+        for r, color in zip(rr, COLORS):
+            ax.plot(t, r['y'], color=color, lw=1.05,
+                    label=f"{r['id']}：MAE {r['metrics']['mae_uT']:.1f} µT")
+        ax.set(title=f"{key}  Kp={v['kp']:g}，修正 ±{v['cap_mm']:g} mm（n={v['n']}）",
+               xlim=(0,40), ylim=(lower,upper), xlabel='测量时间 / s', ylabel='磁响应 / µT')
+        ax.grid(alpha=.18); ax.legend(fontsize=9, loc='lower right')
+    fig.suptitle('非线性前馈＋P 参数扫描：六组参数、九笔完整记录\n所有曲线使用原始记录的 EMA 信号，统一时间轴与纵轴', fontsize=16)
+    save(fig, '01_六组目标跟随')
+
+    fig, axes = plt.subplots(2,2, figsize=(14,8.6), layout='constrained')
+    panels = [('mean_mae_uT','mae_uT','MAE：柱为组均值，点为单笔','误差 / µT'),
+              ('within20_pct','within20_pct','±20 µT 内比例：越高越好','采样比例 / %'),
+              ('pooled_p95_abs_uT',None,'合并绝对误差 P95：保留尾部偏离','误差 / µT'),
+              ('mean_cap_pct','amplitude_cap_pct','实际到达修正幅值上限的比例','采样比例 / %')]
+    labels = [f"{k}（n={v['n']}）\nKp={v['kp']:g}\n±{v['cap_mm']:g} mm" for k,v in groups.items()]
+    for ax, (group_key, run_key, title, ylabel) in zip(axes.flat, panels):
+        values = [v[group_key] for v in groups.values()]
+        ax.bar(range(6), values, width=.65, color=['#94a3b8']*5+['#0f766e'], alpha=.8)
+        for i, (key, v) in enumerate(groups.items()):
+            text_height = values[i]
+            if run_key:
+                dots = [r['metrics'][run_key] for r in group_runs[key]]
+                xx = np.linspace(i-.1, i+.1, len(dots)) if len(dots)>1 else [i]
+                ax.scatter(xx, dots, color='#111827', s=22, zorder=3)
+                text_height = max(text_height, max(dots))
+            ax.text(i, text_height+max(values)*.04, f'{values[i]:.1f}', ha='center', fontsize=10)
+        ax.set(title=title, ylabel=ylabel, xticks=range(6), xticklabels=labels)
+        ax.set_ylim(0, max(values + ([r['metrics'][run_key] for r in runs] if run_key else []))*1.23)
+        ax.grid(axis='y', alpha=.18)
+    fig.suptitle('参数组汇总｜每笔等权，全部 40 s 纳入指标\n单笔离散保留；P95 从各笔绝对误差合并计算', fontsize=16)
+    save(fig, '02_参数组指标')
+
+    fig, axes = plt.subplots(2,2, figsize=(14,8.8), layout='constrained')
+    for ax, key in zip(axes[0], ['D','F']):
+        ax.axhspan(-20,20,color='#16a34a',alpha=.10); ax.axhline(0,color='gray',lw=.8)
+        for r,color in zip(group_runs[key], COLORS):
+            ax.plot(r['t'],r['e'],color=color,lw=1.1,
+                    label=f"{r['id']}：均值 {r['metrics']['bias_uT']:+.1f} µT")
+        v=groups[key]
+        ax.set(title=f"{key}  Kp={v['kp']:g}、±0.8 mm：逐笔有符号误差",
+               xlabel='测量时间 / s',ylabel='实测－目标 / µT',xlim=(0,40),ylim=(-80,80))
+        ax.legend(fontsize=9)
+    ax=axes[1,0]
+    for key,color in [('D','#2563eb'),('F','#0f766e')]:
+        e=np.sort(np.concatenate([abs(r['e']) for r in group_runs[key]]))
+        ax.plot(e,np.arange(1,len(e)+1)/len(e)*100,color=color,lw=1.6,label=f"{key}：Kp={groups[key]['kp']:g}")
+    ax.axvline(20,color='gray',ls='--');ax.axhline(95,color='gray',ls=':')
+    ax.set(title='±0.8 mm 两组：绝对误差累计分布',xlabel='绝对误差 / µT',ylabel='累计采样比例 / %',xlim=(0,80),ylim=(0,100));ax.legend()
+    ax=axes[1,1]
+    keys=['C','D','F']; values=[groups[k]['between_record_curve_mae_uT'] for k in keys]
+    ax.bar(keys,values,color=['#94a3b8','#2563eb','#0f766e'])
+    for i,v in enumerate(values): ax.text(i,v+1,f'{v:.2f}',ha='center')
+    ax.set(title='同组两条实测曲线之间的平均绝对差',ylabel='曲线差异 / µT',ylim=(0,max(values)*1.2),xlabel='n=2 的参数组；该指标不同于目标跟踪 MAE')
+    for ax in axes.flat:ax.grid(alpha=.18)
+    fig.suptitle('误差结构与组内差异｜目标跟踪较好，仍可能存在笔间状态偏移',fontsize=16)
+    save(fig, '03_误差结构与组内差异')
+
+    fig,axes=plt.subplots(2,2,figsize=(14,8.4),sharex=True,layout='constrained')
+    for col,key in enumerate(['D','F']):
+        ax=axes[0,col]
+        for r,color in zip(group_runs[key],COLORS):
+            ax.plot(r['t'],r['correction'],color=color,lw=1.05,label=f"{r['id']}：到顶 {r['metrics']['amplitude_cap_pct']:.1f}%")
+            axes[1,col].plot(r['actual_t'],r['z_error'],color=color,lw=.85,
+                label=f"{r['id']}：Z MAE {r['metrics']['z_tcp_mae_mm']:.3f} mm")
+        ax.axhline(.8,color='gray',ls='--');ax.axhline(-.8,color='gray',ls='--')
+        ax.set(title=f"{key}  Kp={groups[key]['kp']:g}、±0.8 mm",ylabel='反馈压深修正 / mm',ylim=(-.95,.95));ax.legend(fontsize=9)
+        ax=axes[1,col];ax.axhline(0,color='gray',lw=.8)
+        ax.set(xlabel='测量时间 / s',ylabel='实测 TCP Z－命令 Z / mm');ax.legend(fontsize=9)
+    for ax in axes.flat:ax.grid(alpha=.18);ax.set_xlim(0,40)
+    fig.suptitle('反馈行程使用与实际 TCP 跟随\n正修正为下压；TCP 按读取中点对齐命令时间，采集约 10 Hz',fontsize=16)
+    save(fig,'04_反馈限幅与TCP跟随')
+
+    group_rows='\n'.join(f"| {k} | {v['kp']:g} | ±{v['cap_mm']:g} | {v['n']} | {v['mean_mae_uT']:.2f} | {v['min_mae_uT']:.2f}–{v['max_mae_uT']:.2f} | {v['within20_pct']:.2f}% | {v['pooled_p95_abs_uT']:.2f} | {v['mean_severe50_s']:.2f} | {v['mean_cap_pct']:.2f}% |" for k,v in groups.items())
+    run_rows='\n'.join(f"| {r['id']} | {r['metrics']['mae_uT']:.2f} | {r['metrics']['within20_pct']:.2f}% | {r['metrics']['p95_abs_uT']:.2f} | {r['metrics']['bias_uT']:+.2f} | {r['metrics']['severe50_s']:.2f} | {r['metrics']['amplitude_cap_pct']:.2f}% |" for r in ordered)
+    source_rows='\n'.join(f"| {r['id']} | [{r['folder'].name}](../raw/{r['folder'].name}/) |" for r in ordered)
+    tcp_rows='\n'.join(f"| {r['id']} | {r['metrics']['z_tcp_mae_mm']:.3f} | {r['metrics']['z_tcp_p95_mm']:.3f} | {r['audit']['actual_tcp']['max_read_duration_ms']:.2f} | {r['metrics']['control_max_gap_ms']:.2f} |" for r in ordered)
+    d,f=groups['D'],groups['F']
+    improvement=100*(1-f['mean_mae_uT']/d['mean_mae_uT'])
+    report=f'''---
+project: 04-robot-control
+status: active
+---
+
+# 非线性前馈＋P 参数扫描综合分析
+
+## 1. 实验范围与结论
+
+本实验采用同一条 160–240 µT 难目标曲线，比较 Kp=0.25、0.5、1 与修正行程 ±0.4、±0.8 mm 的六种组合。共纳入 **9 笔真机记录、6 组参数**，统一按参数归组分析。
+
+在现有数据中，**F 组（Kp=1、Ki=0、修正 ±0.8 mm）适合作为后续控制实验的基准**：平均 MAE 为 **{f['mean_mae_uT']:.2f} µT**，±20 µT 内比例为 **{f['within20_pct']:.2f}%**，两笔 MAE 为 16.13–17.02 µT。该组的跟踪误差在本批参数中较低，但仍存在初始平台偏差、尾部偏离和笔间状态差异，尚不能认为已经稳定达到全程贴合目标的要求。
+
+## 2. 共同条件与计算口径
+
+- 同一前馈表、目标 StrokePlan、现场设置及旋转进笔配置，四项输入文件哈希一致；Ki 均为 0。
+- X 速度 10 mm/s，测量段长 400 mm、时长 40 s；Z36、Ry30°→15°旋转接触后滑动加载。
+- 修正速度 2 mm/s、加速度 30 mm/s²、首尾渐变 1 s；控制指令间隔 20 ms，实际 TCP 采用独立连接约 10 Hz 记录。
+- 九笔均 completed、hardware，每笔有 2001 个连续测量点，时间、目标及 XY 与输入快照一致；快照哈希及测量引用的传感器有效性校验通过。
+- 误差统一定义为 **记录的实测 EMA 信号－目标**，正值偏高，负值偏低。所有主指标保留完整 0–40 s；不裁剪首段、不重新滤波、不平移信号、不调整基线。
+- 组 MAE 为单笔 MAE 的等权平均；±20 比例合并该组全部采样点；P95 从各笔的绝对误差合并计算，未对平均曲线评分。各笔点数相同，因此组 MAE 也等于合并绝对误差均值。
+- “严重偏离”用于描述 |误差|>50 µT；按每个 20 ms 区间左端点判定累计时长，不把末尾采样点算成额外区间。到顶比例按实际 `depth_fb_m` 达到该组 ±行程上限计算。
+
+## 3. 六组参数的总体比较
+
+| 组 | Kp | 修正/mm | 笔数 n | 平均 MAE/µT | 单笔 MAE 范围/µT | ±20 内 | 合并 P95/µT | 平均 >50 时长/s | 平均到顶比例 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+{group_rows}
+
+n=1 的组仅反映一笔观测，不具备组内离散估计。单笔范围表示实测最小值至最大值，不是置信区间。
+
+![六组目标跟随](01_六组目标跟随.png)
+
+![参数组指标](02_参数组指标.png)
+
+### 3.1 Kp 与行程需要联合考虑
+
+在 ±0.8 mm 条件下，D 组 Kp=0.5 的平均 MAE 为 {d['mean_mae_uT']:.2f} µT，F 组 Kp=1 为 {f['mean_mae_uT']:.2f} µT，描述性降低 **{improvement:.1f}%**；±20 内比例由 {d['within20_pct']:.2f}% 提高到 {f['within20_pct']:.2f}%，每笔平均严重偏离时长由 {d['mean_severe50_s']:.2f} s 降至 {f['mean_severe50_s']:.2f} s。F 的两笔 MAE 均低于 D 的两笔。
+
+Kp=1 时，±0.4 mm 的 E 组平均到顶比例为 {groups['E']['mean_cap_pct']:.2f}%，±0.8 mm 的 F 组为 {f['mean_cap_pct']:.2f}%，同时 F 的平均跟踪指标较好。这支持继续使用 ±0.8 mm 作为当前实验范围；E 仅一笔，不能把两组差异完全归因于行程。
+
+Kp=0.25 时，B 组 ±0.8 mm 的 MAE 高于 A 组 ±0.4 mm，且 B 的实际修正没有到达 ±0.8 mm 上限。因此本批结果不支持“单独增加行程就一定改善”，也不支持把六组观测解释为严格单调的增益规律。
+
+### 3.2 组内差异仍会影响判断
+
+C 组两笔 MAE 为 53.69 和 19.16 µT，平均为 {groups['C']['mean_mae_uT']:.2f} µT；两条实测曲线之间平均绝对差为 {groups['C']['between_record_curve_mae_uT']:.2f} µT。较大的偏差记录完整纳入该组，组均值与单笔范围共同体现其表现。
+
+F 组两笔目标跟踪 MAE 接近，但有符号平均误差分别为 +11.01 和 −9.81 µT，偏差方向改变；两条实测曲线之间平均绝对差为 {f['between_record_curve_mae_uT']:.2f} µT。不能用正负误差相互抵消后的组均值判断“无偏”，也不能把较小的跟踪 MAE 等同于接触状态一致。
+
+![误差结构与组内差异](03_误差结构与组内差异.png)
+
+## 4. 平台、过渡和限幅的具体表现
+
+- F1 在目标下降段的平均实测偏高约 25.18 µT；F2 对应约 1.71 µT。方向相关的偏差程度并不固定，现有数据不足以确定统一的回升补偿量。这里按目标导数 >1 / <−1 µT/s 区分上升/下降，其余为近平台。
+- F2 的首次 0–3 s 平台平均偏低约 38.48 µT，该首段仍包含在正式评分中。完整 40 s 的 MAE 为 16.13 µT、±20 内为 69.87%，全程平均指标不能替代局部平台检查。
+- F1 到顶主要在抬高方向，F2 主要在下压方向。相同参数需要相反修正，提示前馈偏差及笔间状态具有变化；暂不由单笔现象决定整体下移前馈表或继续扩大行程。
+- `limit_reasons` 记录原始请求受到哪些约束；出现 acceleration 等名称不等于最终发送指令违规。图中的到顶比例按实际修正量计算，和原始请求受限比例分开。
+
+![反馈限幅与实际TCP](04_反馈限幅与TCP跟随.png)
+
+## 5. 逐笔指标
+
+记录编号在同一参数组内按采集时间分配，用于连接曲线、指标与原始数据。
+
+| 记录 | MAE/µT | ±20 内 | P95/µT | 实测－目标均值/µT | >50 总时长/s | 实际到顶比例 |
+|---|---:|---:|---:|---:|---:|---:|
+{run_rows}
+
+## 6. 执行器与采集质量
+
+九笔实际 TCP 均无无效读取，全部完成记录。测量控制记录最大相邻间隔为 {max(r['metrics']['control_max_gap_ms'] for r in runs):.2f} ms；独立 TCP 最大单次读取耗时为 {max(r['audit']['actual_tcp']['max_read_duration_ms'] for r in runs):.2f} ms。该读取耗时与控制记录间隔不是同一个量，不能直接用前者判断主控制循环超时。
+
+| 记录 | Z 跟随 MAE/mm | Z 跟随 P95/mm | 最大 TCP 读取/ms | 最大控制间隔/ms |
+|---|---:|---:|---:|---:|
+{tcp_rows}
+
+Z 跟随误差使用共享主机时钟：以实际 TCP 读取开始/结束中点，对已发送命令做线性插值后相减。约 10 Hz 采样可反映较慢的位姿跟随差异，不能排除高频误差，也不能直接等同于纯伺服延迟。
+
+基线、沾水、纸面位置、接触历史及时间漂移尚未被独立控制。不同记录的空载磁分量有变化，但不能把某一轴基线差直接当作磁幅值误差，更不能据此修改基线以贴合曲线。
+
+## 7. 参数选择与后续验证
+
+建议采用 **非线性前馈＋P，Kp=1、Ki=0、总修正 ±0.8 mm、修正速度 2 mm/s、加速度 30 mm/s²、渐变 1 s** 作为基准。该选择依据本批六组九笔的描述性结果，不声称全局最优或统计显著优势。每组仅 1–2 笔，采集顺序未随机化；同一笔的 2001 个时间点不能当成 2001 个独立实验。
+
+下一步已选用 **160→240→160 µT 短平台路径，对比现有 P 与带抗饱和的慢 PI**：同时观察首次平台、深压平台和返回平台，检查积分是否降低持续偏差，以及是否增加返回过程的超调。当前数据支持开展该比较，尚不能保证 PI 足以消除所有偏差。短平台试验方案另见 [实验说明](../../../plans/08_短平台160到240回160_P与PI/README.md)。
+
+## 附录：数据来源与重现
+
+| 记录编号 | 原始记录 |
+|---|---|
+{source_rows}
+
+机器可读结果：[参数组指标](参数组指标.csv)、[逐笔指标](逐笔指标.csv)、[完整指标与来源哈希](summary.json)。图表同时提供同名 SVG。重现命令：
+
+```bash
+python runs/brush2/2026-09-25/07_非线性前馈P参数扫描/analysis/analyze.py
+```
+
+本报告只整理分析产物；原始执行记录、前馈表及控制参数保持原样。
+'''
+    (OUT/'分析报告.md').write_text(report)
+    print(json.dumps(groups,ensure_ascii=False,indent=2))
+
+
+if __name__ == '__main__':
+    main()

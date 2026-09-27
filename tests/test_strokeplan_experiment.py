@@ -34,9 +34,10 @@ def inputs(tmp_path):
     return plan, table(), setup, artifacts
 
 
-def stack(tmp_path, source_type=FakeMagneticSource, control_mode='feedforward'):
+def stack(tmp_path, source_type=FakeMagneticSource, control_mode='feedforward',
+          experiment_folder=None, run_folder_label=None, input_dir=None):
     from scripts.run_strokeplan_experiment import build_stack
-    plan, calibration, setup, artifacts = inputs(tmp_path)
+    plan, calibration, setup, artifacts = inputs(input_dir or tmp_path)
     clock = FakeClock()
     arm = FakeArm((-.2, .5, .13, *setup['vertical_rpy_rad']), clock=clock)
     arm.realtime_state_reads = False
@@ -44,8 +45,33 @@ def stack(tmp_path, source_type=FakeMagneticSource, control_mode='feedforward'):
     engine, hub = build_stack(plan=plan, table=calibration, setup=setup,
                              artifacts=artifacts, label='strokeplan_01_test',
                              root=tmp_path/'runs'/'brush2', arm=arm,
-                             source=source, clock=clock, control_mode=control_mode)
+                             source=source, clock=clock, control_mode=control_mode,
+                             experiment_folder=experiment_folder,
+                             run_folder_label=run_folder_label)
     return engine, hub, arm, source, clock, artifacts
+
+
+def test_grouped_run_names_use_experiment_and_repeat_without_visible_id(tmp_path):
+    from scripts.run_strokeplan_experiment import run_recorded
+    folders = []
+    for index in range(2):
+        input_dir = tmp_path/f'input_{index}'
+        input_dir.mkdir()
+        engine, hub, _, _, clock, _ = stack(
+            tmp_path, experiment_folder='01_四目标纯前馈',
+            run_folder_label='渐进压笔', input_dir=input_dir)
+        result = run_recorded(engine, hub, clock=clock, sleep=lambda _: None)
+        assert result['state'] == 'END_WAIT'
+        folders.append(Path(result['run_dir']))
+    assert folders[0].parent == folders[1].parent
+    assert folders[0].parent.parent.name == '01_四目标纯前馈'
+    assert folders[0].parent.name == 'raw'
+    assert folders[0].name.endswith('_渐进压笔_第1次')
+    assert folders[1].name.endswith('_渐进压笔_第2次')
+    for folder in folders:
+        manifest = json.loads((folder/'manifest.json').read_text())
+        assert manifest['run_id'].split('-')[-1] not in folder.name
+        assert manifest['status'] == 'completed'
 
 
 def test_single_run_records_sensor_targets_commands_and_exact_inputs(tmp_path):
@@ -208,6 +234,20 @@ def test_cli_preview_has_no_hardware_or_run_side_effects_and_blocks_candidates(t
     assert denied_p.returncode != 0
     assert 'approval' in denied_p.stderr
     assert not (tmp_path/'runs').exists()
+
+
+def test_p_limits_wrapper_preview_identifies_separate_experiment(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    plan = (root/'runs/brush2/plans/ry15_rz0_suite_60_200_v1'
+            /'04_smooth_levels_wide_transitions.npz')
+    env = dict(os.environ, PYTHONPATH=str(root/'src'))
+    result = subprocess.run(
+        [sys.executable, str(root/'scripts/run_strokeplan_p.py'),
+         str(plan), '--dry-run'], env=env, capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+    assert ('实验标签: strokeplan_p_limits_04_smooth_levels_wide_transitions'
+            in result.stdout)
+    assert '离线预检通过；未连接硬件，未创建实验 run。' in result.stdout
 
 
 def test_explicit_p_mode_only_corrects_measure_and_records_final_depth(tmp_path):

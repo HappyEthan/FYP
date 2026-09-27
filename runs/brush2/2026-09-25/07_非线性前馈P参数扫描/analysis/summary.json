@@ -1,0 +1,1266 @@
+{
+  "scope": "All 9 complete hardware records, grouped by 6 parameter conditions; no exclusions.",
+  "method": "Full measure_00, 0..40 s, 2001 points per record; recorded EMA alpha=.3; error=measured-target. No trimming, smoothing, time shift, or baseline refit.",
+  "aggregation": "Mean MAE and mean durations are record-weighted. P95 pools absolute errors, not averaged curves. Each record has equal sample count.",
+  "severe_duration": "Left endpoint classification of each 20 ms interval; no fictitious interval after t=40.",
+  "inference": "Descriptive only: n=1 or 2 per condition; no independent-sample significance inferred from 2001 correlated time samples.",
+  "common_input_sha256": {
+    "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+    "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+    "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+    "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19"
+  },
+  "analysis_dependency_sha256": "ddcf1869440ae9c3e2275fca6dc31d52faa1af374e95754c4715a6c212151014",
+  "groups": {
+    "A": {
+      "kp": 0.25,
+      "cap_mm": 0.4,
+      "n": 1,
+      "ids": [
+        "A1"
+      ],
+      "mean_mae_uT": 29.49628611073494,
+      "min_mae_uT": 29.49628611073494,
+      "max_mae_uT": 29.49628611073494,
+      "pooled_p95_abs_uT": 66.32439346405921,
+      "within20_pct": 28.285857071464264,
+      "mean_severe50_s": 6.080000000000005,
+      "mean_cap_pct": 16.541729135432284,
+      "bias_range_uT": [
+        -9.127578868409707,
+        -9.127578868409707
+      ],
+      "between_record_curve_mae_uT": null
+    },
+    "B": {
+      "kp": 0.25,
+      "cap_mm": 0.8,
+      "n": 1,
+      "ids": [
+        "B1"
+      ],
+      "mean_mae_uT": 33.508922475494714,
+      "min_mae_uT": 33.508922475494714,
+      "max_mae_uT": 33.508922475494714,
+      "pooled_p95_abs_uT": 67.25159398308176,
+      "within20_pct": 30.384807596201902,
+      "mean_severe50_s": 10.079999999999998,
+      "mean_cap_pct": 0.0,
+      "bias_range_uT": [
+        -19.003563138988042,
+        -19.003563138988042
+      ],
+      "between_record_curve_mae_uT": null
+    },
+    "C": {
+      "kp": 0.5,
+      "cap_mm": 0.4,
+      "n": 2,
+      "ids": [
+        "C1",
+        "C2"
+      ],
+      "mean_mae_uT": 36.42610456862175,
+      "min_mae_uT": 19.16092158357768,
+      "max_mae_uT": 53.69128755366582,
+      "pooled_p95_abs_uT": 95.9690685649111,
+      "within20_pct": 37.93103448275862,
+      "mean_severe50_s": 11.089999999999986,
+      "mean_cap_pct": 55.522238880559726,
+      "bias_range_uT": [
+        -53.58347841682667,
+        -2.9532916304712895
+      ],
+      "between_record_curve_mae_uT": 50.63018678635538
+    },
+    "D": {
+      "kp": 0.5,
+      "cap_mm": 0.8,
+      "n": 2,
+      "ids": [
+        "D1",
+        "D2"
+      ],
+      "mean_mae_uT": 23.304707222673535,
+      "min_mae_uT": 20.174434699849908,
+      "max_mae_uT": 26.43497974549716,
+      "pooled_p95_abs_uT": 49.132233317003156,
+      "within20_pct": 48.000999500249875,
+      "mean_severe50_s": 1.7700000000000014,
+      "mean_cap_pct": 13.918040979510245,
+      "bias_range_uT": [
+        -22.221515721904645,
+        -9.061021003366879
+      ],
+      "between_record_curve_mae_uT": 13.16965596249736
+    },
+    "E": {
+      "kp": 1.0,
+      "cap_mm": 0.4,
+      "n": 1,
+      "ids": [
+        "E1"
+      ],
+      "mean_mae_uT": 19.641233551046433,
+      "min_mae_uT": 19.641233551046433,
+      "max_mae_uT": 19.641233551046433,
+      "pooled_p95_abs_uT": 43.81320869037941,
+      "within20_pct": 56.57171414292853,
+      "mean_severe50_s": 1.0599999999999952,
+      "mean_cap_pct": 63.2183908045977,
+      "bias_range_uT": [
+        9.218234158471176,
+        9.218234158471176
+      ],
+      "between_record_curve_mae_uT": null
+    },
+    "F": {
+      "kp": 1.0,
+      "cap_mm": 0.8,
+      "n": 2,
+      "ids": [
+        "F1",
+        "F2"
+      ],
+      "mean_mae_uT": 16.577382394886442,
+      "min_mae_uT": 16.13115776178381,
+      "max_mae_uT": 17.02360702798907,
+      "pooled_p95_abs_uT": 42.19994768377442,
+      "within20_pct": 65.84207896051974,
+      "mean_severe50_s": 0.5199999999999978,
+      "mean_cap_pct": 28.885557221389305,
+      "bias_range_uT": [
+        -9.81409628049616,
+        11.006637263491422
+      ],
+      "between_record_curve_mae_uT": 20.8264175640761
+    }
+  },
+  "runs": [
+    {
+      "id": "A1",
+      "folder": "17-55-48_难曲线160到240_前馈加P0p25_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "79036e37cddf0c7eb02290ab6843d403f6a02cb6b2ae5d0d8a3591de2291d83f",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "ad1adf3bb6985ea461db5ce1779a673726aa2d6638af532a7d4402254fc2e8fb",
+        "sensor.csv": "eebedd6057d71b72a30dcdf1e9ff354767e91bf858546ad5123aaf40f49e2bf4",
+        "actual_tcp.csv": "c96b62fe1d2901c3c1bca2a8299969c0726f18792b0823c38b3de2e17beb3b24",
+        "manifest.json": "9a823d6edc0dea7757c5c392bbf206f6b632c550ae47d933c777ff4e6b28ff54"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.25,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2079.455964214713,
+          2934.661431411531,
+          -7088.658707753477
+        ],
+        "applies_after_seq": 503,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.5694243650005563,
+          -1.2617946065792585,
+          -1.257226569386024
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 503,
+        "std_uT": [
+          5.210308086149622,
+          5.333879629999486,
+          14.887571867013985
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 16.05049,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 29.49628611073494,
+        "rmse_uT": 34.267782430819665,
+        "bias_uT": -9.127578868409707,
+        "p95_abs_uT": 66.32439346405921,
+        "max_abs_uT": 76.97821483328403,
+        "within20_pct": 28.285857071464264,
+        "severe50_s": 6.080000000000005,
+        "longest_severe50_s": 5.920000000000002,
+        "amplitude_cap_pct": 16.541729135432284,
+        "press_cap_pct": 14.54272863568216,
+        "lift_cap_pct": 1.999000499750125,
+        "raw_request_outside_amplitude_pct": 20.189905047476262,
+        "z_tcp_mae_mm": 0.0949641879197226,
+        "z_tcp_p95_mm": 0.2627033481253338,
+        "x_tcp_bias_mm": -0.9176951304021204,
+        "magnetic_sample_max_age_ms": 1.058236,
+        "control_max_gap_ms": 20.864861999999817,
+        "max_lateness_ms": 14.810919999995065,
+        "host_measurement_duration_s": 39.999941358
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 32.651474075285584,
+          "bias_uT": -24.372902873276615
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 23.857602419809044,
+          "bias_uT": 9.246381309906415
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 31.0133437454645,
+          "bias_uT": -10.738699118987578
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 62.0461079291503,
+          "bias_uT": -62.0461079291503
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 17.03593676372418,
+          "bias_uT": 15.075565929707764
+        }
+      }
+    },
+    {
+      "id": "B1",
+      "folder": "17-58-54_难曲线160到240_前馈加P0p25_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "774a7ffc7fff42a2e17feca0b7e6a9d7d073b5b6234663c3a73fdf68ec5cdbd1",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "384df85b621a85b1ee52e9065a2673c6dd39c1256057defe3db797ccd555c99a",
+        "sensor.csv": "dcc4eb82fe934ea07b5fc344e2729edd737d21313fb67badcd34fcd152b1bca9",
+        "actual_tcp.csv": "c28c26743da978705a2391d6571cb0fc931bf050aa1a3b0afbe201a2ba8e38e7",
+        "manifest.json": "67ef295bf1e261c9304ce85078693951b6263a89cb653508beb66040ffb2c5d9"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.25,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2065.40198019802,
+          2940.8830693069285,
+          -7091.602023762378
+        ],
+        "applies_after_seq": 505,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.9568035988828061,
+          -0.7897328361423305,
+          -3.646216484661747
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 505,
+        "std_uT": [
+          5.455124399812496,
+          5.462275256282365,
+          14.516050061963002
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1316,
+        "valid_samples": 1316,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 16.996668,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 33.508922475494714,
+        "rmse_uT": 38.83648381873736,
+        "bias_uT": -19.003563138988042,
+        "p95_abs_uT": 67.25159398308176,
+        "max_abs_uT": 80.91472436972191,
+        "within20_pct": 30.384807596201902,
+        "severe50_s": 10.079999999999998,
+        "longest_severe50_s": 6.799999999999997,
+        "amplitude_cap_pct": 0.0,
+        "press_cap_pct": 0.0,
+        "lift_cap_pct": 0.0,
+        "raw_request_outside_amplitude_pct": 2.348825587206397,
+        "z_tcp_mae_mm": 0.09396914291970307,
+        "z_tcp_p95_mm": 0.2608098793135049,
+        "x_tcp_bias_mm": -0.9136797925774252,
+        "magnetic_sample_max_age_ms": 1.103417,
+        "control_max_gap_ms": 20.949783000002498,
+        "max_lateness_ms": 14.98104099999864,
+        "host_measurement_duration_s": 40.000028706
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 39.54938472185185,
+          "bias_uT": -33.548181329328564
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 26.466692076185403,
+          "bias_uT": -2.5303354690614066
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 33.99393894485599,
+          "bias_uT": -19.859708117867243
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 55.30160613184177,
+          "bias_uT": -55.30160613184177
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 14.448224109366457,
+          "bias_uT": 8.754280289864184
+        }
+      }
+    },
+    {
+      "id": "C1",
+      "folder": "18-04-04_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "0ccf67c7827e2f3b31f0ae6601ed43fe199b97956143bf46d18e7e805fa23ddf",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "ba212f48ed81214173a754576fc1fd3daf808230a5b3d0a058de2269e2cd6f9f",
+        "sensor.csv": "78d7331d393ed3901bba621585a30b6b99a7fb8ddb624a7b7d0a457c43332174",
+        "actual_tcp.csv": "07cae90c760d02ce56403aad37471478ce7fa3521f2ba0380c1b28bf283dd4f1",
+        "manifest.json": "ff5abc89fddb94001871df1249da791de8e2de4a035a2ced88227c6395ef5f83"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2074.2181908548714,
+          2987.4993041749512,
+          -7090.984890656069
+        ],
+        "applies_after_seq": 503,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.39175287649987883,
+          -0.7211370736903077,
+          -1.8251461807667508
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 503,
+        "std_uT": [
+          5.544809521666786,
+          5.419227468449139,
+          14.217760808912754
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 17.749982,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 53.69128755366582,
+        "rmse_uT": 63.00456377586107,
+        "bias_uT": -53.58347841682667,
+        "p95_abs_uT": 102.98312318518612,
+        "max_abs_uT": 111.90543849473015,
+        "within20_pct": 23.988005997001498,
+        "severe50_s": 22.13999999999998,
+        "longest_severe50_s": 10.219999999999999,
+        "amplitude_cap_pct": 69.41529235382309,
+        "press_cap_pct": 69.41529235382309,
+        "lift_cap_pct": 0.0,
+        "raw_request_outside_amplitude_pct": 75.86206896551724,
+        "z_tcp_mae_mm": 0.08548696011942908,
+        "z_tcp_p95_mm": 0.2588152887542767,
+        "x_tcp_bias_mm": -0.9161662956942215,
+        "magnetic_sample_max_age_ms": 1.571898,
+        "control_max_gap_ms": 23.842242000000624,
+        "max_lateness_ms": 17.731038999997395,
+        "host_measurement_duration_s": 40.000016196
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 68.28788364380178,
+          "bias_uT": -68.27409538665515
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 41.08419692319612,
+          "bias_uT": -40.71958620163554
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 52.02013448525469,
+          "bias_uT": -52.01476327951295
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 70.70144026617044,
+          "bias_uT": -70.70144026617044
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 23.886084744329892,
+          "bias_uT": -23.886084744329892
+        }
+      }
+    },
+    {
+      "id": "C2",
+      "folder": "18-06-53_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "0ccf67c7827e2f3b31f0ae6601ed43fe199b97956143bf46d18e7e805fa23ddf",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "cb86044aeeea51995e92163e3f60f821ebfd33754e8f24c5cc6e4cbb201b15b7",
+        "sensor.csv": "724377661e52059d9ec1b45b8e3672ae0bc47998d7dedb0a0749a36ec9d24b9f",
+        "actual_tcp.csv": "047c435c9dcf4bf29da9716ac15530a9a2c16df70fee9d54985bc3d86034ccc3",
+        "manifest.json": "6182b5c486a0f693c127cf8f451cb00b8bc49965614e0ed3f57772372555be2b"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2070.050495049505,
+          2929.3096039603943,
+          -7089.1887326732585
+        ],
+        "applies_after_seq": 505,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.8463573591786882,
+          -1.6024376757473058,
+          0.8910316508342897
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 505,
+        "std_uT": [
+          5.156484406850682,
+          7.0521874874399355,
+          14.363771135378293
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 16.640715,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 19.16092158357768,
+        "rmse_uT": 22.002233818213945,
+        "bias_uT": -2.9532916304712895,
+        "p95_abs_uT": 37.08583179192004,
+        "max_abs_uT": 51.13963782823089,
+        "within20_pct": 51.874062968515744,
+        "severe50_s": 0.03999999999999204,
+        "longest_severe50_s": 0.03999999999999204,
+        "amplitude_cap_pct": 41.629185407296355,
+        "press_cap_pct": 24.587706146926536,
+        "lift_cap_pct": 17.041479260369815,
+        "raw_request_outside_amplitude_pct": 48.825587206396804,
+        "z_tcp_mae_mm": 0.10018611737345078,
+        "z_tcp_p95_mm": 0.28701565778126364,
+        "x_tcp_bias_mm": -0.9101145659804296,
+        "magnetic_sample_max_age_ms": 1.113881,
+        "control_max_gap_ms": 20.90596600000083,
+        "max_lateness_ms": 15.270516000001066,
+        "host_measurement_duration_s": 39.999959085
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 18.763761568509008,
+          "bias_uT": -11.741867281587977
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 19.079389903737955,
+          "bias_uT": 8.48871925475743
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 19.480095141923226,
+          "bias_uT": -4.429942308046196
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 29.729045080421503,
+          "bias_uT": -29.729045080421503
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 12.313352573930116,
+          "bias_uT": 8.798152653115158
+        }
+      }
+    },
+    {
+      "id": "D1",
+      "folder": "18-09-15_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "afee833aa2467f1f62782799a22da4ecdf3f7c0a01f344fea38aa192495a3991",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "a2aaa6aaf10a8ad70f52750c7f17fe28b193d8686ef3e0089fc15ec19d50d357",
+        "sensor.csv": "ca565fc77f12845e0992a0657ab17c444ce39e08aa721bf1c10b792c0c4b8346",
+        "actual_tcp.csv": "9118b6a6b25c387453c12431d21650fca752949d9716764df71e8fd7df5b1bdf",
+        "manifest.json": "e93b0d3b906656327f378eb9666149a499027ee5920e5397700a18b9d4bdc234"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2082.4279324055683,
+          2939.4381709741574,
+          -7089.810493041743
+        ],
+        "applies_after_seq": 503,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.822372443868231,
+          -1.5637967960733052,
+          1.5509880453955294
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 503,
+        "std_uT": [
+          5.252513371624016,
+          5.405172421041292,
+          13.900565848983259
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 17.599326,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 20.174434699849908,
+        "rmse_uT": 23.08721234817541,
+        "bias_uT": -9.061021003366879,
+        "p95_abs_uT": 39.25441853235918,
+        "max_abs_uT": 49.31392228988156,
+        "within20_pct": 53.27336331834083,
+        "severe50_s": 0.0,
+        "longest_severe50_s": 0.0,
+        "amplitude_cap_pct": 2.6986506746626686,
+        "press_cap_pct": 2.6986506746626686,
+        "lift_cap_pct": 0.0,
+        "raw_request_outside_amplitude_pct": 7.146426786606696,
+        "z_tcp_mae_mm": 0.10720176834471254,
+        "z_tcp_p95_mm": 0.28865941763207326,
+        "x_tcp_bias_mm": -0.908402591133312,
+        "magnetic_sample_max_age_ms": 1.287067,
+        "control_max_gap_ms": 21.05350099999992,
+        "max_lateness_ms": 15.509266999998772,
+        "host_measurement_duration_s": 40.000146515
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 23.308999259391708,
+          "bias_uT": -19.46587710893044
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 18.26728234432433,
+          "bias_uT": 2.889858566314811
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 19.29970833120813,
+          "bias_uT": -9.780723988419929
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 25.844239629859718,
+          "bias_uT": -25.844239629859718
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 9.493207154270236,
+          "bias_uT": 2.8307639317545115
+        }
+      }
+    },
+    {
+      "id": "D2",
+      "folder": "18-25-53_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "afee833aa2467f1f62782799a22da4ecdf3f7c0a01f344fea38aa192495a3991",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "12246473ee4833f246dce5f872510510d79285ce742c66f622d54cdfb672663b",
+        "sensor.csv": "0019072d2325eee7595f3feb4c53977e3605e059f301589dd38e1838ef4dc25e",
+        "actual_tcp.csv": "481b339dc07e4d30601f4fc78764cf4cabfff0e2e4a2d4d48446c2bad1f208f1",
+        "manifest.json": "0d038658b338d5e4eaa6c0b03013f3c853013a3be7bd3906fb5753295a80617f"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2089.7449404761887,
+          2982.418154761905,
+          -7099.05271428572
+        ],
+        "applies_after_seq": 504,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.2409668398671827,
+          -2.332844845643282,
+          1.2270452685368327
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 504,
+        "std_uT": [
+          5.393701242346959,
+          5.717119825147662,
+          13.742042597218388
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 25.797988,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 26.43497974549716,
+        "rmse_uT": 31.925603468527413,
+        "bias_uT": -22.221515721904645,
+        "p95_abs_uT": 55.551910874679635,
+        "max_abs_uT": 67.89484349843714,
+        "within20_pct": 42.728635682158924,
+        "severe50_s": 3.5400000000000027,
+        "longest_severe50_s": 2.440000000000005,
+        "amplitude_cap_pct": 25.13743128435782,
+        "press_cap_pct": 25.13743128435782,
+        "lift_cap_pct": 0.0,
+        "raw_request_outside_amplitude_pct": 31.93403298350825,
+        "z_tcp_mae_mm": 0.1033526272408233,
+        "z_tcp_p95_mm": 0.2871195889098892,
+        "x_tcp_bias_mm": -0.9125966053526233,
+        "magnetic_sample_max_age_ms": 1.223359,
+        "control_max_gap_ms": 21.038372999999666,
+        "max_lateness_ms": 15.14947699999425,
+        "host_measurement_duration_s": 39.999813847
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 36.244762092099904,
+          "bias_uT": -34.60150405206863
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 17.63186844153221,
+          "bias_uT": -7.952530799980702
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 25.524863119662534,
+          "bias_uT": -23.109746474238577
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 42.76651951097865,
+          "bias_uT": -42.76651951097865
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 11.738823155273028,
+          "bias_uT": -8.489839689906232
+        }
+      }
+    },
+    {
+      "id": "E1",
+      "folder": "18-11-48_难曲线160到240_前馈加P1_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "564fc00cb7eec2bc25dc9b1c1ed0b88b97d91a7e30bb4bc3bcea6a125281a496",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "0277b8e9ead9d8b4c2d8a4beda47a835c13158e546991d9a5ead00cad65608ee",
+        "sensor.csv": "05aa0fc67aa0df2489b735593da670e3572aab099265d243d0ce41bfe3e039f3",
+        "actual_tcp.csv": "e16d5b1b3c8f806a3ee045567decc6601210865c3e8a90120781258724ef430d",
+        "manifest.json": "d428db98be3f6634fc8e8906181247ceca80e7a491eea01d7585eb844dafbbfb"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2077.1217519685015,
+          2926.36033464567,
+          -7089.895913385827
+        ],
+        "applies_after_seq": 508,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.7469213780782487,
+          -1.5711806863677744,
+          2.683913447123766
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 508,
+        "std_uT": [
+          5.060596806785017,
+          5.587828315339796,
+          14.4311849320726
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1317,
+        "valid_samples": 1317,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 15.982623,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 19.641233551046433,
+        "rmse_uT": 23.97366937563038,
+        "bias_uT": 9.218234158471176,
+        "p95_abs_uT": 43.81320869037941,
+        "max_abs_uT": 63.165972175800704,
+        "within20_pct": 56.57171414292853,
+        "severe50_s": 1.0599999999999952,
+        "longest_severe50_s": 0.5400000000000063,
+        "amplitude_cap_pct": 63.2183908045977,
+        "press_cap_pct": 20.539730134932537,
+        "lift_cap_pct": 42.67866066966517,
+        "raw_request_outside_amplitude_pct": 72.21389305347327,
+        "z_tcp_mae_mm": 0.09861833351876356,
+        "z_tcp_p95_mm": 0.27538688315666204,
+        "x_tcp_bias_mm": -0.9191462311372098,
+        "magnetic_sample_max_age_ms": 1.0660699999999999,
+        "control_max_gap_ms": 20.904574999999426,
+        "max_lateness_ms": 14.117339999998535,
+        "host_measurement_duration_s": 40.000087549
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 15.383728427522591,
+          "bias_uT": -1.63215683309723
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 26.8747820565677,
+          "bias_uT": 23.53309968690302
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 17.835986391403473,
+          "bias_uT": 7.273612255430828
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 13.777985296365628,
+          "bias_uT": -13.777985296365628
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 19.11422740987321,
+          "bias_uT": 18.651565204375004
+        }
+      }
+    },
+    {
+      "id": "F1",
+      "folder": "18-14-14_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "72abf7da09e9c45eb3711a9888b15cbce500358b7e112c00c14ebd3f073b5797",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "0131ef17b7b74c8a7e406dcc5127e2959ab0a7f79d5bc14e26501a7ba6a28c2e",
+        "sensor.csv": "637db543d82f60e3e1c9244a838edcbb9fec26a27ea1d03f1b83da5d862e8975",
+        "actual_tcp.csv": "94ddf02d7f62aa5782643a8d576346d1db72b38401a0d90ae3d37c4620fc61d3",
+        "manifest.json": "e61c4f43e4dd8e24a7621ff7e58d1a97e5f745f2287e82870cba34057f8aaf4e"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2067.4428429423465,
+          2916.939363817094,
+          -7091.146544731602
+        ],
+        "applies_after_seq": 503,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.7832655152815301,
+          -0.8367111366261848,
+          0.4971208255696867
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 503,
+        "std_uT": [
+          5.224153309615899,
+          5.229957595824104,
+          14.847388850816923
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1316,
+        "valid_samples": 1316,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 21.829495,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 17.02360702798907,
+        "rmse_uT": 21.723312559235566,
+        "bias_uT": 11.006637263491422,
+        "p95_abs_uT": 41.12637916605357,
+        "max_abs_uT": 59.46953032606959,
+        "within20_pct": 61.81909045477262,
+        "severe50_s": 0.9599999999999866,
+        "longest_severe50_s": 0.4799999999999969,
+        "amplitude_cap_pct": 34.18290854572714,
+        "press_cap_pct": 0.04997501249375312,
+        "lift_cap_pct": 34.132933533233384,
+        "raw_request_outside_amplitude_pct": 39.130434782608695,
+        "z_tcp_mae_mm": 0.11310261407918619,
+        "z_tcp_p95_mm": 0.28731160937918965,
+        "x_tcp_bias_mm": -0.9087937862683552,
+        "magnetic_sample_max_age_ms": 1.208668,
+        "control_max_gap_ms": 21.048275000001837,
+        "max_lateness_ms": 15.142356999994888,
+        "host_measurement_duration_s": 39.999992987
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 11.349834215775658,
+          "bias_uT": 0.7533138894226662
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 27.22891727654401,
+          "bias_uT": 25.179717253434244
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 14.25327186900606,
+          "bias_uT": 8.752611803493421
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 5.969119030941792,
+          "bias_uT": 0.03715273746160528
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 16.33050625784342,
+          "bias_uT": 16.294183568068696
+        }
+      }
+    },
+    {
+      "id": "F2",
+      "folder": "18-28-26_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "mode": "P",
+      "status": "completed",
+      "reason": "",
+      "full_measurement": true,
+      "measurement_samples": 2001,
+      "measurement_duration_s": 40.0,
+      "eligible": true,
+      "timeline_policy": "sequential_20ms",
+      "snapshot_hashes_verified": true,
+      "hashes": {
+        "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+        "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+        "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+        "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+        "resolved.json": "72abf7da09e9c45eb3711a9888b15cbce500358b7e112c00c14ebd3f073b5797",
+        "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+        "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+        "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+        "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+      },
+      "raw_file_sha256": {
+        "control.jsonl": "9c5e151bf25b4063f4b1353b7e30b3442867f64b38d2c2b74c819ee604462b66",
+        "sensor.csv": "b725d24ce61cbc9d1378b423d3f1592f551fa61c417170a1ade9f97aafb6aaa3",
+        "actual_tcp.csv": "d89b6cd5eb1672ec82f02d1c453ec79a081b0d1a0baa8634dcb978fab230511d",
+        "manifest.json": "2da850a0b54ad36c999574f25d64684479247d47ee41427f0de42b5b2e3fd7e9"
+      },
+      "measurement_sensor_references_valid": true,
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2086.52355864811,
+          2958.178926441353,
+          -7095.341852882707
+        ],
+        "applies_after_seq": 503,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -1.944889178931074,
+          -2.877462017548522,
+          0.016450623855731313
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 503,
+        "std_uT": [
+          5.43929783103221,
+          5.65081964537617,
+          13.494441706289283
+        ]
+      },
+      "actual_tcp": {
+        "source": "HRIF_ReadActTcpPos (independent connection)",
+        "clock": "host_monotonic_ns",
+        "units": "metres_and_radians",
+        "requested_interval_s": 0.1,
+        "samples": 1316,
+        "valid_samples": 1316,
+        "invalid_samples": 0,
+        "max_read_duration_ms": 18.453775,
+        "worker_stopped": true,
+        "worker_error": null
+      },
+      "metrics": {
+        "samples": 2001,
+        "mae_uT": 16.13115776178381,
+        "rmse_uT": 20.36196052947143,
+        "bias_uT": -9.81409628049616,
+        "p95_abs_uT": 42.40352877551226,
+        "max_abs_uT": 51.53026752841747,
+        "within20_pct": 69.86506746626686,
+        "severe50_s": 0.08000000000000895,
+        "longest_severe50_s": 0.020000000000003126,
+        "amplitude_cap_pct": 23.588205897051473,
+        "press_cap_pct": 21.339330334832585,
+        "lift_cap_pct": 2.2488755622188905,
+        "raw_request_outside_amplitude_pct": 31.03448275862069,
+        "z_tcp_mae_mm": 0.11929546990410364,
+        "z_tcp_p95_mm": 0.3130831786798024,
+        "x_tcp_bias_mm": -0.9445767419385073,
+        "magnetic_sample_max_age_ms": 1.142903,
+        "control_max_gap_ms": 20.957740000000058,
+        "max_lateness_ms": 12.257399999995755,
+        "host_measurement_duration_s": 39.999920338
+      },
+      "segments": {
+        "rise": {
+          "samples": 580,
+          "mae_uT": 19.700641096422224,
+          "bias_uT": -17.380681568310454
+        },
+        "fall": {
+          "samples": 557,
+          "mae_uT": 12.192779872649323,
+          "bias_uT": 1.7068865697085425
+        },
+        "plateau": {
+          "samples": 864,
+          "mae_uT": 16.273954231873663,
+          "bias_uT": -12.16197588770881
+        },
+        "first_3s": {
+          "samples": 151,
+          "mae_uT": 38.48136535717539,
+          "bias_uT": -38.48136535717539
+        },
+        "last_3s": {
+          "samples": 151,
+          "mae_uT": 6.586314873052403,
+          "bias_uT": -1.9343694883690707
+        }
+      }
+    }
+  ]
+}

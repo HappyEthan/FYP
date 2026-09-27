@@ -1,0 +1,66 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/zhong_connected_soft_entry_v6/character.npz",
+  "sha256": "f2f328713032e6760dc4a917f7b01fd746bdeb658a795ae6808003a791c3cd45",
+  "source": "mixed",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 402,
+      "length_mm": 65.04302548568315,
+      "duration_s": 8.02,
+      "peak_xy_speed_mm_s": 10.000000000000886,
+      "target_range_uT": [
+        100.0,
+        210.06888799838703
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    },
+    {
+      "index": 1,
+      "samples": 1098,
+      "length_mm": 154.56962874208776,
+      "duration_s": 21.94,
+      "peak_xy_speed_mm_s": 10.000000000002432,
+      "target_range_uT": [
+        130.0,
+        229.99993766948785
+      ],
+      "csv": "stroke_01.csv",
+      "png": "stroke_01.png"
+    },
+    {
+      "index": 2,
+      "samples": 477,
+      "length_mm": 91.79531151127621,
+      "duration_s": 9.52,
+      "peak_xy_speed_mm_s": 10.000000000002034,
+      "target_range_uT": [
+        100.0,
+        214.9994079568698
+      ],
+      "csv": "stroke_02.csv",
+      "png": "stroke_02.png"
+    },
+    {
+      "index": 3,
+      "samples": 1078,
+      "length_mm": 187.79776497539606,
+      "duration_s": 21.54,
+      "peak_xy_speed_mm_s": 10.000000000001997,
+      "target_range_uT": [
+        100.0,
+        221.99999273567755
+      ],
+      "csv": "stroke_03.csv",
+      "png": "stroke_03.png"
+    }
+  ]
+}

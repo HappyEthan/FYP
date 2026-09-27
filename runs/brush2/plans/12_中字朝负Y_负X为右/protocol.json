@@ -1,0 +1,121 @@
+{
+  "character": "中",
+  "source_dir": "/home/ethan/FYP/runs/brush2/plans/zhong_bottom_extend30_v11",
+  "source_target_sha256": "be7fe5fca2998c82df0b03524ed4a7e19d3fff6e43a44fd47a3d0d2321ec2265",
+  "transformation": "reflect both X and Y about glyph centre",
+  "reflection_base_y_mm": 500.0,
+  "reflection_base_x_mm": -230.0,
+  "glyph_up": "-Y",
+  "glyph_right": "-X",
+  "control": {
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional"
+  },
+  "entry_policy": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "config_files_copied_unchanged": [
+    "feedforward.json",
+    "settings.json",
+    "pi_profile.json",
+    "entry_profile.json"
+  ],
+  "validation": "offline compilation only; no hardware execution; inherited pose-invariant table assumption",
+  "duration_s": 140.4,
+  "compiled_limits": {
+    "XY speed": 79.8203421658941,
+    "Z speed": 59.997440049151805,
+    "step": 1.5964068433178822,
+    "acceleration": 165.6727216307652,
+    "angular speed": 19.980896919877605,
+    "angular acceleration": 35.02225550790636
+  },
+  "strokes": [
+    {
+      "index": 1,
+      "duration_s": 8.02,
+      "start_base_xy_mm": [
+        -167.01080432172867,
+        458.6194477791116
+      ],
+      "end_base_xy_mm": [
+        -188.83553421368546,
+        518.0432172869148
+      ],
+      "target_range_uT": [
+        100.0,
+        229.58576258956705
+      ]
+    },
+    {
+      "index": 2,
+      "duration_s": 20.32,
+      "start_base_xy_mm": [
+        -181.7046818727491,
+        460.13205282112847
+      ],
+      "end_base_xy_mm": [
+        -292.5639695173259,
+        497.80786781430066
+      ],
+      "target_range_uT": [
+        151.25926766787026,
+        229.99985308562185
+      ]
+    },
+    {
+      "index": 3,
+      "duration_s": 11.42,
+      "start_base_xy_mm": [
+        -198.38504130722617,
+        511.0014080424571
+      ],
+      "end_base_xy_mm": [
+        -305.8924486546304,
+        484.21039428187095
+      ],
+      "target_range_uT": [
+        100.0,
+        213.1665352821109
+      ]
+    },
+    {
+      "index": 4,
+      "duration_s": 18.94,
+      "start_base_xy_mm": [
+        -233.7388447882471,
+        410.0
+      ],
+      "end_base_xy_mm": [
+        -232.9171668667467,
+        590.0
+      ],
+      "target_range_uT": [
+        100.0,
+        221.6172815716188
+      ]
+    }
+  ]
+}

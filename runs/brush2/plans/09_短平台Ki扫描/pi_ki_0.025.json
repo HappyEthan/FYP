@@ -1,0 +1,10 @@
+{
+  "kp": 1.0,
+  "ki": 0.025,
+  "max_correction_mm": 0.8,
+  "max_correction_speed_mm_s": 2.0,
+  "max_correction_accel_mm_s2": 30.0,
+  "taper_ticks": 50,
+  "integral_limit_mm": 0.2,
+  "anti_windup": "conditional"
+}

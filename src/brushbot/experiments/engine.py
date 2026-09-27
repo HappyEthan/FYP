@@ -234,6 +234,9 @@ class ExperimentEngine:
             if step_mm > float(self._setup["max_step_mm"]) + 1e-9:
                 raise RuntimeError("step_limit")
 
+    def _control_diagnostics(self):
+        return {}
+
     def _command_for_tick(self, index, phase, pose, depth_ff, a_control, a_ref):
         """Return the TCP command, feedback depth, band error and active limits."""
         depth_fb = 0.0
@@ -257,15 +260,21 @@ class ExperimentEngine:
     def _reset_feedback_state(self, pose):
         """Adapter hook for segment-local command history."""
 
+    def _select_run_index(self, elapsed):
+        timeline = self._compiled["t_s"]
+        # The nanosecond clock can land exactly on a tick while the floating
+        # timeline stores that tick one ulp above it (e.g. 0.7 vs 0.7000000000000001).
+        index = min(int(np.searchsorted(timeline, elapsed + 1e-9, side="right") - 1), len(timeline) - 1)
+        return max(index, 0)
+
     def _run_step(self) -> None:
         now = self._now_ns()
         control = self.hub.latest_control(now)
         elapsed = (now - self._run_started_ns) / 1e9
         timeline = self._compiled["t_s"]
-        # The nanosecond clock can land exactly on a tick while the floating
-        # timeline stores that tick one ulp above it (e.g. 0.7 vs 0.7000000000000001).
-        index = min(int(np.searchsorted(timeline, elapsed + 1e-9, side="right") - 1), len(timeline) - 1)
-        index = max(index, 0)
+        index = self._select_run_index(elapsed)
+        if index is None:
+            return
         pause_indices = self._compiled.get("pause_after_indices", [])
         pause_index = None
         if self._pause_cursor < len(pause_indices):
@@ -351,6 +360,7 @@ class ExperimentEngine:
             "actual_pose_m_rad": actual_pose,
             "actual_rx_ns": actual_rx_ns, "lateness_s": lateness,
             "limit_active": bool(limits), "limit_reasons": limits,
+            **self._control_diagnostics(),
         })
         self._last_plan_index = index
         if pause_index is not None:

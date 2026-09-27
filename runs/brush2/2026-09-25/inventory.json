@@ -1,0 +1,715 @@
+{
+  "date": "2026-09-25",
+  "inventory_date": "2026-09-27",
+  "scope": "current files on disk; not all historical runs",
+  "runs": [
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/14-25-49_连续下压_Z38到24mm_单程30s_第1次",
+      "run_id": "20260925T062549.748539Z-1403aa",
+      "status": "completed",
+      "started_at": "2026-09-25T06:25:49.748539+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/14-28-57_连续下压_Z38到24mm_单程30s_第2次",
+      "run_id": "20260925T062857.326996Z-9a9d65",
+      "status": "completed",
+      "started_at": "2026-09-25T06:28:57.326996+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/14-32-02_下压回升_Z38到24mm_单程15s_第1次",
+      "run_id": "20260925T063202.212704Z-289303",
+      "status": "completed",
+      "started_at": "2026-09-25T06:32:02.212704+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/14-35-25_下压回升_Z38到24mm_单程15s_第2次",
+      "run_id": "20260925T063525.790228Z-bd0c90",
+      "status": "completed",
+      "started_at": "2026-09-25T06:35:25.790228+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-02-32_连续下压_Z38到24mm_单程30s_第3次",
+      "run_id": "20260925T070232.692803Z-94c67f",
+      "status": "completed",
+      "started_at": "2026-09-25T07:02:32.692803+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-25-02_压深5mm_扰动1mm_先下压_第1次",
+      "run_id": "20260925T072502.862069Z-4c058b",
+      "status": "completed",
+      "started_at": "2026-09-25T07:25:02.862069+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-29-34_压深5mm_扰动1mm_先下压_第2次",
+      "run_id": "20260925T072934.768469Z-9fd1f7",
+      "status": "completed",
+      "started_at": "2026-09-25T07:29:34.768469+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-35-27_压深10mm_扰动1mm_先下压_第1次",
+      "run_id": "20260925T073527.841894Z-995acf",
+      "status": "completed",
+      "started_at": "2026-09-25T07:35:27.841894+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-37-57_压深10mm_扰动1mm_先下压_第2次",
+      "run_id": "20260925T073757.508299Z-8069d2",
+      "status": "aborted",
+      "started_at": "2026-09-25T07:37:57.508299+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-41-18_压深12p5mm_扰动0p5mm_先下压_第1次",
+      "run_id": "20260925T074118.044996Z-04ce45",
+      "status": "completed",
+      "started_at": "2026-09-25T07:41:18.044996+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/15-52-04_压深12p5mm_扰动0p5mm_先下压_第2次",
+      "run_id": "20260925T075204.420276Z-9e56d1",
+      "status": "completed",
+      "started_at": "2026-09-25T07:52:04.420276+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/16-09-01_压深5mm_扰动1mm_先下压_第3次",
+      "run_id": "20260925T080901.051523Z-068c2f",
+      "status": "completed",
+      "started_at": "2026-09-25T08:09:01.051523+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "05_Z动态辨识",
+      "path": "05_Z动态辨识/raw/16-12-58_压深5mm_扰动1mm_先下压_第4次",
+      "run_id": "20260925T081258.743263Z-f19692",
+      "status": "completed",
+      "started_at": "2026-09-25T08:12:58.743263+00:00",
+      "control": {
+        "enabled": false,
+        "mode": "identification"
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "06_非线性前馈难曲线对比",
+      "path": "06_非线性前馈难曲线对比/raw/17-06-09_难曲线160到240_纯前馈_第1次",
+      "run_id": "20260925T090609.841122Z-d32bd7",
+      "status": "completed",
+      "started_at": "2026-09-25T09:06:09.841122+00:00",
+      "control": {
+        "enabled": false
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "06_非线性前馈难曲线对比",
+      "path": "06_非线性前馈难曲线对比/raw/17-11-37_难曲线160到240_前馈加P2_修正0p4mm_第1次",
+      "run_id": "20260925T091137.904028Z-d2f1c2",
+      "status": "aborted",
+      "started_at": "2026-09-25T09:11:37.904028+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "06_非线性前馈难曲线对比",
+      "path": "06_非线性前馈难曲线对比/raw/17-20-00_难曲线160到240_前馈加P2_修正0p4mm_第2次",
+      "run_id": "20260925T092000.043021Z-08a2be",
+      "status": "completed",
+      "started_at": "2026-09-25T09:20:00.043021+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "06_非线性前馈难曲线对比",
+      "path": "06_非线性前馈难曲线对比/raw/17-26-10_难曲线160到240_前馈加P2_修正0p4mm_第3次",
+      "run_id": "20260925T092610.876043Z-760822",
+      "status": "completed",
+      "started_at": "2026-09-25T09:26:10.876043+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "06_非线性前馈难曲线对比",
+      "path": "06_非线性前馈难曲线对比/raw/17-29-38_难曲线160到240_纯前馈_第2次",
+      "run_id": "20260925T092938.598616Z-8a0b54",
+      "status": "completed",
+      "started_at": "2026-09-25T09:29:38.598616+00:00",
+      "control": {
+        "enabled": false
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/17-55-48_难曲线160到240_前馈加P0p25_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T095548.065938Z-4e5c62",
+      "status": "completed",
+      "started_at": "2026-09-25T09:55:48.065938+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.25,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/17-58-54_难曲线160到240_前馈加P0p25_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T095854.410026Z-03a71d",
+      "status": "completed",
+      "started_at": "2026-09-25T09:58:54.410026+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.25,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-04-04_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T100404.180911Z-ea0d2f",
+      "status": "completed",
+      "started_at": "2026-09-25T10:04:04.180911+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-06-53_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "run_id": "20260925T100653.031671Z-2c0c53",
+      "status": "completed",
+      "started_at": "2026-09-25T10:06:53.031671+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-09-15_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T100915.605996Z-64c572",
+      "status": "completed",
+      "started_at": "2026-09-25T10:09:15.605996+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-11-48_难曲线160到240_前馈加P1_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T101148.640249Z-4e993f",
+      "status": "completed",
+      "started_at": "2026-09-25T10:11:48.640249+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-14-14_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+      "run_id": "20260925T101414.453284Z-ab6e8d",
+      "status": "completed",
+      "started_at": "2026-09-25T10:14:14.453284+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-25-53_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "run_id": "20260925T102553.469105Z-3eee0e",
+      "status": "completed",
+      "started_at": "2026-09-25T10:25:53.469105+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.5,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "07_非线性前馈P参数扫描",
+      "path": "07_非线性前馈P参数扫描/raw/18-28-26_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+      "run_id": "20260925T102826.543495Z-a732d0",
+      "status": "completed",
+      "started_at": "2026-09-25T10:28:26.543495+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "08_短平台P与PI对比",
+      "path": "08_短平台P与PI对比/raw/18-54-20_平台160到240回160_P_Kp1_Ki0_总修正0p8mm_第1次",
+      "run_id": "20260925T105420.877447Z-98c8c2",
+      "status": "completed",
+      "started_at": "2026-09-25T10:54:20.877447+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "08_短平台P与PI对比",
+      "path": "08_短平台P与PI对比/raw/18-56-22_平台160到240回160_P_Kp1_Ki0_总修正0p8mm_第2次",
+      "run_id": "20260925T105622.210199Z-841376",
+      "status": "completed",
+      "started_at": "2026-09-25T10:56:22.210199+00:00",
+      "control": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "08_短平台P与PI对比",
+      "path": "08_短平台P与PI对比/raw/18-59-14_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_抗饱和_第1次",
+      "run_id": "20260925T105914.400090Z-14bebd",
+      "status": "completed",
+      "started_at": "2026-09-25T10:59:14.400090+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "08_短平台P与PI对比",
+      "path": "08_短平台P与PI对比/raw/19-02-51_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_抗饱和_第2次",
+      "run_id": "20260925T110251.910481Z-359150",
+      "status": "completed",
+      "started_at": "2026-09-25T11:02:51.910481+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-22-05_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_第1次",
+      "run_id": "20260925T112205.792612Z-24bcf0",
+      "status": "completed",
+      "started_at": "2026-09-25T11:22:05.792612+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-29-23_平台160到240回160_PI_Kp1_Ki0p025_总修正0p8mm_积分0p2mm_第1次",
+      "run_id": "20260925T112923.586848Z-ef1845",
+      "status": "completed",
+      "started_at": "2026-09-25T11:29:23.586848+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.025,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-31-38_平台160到240回160_PI_Kp1_Ki0p1_总修正0p8mm_积分0p2mm_第1次",
+      "run_id": "20260925T113138.974622Z-03af7f",
+      "status": "completed",
+      "started_at": "2026-09-25T11:31:38.974622+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-37-52_平台160到240回160_PI_Kp1_Ki0p1_总修正0p8mm_积分0p2mm_第2次",
+      "run_id": "20260925T113752.911876Z-c4d5d4",
+      "status": "completed",
+      "started_at": "2026-09-25T11:37:52.911876+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-45-40_平台160到240回160_PI_Kp1_Ki0p025_总修正0p8mm_积分0p2mm_第2次",
+      "run_id": "20260925T114540.752028Z-613b8c",
+      "status": "completed",
+      "started_at": "2026-09-25T11:45:40.752028+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.025,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "09_短平台Ki参数扫描",
+      "path": "09_短平台Ki参数扫描/raw/19-47-52_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_第2次",
+      "run_id": "20260925T114752.342820Z-88f096",
+      "status": "completed",
+      "started_at": "2026-09-25T11:47:52.342820+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "10_中字原地旋转进笔",
+      "path": "10_中字原地旋转进笔/raw/19-42-23_中_第3笔_pi_第2次",
+      "run_id": "20260925T114223.281371Z-0aa5e8",
+      "status": "completed",
+      "started_at": "2026-09-25T11:42:23.281371+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": true
+    },
+    {
+      "experiment": "10_中字原地旋转进笔",
+      "path": "10_中字原地旋转进笔/raw/19-43-10_中_第4笔_pi_第2次",
+      "run_id": "20260925T114310.283241Z-e81fcb",
+      "status": "completed",
+      "started_at": "2026-09-25T11:43:10.283241+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.05,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "pi",
+        "phase": "measure_00",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "11_中字连续方向姿态",
+      "path": "11_中字连续方向姿态/raw/20-58-43_中_整字_方向姿态_pi_第8次",
+      "run_id": "20260925T125843.882914Z-096f83",
+      "status": "completed",
+      "started_at": "2026-09-25T12:58:43.882914+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "measurement_phases": [
+          "measure_00",
+          "measure_01",
+          "measure_02",
+          "measure_03"
+        ],
+        "mode": "pi",
+        "phase": "per_stroke",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": false
+    },
+    {
+      "experiment": "11_中字连续方向姿态",
+      "path": "11_中字连续方向姿态/raw/21-09-54_中_整字_方向姿态_pi_第9次",
+      "run_id": "20260925T130954.025459Z-e37642",
+      "status": "completed",
+      "started_at": "2026-09-25T13:09:54.025459+00:00",
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "measurement_phases": [
+          "measure_00",
+          "measure_01",
+          "measure_02",
+          "measure_03"
+        ],
+        "mode": "pi",
+        "phase": "per_stroke",
+        "taper_ticks": 50
+      },
+      "sync_as_reference": true
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "runs": [
+    {
+      "label": "慢扫 1（进笔异常）",
+      "folder": "14-25-49_连续下压_Z38到24mm_单程30s_第1次",
+      "run_id": "20260925T062549.748539Z-1403aa",
+      "mode": "sweep-down",
+      "status": "completed",
+      "control_samples": 6638,
+      "sensor_samples": 33724,
+      "sensor_invalid": 0,
+      "tcp_samples": 1323,
+      "tcp_invalid": 0,
+      "median_control_dt_ms": 19.99959599999812,
+      "p99_control_dt_ms": 20.12501219999983,
+      "max_control_dt_ms": 29.49509100000114,
+      "missing_plan_ticks": 1,
+      "duplicate_plan_ticks": 1,
+      "sensor_age_p99_ms": 0.27596177000000005,
+      "entry_peak_uT": 8089.8951243805195,
+      "entry_end_1s_mean_uT": 1042.1246653496116,
+      "final_wait_mean_uT": 54.32760174460371,
+      "final_wait_duration_s": 0.18000007999998502,
+      "scan_tcp_z_mae_mm": 0.055237884584424086,
+      "scan_tcp_z_p95_abs_mm": 0.13551081321640265,
+      "scan_tcp_z_max_abs_mm": 0.15013026272014685,
+      "scan_tcp_x_median_error_mm": -0.9179733825924501,
+      "manifest_sha256": "4f0c1eac08245151b4cf0a2e275f9e23612cfda07c82d821d1eb5be9997e8815",
+      "control_sha256": "4eb93082a1d01eb58348d1d82b8e5ab3a214617cf7c03ce8cc7727d4de90cfb2",
+      "sensor_sha256": "f9b281a5ed06b1f12ff20e0936ed5b696c9e859d5118b08df842ad38382266c0",
+      "tcp_sha256": "c092c33354d981507335f9124812567e0735475fe2cc242b3b08cca7fcbed7b2"
+    },
+    {
+      "label": "慢扫 2",
+      "folder": "14-28-57_连续下压_Z38到24mm_单程30s_第2次",
+      "run_id": "20260925T062857.326996Z-9a9d65",
+      "mode": "sweep-down",
+      "status": "completed",
+      "control_samples": 6638,
+      "sensor_samples": 33724,
+      "sensor_invalid": 0,
+      "tcp_samples": 1324,
+      "tcp_invalid": 0,
+      "median_control_dt_ms": 19.999599000000146,
+      "p99_control_dt_ms": 20.117728280005736,
+      "max_control_dt_ms": 20.9408609999997,
+      "missing_plan_ticks": 0,
+      "duplicate_plan_ticks": 0,
+      "sensor_age_p99_ms": 0.2795362,
+      "entry_peak_uT": 72.38384794535784,
+      "entry_end_1s_mean_uT": 65.96156792942841,
+      "final_wait_mean_uT": 22.469188676684045,
+      "final_wait_duration_s": 0.1800036900000066,
+      "scan_tcp_z_mae_mm": 0.05453515773418768,
+      "scan_tcp_z_p95_abs_mm": 0.13326697714473337,
+      "scan_tcp_z_max_abs_mm": 0.1475643210999138,
+      "scan_tcp_x_median_error_mm": -0.9011945595287187,
+      "manifest_sha256": "5ba6b18a896d115f0f770c5b931bbde63403e59c41522e9f83f4a193d3d26979",
+      "control_sha256": "f359e55227c249dac923d719295691f80acd060c6f388fa5d6ab7601f00297d5",
+      "sensor_sha256": "929304972ac60ec63ab9c1faca70e8f57c46c7594cba8c10349743e0e45bf75b",
+      "tcp_sha256": "70fd4a3e89535d1012077bb6edcba88214d3dc99af9b9d223f774978e3dbb184"
+    },
+    {
+      "label": "快扫往返 1",
+      "folder": "14-32-02_下压回升_Z38到24mm_单程15s_第1次",
+      "run_id": "20260925T063202.212704Z-289303",
+      "mode": "sweep-cycle",
+      "status": "completed",
+      "control_samples": 6507,
+      "sensor_samples": 33098,
+      "sensor_invalid": 0,
+      "tcp_samples": 1299,
+      "tcp_invalid": 0,
+      "median_control_dt_ms": 19.999588000001012,
+      "p99_control_dt_ms": 20.106583350000662,
+      "max_control_dt_ms": 29.345871000003854,
+      "missing_plan_ticks": 1,
+      "duplicate_plan_ticks": 1,
+      "sensor_age_p99_ms": 0.27237513999999996,
+      "entry_peak_uT": 85.11047146692768,
+      "entry_end_1s_mean_uT": 79.34828339406528,
+      "final_wait_mean_uT": 33.06732077657439,
+      "final_wait_duration_s": 0.17998834199997304,
+      "scan_tcp_z_mae_mm": 0.08922551407536439,
+      "scan_tcp_z_p95_abs_mm": 0.17037284289012322,
+      "scan_tcp_z_max_abs_mm": 0.20416791188197791,
+      "scan_tcp_x_median_error_mm": -0.9131126707354156,
+      "manifest_sha256": "f9311affe137ddefc729fbc44cb52e9f987194edb9236c1ee8ee6bdf712ccd26",
+      "control_sha256": "036d7ba767c2644a628d3f93dd2547b2e617b1f6f5fd4ef3856b2f462756ca3e",
+      "sensor_sha256": "e71610c64f64d91f89bb8cef951c86872aec0535cf9c42b09107a4ce824182c2",
+      "tcp_sha256": "f9765ea3252c87dc922fada86ff3ecba4845b9ad78b9e3b16b3bdbb199700054"
+    },
+    {
+      "label": "快扫往返 2",
+      "folder": "14-35-25_下压回升_Z38到24mm_单程15s_第2次",
+      "run_id": "20260925T063525.790228Z-bd0c90",
+      "mode": "sweep-cycle",
+      "status": "completed",
+      "control_samples": 6507,
+      "sensor_samples": 33068,
+      "sensor_invalid": 0,
+      "tcp_samples": 1298,
+      "tcp_invalid": 0,
+      "median_control_dt_ms": 19.999749500000163,
+      "p99_control_dt_ms": 20.101114399999176,
+      "max_control_dt_ms": 29.49886199999696,
+      "missing_plan_ticks": 1,
+      "duplicate_plan_ticks": 1,
+      "sensor_age_p99_ms": 0.2589295999999999,
+      "entry_peak_uT": 83.83365568641796,
+      "entry_end_1s_mean_uT": 78.4771142032515,
+      "final_wait_mean_uT": 24.845525156065158,
+      "final_wait_duration_s": 0.18000430099999676,
+      "scan_tcp_z_mae_mm": 0.08994217893400322,
+      "scan_tcp_z_p95_abs_mm": 0.17395473848650894,
+      "scan_tcp_z_max_abs_mm": 0.20856967444833074,
+      "scan_tcp_x_median_error_mm": -0.9169906987571039,
+      "manifest_sha256": "6604365f0e7ceaf07c660a8f080b44962d28e807d7022013f22076e0a6f784af",
+      "control_sha256": "f651d6c60a7367a474a51c429a5e93f08a89ebb431a9884db0447942eb44575c",
+      "sensor_sha256": "b2a053123cbe5c431a55f47ee9efcfb0f1d6b299e73626314cc9c1dd6d9ae6f1",
+      "tcp_sha256": "be40805e83feabbc81539c86181e3c97b8d0783eb8683d4c7eb24302ef192221"
+    }
+  ],
+  "comparison_depth_grid_mm": [
+    5.0,
+    5.25,
+    5.5,
+    5.75,
+    6.0,
+    6.25,
+    6.5,
+    6.75,
+    7.0,
+    7.25,
+    7.5,
+    7.75,
+    8.0,
+    8.25,
+    8.5,
+    8.75,
+    9.0,
+    9.25,
+    9.5,
+    9.75,
+    10.0,
+    10.25,
+    10.5,
+    10.75,
+    11.0,
+    11.25,
+    11.5,
+    11.75,
+    12.0,
+    12.25,
+    12.5,
+    12.75,
+    13.0,
+    13.25,
+    13.5,
+    13.75,
+    14.0,
+    14.25,
+    14.5,
+    14.75,
+    15.0
+  ],
+  "comparisons": {
+    "slow_repeat_1_minus_2": {
+      "mean": -1.0927860389354045,
+      "mae": 12.172311571659826,
+      "p95_abs": 25.65891352729605,
+      "maximum_abs": 30.51033669641106,
+      "fraction_abs_le20": 0.7804878048780488
+    },
+    "fast_press_repeat_1_minus_2": {
+      "mean": -5.874346481423129,
+      "mae": 7.139621283371063,
+      "p95_abs": 11.664992369331443,
+      "maximum_abs": 12.91019079636736,
+      "fraction_abs_le20": 1.0
+    },
+    "fast_lift_repeat_1_minus_2": {
+      "mean": -0.4551162959506484,
+      "mae": 6.943344772961033,
+      "p95_abs": 14.204860857770143,
+      "maximum_abs": 15.458560738634844,
+      "fraction_abs_le20": 1.0
+    },
+    "cycle1_lift_minus_press": {
+      "mean": 74.8544258927557,
+      "mae": 74.8544258927557,
+      "p95_abs": 101.51190012321246,
+      "maximum_abs": 102.02472180440066,
+      "fraction_abs_le20": 0.0
+    },
+    "cycle2_lift_minus_press": {
+      "mean": 69.43519570728323,
+      "mae": 69.43519570728323,
+      "p95_abs": 91.03191598114114,
+      "maximum_abs": 92.8063272364013,
+      "fraction_abs_le20": 0.0
+    },
+    "slow2_minus_mean_fast_press": {
+      "mean": 23.061548678488617,
+      "mae": 23.085224949655608,
+      "p95_abs": 41.00312630255965,
+      "maximum_abs": 42.765781459479484,
+      "fraction_abs_le20": 0.3170731707317073
+    }
+  },
+  "target_crossings": [
+    {
+      "run": "慢扫 2",
+      "direction": "下压",
+      "target_uT": 60,
+      "depth_mm": 3.9894044513947016,
+      "z_mm": 36.010595548605295,
+      "crossings_found": 1
+    },
+    {
+      "run": "慢扫 2",
+      "direction": "下压",
+      "target_uT": 100,
+      "depth_mm": 6.793826444360353,
+      "z_mm": 33.206173555639644,
+      "crossings_found": 1
+    },
+    {
+      "run": "慢扫 2",
+      "direction": "下压",
+      "target_uT": 150,
+      "depth_mm": 9.204218166848385,
+      "z_mm": 30.795781833151615,
+      "crossings_found": 1
+    },
+    {
+      "run": "慢扫 2",
+      "direction": "下压",
+      "target_uT": 200,
+      "depth_mm": 11.778038419931512,
+      "z_mm": 28.221961580068488,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "下压",
+      "target_uT": 60,
+      "depth_mm": 4.075824600517618,
+      "z_mm": 35.92417539948238,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "下压",
+      "target_uT": 100,
+      "depth_mm": 7.567033863699597,
+      "z_mm": 32.4329661363004,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "下压",
+      "target_uT": 150,
+      "depth_mm": 11.243463617400456,
+      "z_mm": 28.756536382599542,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "下压",
+      "target_uT": 200,
+      "depth_mm": 13.165517659375455,
+      "z_mm": 26.834482340624547,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "回升",
+      "target_uT": 60,
+      "depth_mm": null,
+      "z_mm": null,
+      "crossings_found": 0
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "回升",
+      "target_uT": 100,
+      "depth_mm": 3.2862635405100784,
+      "z_mm": 36.71373645948992,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "回升",
+      "target_uT": 150,
+      "depth_mm": 6.386135733360386,
+      "z_mm": 33.61386426663962,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 1",
+      "direction": "回升",
+      "target_uT": 200,
+      "depth_mm": 8.152333654942375,
+      "z_mm": 31.847666345057625,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "下压",
+      "target_uT": 60,
+      "depth_mm": null,
+      "z_mm": null,
+      "crossings_found": 0
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "下压",
+      "target_uT": 100,
+      "depth_mm": 6.709431555630131,
+      "z_mm": 33.29056844436987,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "下压",
+      "target_uT": 150,
+      "depth_mm": 11.014071204971144,
+      "z_mm": 28.985928795028855,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "下压",
+      "target_uT": 200,
+      "depth_mm": 13.187337626550859,
+      "z_mm": 26.812662373449143,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "回升",
+      "target_uT": 60,
+      "depth_mm": null,
+      "z_mm": null,
+      "crossings_found": 0
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "回升",
+      "target_uT": 100,
+      "depth_mm": 3.3903257899865635,
+      "z_mm": 36.60967421001344,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "回升",
+      "target_uT": 150,
+      "depth_mm": 6.6325423560028405,
+      "z_mm": 33.367457643997156,
+      "crossings_found": 1
+    },
+    {
+      "run": "快扫往返 2",
+      "direction": "回升",
+      "target_uT": 200,
+      "depth_mm": 8.424901473813149,
+      "z_mm": 31.57509852618685,
+      "crossings_found": 1
+    }
+  ],
+  "apparent_gains": [
+    {
+      "run": "慢扫 2",
+      "depth_mm": 5.0,
+      "apparent_gain_uT_per_mm": 11.72637256098928
+    },
+    {
+      "run": "慢扫 2",
+      "depth_mm": 7.5,
+      "apparent_gain_uT_per_mm": 21.55578946313642
+    },
+    {
+      "run": "慢扫 2",
+      "depth_mm": 10.0,
+      "apparent_gain_uT_per_mm": 15.111795614022125
+    },
+    {
+      "run": "慢扫 2",
+      "depth_mm": 12.5,
+      "apparent_gain_uT_per_mm": 29.89575606364178
+    },
+    {
+      "run": "慢扫 2",
+      "depth_mm": 15.0,
+      "apparent_gain_uT_per_mm": 70.79596902517679
+    },
+    {
+      "run": "快扫往返 1",
+      "depth_mm": 5.0,
+      "apparent_gain_uT_per_mm": 10.066298880739607
+    },
+    {
+      "run": "快扫往返 1",
+      "depth_mm": 7.5,
+      "apparent_gain_uT_per_mm": 8.378365969476231
+    },
+    {
+      "run": "快扫往返 1",
+      "depth_mm": 10.0,
+      "apparent_gain_uT_per_mm": 9.337136791017473
+    },
+    {
+      "run": "快扫往返 1",
+      "depth_mm": 12.5,
+      "apparent_gain_uT_per_mm": 28.291265054804015
+    },
+    {
+      "run": "快扫往返 1",
+      "depth_mm": 15.0,
+      "apparent_gain_uT_per_mm": 75.85746855063783
+    },
+    {
+      "run": "快扫往返 2",
+      "depth_mm": 5.0,
+      "apparent_gain_uT_per_mm": 10.954202652849645
+    },
+    {
+      "run": "快扫往返 2",
+      "depth_mm": 7.5,
+      "apparent_gain_uT_per_mm": 9.97931099258165
+    },
+    {
+      "run": "快扫往返 2",
+      "depth_mm": 10.0,
+      "apparent_gain_uT_per_mm": 6.241222002336011
+    },
+    {
+      "run": "快扫往返 2",
+      "depth_mm": 12.5,
+      "apparent_gain_uT_per_mm": 25.962252354845262
+    },
+    {
+      "run": "快扫往返 2",
+      "depth_mm": 15.0,
+      "apparent_gain_uT_per_mm": 76.70885594373664
+    }
+  ],
+  "methods": {
+    "curve": "0.25 mm command-depth bins, mean EMA magnetic response; >=5 samples/bin",
+    "comparison": "linear interpolation on uniform 5..15 mm grid at 0.25 mm; equal-depth weighting",
+    "crossing": "first ascending crossing after binned branch minimum; slow run1 excluded because anomalous entry; no extrapolation",
+    "apparent_gain": "linear fit to binned press branch in +/-0.75 mm; not steady-state plant gain",
+    "tcp": "request midpoint against interpolated host command; finite asynchronous samples; no delay compensation",
+    "limits": "n=2 per protocol; rate and direction effects confounded with XY position, wetting and contact history; no magnetic delay estimate"
+  }
+}

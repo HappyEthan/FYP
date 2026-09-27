@@ -1,0 +1,56 @@
+{
+  "source_run": "/home/ethan/FYP/runs/brush2/2026-09-24/13-02-42__strokeplan_01_gradual_press__e0fa78",
+  "source_sha256": {
+    "sensor.csv": "c13016db933686846ac6cd7d35441d4c1331bd1f7ad52499ad9e746c5208055b",
+    "control.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "manifest.json": "bf10f5ae44245cd8b7d4210abbf536a17be48e80c648fb2baf000b627bf377ea",
+    "setup.json": "418dd6382cb0f0529e874f31c889725de14c96d284abe017150e44acac279aa4",
+    "events.jsonl": "48ba332e0dadece86bdebd2b6463a638af7556ae152d8ee64ac8534eaff61a5a"
+  },
+  "old_policy": {
+    "baseline_window_s": 0.04,
+    "baseline_timeout_s": 2.0,
+    "baseline_min_samples": 3,
+    "baseline_max_std_uT": [
+      0.1,
+      0.1,
+      0.1
+    ],
+    "baseline_max_drift_uT_s": 0.1
+  },
+  "new_policy": {
+    "baseline_window_s": 2.0,
+    "baseline_timeout_s": 5.0,
+    "baseline_min_samples": 400,
+    "baseline_max_std_uT": [
+      10.0,
+      10.0,
+      30.0
+    ],
+    "baseline_max_drift_uT_s": 5.0
+  },
+  "recorded_sample_count": 503,
+  "recorded_host_duration_s": 2.000050216,
+  "replayed_baseline": {
+    "baseline_id": 0,
+    "B0_uT": [
+      2093.1143141153107,
+      2931.993041749501,
+      -7092.686107355867
+    ],
+    "std_uT": [
+      5.599956854841209,
+      5.363772085606234,
+      15.136029727932511
+    ],
+    "drift_uT_s": [
+      -0.6728486572857476,
+      -0.4062021173954967,
+      0.3790417755574701
+    ],
+    "first_seq": 1,
+    "last_seq": 503
+  },
+  "validation": "Old policy rejects; revised trial policy accepts full saved record; added drift and high variance reject; short record rejects. No hardware run performed.",
+  "changed_at": "2026-09-24T05:05:01.580306+00:00"
+}

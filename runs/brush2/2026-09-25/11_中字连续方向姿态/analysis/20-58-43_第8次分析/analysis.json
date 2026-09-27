@@ -1,0 +1,310 @@
+{
+  "run_dir": "/home/ethan/FYP/runs/brush2/2026-09-25/11_中字连续方向姿态/raw/20-58-43_中_整字_方向姿态_pi_第8次",
+  "run_id": "20260925T125843.882914Z-096f83",
+  "status": "completed",
+  "snapshot_hashes_verified": true,
+  "tcp_capture": {
+    "source": "HRIF_ReadActTcpPos (independent connection)",
+    "clock": "host_monotonic_ns",
+    "units": "metres_and_radians",
+    "requested_interval_s": 0.1,
+    "samples": 1350,
+    "valid_samples": 1350,
+    "invalid_samples": 0,
+    "max_read_duration_ms": 18.343668,
+    "worker_stopped": true,
+    "worker_error": null
+  },
+  "notes": [
+    "Depth is nominal contact Z minus TCP Z, not a measured brush indentation.",
+    "TCP uses asynchronous 10 Hz reads at request midpoint; lag is an empirical fit, not a controller latency measurement.",
+    "Centerline gaps do not measure ink boundaries or compliant brush-tip motion.",
+    "Magnetic response is not a calibrated force or line width."
+  ],
+  "strokes": [
+    {
+      "index": 1,
+      "samples": 402,
+      "phases": {
+        "rotate_air": {
+          "duration_s": 2.0,
+          "response_first_uT": 13.575500925905866,
+          "response_last_uT": 13.052604604485115,
+          "response_max_uT": 18.13036325005351,
+          "response_mean_uT": 10.779996422046192,
+          "command_depth_first_mm": -90.0,
+          "command_depth_last_mm": -90.0
+        },
+        "lower_slow": {
+          "duration_s": 1.76,
+          "response_first_uT": 27.291190695886467,
+          "response_last_uT": 34.696276040437894,
+          "response_max_uT": 38.921223683998306,
+          "response_mean_uT": 30.432220058609484,
+          "command_depth_first_mm": -9.999798048219926,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "rotate_contact": {
+          "duration_s": 3.0,
+          "response_first_uT": 35.58324070898225,
+          "response_last_uT": 45.350810606581426,
+          "response_max_uT": 50.8952471042485,
+          "response_mean_uT": 37.2539114723828,
+          "command_depth_first_mm": 4.0000000000000036,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "load_workpoint": {
+          "duration_s": 3.0,
+          "response_first_uT": 48.00160972663899,
+          "response_last_uT": 43.294143524258345,
+          "response_max_uT": 53.007421555498105,
+          "response_mean_uT": 45.29173194900325,
+          "command_depth_first_mm": 4.0000080800207325,
+          "command_depth_last_mm": 6.754478327398547
+        },
+        "measure": {
+          "duration_s": 8.040000000000001,
+          "response_first_uT": 48.951034002691856,
+          "response_last_uT": 119.49898191612517,
+          "response_max_uT": 219.79431419742278,
+          "response_mean_uT": 163.9147380802377,
+          "command_depth_first_mm": 6.754478327398547,
+          "command_depth_last_mm": 8.11956340986119
+        }
+      },
+      "mean_error_uT": -28.895319194164173,
+      "mae_uT": 30.08628527103352,
+      "body_mean_error_uT": -6.824385507012513,
+      "body_mean_command_depth_mm": 12.62758118784077,
+      "body_definition": "exclude first 15 mm and final 10 mm of arclength",
+      "body_mean_target_uT": 214.848507070289,
+      "feedback_mean_mm": 0.35789341569901084,
+      "positive_saturation_fraction": 0.2512437810945274,
+      "negative_saturation_fraction": 0.0,
+      "fitted_lag_s": 0.079,
+      "lag_aligned_xy_rms_mm": 0.055056465518514314,
+      "lag_aligned_xy_p95_mm": 0.10894426251994752
+    },
+    {
+      "index": 2,
+      "samples": 1017,
+      "phases": {
+        "rotate_air": {
+          "duration_s": 2.04,
+          "response_first_uT": 52.19368364634112,
+          "response_last_uT": 47.7132669235311,
+          "response_max_uT": 56.84165338755655,
+          "response_mean_uT": 51.009017095696585,
+          "command_depth_first_mm": -90.0,
+          "command_depth_last_mm": -90.0
+        },
+        "lower_slow": {
+          "duration_s": 1.76,
+          "response_first_uT": 60.64820820887959,
+          "response_last_uT": 66.58032332120304,
+          "response_max_uT": 69.74487010819587,
+          "response_mean_uT": 63.21714703427433,
+          "command_depth_first_mm": -9.999798048219926,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "rotate_contact": {
+          "duration_s": 3.0,
+          "response_first_uT": 68.02184412164335,
+          "response_last_uT": 68.31885351716873,
+          "response_max_uT": 73.34045032475272,
+          "response_mean_uT": 66.63058581747126,
+          "command_depth_first_mm": 4.0000000000000036,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "load_workpoint": {
+          "duration_s": 3.0,
+          "response_first_uT": 71.18546022631827,
+          "response_last_uT": 58.12649534926221,
+          "response_max_uT": 91.4256275803164,
+          "response_mean_uT": 70.7834884893254,
+          "command_depth_first_mm": 4.000017331962251,
+          "command_depth_last_mm": 9.908464343516394
+        },
+        "measure": {
+          "duration_s": 20.34,
+          "response_first_uT": 56.0007469426324,
+          "response_last_uT": 154.9155425228512,
+          "response_max_uT": 230.57196714270856,
+          "response_mean_uT": 177.15992833686977,
+          "command_depth_first_mm": 9.908464343516394,
+          "command_depth_last_mm": 9.908464343516394
+        }
+      },
+      "mean_error_uT": -10.511151006026784,
+      "mae_uT": 15.697067705573092,
+      "body_mean_error_uT": -9.136611039894206,
+      "body_mean_command_depth_mm": 11.795988149364883,
+      "body_definition": "exclude first 15 mm and final 10 mm of arclength",
+      "body_mean_target_uT": 191.9224132232964,
+      "feedback_mean_mm": 0.30057768793985584,
+      "positive_saturation_fraction": 0.14355948869223206,
+      "negative_saturation_fraction": 0.0029498525073746312,
+      "fitted_lag_s": 0.101,
+      "lag_aligned_xy_rms_mm": 0.061035447882841945,
+      "lag_aligned_xy_p95_mm": 0.10691015309179062
+    },
+    {
+      "index": 3,
+      "samples": 547,
+      "phases": {
+        "rotate_air": {
+          "duration_s": 3.48,
+          "response_first_uT": 51.97457623514709,
+          "response_last_uT": 49.08644175060218,
+          "response_max_uT": 58.1110533590317,
+          "response_mean_uT": 49.931140590914836,
+          "command_depth_first_mm": -90.0,
+          "command_depth_last_mm": -90.0
+        },
+        "lower_slow": {
+          "duration_s": 1.76,
+          "response_first_uT": 32.005043134929636,
+          "response_last_uT": 19.615714785005157,
+          "response_max_uT": 39.30081562378409,
+          "response_mean_uT": 30.60446191640835,
+          "command_depth_first_mm": -9.999798048219926,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "rotate_contact": {
+          "duration_s": 3.0,
+          "response_first_uT": 22.49331037931749,
+          "response_last_uT": 30.754081752059392,
+          "response_max_uT": 33.650903435042345,
+          "response_mean_uT": 25.562754351083424,
+          "command_depth_first_mm": 4.0000000000000036,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "load_workpoint": {
+          "duration_s": 3.0,
+          "response_first_uT": 32.498296571113755,
+          "response_last_uT": 29.177771002275936,
+          "response_max_uT": 38.350297207397595,
+          "response_mean_uT": 29.41335966396242,
+          "command_depth_first_mm": 4.0000080800207325,
+          "command_depth_last_mm": 6.754478327398547
+        },
+        "measure": {
+          "duration_s": 10.94,
+          "response_first_uT": 35.93276271521042,
+          "response_last_uT": 167.7509047687146,
+          "response_max_uT": 207.7666198501602,
+          "response_mean_uT": 140.2973484163759,
+          "command_depth_first_mm": 6.754478327398547,
+          "command_depth_last_mm": 9.908464343516394
+        }
+      },
+      "mean_error_uT": -28.236321681416733,
+      "mae_uT": 35.985666917546126,
+      "body_mean_error_uT": -26.218913161623945,
+      "body_mean_command_depth_mm": 11.263124586871605,
+      "body_definition": "exclude first 15 mm and final 10 mm of arclength",
+      "body_mean_target_uT": 175.69098295340743,
+      "feedback_mean_mm": 0.41527193907662924,
+      "positive_saturation_fraction": 0.5703839122486288,
+      "negative_saturation_fraction": 0.0,
+      "fitted_lag_s": 0.106,
+      "lag_aligned_xy_rms_mm": 0.049635885680047585,
+      "lag_aligned_xy_p95_mm": 0.10253571907727835
+    },
+    {
+      "index": 4,
+      "samples": 948,
+      "phases": {
+        "rotate_air": {
+          "duration_s": 3.2800000000000002,
+          "response_first_uT": 48.00366390684793,
+          "response_last_uT": 36.084201121526974,
+          "response_max_uT": 48.58204363919674,
+          "response_mean_uT": 40.86711830618859,
+          "command_depth_first_mm": -90.0,
+          "command_depth_last_mm": -90.0
+        },
+        "lower_slow": {
+          "duration_s": 1.76,
+          "response_first_uT": 42.78500233559694,
+          "response_last_uT": 47.23675372691898,
+          "response_max_uT": 50.94642461147863,
+          "response_mean_uT": 45.12075219118103,
+          "command_depth_first_mm": -9.999798048219926,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "rotate_contact": {
+          "duration_s": 3.0,
+          "response_first_uT": 46.15148261057054,
+          "response_last_uT": 45.61479013131477,
+          "response_max_uT": 52.01629327620181,
+          "response_mean_uT": 45.2170589696312,
+          "command_depth_first_mm": 4.0000000000000036,
+          "command_depth_last_mm": 4.0000000000000036
+        },
+        "load_workpoint": {
+          "duration_s": 3.0,
+          "response_first_uT": 45.72120709621815,
+          "response_last_uT": 49.593628493682345,
+          "response_max_uT": 57.72056832104212,
+          "response_mean_uT": 47.55649456134199,
+          "command_depth_first_mm": 4.0000080800207325,
+          "command_depth_last_mm": 6.754478327398547
+        },
+        "measure": {
+          "duration_s": 18.96,
+          "response_first_uT": 51.85162193194693,
+          "response_last_uT": 159.06216913582134,
+          "response_max_uT": 248.81619786469463,
+          "response_mean_uT": 193.08975102402945,
+          "command_depth_first_mm": 6.754478327398547,
+          "command_depth_last_mm": 6.754478327398547
+        }
+      },
+      "mean_error_uT": 9.125620572335537,
+      "mae_uT": 21.487665638389846,
+      "body_mean_error_uT": 9.25248259056511,
+      "body_mean_command_depth_mm": 11.194637620750246,
+      "body_definition": "exclude first 15 mm and final 10 mm of arclength",
+      "body_mean_target_uT": 192.17159187264966,
+      "feedback_mean_mm": -0.2239748801722874,
+      "positive_saturation_fraction": 0.05063291139240506,
+      "negative_saturation_fraction": 0.20253164556962025,
+      "fitted_lag_s": 0.10200000000000001,
+      "lag_aligned_xy_rms_mm": 0.0630832426612362,
+      "lag_aligned_xy_p95_mm": 0.10116438341851698
+    }
+  ],
+  "connections": [
+    {
+      "strokes": [
+        3,
+        1
+      ],
+      "sampled_centerline_gap_mm": 11.000032862484648,
+      "stroke3_xy_mm": [
+        -261.61495869277377,
+        488.99859195754294
+      ],
+      "other_xy_mm": [
+        -272.2497663976726,
+        486.18761560482017
+      ]
+    },
+    {
+      "strokes": [
+        3,
+        2
+      ],
+      "sampled_centerline_gap_mm": 0.10436781284169024,
+      "stroke3_xy_mm": [
+        -167.36443343742178,
+        512.4859700030295
+      ],
+      "other_xy_mm": [
+        -167.43603048267406,
+        512.4100325059118
+      ]
+    }
+  ]
+}

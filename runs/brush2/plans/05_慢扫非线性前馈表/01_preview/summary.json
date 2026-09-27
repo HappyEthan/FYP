@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/ry15_rz0_slow_sweep_ff_20260925_v1/01_gradual_160_240.npz",
+  "sha256": "09ee4313684dafe88d344f2948036319420d259c3f8e5be7bc5f117223fd627f",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 2011,
+      "length_mm": 400.0,
+      "duration_s": 40.2,
+      "peak_xy_speed_mm_s": 10.000000000003553,
+      "target_range_uT": [
+        160.0,
+        240.0
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

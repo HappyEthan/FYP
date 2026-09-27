@@ -1,0 +1,163 @@
+{
+  "folder": "15-02-32_连续下压_Z38到24mm_单程30s_第3次",
+  "status": "completed",
+  "entry_z_mm": 38.0,
+  "entry_peak_uT": 88.64469226357394,
+  "at_scan_start_uT": 88.65311384844976,
+  "by_large_jumps": 0,
+  "by_range_uT": [
+    2874.3,
+    3357.45
+  ],
+  "comparisons": {
+    "new_minus_slow2": {
+      "mean": 0.9809424050401983,
+      "mae": 2.135052744215843,
+      "p95_abs": 4.326527391691258,
+      "max_abs": 6.502450168030833,
+      "fraction_le20": 1.0
+    },
+    "old_minus_slow2": {
+      "mean": -1.0927860389354045,
+      "mae": 12.172311571659826,
+      "p95_abs": 25.65891352729605,
+      "max_abs": 30.51033669641106,
+      "fraction_le20": 0.7804878048780488
+    },
+    "clean_slow_mean_minus_fast_down_mean": {
+      "mean": 23.552019881008718,
+      "mae": 23.552019881008718,
+      "p95_abs": 42.00967892088411,
+      "max_abs": 43.84657968735752,
+      "fraction_le20": 0.34146341463414637
+    }
+  },
+  "target_crossings": [
+    {
+      "run": "正常慢扫 2",
+      "target_uT": 60,
+      "depth_mm": 3.9894044513947016
+    },
+    {
+      "run": "正常慢扫 2",
+      "target_uT": 100,
+      "depth_mm": 6.793826444360353
+    },
+    {
+      "run": "正常慢扫 2",
+      "target_uT": 150,
+      "depth_mm": 9.204218166848385
+    },
+    {
+      "run": "正常慢扫 2",
+      "target_uT": 200,
+      "depth_mm": 11.778038419931512
+    },
+    {
+      "run": "复录慢扫",
+      "target_uT": 60,
+      "depth_mm": null
+    },
+    {
+      "run": "复录慢扫",
+      "target_uT": 100,
+      "depth_mm": 6.724598813182949
+    },
+    {
+      "run": "复录慢扫",
+      "target_uT": 150,
+      "depth_mm": 9.32097491469808
+    },
+    {
+      "run": "复录慢扫",
+      "target_uT": 200,
+      "depth_mm": 11.688472235595976
+    }
+  ],
+  "depth_grid_mm": [
+    5.0,
+    5.25,
+    5.5,
+    5.75,
+    6.0,
+    6.25,
+    6.5,
+    6.75,
+    7.0,
+    7.25,
+    7.5,
+    7.75,
+    8.0,
+    8.25,
+    8.5,
+    8.75,
+    9.0,
+    9.25,
+    9.5,
+    9.75,
+    10.0,
+    10.25,
+    10.5,
+    10.75,
+    11.0,
+    11.25,
+    11.5,
+    11.75,
+    12.0,
+    12.25,
+    12.5,
+    12.75,
+    13.0,
+    13.25,
+    13.5,
+    13.75,
+    14.0,
+    14.25,
+    14.5,
+    14.75,
+    15.0
+  ],
+  "sources": [
+    {
+      "folder": "14-25-49_连续下压_Z38到24mm_单程30s_第1次",
+      "stream_sha256": {
+        "control.jsonl": "4eb93082a1d01eb58348d1d82b8e5ab3a214617cf7c03ce8cc7727d4de90cfb2",
+        "sensor.csv": "f9b281a5ed06b1f12ff20e0936ed5b696c9e859d5118b08df842ad38382266c0",
+        "actual_tcp.csv": "c092c33354d981507335f9124812567e0735475fe2cc242b3b08cca7fcbed7b2"
+      }
+    },
+    {
+      "folder": "14-28-57_连续下压_Z38到24mm_单程30s_第2次",
+      "stream_sha256": {
+        "control.jsonl": "f359e55227c249dac923d719295691f80acd060c6f388fa5d6ab7601f00297d5",
+        "sensor.csv": "929304972ac60ec63ab9c1faca70e8f57c46c7594cba8c10349743e0e45bf75b",
+        "actual_tcp.csv": "70fd4a3e89535d1012077bb6edcba88214d3dc99af9b9d223f774978e3dbb184"
+      }
+    },
+    {
+      "folder": "14-32-02_下压回升_Z38到24mm_单程15s_第1次",
+      "stream_sha256": {
+        "control.jsonl": "036d7ba767c2644a628d3f93dd2547b2e617b1f6f5fd4ef3856b2f462756ca3e",
+        "sensor.csv": "e71610c64f64d91f89bb8cef951c86872aec0535cf9c42b09107a4ce824182c2",
+        "actual_tcp.csv": "f9765ea3252c87dc922fada86ff3ecba4845b9ad78b9e3b16b3bdbb199700054"
+      }
+    },
+    {
+      "folder": "14-35-25_下压回升_Z38到24mm_单程15s_第2次",
+      "stream_sha256": {
+        "control.jsonl": "f651d6c60a7367a474a51c429a5e93f08a89ebb431a9884db0447942eb44575c",
+        "sensor.csv": "b2a053123cbe5c431a55f47ee9efcfb0f1d6b299e73626314cc9c1dd6d9ae6f1",
+        "actual_tcp.csv": "be40805e83feabbc81539c86181e3c97b8d0783eb8683d4c7eb24302ef192221"
+      }
+    },
+    {
+      "folder": "15-02-32_连续下压_Z38到24mm_单程30s_第3次",
+      "stream_sha256": {
+        "control.jsonl": "77b73c5de850d87b2fb60927d4938d226855d79b8f9d9814c026e9d2fac9d15a",
+        "sensor.csv": "6b2e9583e1bbfa8e0d30cc6a1d6ea4f230446e9c9a92f769684491ea78b13a2a",
+        "actual_tcp.csv": "152e48d3641c8e9a182473d61e67b12346ab9edef6265f8cdd35b8023ebbe8b8"
+      }
+    }
+  ],
+  "method": "0.25mm command-depth bins >=5 samples, interpolated onto uniform 5..15mm grid; EMA response; no static-gain or delay fit"
+}
