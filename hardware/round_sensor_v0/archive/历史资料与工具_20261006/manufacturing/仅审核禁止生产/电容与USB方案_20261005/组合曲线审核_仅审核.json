@@ -1,0 +1,173 @@
+{
+  "status": "仅审核；候选变更未实施；非生产放行",
+  "date": "2026-10-05",
+  "pcb_sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+  "source_url": "https://ds.murata.com/simsurfing/mlcc.html",
+  "site_update_shown": "2026/10/02",
+  "method": "C-Temp Capacitance at DC5.5V AC0.01Vrms; exported through manufacturer visible UI",
+  "candidates": [
+    {
+      "mpn": "GRM155R61A105KE15D",
+      "csv": "原1uF_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "sha256": "60d4e8a5269077d2821ee61e9bbf319b1a1e3d2f417aa94d318e9161d9372928",
+      "model_points": 281,
+      "dc_V": 5.5,
+      "ac_Vrms": 0.01,
+      "tolerance": 0.1,
+      "max_height_mm_from_current_sim_surfing_grid": 0.55,
+      "lifecycle_from_current_grid": "planned_discontinuation",
+      "intervals": {
+        "model_full": {
+          "temperature_interval_C": [
+            -55,
+            85
+          ],
+          "min_at_C": -55.0,
+          "model_min_uF": 0.5163172039490778,
+          "tolerance_screen_uF": 0.46468548355417,
+          "headroom_above_0p47_uF": -0.005314516445829975,
+          "additional_fractional_loss_to_0p47": -0.011436803244167626
+        },
+        "screen_minus40_to85": {
+          "temperature_interval_C": [
+            -40,
+            85
+          ],
+          "min_at_C": -40.0,
+          "model_min_uF": 0.5404771631409981,
+          "tolerance_screen_uF": 0.4864294468268983,
+          "headroom_above_0p47_uF": 0.016429446826898342,
+          "additional_fractional_loss_to_0p47": 0.03377560082777009
+        },
+        "illustrative_0_to60": {
+          "temperature_interval_C": [
+            0,
+            60
+          ],
+          "min_at_C": 60.0,
+          "model_min_uF": 0.5804822544026359,
+          "tolerance_screen_uF": 0.5224340289623723,
+          "headroom_above_0p47_uF": 0.05243402896237237,
+          "additional_fractional_loss_to_0p47": 0.10036488064629656
+        }
+      }
+    },
+    {
+      "mpn": "GRM155R61A225KE01D",
+      "csv": "2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "sha256": "0aba8a5f93d26c3b1284ed5597f5ef6b8332b9b05a77f440e14ed3b2c1ceb822",
+      "model_points": 281,
+      "dc_V": 5.5,
+      "ac_Vrms": 0.01,
+      "tolerance": 0.1,
+      "max_height_mm_from_current_sim_surfing_grid": 0.55,
+      "lifecycle_from_current_grid": "in_production",
+      "intervals": {
+        "model_full": {
+          "temperature_interval_C": [
+            -55,
+            85
+          ],
+          "min_at_C": -55.0,
+          "model_min_uF": 0.4430216405424792,
+          "tolerance_screen_uF": 0.3987194764882313,
+          "headroom_above_0p47_uF": -0.07128052351176867,
+          "additional_fractional_loss_to_0p47": -0.17877361833332106
+        },
+        "screen_minus40_to85": {
+          "temperature_interval_C": [
+            -40,
+            85
+          ],
+          "min_at_C": -40.0,
+          "model_min_uF": 0.46414222166864383,
+          "tolerance_screen_uF": 0.41772799950177947,
+          "headroom_above_0p47_uF": -0.052272000498220506,
+          "additional_fractional_loss_to_0p47": -0.1251340598680597
+        },
+        "illustrative_0_to60": {
+          "temperature_interval_C": [
+            0,
+            60
+          ],
+          "min_at_C": 0.0,
+          "model_min_uF": 0.5098405790525843,
+          "tolerance_screen_uF": 0.4588565211473259,
+          "headroom_above_0p47_uF": -0.011143478852674082,
+          "additional_fractional_loss_to_0p47": -0.0242853230565645
+        }
+      }
+    },
+    {
+      "mpn": "GRM155R61A475MEAAD",
+      "csv": "4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "sha256": "0e41a60fcfa562ad1e4e07634335bb23d6e71f854a71024635ff91581fcd2e8e",
+      "model_points": 281,
+      "dc_V": 5.5,
+      "ac_Vrms": 0.01,
+      "tolerance": 0.2,
+      "max_height_mm_from_current_sim_surfing_grid": 0.65,
+      "lifecycle_from_current_grid": "in_production",
+      "intervals": {
+        "model_full": {
+          "temperature_interval_C": [
+            -55,
+            85
+          ],
+          "min_at_C": -55.0,
+          "model_min_uF": 1.2947417567723207,
+          "tolerance_screen_uF": 1.0357934054178566,
+          "headroom_above_0p47_uF": 0.5657934054178566,
+          "additional_fractional_loss_to_0p47": 0.5462415598114433
+        },
+        "screen_minus40_to85": {
+          "temperature_interval_C": [
+            -40,
+            85
+          ],
+          "min_at_C": -40.0,
+          "model_min_uF": 1.3514792616201785,
+          "tolerance_screen_uF": 1.0811834092961428,
+          "headroom_above_0p47_uF": 0.6111834092961428,
+          "additional_fractional_loss_to_0p47": 0.5652911467574471
+        },
+        "illustrative_0_to60": {
+          "temperature_interval_C": [
+            0,
+            60
+          ],
+          "min_at_C": 0.0,
+          "model_min_uF": 1.4492376422808044,
+          "tolerance_screen_uF": 1.1593901138246436,
+          "headroom_above_0p47_uF": 0.6893901138246437,
+          "additional_fractional_loss_to_0p47": 0.5946144491007046
+        }
+      }
+    }
+  ],
+  "limits": [
+    "典型模型不等于制造商最小值保证",
+    "容差乘法是工程筛查，不保证容差与偏压响应独立",
+    "组合曲线已包含温度和AC/DC条件，不再重复乘X5R温度或小信号降额",
+    "未计老化；不据模型代替实物瞬态、热或寿命验证",
+    "5.5V为现LDO输入上限筛查，不是声称电脑USB正常输出5.5V",
+    "没有给整机增加-55或-40摄氏度使用要求",
+    "准确D包装候选沿用厂家料号规则；国内接贴和供货未刷新"
+  ],
+  "proposal": {
+    "ref": "C9",
+    "from": "1uF / 10V; GRM155R61A105KE15D candidate",
+    "to": "4.7uF / 10V; GRM155R61A475MEAAD candidate",
+    "same_eia_size": "0402",
+    "max_height_delta_mm": 0.1,
+    "pcb_instance_header": "LIB~4142.752~3097.815~package`C0402`Contributor`lcsc`link`https://item.szlcsc.com/15869.html`3DModel`C0402_L1.0-W0.5-H0.5`nameAlias`Value`Value`1uF / 10V`spicePre`C`spiceSymbolName`1uF / 10V`Manufacturer Part`1uF / 10V`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / C1；只复用焊盘几何，不沿用旧接线`~270~~ggeA5609~2~0821ed6ea50c44f4909e4be7610e4198~1766729391~0~~yes~~",
+    "pads": [
+      "PAD~RECT~4142.752~3096.161~1.9685~2.126~2~GND~2~0~4143.815 3097.1457 4143.815 3095.1772 4141.689 3095.1772 4141.689 3097.1457~270~gge810~0~~Y~0~0~0.2000~4142.752,3096.1616",
+      "PAD~RECT~4142.752~3099.469~1.9685~2.126~2~VSYS~1~0~4143.815 3100.4528 4143.815 3098.4843 4141.689 3098.4843 4141.689 3100.4528~270~gge825~0~~Y~0~0~0.2000~4142.752,3099.4684"
+    ],
+    "apply_to_schematic": false,
+    "apply_to_pcb": false,
+    "apply_to_released_bom": false,
+    "manufacturing_release": false
+  }
+}

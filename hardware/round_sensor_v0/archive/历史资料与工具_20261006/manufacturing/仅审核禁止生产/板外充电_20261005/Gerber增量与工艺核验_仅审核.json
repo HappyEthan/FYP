@@ -1,0 +1,270 @@
+{
+  "date": "2026-10-05",
+  "sha256": {
+    "PCB_板外充电_保存重开_20261005.json": "57b67d2d0f2de9a4fe2511a1069ec17852bed81a3e244c796b008095251f0849",
+    "Gerber_板外充电_仅审核_20261005.zip": "f0ea504fdd490eb46ba1740e9a730fee03d003b60422a5d51f8ab2de977d3a83",
+    "Gerber_丝印终检_仅审核_20261004.zip": "cd29835d74264caf478d2ca343429f24350b56387b42f90bf0029eab679f62d5"
+  },
+  "layers": [
+    {
+      "file": "Drill_NPTH_Through.DRL",
+      "added": 0,
+      "removed": 0,
+      "after": 2
+    },
+    {
+      "file": "Drill_PTH_Through.DRL",
+      "added": 0,
+      "removed": 2,
+      "after": 85
+    },
+    {
+      "file": "Drill_PTH_Through_Via.DRL",
+      "added": 0,
+      "removed": 2,
+      "after": 81
+    },
+    {
+      "file": "Gerber_TopLayer.GTL",
+      "primitives_equal": false,
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "file": "Gerber_BottomLayer.GBL",
+      "primitives_equal": false,
+      "added": 1,
+      "removed": 28
+    },
+    {
+      "file": "Gerber_TopSilkscreenLayer.GTO",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "file": "Gerber_BottomSilkscreenLayer.GBO",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "file": "Gerber_TopPasteMaskLayer.GTP",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "file": "Gerber_BottomPasteMaskLayer.GBP",
+      "primitives_equal": false,
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "file": "Gerber_TopSolderMaskLayer.GTS",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "file": "Gerber_BottomSolderMaskLayer.GBS",
+      "primitives_equal": false,
+      "added": 0,
+      "removed": 8
+    },
+    {
+      "file": "Gerber_BoardOutlineLayer.GKO",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "file": "Gerber_DocumentLayer.GDL",
+      "primitives_equal": false,
+      "added": 0,
+      "removed": 11
+    },
+    {
+      "file": "Gerber_InnerLayer1.G1",
+      "primitives_equal": false,
+      "added": 3,
+      "removed": 4
+    },
+    {
+      "file": "Gerber_InnerLayer2.G2",
+      "primitives_equal": false,
+      "added": 2,
+      "removed": 3
+    }
+  ],
+  "local_geometry_deltas": [
+    {
+      "file": "Gerber_TopLayer.GTL",
+      "changed_area_mm2": 0.4948657811750934,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 2.405573570202213e-18,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 0.0,
+      "nonlocal_native_GND_repour_fragments": []
+    },
+    {
+      "file": "Gerber_BottomLayer.GBL",
+      "changed_area_mm2": 3.4098363796583784,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 8.043637476405041e-05,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 7.571784493198342e-05,
+      "nonlocal_native_GND_repour_fragments": [
+        {
+          "area_mm2": 8.043270000080175e-05,
+          "bounds_mm": [
+            20.15998,
+            -72.27366,
+            20.39924,
+            -72.25741
+          ],
+          "direction": "added"
+        }
+      ]
+    },
+    {
+      "file": "Gerber_InnerLayer1.G1",
+      "changed_area_mm2": 0.5870462571875203,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 0.0,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 0.0,
+      "nonlocal_native_GND_repour_fragments": []
+    },
+    {
+      "file": "Gerber_InnerLayer2.G2",
+      "changed_area_mm2": 0.40545830730390814,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 7.4923001339103484e-06,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 3.6385145538134457e-06,
+      "nonlocal_native_GND_repour_fragments": [
+        {
+          "area_mm2": 7.4923001339103484e-06,
+          "bounds_mm": [
+            23.17082324691939,
+            -75.27848,
+            23.33142,
+            -75.11784228762787
+          ],
+          "direction": "removed"
+        }
+      ]
+    },
+    {
+      "file": "Gerber_BottomPasteMaskLayer.GBP",
+      "changed_area_mm2": 0.8092212456686532,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 0.0,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 0.0,
+      "nonlocal_native_GND_repour_fragments": []
+    },
+    {
+      "file": "Gerber_BottomSolderMaskLayer.GBS",
+      "changed_area_mm2": 1.2812509964411405,
+      "outside_removed_circuit_0_5mm_neighborhood_mm2": 0.0,
+      "outside_and_beyond_0_00002mm_output_boundary_rounding_mm2": 0.0,
+      "nonlocal_native_GND_repour_fragments": []
+    }
+  ],
+  "eight_removed_paste_apertures_match_U4_R10_pads": true,
+  "two_removed_drills_match_U4_C1_vias": true,
+  "hole_slot_total": 87,
+  "DNP_handwire_paste": [
+    {
+      "ref": "C30",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C30",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "paste_overlap_mm2": 0.0
+    }
+  ],
+  "silkscreen": [
+    {
+      "side": "Top",
+      "overlap_mm2": 0.0,
+      "within_0_15mm_area_mm2": 0.0
+    },
+    {
+      "side": "Bottom",
+      "overlap_mm2": 0.0,
+      "within_0_15mm_area_mm2": 0.0
+    }
+  ],
+  "Q1": {
+    "copper_gap_2_3_mm": 0.13985239999988153,
+    "rule_mm": 0.15001240000000002,
+    "native_DRC_remaining": true,
+    "factory_acceptance": false
+  },
+  "native_export_settings": {
+    "layers": 4,
+    "estimated_size_mm": [
+      18,
+      18
+    ],
+    "dialog_thickness_mm": 0.8,
+    "dialog_finish": "沉金",
+    "not_manufacturing_acceptance": true
+  },
+  "limits": [
+    "Finite native Gerber parser and bounded circular approximations; no fabrication tolerance simulation.",
+    "Removed U4/R10 pads, traces, two vias and their mask/paste/silk are intentional; ground copper rebuilt natively.",
+    "Factory stencil, via filling/capping, machine origin and actual stackup remain unapproved."
+  ],
+  "production_released": false
+}

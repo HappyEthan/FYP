@@ -1,0 +1,231 @@
+{
+  "status": "仅审核；变更前核对完成；原理图与PCB尚未修改",
+  "confirmed_requirement": "可拆电池取下后板外充电；J2只供电；USB供电、烧录和数据保留",
+  "source_sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+  "native_export_matches_silk_source_byte_for_byte": true,
+  "remove_refs": [
+    "U4",
+    "R10"
+  ],
+  "remove_exclusive_net": "U4_C1",
+  "exclusive_tracks_and_vias": [
+    "TRACK~0.3937~2~U4_C1~4098.5673 3106.9053 4096.7957 3105.1337 4096.7957 3103.2045 4098.7561 3101.2441 4101.9574 3101.2441~ggeUSB0928T354~0",
+    "TRACK~0.3937~2~U4_C1~4108.213 3110.1337 4107.0946 3110.1337 4106.378 3110.8504~ggeUSB0928T352~0",
+    "TRACK~0.3937~1~U4_C1~4106.378 3110.8504 4107.9921 3112.4646 4107.9921 3112.7955 4106.2839 3114.5037 4104.9847 3114.5037 4098.5673 3108.0864 4098.5673 3106.9053~ggeUSB0928T353~0",
+    "VIA~4106.378~3110.85~0.9842~U4_C1~0.29527559~ggeUSB0928V324~0",
+    "VIA~4098.567~3106.905~0.9842~U4_C1~0.29527559~ggeUSB0928V325~0"
+  ],
+  "retain_refs": {
+    "C6": {
+      "header": "LIB~4101.5~3115~package`C0402`Contributor`lcsc`link`https://item.szlcsc.com/15869.html`3DModel`C0402_L1.0-W0.5-H0.5`nameAlias`Value`Value`1uF / 16V`spicePre`C`spiceSymbolName`1uF / 16V`Manufacturer Part`1uF / 16V`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / C1；只复用焊盘几何，不沿用旧接线`~180~~ggeA5683~2~0821ed6ea50c44f4909e4be7610e4198~1766729391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "USB_5V"
+        }
+      ]
+    },
+    "C7": {
+      "header": "LIB~4115.5~3114~package`C0402`Contributor`lcsc`link`https://item.szlcsc.com/15869.html`3DModel`C0402_L1.0-W0.5-H0.5`nameAlias`Value`Value`1uF / 10V`spicePre`C`spiceSymbolName`1uF / 10V`Manufacturer Part`1uF / 10V`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / C1；只复用焊盘几何，不沿用旧接线`~~~ggeA5725~2~0821ed6ea50c44f4909e4be7610e4198~1766729391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "BAT_P"
+        }
+      ]
+    },
+    "Q1": {
+      "header": "LIB~4122.5~3111.5~package`LP0404N3_SOT883_LRC_LAND_A5`Contributor`eda_htyqpfoe`说明`A5自定义编号1=D大焊盘，2=G左上，3=S左下；铜最小间距0.14mm；顶视图，不直接照抄底视图`link``nameAlias`Value`Value`LP0404N3T5G`spicePre`Q`spiceSymbolName`LP0404N3T5G`Manufacturer Part`LP0404N3T5G`Package candidate`SOT-883-3 / 1.0x0.6 mm`审查备注`D=1接电池，G=2接USB，S=3接系统；体二极管BAT_P至VSYS；按XIAO焊盘编号核对封装`装配状态`装配`3DModel`SOT-883-3_L1.0-W0.6-BR-A`~180~~ggeA5557~2~31db4911842348f88856ccec0e08bb57~1789542909~0~~yes~~",
+      "pads": [
+        {
+          "number": "1",
+          "net": "BAT_P"
+        },
+        {
+          "number": "2",
+          "net": "USB_5V"
+        },
+        {
+          "number": "3",
+          "net": "VSYS"
+        }
+      ]
+    },
+    "D4": {
+      "header": "LIB~4122.5~3115.5~package`LMBR4010_SOD882_LRC_LAND_A5`Contributor`eda_htyqpfoe`说明`1阴极左侧，2阳极右侧；中心距0.70mm，铜间隙0.30mm`link``nameAlias`Value`Value`LMBR4010BST5G`spicePre`D`spiceSymbolName`LMBR4010BST5G`Manufacturer Part`LMBR4010BST5G`Package candidate`SOD-882 / 1.0x0.6 mm`审查备注``装配状态`装配`3DModel`SOD-882_L1.0-W0.6-RD-1`~180~~ggeA5569~2~e653cc1f82d246219d2307d4499fa4f1~1789542872~0~~yes~~",
+      "pads": [
+        {
+          "number": "1",
+          "net": "VSYS"
+        },
+        {
+          "number": "2",
+          "net": "USB_5V"
+        }
+      ]
+    },
+    "R9": {
+      "header": "LIB~4115.5~3108.5~package`R0402`Contributor`lcsc`link`https://item.szlcsc.com/323315.html`3DModel`R0402_L1.0-W0.5-H0.4`nameAlias`Value`Value`100k`spicePre`R`spiceSymbolName`100k`Manufacturer Part`100k`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / R7；只复用焊盘几何，不沿用旧接线`~180~~ggeA5578~2~fafd024f554e426eb74cf4a204aa88b0~1733220391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "USB_5V"
+        }
+      ]
+    },
+    "U5": {
+      "header": "LIB~4135.5~3097~package`WSON-6_L2.0-W2.0-P0.65-TL-EP`Contributor`LCSC`link`https://item.szlcsc.com/381430.html`3DModel`WSON-6_L2.0-W2.0-H0.8-P0.65`nameAlias`Value`Value`TLV75533PDRVR`spicePre`U`spiceSymbolName`TLV75533PDRVR`Manufacturer Part`TLV75533PDRVR`Package candidate`WSON-6 + EP / 2x2 mm`审查备注``装配状态`装配`封装来源`SCH-A3 / U5；只复用焊盘几何，不沿用旧接线`~180~~ggeA5591~2~2fd3b96824b74067965fed5f1675aa2e~1617613340~0~~yes~~",
+      "pads": [
+        {
+          "number": "1",
+          "net": "3V3"
+        },
+        {
+          "number": "2",
+          "net": ""
+        },
+        {
+          "number": "3",
+          "net": "GND"
+        },
+        {
+          "number": "4",
+          "net": "REG_EN"
+        },
+        {
+          "number": "5",
+          "net": ""
+        },
+        {
+          "number": "6",
+          "net": "VSYS"
+        },
+        {
+          "number": "7",
+          "net": "GND"
+        }
+      ]
+    },
+    "C9": {
+      "header": "LIB~4142.752~3097.815~package`C0402`Contributor`lcsc`link`https://item.szlcsc.com/15869.html`3DModel`C0402_L1.0-W0.5-H0.5`nameAlias`Value`Value`1uF / 10V`spicePre`C`spiceSymbolName`1uF / 10V`Manufacturer Part`1uF / 10V`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / C1；只复用焊盘几何，不沿用旧接线`~270~~ggeA5609~2~0821ed6ea50c44f4909e4be7610e4198~1766729391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "VSYS"
+        }
+      ]
+    },
+    "C10": {
+      "header": "LIB~4126.5~3093.5~package`C0402`Contributor`lcsc`link`https://item.szlcsc.com/15869.html`3DModel`C0402_L1.0-W0.5-H0.5`nameAlias`Value`Value`1uF / 10V`spicePre`C`spiceSymbolName`1uF / 10V`Manufacturer Part`1uF / 10V`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / C1；只复用焊盘几何，不沿用旧接线`~270~~ggeA5625~2~0821ed6ea50c44f4909e4be7610e4198~1766729391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "3V3"
+        }
+      ]
+    },
+    "J2": {
+      "header": "LIB~4110.5~3122.5~package`BATTERY_WIRE_2PAD_A5`Contributor`eda_htyqpfoe`说明`1电池正极左，2负极右；沿用原1.5x2.0mm单焊盘、1.8mm间距；线径、电流、应力释放和禁开钢网须审核`link``nameAlias`Value`Value`单节锂电池焊盘`spicePre`J`spiceSymbolName`单节锂电池焊盘`Manufacturer Part`单节锂电池焊盘`Package candidate`BATTERY_WIRE_2PAD_COMPACT`审查备注`外接带过充、过放及短路保护的4.2V单节电池`装配状态`装配`~180~~ggeA5739~2~b03ed2930307411c83f764c7d1a2ab2d~1789542820~0~~yes~~",
+      "pads": [
+        {
+          "number": "1",
+          "net": "BAT_P"
+        },
+        {
+          "number": "2",
+          "net": "GND"
+        }
+      ]
+    },
+    "SW1": {
+      "header": "LIB~4099.5~3070.0906~package`BATTERY_WIRE_3PAD_COMPACT`Contributor`eda_htyqpfoe`nameAlias`Value`Value`电源开关焊盘`spicePre`SW`spiceSymbolName`电源开关焊盘`Manufacturer Part`电源开关焊盘`Package candidate`SWITCH_WIRE_3PAD_COMPACT`审查备注``装配状态`装配`封装来源`SCH-A3 / SW1；只复用焊盘几何，不沿用旧接线`~180~~ggeA5648~2~494a78c2e9cf418fa55387e9294a616a~1789459802~0~~yes~~",
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND"
+        },
+        {
+          "number": "2",
+          "net": "REG_EN"
+        },
+        {
+          "number": "3",
+          "net": "VSYS"
+        }
+      ]
+    },
+    "R11": {
+      "header": "LIB~4139.5~3106~package`R0402`Contributor`lcsc`link`https://item.szlcsc.com/323315.html`3DModel`R0402_L1.0-W0.5-H0.4`nameAlias`Value`Value`100k`spicePre`R`spiceSymbolName`100k`Manufacturer Part`100k`Package candidate`0402`审查备注``装配状态`装配`封装来源`SCH-A3 / R7；只复用焊盘几何，不沿用旧接线`~270~~ggeA5847~2~fafd024f554e426eb74cf4a204aa88b0~1733220391~0~~yes~~",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND"
+        },
+        {
+          "number": "1",
+          "net": "REG_EN"
+        }
+      ]
+    }
+  },
+  "expected_after_minimal_change": {
+    "components": 41,
+    "nets": 20,
+    "smt_count": 36,
+    "actual_change_applied": false
+  },
+  "usb_current_scenes_mA_excluding_auxiliary": [
+    {
+      "system": 100,
+      "old_including_nominal_CC_charge": 209.0909090909091,
+      "new_without_charge": 100
+    },
+    {
+      "system": 200,
+      "old_including_nominal_CC_charge": 309.0909090909091,
+      "new_without_charge": 200
+    },
+    {
+      "system": 300,
+      "old_including_nominal_CC_charge": 409.0909090909091,
+      "new_without_charge": 300
+    },
+    {
+      "system": 400,
+      "old_including_nominal_CC_charge": 509.0909090909091,
+      "new_without_charge": 400
+    },
+    {
+      "system": 500,
+      "old_including_nominal_CC_charge": 609.0909090909091,
+      "new_without_charge": 500
+    }
+  ],
+  "limits": [
+    "不把SGM40567当电池保护IC；移除充电器仍须保持原带保护电池要求",
+    "现J2为飞线焊盘，可拆通过板外引线插头实现，具体插头待电池确定",
+    "删除USB_5V/BAT_P/GND通往U4的支线前逐段检查共享节点，不能删除整条共享电源网",
+    "新增数据不代替原生DRC/ERC、保存重开和新BOM/Gerber验证",
+    "Q1间距提示保留，移除U4不会消除该问题"
+  ]
+}

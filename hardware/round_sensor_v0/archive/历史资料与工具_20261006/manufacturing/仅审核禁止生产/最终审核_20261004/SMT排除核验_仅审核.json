@@ -1,0 +1,21 @@
+{
+  "status": "仅审核；坐标字段原样保留；ANT1吸取中心和器件方向仍待终审",
+  "input": "CPL_工作板_原生_仅审核_20261004.csv",
+  "input_sha256": "30574e4a1920b21bd4115b31189ba603597bf9e6d6428100aead78e235c1cb20",
+  "output": "CPL_38件SMT_仅审核_20261004.csv",
+  "output_sha256": "5c1c17655946f0a4a5c7805f8f2086a6dc51491db70e3b960184c6c8711c9bf9",
+  "counts": {
+    "total": 38,
+    "top": 6,
+    "bottom": 32
+  },
+  "excluded": {
+    "C30": "不装配，RF匹配预留",
+    "C31": "不装配，RF匹配预留",
+    "J2": "电池手焊焊盘",
+    "J4": "笔头四线手焊焊盘",
+    "SW1": "外接开关手焊焊盘"
+  },
+  "changes": "仅排除五行；UTF-16制表符转UTF-8带BOM逗号CSV；其余单元格逐值不变。未改角度、镜像、原点、Mid/Ref/Pad坐标。",
+  "production_released": false
+}

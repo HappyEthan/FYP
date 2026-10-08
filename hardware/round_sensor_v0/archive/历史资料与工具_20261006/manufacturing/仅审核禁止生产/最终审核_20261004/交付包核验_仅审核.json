@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-04",
+  "package": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004.zip",
+  "sha256": "6de3134d3d32986897a3124119c481f2d888d23c94e01f75ef4200b7f7bb7d39",
+  "bytes": 15883606,
+  "archive_integrity": "pass",
+  "manifest_hashes": "all pass",
+  "file_count": 36,
+  "single_Gerber_BOM_CPL": true,
+  "production_released": false
+}

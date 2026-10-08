@@ -1,0 +1,63 @@
+{
+  "status": "Only review; max C9 body vs nominal neighbor models; no solder/placement/pen tolerance included",
+  "source": "hardware/round_sensor_v0/easyeda_std/C9替料_20261005/PCB_C9替料_保存重开_20261005.json",
+  "C9": {
+    "MPN": "GRM155R61A475MEAAD",
+    "nominal_LWT_mm": [
+      1,
+      0.5,
+      0.5
+    ],
+    "tolerance_mm": 0.15,
+    "max_LWT_mm": [
+      1.15,
+      0.65,
+      0.65
+    ],
+    "center_source_y_down_mm": [
+      31.179008000000103,
+      -77.77098999999998
+    ],
+    "angle_source": "270",
+    "layer": "Bottom",
+    "model": "C0402_L1.0-W0.5-H0.5",
+    "nonpolar": true
+  },
+  "board": {
+    "center_mm": [
+      22.9999540000001,
+      -78.99984200000003
+    ],
+    "radius_mm": 8.999982,
+    "thickness_candidate_mm": 0.8
+  },
+  "maximum_body_edge_margin_mm": 0.3067192941558794,
+  "nearest_same_side_nominal_models": [
+    {
+      "ref": "U5",
+      "nominal_model": "WSON-6_L2.0-W2.0-H0.8-P0.65",
+      "gap_mm": 0.507027800000035
+    },
+    {
+      "ref": "R11",
+      "nominal_model": "R0402_L1.0-W0.5-H0.4",
+      "gap_mm": 1.0348959227528662
+    },
+    {
+      "ref": "C10",
+      "nominal_model": "C0402_L1.0-W0.5-H0.5",
+      "gap_mm": 3.5531307546240223
+    },
+    {
+      "ref": "D1",
+      "nominal_model": "X1SON-2_L1.0-W0.6-P0.65-BI-1",
+      "gap_mm": 4.509001000000012
+    }
+  ],
+  "limits": [
+    "nominal model adjacency is not full maximum package or factory placement clearance guarantee",
+    "maximum C9 0.65mm remains below existing U5 nominal0.8mm and U3 nominal0.9mm bottom envelope",
+    "height increase0.10mm from old0.55max; current model0.5nominal remains physically plausible; use0.65bound for enclosure",
+    "current pads and paste retained; assembly fit/fillet and supplier machine acceptance pending"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "仅审核；已补充板外充电实施后的当前状态，曲线原件未变，未换C9或放行生产",
+  "files": [
+    {
+      "name": "2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8082,
+      "sha256": "0aba8a5f93d26c3b1284ed5597f5ef6b8332b9b05a77f440e14ed3b2c1ceb822"
+    },
+    {
+      "name": "4.7uF候选_DC5.5V_AC10mV_原厂曲线.png",
+      "bytes": 17857,
+      "sha256": "197407a0d207ff5a964d65f2b36a62fc63f21e41757ae7253f0318027ad23e39"
+    },
+    {
+      "name": "4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8307,
+      "sha256": "0e41a60fcfa562ad1e4e07634335bb23d6e71f854a71024635ff91581fcd2e8e"
+    },
+    {
+      "name": "原1uF_DC5.5V_AC10mV_原厂曲线.png",
+      "bytes": 21926,
+      "sha256": "bb26f0eaeb0654737a80d4df504ca18c6d81f83a13317de9e75dfba5dc52c921"
+    },
+    {
+      "name": "原1uF_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8069,
+      "sha256": "60d4e8a5269077d2821ee61e9bbf319b1a1e3d2f417aa94d318e9161d9372928"
+    },
+    {
+      "name": "本轮结论与变更建议_仅审核.md",
+      "bytes": 9192,
+      "sha256": "20905621368a7c45282037d1d1df6d9b04c5c28b8d085e78ea9d2505fd5c1b25"
+    },
+    {
+      "name": "组合曲线审核_仅审核.json",
+      "bytes": 6785,
+      "sha256": "492a3210cd0973a4e0381a187808f0f348bd7aaba27a8b5e920551d3e5fead3c"
+    }
+  ]
+}

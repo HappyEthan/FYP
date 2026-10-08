@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-04",
+  "native_backup_generated": "21:02:02",
+  "backup_sha256": "c91c8a86b55d78f7146cd22afbae21283beb9321598089f3afa9eb8e28bbf746",
+  "cloud_PCB_sha256": "aefc262dc3cc678d01deddbd0d5cb2837aaa77f366b1c6f4b096852e01ad1dcc",
+  "matches_adopted_button_geometry": false,
+  "cloud_all_shapes_equal_to_pre_button_recovery": true,
+  "conclusion": "FAIL: batch backup still returns pre-button board, including old SW3 and old EN routing. Cause remains unresolved; do not overwrite local adopted button board. Native SW3 audit remark was edited before this request, but is also absent from batch backup.",
+  "ui_observations": [
+    "Correct current workdoc name; native SW3 X17.700 Y74.500 angle180 (bottom).",
+    "Native audit remark edit generated dirty star; saving cleared star.",
+    "Project update time shown 21:00:30; backup notification 21:02:02.",
+    "Temporary NEW_PCB closed via 不保存; no extra cloud PCB created.",
+    "Right-click coordinate actions failed with windowNotFoundAtPosition; requested user to foreground EDA."
+  ],
+  "native_DRC_this_turn": "Not rerun; no geometry/rule changes in this turn. Reuse previous button native 21/21 and Q1 only as dated evidence."
+}

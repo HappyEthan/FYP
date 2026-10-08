@@ -1,0 +1,118 @@
+{
+  "gerber_sha256": "1607eada8838d3a60485c268a7a5e6f311b536bf47c3fac75a56dfa37b6cbad6",
+  "old_gerber_sha256": "f0ea504fdd490eb46ba1740e9a730fee03d003b60422a5d51f8ab2de977d3a83",
+  "layers": {
+    "Drill_NPTH_Through.DRL": {
+      "drills_exact_geometry": true,
+      "count": 2
+    },
+    "Drill_PTH_Through.DRL": {
+      "drills_exact_geometry": true,
+      "count": 85
+    },
+    "Drill_PTH_Through_Via.DRL": {
+      "drills_exact_geometry": true,
+      "count": 81
+    },
+    "Gerber_TopLayer.GTL": {
+      "geometries_identical": true,
+      "old_primitives": 307,
+      "new_primitives": 307
+    },
+    "Gerber_BottomLayer.GBL": {
+      "geometries_identical": true,
+      "old_primitives": 416,
+      "new_primitives": 416
+    },
+    "Gerber_TopSilkscreenLayer.GTO": {
+      "geometries_identical": true,
+      "old_primitives": 19,
+      "new_primitives": 19
+    },
+    "Gerber_BottomSilkscreenLayer.GBO": {
+      "geometries_identical": false,
+      "old_primitives": 29,
+      "new_primitives": 32
+    },
+    "Gerber_TopPasteMaskLayer.GTP": {
+      "geometries_identical": true,
+      "old_primitives": 82,
+      "new_primitives": 82
+    },
+    "Gerber_BottomPasteMaskLayer.GBP": {
+      "geometries_identical": true,
+      "old_primitives": 95,
+      "new_primitives": 95
+    },
+    "Gerber_TopSolderMaskLayer.GTS": {
+      "geometries_identical": true,
+      "old_primitives": 90,
+      "new_primitives": 90
+    },
+    "Gerber_BottomSolderMaskLayer.GBS": {
+      "geometries_identical": true,
+      "old_primitives": 97,
+      "new_primitives": 97
+    },
+    "Gerber_BoardOutlineLayer.GKO": {
+      "geometries_identical": true,
+      "old_primitives": 4,
+      "new_primitives": 4
+    },
+    "Gerber_DocumentLayer.GDL": {
+      "geometries_identical": false,
+      "old_primitives": 284,
+      "new_primitives": 290
+    },
+    "Gerber_InnerLayer1.G1": {
+      "geometries_identical": true,
+      "old_primitives": 122,
+      "new_primitives": 122
+    },
+    "Gerber_InnerLayer2.G2": {
+      "geometries_identical": true,
+      "old_primitives": 190,
+      "new_primitives": 190
+    }
+  },
+  "labels": [
+    {
+      "text": "BOOT",
+      "cap_height_mm": 0.9499999999200001,
+      "stroke_mm": 0.127,
+      "actual_bbox_source_mm": [
+        14.57150000096002,
+        -79.76475000027996,
+        15.648500000880047,
+        -76.64525000104
+      ],
+      "mask_clearance_mm": 0.16078999911995592,
+      "board_clearance_mm": 0.2636042095232485,
+      "native_silk_covers_label_fraction": 0.9949095819362935,
+      "native_vs_source_hausdorff_mm": 0.0013419967272546639,
+      "native_silk_covers_source_with_0_005mm_buffer": 0.9999999999999997,
+      "native_label_mask_clearance_mm": 0.16086491767563138
+    },
+    {
+      "text": "RESET",
+      "cap_height_mm": 0.75000000114,
+      "stroke_mm": 0.127,
+      "actual_bbox_source_mm": [
+        14.836489999299964,
+        -76.23850340026,
+        17.96348999877997,
+        -75.36150339911995
+      ],
+      "mask_clearance_mm": 0.1526710012200283,
+      "board_clearance_mm": 0.28813366943178864,
+      "native_silk_covers_label_fraction": 0.994903815360304,
+      "native_vs_source_hausdorff_mm": 0.0013408028933235032,
+      "native_silk_covers_source_with_0_005mm_buffer": 0.9999999999999998,
+      "native_label_mask_clearance_mm": 0.15278099999999742
+    }
+  ],
+  "bottom_silk_to_mask_overlap_mm2": 0.0,
+  "bottom_silk_to_mask_0_15mm_neighborhood_overlap_mm2": 0.0,
+  "bottom_silk_minimum_mask_clearance_mm": 0.15278099999999742,
+  "scope": "Finite current Gerber geometry and label check; factory DFM and print tolerances not accepted. PCB 0.8mm candidate remains."
+}

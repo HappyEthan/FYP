@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-04",
+  "status": "Applied to sole working board, saved, closed/reopened, source equivalence verified",
+  "document_id": "cca094630ebf453c98ae64b900f0d7f0",
+  "document_title": "PCB_圆形传感板_SCH_A5 copy",
+  "inputs": {
+    "before": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_钢网写回前_现场确认_20261004.json",
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16"
+    },
+    "candidate": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_本地候选_20261004.json",
+      "sha256": "0ebd54c003d610cbde2bfb19c2a741356778e310f422159b5763a1b5ed5f323a"
+    },
+    "native_candidate": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_原生候选回读_20261004.json",
+      "sha256": "069464569ead70a3d0e90dd9dc9df5576e924ed67f46788bfa080c78de648738"
+    },
+    "saved_reopened": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json",
+      "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8"
+    }
+  },
+  "changes": [
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "pad_id": "gge2985",
+      "field": "paste expansion",
+      "before_native": "0",
+      "after_native": "-11.811024",
+      "after_mm": -3
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "pad_id": "gge3000",
+      "field": "paste expansion",
+      "before_native": "0",
+      "after_native": "-11.811024",
+      "after_mm": -3
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "pad_id": "gge3015",
+      "field": "paste expansion",
+      "before_native": "0",
+      "after_native": "-11.811024",
+      "after_mm": -3
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "pad_id": "gge1962",
+      "field": "paste expansion",
+      "before_native": "0",
+      "after_native": "-11.811024",
+      "after_mm": -3
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "pad_id": "gge1977",
+      "field": "paste expansion",
+      "before_native": "0",
+      "after_native": "-11.811024",
+      "after_mm": -3
+    }
+  ],
+  "native_DRC": {
+    "parts": 43,
+    "nets_connected": 21,
+    "nets_total": 21,
+    "remaining": [
+      {
+        "pair": [
+          "gge2100",
+          "gge2115"
+        ],
+        "actual_display_mm": 0.14,
+        "rule_display_mm": 0.15,
+        "ref": "Q1"
+      }
+    ],
+    "rules_relaxed": false,
+    "ignored_errors": false,
+    "run_after_reopen": true
+  },
+  "temporary_candidate": "Validated in unsaved NEW_PCB; native Gerber refused until save; did not save a new cloud PCB",
+  "unchanged": [
+    "copper pads",
+    "tracks",
+    "vias",
+    "pours/cache",
+    "all 40 models",
+    "placements",
+    "BOM attributes",
+    "CPL-relevant fields",
+    "DRC rules",
+    "schematic"
+  ],
+  "final_Gerber": "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+  "production_released": false
+}

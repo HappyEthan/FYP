@@ -1,0 +1,199 @@
+{
+  "source_sha256": "35847c6648fadef479d587b9e3e2e851e8a7c41e90954f1ff7c943148e100c07",
+  "candidate_sha256": "5af552666b3c8140ddfe3b0a3ad6246a9f84ff036272486a704d0a130a87e2a3",
+  "changes": [
+    {
+      "ref": "C30",
+      "id": "gge1071",
+      "old_layer": "3",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C30",
+      "id": "gge1074",
+      "old_layer": "3",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C30",
+      "id": "gge1077",
+      "old_layer": "3",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C30",
+      "id": "gge1080",
+      "old_layer": "3",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C1",
+      "id": "gge120",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C1",
+      "id": "gge123",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C1",
+      "id": "gge126",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C1",
+      "id": "gge129",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C2",
+      "id": "gge216",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C2",
+      "id": "gge219",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C2",
+      "id": "gge222",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C2",
+      "id": "gge225",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C3",
+      "id": "gge312",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C3",
+      "id": "gge315",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C3",
+      "id": "gge318",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C3",
+      "id": "gge321",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C5",
+      "id": "gge504",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C5",
+      "id": "gge507",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C5",
+      "id": "gge510",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C5",
+      "id": "gge513",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C6",
+      "id": "gge600",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C6",
+      "id": "gge603",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C6",
+      "id": "gge606",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C6",
+      "id": "gge609",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C7",
+      "id": "gge696",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C7",
+      "id": "gge699",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C7",
+      "id": "gge702",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C7",
+      "id": "gge705",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C10",
+      "id": "gge888",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C10",
+      "id": "gge891",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C10",
+      "id": "gge894",
+      "old_layer": "4",
+      "new_layer": "12"
+    },
+    {
+      "ref": "C10",
+      "id": "gge897",
+      "old_layer": "4",
+      "new_layer": "12"
+    }
+  ],
+  "scope": "ARC layer field only; copper, models, text, pads and all other data preserved"
+}

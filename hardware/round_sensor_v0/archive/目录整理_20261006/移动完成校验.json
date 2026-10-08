@@ -1,0 +1,18 @@
+{
+  "files": 641,
+  "bytes": 201263204,
+  "every_move_sha256_equal": true,
+  "permanent_deletions": 0,
+  "current_source_hashes_preserved": {
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1修改前_五页原生回读_20261006.json": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1",
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json": "b45751ba534a0a78d20714e056650274dc8f70d5eed32a22a7c11f110a2bbde4",
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1修改前_原生回读_20261006.json": "104338789cb0e09d8fe32ea936048fd769a2379924382ee0988ad800f5a0006b",
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_五页保存重开_20261006.json": "452ec9de62948e2e5ad1d838119dbd42c8f4be2ac4f9048427290503481b674b",
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_最终五页回读_20261006.json": "2a1a585090742c89eee72219f31674d902c01ce4c85764fcc8b92ee54a25dfff",
+    "easyeda_std/Q1直接修复_20261006/Q1候选几何初筛_仅审核.json": "4587122ffe70f15a2ff93df9108c19707fcbfb1d7e8a327faf97fae802aafc40",
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json": "01bdc6f3ebbf06956df64acd06eedf64aa8167896c395bc4b5d5ec3b47a1077b",
+    "easyeda_std/Q1直接修复_20261006/Q1直接修复_整图逐脚核验_保存重开.json": "e4a9dda7f43bc48ba85a901f0304be1e70fb0c8f337e2a7c34e12ad0038edc9b",
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生整图网表_20261006.net": "97afcf53ce05125c163c0e53e548f134fcbf52f9fea3311625c137fc01cb3c29",
+    "easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_个人库保存重开_20261006.json": "ffdac5167b2323ea70f2f6f551c884f20f5755d86ef7d6978bb75ec19059b566"
+  }
+}

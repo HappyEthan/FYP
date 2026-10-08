@@ -1,0 +1,10 @@
+{
+  "package_sha256": "6de3134d3d32986897a3124119c481f2d888d23c94e01f75ef4200b7f7bb7d39",
+  "manifest_count": 34,
+  "hash_mismatches": [],
+  "zip_test": null,
+  "PCB_matches_manifest": true,
+  "schematic_matches_manifest": true,
+  "gerber_matches_manifest": true,
+  "scope": "File integrity and input identity only; not correctness of report conclusions or design"
+}

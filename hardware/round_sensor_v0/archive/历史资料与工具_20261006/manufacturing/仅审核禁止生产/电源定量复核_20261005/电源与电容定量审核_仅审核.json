@@ -1,0 +1,324 @@
+{
+  "date": "2026-10-05",
+  "status": "仅审核，生产未放行",
+  "scope": "最新保存PCB的只读电源预算及电容曲线审核；未操作在线EDA，未新跑DRC。",
+  "source": "hardware/round_sensor_v0/easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+  "source_sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+  "component_count": 43,
+  "current_power_parts": {
+    "U4": {
+      "value": "SGM40567-4.2XG/TR",
+      "pins": {
+        "A1": "BAT_P",
+        "A2": "USB_5V",
+        "B1": "GND",
+        "B2": "",
+        "C1": "U4_C1",
+        "C2": "GND"
+      }
+    },
+    "D4": {
+      "value": "LMBR4010BST5G",
+      "pins": {
+        "1": "VSYS",
+        "2": "USB_5V"
+      }
+    },
+    "Q1": {
+      "value": "LP0404N3T5G",
+      "pins": {
+        "1": "BAT_P",
+        "2": "USB_5V",
+        "3": "VSYS"
+      }
+    },
+    "C6": {
+      "value": "1uF / 16V",
+      "pins": {
+        "2": "GND",
+        "1": "USB_5V"
+      }
+    },
+    "C7": {
+      "value": "1uF / 10V",
+      "pins": {
+        "2": "GND",
+        "1": "BAT_P"
+      }
+    },
+    "C9": {
+      "value": "1uF / 10V",
+      "pins": {
+        "2": "GND",
+        "1": "VSYS"
+      }
+    },
+    "C10": {
+      "value": "1uF / 10V",
+      "pins": {
+        "2": "GND",
+        "1": "3V3"
+      }
+    },
+    "R5": {
+      "value": "4.7k",
+      "pins": {
+        "2": "I2C_SDA",
+        "1": "3V3"
+      }
+    },
+    "R6": {
+      "value": "4.7k",
+      "pins": {
+        "2": "I2C_SCL",
+        "1": "3V3"
+      }
+    },
+    "R9": {
+      "value": "100k",
+      "pins": {
+        "2": "GND",
+        "1": "USB_5V"
+      }
+    },
+    "R10": {
+      "value": "220k / 1%",
+      "pins": {
+        "2": "GND",
+        "1": "U4_C1"
+      }
+    },
+    "R11": {
+      "value": "100k",
+      "pins": {
+        "2": "GND",
+        "1": "REG_EN"
+      }
+    },
+    "U5": {
+      "value": "TLV75533PDRVR",
+      "pins": {
+        "1": "3V3",
+        "2": "",
+        "3": "GND",
+        "4": "REG_EN",
+        "5": "",
+        "6": "VSYS",
+        "7": "GND"
+      }
+    }
+  },
+  "references": [
+    {
+      "file": "hardware/round_sensor_v0/references/Murata_GRM155R61A105KE15_characteristics_20210118_chipdip.pdf",
+      "sha256": "67753feb6de8634e9b99ede426866bc073d7f7151f4276532025cb9cc16eb4b8",
+      "url": "https://static.chipdip.ru/lib/892/DOC031892571.pdf"
+    },
+    {
+      "file": "hardware/round_sensor_v0/references/Murata_GRM155R61C105KA12_curve_20131001_octopart.pdf",
+      "sha256": "f57e041e5e17d645b373b90bf262fab5bbfa0c027f14c5357fe2ee8cc085bc9f",
+      "url": "https://datasheet.octopart.com/GRM155R61C105KA12D-Murata-datasheet-22975622.pdf"
+    },
+    {
+      "file": "hardware/round_sensor_v0/references/esp32-s3_chip_current.pdf",
+      "sha256": "2d5a7cb7fd559d8d972bd88db32669c0196d23f22d7afaafb0f63d099b589a3f",
+      "url": "https://documentation.espressif.com/esp32-s3_datasheet_en.pdf"
+    },
+    {
+      "file": "hardware/round_sensor_v0/references/esp32-s3-pico-1.pdf",
+      "sha256": "44daca9121111a9c7df437e18c3c153258a20e68fe57fcd3bd9be593ad162979",
+      "url": "https://www.espressif.com/documentation/esp32-s3-pico-1_datasheet_en.pdf"
+    },
+    {
+      "file": "hardware/round_sensor_v0/references/tlv755p.pdf",
+      "sha256": "c0fe7be9fea4e4c8d933142f59758f7a951e195a45ca4e7e17684153da018cbb",
+      "url": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf"
+    },
+    {
+      "file": "hardware/round_sensor_v0/references/sgm40567.pdf",
+      "sha256": "19f44476cba9a27dbde9ca29e8f729c91381648c0d57545b2992f6f41abe38a9",
+      "url": "https://www.sg-micro.com/rect/assets/e95e555a-a8a2-4761-b86a-6554dff2d8ed/SGM40567.pdf"
+    }
+  ],
+  "charge_nominal_mA": 109.0909090909091,
+  "charge_tolerance": "220k电阻±1%不代表完整充电精度；不从120k/600k表点插值保证。",
+  "USB500mA_remaining_system_mA_no_aux": 390.9090909090909,
+  "power_scenarios": [
+    {
+      "system_current_mA_scenario": 100.0,
+      "USB_total_mA_excluding_aux": 209.09,
+      "LDO_loss_W_USB5_D4_0p3": 0.14,
+      "D4_loss_W_assumed": 0.03,
+      "charger_loss_W_BAT3": 0.218,
+      "power_components_loss_W": 0.388,
+      "power_components_loss_W_USB5p5_BAT3": 0.493,
+      "Q1_drop_V_25C_model": 0.067,
+      "battery_V_to_maintain_nominal3p3_model_not_cutoff": 3.41
+    },
+    {
+      "system_current_mA_scenario": 200.0,
+      "USB_total_mA_excluding_aux": 309.09,
+      "LDO_loss_W_USB5_D4_0p3": 0.28,
+      "D4_loss_W_assumed": 0.06,
+      "charger_loss_W_BAT3": 0.218,
+      "power_components_loss_W": 0.558,
+      "power_components_loss_W_USB5p5_BAT3": 0.713,
+      "Q1_drop_V_25C_model": 0.134,
+      "battery_V_to_maintain_nominal3p3_model_not_cutoff": 3.52
+    },
+    {
+      "system_current_mA_scenario": 300.0,
+      "USB_total_mA_excluding_aux": 409.09,
+      "LDO_loss_W_USB5_D4_0p3": 0.42,
+      "D4_loss_W_assumed": 0.09,
+      "charger_loss_W_BAT3": 0.218,
+      "power_components_loss_W": 0.728,
+      "power_components_loss_W_USB5p5_BAT3": 0.933,
+      "Q1_drop_V_25C_model": 0.201,
+      "battery_V_to_maintain_nominal3p3_model_not_cutoff": 3.63
+    },
+    {
+      "system_current_mA_scenario": 400.0,
+      "USB_total_mA_excluding_aux": 509.09,
+      "LDO_loss_W_USB5_D4_0p3": 0.56,
+      "D4_loss_W_assumed": 0.12,
+      "charger_loss_W_BAT3": 0.218,
+      "power_components_loss_W": 0.898,
+      "power_components_loss_W_USB5p5_BAT3": 1.153,
+      "Q1_drop_V_25C_model": 0.268,
+      "battery_V_to_maintain_nominal3p3_model_not_cutoff": 3.74
+    },
+    {
+      "system_current_mA_scenario": 500.0,
+      "USB_total_mA_excluding_aux": 609.09,
+      "LDO_loss_W_USB5_D4_0p3": 0.7,
+      "D4_loss_W_assumed": 0.15,
+      "charger_loss_W_BAT3": 0.218,
+      "power_components_loss_W": 1.068,
+      "power_components_loss_W_USB5p5_BAT3": 1.373,
+      "Q1_drop_V_25C_model": 0.335,
+      "battery_V_to_maintain_nominal3p3_model_not_cutoff": 3.85
+    }
+  ],
+  "power_notes": [
+    "USB总流另加U4/U5静态、电阻泄放、CC/保护等，不把场景列当测量值。",
+    "109mA仅恒流模型；非预充、恒压、热限流或SGM二极管充电状态的通用上限。",
+    "在已经允许500mA的供电条件下，300mA场景约有91mA名义差额；无枚举前/暂停授权。",
+    "低电量公式组合Q1 25C/.67ohm与LDO至85C 215mV@500mA线性近似，不能当全温保证或固件关机阈值。",
+    "5.5V为高端电压灵敏度；C9不以D4固定0.3V保证最高偏压，轻载可能更接近VBUS。",
+    "500mA是LDO推荐输出上限；不能用560mA电流限制下限扩充连续额定。",
+    "热表为器件电损耗，不是温升；18mm封闭笔杆需要实测。"
+  ],
+  "loads": {
+    "ESP32S3_chip_BLE_peak_reference_mA": {
+      "0dBm": 176,
+      "9dBm": 193,
+      "21dBm_reference_not_PICO_target": 335,
+      "RX_CPU_idle": 93
+    },
+    "chip_test_conditions": "3.3V/25C、TX100%占空；PICO封装和存储器不是同一个测量边界；不重复加整颗CPU表电流。",
+    "PICO_recommended_supply_mA": 500,
+    "two_MLX_conversion_max_mA": 8,
+    "MLX_axes_sequential_not_add_XYZ": true,
+    "IMU_typical_mA_at1p8V_25C": 0.55,
+    "IMU_is_not_max_or3p3V_guarantee": true,
+    "two_onboard_I2C_pullups_both_low_mA": 1.4042553191489362,
+    "BLE9_plus_sensor_reference_mA_mixed_conditions": 202.95425531914896,
+    "remaining_to300mA_reference_only": 97.04574468085104,
+    "excluded": "PICO存储器/最终固件差额、笔头模块附加器件/上拉、动态峰值；必须实测，不是总峰值保证。"
+  },
+  "capacitor_screen": {
+    "MPN": "GRM155R61A105KE15D",
+    "rating": "1uF10VX5R0402±10%",
+    "LDO_requirement": "C9/C10名义至少1uF；引脚有效>0.47uF，不能误写输入必须有效1uF。",
+    "method": "渲染Murata原厂2021-01-18特性PDF第3页，蓝曲线像素读数；仅取约0.02uF精度。",
+    "pixel_axes": {
+      "x0": 110,
+      "x10": 494,
+      "y_plus20": 882,
+      "y_minus100": 1116
+    },
+    "curve_rows": [
+      {
+        "bias_V": 3,
+        "digitized_typical_uF_not_guaranteed": 0.821,
+        "screen_tolerance10_temperature15_uF": 0.628,
+        "screen_additional_AC10_uF": 0.565
+      },
+      {
+        "bias_V": 3.3,
+        "digitized_typical_uF_not_guaranteed": 0.795,
+        "screen_tolerance10_temperature15_uF": 0.608,
+        "screen_additional_AC10_uF": 0.547
+      },
+      {
+        "bias_V": 3.35,
+        "digitized_typical_uF_not_guaranteed": 0.785,
+        "screen_tolerance10_temperature15_uF": 0.6,
+        "screen_additional_AC10_uF": 0.54
+      },
+      {
+        "bias_V": 4.2,
+        "digitized_typical_uF_not_guaranteed": 0.703,
+        "screen_tolerance10_temperature15_uF": 0.537,
+        "screen_additional_AC10_uF": 0.484
+      },
+      {
+        "bias_V": 4.7,
+        "digitized_typical_uF_not_guaranteed": 0.659,
+        "screen_tolerance10_temperature15_uF": 0.504,
+        "screen_additional_AC10_uF": 0.454
+      },
+      {
+        "bias_V": 5,
+        "digitized_typical_uF_not_guaranteed": 0.631,
+        "screen_tolerance10_temperature15_uF": 0.483,
+        "screen_additional_AC10_uF": 0.434
+      },
+      {
+        "bias_V": 5.25,
+        "digitized_typical_uF_not_guaranteed": 0.608,
+        "screen_tolerance10_temperature15_uF": 0.465,
+        "screen_additional_AC10_uF": 0.418
+      },
+      {
+        "bias_V": 5.5,
+        "digitized_typical_uF_not_guaranteed": 0.59,
+        "screen_tolerance10_temperature15_uF": 0.451,
+        "screen_additional_AC10_uF": 0.406
+      }
+    ],
+    "limits": "典型曲线不是保证值；0.9容差×0.85温度×0.9AC仅敏感度模型，组合非独立保证，未计老化；不得与Nordic已包含DC/AC/温度的曲线再重复降额。",
+    "C10_disposition": "3.3V典型约0.80uF，组合筛查约0.55uF；保留，无必须换料证据，但不是全条件量产验收。",
+    "C9_disposition": "4.7V约0.66uF，容差温度后约0.50uF，再加AC敏感度约0.45uF；5.25/5.5V约0.61/0.59uF，不能关闭上限余量。先取得该料实际组合曲线或有偏压的样品容量测量，未证明原料必然失败，不盲目增容。",
+    "16V_candidate": "GRM155R61C105KA12D原厂2013曲线在4.7-5V约0.4uF，不能当C9更稳健的直接替料；旧图需以当前准确料号数据复核。现C6采用该候选，不把TLV755的0.47uF阈值套到SGM40567上。",
+    "evidence_closed": "取得实际工作电压DC曲线；拒绝只凭更高耐压换料。",
+    "remaining_finite": "C9组合偏压容量或经核实同焊盘替料一项；本轮未将缺资料转为强制电路改动。"
+  },
+  "sample_tests": [
+    {
+      "item": "C9有效容量",
+      "condition": "准确采购批次，3.3/4.7/5.25/5.5V偏压及目标温度、小信号；若直接测在板电容，须排除并联和半导体干扰",
+      "pass": "按TI要求>0.47uF且有余量，不能只测0V1kHz标称值。"
+    },
+    {
+      "item": "供电负载",
+      "condition": "真实USB采集+BLE+两MLX+IMU；0/9dBm和实际最高发射功率、上电、插拔",
+      "pass": "记录峰值、平均、3V3谷值；建议300mA仅初始复核场景，不是已经实现的电流限幅。"
+    },
+    {
+      "item": "电池电压",
+      "condition": "受控电源模拟4.2/3.8/3.6/3.4V及线阻，捕获3V3/VSYS，降压逐步进行",
+      "pass": "PICO供电脚保持推荐范围，目标3.3V稳定，无复位/丢数；测试结果再确定低电量使用边界。"
+    },
+    {
+      "item": "热",
+      "condition": "边充边采集，板外及实际笔杆内，电池充电最耗散点",
+      "pass": "按真实电池/器件额定确认温度，禁止用手册标准板热阻宣称实装通过。"
+    }
+  ],
+  "next_design_gate": "USB固定充电的默认禁止/使能方案和VBUS行为，先完成具体电路与布局方案，再按AGENTS取得新增器件决定。",
+  "source_modified": false,
+  "manufacturing_files_modified": false,
+  "native_DRC_rerun": false
+}

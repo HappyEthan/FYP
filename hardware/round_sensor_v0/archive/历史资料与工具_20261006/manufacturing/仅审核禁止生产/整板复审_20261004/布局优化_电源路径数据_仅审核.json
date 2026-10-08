@@ -1,0 +1,1006 @@
+{
+  "source": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json",
+  "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8",
+  "method": "Selected track-center graph paths, not guaranteed shortest physical copper routes: pad/via annuli ideal contact; misses some mid-segment overlaps; no plane current distribution, via resistance or capacitance/inductance; ground paths exclude pours. Unresolved graph paths are not open-circuit findings. Straight distance is pad-center distance, not wire length.",
+  "paths": [
+    {
+      "net": "VSYS",
+      "start": "D4.1",
+      "end": "U5.6",
+      "straight_pad_centers_mm": 6.188758028070571,
+      "track_length_mm": 9.966718866531066,
+      "distinct_vias_used": 2,
+      "tracks": [
+        "ggeBATCH0928T300",
+        "ggeBATCH0928T301",
+        "ggeBATCH0928T302"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "VSYS",
+      "start": "Q1.3",
+      "end": "U5.6",
+      "straight_pad_centers_mm": 5.4866558243643295,
+      "track_length_mm": 7.155788240046828,
+      "distinct_vias_used": 2,
+      "tracks": [
+        "ggeUSB0928T293",
+        "ggeBATCH0928T301",
+        "ggeBATCH0928T302"
+      ],
+      "widths_mm": [
+        0.1,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "VSYS",
+      "start": "D4.1",
+      "end": "SW1.3",
+      "straight_pad_centers_mm": 12.110618062493636,
+      "track_length_mm": 25.94721616902668,
+      "distinct_vias_used": 3,
+      "tracks": [
+        "ggeBATCH0928T300",
+        "ggeUSB0928T292",
+        "ggeUSB0928T291"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "BAT_P",
+      "start": "J2.1",
+      "end": "Q1.1",
+      "straight_pad_centers_mm": 5.126322828768092,
+      "track_length_mm": 6.452660236687551,
+      "distinct_vias_used": 2,
+      "tracks": [
+        "gge5173171",
+        "ggeUSB0928T350",
+        "gge5173174",
+        "ggeBATCH0928T297",
+        "ggeBATCH0928T296",
+        "ggeBATCH0928T295"
+      ],
+      "widths_mm": [
+        0.25,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "USB_5V",
+      "start": "J1.A9",
+      "end": "D4.2",
+      "straight_pad_centers_mm": 4.08517439964766,
+      "track_length_mm": 7.437283536825318,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeBATCH0928T306",
+        "ggeUSB0928T398",
+        "ggeUSB0928T400",
+        "ggeUSB0928T399"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "3V3",
+      "start": "U5.1",
+      "end": "U1.2",
+      "straight_pad_centers_mm": 11.870922220904,
+      "track_length_mm": 18.159752360710947,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeLDO0929Qshort",
+        "gge5173012",
+        "gge5172934",
+        "gge5172937",
+        "gge5172985",
+        "gge5172982",
+        "gge5172976",
+        "gge5172979",
+        "gge5172970",
+        "gge5172922",
+        "gge5172925",
+        "gge5172931",
+        "ggeBATCH0928T308",
+        "ggeBATCH0928T315",
+        "ggeRF0928T245",
+        "gge5172910"
+      ],
+      "widths_mm": [
+        0.15001,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "3V3",
+      "start": "U5.1",
+      "end": "U1.20",
+      "straight_pad_centers_mm": 7.122575848046182,
+      "track_length_mm": 31.2666542003909,
+      "distinct_vias_used": 6,
+      "tracks": [
+        "ggeLDO0929Qshort",
+        "gge5173012",
+        "gge5172934",
+        "gge5172937",
+        "gge5172985",
+        "gge5172982",
+        "gge5172976",
+        "gge5172979",
+        "gge5172970",
+        "gge5172922",
+        "gge5172925",
+        "gge5172931",
+        "ggeBATCH0928T308",
+        "ggeBATCH0928T315",
+        "ggeRF0928T245",
+        "ggeUSB0928T347",
+        "gge5172901",
+        "gge5173018",
+        "gge5172952",
+        "gge5172898",
+        "ggeUSB0928T381",
+        "ggeUSB0928T382",
+        "ggeUSB0928T294"
+      ],
+      "widths_mm": [
+        0.1,
+        0.15001,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "3V3",
+      "start": "U5.1",
+      "end": "C20.1",
+      "straight_pad_centers_mm": 11.587765946576251,
+      "track_length_mm": 24.684734808266228,
+      "distinct_vias_used": 5,
+      "tracks": [
+        "ggeLDO0929Qshort",
+        "gge5173012",
+        "gge5172934",
+        "gge5172937",
+        "gge5172985",
+        "gge5172982",
+        "gge5172976",
+        "gge5172979",
+        "gge5172970",
+        "gge5172922",
+        "gge5172925",
+        "gge5172931",
+        "ggeBATCH0928T308",
+        "ggeBATCH0928T315",
+        "ggeRF0928T245",
+        "ggeRF0928T246",
+        "ggeRF0928T252"
+      ],
+      "widths_mm": [
+        0.15001,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "MCU_EN",
+      "start": "C1.1",
+      "end": "U1.4",
+      "straight_pad_centers_mm": 5.404383154142605,
+      "track_length_mm": 7.619808757595976,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeUSB0928T341",
+        "ggeUSB0928T242"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "MCU_EN",
+      "start": "R7.2",
+      "end": "U1.4",
+      "straight_pad_centers_mm": 6.434616429024814,
+      "track_length_mm": 7.261834918323207,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeUSB0928T241",
+        "ggeUSB0928T242"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "MCU_EN",
+      "start": "SW3.1",
+      "end": "U1.4",
+      "straight_pad_centers_mm": 14.373974989254034,
+      "track_length_mm": 19.961383085543993,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeUSB0928T240",
+        "ggeUSB0928T244",
+        "ggeUSB0928T245",
+        "ggeUSB0928T242"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "BOOT_N",
+      "start": "R8.2",
+      "end": "U1.5",
+      "straight_pad_centers_mm": 6.480596073318873,
+      "track_length_mm": 18.124634710574735,
+      "distinct_vias_used": 8,
+      "tracks": [
+        "ggeUSB0928T266",
+        "ggeUSB0928T267",
+        "ggeUSB0928T268",
+        "ggeUSB0928T269",
+        "ggeUSB0928T238"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "BOOT_N",
+      "start": "SW2.1",
+      "end": "U1.5",
+      "straight_pad_centers_mm": 6.162011753009851,
+      "track_length_mm": 7.959812799881828,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeUSB0928T236",
+        "ggeUSB0928T237",
+        "ggeUSB0928T238"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "U4_C1",
+      "start": "R10.1",
+      "end": "U4.C1",
+      "straight_pad_centers_mm": 2.7609872381725857,
+      "track_length_mm": 7.397866078390108,
+      "distinct_vias_used": 2,
+      "tracks": [
+        "ggeUSB0928T354",
+        "ggeUSB0928T353",
+        "ggeUSB0928T352"
+      ],
+      "widths_mm": [
+        0.1
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "I2C_SDA",
+      "start": "U1.6",
+      "end": "U2.2",
+      "straight_pad_centers_mm": 1.657311193990225,
+      "track_length_mm": 2.5399841512703647,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeUSB0928T207",
+        "ggeUSB0928T206"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "I2C_SDA",
+      "start": "U1.6",
+      "end": "U3.14",
+      "straight_pad_centers_mm": 7.993977777584344,
+      "track_length_mm": 14.056759452405942,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeUSB0928T207",
+        "ggeUSB0928T216",
+        "ggeUSB0928T215",
+        "ggeUSB0928T209"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "I2C_SDA",
+      "start": "U1.6",
+      "end": "J4.3",
+      "straight_pad_centers_mm": 7.760985128592679,
+      "track_length_mm": 18.371261805532416,
+      "distinct_vias_used": 8,
+      "tracks": [
+        "ggeUSB0928T207",
+        "ggeUSB0928T216",
+        "ggeUSB0928T215",
+        "ggeUSB0928T209",
+        "ggeUSB0928T210",
+        "ggeUSB0928T211",
+        "ggeUSB0928T212"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "I2C_SCL",
+      "start": "U1.7",
+      "end": "U2.1",
+      "straight_pad_centers_mm": 1.6572731825861522,
+      "track_length_mm": 2.5177125231047883,
+      "distinct_vias_used": 1,
+      "tracks": [
+        "ggeUSB0928T225",
+        "ggeUSB0928T224"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "I2C_SCL",
+      "start": "U1.7",
+      "end": "U3.13",
+      "straight_pad_centers_mm": 8.528213294223347,
+      "track_length_mm": 14.064793233735735,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeUSB0928T234",
+        "ggeUSB0928T233",
+        "ggeUSB0928T228",
+        "ggeUSB0928T227"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "I2C_SCL",
+      "start": "U1.7",
+      "end": "J4.4",
+      "straight_pad_centers_mm": 8.738867505402826,
+      "track_length_mm": 10.441446362320404,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeUSB0928T234",
+        "ggeUSB0928T233",
+        "ggeUSB0928T229"
+      ],
+      "widths_mm": [
+        0.08999
+      ],
+      "layers": [
+        "1",
+        "2",
+        "22"
+      ]
+    },
+    {
+      "net": "3V3",
+      "start": "C2.1",
+      "end": "U2.6",
+      "straight_pad_centers_mm": 1.524392177397975,
+      "track_length_mm": 1.8798616614263113,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "ggeUSB0928T355"
+      ],
+      "widths_mm": [
+        0.1
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C2.2",
+      "end": "U2.5",
+      "straight_pad_centers_mm": 1.2390782384404881,
+      "track_length_mm": 1.6699991999998467,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "ggeUSB0928T343",
+        "ggeUSB0928T338"
+      ],
+      "widths_mm": [
+        0.1
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "3V3",
+      "start": "C3.1",
+      "end": "U2.4",
+      "straight_pad_centers_mm": 1.6269520869220917,
+      "track_length_mm": 2.627958421580792,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "gge5173018",
+        "gge5172901"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C3.2",
+      "end": "U2.5",
+      "straight_pad_centers_mm": 3.183553434591941,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C4.1",
+      "end": "U3.8",
+      "straight_pad_centers_mm": 1.6135763581871105,
+      "track_length_mm": 2.257814008440465,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "gge5173024",
+        "gge5173030",
+        "gge5173027"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C4.2",
+      "end": "U3.7",
+      "straight_pad_centers_mm": 1.855909326090902,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C5.1",
+      "end": "U3.5",
+      "straight_pad_centers_mm": 3.3928181701335065,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "GND",
+      "start": "C5.2",
+      "end": "U3.6",
+      "straight_pad_centers_mm": 3.141194127796268,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "USB_5V",
+      "start": "C6.1",
+      "end": "U4.A2",
+      "straight_pad_centers_mm": 2.5624406785320075,
+      "track_length_mm": 4.1936289986672355,
+      "distinct_vias_used": 2,
+      "tracks": [
+        "gge5173042",
+        "ggeUSB0928T316",
+        "ggeUSB0928T321",
+        "ggeUSB0928T351"
+      ],
+      "widths_mm": [
+        0.15,
+        0.25,
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C6.2",
+      "end": "U4.C2",
+      "straight_pad_centers_mm": 2.0896328221408944,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "BAT_P",
+      "start": "C7.1",
+      "end": "U4.A1",
+      "straight_pad_centers_mm": 2.2782123443454494,
+      "track_length_mm": 3.3402744723825526,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "gge5173174",
+        "gge5173171",
+        "ggeUSB0928T350"
+      ],
+      "widths_mm": [
+        0.25,
+        0.25001
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C7.2",
+      "end": "U4.C2",
+      "straight_pad_centers_mm": 1.423937138073449,
+      "track_length_mm": 1.3888325302639715,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "ggeUSB0928T349"
+      ],
+      "widths_mm": [
+        0.1
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "VSYS",
+      "start": "C9.1",
+      "end": "U5.6",
+      "straight_pad_centers_mm": 0.8138831042869773,
+      "track_length_mm": 0.7151815985915198,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "gge5173177"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C9.2",
+      "end": "U5.3",
+      "straight_pad_centers_mm": 2.903527197108451,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C10.1",
+      "end": "U5.1",
+      "straight_pad_centers_mm": 1.6833183406870005,
+      "track_length_mm": 1.6843592686185669,
+      "distinct_vias_used": 0,
+      "tracks": [
+        "ggeLDO0929Qshort"
+      ],
+      "widths_mm": [
+        0.15001
+      ],
+      "layers": [
+        "2"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C10.2",
+      "end": "U5.3",
+      "straight_pad_centers_mm": 1.4197571195137706,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C20.1",
+      "end": "U1.46",
+      "straight_pad_centers_mm": 2.353290244392104,
+      "track_length_mm": 11.859870760350068,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeRF0928T247",
+        "ggeRF0928T246",
+        "ggeRF0928T245",
+        "gge5172907",
+        "ggeBATCH0928T315",
+        "ggeRF0928T254"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "22"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C20.2",
+      "end": "U1.57",
+      "straight_pad_centers_mm": 5.209288886526011,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C20.1",
+      "end": "U1.55",
+      "straight_pad_centers_mm": 2.38812156418812,
+      "track_length_mm": 8.68986211190563,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeRF0928T247",
+        "ggeRF0928T246",
+        "ggeRF0928T245",
+        "gge5172907",
+        "ggeBATCH0928T315",
+        "gge5172913",
+        "ggeRF0928T244"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "22"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C20.2",
+      "end": "U1.57",
+      "straight_pad_centers_mm": 5.209288886526011,
+      "path": "not resolved without copper areas"
+    },
+    {
+      "net": "3V3",
+      "start": "C21.1",
+      "end": "U1.46",
+      "straight_pad_centers_mm": 2.762899539199533,
+      "track_length_mm": 16.35332907193692,
+      "distinct_vias_used": 4,
+      "tracks": [
+        "ggeRF0928T250",
+        "ggeRF0928T251",
+        "ggeRF0928T246",
+        "ggeRF0928T245",
+        "gge5172907",
+        "ggeBATCH0928T315",
+        "ggeRF0928T254"
+      ],
+      "widths_mm": [
+        0.25001
+      ],
+      "layers": [
+        "1",
+        "22"
+      ]
+    },
+    {
+      "net": "GND",
+      "start": "C21.2",
+      "end": "U1.57",
+      "straight_pad_centers_mm": 5.616025008940397,
+      "path": "not resolved without copper areas"
+    }
+  ],
+  "ground_via_nearness": [
+    {
+      "cap": "C1",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.1787052854811353,
+          "center_dist_mm": 0.6551891032129095,
+          "via": "ggeUSB0928V322"
+        },
+        {
+          "edge_gap_mm": 1.134733258370581,
+          "center_dist_mm": 1.699658357479581,
+          "via": "ggeRF0928V256"
+        },
+        {
+          "edge_gap_mm": 1.3610833604762185,
+          "center_dist_mm": 1.998695846794814,
+          "via": "U1.gge4275"
+        }
+      ]
+    },
+    {
+      "cap": "C2",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.7373039874099875,
+          "center_dist_mm": 1.2268733707205013,
+          "via": "ggeUSB0928V323"
+        },
+        {
+          "edge_gap_mm": 1.1226545999999225,
+          "center_dist_mm": 1.6975650185426057,
+          "via": "U1.gge4293"
+        },
+        {
+          "edge_gap_mm": 1.4325706085146357,
+          "center_dist_mm": 2.098127085636623,
+          "via": "U1.gge4284"
+        }
+      ]
+    },
+    {
+      "cap": "C3",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 1.1601196000000158,
+          "center_dist_mm": 1.6301339000494897,
+          "via": "ggeUSB0928V410"
+        },
+        {
+          "edge_gap_mm": 3.1649796999999538,
+          "center_dist_mm": 3.543157541600337,
+          "via": "ggeUSB0928V323"
+        },
+        {
+          "edge_gap_mm": 3.732922986451011,
+          "center_dist_mm": 4.298706586259419,
+          "via": "U1.gge4284"
+        }
+      ]
+    },
+    {
+      "cap": "C4",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.08182105662409815,
+          "center_dist_mm": 0.6243893851648984,
+          "via": "ggeRF0928V258"
+        },
+        {
+          "edge_gap_mm": 3.1454785108890166,
+          "center_dist_mm": 3.7012770343590913,
+          "via": "ggeRF0928V256"
+        },
+        {
+          "edge_gap_mm": 4.069081093676061,
+          "center_dist_mm": 4.613692675631433,
+          "via": "ggeRF0928V260"
+        }
+      ]
+    },
+    {
+      "cap": "C5",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.08167505876492834,
+          "center_dist_mm": 0.5687309913379918,
+          "via": "ggeUSB0928V322"
+        },
+        {
+          "edge_gap_mm": 0.8389111999999059,
+          "center_dist_mm": 1.2921867248159715,
+          "via": "ggeRF0928V256"
+        },
+        {
+          "edge_gap_mm": 1.2649961999999952,
+          "center_dist_mm": 1.8296326853394849,
+          "via": "U1.gge4275"
+        }
+      ]
+    },
+    {
+      "cap": "C6",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.26791785783252675,
+          "center_dist_mm": 0.8316527955521069,
+          "via": "ggeUSB0928V319"
+        },
+        {
+          "edge_gap_mm": 1.022480960919628,
+          "center_dist_mm": 1.4485349009015493,
+          "via": "ggeUSB0928V287"
+        },
+        {
+          "edge_gap_mm": 1.461397031485585,
+          "center_dist_mm": 1.8841503785881866,
+          "via": "ggeUSB0928V327"
+        }
+      ]
+    },
+    {
+      "cap": "C7",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.3890624688007941,
+          "center_dist_mm": 0.8808318923734517,
+          "via": "ggeUSB0928V328"
+        },
+        {
+          "edge_gap_mm": 1.3544911521799285,
+          "center_dist_mm": 1.8443207134021167,
+          "via": "ggeUSB0928VLeftN"
+        },
+        {
+          "edge_gap_mm": 1.6055765678425156,
+          "center_dist_mm": 2.0213446010561142,
+          "via": "ggeUSB0928V329"
+        }
+      ]
+    },
+    {
+      "cap": "C9",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.7091172000000228,
+          "center_dist_mm": 1.1692917491805708,
+          "via": "ggeRF0928V262"
+        },
+        {
+          "edge_gap_mm": 3.8831976610784618,
+          "center_dist_mm": 4.297862408529525,
+          "via": "ggeUSB0928V283"
+        },
+        {
+          "edge_gap_mm": 3.9975929889516446,
+          "center_dist_mm": 4.547455104968564,
+          "via": "ggeRF0928V260"
+        }
+      ]
+    },
+    {
+      "cap": "C10",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.41297859999991715,
+          "center_dist_mm": 0.8633149874740084,
+          "via": "ggeRF0928V260"
+        },
+        {
+          "edge_gap_mm": 1.1915139999999695,
+          "center_dist_mm": 1.5731384653829419,
+          "via": "ggeUSB0928V283"
+        },
+        {
+          "edge_gap_mm": 2.3057865999999265,
+          "center_dist_mm": 2.707663889267692,
+          "via": "ggeUSB0928V326"
+        }
+      ]
+    },
+    {
+      "cap": "C20",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 0.0699007999999317,
+          "center_dist_mm": 0.9486171444259915,
+          "via": "ggeUSB0928V281"
+        },
+        {
+          "edge_gap_mm": 2.8880397010672896,
+          "center_dist_mm": 3.7824318012197304,
+          "via": "ggeUSB0928V322"
+        },
+        {
+          "edge_gap_mm": 2.9707078000000138,
+          "center_dist_mm": 3.9993050881156997,
+          "via": "U1.gge4275"
+        }
+      ]
+    },
+    {
+      "cap": "C21",
+      "nearest_ground_vias": [
+        {
+          "edge_gap_mm": 2.2948899999998815,
+          "center_dist_mm": 2.696611252365574,
+          "via": "ggeUSB0928V281"
+        },
+        {
+          "edge_gap_mm": 2.8928265435650884,
+          "center_dist_mm": 3.327538444012789,
+          "via": "ggeUSB0928V322"
+        },
+        {
+          "edge_gap_mm": 3.3178764050188807,
+          "center_dist_mm": 3.8061016561517826,
+          "via": "ggeRF0928V256"
+        }
+      ]
+    }
+  ]
+}

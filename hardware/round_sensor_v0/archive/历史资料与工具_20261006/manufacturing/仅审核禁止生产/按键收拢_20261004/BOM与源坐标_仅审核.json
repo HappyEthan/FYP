@@ -1,0 +1,2296 @@
+{
+  "status": "仅审核；采购/贴装未放行；禁止生产",
+  "date_hk": "2026-10-01",
+  "snapshot": {
+    "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+    "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+    "bytes": 527992
+  },
+  "counts": {
+    "拟贴装": 38,
+    "DNP": 2,
+    "纯飞线焊盘": 3,
+    "components": 43,
+    "models": 40,
+    "pad_named_nets": 21
+  },
+  "parts": [
+    {
+      "ref": "ANT1",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        29.1499798,
+        -80.6699936
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5786",
+      "pads": [
+        {
+          "number": "1",
+          "net": "R30_2",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4134.764~3080.398~3.937~4.1339~1~R30_2~1~0~4136.7322 3082.4645 4132.7952 3082.4645 4132.7952 3078.3307 4136.7322 3078.3307~180~gge27~0~~Y~0~0~0.2~4134.7637,3080.3976"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4140.571~3086.402~4.1339~8.6614~1~GND~2~0~4142.6376 3090.7323 4138.5038 3090.7323 4138.5038 3082.0709 4142.6376 3082.0709~180~gge42~0~~Y~0~0~0.2~4140.5707,3086.4016"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4128.957~3086.402~4.1339~8.6614~1~GND~3~0~4131.0236 3090.7323 4126.8898 3090.7323 4126.8898 3082.0709 4131.0236 3082.0709~180~gge57~0~~Y~0~0~0.2~4128.9567,3086.4016"
+        }
+      ],
+      "native_value": "U.FL-R-SMT-1 + FXP75.07.0045B",
+      "native_mpn": "U.FL-R-SMT-1 + FXP75.07.0045B",
+      "native_footprint": "U_FL_R_SMT_1_HIROSE_LAND_A5",
+      "candidate": {
+        "manufacturer": "Hirose",
+        "candidate_mpn": "U.FL-R-SMT-1(80)",
+        "historical_domestic_code": "C88374",
+        "pending": "沿用既有工程采购候选；原生混写天线且未落实后缀",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C1",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.257,
+        -83.566
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5150",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.154~3075~1.9685~2.126~2~GND~2~0~4116.1693 3076.063 4118.1378 3076.063 4118.1378 3073.937 4116.1693 3073.937~180~gge138~0~~Y~0~0~0.2000~4117.1534,3075"
+        },
+        {
+          "number": "1",
+          "net": "MCU_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.846~3075~1.9685~2.126~2~MCU_EN~1~0~4112.8622 3076.063 4114.8307 3076.063 4114.8307 3073.937 4112.8622 3073.937~180~gge153~0~~Y~0~0~0.2000~4113.8466,3075"
+        }
+      ],
+      "native_value": "1uF / 10V",
+      "native_mpn": "1uF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R61A105KE15D",
+        "historical_domestic_code": "C76999",
+        "pending": "生命周期及工作偏压依据待核；不自动换料",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C2",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        19.6000116,
+        -83.0000118
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5294",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4095.512~3077.228~1.9685~2.126~2~GND~2~0~4096.4961 3076.1653 4094.5276 3076.1653 4094.5276 3078.2913 4096.4961 3078.2913~0~gge234~0~~Y~0~0~0.2000~4095.5121,3077.2283"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4098.819~3077.228~1.9685~2.126~2~3V3~1~0~4099.8032 3076.1653 4097.8348 3076.1653 4097.8348 3078.2913 4099.8032 3078.2913~0~gge249~0~~Y~0~0~0.2000~4098.8189,3077.2283"
+        }
+      ],
+      "native_value": "100nF / 10V",
+      "native_mpn": "100nF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R71A104KA01D",
+        "historical_domestic_code": "C71687",
+        "pending": "有效容量及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C3",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        16.1499804,
+        -82.0498232
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5305",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4085.236~3080.969~1.9685~2.126~2~GND~2~0~4084.2518 3082.0322 4086.2203 3082.0322 4086.2203 3079.9061 4084.2518 3079.9061~180~gge330~0~~Y~0~0~0.2000~4085.236,3080.9692"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4081.929~3080.969~1.9685~2.126~2~3V3~1~0~4080.9447 3082.0322 4082.9132 3082.0322 4082.9132 3079.9061 4080.9447 3079.9061~180~gge345~0~~Y~0~0~0.2000~4081.9292,3080.9692"
+        }
+      ],
+      "native_value": "100nF / 10V",
+      "native_mpn": "100nF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R71A104KA01D",
+        "historical_domestic_code": "C71687",
+        "pending": "有效容量及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C4",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        29.21,
+        -83.82
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5333",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4135~3072.346~1.9685~2.126~2~GND~2~0~4136.063 3073.3307 4136.063 3071.3622 4133.937 3071.3622 4133.937 3073.3307~270~gge426~0~~Y~0~0~0.2000~4135,3072.3466"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4135~3075.654~1.9685~2.126~2~3V3~1~0~4136.063 3076.6378 4136.063 3074.6693 4133.937 3074.6693 4133.937 3076.6378~270~gge441~0~~Y~0~0~0.2000~4135,3075.6534"
+        }
+      ],
+      "native_value": "100nF / 10V",
+      "native_mpn": "100nF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R71A104KA01D",
+        "historical_domestic_code": "C71687",
+        "pending": "有效容量及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C5",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.257,
+        -82.55
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5344",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.154~3079~1.9685~2.126~2~GND~2~0~4116.1693 3080.063 4118.1378 3080.063 4118.1378 3077.9369 4116.1693 3077.9369~180~gge522~0~~Y~0~0~0.2000~4117.1534,3079"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.846~3079~1.9685~2.126~2~3V3~1~0~4112.8622 3080.063 4114.8307 3080.063 4114.8307 3077.9369 4112.8622 3077.9369~180~gge537~0~~Y~0~0~0.2000~4113.8466,3079"
+        }
+      ],
+      "native_value": "100nF / 10V",
+      "native_mpn": "100nF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R71A104KA01D",
+        "historical_domestic_code": "C71687",
+        "pending": "有效容量及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C6",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        20.701,
+        -73.406
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5683",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4103.154~3115~1.9685~2.126~2~GND~2~0~4102.1693 3116.0629 4104.1378 3116.0629 4104.1378 3113.9369 4102.1693 3113.9369~180~gge618~0~~Y~0~0~0.2000~4103.1534,3115"
+        },
+        {
+          "number": "1",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4099.846~3115~1.9685~2.126~2~USB_5V~1~0~4098.8622 3116.0629 4100.8307 3116.0629 4100.8307 3113.9369 4098.8622 3113.9369~180~gge633~0~~Y~0~0~0.2000~4099.8466,3115"
+        }
+      ],
+      "native_value": "1uF / 16V",
+      "native_mpn": "1uF / 16V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R61C105KA12D",
+        "historical_domestic_code": "C77006",
+        "pending": "USB输入工作偏压下有效容量待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C7",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.257,
+        -73.66
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5725",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.846~3114~1.9685~2.126~2~GND~2~0~4114.8307 3112.937 4112.8622 3112.937 4112.8622 3115.063 4114.8307 3115.063~0~gge714~0~~Y~0~0~0.2000~4113.8466,3114"
+        },
+        {
+          "number": "1",
+          "net": "BAT_P",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.154~3114~1.9685~2.126~2~BAT_P~1~0~4118.1378 3112.937 4116.1693 3112.937 4116.1693 3115.063 4118.1378 3115.063~0~gge729~0~~Y~0~0~0.2000~4117.1534,3114"
+        }
+      ],
+      "native_value": "1uF / 10V",
+      "native_mpn": "1uF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R61A105KE15D",
+        "historical_domestic_code": "C76999",
+        "pending": "生命周期及工作偏压依据待核；不自动换料",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C9",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        31.179008,
+        -77.77099
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5609",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4142.752~3096.161~1.9685~2.126~2~GND~2~0~4143.815 3097.1457 4143.815 3095.1772 4141.689 3095.1772 4141.689 3097.1457~270~gge810~0~~Y~0~0~0.2000~4142.752,3096.1616"
+        },
+        {
+          "number": "1",
+          "net": "VSYS",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4142.752~3099.469~1.9685~2.126~2~VSYS~1~0~4143.815 3100.4528 4143.815 3098.4843 4141.689 3098.4843 4141.689 3100.4528~270~gge825~0~~Y~0~0~0.2000~4142.752,3099.4684"
+        }
+      ],
+      "native_value": "1uF / 10V",
+      "native_mpn": "1uF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R61A105KE15D",
+        "historical_domestic_code": "C76999",
+        "pending": "生命周期及工作偏压依据待核；不自动换料",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C10",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        27.051,
+        -78.867
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5625",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4126.5~3091.847~1.9685~2.126~2~GND~2~0~4127.563 3092.8308 4127.563 3090.8623 4125.437 3090.8623 4125.437 3092.8308~270~gge906~0~~Y~0~0~0.2000~4126.5,3091.8466"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4126.5~3095.154~1.9685~2.126~2~3V3~1~0~4127.563 3096.1379 4127.563 3094.1694 4125.437 3094.1694 4125.437 3096.1379~270~gge921~0~~Y~0~0~0.2000~4126.5,3095.1534"
+        }
+      ],
+      "native_value": "1uF / 10V",
+      "native_mpn": "1uF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R61A105KE15D",
+        "historical_domestic_code": "C76999",
+        "pending": "生命周期及工作偏压依据待核；不自动换料",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C20",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        22.4799906,
+        -86.6899968
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5118",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4112.441~3062.701~5.5512~5.315~1~GND~2~0~4109.6654 3065.3583 4109.6654 3060.0433 4115.2166 3060.0433 4115.2166 3065.3583~0~gge1278~0~~Y~0~-393.7008~0.2000~4112.441,3062.7008"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4104.567~3062.701~5.5512~5.315~1~3V3~1~0~4107.3424 3065.3583 4107.3424 3060.0433 4101.7912 3060.0433 4101.7912 3065.3583~0~gge1290~0~~Y~0~-393.7008~0.2000~4104.5668,3062.7008"
+        }
+      ],
+      "native_value": "22uF / 10V",
+      "native_mpn": "22uF / 10V",
+      "native_footprint": "C0805",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM21BR61A226ME44L",
+        "historical_domestic_code": "C441864",
+        "pending": "现铜/凹口锡膏保留；工厂锡量确认及负载瞬态待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C21",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        25.2700028,
+        -86.6199944
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5127",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.488~3064.63~1.9685~2.126~1~GND~2~0~4120.5512 3063.6457 4120.5512 3065.6142 4118.4252 3065.6142 4118.4252 3063.6457~270~gge1002~0~~Y~0~0~0.2000~4119.4882,3064.6298"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.488~3061.323~1.9685~2.126~1~3V3~1~0~4120.5512 3060.3386 4120.5512 3062.3071 4118.4252 3062.3071 4118.4252 3060.3386~270~gge1017~0~~Y~0~0~0.2000~4119.4882,3061.323"
+        }
+      ],
+      "native_value": "100nF / 10V",
+      "native_mpn": "100nF / 10V",
+      "native_footprint": "C0402",
+      "candidate": {
+        "manufacturer": "Murata",
+        "candidate_mpn": "GRM155R71A104KA01D",
+        "historical_domestic_code": "C71687",
+        "pending": "有效容量及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C30",
+      "kind": "DNP",
+      "side": "顶层",
+      "source_xy_mm": [
+        26.416,
+        -84.328
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5768",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4124~3073.654~1.9685~2.126~1~GND~2~0~4125.063 3072.6693 4125.063 3074.6378 4122.937 3074.6378 4122.937 3072.6693~270~gge1089~0~~Y~0~0~0.2000~4124,3073.6534"
+        },
+        {
+          "number": "1",
+          "net": "RF_SOC",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4124~3070.346~1.9685~2.126~1~RF_SOC~1~0~4125.063 3069.3622 4125.063 3071.3307 4122.937 3071.3307 4122.937 3069.3622~270~gge1104~0~~Y~0~0~0.2000~4124,3070.3466"
+        }
+      ],
+      "native_value": "匹配预留 / 不装",
+      "native_mpn": "匹配预留 / 不装",
+      "native_footprint": "C0402",
+      "candidate": null,
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "C31",
+      "kind": "DNP",
+      "side": "顶层",
+      "source_xy_mm": [
+        29.337,
+        -83.439
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5777",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4137.154~3075.5~1.9685~2.126~1~GND~2~0~4136.1693 3074.437 4138.1378 3074.437 4138.1378 3076.563 4136.1693 3076.563~0~gge1176~0~~Y~0~0~0.2000~4137.1534,3075.5"
+        },
+        {
+          "number": "1",
+          "net": "R30_2",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4133.846~3075.5~1.9685~2.126~1~R30_2~1~0~4132.8622 3074.437 4134.8307 3074.437 4134.8307 3076.563 4132.8622 3076.563~0~gge1191~0~~Y~0~0~0.2000~4133.8466,3075.5"
+        }
+      ],
+      "native_value": "匹配预留 / 不装",
+      "native_mpn": "匹配预留 / 不装",
+      "native_footprint": "C0402",
+      "candidate": null,
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "D1",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        26.035,
+        -77.47
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5508",
+      "pads": [
+        {
+          "number": "1",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4122.5~3100.378~1.1811~1.9685~2~USB_5V~1~0~4123.4841 3100.9685 4123.4841 3099.7874 4121.5156 3099.7874 4121.5156 3100.9685~270~gge1353~0~~Y~0~0~0.2~4122.5,3100.3783"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4122.5~3097.622~1.1811~1.9685~2~GND~2~0~4123.4841 3098.2126 4123.4841 3097.0315 4121.5156 3097.0315 4121.5156 3098.2126~270~gge1368~0~~Y~0~0~0.2~4122.5,3097.6217"
+        }
+      ],
+      "native_value": "TPD1E10B06DPYR",
+      "native_mpn": "TPD1E10B06DPYR",
+      "native_footprint": "TPD1E10B06_DPY_X1SON2_TI_LAND",
+      "candidate": {
+        "manufacturer": "TI",
+        "candidate_mpn": "TPD1E10B06DPYR",
+        "historical_domestic_code": "C48260",
+        "pending": "已定TI DPY型号；1脚/可双向保护与装配图核对",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "D2",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.638,
+        -76.454
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5444",
+      "pads": [
+        {
+          "number": "1",
+          "net": "J1_A5",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117~3104.378~1.1811~1.9685~2~J1_A5~1~0~4117.9841 3104.9685 4117.9841 3103.7874 4116.0156 3103.7874 4116.0156 3104.9685~270~gge1434~0~~Y~0~0~0.2~4117,3104.3783"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117~3101.622~1.1811~1.9685~2~GND~2~0~4117.9841 3102.2126 4117.9841 3101.0315 4116.0156 3101.0315 4116.0156 3102.2126~270~gge1449~0~~Y~0~0~0.2~4117,3101.6217"
+        }
+      ],
+      "native_value": "TPD1E10B06DPYR",
+      "native_mpn": "TPD1E10B06DPYR",
+      "native_footprint": "TPD1E10B06_DPY_X1SON2_TI_LAND",
+      "candidate": {
+        "manufacturer": "TI",
+        "candidate_mpn": "TPD1E10B06DPYR",
+        "historical_domestic_code": "C48260",
+        "pending": "已定TI DPY型号；1脚/可双向保护与装配图核对",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "D3",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        21.336,
+        -75.692
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5470",
+      "pads": [
+        {
+          "number": "1",
+          "net": "J1_B5",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4102.622~3106~1.1811~1.9685~2~J1_B5~1~0~4102.0315 3106.9842 4103.2126 3106.9842 4103.2126 3105.0157 4102.0315 3105.0157~180~gge1515~0~~Y~0~0~0.2~4102.6217,3106"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4105.378~3106~1.1811~1.9685~2~GND~2~0~4104.7874 3106.9842 4105.9685 3106.9842 4105.9685 3105.0157 4104.7874 3105.0157~180~gge1530~0~~Y~0~0~0.2~4105.3783,3106"
+        }
+      ],
+      "native_value": "TPD1E10B06DPYR",
+      "native_mpn": "TPD1E10B06DPYR",
+      "native_footprint": "TPD1E10B06_DPY_X1SON2_TI_LAND",
+      "candidate": {
+        "manufacturer": "TI",
+        "candidate_mpn": "TPD1E10B06DPYR",
+        "historical_domestic_code": "C48260",
+        "pending": "已定TI DPY型号；1脚/可双向保护与装配图核对",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "D4",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        26.035,
+        -73.279
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5569",
+      "pads": [
+        {
+          "number": "1",
+          "net": "VSYS",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.122~3115.5~1.5748~2.7559~2~VSYS~1~0~4120.3345 3116.8779 4121.9093 3116.8779 4121.9093 3114.1219 4120.3345 3114.1219~180~gge1569~0~~Y~0~0~0.2~4121.122,3115.5"
+        },
+        {
+          "number": "2",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4123.878~3115.5~1.5748~2.7559~2~USB_5V~2~0~4123.0905 3116.8779 4124.6653 3116.8779 4124.6653 3114.1219 4123.0905 3114.1219~180~gge1584~0~~Y~0~0~0.2~4123.878,3115.5"
+        }
+      ],
+      "native_value": "LMBR4010BST5G",
+      "native_mpn": "LMBR4010BST5G",
+      "native_footprint": "LMBR4010_SOD882_LRC_LAND_A5",
+      "candidate": {
+        "manufacturer": "LRC",
+        "candidate_mpn": "LMBR4010BST5G",
+        "historical_domestic_code": "C2912031",
+        "pending": "已定型号；1=阴极/VSYS，2=阳极/USB_5V，机器方向待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "J1",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        22.987,
+        -74.8629948
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5374",
+      "pads": [
+        {
+          "number": "A1",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4097.902~3099.904~0~0~1~GND~A1~0~4096.72 3097.6398 4099.083 3097.6398 4099.083 3101.9709 4096.72 3101.9709~0~gge1647~0~~Y~0~0~0.2~4097.902,3099.9038"
+        },
+        {
+          "number": "A4",
+          "net": "USB_5V",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4101.051~3099.904~0~0~1~USB_5V~A4~0~4099.87 3097.6398 4102.232 3097.6398 4102.232 3102.1678 4099.87 3102.1678~0~gge1662~0~~Y~0~0~0.2~4101.051,3099.9038"
+        },
+        {
+          "number": "A5",
+          "net": "J1_A5",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4105.579~3099.904~1.181~4.528~1~J1_A5~A5~0~4104.988 3097.6398 4106.169 3097.6398 4106.169 3102.1678 4104.988 3102.1678~0~gge1677~0~~Y~0~0~0.2~4105.579,3099.9038"
+        },
+        {
+          "number": "A6",
+          "net": "USB_DP",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4109.516~3099.904~0~0~1~USB_DP~A6~0~4108.925 3097.6398 4110.106 3097.6398 4110.106 3102.1678 4108.925 3102.1678~0~gge1692~0~~Y~0~0~0.2~4109.516,3099.9038"
+        },
+        {
+          "number": "A7",
+          "net": "USB_DM",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4111.484~3099.904~0~0~1~USB_DM~A7~0~4110.894 3097.6398 4112.075 3097.6398 4112.075 3102.1678 4110.894 3102.1678~0~gge1707~0~~Y~0~0~0.2~4111.484,3099.9038"
+        },
+        {
+          "number": "A8",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4115.421~3099.904~0~0~1~~A8~0~4114.831 3097.6398 4116.012 3097.6398 4116.012 3102.1678 4114.831 3102.1678~0~gge1722~0~~Y~0~0~0.2~4115.421,3099.9038"
+        },
+        {
+          "number": "A9",
+          "net": "USB_5V",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4119.949~3099.904~0~0~1~USB_5V~A9~0~4118.768 3097.6398 4121.13 3097.6398 4121.13 3102.1678 4118.768 3102.1678~0~gge1737~0~~Y~0~0~0.2~4119.949,3099.9038"
+        },
+        {
+          "number": "A12",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4123.098~3099.904~0~0~1~GND~A12~0~4121.917 3097.6398 4124.28 3097.6398 4124.28 3101.9709 4121.917 3101.9709~0~gge1752~0~~Y~0~0~0.2~4123.098,3099.9038"
+        },
+        {
+          "number": "B1",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4123.098~3099.904~0~0~1~GND~B1~0~4121.917 3097.6398 4124.28 3097.6398 4124.28 3101.9709 4121.917 3101.9709~0~gge1767~0~~Y~0~0~0.2~4123.098,3099.9038"
+        },
+        {
+          "number": "B4",
+          "net": "USB_5V",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4119.949~3099.904~0~0~1~USB_5V~B4~0~4118.768 3097.6398 4121.13 3097.6398 4121.13 3102.1678 4118.768 3102.1678~0~gge1782~0~~Y~0~0~0.2~4119.949,3099.9038"
+        },
+        {
+          "number": "B5",
+          "net": "J1_B5",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4117.39~3099.904~0~0~1~J1_B5~B5~0~4116.799 3097.6398 4117.98 3097.6398 4117.98 3102.1678 4116.799 3102.1678~0~gge1797~0~~Y~0~0~0.2~4117.39,3099.9038"
+        },
+        {
+          "number": "B6",
+          "net": "USB_DP",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4113.453~3099.904~0~0~1~USB_DP~B6~0~4112.862 3097.6398 4114.043 3097.6398 4114.043 3102.1678 4112.862 3102.1678~0~gge1812~0~~Y~0~0~0.2~4113.453,3099.9038"
+        },
+        {
+          "number": "B7",
+          "net": "USB_DM",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4107.547~3099.904~0~0~1~USB_DM~B7~0~4106.957 3097.6398 4108.138 3097.6398 4108.138 3102.1678 4106.957 3102.1678~0~gge1827~0~~Y~0~0~0.2~4107.547,3099.9038"
+        },
+        {
+          "number": "B8",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4103.61~3099.904~0~0~1~~B8~0~4103.02 3097.6398 4104.201 3097.6398 4104.201 3102.1678 4103.02 3102.1678~0~gge1842~0~~Y~0~0~0.2~4103.61,3099.9038"
+        },
+        {
+          "number": "B9",
+          "net": "USB_5V",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4101.051~3099.904~0~0~1~USB_5V~B9~0~4099.87 3097.6398 4102.232 3097.6398 4102.232 3102.1678 4099.87 3102.1678~0~gge1857~0~~Y~0~0~0.2~4101.051,3099.9038"
+        },
+        {
+          "number": "B12",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~POLYGON~4097.902~3099.904~0~0~1~GND~B12~0~4096.72 3097.6398 4099.083 3097.6398 4099.083 3101.9709 4096.72 3101.9709~0~gge1872~0~~Y~0~0~0.2~4097.902,3099.9038"
+        },
+        {
+          "number": "SH",
+          "net": "GND",
+          "layer": "11",
+          "raw_native_pad": "PAD~OVAL~4093.492~3102.168~3.937~8.268~11~GND~SH~1.181~4093.492 3100.0025 4093.492 3104.3335~0~gge1887~6.693~4093.492 3104.3335 4093.492 3100.0025~Y~0~0~0.2~4093.492,3102.168"
+        },
+        {
+          "number": "SH",
+          "net": "GND",
+          "layer": "11",
+          "raw_native_pad": "PAD~OVAL~4093.492~3118.624~3.937~7.087~11~GND~SH~1.181~4093.492 3117.049 4093.492 3120.199~0~gge1902~5.512~4093.492 3120.199 4093.492 3117.049~Y~0~0~0.2~4093.492,3118.624"
+        },
+        {
+          "number": "SH",
+          "net": "GND",
+          "layer": "11",
+          "raw_native_pad": "PAD~OVAL~4127.508~3102.168~3.937~8.268~11~GND~SH~1.181~4127.508 3100.0025 4127.508 3104.3335~0~gge1917~6.693~4127.508 3104.3335 4127.508 3100.0025~Y~0~0~0.2~4127.508,3102.168"
+        },
+        {
+          "number": "SH",
+          "net": "GND",
+          "layer": "11",
+          "raw_native_pad": "PAD~OVAL~4127.508~3118.624~3.937~7.087~11~GND~SH~1.181~4127.508 3117.049 4127.508 3120.199~0~gge1932~5.512~4127.508 3120.199 4127.508 3117.049~Y~0~0~0.2~4127.508,3118.624"
+        }
+      ],
+      "native_value": "USB4105-GF-A-060",
+      "native_mpn": "USB4105-GF-A-060",
+      "native_footprint": "USB4105_GF_A_060_GCT_17PIN_RECT",
+      "candidate": {
+        "manufacturer": "GCT",
+        "candidate_mpn": "USB4105-GF-A-060",
+        "historical_domestic_code": "C3025063",
+        "pending": "保持T实例修正；-060为壳脚长度；真实装配/板厚待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "J2",
+      "kind": "纯飞线焊盘",
+      "side": "底层",
+      "source_xy_mm": [
+        22.987,
+        -71.501
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5739",
+      "pads": [
+        {
+          "number": "1",
+          "net": "BAT_P",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4106.957~3122.5~5.9055~7.874~2~BAT_P~1~0~4104.0042 3126.437 4109.9098 3126.437 4109.9098 3118.563 4104.0042 3118.563~180~gge1962~0~~Y~0~-11.811024~0.2~4106.957,3122.5"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4114.043~3122.5~5.9055~7.874~2~GND~2~0~4111.0902 3126.437 4116.9958 3126.437 4116.9958 3118.563 4111.0902 3118.563~180~gge1977~0~~Y~0~-11.811024~0.2~4114.043,3122.5"
+        }
+      ],
+      "native_value": "单节锂电池焊盘",
+      "native_mpn": "单节锂电池焊盘",
+      "native_footprint": "BATTERY_WIRE_2PAD_A5",
+      "candidate": null,
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "J4",
+      "kind": "纯飞线焊盘",
+      "side": "底层",
+      "source_xy_mm": [
+        24.638,
+        -86.36
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5120006",
+      "pads": [
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4111.685~3064~2.3622~3.937~2~3V3~1~0~4110.5039 3065.9684 4112.8661 3065.9684 4112.8661 3062.0314 4110.5039 3062.0314~180~gge2013~0~~Y~0~-7.874016~0.2~4111.685,3064"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4115.228~3064~2.3622~3.937~2~GND~2~0~4114.0469 3065.9684 4116.4091 3065.9684 4116.4091 3062.0314 4114.0469 3062.0314~180~gge2025~0~~Y~0~-7.874016~0.2~4115.2283,3064"
+        },
+        {
+          "number": "3",
+          "net": "I2C_SDA",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4118.772~3064~2.3622~3.937~2~I2C_SDA~3~0~4117.5909 3065.9684 4119.9531 3065.9684 4119.9531 3062.0314 4117.5909 3062.0314~180~gge2037~0~~Y~0~-7.874016~0.2~4118.7717,3064"
+        },
+        {
+          "number": "4",
+          "net": "I2C_SCL",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4122.315~3064~2.3622~3.937~2~I2C_SCL~4~0~4121.1339 3065.9684 4123.4961 3065.9684 4123.4961 3062.0314 4121.1339 3062.0314~180~gge2049~0~~Y~0~-7.874016~0.2~4122.315,3064"
+        }
+      ],
+      "native_value": "笔头 MLX90393 飞线焊盘",
+      "native_mpn": "笔头 MLX90393 飞线焊盘",
+      "native_footprint": "笔头四线_焊线焊盘候选",
+      "candidate": null,
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "Q1",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        26.035,
+        -74.295
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5557",
+      "pads": [
+        {
+          "number": "1",
+          "net": "BAT_P",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4123.878~3111.5~1.5748~2.1654~2~BAT_P~1~0~4123.0906 3112.5827 4124.6654 3112.5827 4124.6654 3110.4173 4123.0906 3110.4173~180~gge2085~0~~Y~0~0~0~4123.878,3111.5"
+        },
+        {
+          "number": "2",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.122~3112.169~1.5748~0.7874~2~USB_5V~2~0~4120.3346 3112.5627 4121.9094 3112.5627 4121.9094 3111.7753 4120.3346 3111.7753~180~gge2100~0~~Y~0~0~0~4121.122,3112.169"
+        },
+        {
+          "number": "3",
+          "net": "VSYS",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.122~3110.831~1.5748~0.7874~2~VSYS~3~0~4120.3346 3111.2247 4121.9094 3111.2247 4121.9094 3110.4373 4120.3346 3110.4373~180~gge2115~0~~Y~0~0~0~4121.122,3110.831"
+        }
+      ],
+      "native_value": "LP0404N3T5G",
+      "native_mpn": "LP0404N3T5G",
+      "native_footprint": "LP0404N3_SOT883_LRC_LAND_A5",
+      "candidate": {
+        "manufacturer": "LRC",
+        "candidate_mpn": "LP0404N3T5G",
+        "historical_domestic_code": "C172433",
+        "pending": "保留原厂焊盘；Q1 DRC及实际阻焊/锡膏工艺待确认",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R1",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        19.2000124,
+        -78.3999956
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5438",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4097.295~3095.339~2.227~2.126~2~GND~2~0~4096.1812 3094.2756 4096.1812 3096.4017 4098.408 3096.4017 4098.408 3094.2756~180~gge2178~0~~Y~0~-393.7008~0.2000~4097.2946,3095.3386"
+        },
+        {
+          "number": "1",
+          "net": "J1_A5",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4093.887~3095.339~2.227~2.126~2~J1_A5~1~0~4095 3094.2756 4095 3096.4017 4092.773 3096.4017 4092.773 3094.2756~180~gge2190~0~~Y~0~-393.7008~0.2000~4093.8866,3095.3386"
+        }
+      ],
+      "native_value": "5.1k / 1%",
+      "native_mpn": "5.1k / 1%",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-075K1L",
+        "historical_domestic_code": "C105872",
+        "pending": "候选功率/温漂/装配核准",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R2",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        20.701,
+        -74.349991
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5464",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4103.204~3111.283~2.227~2.126~2~GND~2~0~4102.0906 3110.2204 4102.0906 3112.3464 4104.3175 3112.3464 4104.3175 3110.2204~180~gge2250~0~~Y~0~-393.7008~0.2000~4103.204,3111.2835"
+        },
+        {
+          "number": "1",
+          "net": "J1_B5",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4099.796~3111.283~2.227~2.126~2~J1_B5~1~0~4100.9094 3110.2204 4100.9094 3112.3464 4098.6825 3112.3464 4098.6825 3110.2204~180~gge2262~0~~Y~0~-393.7008~0.2000~4099.796,3111.2835"
+        }
+      ],
+      "native_value": "5.1k / 1%",
+      "native_mpn": "5.1k / 1%",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-075K1L",
+        "historical_domestic_code": "C105872",
+        "pending": "候选功率/温漂/装配核准",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R3",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        23.8499904,
+        -78.3999956
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5405",
+      "pads": [
+        {
+          "number": "2",
+          "net": "USB_DP_SOC",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.898~3093.635~2.227~2.126~2~USB_DP_SOC~2~0~4112.8346 3094.748 4114.9606 3094.748 4114.9606 3092.5211 4112.8346 3092.5211~270~gge2313~0~~Y~0~-393.7008~0.2000~4113.8976,3093.6346"
+        },
+        {
+          "number": "1",
+          "net": "USB_DP",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.898~3097.043~2.227~2.126~2~USB_DP~1~0~4112.8346 3095.9292 4114.9606 3095.9292 4114.9606 3098.1562 4112.8346 3098.1562~270~gge2325~0~~Y~0~-393.7008~0.2000~4113.8976,3097.0426"
+        }
+      ],
+      "native_value": "22Ω",
+      "native_mpn": "22Ω",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-0722RL",
+        "historical_domestic_code": "C114765",
+        "pending": "候选功率/装配核准；USB路径审核另列",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R4",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        23.049992,
+        -78.3999956
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5411",
+      "pads": [
+        {
+          "number": "2",
+          "net": "USB_DM_SOC",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4110.748~3093.635~2.227~2.126~2~USB_DM_SOC~2~0~4109.685 3094.748 4111.811 3094.748 4111.811 3092.5211 4109.685 3092.5211~270~gge2376~0~~Y~0~-393.7008~0.2000~4110.748,3093.6346"
+        },
+        {
+          "number": "1",
+          "net": "USB_DM",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4110.748~3097.043~2.227~2.126~2~USB_DM~1~0~4109.685 3095.9292 4111.811 3095.9292 4111.811 3098.1561 4109.685 3098.1561~270~gge2388~0~~Y~0~-393.7008~0.2000~4110.748,3097.0426"
+        }
+      ],
+      "native_value": "22Ω",
+      "native_mpn": "22Ω",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-0722RL",
+        "historical_domestic_code": "C114765",
+        "pending": "候选功率/装配核准；USB路径审核另列",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R5",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.384,
+        -80.391
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5259",
+      "pads": [
+        {
+          "number": "2",
+          "net": "I2C_SDA",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.704~3087.5~2.227~2.126~2~I2C_SDA~2~0~4116.5906 3086.437 4116.5906 3088.563 4118.8175 3088.563 4118.8175 3086.437~180~gge2448~0~~Y~0~-393.7008~0.2000~4117.704,3087.5"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4114.296~3087.5~2.227~2.126~2~3V3~1~0~4115.4094 3086.437 4115.4094 3088.563 4113.1825 3088.563 4113.1825 3086.437~180~gge2460~0~~Y~0~-393.7008~0.2000~4114.296,3087.5"
+        }
+      ],
+      "native_value": "4.7k",
+      "native_mpn": "4.7k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-074K7L",
+        "historical_domestic_code": "C105871",
+        "pending": "候选功率/温漂/装配核准；整条I2C上拉另验",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R6",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        20.8000092,
+        -78.3999956
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5253",
+      "pads": [
+        {
+          "number": "2",
+          "net": "I2C_SCL",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4103.594~3095.339~2.227~2.126~2~I2C_SCL~2~0~4102.4804 3094.2755 4102.4804 3096.4016 4104.7073 3096.4016 4104.7073 3094.2755~180~gge2520~0~~Y~0~-393.7008~0.2000~4103.5938,3095.3386"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4100.186~3095.339~2.227~2.126~2~3V3~1~0~4101.2992 3094.2755 4101.2992 3096.4016 4099.0723 3096.4016 4099.0723 3094.2755~180~gge2532~0~~Y~0~-393.7008~0.2000~4100.1858,3095.3386"
+        }
+      ],
+      "native_value": "4.7k",
+      "native_mpn": "4.7k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-074K7L",
+        "historical_domestic_code": "C105871",
+        "pending": "候选功率/温漂/装配核准；整条I2C上拉另验",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R7",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.257,
+        -84.709
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5141",
+      "pads": [
+        {
+          "number": "2",
+          "net": "MCU_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.204~3070.5~2.227~2.126~2~MCU_EN~2~0~4116.0906 3069.437 4116.0906 3071.563 4118.3175 3071.563 4118.3175 3069.437~180~gge2592~0~~Y~0~-393.7008~0.2000~4117.204,3070.5"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.796~3070.5~2.227~2.126~2~3V3~1~0~4114.9094 3069.437 4114.9094 3071.563 4112.6825 3071.563 4112.6825 3069.437~180~gge2604~0~~Y~0~-393.7008~0.2000~4113.796,3070.5"
+        }
+      ],
+      "native_value": "10k",
+      "native_mpn": "10k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-0710KL",
+        "historical_domestic_code": "C60490",
+        "pending": "候选功率/温漂/装配核准；R7启动RC另审",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R8",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.384,
+        -81.534
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5167",
+      "pads": [
+        {
+          "number": "2",
+          "net": "BOOT_N",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.704~3083~2.227~2.126~2~BOOT_N~2~0~4116.5906 3081.9369 4116.5906 3084.063 4118.8175 3084.063 4118.8175 3081.9369~180~gge2664~0~~Y~0~-393.7008~0.2000~4117.704,3083"
+        },
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4114.296~3083~2.227~2.126~2~3V3~1~0~4115.4094 3081.9369 4115.4094 3084.063 4113.1825 3084.063 4113.1825 3081.9369~180~gge2676~0~~Y~0~-393.7008~0.2000~4114.296,3083"
+        }
+      ],
+      "native_value": "10k",
+      "native_mpn": "10k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-0710KL",
+        "historical_domestic_code": "C60490",
+        "pending": "候选功率/温漂/装配核准；R7启动RC另审",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R9",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        24.257,
+        -75.057
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5578",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4117.204~3108.5~2.227~2.126~2~GND~2~0~4116.0906 3107.4369 4116.0906 3109.5629 4118.3175 3109.5629 4118.3175 3107.4369~180~gge2736~0~~Y~0~-393.7008~0.2000~4117.204,3108.5"
+        },
+        {
+          "number": "1",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4113.796~3108.5~2.227~2.126~2~USB_5V~1~0~4114.9094 3107.4369 4114.9094 3109.5629 4112.6825 3109.5629 4112.6825 3107.4369~180~gge2748~0~~Y~0~-393.7008~0.2000~4113.796,3108.5"
+        }
+      ],
+      "native_value": "100k",
+      "native_mpn": "100k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-07100KL",
+        "historical_domestic_code": "C60491",
+        "pending": "候选功率/温漂/装配核准",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R10",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        21.2499956,
+        -76.8999986
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5697",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4105.365~3101.244~2.227~2.126~2~GND~2~0~4104.252 3100.1811 4104.252 3102.3071 4106.4789 3102.3071 4106.4789 3100.1811~180~gge2808~0~~Y~0~-393.7008~0.2000~4105.3654,3101.2441"
+        },
+        {
+          "number": "1",
+          "net": "U4_C1",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4101.957~3101.244~2.227~2.126~2~U4_C1~1~0~4103.0708 3100.1811 4103.0708 3102.3071 4100.8439 3102.3071 4100.8439 3100.1811~180~gge2820~0~~Y~0~-393.7008~0.2000~4101.9574,3101.2441"
+        }
+      ],
+      "native_value": "220k / 1%",
+      "native_mpn": "220k / 1%",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-07220KL",
+        "historical_domestic_code": "C138030",
+        "pending": "充电电流设定容差/温漂及供应待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R11",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        30.353,
+        -75.692
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5847",
+      "pads": [
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4139.5~3104.296~2.227~2.126~2~GND~2~0~4138.4369 3105.4094 4140.5629 3105.4094 4140.5629 3103.1825 4138.4369 3103.1825~270~gge2880~0~~Y~0~-393.7008~0.2000~4139.5,3104.296"
+        },
+        {
+          "number": "1",
+          "net": "REG_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4139.5~3107.704~2.227~2.126~2~REG_EN~1~0~4138.4369 3106.5906 4140.5629 3106.5906 4140.5629 3108.8175 4138.4369 3108.8175~270~gge2892~0~~Y~0~-393.7008~0.2000~4139.5,3107.704"
+        }
+      ],
+      "native_value": "100k",
+      "native_mpn": "100k",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402FR-07100KL",
+        "historical_domestic_code": "C60491",
+        "pending": "候选功率/温漂/装配核准",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "R30",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        28.194,
+        -84.709
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5759",
+      "pads": [
+        {
+          "number": "2",
+          "net": "R30_2",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4132.704~3070.5~2.227~2.126~1~R30_2~2~0~4131.5906 3071.563 4131.5906 3069.437 4133.8175 3069.437 4133.8175 3071.563~0~gge2943~0~~Y~0~-393.7008~0.2000~4132.704,3070.5"
+        },
+        {
+          "number": "1",
+          "net": "RF_SOC",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4129.296~3070.5~2.227~2.126~1~RF_SOC~1~0~4130.4094 3071.563 4130.4094 3069.437 4128.1825 3069.437 4128.1825 3071.563~0~gge2955~0~~Y~0~-393.7008~0.2000~4129.296,3070.5"
+        }
+      ],
+      "native_value": "0Ω / 射频串联",
+      "native_mpn": "0Ω / 射频串联",
+      "native_footprint": "R0402",
+      "candidate": {
+        "manufacturer": "YAGEO",
+        "candidate_mpn": "RC0402JR-070RL",
+        "historical_domestic_code": "C60485",
+        "pending": "RF串联零欧姆；寄生及实装匹配待核",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "SW1",
+      "kind": "纯飞线焊盘",
+      "side": "底层",
+      "source_xy_mm": [
+        20.193,
+        -84.8129876
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5648",
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~POLYGON~4092.415~3070.091~0~0~2~GND~1~0~4089.4619 3074.0266 4095.3669 3074.0266 4095.3669 3066.1526 4089.4619 3066.1526~180~gge2985~0~~Y~0~-11.811024~0.2~4092.414,3070.0896"
+        },
+        {
+          "number": "2",
+          "net": "REG_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~POLYGON~4099.5~3070.091~5.9058~7.874~2~REG_EN~2~0~4096.548 3074.0266 4102.4539 3074.0266 4102.4539 3066.1526 4096.548 3066.1526~180~gge3000~0~~Y~0~-11.811024~0.2~4099.501,3070.0896"
+        },
+        {
+          "number": "3",
+          "net": "VSYS",
+          "layer": "2",
+          "raw_native_pad": "PAD~POLYGON~4106.589~3070.091~5.9053~7.874~2~VSYS~3~0~4103.6349 3074.0266 4109.54 3074.0266 4109.54 3066.1526 4103.6349 3066.1526~180~gge3015~0~~Y~0~-11.811024~0.2~4106.588,3070.0896"
+        }
+      ],
+      "native_value": "电源开关焊盘",
+      "native_mpn": "电源开关焊盘",
+      "native_footprint": "BATTERY_WIRE_3PAD_COMPACT",
+      "candidate": null,
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "SW2",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        16.51,
+        -78.105
+      ],
+      "native_rotation_deg": 270.0,
+      "source_lib_id": "ggeA5120032",
+      "pads": [
+        {
+          "number": "1",
+          "net": "BOOT_N",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4086.476~3101.717~2.1654~2.1654~2~BOOT_N~1~0~4087.5587 3102.7997 4087.5587 3100.6343 4085.3933 3100.6343 4085.3933 3102.7997~270~gge3051~0~~Y~0~-0.1969~0.2~4086.476,3101.717"
+        },
+        {
+          "number": "2",
+          "net": "BOOT_N",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4083.524~3101.717~2.1654~2.1654~2~BOOT_N~2~0~4084.6067 3102.7997 4084.6067 3100.6343 4082.4413 3100.6343 4082.4413 3102.7997~270~gge3066~0~~Y~0~-0.1969~0.2~4083.524,3101.717"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4086.476~3091.283~2.1654~2.1654~2~GND~3~0~4087.5587 3092.3657 4087.5587 3090.2003 4085.3933 3090.2003 4085.3933 3092.3657~270~gge3081~0~~Y~0~-0.1969~0.2~4086.476,3091.283"
+        },
+        {
+          "number": "4",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4083.524~3091.283~2.1654~2.1654~2~GND~4~0~4084.6067 3092.3657 4084.6067 3090.2003 4082.4413 3090.2003 4082.4413 3092.3657~270~gge3096~0~~Y~0~-0.1969~0.2~4083.524,3091.283"
+        }
+      ],
+      "native_value": "EVPBB2A9B000",
+      "native_mpn": "EVPBB2A9B000",
+      "native_footprint": "按键_EVPBB_官方铜焊盘",
+      "candidate": {
+        "manufacturer": "Panasonic",
+        "candidate_mpn": "EVPBB2A9B000",
+        "historical_domestic_code": null,
+        "pending": "原生准确型号已提取；国内准确条目及接贴待确认，不用同系列静默替代",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "SW3",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        17.69999,
+        -74.5000034
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA5120058",
+      "pads": [
+        {
+          "number": "1",
+          "net": "MCU_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4094.902~3109.217~2.1654~2.1654~2~MCU_EN~1~0~4095.9847 3108.1342 4093.8193 3108.1342 4093.8193 3110.2996 4095.9847 3110.2996~0~gge3132~0~~Y~0~-0.1969~0.2~4094.902,3109.2169"
+        },
+        {
+          "number": "2",
+          "net": "MCU_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4094.902~3112.169~2.1654~2.1654~2~MCU_EN~2~0~4095.9847 3111.0862 4093.8193 3111.0862 4093.8193 3113.2516 4095.9847 3113.2516~0~gge3147~0~~Y~0~-0.1969~0.2~4094.902,3112.1689"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4084.468~3109.217~2.1654~2.1654~2~GND~3~0~4085.5507 3108.1342 4083.3853 3108.1342 4083.3853 3110.2996 4085.5507 3110.2996~0~gge3162~0~~Y~0~-0.1969~0.2~4084.468,3109.2169"
+        },
+        {
+          "number": "4",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4084.468~3112.169~2.1654~2.1654~2~GND~4~0~4085.5507 3111.0862 4083.3853 3111.0862 4083.3853 3113.2516 4085.5507 3113.2516~0~gge3177~0~~Y~0~-0.1969~0.2~4084.468,3112.1689"
+        }
+      ],
+      "native_value": "EVPBB2A9B000",
+      "native_mpn": "EVPBB2A9B000",
+      "native_footprint": "按键_EVPBB_官方铜焊盘",
+      "candidate": {
+        "manufacturer": "Panasonic",
+        "candidate_mpn": "EVPBB2A9B000",
+        "historical_domestic_code": null,
+        "pending": "原生准确型号已提取；国内准确条目及接贴待确认，不用同系列静默替代",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U1",
+      "kind": "拟贴装",
+      "side": "顶层",
+      "source_xy_mm": [
+        21.856954,
+        -81.7398416
+      ],
+      "native_rotation_deg": 0.0,
+      "source_lib_id": "ggeA57",
+      "pads": [
+        {
+          "number": "1",
+          "net": "RF_SOC",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3071.953~2.6181~0.7874~1~RF_SOC~1~0~4091.3265 3071.5594 4093.9446 3071.5594 4093.9446 3072.3468 4091.3265 3072.3468~0~gge3582~0~~Y~0~-393.7~0.2000~4092.6359,3071.9531"
+        },
+        {
+          "number": "2",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3073.528~2.6181~0.7874~1~3V3~2~0~4091.3265 3073.1344 4093.9446 3073.1344 4093.9446 3073.9218 4091.3265 3073.9218~0~gge3594~0~~Y~0~-393.7~0.2000~4092.6359,3073.5279"
+        },
+        {
+          "number": "3",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3075.103~2.6181~0.7874~1~3V3~3~0~4091.3265 3074.7094 4093.9446 3074.7094 4093.9446 3075.4968 4091.3265 3075.4968~0~gge3606~0~~Y~0~-393.7~0.2000~4092.6359,3075.1027"
+        },
+        {
+          "number": "4",
+          "net": "MCU_EN",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3076.677~2.6181~0.7874~1~MCU_EN~4~0~4091.3265 3076.2834 4093.9446 3076.2834 4093.9446 3077.0708 4091.3265 3077.0708~0~gge3618~0~~Y~0~-393.7~0.2000~4092.6359,3076.6775"
+        },
+        {
+          "number": "5",
+          "net": "BOOT_N",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3078.252~2.6181~0.7874~1~BOOT_N~5~0~4091.3265 3077.8584 4093.9446 3077.8584 4093.9446 3078.6458 4091.3265 3078.6458~0~gge3630~0~~Y~0~-393.7~0.2000~4092.6359,3078.2523"
+        },
+        {
+          "number": "6",
+          "net": "I2C_SDA",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3079.827~2.6181~0.7874~1~I2C_SDA~6~0~4091.3265 3079.4334 4093.9446 3079.4334 4093.9446 3080.2208 4091.3265 3080.2208~0~gge3642~0~~Y~0~-393.7~0.2000~4092.6359,3079.8271"
+        },
+        {
+          "number": "7",
+          "net": "I2C_SCL",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3081.402~2.6181~0.7874~1~I2C_SCL~7~0~4091.3265 3081.0084 4093.9446 3081.0084 4093.9446 3081.7958 4091.3265 3081.7958~0~gge3654~0~~Y~0~-393.7~0.2000~4092.6359,3081.4019"
+        },
+        {
+          "number": "8",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3082.977~2.6181~0.7874~1~~8~0~4091.3265 3082.5834 4093.9446 3082.5834 4093.9446 3083.3708 4091.3265 3083.3708~0~gge3666~0~~Y~0~-393.7~0.2000~4092.6359,3082.9767"
+        },
+        {
+          "number": "9",
+          "net": "MLX_INT",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3084.551~2.6181~0.7874~1~MLX_INT~9~0~4091.3265 3084.1574 4093.9446 3084.1574 4093.9446 3084.9448 4091.3265 3084.9448~0~gge3678~0~~Y~0~-393.7~0.2000~4092.6359,3084.5515"
+        },
+        {
+          "number": "10",
+          "net": "IMU_INT",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3086.126~2.6181~0.7874~1~IMU_INT~10~0~4091.3265 3085.7324 4093.9446 3085.7324 4093.9446 3086.5198 4091.3265 3086.5198~0~gge3690~0~~Y~0~-393.7~0.2000~4092.6359,3086.1263"
+        },
+        {
+          "number": "11",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3087.701~2.6181~0.7874~1~~11~0~4091.3265 3087.3074 4093.9446 3087.3074 4093.9446 3088.0948 4091.3265 3088.0948~0~gge3702~0~~Y~0~-393.7~0.2000~4092.6359,3087.7011"
+        },
+        {
+          "number": "12",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3089.276~2.6181~0.7874~1~~12~0~4091.3265 3088.8824 4093.9446 3088.8824 4093.9446 3089.6698 4091.3265 3089.6698~0~gge3714~0~~Y~0~-393.7~0.2000~4092.6359,3089.2759"
+        },
+        {
+          "number": "13",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3090.851~2.6181~0.7874~1~~13~0~4091.3265 3090.4574 4093.9446 3090.4574 4093.9446 3091.2448 4091.3265 3091.2448~0~gge3726~0~~Y~0~-393.7~0.2000~4092.6359,3090.8507"
+        },
+        {
+          "number": "14",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4092.636~3092.425~2.6181~0.7874~1~~14~0~4091.3265 3092.0314 4093.9446 3092.0314 4093.9446 3092.8188 4091.3265 3092.8188~0~gge3738~0~~Y~0~-393.7~0.2000~4092.6359,3092.4255"
+        },
+        {
+          "number": "15",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4095.816~3095.605~0.7874~2.6181~1~~15~0~4095.4218 3094.2961 4096.2092 3094.2961 4096.2092 3096.9142 4095.4218 3096.9142~0~gge3750~0~~Y~0~-393.7~0.2000~4095.8151,3095.6047"
+        },
+        {
+          "number": "16",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4097.389~3095.605~0.7874~2.6181~1~~16~0~4096.9958 3094.2961 4097.7832 3094.2961 4097.7832 3096.9142 4096.9958 3096.9142~0~gge3762~0~~Y~0~-393.7~0.2000~4097.3899,3095.6047"
+        },
+        {
+          "number": "17",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4098.965~3095.605~0.7874~2.6181~1~~17~0~4098.5708 3094.2961 4099.3582 3094.2961 4099.3582 3096.9142 4098.5708 3096.9142~0~gge3774~0~~Y~0~-393.7~0.2000~4098.9647,3095.6047"
+        },
+        {
+          "number": "18",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4100.54~3095.605~0.7874~2.6181~1~~18~0~4100.1458 3094.2961 4100.9332 3094.2961 4100.9332 3096.9142 4100.1458 3096.9142~0~gge3786~0~~Y~0~-393.7~0.2000~4100.5395,3095.6047"
+        },
+        {
+          "number": "19",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4102.114~3095.605~0.7874~2.6181~1~~19~0~4101.7208 3094.2961 4102.5082 3094.2961 4102.5082 3096.9142 4101.7208 3096.9142~0~gge3798~0~~Y~0~-393.7~0.2000~4102.1143,3095.6047"
+        },
+        {
+          "number": "20",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4103.69~3095.605~0.7874~2.6181~1~3V3~20~0~4103.2958 3094.2961 4104.0832 3094.2961 4104.0832 3096.9142 4103.2958 3096.9142~0~gge3810~0~~Y~0~-393.7~0.2000~4103.6891,3095.6047"
+        },
+        {
+          "number": "21",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4105.264~3095.605~0.7874~2.6181~1~~21~0~4104.8698 3094.2961 4105.6572 3094.2961 4105.6572 3096.9142 4104.8698 3096.9142~0~gge3822~0~~Y~0~-393.7~0.2000~4105.2639,3095.6047"
+        },
+        {
+          "number": "22",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4106.839~3095.605~0.7874~2.6181~1~~22~0~4106.4448 3094.2961 4107.2322 3094.2961 4107.2322 3096.9142 4106.4448 3096.9142~0~gge3834~0~~Y~0~-393.7~0.2000~4106.8387,3095.6047"
+        },
+        {
+          "number": "23",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4108.414~3095.605~0.7874~2.6181~1~~23~0~4108.0198 3094.2961 4108.8072 3094.2961 4108.8072 3096.9142 4108.0198 3096.9142~0~gge3846~0~~Y~0~-393.7~0.2000~4108.4135,3095.6047"
+        },
+        {
+          "number": "24",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4109.988~3095.605~0.7874~2.6181~1~~24~0~4109.5948 3094.2961 4110.3822 3094.2961 4110.3822 3096.9142 4109.5948 3096.9142~0~gge3858~0~~Y~0~-393.7~0.2000~4109.9883,3095.6047"
+        },
+        {
+          "number": "25",
+          "net": "USB_DM_SOC",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4111.564~3095.605~0.7874~2.6181~1~USB_DM_SOC~25~0~4111.1698 3094.2961 4111.9572 3094.2961 4111.9572 3096.9142 4111.1698 3096.9142~0~gge3870~0~~Y~0~-393.7~0.2000~4111.5631,3095.6047"
+        },
+        {
+          "number": "26",
+          "net": "USB_DP_SOC",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4113.138~3095.605~0.7874~2.6181~1~USB_DP_SOC~26~0~4112.7438 3094.2961 4113.5312 3094.2961 4113.5312 3096.9142 4112.7438 3096.9142~0~gge3882~0~~Y~0~-393.7~0.2000~4113.1379,3095.6047"
+        },
+        {
+          "number": "27",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4114.712~3095.605~0.7874~2.6181~1~~27~0~4114.3188 3094.2961 4115.1062 3094.2961 4115.1062 3096.9142 4114.3188 3096.9142~0~gge3894~0~~Y~0~-393.7~0.2000~4114.7127,3095.6047"
+        },
+        {
+          "number": "28",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4116.288~3095.605~0.7874~2.6181~1~~28~0~4115.8938 3094.2961 4116.6812 3094.2961 4116.6812 3096.9142 4115.8938 3096.9142~0~gge3906~0~~Y~0~-393.7~0.2000~4116.2875,3095.6047"
+        },
+        {
+          "number": "29",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3092.425~2.6181~0.7874~1~~29~0~4118.1575 3092.0314 4120.7756 3092.0314 4120.7756 3092.8188 4118.1575 3092.8188~0~gge3918~0~~Y~0~-393.7~0.2000~4119.4667,3092.4255"
+        },
+        {
+          "number": "30",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3090.851~2.6181~0.7874~1~~30~0~4118.1575 3090.4574 4120.7756 3090.4574 4120.7756 3091.2448 4118.1575 3091.2448~0~gge3930~0~~Y~0~-393.7~0.2000~4119.4667,3090.8507"
+        },
+        {
+          "number": "31",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3089.276~2.6181~0.7874~1~~31~0~4118.1575 3088.8824 4120.7756 3088.8824 4120.7756 3089.6698 4118.1575 3089.6698~0~gge3942~0~~Y~0~-393.7~0.2000~4119.4667,3089.2759"
+        },
+        {
+          "number": "32",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3087.701~2.6181~0.7874~1~~32~0~4118.1575 3087.3074 4120.7756 3087.3074 4120.7756 3088.0948 4118.1575 3088.0948~0~gge3954~0~~Y~0~-393.7~0.2000~4119.4667,3087.7011"
+        },
+        {
+          "number": "33",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3086.126~2.6181~0.7874~1~~33~0~4118.1575 3085.7324 4120.7756 3085.7324 4120.7756 3086.5198 4118.1575 3086.5198~0~gge3966~0~~Y~0~-393.7~0.2000~4119.4667,3086.1263"
+        },
+        {
+          "number": "34",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3084.551~2.6181~0.7874~1~~34~0~4118.1575 3084.1574 4120.7756 3084.1574 4120.7756 3084.9448 4118.1575 3084.9448~0~gge3978~0~~Y~0~-393.7~0.2000~4119.4667,3084.5515"
+        },
+        {
+          "number": "35",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3082.977~2.6181~0.7874~1~~35~0~4118.1575 3082.5834 4120.7756 3082.5834 4120.7756 3083.3708 4118.1575 3083.3708~0~gge3990~0~~Y~0~-393.7~0.2000~4119.4667,3082.9767"
+        },
+        {
+          "number": "36",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3081.402~2.6181~0.7874~1~~36~0~4118.1575 3081.0084 4120.7756 3081.0084 4120.7756 3081.7958 4118.1575 3081.7958~0~gge4002~0~~Y~0~-393.7~0.2000~4119.4667,3081.4019"
+        },
+        {
+          "number": "37",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3079.827~2.6181~0.7874~1~~37~0~4118.1575 3079.4334 4120.7756 3079.4334 4120.7756 3080.2208 4118.1575 3080.2208~0~gge4014~0~~Y~0~-393.7~0.2000~4119.4667,3079.8271"
+        },
+        {
+          "number": "38",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3078.252~2.6181~0.7874~1~~38~0~4118.1575 3077.8584 4120.7756 3077.8584 4120.7756 3078.6458 4118.1575 3078.6458~0~gge4026~0~~Y~0~-393.7~0.2000~4119.4667,3078.2523"
+        },
+        {
+          "number": "39",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3076.677~2.6181~0.7874~1~~39~0~4118.1575 3076.2834 4120.7756 3076.2834 4120.7756 3077.0708 4118.1575 3077.0708~0~gge4038~0~~Y~0~-393.7~0.2000~4119.4667,3076.6775"
+        },
+        {
+          "number": "40",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3075.103~2.6181~0.7874~1~~40~0~4118.1575 3074.7094 4120.7756 3074.7094 4120.7756 3075.4968 4118.1575 3075.4968~0~gge4050~0~~Y~0~-393.7~0.2000~4119.4667,3075.1027"
+        },
+        {
+          "number": "41",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3073.528~2.6181~0.7874~1~~41~0~4118.1575 3073.1344 4120.7756 3073.1344 4120.7756 3073.9218 4118.1575 3073.9218~0~gge4062~0~~Y~0~-393.7~0.2000~4119.4667,3073.5279"
+        },
+        {
+          "number": "42",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4119.467~3071.953~2.6181~0.7874~1~~42~0~4118.1575 3071.5594 4120.7756 3071.5594 4120.7756 3072.3468 4118.1575 3072.3468~0~gge4074~0~~Y~0~-393.7~0.2000~4119.4667,3071.9531"
+        },
+        {
+          "number": "43",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4116.288~3068.774~0.7874~2.6181~1~~43~0~4115.8938 3067.465 4116.6812 3067.465 4116.6812 3070.0832 4115.8938 3070.0832~0~gge4086~0~~Y~0~-393.7~0.2000~4116.2875,3068.7739"
+        },
+        {
+          "number": "44",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4114.712~3068.774~0.7874~2.6181~1~~44~0~4114.3188 3067.465 4115.1062 3067.465 4115.1062 3070.0832 4114.3188 3070.0832~0~gge4098~0~~Y~0~-393.7~0.2000~4114.7127,3068.7739"
+        },
+        {
+          "number": "45",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4113.138~3068.774~0.7874~2.6181~1~~45~0~4112.7438 3067.465 4113.5312 3067.465 4113.5312 3070.0832 4112.7438 3070.0832~0~gge4110~0~~Y~0~-393.7~0.2000~4113.1379,3068.7739"
+        },
+        {
+          "number": "46",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4111.564~3068.774~0.7874~2.6181~1~3V3~46~0~4111.1698 3067.465 4111.9572 3067.465 4111.9572 3070.0832 4111.1698 3070.0832~0~gge4122~0~~Y~0~-393.7~0.2000~4111.5631,3068.7739"
+        },
+        {
+          "number": "47",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4109.988~3068.774~0.7874~2.6181~1~~47~0~4109.5948 3067.465 4110.3822 3067.465 4110.3822 3070.0832 4109.5948 3070.0832~0~gge4134~0~~Y~0~-393.7~0.2000~4109.9883,3068.7739"
+        },
+        {
+          "number": "48",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4108.414~3068.774~0.7874~2.6181~1~~48~0~4108.0198 3067.465 4108.8072 3067.465 4108.8072 3070.0832 4108.0198 3070.0832~0~gge4146~0~~Y~0~-393.7~0.2000~4108.4135,3068.7739"
+        },
+        {
+          "number": "49",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4106.839~3068.774~0.7874~2.6181~1~~49~0~4106.4448 3067.465 4107.2322 3067.465 4107.2322 3070.0832 4106.4448 3070.0832~0~gge4158~0~~Y~0~-393.7~0.2000~4106.8387,3068.7739"
+        },
+        {
+          "number": "50",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4105.264~3068.774~0.7874~2.6181~1~~50~0~4104.8698 3067.465 4105.6572 3067.465 4105.6572 3070.0832 4104.8698 3070.0832~0~gge4170~0~~Y~0~-393.7~0.2000~4105.2639,3068.7739"
+        },
+        {
+          "number": "51",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4103.69~3068.774~0.7874~2.6181~1~~51~0~4103.2958 3067.465 4104.0832 3067.465 4104.0832 3070.0832 4103.2958 3070.0832~0~gge4182~0~~Y~0~-393.7~0.2000~4103.6891,3068.7739"
+        },
+        {
+          "number": "52",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4102.114~3068.774~0.7874~2.6181~1~~52~0~4101.7208 3067.465 4102.5082 3067.465 4102.5082 3070.0832 4101.7208 3070.0832~0~gge4194~0~~Y~0~-393.7~0.2000~4102.1143,3068.7739"
+        },
+        {
+          "number": "53",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4100.54~3068.774~0.7874~2.6181~1~~53~0~4100.1458 3067.465 4100.9332 3067.465 4100.9332 3070.0832 4100.1458 3070.0832~0~gge4206~0~~Y~0~-393.7~0.2000~4100.5395,3068.7739"
+        },
+        {
+          "number": "54",
+          "net": "",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4098.965~3068.774~0.7874~2.6181~1~~54~0~4098.5708 3067.465 4099.3582 3067.465 4099.3582 3070.0832 4098.5708 3070.0832~0~gge4218~0~~Y~0~-393.7~0.2000~4098.9647,3068.7739"
+        },
+        {
+          "number": "55",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4097.389~3068.774~0.7874~2.6181~1~3V3~55~0~4096.9958 3067.465 4097.7832 3067.465 4097.7832 3070.0832 4096.9958 3070.0832~0~gge4230~0~~Y~0~-393.7~0.2000~4097.3899,3068.7739"
+        },
+        {
+          "number": "56",
+          "net": "3V3",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4095.816~3068.774~0.7874~2.6181~1~3V3~56~0~4095.4218 3067.465 4096.2092 3067.465 4096.2092 3070.0832 4095.4218 3070.0832~0~gge4242~0~~Y~0~-393.7~0.2000~4095.8151,3068.7739"
+        },
+        {
+          "number": "57",
+          "net": "GND",
+          "layer": "1",
+          "raw_native_pad": "PAD~RECT~4106.051~3082.189~15.748~15.748~1~GND~57~0~4098.1775 3074.3151 4113.9255 3074.3151 4113.9255 3090.0631 4098.1775 3090.0631~0~gge4254~0~~Y~0~-393.7~0.2000~4106.0513,3082.1893"
+        }
+      ],
+      "native_value": "ESP32-S3-PICO-1-N8R8",
+      "native_mpn": "ESP32-S3-PICO-1-N8R8",
+      "native_footprint": "ESP32-S3-PICO-1-N8R8",
+      "candidate": {
+        "manufacturer": "Espressif",
+        "candidate_mpn": "ESP32-S3-PICO-1-N8R8",
+        "historical_domestic_code": "C7545129",
+        "pending": "已定型号；客供路径；10盘中孔与单次回流待工厂确认",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U2",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        18.5499756,
+        -81.2998374
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5218",
+      "pads": [
+        {
+          "number": "1",
+          "net": "I2C_SCL",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4088.307~3086.284~2.3622~0.7874~2~I2C_SCL~1~0~4087.1259 3086.6779 4089.4881 3086.6779 4089.4881 3085.8905 4087.1259 3085.8905~180~gge4395~0~~Y~0~0~-39.370079~4088.307,3086.2841"
+        },
+        {
+          "number": "2",
+          "net": "I2C_SDA",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4088.307~3084.709~2.3622~0.7874~2~I2C_SDA~2~0~4087.1259 3085.1031 4089.4881 3085.1031 4089.4881 3084.3157 4087.1259 3084.3157~180~gge4407~0~~Y~0~0~-39.370079~4088.307,3084.7093"
+        },
+        {
+          "number": "3",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4088.307~3083.135~2.3622~0.7874~2~~3~0~4087.1259 3083.5283 4089.4881 3083.5283 4089.4881 3082.7409 4087.1259 3082.7409~180~gge4419~0~~Y~0~0~-39.370079~4088.307,3083.1345"
+        },
+        {
+          "number": "4",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4088.307~3081.56~2.3622~0.7874~2~3V3~4~0~4087.1259 3081.9535 4089.4881 3081.9535 4089.4881 3081.1661 4087.1259 3081.1661~180~gge4431~0~~Y~0~0~-39.370079~4088.307,3081.5597"
+        },
+        {
+          "number": "5",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4097.756~3081.56~2.3622~0.7874~2~GND~5~0~4096.5747 3081.9535 4098.9369 3081.9535 4098.9369 3081.1661 4096.5747 3081.1661~180~gge4443~0~~Y~0~0~-39.370079~4097.7558,3081.5597"
+        },
+        {
+          "number": "6",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4097.756~3083.135~2.3622~0.7874~2~3V3~6~0~4096.5747 3083.5283 4098.9369 3083.5283 4098.9369 3082.7409 4096.5747 3082.7409~180~gge4455~0~~Y~0~0~-39.370079~4097.7558,3083.1345"
+        },
+        {
+          "number": "7",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4097.756~3084.709~2.3622~0.7874~2~3V3~7~0~4096.5747 3085.1031 4098.9369 3085.1031 4098.9369 3084.3157 4096.5747 3084.3157~180~gge4467~0~~Y~0~0~-39.370079~4097.7558,3084.7093"
+        },
+        {
+          "number": "8",
+          "net": "MLX_INT",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4097.756~3086.284~2.3622~0.7874~2~MLX_INT~8~0~4096.5747 3086.6779 4098.9369 3086.6779 4098.9369 3085.8905 4096.5747 3085.8905~180~gge4479~0~~Y~0~0~-39.370079~4097.7558,3086.2841"
+        },
+        {
+          "number": "9",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4093.031~3083.922~5.1181~6.1024~2~GND~9~0~4090.4723 3086.9731 4095.5905 3086.9731 4095.5905 3080.8708 4090.4723 3080.8708~180~gge4491~0~~Y~0~-39.370079~0.19685~4093.0314,3083.9219"
+        }
+      ],
+      "native_value": "MLX90393SLQ-ABA-011-RE",
+      "native_mpn": "MLX90393SLQ-ABA-011-RE",
+      "native_footprint": "MLX90393_LQ_8_EP_P040_A5_R1",
+      "candidate": {
+        "manufacturer": "Melexis",
+        "candidate_mpn": "MLX90393SLQ-ABA-011-RE",
+        "historical_domestic_code": "C1856300",
+        "pending": "已定SLQ/UTDFN-8型号；EP分窗与脚序待装配闭环",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U3",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        26.924,
+        -83.82
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5232",
+      "pads": [
+        {
+          "number": "1",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.374~3076.953~1.9685~1.1024~2~GND~1~0~4120.39 3077.5042 4122.3585 3077.5042 4122.3585 3076.4018 4120.39 3076.4018~180~gge4593~0~~Y~0~0.0000~0.2000~4121.3742,3076.9528"
+        },
+        {
+          "number": "2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.374~3074.984~1.9685~1.1024~2~GND~2~0~4120.39 3075.5352 4122.3585 3075.5352 4122.3585 3074.4328 4120.39 3074.4328~180~gge4608~0~~Y~0~0.0000~0.2000~4121.3742,3074.9843"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.374~3073.016~1.9685~1.1024~2~GND~3~0~4120.39 3073.5672 4122.3585 3073.5672 4122.3585 3072.4648 4120.39 3072.4648~180~gge4623~0~~Y~0~0.0000~0.2000~4121.3742,3073.0157"
+        },
+        {
+          "number": "4",
+          "net": "IMU_INT",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4121.374~3071.047~1.9685~1.1024~2~IMU_INT~4~0~4120.39 3071.5982 4122.3585 3071.5982 4122.3585 3070.4958 4120.39 3070.4958~180~gge4638~0~~Y~0~0.0000~0.2000~4121.3742,3071.0472"
+        },
+        {
+          "number": "5",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4124.032~3070.358~1.1024~1.9685~2~3V3~5~0~4123.4808 3071.3424 4124.5832 3071.3424 4124.5832 3069.3739 4123.4808 3069.3739~180~gge4653~0~~Y~0~0.0000~0.2000~4124.0315,3070.3585"
+        },
+        {
+          "number": "6",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4126~3070.358~1.1024~1.9685~2~GND~6~0~4125.4488 3071.3424 4126.5512 3071.3424 4126.5512 3069.3739 4125.4488 3069.3739~180~gge4668~0~~Y~0~0.0000~0.2000~4126,3070.3585"
+        },
+        {
+          "number": "7",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4127.969~3070.358~1.1024~1.9685~2~GND~7~0~4127.4178 3071.3424 4128.5202 3071.3424 4128.5202 3069.3739 4127.4178 3069.3739~180~gge4683~0~~Y~0~0.0000~0.2000~4127.9685,3070.3585"
+        },
+        {
+          "number": "8",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4130.626~3071.047~1.9685~1.1024~2~3V3~8~0~4129.6415 3071.5982 4131.61 3071.5982 4131.61 3070.4958 4129.6415 3070.4958~180~gge4698~0~~Y~0~0.0000~0.2000~4130.6258,3071.0472"
+        },
+        {
+          "number": "9",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4130.626~3073.016~1.9685~1.1024~2~~9~0~4129.6415 3073.5672 4131.61 3073.5672 4131.61 3072.4648 4129.6415 3072.4648~180~gge4713~0~~Y~0~0.0000~0.2000~4130.6258,3073.0157"
+        },
+        {
+          "number": "10",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4130.626~3074.984~1.9685~1.1024~2~~10~0~4129.6415 3075.5352 4131.61 3075.5352 4131.61 3074.4328 4129.6415 3074.4328~180~gge4728~0~~Y~0~0.0000~0.2000~4130.6258,3074.9843"
+        },
+        {
+          "number": "11",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4130.626~3076.953~1.9685~1.1024~2~~11~0~4129.6415 3077.5042 4131.61 3077.5042 4131.61 3076.4018 4129.6415 3076.4018~180~gge4743~0~~Y~0~0.0000~0.2000~4130.6258,3076.9528"
+        },
+        {
+          "number": "12",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4127.969~3077.642~1.1024~1.9685~2~3V3~12~0~4127.4178 3078.626 4128.5202 3078.626 4128.5202 3076.6575 4127.4178 3076.6575~180~gge4758~0~~Y~0~0.0000~0.2000~4127.9685,3077.6415"
+        },
+        {
+          "number": "13",
+          "net": "I2C_SCL",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4126~3077.642~1.1024~1.9685~2~I2C_SCL~13~0~4125.4488 3078.626 4126.5512 3078.626 4126.5512 3076.6575 4125.4488 3076.6575~180~gge4773~0~~Y~0~0.0000~0.2000~4126,3077.6415"
+        },
+        {
+          "number": "14",
+          "net": "I2C_SDA",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4124.032~3077.642~1.1024~1.9685~2~I2C_SDA~14~0~4123.4808 3078.6261 4124.5832 3078.6261 4124.5832 3076.6576 4123.4808 3076.6576~180~gge4788~0~~Y~0~0.0000~0.2000~4124.0315,3077.6415"
+        }
+      ],
+      "native_value": "LSM6DSOXTR",
+      "native_mpn": "LSM6DSOXTR",
+      "native_footprint": "LGA-14L_L3.0-W2.5-P0.50-TL",
+      "candidate": {
+        "manufacturer": "ST",
+        "candidate_mpn": "LSM6DSOXTR",
+        "historical_domestic_code": "C481766",
+        "pending": "已定型号；1脚及原生贴装角度待闭环",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U4",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        22.606,
+        -74.2419902
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5669",
+      "pads": [
+        {
+          "number": "A1",
+          "net": "BAT_P",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4108.213~3113.284~0.7874~0.7874~2~BAT_P~A1~0~~180~gge4827~0~~Y~0~0~0.2~4108.213,3113.2837"
+        },
+        {
+          "number": "A2",
+          "net": "USB_5V",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4109.787~3113.284~0.7874~0.7874~2~USB_5V~A2~0~~180~gge4842~0~~Y~0~0~0.2~4109.787,3113.2837"
+        },
+        {
+          "number": "B1",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4108.213~3111.709~0.7874~0.7874~2~GND~B1~0~~180~gge4857~0~~Y~0~0~0.2~4108.213,3111.7087"
+        },
+        {
+          "number": "B2",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4109.787~3111.709~0.7874~0.7874~2~~B2~0~~180~gge4872~0~~Y~0~0~0.2~4109.787,3111.7087"
+        },
+        {
+          "number": "C1",
+          "net": "U4_C1",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4108.213~3110.134~0.7874~0.7874~2~U4_C1~C1~0~~180~gge4887~0~~Y~0~0~0.2~4108.213,3110.1337"
+        },
+        {
+          "number": "C2",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~ELLIPSE~4109.787~3110.134~0.7874~0.7874~2~GND~C2~0~~180~gge4902~0~~Y~0~0~0.2~4109.787,3110.1337"
+        }
+      ],
+      "native_value": "SGM40567-4.2XG/TR",
+      "native_mpn": "SGM40567-4.2XG/TR",
+      "native_footprint": "SGM40567_WLCSP_6B_SGM_LAND_A5",
+      "candidate": {
+        "manufacturer": "SGMICRO",
+        "candidate_mpn": "SGM40567-4.2XG/TR",
+        "historical_domestic_code": "C5141336",
+        "pending": "已定4.2V型号；客供路径；WLCSP A1与钢网待闭环",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U5",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        29.337,
+        -77.978
+      ],
+      "native_rotation_deg": 180.0,
+      "source_lib_id": "ggeA5591",
+      "pads": [
+        {
+          "number": "1",
+          "net": "3V3",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4131.451~3099.559~1.4331~2.3898~2~3V3~1~0~4131.9294 3099.559 4130.9727 3099.559~270~gge4980~0~~Y~0~0.0000~0.2000~4131.4508,3099.5591"
+        },
+        {
+          "number": "2",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4131.451~3097~1.4331~2.3898~2~~2~0~4131.9294 3097 4130.9727 3097~270~gge4995~0~~Y~0~0.0000~0.2000~4131.4508,3097"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4131.451~3094.441~1.4331~2.3898~2~GND~3~0~4131.9294 3094.441 4130.9727 3094.441~270~gge5010~0~~Y~0~0.0000~0.2000~4131.4508,3094.4409"
+        },
+        {
+          "number": "4",
+          "net": "REG_EN",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4139.549~3094.441~1.4331~2.3898~2~REG_EN~4~0~4140.0274 3094.441 4139.0707 3094.441~270~gge5025~0~~Y~0~0.0000~0.2000~4139.5492,3094.4409"
+        },
+        {
+          "number": "5",
+          "net": "",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4139.549~3097~1.4331~2.3898~2~~5~0~4140.0274 3097 4139.0707 3097~270~gge5040~0~~Y~0~0.0000~0.2000~4139.5492,3097"
+        },
+        {
+          "number": "6",
+          "net": "VSYS",
+          "layer": "2",
+          "raw_native_pad": "PAD~OVAL~4139.549~3099.559~1.4331~2.3898~2~VSYS~6~0~4140.0274 3099.559 4139.0707 3099.559~270~gge5055~0~~Y~0~0.0000~0.2000~4139.5492,3099.5591"
+        },
+        {
+          "number": "7",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4135.5~3097~3.937~6.2992~2~GND~7~0~4133.5314 3100.1496 4137.4684 3100.1496 4137.4684 3093.8504 4133.5314 3093.8504~180~gge5070~0~~Y~0~0.0000~0.2000~4135.5,3097"
+        }
+      ],
+      "native_value": "TLV75533PDRVR",
+      "native_mpn": "TLV75533PDRVR",
+      "native_footprint": "WSON-6_L2.0-W2.0-P0.65-TL-EP",
+      "candidate": {
+        "manufacturer": "TI",
+        "candidate_mpn": "TLV75533PDRVR",
+        "historical_domestic_code": "C2861750",
+        "pending": "已定PDRVR/WSON型号；EP与贴装方向待闭环",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    },
+    {
+      "ref": "U6",
+      "kind": "拟贴装",
+      "side": "底层",
+      "source_xy_mm": [
+        22.549993,
+        -76.7999988
+      ],
+      "native_rotation_deg": 90.0,
+      "source_lib_id": "ggeA5423",
+      "pads": [
+        {
+          "number": "1",
+          "net": "USB_DP",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4110.157~3103.606~0.7874~1.1811~2~USB_DP~1~0~4110.5511 3103.0153 4109.7637 3103.0153 4109.7637 3104.1964 4110.5511 3104.1964~0~gge5142~0~~Y~0~0~0.2~4110.1575,3103.6064"
+        },
+        {
+          "number": "2",
+          "net": "USB_DM",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4107.402~3103.606~0.7874~1.1811~2~USB_DM~2~0~4107.7952 3103.0153 4107.0078 3103.0153 4107.0078 3104.1964 4107.7952 3104.1964~0~gge5157~0~~Y~0~0~0.2~4107.4015,3103.6064"
+        },
+        {
+          "number": "3",
+          "net": "GND",
+          "layer": "2",
+          "raw_native_pad": "PAD~RECT~4108.78~3099.669~0.7874~1.1811~2~GND~3~0~4109.1732 3099.0783 4108.3858 3099.0783 4108.3858 3100.2594 4109.1732 3100.2594~0~gge5172~0~~Y~0~0~0.2~4108.7795,3099.6693"
+        }
+      ],
+      "native_value": "TPD2EUSB30ADRTR",
+      "native_mpn": "TPD2EUSB30ADRTR",
+      "native_footprint": "SOT-9X3-3_L1.0-W0.8-P0.35-LS1.0-BR",
+      "candidate": {
+        "manufacturer": "TI",
+        "candidate_mpn": "TPD2EUSB30ADRTR",
+        "historical_domestic_code": "C94934",
+        "pending": "已定DRT型号；不可按模型角度直接填机器角度",
+        "source_record": "PCB_A5_嘉立创物料与层叠准备.md；电源审核_R_20260929.md；当前PCB原生属性",
+        "procurement_approved": false,
+        "stock_checked_this_run": false
+      },
+      "machine_placement_verified": false
+    }
+  ],
+  "unique_fitted_candidate_mpns": 23,
+  "coordinate_convention": "x/y相对源码head原点，内部单位乘0.254mm；保留源码Y轴及原生角度；底层未镜像。不是机器坐标/CPL。",
+  "native_CPL": "未收到；本文件源坐标不是机器坐标文件",
+  "external_items": [
+    {
+      "item": "FPC天线",
+      "candidate_mpn": "FXP75.07.0045B",
+      "on_PCB_SMT": false,
+      "status": "既有候选；扣合/转弯/装壳及无线实测待核"
+    },
+    {
+      "item": "电池/保护、外接开关、导线及笔头模块",
+      "on_PCB_SMT": false,
+      "status": "实物/连接及工况待核；电池本轮暂不选"
+    }
+  ],
+  "supplier_code_policy": "编号沿用历史国内资料，未刷新库存、价格或锁料，不构成接贴批准。"
+}

@@ -1,0 +1,779 @@
+{
+  "date": "2026-10-06",
+  "status": "REVIEW ONLY",
+  "inputs": {
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json": "b45751ba534a0a78d20714e056650274dc8f70d5eed32a22a7c11f110a2bbde4",
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1修改前_原生回读_20261006.json": "104338789cb0e09d8fe32ea936048fd769a2379924382ee0988ad800f5a0006b",
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json": "01bdc6f3ebbf06956df64acd06eedf64aa8167896c395bc4b5d5ec3b47a1077b",
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip": "ba62a8bb4b6417d00915a440b121e2b165f7230bd0a76ed1ab181b6194412356",
+    "manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip": "405203473d8226ca9bf638fafe6d3e5d8cc44decabd9ece37f46ff417a5050a0"
+  },
+  "saved_reopened_shape_and_nonshape_equal": true,
+  "changed_refs": [
+    "D4",
+    "Q1",
+    "R9"
+  ],
+  "other_38_parts_unchanged": true,
+  "pad_pin_net_signature_unchanged": true,
+  "rules_unchanged": true,
+  "native_UI": {
+    "PCB": "PCB_圆形传感板_SCH_A5 copy",
+    "doc_id": "cca094630ebf453c98ae64b900f0d7f0",
+    "saved_no_star_and_closed_reopened": true,
+    "pours_rebuilt": 3,
+    "components": 41,
+    "nets": "20/20",
+    "unconnected": 0,
+    "DRC_errors": 0,
+    "ignored_or_relaxed_rules": false
+  },
+  "BOM_CPL": {
+    "native_rows": 41,
+    "SMT_rows": 36,
+    "top": 6,
+    "bottom": 30,
+    "unique_MPNs": 22,
+    "ANT1_corrected_Y_mm": 80.67,
+    "J1_machine_pick_and_all_tape_angles": "factory pending",
+    "checks": [
+      {
+        "ref": "ANT1",
+        "CPL_minus_LIB_mm": [
+          2.019999989144594e-05,
+          -6.400000032158459e-06
+        ],
+        "rotation": "180",
+        "side": "T"
+      },
+      {
+        "ref": "C1",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          -0.003999999999990678
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "C2",
+        "CPL_minus_LIB_mm": [
+          -1.1599999965028474e-05,
+          1.1799999938943984e-05
+        ],
+        "rotation": "180",
+        "side": "B"
+      },
+      {
+        "ref": "C3",
+        "CPL_minus_LIB_mm": [
+          1.9599999951935843e-05,
+          -0.00017679999999131724
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "C4",
+        "CPL_minus_LIB_mm": [
+          0.0,
+          1.4210854715202004e-14
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "C5",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          0.0
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "C6",
+        "CPL_minus_LIB_mm": [
+          -0.0010000000000012221,
+          -0.003999999999990678
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "C7",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          0.0
+        ],
+        "rotation": "180",
+        "side": "B"
+      },
+      {
+        "ref": "C9",
+        "CPL_minus_LIB_mm": [
+          0.0009919999998970752,
+          0.0009899999999873899
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "C10",
+        "CPL_minus_LIB_mm": [
+          -0.0010000000000012221,
+          -0.0030000000000001137
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "C20",
+        "CPL_minus_LIB_mm": [
+          9.400000074322179e-06,
+          -3.2000000089738023e-06
+        ],
+        "rotation": "0",
+        "side": "T"
+      },
+      {
+        "ref": "C21",
+        "CPL_minus_LIB_mm": [
+          -2.799999943903231e-06,
+          -5.600000008598727e-06
+        ],
+        "rotation": "270",
+        "side": "T"
+      },
+      {
+        "ref": "D1",
+        "CPL_minus_LIB_mm": [
+          0.004999999999999005,
+          0.0
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "D2",
+        "CPL_minus_LIB_mm": [
+          0.0019999999999988916,
+          0.0040000000000048885
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "D3",
+        "CPL_minus_LIB_mm": [
+          0.004000000000001336,
+          0.0020000000000095497
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "D4",
+        "CPL_minus_LIB_mm": [
+          0.004999999999999005,
+          -0.0009991999999670043
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "J1",
+        "CPL_minus_LIB_mm": [
+          0.002999999999996561,
+          0.002994799999953557
+        ],
+        "rotation": "0",
+        "side": "T"
+      },
+      {
+        "ref": "Q1",
+        "CPL_minus_LIB_mm": [
+          1.0000000116860974e-06,
+          3.399999997100167e-06
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R1",
+        "CPL_minus_LIB_mm": [
+          -1.2399999999246347e-05,
+          -4.4000000087862645e-06
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R2",
+        "CPL_minus_LIB_mm": [
+          -0.0010000000000012221,
+          -8.999999991488039e-06
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R3",
+        "CPL_minus_LIB_mm": [
+          9.599999941656279e-06,
+          -4.4000000087862645e-06
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "R4",
+        "CPL_minus_LIB_mm": [
+          8.00000010414692e-06,
+          -4.4000000087862645e-06
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "R5",
+        "CPL_minus_LIB_mm": [
+          -0.004000000000001336,
+          0.0010000000000047748
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R6",
+        "CPL_minus_LIB_mm": [
+          -9.199999979614404e-06,
+          -4.4000000087862645e-06
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R7",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          -0.000999999999990564
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R8",
+        "CPL_minus_LIB_mm": [
+          -0.004000000000001336,
+          0.0040000000000048885
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R9",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          -0.0030003999999621556
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "R11",
+        "CPL_minus_LIB_mm": [
+          -0.0030000000000001137,
+          0.0020000000000095497
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "R30",
+        "CPL_minus_LIB_mm": [
+          -0.003999999999997783,
+          -0.000999999999990564
+        ],
+        "rotation": "0",
+        "side": "T"
+      },
+      {
+        "ref": "SW2",
+        "CPL_minus_LIB_mm": [
+          0.0,
+          -0.0049999999999954525
+        ],
+        "rotation": "90",
+        "side": "B"
+      },
+      {
+        "ref": "SW3",
+        "CPL_minus_LIB_mm": [
+          1.0000000013832278e-05,
+          3.399999997100167e-06
+        ],
+        "rotation": "180",
+        "side": "B"
+      },
+      {
+        "ref": "U1",
+        "CPL_minus_LIB_mm": [
+          0.0030459999999017384,
+          -0.00015840000003208843
+        ],
+        "rotation": "0",
+        "side": "T"
+      },
+      {
+        "ref": "U2",
+        "CPL_minus_LIB_mm": [
+          2.4400000040003533e-05,
+          -0.00016259999995327235
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "U3",
+        "CPL_minus_LIB_mm": [
+          -0.003999999999997783,
+          1.4210854715202004e-14
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "U5",
+        "CPL_minus_LIB_mm": [
+          0.0030000000000001137,
+          -0.0020000000000095497
+        ],
+        "rotation": "0",
+        "side": "B"
+      },
+      {
+        "ref": "U6",
+        "CPL_minus_LIB_mm": [
+          7.000000092460823e-06,
+          -1.1999999856016075e-06
+        ],
+        "rotation": "270",
+        "side": "B"
+      }
+    ]
+  },
+  "Q1": {
+    "MPN": "DMP2165UW-7",
+    "LCSC": "C388477",
+    "footprint_uuid": "5681cb3b3db54d94938593cf878665cb",
+    "model_rotation": "0,0,90",
+    "custom_to_manufacturer_pin": {
+      "1": "D, manufacturer physical 3, BAT_P",
+      "2": "G, manufacturer physical 1, USB_5V",
+      "3": "S, manufacturer physical 2, VSYS"
+    },
+    "max_height_mm": 1.1,
+    "USB_plus_candidate_board_plus_Q1_global_height_band_mm": 5.21,
+    "mechanical_limit": "Global band, not same XY cross-section; excludes solder/neighbor maximum tolerances and real pen fit.",
+    "G_S_copper_gap_mm": 0.8299957999999634,
+    "clearance_rule_mm": 0.15001240000000002
+  },
+  "production_released": false,
+  "CAM_layers": [
+    {
+      "layer": "Gerber_TopLayer.GTL",
+      "same_primitives": false,
+      "removed": 7,
+      "added": 8
+    },
+    {
+      "layer": "Gerber_BottomLayer.GBL",
+      "same_primitives": false,
+      "removed": 36,
+      "added": 32
+    },
+    {
+      "layer": "Gerber_TopSilkscreenLayer.GTO",
+      "same_primitives": true,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "layer": "Gerber_BottomSilkscreenLayer.GBO",
+      "same_primitives": true,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "layer": "Gerber_TopPasteMaskLayer.GTP",
+      "same_primitives": true,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "same_primitives": false,
+      "removed": 7,
+      "added": 7
+    },
+    {
+      "layer": "Gerber_TopSolderMaskLayer.GTS",
+      "same_primitives": true,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "layer": "Gerber_BottomSolderMaskLayer.GBS",
+      "same_primitives": false,
+      "removed": 7,
+      "added": 7
+    },
+    {
+      "layer": "Gerber_BoardOutlineLayer.GKO",
+      "same_primitives": true,
+      "removed": 0,
+      "added": 0
+    },
+    {
+      "layer": "Gerber_DocumentLayer.GDL",
+      "same_primitives": false,
+      "removed": 16,
+      "added": 17
+    },
+    {
+      "layer": "Gerber_InnerLayer1.G1",
+      "same_primitives": false,
+      "removed": 9,
+      "added": 6
+    },
+    {
+      "layer": "Gerber_InnerLayer2.G2",
+      "same_primitives": false,
+      "removed": 4,
+      "added": 2
+    }
+  ],
+  "CAM_geometry_delta": [
+    {
+      "layer": "Gerber_TopLayer.GTL",
+      "symmetric_difference_mm2": 1.14486877840883,
+      "difference_bounds_mm": [
+        20.887190564861047,
+        -80.47212901380043,
+        31.150103833300925,
+        -71.89993
+      ],
+      "outside_Q1_D4_R9_scope_mm2": 5.471560709765947e-19
+    },
+    {
+      "layer": "Gerber_BottomLayer.GBL",
+      "symmetric_difference_mm2": 4.507618867362097,
+      "difference_bounds_mm": [
+        23.13482,
+        -76.06182,
+        27.45486,
+        -71.59599
+      ],
+      "outside_Q1_D4_R9_scope_mm2": 0.0
+    },
+    {
+      "layer": "Gerber_TopSilkscreenLayer.GTO",
+      "symmetric_difference_mm2": 0.0,
+      "difference_bounds_mm": null,
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_BottomSilkscreenLayer.GBO",
+      "symmetric_difference_mm2": 0.0,
+      "difference_bounds_mm": null,
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_TopPasteMaskLayer.GTP",
+      "symmetric_difference_mm2": 0.0,
+      "difference_bounds_mm": null,
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "symmetric_difference_mm2": 2.324244411099995,
+      "difference_bounds_mm": [
+        23.54122,
+        -75.5269,
+        27.150000000000002,
+        -72.52902
+      ],
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_TopSolderMaskLayer.GTS",
+      "symmetric_difference_mm2": 0.0,
+      "difference_bounds_mm": null,
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_BottomSolderMaskLayer.GBS",
+      "symmetric_difference_mm2": 2.5475322254000194,
+      "difference_bounds_mm": [
+        23.490569999999998,
+        -75.57782,
+        27.150000000000002,
+        -72.47822
+      ],
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_BoardOutlineLayer.GKO",
+      "symmetric_difference_mm2": 0.0,
+      "difference_bounds_mm": null,
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_DocumentLayer.GDL",
+      "symmetric_difference_mm2": 2.1719371416912874,
+      "difference_bounds_mm": [
+        23.23655,
+        -83.14527934399882,
+        27.154119850578365,
+        -72.55402
+      ],
+      "outside_Q1_D4_R9_scope_mm2": null
+    },
+    {
+      "layer": "Gerber_InnerLayer1.G1",
+      "symmetric_difference_mm2": 1.8468337446413763,
+      "difference_bounds_mm": [
+        24.66035,
+        -75.98409,
+        27.2293,
+        -71.69556
+      ],
+      "outside_Q1_D4_R9_scope_mm2": 0.0
+    },
+    {
+      "layer": "Gerber_InnerLayer2.G2",
+      "symmetric_difference_mm2": 0.6300314809987053,
+      "difference_bounds_mm": [
+        19.54196,
+        -82.31824999999999,
+        30.868239999999997,
+        -71.89993
+      ],
+      "outside_Q1_D4_R9_scope_mm2": 1.4050170765620667e-15
+    }
+  ],
+  "CAM_local_scope_source_mm": [
+    22.9,
+    -76.2,
+    27.6,
+    -71.5
+  ],
+  "silkscreen": [
+    {
+      "side": "Top",
+      "opening_overlap_mm2": 0.0,
+      "within_0_15mm_opening_mm2": 0.0
+    },
+    {
+      "side": "Bottom",
+      "opening_overlap_mm2": 0.0,
+      "within_0_15mm_opening_mm2": 0.0
+    }
+  ],
+  "excluded_paste": [
+    {
+      "ref": "C30",
+      "pin": "2",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "C30",
+      "pin": "1",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "2",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "1",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "1",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "overlap_mm2": 0.0
+    }
+  ],
+  "Q1_pads": [
+    {
+      "custom_pin": "1",
+      "net": "BAT_P",
+      "center_source_mm": [
+        24.949988199999943,
+        -74.50000339999998
+      ],
+      "copper_area_mm2": 0.28200039599807364,
+      "paste_area_mm2": 0.282,
+      "paste_symmetric_difference_mm2": 1.1787952261326637e-05,
+      "mask_bounds_source_mm": [
+        24.64998,
+        -74.735,
+        25.24998,
+        -74.265
+      ],
+      "mask_exposed_fraction": 0.9999783972815147,
+      "stencil_area_ratio": {
+        "0.08": 1.6471962616822424,
+        "0.1": 1.3177570093457938,
+        "0.12": 1.098130841121495
+      }
+    },
+    {
+      "custom_pin": "3",
+      "net": "VSYS",
+      "center_source_mm": [
+        26.850009800000038,
+        -73.84999200000003
+      ],
+      "copper_area_mm2": 0.28200039599807364,
+      "paste_area_mm2": 0.282,
+      "paste_symmetric_difference_mm2": 1.161197316350614e-05,
+      "mask_bounds_source_mm": [
+        26.55,
+        -74.08499,
+        27.150000000000002,
+        -73.61499
+      ],
+      "mask_exposed_fraction": 0.9999787093007536,
+      "stencil_area_ratio": {
+        "0.08": 1.6471962616822424,
+        "0.1": 1.3177570093457938,
+        "0.12": 1.098130841121495
+      }
+    },
+    {
+      "custom_pin": "2",
+      "net": "USB_5V",
+      "center_source_mm": [
+        26.850009800000038,
+        -75.14998939999998
+      ],
+      "copper_area_mm2": 0.2820003959979969,
+      "paste_area_mm2": 0.282,
+      "paste_symmetric_difference_mm2": 2.049181921937893e-05,
+      "mask_bounds_source_mm": [
+        26.55,
+        -75.38498,
+        27.150000000000002,
+        -74.91498
+      ],
+      "mask_exposed_fraction": 0.9999629649150981,
+      "stencil_area_ratio": {
+        "0.08": 1.6471962616822424,
+        "0.1": 1.3177570093457938,
+        "0.12": 1.098130841121495
+      }
+    }
+  ],
+  "drills": {
+    "total": 85,
+    "PTH": 83,
+    "NPTH": 2,
+    "via_subset_of_PTH": 79,
+    "before_total": 87,
+    "minimum_hole_edge_gap_mm": 0.24802506186955028,
+    "C9_baseline_minimum_hole_edge_gap_mm": 0.24802506186955028,
+    "duplicate_local_GND_via_removed": "ggeUSB0928V329; C7 stub now terminates on existing ggeUSB0928V328",
+    "superseded_initial_Q1_export_gap_mm": 0.041908776,
+    "initial_Q1_export_not_for_manufacturing": true,
+    "NPTH_copper_gaps": [
+      {
+        "hole": {
+          "a": [
+            20.097,
+            -76.165
+          ],
+          "b": [
+            20.097,
+            -76.165
+          ],
+          "diameter": 0.651
+        },
+        "gaps_mm": {
+          "Gerber_TopLayer.GTL": 0.20967390762255111,
+          "Gerber_BottomLayer.GBL": 0.2919183519418115,
+          "Gerber_InnerLayer1.G1": 0.20175818816548585,
+          "Gerber_InnerLayer2.G2": 0.22954000000000108
+        }
+      },
+      {
+        "hole": {
+          "a": [
+            25.877,
+            -76.165
+          ],
+          "b": [
+            25.877,
+            -76.165
+          ],
+          "diameter": 0.651
+        },
+        "gaps_mm": {
+          "Gerber_TopLayer.GTL": 0.20929068092780645,
+          "Gerber_BottomLayer.GBL": 0.21635307169654416,
+          "Gerber_InnerLayer1.G1": 0.20165571347132982,
+          "Gerber_InnerLayer2.G2": 0.2518613019664414
+        }
+      }
+    ]
+  },
+  "limits": [
+    "Finite native format parser and bounded circular geometry; not factory DFM or machine setup.",
+    "137 connected pins / 49 explicit NC verified by separate whole schematic graph report; not complete native electrical-type ERC.",
+    "No ordering, quotation upload, physical USB/RF/power/pen testing."
+  ]
+}

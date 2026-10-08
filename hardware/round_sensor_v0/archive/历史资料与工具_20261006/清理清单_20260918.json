@@ -1,0 +1,2053 @@
+{
+  "范围": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0",
+  "废纸篓目录": "/Users/liuchunyu/.Trash/fyp_round_sensor_cleanup_20260918",
+  "已执行": true,
+  "保留脚本模块": [
+    "audit_a5_routed_snapshot",
+    "audit_a5_ufl_keepout",
+    "build_a5_preroute_layout_candidate_20260918",
+    "build_a5_rf_clearance_layout",
+    "build_a5_rf_route_20260918",
+    "build_a5_uart_candidate",
+    "build_a5_usb_front_candidate",
+    "build_a5_usb_keep_candidate",
+    "build_a5_usb_keep_footprints",
+    "build_a5_usb_soc_fanout",
+    "build_a5_usb_zone_placement",
+    "build_pcb_a5_pico_stencil",
+    "build_sch_a5",
+    "build_sch_a5_footprints",
+    "check_a5_uart_candidate",
+    "check_pcb_a5",
+    "check_pcb_a5_mechanical",
+    "check_sch_a5_footprints",
+    "check_ufl_footprint",
+    "optimize_pcb_a5_layout",
+    "repack_a5_local_20260918",
+    "test_a5_rf_route_20260918",
+    "test_a5_usb_keep_candidate",
+    "test_a5_usb_keep_footprints",
+    "test_a5_usb_soc_fanout",
+    "test_pcb_a5_pico_stencil",
+    "tidy_pcb_a5_labels",
+    "tidy_pcb_a5_silkscreen",
+    "verify_a5_preroute_layout_cloud_20260918",
+    "verify_a5_rf_native_20260918"
+  ],
+  "保留文件": [
+    "PCB_A5_PICO钢网与填孔候选.md",
+    "PCB_A5_嘉立创物料与层叠准备.md",
+    "PCB_A5_射频首段审核_20260918.md",
+    "PCB_A5_布线前制造审核.md",
+    "PCB_A5_机械审核.md",
+    "SCH_A5_电气与制造审核.md",
+    "SCH_A5_续航放宽与电源取舍.md",
+    "archive/eda_session_close_20260918/关机备份_01_旧工作板未保存.json",
+    "archive/pcb_cloud_cleanup_20260918/1-Schematic_圆形传感板_SCH_A5.json",
+    "archive/pre_SCH_A5_20260916/easyeda_std/PCBLIB_DMC2400UV_SOT563_DIODES_LAND_2026-09-15.json",
+    "easyeda_std/PCB_A5_18mm_trial.svg",
+    "easyeda_std/PCB_A5_18mm_trial_20260916.json",
+    "easyeda_std/PCB_A5_MLX040_verified_20260916.json",
+    "easyeda_std/PCB_A5_PICO分窗_仅候选禁止生产_20260917.json",
+    "easyeda_std/PCB_A5_PICO钢网对照.svg",
+    "easyeda_std/PCB_A5_USB主控侧_云端重开回读_20260917.json",
+    "easyeda_std/PCB_A5_USB主控侧重布候选_20260917.json",
+    "easyeda_std/PCB_A5_USB区域重新摆位候选_20260917.json",
+    "easyeda_std/PCB_A5_USB区域重新摆位对照.svg",
+    "easyeda_std/PCB_A5_USB接口侧局部重布候选_20260917.json",
+    "easyeda_std/PCB_A5_cloud_reopened_20260916.json",
+    "easyeda_std/PCB_A5_layout_before_20260916.json",
+    "easyeda_std/PCB_A5_native_unplaced_20260916.json",
+    "easyeda_std/PCB_A5_production_silk_verified_20260916.json",
+    "easyeda_std/PCB_A5_silk_before_20260916.json",
+    "easyeda_std/PCB_A5_silk_candidate_20260916.json",
+    "easyeda_std/PCB_A5_丝印预览.svg",
+    "easyeda_std/PCB_A5_保留自动布线_局部重布候选_20260917.json",
+    "easyeda_std/PCB_A5_天线净空布局候选_未原生验证_20260917.json",
+    "easyeda_std/PCB_A5_天线净空调整对照.svg",
+    "easyeda_std/PCB_A5_天线禁布审核.svg",
+    "easyeda_std/PCB_A5_布局优化预检.svg",
+    "easyeda_std/PCB_A5_机械空间审核.svg",
+    "easyeda_std/PCB_A5_用户布线副本_调整前备份_20260917.json",
+    "easyeda_std/PCB_A5_装配定位图.svg",
+    "easyeda_std/PCB_射频布线前现场备份_20260918.json",
+    "easyeda_std/PCB_射频首段_云端重开回读_20260918.json",
+    "easyeda_std/PCB_射频首段_原生回读_20260918.json",
+    "easyeda_std/PCB_射频首段候选_20260918.json",
+    "easyeda_std/PCB_局部重排_槽孔修正后云端回读_20260918.json",
+    "easyeda_std/PCB_局部重排候选_20260918.json",
+    "easyeda_std/PCB_局部重排前备份_20260918.json",
+    "easyeda_std/PCB_布线前关键区局部候选_20260918.json",
+    "easyeda_std/PCB_布线前关键区布局_云端重开回读_20260918.json",
+    "easyeda_std/cloud_presync_20260918/原理图_云端同步前备份.json",
+    "easyeda_std/design_netlist.json",
+    "easyeda_std/footprints/BATTERY_WIRE_2PAD_A5.json",
+    "easyeda_std/footprints/LMBR4010_SOD882_LRC_LAND_A5.json",
+    "easyeda_std/footprints/LP0404N3_SOT883_LRC_LAND_A5.json",
+    "easyeda_std/footprints/MLX90393_LQ_8_EP_P040_A5_R1.json",
+    "easyeda_std/footprints/MLX90393_封装设计说明.json",
+    "easyeda_std/footprints/SGM40567_WLCSP_6B_SGM_LAND_A5.json",
+    "easyeda_std/footprints/U_FL_R_SMT_1_HIROSE_LAND_A5.json",
+    "easyeda_std/footprints/原生焊盘回读.json",
+    "easyeda_std/footprints/封装几何清单.json",
+    "easyeda_std/footprints/封装原生核验报告.json",
+    "easyeda_std/pcb_a5_geometry_audit.json",
+    "easyeda_std/pcb_a5_label_positions.json",
+    "easyeda_std/pcb_a5_layout_plan.json",
+    "easyeda_std/pcb_a5_mechanical_audit.json",
+    "easyeda_std/pcb_a5_pico_stencil_candidate_check.json",
+    "easyeda_std/pcb_a5_rf_clearance_layout_check.json",
+    "easyeda_std/pcb_a5_routed_snapshot_audit.json",
+    "easyeda_std/pcb_a5_ufl_keepout_audit.json",
+    "easyeda_std/pcb_a5_usb_front_candidate_check_20260917.json",
+    "easyeda_std/pcb_a5_usb_soc_fanout_check.json",
+    "easyeda_std/pcb_a5_usb_zone_placement_check_20260917.json",
+    "easyeda_std/ufl_footprint_geometry_check.json",
+    "easyeda_std/usb_keep_min_candidate/01.svg",
+    "easyeda_std/usb_keep_min_candidate/02.svg",
+    "easyeda_std/usb_keep_min_candidate/03.svg",
+    "easyeda_std/usb_keep_min_candidate/04.svg",
+    "easyeda_std/usb_keep_min_candidate/05.svg",
+    "easyeda_std/usb_keep_min_candidate/footprints/封装清单.json",
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.json",
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.svg",
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_原生核验.json",
+    "easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.json",
+    "easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.svg",
+    "easyeda_std/usb_keep_min_candidate/制造规则候选.json",
+    "easyeda_std/usb_keep_min_candidate/原理图_保留USB小型化候选.json",
+    "easyeda_std/usb_keep_min_candidate/原生回读_全部封装绑定.json",
+    "easyeda_std/usb_keep_min_candidate/原生回读_按键绑定.json",
+    "easyeda_std/usb_keep_min_candidate/原生验证进度.json",
+    "easyeda_std/usb_keep_min_candidate/接线检查.json",
+    "easyeda_std/usb_keep_min_candidate/预期接线.json",
+    "easyeda_std/usb_keep_min_candidate/预览.html",
+    "easyeda_std/射频首段云端核验_20260918.json",
+    "easyeda_std/射频首段原生核验_20260918.json",
+    "easyeda_std/射频首段检查_20260918.json",
+    "easyeda_std/局部重排检查_20260918.json",
+    "easyeda_std/布线前关键区局部候选检查_20260918.json",
+    "easyeda_std/布线前关键区布局_云端核验记录_20260918.json",
+    "references/Connect Timing ECN.pdf",
+    "references/FXP75.07.0045B.pdf",
+    "references/Hirose_U.FL_catalog.pdf",
+    "references/Hirose_UFL_10_spec.pdf",
+    "references/USB 2.0 ECN VBUS Max Limit.pdf",
+    "references/U_FL_R_SMT_1_HIROSE_LAND.kicad_mod",
+    "references/U_FL_R_SMT_1_HIROSE_LAND_easyeda_import.kicad_pcb",
+    "references/XIAO_ESP32S3_V1.3_SCH_260115.pdf",
+    "references/esp32-s3-pico-1.pdf",
+    "references/imu.kicad_mod",
+    "references/lmbr4010bst5g.pdf",
+    "references/lp0404n3t5g.pdf",
+    "references/melexis_smt_guidelines.pdf",
+    "references/mlx90393.pdf",
+    "references/panasonic_evpbb.pdf",
+    "references/round_sensor_project_pads_easyeda_import.kicad_pcb",
+    "references/sgm40567.pdf",
+    "references/sgm6029.pdf",
+    "references/ti_mlcc_dc_bias_sluaad3.pdf",
+    "references/ti_qfn_son_slua271c.pdf",
+    "references/tlv755p.pdf",
+    "references/tpd2eusb30a.pdf",
+    "references/tps63802.pdf",
+    "references/usb4105.kicad_mod",
+    "references/usb4105.pdf",
+    "scripts/audit_a5_routed_snapshot.py",
+    "scripts/audit_a5_ufl_keepout.py",
+    "scripts/build_a5_preroute_layout_candidate_20260918.py",
+    "scripts/build_a5_rf_clearance_layout.py",
+    "scripts/build_a5_rf_route_20260918.py",
+    "scripts/build_a5_uart_candidate.py",
+    "scripts/build_a5_usb_front_candidate.py",
+    "scripts/build_a5_usb_keep_candidate.py",
+    "scripts/build_a5_usb_keep_footprints.py",
+    "scripts/build_a5_usb_soc_fanout.py",
+    "scripts/build_a5_usb_zone_placement.py",
+    "scripts/build_pcb_a5_pico_stencil.py",
+    "scripts/build_sch_a5.py",
+    "scripts/build_sch_a5_footprints.py",
+    "scripts/check_a5_uart_candidate.py",
+    "scripts/check_pcb_a5.py",
+    "scripts/check_pcb_a5_mechanical.py",
+    "scripts/check_sch_a5_footprints.py",
+    "scripts/check_ufl_footprint.py",
+    "scripts/cleanup_hardware_20260918.py",
+    "scripts/optimize_pcb_a5_layout.py",
+    "scripts/repack_a5_local_20260918.py",
+    "scripts/test_a5_rf_route_20260918.py",
+    "scripts/test_a5_usb_keep_candidate.py",
+    "scripts/test_a5_usb_keep_footprints.py",
+    "scripts/test_a5_usb_soc_fanout.py",
+    "scripts/test_pcb_a5_pico_stencil.py",
+    "scripts/tidy_pcb_a5_labels.py",
+    "scripts/tidy_pcb_a5_silkscreen.py",
+    "scripts/verify_a5_preroute_layout_cloud_20260918.py",
+    "scripts/verify_a5_rf_native_20260918.py",
+    "双MLX90393_I2C审核_20260918.md"
+  ],
+  "移出文件数": 310,
+  "移出字节": 37422848,
+  "清单": [
+    {
+      "原路径": "AGENTS.md",
+      "字节": 6466,
+      "SHA256": "8c18e8b07a2413695ec69bd8f43cf06b347b1692a0f0829fe58fbc9dd4fe6ba0",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "CAD_HANDOFF.md",
+      "字节": 33015,
+      "SHA256": "3e2914f2ae593fbc6de418ed90436e33450bcd8a46e339f74e2efe9e5c602602",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "DESIGN_BASELINE_XIAO_PICO.md",
+      "字节": 8443,
+      "SHA256": "66815d8351dac795a6303513a38fbb11a2728dfecd37e53f799a1cc56d2c54c0",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "PCB_A5_USB主控侧局部重布.md",
+      "字节": 4534,
+      "SHA256": "269df343198ed361bf47c4f634470a40b10188a7e6ecc5ea92f015ea85063d4e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_USB区域重新摆位.md",
+      "字节": 2255,
+      "SHA256": "c9c55b2cfe29289424fb51a7ce305b0f13ed60b55b8d2a1090be36de0ecb0ac2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_USB四网完整布线.md",
+      "字节": 2813,
+      "SHA256": "3c062f80f3e90bcf2e47a93ff4684c236869c6bbdf367654151e9b40de23ce06",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_USB接口侧局部重布判定.md",
+      "字节": 2149,
+      "SHA256": "03db5c86b17952efacf70a5001192e989370c447310cdf53a3343f501a309112",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_USB电源接地回接.md",
+      "字节": 5502,
+      "SHA256": "daa48b846ae7adb22b78a9ac0769890d52abe15e33cc3c139ddceb54d64e2050",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_天线净空布局调整.md",
+      "字节": 3818,
+      "SHA256": "79ba4482c8f834dba7ea3922f3a643a2f8455953a4fd8f9299bffd910ff86500",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_天线接口与禁布审核.md",
+      "字节": 5153,
+      "SHA256": "1139b12c61130556ecc6b1c963a91791bb9f71c3ce7f71994d62a3153bd7f565",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_布局优化.md",
+      "字节": 4788,
+      "SHA256": "61fcbadf63305020bb6ffb5eebaa30288252a34fb51ca08013174897161810e9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_布线前关键区布局审核_20260918.md",
+      "字节": 4257,
+      "SHA256": "51ae4dd1eaf93976b2cb98e9f6e3ed245badd2dda1a83281ebd1a21ca944454c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_接线与丝印.md",
+      "字节": 3726,
+      "SHA256": "affee9d4d1ee58aee5352e51dcd4bf7bfb44b706c07b10a9ea86e61dfe37b427",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_最新布线副本审核.md",
+      "字节": 7276,
+      "SHA256": "ea51623df83cae7ed8489b2c2e93c6509149c0cda97c335384ebeb03739937a2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_电池系统电源回接.md",
+      "字节": 4200,
+      "SHA256": "82530195e8f56fc3174c9fcdf0d9fbe25b01d10dce6577e76aaef05d6953eb28",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "PCB_A5_试排审核.md",
+      "字节": 9438,
+      "SHA256": "7b84b5064c32a3f651876255caf71c2f95c1c61ee934be4df7e057a4f8a0e60f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "README.md",
+      "字节": 15263,
+      "SHA256": "362a7a60446b947775ef90ce36962124d4b07b9a634470f91c9a06a7a57c60f6",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_02_五页原理图候选.json",
+      "字节": 99042,
+      "SHA256": "0f59ca7f783b71e3960a888bd03df6a802ee880eaf73133de7f2530a92fd1e15",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_03_局部重排候选一.json",
+      "字节": 366769,
+      "SHA256": "f43fe9925ded241f376b92c0de01b6c1923283e7ed7392204e5dc95a4c77bb9e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_04_局部重排候选二.json",
+      "字节": 366781,
+      "SHA256": "c094606757496faa90304d103a9912b643a722dbd4ad28947df8977de8906f67",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_05_布线前关键区候选.json",
+      "字节": 392863,
+      "SHA256": "7759d1e563d7fe39b1795514e7a8ca68135444c0f0391b34b4044cda0e33132a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_06_射频首段候选.json",
+      "字节": 395164,
+      "SHA256": "b8456e67199106671681eb29cf180cdf4c363e82f22319860d59f78341339a17",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/关机备份_07_最新云端PCB.json",
+      "字节": 395148,
+      "SHA256": "d22b484a763e2224d73e1be1d723be3be5c914914e04d1afcca2d497c79c5446",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/eda_session_close_20260918/恢复说明.md",
+      "字节": 2447,
+      "SHA256": "46835e8418788449cc6563c1d238f89f4562b96bd8e2fccad393e0b08d9c969f",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/1-PCB_PCB_圆形传感板_SCH_A5.json",
+      "字节": 342408,
+      "SHA256": "7a0f96cd2fa10902fe28dc846b31d15df74ae6831d879cb1cd444c58704f9f04",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/2-PCB_PCB_圆形传感板_SCH_A5 copy.json",
+      "字节": 342408,
+      "SHA256": "7a0f96cd2fa10902fe28dc846b31d15df74ae6831d879cb1cd444c58704f9f04",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/3-PCB_PCB_A5_保留自动布线_局部重布候选_20260917.json",
+      "字节": 362727,
+      "SHA256": "ebc5ef084c2764b6ff4898b8676e885b7ea943783f2efc10494a20b763c3e7a4",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/4-PCB_PCB_A5_USB主控侧重布候选_20260917.json",
+      "字节": 363178,
+      "SHA256": "569f82683236011346cf6993eeb58d36774b488d4dc4016f181acc06232e32e6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/5-PCB_PCB_A5_USB电源接地回接候选_20260917.json",
+      "字节": 373421,
+      "SHA256": "7b62cd7407efa71689204fe5de3cbbf2448c5334e80874bb3af5fe1f764ae988",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/6-PCB_PCB_A5_电池系统电源回接候选_20260918.json",
+      "字节": 375093,
+      "SHA256": "e0cf3e040a502467b54f6d12ad35877c80f96602a0d1f70917e5521aae992384",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/A5云端工程_清理前完整备份.zip",
+      "字节": 471526,
+      "SHA256": "dc4af064155336bed7d820e8ad396221cdf5e967e3202d3cd0d7c2ba1d26940b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/README.txt",
+      "字节": 532,
+      "SHA256": "c7851025a85a522417c2360e16043554b43f02f80a8d9384c4f952ca8776ae9c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/备份核验清单.json",
+      "字节": 3027,
+      "SHA256": "d104afe37a401c0e618ae513d046d7ffa81a458e80fccde4085dd4252e684019",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/当前工作版_清理后核验.json",
+      "字节": 374142,
+      "SHA256": "2b26108cc0cdfa990ee24d9ff90a4ca758f61b91e7084b4673eb2ca3374920ce",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/未保存copy_清理前快照.json",
+      "字节": 359470,
+      "SHA256": "6b571b8bfc231e56458c0af80c835215c6809e27611e5422f25e6f58e231a443",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pcb_cloud_cleanup_20260918/清理说明.md",
+      "字节": 2533,
+      "SHA256": "b0d847881b477062449c1e0818f776355ff549325a7f7e2f07acf30dfcb5a128",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/CAD_HANDOFF.md",
+      "字节": 5933,
+      "SHA256": "2e0ae123b96871207b5b9a0d10e2c177b1efd3330e2c9bbdf8b77c729a45ecd8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/DESIGN_BASELINE_XIAO_PICO.md",
+      "字节": 3399,
+      "SHA256": "3aaf82e8087f69e698ee2e8aacc9a157fbfea6bd31d1ab633cc4f860b893b6a9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/POWER_CANDIDATE_COMPARISON_SCH_A4.md",
+      "字节": 12452,
+      "SHA256": "6c0a03494f231251f48bda2380469e60fa23dbe32effe3f4c302bbba421b7e30",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/POWER_CONTROL_POLICY_SCH_A4.md",
+      "字节": 6459,
+      "SHA256": "26a30afa9079e3f0857d8fe718f399a7c3f0c554292a57dbf31f24decb575fbe",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/POWER_REVIEW_SCH_A2.md",
+      "字节": 8612,
+      "SHA256": "d47c8ef5bc8aeb9476f3b90084b928de23a1259e0c546ba735ea03e36f44adfa",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/POWER_REVIEW_SCH_A3.md",
+      "字节": 7867,
+      "SHA256": "843f1b537154e8a44e12ed9791e92b42b4d9d003891cbbc13f8ad5edcf32576f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/POWER_UPDATE_SCH_A3.md",
+      "字节": 5173,
+      "SHA256": "bdce0e8d602470977e877dd3add37d07903199d2d7dbf860ac8d9d9f324384af",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/README.md",
+      "字节": 13048,
+      "SHA256": "6575d7c679cc7b12517f5ad40629e6b034b83b5df627c4f1a678a92ed233b359",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/RF_CHARGER_UPDATE_SCH_A4.md",
+      "字节": 6012,
+      "SHA256": "05a62b4668471b96e3b76e7dcf24122f750277ac52b1943d0b50ea5299577dbb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/SCH_A5_cloud_before_finalcheck_20260916.json",
+      "字节": 94805,
+      "SHA256": "7f47ef0383a28d43a10d8aabd5c6a12e45c682b7baa448344efc9cec711f6a38",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/cleanup_manifest.json",
+      "字节": 15257,
+      "SHA256": "82df584f7fe09c2029ec8dbe8fe7f7f4afd99f97764732055e47142699341469",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/01_mcu.svg",
+      "字节": 29859,
+      "SHA256": "b8fe754498ab07a1896b8bce769a4f8fc09c21d8bc199d45b2165dc74493babd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/02_sensors.svg",
+      "字节": 21557,
+      "SHA256": "846f9d5890fdc271e19d4fafb82bc507c215b58d344a79e9ffda3c01ba9af53a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/03_usb.svg",
+      "字节": 20544,
+      "SHA256": "98e8ba46a2f43d9b1d2ab2c25e60d3fce946013448abe2a1c219d88414f57b9d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/04_power.svg",
+      "字节": 44173,
+      "SHA256": "bc8fb3f4ae25ffd5b49f3bcebfd3bf9fda241a46a1c7a32af766c8d8c855e11c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/05_rf_bringup.svg",
+      "字节": 36287,
+      "SHA256": "fe964a69fc860b4555f2009b779d1145391d99188ca05f4fd0bd75c266615f39",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/PCB_round_sensor_SCH_A2_initial_2026-09-15.json",
+      "字节": 366576,
+      "SHA256": "d6bf7a362fd21ab11799ab3fdfd09165b11ef0829629f05523fc66e3038bbcf8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/README.md",
+      "字节": 15668,
+      "SHA256": "b50f2255eaa3e28e84eb130a3029da9910b078a2299a1fe8d6b363880df17af1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/SCH_round_sensor_SCH_A2_bound60_2026-09-15.json",
+      "字节": 123089,
+      "SHA256": "925871e6dac455a309294df3c2a8e8d069732dccfcdd550e12e8e1d3cec072bf",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/SCH_round_sensor_SCH_A3_bound65_2026-09-15.json",
+      "字节": 131210,
+      "SHA256": "bfe28598e1448ff9c33d9b9d7eadd060d93ecf8c50a20e57af76346d7294c0ed",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/bom_draft.json",
+      "字节": 16472,
+      "SHA256": "4679b23dcd57ab85d45706655cd0a05b1fbc372a9ebc95983353efdd826275ee",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/custom_footprint_plan_SCH_A2.json",
+      "字节": 8047,
+      "SHA256": "ab948c95774053674e8379840d3c3cd2597eb4999b709f7c78a99caeb8a09b86",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/design_netlist.json",
+      "字节": 70872,
+      "SHA256": "6387b934953302ec933f65dc5ae917ef393d983d5392e65215947ead26a2eef6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/editor_validation_SCH_A2_CN_FINAL.json",
+      "字节": 1125,
+      "SHA256": "167a51d60a004e4f4c9b7f8e5422e9ac2c232ec4f8badaa214a478aa194c9490",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/editor_validation_SCH_A3.json",
+      "字节": 2005,
+      "SHA256": "007f444456f83a325f52ea4272442e53068d82bc177b587bf039ee4f947b6ed0",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/footprint_binding_SCH_A2.json",
+      "字节": 7495,
+      "SHA256": "4d6471e9e6f3f7390a04e9e26d5478d70a5ebfed9a53fc46651f339a81eb2584",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/footprint_binding_SCH_A3.json",
+      "字节": 2016,
+      "SHA256": "3f943d81d2e9307099e1db3e2121f31949a0379272256f3166b4d21d021ae460",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/footprint_binding_SCH_A4.json",
+      "字节": 1996,
+      "SHA256": "cc6a24370e072bd0acbc1c96c9a48c3bfd5348b25eb24293964789a95f73fe7f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/preview.html",
+      "字节": 1900,
+      "SHA256": "79168b183684051cd3b259ade0cc895abca1c7187f6d6bcad105b900417e659e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/q1_footprint_geometry_check.json",
+      "字节": 1631,
+      "SHA256": "ef5dc5cd1b725cb05d850253335e75a1d3a6f8edaa4f63f79479e142a3bc3c9f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/q1_footprint_review_SCH_A3.json",
+      "字节": 1862,
+      "SHA256": "d7b61bd91edae09941c750455a93ae18b57279f2483538a34feb9973c66913ea",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_01_MCU.json",
+      "字节": 18740,
+      "SHA256": "27071cab0affddda4ac5dc8c5ec1b95851fe0212782be42d80e11023ca2a2363",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_02_SENSORS.json",
+      "字节": 16070,
+      "SHA256": "5bbefc58cb2f53d69d86909221b5f75aa6e86f0a54870b850596721e3a2eacf9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_03_USB.json",
+      "字节": 16190,
+      "SHA256": "46322c7da65ea136784bd6e1344ade6454cb6d1cd8c1cf61d14b6fd99b0f3246",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_04_POWER.json",
+      "字节": 28111,
+      "SHA256": "3de6caad805ba32c47a4ae2c1e722a10e5657206dd8ea3a380b4fe30512c5f87",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_05_RF_BATTERY_DEBUG.json",
+      "字节": 32671,
+      "SHA256": "86787e5f725952525093bd0331077a212e95e392e0b1bc562fa70bf482585c17",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_WIRED_multi.json",
+      "字节": 119375,
+      "SHA256": "9c42e906ae26a2d8808b3c83e1a1b2dd3b824a4e2eb68d289e8351780caa64ab",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A2_multi.json",
+      "字节": 116529,
+      "SHA256": "859f19994c062c087f1a49e9ca4ae3e051038bf0236c6e09421340c3d7c13e23",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_01_MCU.json",
+      "字节": 18788,
+      "SHA256": "8362faed9699de781df1ffd8b3f2be96b5883f9ff92a7999484acfdae755d872",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_02_SENSORS.json",
+      "字节": 16070,
+      "SHA256": "734c6c77848e9dffdc5b28872e973be75339c69bdbf937ba96d0de08a4d4ebc5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_03_USB.json",
+      "字节": 16190,
+      "SHA256": "7749c91259fc79e7839c0d53553df126add1134cc1f8c17b9cb224f515cb6cab",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_04_POWER.json",
+      "字节": 35897,
+      "SHA256": "9674934fe12080b8267297be9c126a1fd6188b3d6096fa08e201264db2f839fc",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_05_RF_BATTERY_DEBUG.json",
+      "字节": 32784,
+      "SHA256": "4f0e3eebf6d4015ef54a4255428640fc8f83d31fdd7d62e092d2787c5652b7a6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_WIRED_multi.json",
+      "字节": 127788,
+      "SHA256": "29504b6d8bb0dff893d1e0f9078773f7001487a740a3e39be266dc7241b09789",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A3_multi.json",
+      "字节": 124722,
+      "SHA256": "9d9340fdfc29e2b888d79f9534178acf0d0d961c0868b9443744c2a8c5c21cbb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_01_MCU.json",
+      "字节": 18788,
+      "SHA256": "bcfaaf063f05e3075c246f1513f0b67b0000282c98ccf2baf91dff6c4c01598f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_02_SENSORS.json",
+      "字节": 16070,
+      "SHA256": "c46ae4dacfb3edf03f815cecf5a98107f0646158efbca2b6d471813c3b363f8c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_03_USB.json",
+      "字节": 16190,
+      "SHA256": "5aa9b9d0aae384e6c7252cbd22c097b7e097a254f684bc5765d31cd230ad761d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_04_POWER.json",
+      "字节": 35897,
+      "SHA256": "cc3567a0a9afaab66f671e70f52d225e1e14e2519cdb182eae1744be9be0cabb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_05_RF_BATTERY_DEBUG.json",
+      "字节": 31602,
+      "SHA256": "9a1b248e2a82c437d15365872ab8f67e09b6e01e0a2b17265b79d3eb7f42259c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_WIRED_multi.json",
+      "字节": 126435,
+      "SHA256": "4633d2e34962da537fd392e90fcee59bb90e6e4b99ca6a8aa8615488334d66e9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/round_sensor_SCH_A4_multi.json",
+      "字节": 123498,
+      "SHA256": "699ef801d3cbdaba3c896de0190b1cec1d2795c25a56b69a02a3419f94be0dca",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/sheets_manifest.json",
+      "字节": 3343,
+      "SHA256": "488c29236aabf8592b89a702cbe76973d2fc9795e5a32067794da63f01e67ed7",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/ufl_footprint_geometry_check.json",
+      "字节": 1068,
+      "SHA256": "115a2bfd0e48cb324ac68e29430472eeede07bcb6cc70c2b92aba9b36bc1db68",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/easyeda_std/validation_report.json",
+      "字节": 6684,
+      "SHA256": "3df94d073e0b31bebf2575a204b75cd2c4f81f8471f18d91433f4c96e58a4dd0",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/component_placement_checks.json",
+      "字节": 27176,
+      "SHA256": "cc0a8e5fa5b66b1253e4535cf3780f03e406534d968c1046a915e03fea16530a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/connections.json",
+      "字节": 6171,
+      "SHA256": "1bba23c864159c89ba59d355b40f0cb805232a2a1a1818626ee3d489b579ffde",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/geometry_checks.json",
+      "字节": 6638,
+      "SHA256": "31fb5ef4c1f8b71fcbff74c0689d5d9e582b7eca8b2f3f251d98d7cc4cd5a3ab",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/passive_schedule.json",
+      "字节": 935,
+      "SHA256": "413cdd84f5833a3c1087da140389a203f1f44c9250b63e5c9bbbfd94dc9603f6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/placement_18mm.svg",
+      "字节": 6482,
+      "SHA256": "453f9ab0b4269f1c7e1bda20b2bea64c2a1efd136093d54fe8991a2c92f541a5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/placement_18mm_preview.png",
+      "字节": 47158,
+      "SHA256": "e0debdbca6eaccdf9104e6cf10c3c3addcae51a4ce3b238978720dec6e0ac9cc",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/placement_20mm.svg",
+      "字节": 6485,
+      "SHA256": "11284ed27ec631582942cba1c45e745245557af778e8222771618f08f685a9d5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/placement_22mm.svg",
+      "字节": 6489,
+      "SHA256": "845d983865c131e657da6002d957de9861a44423bf252bcfb166e254e7a4fb0a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/power_candidate_comparison.json",
+      "字节": 32207,
+      "SHA256": "462cbe7a9f0e4de911c24af6ae587fa67b78c8d6d544ceba48af822555a01698",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/generated/source_manifest.json",
+      "字节": 3406,
+      "SHA256": "23fbfcb3928a69c5cb0d3353c793821458e43b3a8e430e408a9bb9d51428c96b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/audit_power_sch_a2.py",
+      "字节": 7400,
+      "SHA256": "aaa0a2eb6cfa2e2b439934f70e7d1a2e20a16f1ba9f813dfa2de665a462cd988",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/audit_power_sch_a3.py",
+      "字节": 2327,
+      "SHA256": "919ad8fd1bcc0ec1a78ee997355da118955b245bc3d60fd2d29f52f6ffc36432",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/build_component_placement.py",
+      "字节": 7781,
+      "SHA256": "0237992c92aeed6f5929c0364edd3e31c07692f540def184694cecafe5978a8a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/build_easyeda_schematic.py",
+      "字节": 30336,
+      "SHA256": "77fcaf478981267a087e14351e89450272914e1090d77c633f97d29a1085962e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/build_review.py",
+      "字节": 19547,
+      "SHA256": "62117d6f9c3dd81b2b8c9b6fd208081438cd7386e172145d4a7f34bbf77a0d06",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/check_easyeda_schematic.py",
+      "字节": 12297,
+      "SHA256": "2684ea52213d093964215a821d82925b8e575bdf97d87b26dbcf0b47b9a29818",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/check_q1_footprint.py",
+      "字节": 2351,
+      "SHA256": "01a0ba16bbd39391299d3f195bdf6599020844010be30dfd83b6fd3a14ec968a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/check_ufl_footprint.py",
+      "字节": 1996,
+      "SHA256": "8b50a6012e488db8b9e0c956ef01be2e37ef4c00bf2bcaaf27a6ce99a895bf3f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/compare_power_candidates.py",
+      "字节": 5942,
+      "SHA256": "ffa7d11947ae85bb36a6ecd26c020c422acf8fd007d2386fbd65b9c9e0ed3f7a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/merge_bound_wired_schematic.py",
+      "字节": 4417,
+      "SHA256": "688c9473346a8e92c7ea1977aa833fb01d3d4018b5a17e6bfada54be1519ac4f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/power_policy.py",
+      "字节": 2290,
+      "SHA256": "66ee750b1167a576dfed3eb6bd2ec96d37cb2c500e3e3ea8994e0116f98a42fd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/test_easyeda_checker.py",
+      "字节": 3695,
+      "SHA256": "864b32ac067a85e97cece6b262dcb4bfdf725fd407cdd8a819d7f9abb4146e90",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/scripts/test_power_policy.py",
+      "字节": 2947,
+      "SHA256": "1f8445fa64843c17a7412c58cb82ea63ef1ee7684477f04881490167f5d37e98",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "archive/pre_SCH_A5_20260916/归档说明.md",
+      "字节": 622,
+      "SHA256": "d461f457bc20b632d0b0b58385c347fb48af3014c57df82cd8fb3c40acd10b2b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/01_mcu.svg",
+      "字节": 33617,
+      "SHA256": "81cfe8fb9dc63d2588140a171cce49638f928827e15731a0aeb57b3f7e25ad8a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/02_sensors.svg",
+      "字节": 20797,
+      "SHA256": "3331740769dcff054dd7b2e5991e9bb6019585316f4c913b3dafd5446190f8ca",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/03_usb.svg",
+      "字节": 22531,
+      "SHA256": "ecc1a4cc0b41bb1ee7043b92a77149acd946addb16f2db78a746cd2d9474f02b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/04_power.svg",
+      "字节": 28854,
+      "SHA256": "90d66069873872a992bf3adbd3c3d31a0885d3760666fdfb6bd224bb0abfd52f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/05_rf_debug.svg",
+      "字节": 12053,
+      "SHA256": "e20f3bef2cbcc186c1d9340a67739174fdb75f9e39edcbc4cea2e3eb5090ad99",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_18mm_readable_20260916.json",
+      "字节": 335031,
+      "SHA256": "e4ac945be4cc6b903ed463a976bf66c0e80f3dea298289bc7af2c99dc9d751f7",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_MLX040_candidate.json",
+      "字节": 333525,
+      "SHA256": "6770f733f02701ae9e82b67ba1a5f1f8567abeba9500a316e73991a21d4de3eb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_MLX040_clearance_cloud_20260916.json",
+      "字节": 333233,
+      "SHA256": "71dd49937c19f5cdd4aaef8eda238993fc4bb767f94dd667a9e76474ca7d719c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_MLX040_reopened_20260916.json",
+      "字节": 333233,
+      "SHA256": "71dd49937c19f5cdd4aaef8eda238993fc4bb767f94dd667a9e76474ca7d719c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_MLX040_saved_20260916.json",
+      "字节": 333233,
+      "SHA256": "71dd49937c19f5cdd4aaef8eda238993fc4bb767f94dd667a9e76474ca7d719c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB主控侧_原生回读_20260917.json",
+      "字节": 361955,
+      "SHA256": "386dd7e92fff63cda5ed458de904bdb6eebcec387ebf29c353aec90fde2f9403",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB主控侧_规则回读临时_20260917.json",
+      "字节": 361973,
+      "SHA256": "8850facfefed5df779aa483964bb99c0f94c126b594100e8d00ed75e959b54ef",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB区域重新摆位预览.svg",
+      "字节": 150931,
+      "SHA256": "a712293ef150c079a42e50cf5cfdbe58302b2a7a91e90a6e0b2ea2d82a23eca5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB四网完整布线候选_20260917.json",
+      "字节": 370841,
+      "SHA256": "d87f5057d71e0ae61ebc106630598e7d0856a7fe5ea3a212c2ae5196383e80fe",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB电源接地_云端重开回读_20260917.json",
+      "字节": 372338,
+      "SHA256": "67d6333e36badc7abf0b09c388d90436b65a7836d92491cf5c34922c0f9e3095",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB电源接地_原生回读_20260917.json",
+      "字节": 372336,
+      "SHA256": "97a22f6225ceb44fdc83bd6ae4671336b61c16a2117ea720e305ac1b5ce0f9ea",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB电源接地回接候选_20260917.json",
+      "字节": 374145,
+      "SHA256": "789389718d82b30293f132fddd9b06ed0ff20d46fb4e1759d90fba77e5db4387",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_USB电源接地局部对照.svg",
+      "字节": 73956,
+      "SHA256": "86cf465e7278e68804dacd16175fc57bb9c57e0c66f18a646e08735cdf6d24bc",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_function_silk_before_20260916.json",
+      "字节": 334683,
+      "SHA256": "254224d7c7cc57a33b4d3e6d26232b4599144a345abf724914d294957b8b111c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_function_silk_candidate_20260916.json",
+      "字节": 338610,
+      "SHA256": "87458104d961518ea6aaedbdec0d4d17827c5ac5b3d9e8f4170e6b857af3ff71",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_function_silk_probe_20260916.json",
+      "字节": 337899,
+      "SHA256": "772f71c54750392c54506c783fec7dc33228404931f3896adc50ff278147ed7e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_function_silk_verified_20260916.json",
+      "字节": 337918,
+      "SHA256": "fa3d2a725cb438ddd5e14130c56875b8cbf3990e833eb5b4fc8c9e1ae14d222f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_candidate_20260916.json",
+      "字节": 335904,
+      "SHA256": "6d6d85e237028c6560e5aee93a7c9f7fa7002888ad15a1b9c43cd0cf4f74e58c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_final_20260916.json",
+      "字节": 334683,
+      "SHA256": "5bbdafcbae517fb9dde026457e4900fc7350230dd179a413b45981250268cf24",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_final_candidate.json",
+      "字节": 335436,
+      "SHA256": "91b63ef89e2b27f809387ec5c8e88809abd00978d56be84af0297a15bbf3c614",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_markers_candidate.json",
+      "字节": 334743,
+      "SHA256": "c19fdf9d66ab0d9a5362b5314df97e1f3a58eb607f1c16135bbe0c6a9cbc8e2a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_oriented_20260916.json",
+      "字节": 335142,
+      "SHA256": "773a2e11bbfa44d306cceeef9f47831007b098fe45cad7f0403aa52479507b4a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_placed_20260916.json",
+      "字节": 335237,
+      "SHA256": "939c90e8051a83aabd47269cf7478b75b572cc01933d2d96c740ba32437d42f3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_layout_verified_20260916.json",
+      "字节": 334673,
+      "SHA256": "806e926f1aa249cfa2a59a1ccbbbe4d6891ea8052e3b5a397a1fad74afdae7ed",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_production_silk_before_20260916.json",
+      "字节": 337918,
+      "SHA256": "fa3d2a725cb438ddd5e14130c56875b8cbf3990e833eb5b4fc8c9e1ae14d222f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_production_silk_candidate_20260916.json",
+      "字节": 339395,
+      "SHA256": "4b1737814233a6f26190ec8249650bcd27482d1a2e1ca3885ca011fcd9d85284",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_silk_verified_20260916.json",
+      "字节": 330635,
+      "SHA256": "294d1031fe92391675be607cec833c847a98cbb5e0b722b5c3e2751ab765c866",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_仅审查禁止生产_20260916.zip",
+      "字节": 27307,
+      "SHA256": "aa7da6d66e265586f6b76ddbde57216de0512cd418334e1109f89bc0be051c46",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_生产字号候选.svg",
+      "字节": 150670,
+      "SHA256": "5fdac72d5109a24bd30d2bd0b11525ea9ca124ede2b05e749625c07fc122cac1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_电池系统电源回接_云端重开回读_20260918.json",
+      "字节": 374142,
+      "SHA256": "00ca7e3543298485dfef2692a2746d65d3e12e56d65eb680cb4fd970e240b4d2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_电池系统电源回接_原生回读_20260918.json",
+      "字节": 374142,
+      "SHA256": "be2437a18c095baf10e5baff67ae5a0c63d74781a94c78dbb8c840ec09609f62",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_电池系统电源回接候选_20260918.json",
+      "字节": 374599,
+      "SHA256": "f6ab97302a1572972a11e7f356676a1d23df90ff0788b69ab7ca97e0d8c184f1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_A5_电源地布线前回读_20260918.json",
+      "字节": 372338,
+      "SHA256": "67d6333e36badc7abf0b09c388d90436b65a7836d92491cf5c34922c0f9e3095",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_局部重排_云端重开回读_20260918.json",
+      "字节": 366441,
+      "SHA256": "5395ace9684896efea086abf82e700d6b4d0bb74605bcd3cdc82b762fa70684a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_局部重排_最终云端回读_20260918.json",
+      "字节": 366441,
+      "SHA256": "5395ace9684896efea086abf82e700d6b4d0bb74605bcd3cdc82b762fa70684a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/PCB_槽孔导入诊断_20260918.json",
+      "字节": 366781,
+      "SHA256": "c094606757496faa90304d103a9912b643a722dbd4ad28947df8977de8906f67",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/README.md",
+      "字节": 9058,
+      "SHA256": "0e0ffbf6d9ad09a7420452088f27213f246e7382e0cf918272c0268aec5d9d75",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "easyeda_std/SCH_A5_MLX040_bound_20260916.json",
+      "字节": 93819,
+      "SHA256": "0a00f00f3220c02d0c7f12afade915b1ebea27c1199fcd9dad56591c2f6cfb49",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/SCH_A5_bound40_cloud_20260916.json",
+      "字节": 92673,
+      "SHA256": "2a16bdfc0e5d1618435d8da5a8e58dd80d8ae4b4ab956a6b9cd452eef38c609b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/SCH_A5_bound40_final_20260916.json",
+      "字节": 92440,
+      "SHA256": "b5328a6084d49553670777de2e1626bfd199d27903946577effe088ce740c1d0",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/SCH_A5_bound41_review_20260916.json",
+      "字节": 94052,
+      "SHA256": "9ee8be176c7d2d3e236c7dea54ad658d0d43b480a50ee23ee71829c7681856d4",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/SCH_A5_cloud_verified_20260916.json",
+      "字节": 91333,
+      "SHA256": "f43f28c837e3dbee2447274321917f9f8b412c13fe3444f7dce526ba6988a875",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/bom_draft.json",
+      "字节": 7940,
+      "SHA256": "06ae91609d0760dff44e0d2fcc30c9baad685fa0bad3c86fffb286cfc7e31ef7",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/cloud_presync_20260918/PCB_云端同步前备份.json",
+      "字节": 374142,
+      "SHA256": "2b26108cc0cdfa990ee24d9ff90a4ca758f61b91e7084b4673eb2ca3374920ce",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/editor_validation_SCH_A5.json",
+      "字节": 2310,
+      "SHA256": "75c7b6e1ca9c1cd3d4c50436e4d722a83ed0b9b459f7dd8526a8098da8dca35f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/footprint_binding_SCH_A5.json",
+      "字节": 2425,
+      "SHA256": "84f3a651f32474a384df4f54bae4d3e9bb620f18558cd89f2071d3a895210d9d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/mlx90393_native_verification.json",
+      "字节": 1836,
+      "SHA256": "e3934cca699c6ba5b72a23109672a2e30c2af4960fdf652a398d8890dfb8f859",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_cloud_verification.json",
+      "字节": 1037,
+      "SHA256": "ec21094413dc8dabe2413091f29697fc00142ffc370545673907e3eff3a16ecf",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_function_silk_plan.json",
+      "字节": 4179,
+      "SHA256": "f2bbfb1461ce21a5b8edde880c848e4a15bd60024e203a4dedf78eb7e68f32cd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_function_silk_verification.json",
+      "字节": 791,
+      "SHA256": "2a4f33dcf237b5ca173022f16ae8760e6138104cbe5a33d5aad821e0bdf4555f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_impedance_rule_candidate_20260917.json",
+      "字节": 4010,
+      "SHA256": "7213fcccf23a4a68e7bf77a84e904dac01145819a4ced760902d9c27343b7ec9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_label_verification.json",
+      "字节": 903,
+      "SHA256": "b4265b2a4c4c2e98963e05bda381ea77b5c8223649df63edfe7dc4d27a61dbda",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_layout_labels_final_plan.json",
+      "字节": 4628,
+      "SHA256": "516ec8324b768a29c45428debee5dbbff538c316f19d1322ceb4da6cfdbc9805",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_layout_labels_plan.json",
+      "字节": 4627,
+      "SHA256": "7c1560a35f2f1170032d4859447f8105996eb2c02dd6fa9019f1168c05ae225c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_layout_verification.json",
+      "字节": 2000,
+      "SHA256": "367745fba336ed2a9e650db3d030ea82c16623a584a9860413dff36d7c7ffe68",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_power_cloud_save_20260918.json",
+      "字节": 2267,
+      "SHA256": "12bcece9a00480b01eeb5b9dda2f47aeb6c74a5d267658ee1024014f9d9ebdb2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_power_links_check_20260918.json",
+      "字节": 6550,
+      "SHA256": "94d518b131a73f90bc1b7b604744482df47e8a609b8ef250d4a5b3c637a4dc9e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_power_native_validation_20260918.json",
+      "字节": 1636,
+      "SHA256": "cb2f7efd67217412729b2bc4f8b84c5aae04cf5b9fb696c96996c3b525d53b27",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_preroute_audit.json",
+      "字节": 7751,
+      "SHA256": "98664b3f70805b57ec4820c37768019447c53939f48db160e29ec2057c12574c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_production_silk_plan.json",
+      "字节": 7021,
+      "SHA256": "aff8fdcef2d8463af517094251ef72bb363273a73d029c313918e95440fe2e34",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_production_silk_verification.json",
+      "字节": 1516,
+      "SHA256": "68dfde1f15beed675c4b38a3d4bd8f12d3fd8e80b0560b23ce1a3a9ab4cacc37",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_routed_preservation_candidate_check.json",
+      "字节": 2510,
+      "SHA256": "c2011ea1371f929c5cc1292b155a982acc4b366e7f0c49eaff6d36310578aee3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_routed_preservation_native_validation_20260917.json",
+      "字节": 1291,
+      "SHA256": "1b7b28c3a40387cab8196c857de620e4e36fcf1a5c465a37740e2ae4541a06c0",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_silkscreen_plan.json",
+      "字节": 19358,
+      "SHA256": "ce4a1c04ee5e97c5f983322eaaeb4eb5364d583194dadc0bd92776d80bdce17d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_silkscreen_verification.json",
+      "字节": 848,
+      "SHA256": "f48a5267dc8b6927260cbb400ccc881f3cf716cf92b92a86fb1d40ce2375aaba",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_front_audit_20260917.json",
+      "字节": 4795,
+      "SHA256": "e6cb84bd735ecd89a388577f39ab8b8cba576dd5d21260d01367a5fcfe5d475a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_ground_cloud_save_20260917.json",
+      "字节": 2427,
+      "SHA256": "a1e8268074da5c95762beb13ec3866dde4e3f01fb924eaf1114eaa028eb481b9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_ground_native_validation_20260917.json",
+      "字节": 1371,
+      "SHA256": "71537e881e783a774b5ad1e6c733be1be35c17c4ee37abd998ebb9c7ae3a7ea8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_ground_reconnect_check_20260917.json",
+      "字节": 6279,
+      "SHA256": "843de77e08cb87bc0fe7a40f156eb9f8c9bca0a8f9b0f0046f37c02d3eda74a1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_routing_candidate_check_20260917.json",
+      "字节": 3516,
+      "SHA256": "abb3174d83685fd904ff7a107938ee775b6bfcf35d56a3a70dc956d80f254c4d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_soc_cloud_save_20260917.json",
+      "字节": 1491,
+      "SHA256": "4ee1e05d02dc85d6efd723efc273b0175391686e69a630430c83e92316293fe3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/pcb_a5_usb_soc_native_validation_20260917.json",
+      "字节": 1683,
+      "SHA256": "bab8ce433faff2d1bf11e02506da1a997a151a3cc4c79c2a801391149af451d8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/preview.html",
+      "字节": 1503,
+      "SHA256": "c61e235ea934639e1fcb576ef47d47132b65735f38ba1dc7b7128ac6fe89c922",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_01_MCU.json",
+      "字节": 22869,
+      "SHA256": "f8d9648cbeb95d4cb7ba18d8a64d37fab0c797191e0899f804351ca1350da7b2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_02_SENSORS.json",
+      "字节": 15291,
+      "SHA256": "c48ea99079bcdf5e72ada46fb52c3b18d2052ddf343538a34d0d326edea1e363",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_03_USB.json",
+      "字节": 16322,
+      "SHA256": "860c4c905c55e16941f501513f476da6be41f950651ab6774b2454c05b09a462",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_04_POWER.json",
+      "字节": 21913,
+      "SHA256": "99b6c99638c679ee5dcc4fcb1f7d47c5fc4d6265dece04b2f42fede048f15868",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_05_RF_DEBUG.json",
+      "字节": 9241,
+      "SHA256": "ffe997c65b3ac358597666483b1644dc263fa96e3498cf50e6302de9bb628a26",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_WIRED_multi.json",
+      "字节": 95032,
+      "SHA256": "a6ddd9408047f957d532a5ad788e07ec005ec9ac16ac598d99d7038513ab8156",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/round_sensor_SCH_A5_multi.json",
+      "字节": 90071,
+      "SHA256": "1aa27be343eee6c4919c55e332fb76edb90804b027143fb06e7c6a0720badff8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/sheets_manifest.json",
+      "字节": 1949,
+      "SHA256": "fc6deb15ad9ac4f096ff7c2fc9fb6b527868c468ec68d8cf19a1827da56469b0",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/01.svg",
+      "字节": 33376,
+      "SHA256": "ec64fe3752ccef1c502593d8f753b9ab7d9eeea9f92939b775ba34d7e2f8462c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/02.svg",
+      "字节": 20578,
+      "SHA256": "178f56f48c833789218a11e5e79e5458bd5c0fe980925523e61a3aebb9ce6289",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/03.svg",
+      "字节": 15915,
+      "SHA256": "b85d02edaff22b49edf936bda6719e7f82f847e0fe97d53fda9188bb52f2694e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/04.svg",
+      "字节": 28891,
+      "SHA256": "84c88fc48774144966a1b9867f1481b0ed0c850fda44b079069981df6d7a06f6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/05.svg",
+      "字节": 14405,
+      "SHA256": "4b7e4f752f54da11eac1dba9e836228923503f1116a3178e880e99af5d973e64",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/制造规则候选.json",
+      "字节": 1672,
+      "SHA256": "b9df75292d9c176e398e47c440e379a576948d1901920fa97ae170384caa94b8",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/原理图_UART小型化候选.json",
+      "字节": 90698,
+      "SHA256": "8d262d5a819fa309c4d5f4094397c9f6a5467bdd268ab23aa0449734da4a4b10",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/接线检查.json",
+      "字节": 2686,
+      "SHA256": "30e964a59ad6c63277244f377633ec182c3a3dd273a67faa8d9a17f9be8895d3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/预期接线.json",
+      "字节": 3294,
+      "SHA256": "10cc8fd5d2847063780823b514dc6b1fb0530d22dfefe98466317fcef2d89469",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/uart_min_candidate/预览.html",
+      "字节": 767,
+      "SHA256": "07ce721c7149be7f1ad8ae2b671342f21f8ff52276cda7cd866d0f4889401261",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/validation_report.json",
+      "字节": 9130,
+      "SHA256": "b8de9bfb1847dbcb68448c30857f335963145696b922c146f0fa4856ba61deda",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/嘉立创采购分流_待审核.json",
+      "字节": 59296,
+      "SHA256": "0f6e6a12f5803b54627de47c2422917ce605a3376031a9c79c6fcbc2516c9571",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "easyeda_std/局部重排_云端核验记录_20260918.json",
+      "字节": 1539,
+      "SHA256": "10cf794f7a702ff45b8e41ecfdb18b7791481746315c51815ceee4529b73158d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/2450AT18D0100001E_CIRCULAR_THIN_EDGE_4PAD.kicad_mod",
+      "字节": 1600,
+      "SHA256": "3974e8a9bc6716031617c31e6f556e8285e6102c443ccfa197f1789b8cd6848a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/2450AT18D0100001E_CIRCULAR_THIN_EDGE_4PAD_easyeda_import.kicad_pcb",
+      "字节": 1567,
+      "SHA256": "f5155f6fe19fdeba67069586ec1c6dfdb5cefbcb7f40b45e651eb8f6c9515674",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/BATTERY_WIRE_3PAD_COMPACT.kicad_mod",
+      "字节": 1131,
+      "SHA256": "2c02ae9580ff714db5e98e14bcc4bcafa64b81685a82eb63eceaa5a0bedb3e08",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/DMC2400UV_SOT563_DIODES_LAND.kicad_pcb",
+      "字节": 1811,
+      "SHA256": "bc6fc792efc9f7f2466aff36e3b3c44a06cd2555a34cad55c5c820fc11e33592",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/POGO_RECOVERY_6PAD_COMPACT.kicad_mod",
+      "字节": 1306,
+      "SHA256": "7ca3ad30cdc7564869291ac40bf613113d7f0e555147c78ad4b585ab3b0bc076",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/POWER_SWITCH_WIRE_2PAD_COMPACT.kicad_mod",
+      "字节": 1061,
+      "SHA256": "87ac0754b6cd79df5e86489dd8e0579eae79bce364daff013b4501aecf5bd719",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/antenna-2450at18d.pdf",
+      "字节": 1245733,
+      "SHA256": "0035b5c49959b4a720f6f907c75169d929a62e000cae85d7c347df56f36f9eac",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/bq24074.pdf",
+      "字节": 3731445,
+      "SHA256": "05585ca0112a74b0ad1ef22f3cc30e92c1cdce50430d32605a00f4c3b57b7435",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/bq25185.pdf",
+      "字节": 1544774,
+      "SHA256": "c73ed7d63e6532bb05e26df30edd37c6ac2de310c1222a84a77625e15e133684",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/bq25186.pdf",
+      "字节": 2093032,
+      "SHA256": "96834a4566939677cf084cef87d88f1534b9369ae80171ee004a7ac6572791c9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/dmc2400uv.pdf",
+      "字节": 777051,
+      "SHA256": "281033359650bed44f79efb6d672b018c72ed5d80bd60046b637d22748eec643",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/jst_suh.pdf",
+      "字节": 583032,
+      "SHA256": "6f48ff29a7338c6d2e5a3c140c7d7369e4a067bc4a33dfb11b054e0051331943",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "references/sn74lvc2g17.pdf",
+      "字节": 1888823,
+      "SHA256": "624dbe55679d2fed4123b0d7708cd0d295efcc78de395e71a0caf5cd13cbc216",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/add_pcb_a5_function_silk.cpython-312.pyc",
+      "字节": 18151,
+      "SHA256": "3b66f1bbc06e8e37ac227b97bc84075872f1fc3b630284868a45392ac799f376",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/audit_pcb_a5_preroute.cpython-312.pyc",
+      "字节": 11410,
+      "SHA256": "409ab8cd693b6388513675adfb38243ce80bf560cb049586c3af5bdb2efe03b2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/build_mlx90393_footprint.cpython-312.pyc",
+      "字节": 15051,
+      "SHA256": "efd33bd57a7725fca8564e697da05924c57292fecf7e7e1f0740ca94cc2854be",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/build_pcb_a5_pico_stencil.cpython-312.pyc",
+      "字节": 21293,
+      "SHA256": "f3cbc58124a4a6fa88a20cc67033f311272cf36bef8afc6429db171991361a10",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/build_pcb_a5_production_silk.cpython-312.pyc",
+      "字节": 15479,
+      "SHA256": "c0ca915bb7866ef3f93cb1990c40ebf498fa0f38bcf3b4f7219c9781998922fe",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/check_easyeda_schematic.cpython-312.pyc",
+      "字节": 20148,
+      "SHA256": "4914d22ea26fc2b8618ab01805ed05a50afd696e403c7e9fcc663f9c7a7f91ef",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/check_pcb_a5.cpython-312.pyc",
+      "字节": 18560,
+      "SHA256": "e7eefa45ff384d93270873a65d489eefe41cd20ab664d89c0cbcb275ab3a500b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/check_pcb_a5_mechanical.cpython-312.pyc",
+      "字节": 22551,
+      "SHA256": "7bef547b4812ce7a587074b1e8ced1215dac808e99dc81f0791b3d4f8453fda4",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/finalize_pcb_a5_layout.cpython-312.pyc",
+      "字节": 4539,
+      "SHA256": "b8615190b158001adaca60d1657cf5b2996b40a67d4427bf10df24154303b309",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/optimize_pcb_a5_layout.cpython-312.pyc",
+      "字节": 16743,
+      "SHA256": "98677cedfe9d90c00e60f05123c211ce35fa647a07f6cf91a08a87340a014496",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/test_easyeda_checker.cpython-312.pyc",
+      "字节": 11492,
+      "SHA256": "a75eeaae661f569fef7cef7c3b75ee9b7aa6f2f2b9b3b9f08c6b55f48fdee4f7",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/test_mlx90393_footprint.cpython-312.pyc",
+      "字节": 9727,
+      "SHA256": "f0dfa84e22bda159bca40c077896b239c98f1b5be50f3cbf18077156a979b4fd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/test_pcb_a5.cpython-312.pyc",
+      "字节": 6456,
+      "SHA256": "fdd8a5e65f6bda817f41d42f3befdde014b921d52e6b371905e13bd50dfc02a3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/test_pcb_a5_mechanical.cpython-312.pyc",
+      "字节": 6159,
+      "SHA256": "67987abdc4120a577f4c9f05d489760be0326107934ad36282d4c924358056b3",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/test_pcb_a5_pico_stencil.cpython-312.pyc",
+      "字节": 5960,
+      "SHA256": "a86630e05ea2d272e41d9c1fbbc955c2b6f1ee0eee819c47008755fc4f8ea815",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/tidy_pcb_a5_labels.cpython-312.pyc",
+      "字节": 9239,
+      "SHA256": "418b002cb86ee89f183d8c30f829ee0f7a7e2d1384bb3112c62fb5e4ab5ab1f4",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/tidy_pcb_a5_silkscreen.cpython-312.pyc",
+      "字节": 24001,
+      "SHA256": "b4cdb66d7fcf412f39eb71163480169a8eda273eb1f85581a67753dbd1245bd1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/verify_pcb_a5.cpython-312.pyc",
+      "字节": 5539,
+      "SHA256": "98312788ea40f8cd371f28f1dfb93e36d64ae636eeb10b218498054a19eea279",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/verify_pcb_a5_layout.cpython-312.pyc",
+      "字节": 15734,
+      "SHA256": "42f09928894d8a1ef606748aab353d6603b8e2ee7cdbe82c1723462820abe80b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/verify_pcb_a5_production_silk.cpython-312.pyc",
+      "字节": 11356,
+      "SHA256": "778c7e395ad16149565848ea3e3539e2660d5d796953b6c2a59091d5d0f4d115",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/__pycache__/verify_pcb_a5_silkscreen.cpython-312.pyc",
+      "字节": 8678,
+      "SHA256": "7ed691195b334184af6daf614a20d1627c324d05af5dc4bac5ad260dc59e0927",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/add_pcb_a5_function_silk.js",
+      "字节": 672560,
+      "SHA256": "83101d8aab5c00c06e694c08e46c7d56985d904d620dcdb432e883b08c722375",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/add_pcb_a5_function_silk.py",
+      "字节": 9504,
+      "SHA256": "224ca1e60b306b2a6e7a8ab08c94efc11c856082c51951c7f54ddc6b9bb57368",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/apply_pcb_a5_layout.js",
+      "字节": 328870,
+      "SHA256": "777a26edc292d57fd36c8f14f096dd10219ad139f692116b5d1d9475f501fc9e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/apply_pcb_a5_production_silk.js",
+      "字节": 361092,
+      "SHA256": "a1239a1af659279f6610f364a5c0412a8df5965941ef54e742b3e388539b5cdd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/archive_pre_a5.py",
+      "字节": 1989,
+      "SHA256": "d5ac9b669c5d80df2cc7bcf5fc47bbb2dd778d6c5399c6279fd20fe04da6915a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/audit_a5_usb_front.py",
+      "字节": 6439,
+      "SHA256": "726514d4d3a2dd6b6d62d5984061700106263b8a6ee40bce6840345be5013527",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/audit_pcb_a5_preroute.py",
+      "字节": 5329,
+      "SHA256": "54409dfe215bc394111d33700a64cf499d4ba7c1452fbbebeec2ae6e7012d0ea",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/bind_sch_a5_footprints.py",
+      "字节": 4524,
+      "SHA256": "a9a3fb43e355e466c91d07856ff2df632cc90580b69c4504fbc278d202fccaeb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_a5_power_links.py",
+      "字节": 6875,
+      "SHA256": "2ed496877b68939a27ae7377d2b9640ed657638c1bf2971ee9fc5004422dca6e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_a5_procurement_review.py",
+      "字节": 20518,
+      "SHA256": "7c6c203d40d24f9a7d7d7a9e474025988f116d77de00851ab3d9e88552a4a46d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_a5_routed_preservation_candidate.py",
+      "字节": 6994,
+      "SHA256": "f3f49f95c20ee1e5a2f7138b9d900b25ba9dcfb9c8bab28ddf8785cb2d88819c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_a5_usb_ground_reconnect.py",
+      "字节": 10992,
+      "SHA256": "cad287eadc649302a917463234a1a26e9f822306326ab16af7994788fd581d9b",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_a5_usb_routing_candidate.py",
+      "字节": 6684,
+      "SHA256": "c21a9e4c30095635c4dcb61e31375be58b6cbcd436b375d5f36f1e8df6fa1c6a",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_mlx90393_footprint.py",
+      "字节": 8105,
+      "SHA256": "962600ddf649366f20166598f86887fe36f050f783bff43aca58383b68fc9ff2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/build_pcb_a5_production_silk.py",
+      "字节": 7593,
+      "SHA256": "c991aa558d15c2247bc5dd59f62806222dab21ad1ad43be3e67e4019f4e11e86",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/check_easyeda_schematic.py",
+      "字节": 11991,
+      "SHA256": "2efa3f8984107a281daa1a7083903d65235a705419e32db89d09115b18b7f0c7",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/correct_pcb_a5_layout_angles.js",
+      "字节": 716,
+      "SHA256": "d26c15b2368126a0e3b453b4d17534acb46eb94dae1aaea121d431e6dd5af6a4",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/finalize_pcb_a5_layout.js",
+      "字节": 669433,
+      "SHA256": "4bef62ef721cc5f11b0060f7b9f8018ad2c7d040c0f1b45ed6aea0485313bd8f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/finalize_pcb_a5_layout.py",
+      "字节": 2499,
+      "SHA256": "2c1c3cc051649fd2754a463129de6b815353c807c463aeb39dac32a5b3b3707d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/fix_pcb_a5_silk_ids.js",
+      "字节": 629,
+      "SHA256": "c991e6334dd093f10234771eb8323c10b1d3ba21e5ed5d826986472d3dbd6531",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/nudge_mlx90393_pcb.js",
+      "字节": 537,
+      "SHA256": "48b0f51917fbb8eefc4ff479d1b2263e579fe4d97ebb3c36ee2501746d2a4ccc",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/nudge_pcb_a5_pin1.js",
+      "字节": 645,
+      "SHA256": "e3cb323457249309599a3dd8f4af04f0b78092234c3804aab75061ae9695338c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/place_pcb_a5.js",
+      "字节": 2295,
+      "SHA256": "de36d7143deb1fab48c26beb089b8ebce4356b0c1fef8c62cf49e21372730843",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/prepare_pcb_a5.js",
+      "字节": 3776,
+      "SHA256": "d178c3e2f6c5499bcec8646d5c03c7c4cedc40feb817f2052c8bd4d9a586517c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/repair_pcb_a5_function_silk.js",
+      "字节": 675776,
+      "SHA256": "d6127d0dd06e19ab1274d08deca856191d89fe117fd0f6f39058909b75a7e31d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/replace_mlx90393_pcb.js",
+      "字节": 11394,
+      "SHA256": "b7f618736fc29f23c1dc33630e4e297bf5b398677b147682a53e69be5cf5e31e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_power_links.py",
+      "字节": 2305,
+      "SHA256": "f74b98e788ca6dc2afc5461decd309a7f28be85d276c07ece82c56d92ec75589",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_rf_clearance_layout.py",
+      "字节": 2358,
+      "SHA256": "ea34fc49a3ff0f355d219717eb48f4e6b9c80f7b576bd8bf3459b648dcef2b02",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_routed_preservation_candidate.py",
+      "字节": 779,
+      "SHA256": "afe2072c80d1b0bf1cf26349daf535ff9e35e8bd65dc177c60aca4e4d8576e9d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_routed_snapshot.py",
+      "字节": 1058,
+      "SHA256": "8233de70611ffd98d6ceab019855781d469c932eb37cf8d387a214429ab9f275",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_ufl_keepout.py",
+      "字节": 1436,
+      "SHA256": "9b2e7daab7a2d9232b9dda0a8b8b4dfcfc9ba14939748c2860bc3e91a5e5adfa",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_usb_front.py",
+      "字节": 1795,
+      "SHA256": "7c290ac405f1324c9ae01515ae95e8b74d520e931825635b489feefffec8b946",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_usb_front_candidate.py",
+      "字节": 2413,
+      "SHA256": "9a29287adedbaa92d588c45f9c5c9e6871ef8dcb45c7f3537f676cccbfd48f86",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_usb_ground_reconnect.py",
+      "字节": 4010,
+      "SHA256": "e76c954e330b876211546cc1fcc55b2ceaa96bddbb0f4d23d1a728745341af2e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_usb_routing_candidate.py",
+      "字节": 3803,
+      "SHA256": "5d675f231df4a119ce14bbf4d9e442dc69f651130db8cf38daf0f2558774f79f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_a5_usb_zone_placement.py",
+      "字节": 2963,
+      "SHA256": "1e7ea177c9d5940c1513bb79aec5d33059106d4a489ea71d0ebe2e0a043e9afb",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_easyeda_checker.py",
+      "字节": 5049,
+      "SHA256": "832e2eb6e47c49c7e0f6211749f4ef7493d0d3209a5461e04ac334bf0bf337f6",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_mlx90393_footprint.py",
+      "字节": 3663,
+      "SHA256": "bf322632d048bdbbeb8ec3c963d8e3e086063def171156addad4d4f7773a19e1",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_pcb_a5.py",
+      "字节": 2437,
+      "SHA256": "f4044dbb39dbf48b7f69f80c9d8dca87a971244f9cea849966c45d4de20b5451",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_pcb_a5_layout.py",
+      "字节": 2307,
+      "SHA256": "72601a9195b08a1d8f0e435d3ef5ae3102d9c62446778bd9916ec75568fdca92",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/test_pcb_a5_mechanical.py",
+      "字节": 2604,
+      "SHA256": "18a32fe4d41b4792f8249793e245e66ce2142fef18bff96b018626f2c8d481a2",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/tidy_pcb_a5_labels.js",
+      "字节": 37948,
+      "SHA256": "9b4b9434e6c67469bebaf9cd4cb1fc0fa3d07db10157f8b8804ed9cbc2666212",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/tidy_pcb_a5_layout_labels.js",
+      "字节": 351300,
+      "SHA256": "8104854a286e742646427cf58cbf769ddbc0924e6c6040fd7402060fe15d2e59",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/tidy_pcb_a5_layout_labels_final.js",
+      "字节": 350964,
+      "SHA256": "59600a489587dd36667fbcb60b02fa7f620ea43cf296f368ee633405f74d37ac",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/tidy_pcb_a5_silkscreen.js",
+      "字节": 410452,
+      "SHA256": "e4dddadec1fc7316901b8e2149d12f50904b6af641d6fbf9f5c1089880612aaf",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_a5_local_repack_20260918.py",
+      "字节": 3305,
+      "SHA256": "f5e29c9e90fffd9873bef058e32d7ebc20b7b87c5ebcc279ed1710eb4b0499bd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_a5_power_native.py",
+      "字节": 5089,
+      "SHA256": "a8aa05edf5f49f44007945978bc189529ac82e71b5fbd2f37c05f4ee3a66c05d",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_a5_usb_ground_cloud.py",
+      "字节": 2926,
+      "SHA256": "54f6f211f96115129623fbeda89f43d67a29733267c57d9a96dffcb8ca280e64",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_a5_usb_ground_native.py",
+      "字节": 4198,
+      "SHA256": "55f403e2edd92cf4e02d2c85249900999b3bf33a197c85e2c943e43bddf2af26",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_a5_usb_soc_native.py",
+      "字节": 4524,
+      "SHA256": "d5aa6d4b5d08a84951744f3ee4b63fa5ceb7f371243ea46b35fee9574e2f4abd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_editor_sch_a5.py",
+      "字节": 4309,
+      "SHA256": "d729c07267a558dad3ad81a93ea6c900025d7a308c714d266fc1912ed50fe36e",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_mlx90393_native.py",
+      "字节": 5582,
+      "SHA256": "61c8b60cbe3b1caecf5399df5a3889c6b938bb5f39b794fd82dfea2519976fa9",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5.py",
+      "字节": 3084,
+      "SHA256": "4d91c9d1e068e406b1d1f356ba7b511e774bf379cf8d428422d3d55e95aa5d35",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5_function_silk.py",
+      "字节": 2818,
+      "SHA256": "9c9caeb6e192b00aabc1f320bc98fd8f90456e8dd643b469947043a2311a9fff",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5_labels.py",
+      "字节": 3519,
+      "SHA256": "a2b5a30528c6d3449c0611d3aa33ba03522e6a16c2b04d46b5c355fa258e68fd",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5_layout.py",
+      "字节": 7061,
+      "SHA256": "fbaa265207dc10af375c3d05c2c0e3aa7305d50eed8ffb7f36ca443a3e32c87f",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5_production_silk.py",
+      "字节": 4682,
+      "SHA256": "373aa243cb7bf6a006e95cd4d6cc3bc62948f929c9e8e8b625c7e58107411dbe",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_a5_silkscreen.py",
+      "字节": 3992,
+      "SHA256": "8de864ac745ebaedcea98b66dbb4bcf9557f824a5b3a1643e0d75c34405b6cb5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "scripts/verify_pcb_cleanup_backup.py",
+      "字节": 2966,
+      "SHA256": "c45a0c769ed567a7b0e4021fb274417939c680ccb6e9b9c8354deb3d89181312",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "保留USB小型化实施记录.md",
+      "字节": 7770,
+      "SHA256": "81ae1c1e1f3113ed0bb961632d11509b57780143ec1ce00efcc232d3265a19e5",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    },
+    {
+      "原路径": "小型化调整方案.md",
+      "字节": 13296,
+      "SHA256": "63e1fb782ef989af8f1a178e4d81eb98f8cdb624e898c7a6c86054c10f9d6870",
+      "原因": "旧说明原件留档，原位重写最新入口"
+    },
+    {
+      "原路径": "工程整体复审_20260917.md",
+      "字节": 10651,
+      "SHA256": "9a2b686b27c37312b60a58326ab5fa53904fc80ecb358fff26108d44d6c2e42c",
+      "原因": "过时版本、独立旧工具、重复备份或缓存"
+    }
+  ]
+}

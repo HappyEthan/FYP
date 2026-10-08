@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-06",
+  "scope": "更新需求、推荐固件交互规格与博后确认清单；未编码或操作在线EDA",
+  "package": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/圆形传感板_启动模式交接_仅审核_20261006.zip",
+  "sha256": "e88f05d8fffb9f4d5470c718662cbf9cc84b89cf3ad129c6b95721ac95a1ae8b",
+  "bytes": 27292341,
+  "files": 67,
+  "all_manifest_hashes_verified": true,
+  "testzip": null,
+  "one_current_Gerber": "manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip",
+  "PCB_SCH_Gerber_BOM_CPL_unchanged": true,
+  "firmware_implemented": false,
+  "native_DRC_rerun": false,
+  "production_released": false,
+  "prior_package_preserved_sha256": "07c77b1bf9563621c38acc8a1f4ebf3e6eeddfdc668d64ef97e373089a04bf43"
+}

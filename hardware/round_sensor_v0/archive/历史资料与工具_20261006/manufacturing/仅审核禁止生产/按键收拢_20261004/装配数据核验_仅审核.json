@@ -1,0 +1,1382 @@
+{
+  "status": "仅审核；输入为最终保存重开源，工厂机器库与接贴确认另行完成",
+  "date": "2026-10-04",
+  "inputs": {
+    "pcb": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c"
+    },
+    "native_cpl": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_原生43件_仅审核_20261004.csv",
+      "sha256": "f863ef6eefc979259a18f448d9526128f74b68936fc0d8e9bb4b71b66e41994e"
+    },
+    "mapping": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM与源坐标_仅审核.json",
+      "sha256": "7bd1da04cdc4d559db21402a3a4fbfd646d7991a93312cbc6e7522fbc41aab66"
+    }
+  },
+  "counts": {
+    "positions": 43,
+    "SMT": 38,
+    "top": 6,
+    "bottom": 32,
+    "MPNs": 23
+  },
+  "excluded": [
+    "C30",
+    "C31",
+    "J2",
+    "J4",
+    "SW1"
+  ],
+  "CPL_changes": [
+    {
+      "ref": "ANT1",
+      "field": "Mid Y",
+      "before": "81.43mm",
+      "after": "80.67mm"
+    }
+  ],
+  "ANT1_evidence": {
+    "source_axis_mm": [
+      29.15005600000003,
+      80.66989199999999
+    ],
+    "datasheet": "references/Hirose_U.FL_catalog.pdf p12",
+    "datasheet_sha256": "440490c5babe075dac69d78d6f4e0aecef0bf571f31c4a7268fab5d959a511bd",
+    "reason": "Native Mid is displaced toward offset signal pad. Coax body axis equals Ref; retain rotation 180 and all other native cells.",
+    "factory_action": "Use corrected body centre; factory confirms nozzle/pick method and machine library angle against assembly pin map."
+  },
+  "coordinate_convention": "mm; native X/positive-up Y; bottom not mirrored. Assembly drawing bottom is mirrored for viewing only.",
+  "pin_anchors": [
+    {
+      "ref": "U1",
+      "pin": "1",
+      "net": "RF_SOC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 84.339938,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "2",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 83.939888,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "3",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 83.539838,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "4",
+      "net": "MCU_EN",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 83.140042,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "5",
+      "net": "BOOT_N",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 82.739992,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "6",
+      "net": "I2C_SDA",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 82.339942,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "7",
+      "net": "I2C_SCL",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 81.939892,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "8",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 81.539842,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "9",
+      "net": "MLX_INT",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 81.140046,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "10",
+      "net": "IMU_INT",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 80.739996,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "11",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 80.339946,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "12",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 79.939896,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "13",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 79.539846,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "14",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 18.449544,
+      "Y_mm": 79.14005,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "15",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 19.257264,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "16",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 19.656806,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "17",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.05711,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "18",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.45716,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "19",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.856956,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "20",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 21.25726,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "21",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 21.657056,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "22",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.057106,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "23",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.457156,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "24",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.856952,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "25",
+      "net": "USB_DM_SOC",
+      "side": "T",
+      "X_mm": 23.257256,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "26",
+      "net": "USB_DP_SOC",
+      "side": "T",
+      "X_mm": 23.657052,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "27",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 24.056848,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "28",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 24.457152,
+      "Y_mm": 78.33233,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "29",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 79.14005,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "30",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 79.539846,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "31",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 79.939896,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "32",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 80.339946,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "33",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 80.739996,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "34",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 81.140046,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "35",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 81.539842,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "36",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 81.939892,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "37",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 82.339942,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "38",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 82.739992,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "39",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 83.140042,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "40",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 83.539838,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "41",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 83.939888,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "42",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 25.264618,
+      "Y_mm": 84.339938,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "43",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 24.457152,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "44",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 24.056848,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "45",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 23.657052,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "46",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 23.257256,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "47",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.856952,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "48",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.457156,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "49",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 22.057106,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "50",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 21.657056,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "51",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 21.25726,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "52",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.856956,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "53",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.45716,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "54",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 20.05711,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "55",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 19.656806,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "56",
+      "net": "3V3",
+      "side": "T",
+      "X_mm": 19.257264,
+      "Y_mm": 85.147404,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U1",
+      "pin": "57",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 21.856954,
+      "Y_mm": 81.739994,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "1",
+      "net": "I2C_SCL",
+      "side": "B",
+      "X_mm": 17.349978,
+      "Y_mm": 80.699864,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "2",
+      "net": "I2C_SDA",
+      "side": "B",
+      "X_mm": 17.349978,
+      "Y_mm": 81.099914,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "3",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 17.349978,
+      "Y_mm": 81.49971,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "4",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 17.349978,
+      "Y_mm": 81.89976,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "5",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 19.750024,
+      "Y_mm": 81.89976,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "6",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 19.750024,
+      "Y_mm": 81.49971,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "7",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 19.750024,
+      "Y_mm": 81.099914,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "8",
+      "net": "MLX_INT",
+      "side": "B",
+      "X_mm": 19.750024,
+      "Y_mm": 80.699864,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U2",
+      "pin": "9",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 18.549874,
+      "Y_mm": 81.299812,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "1",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 25.748996,
+      "Y_mm": 83.069938,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 25.748996,
+      "Y_mm": 83.570064,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "3",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 25.748996,
+      "Y_mm": 84.069936,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "4",
+      "net": "IMU_INT",
+      "side": "B",
+      "X_mm": 25.748996,
+      "Y_mm": 84.570062,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "5",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 26.424128,
+      "Y_mm": 84.745068,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "6",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 26.924,
+      "Y_mm": 84.745068,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "7",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 27.424126,
+      "Y_mm": 84.745068,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "8",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 28.099004,
+      "Y_mm": 84.570062,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "9",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 28.099004,
+      "Y_mm": 84.069936,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "10",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 28.099004,
+      "Y_mm": 83.570064,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "11",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 28.099004,
+      "Y_mm": 83.069938,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "12",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 27.424126,
+      "Y_mm": 82.894932,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "13",
+      "net": "I2C_SCL",
+      "side": "B",
+      "X_mm": 26.924,
+      "Y_mm": 82.894932,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U3",
+      "pin": "14",
+      "net": "I2C_SDA",
+      "side": "B",
+      "X_mm": 26.424128,
+      "Y_mm": 82.894932,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "A1",
+      "net": "BAT_P",
+      "side": "B",
+      "X_mm": 22.406102,
+      "Y_mm": 73.841864,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "A2",
+      "net": "USB_5V",
+      "side": "B",
+      "X_mm": 22.805898,
+      "Y_mm": 73.841864,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "B1",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 22.406102,
+      "Y_mm": 74.241914,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "B2",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 22.805898,
+      "Y_mm": 74.241914,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "C1",
+      "net": "U4_C1",
+      "side": "B",
+      "X_mm": 22.406102,
+      "Y_mm": 74.641964,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U4",
+      "pin": "C2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 22.805898,
+      "Y_mm": 74.641964,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "1",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 28.308554,
+      "Y_mm": 77.328014,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "2",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 28.308554,
+      "Y_mm": 77.978,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "3",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 28.308554,
+      "Y_mm": 78.627986,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "4",
+      "net": "REG_EN",
+      "side": "B",
+      "X_mm": 30.365446,
+      "Y_mm": 78.627986,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "5",
+      "net": "NC",
+      "side": "B",
+      "X_mm": 30.365446,
+      "Y_mm": 77.978,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "6",
+      "net": "VSYS",
+      "side": "B",
+      "X_mm": 30.365446,
+      "Y_mm": 77.328014,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U5",
+      "pin": "7",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 29.337,
+      "Y_mm": 77.978,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "U6",
+      "pin": "1",
+      "net": "USB_DP",
+      "side": "B",
+      "X_mm": 22.899878,
+      "Y_mm": 76.300076,
+      "native_rotation_deg": "270"
+    },
+    {
+      "ref": "U6",
+      "pin": "2",
+      "net": "USB_DM",
+      "side": "B",
+      "X_mm": 22.200108,
+      "Y_mm": 76.300076,
+      "native_rotation_deg": "270"
+    },
+    {
+      "ref": "U6",
+      "pin": "3",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 22.55012,
+      "Y_mm": 77.300074,
+      "native_rotation_deg": "270"
+    },
+    {
+      "ref": "Q1",
+      "pin": "1",
+      "net": "BAT_P",
+      "side": "B",
+      "X_mm": 26.385012,
+      "Y_mm": 74.295,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "Q1",
+      "pin": "2",
+      "net": "USB_5V",
+      "side": "B",
+      "X_mm": 25.684988,
+      "Y_mm": 74.125074,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "Q1",
+      "pin": "3",
+      "net": "VSYS",
+      "side": "B",
+      "X_mm": 25.684988,
+      "Y_mm": 74.464926,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "D1",
+      "pin": "1",
+      "net": "USB_5V",
+      "side": "B",
+      "X_mm": 26.035,
+      "Y_mm": 77.119988,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "D1",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 26.035,
+      "Y_mm": 77.820012,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "D2",
+      "pin": "1",
+      "net": "J1_A5",
+      "side": "B",
+      "X_mm": 24.638,
+      "Y_mm": 76.103988,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "D2",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 24.638,
+      "Y_mm": 76.804012,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "D3",
+      "pin": "1",
+      "net": "J1_B5",
+      "side": "B",
+      "X_mm": 20.985988,
+      "Y_mm": 75.692,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "D3",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 21.686012,
+      "Y_mm": 75.692,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "D4",
+      "pin": "1",
+      "net": "VSYS",
+      "side": "B",
+      "X_mm": 25.684988,
+      "Y_mm": 73.279,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "D4",
+      "pin": "2",
+      "net": "USB_5V",
+      "side": "B",
+      "X_mm": 26.385012,
+      "Y_mm": 73.279,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "ANT1",
+      "pin": "1",
+      "net": "R30_2",
+      "side": "T",
+      "X_mm": 29.150056,
+      "Y_mm": 82.194908,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "ANT1",
+      "pin": "2",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 30.625034,
+      "Y_mm": 80.669892,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "ANT1",
+      "pin": "3",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 27.675078,
+      "Y_mm": 80.669892,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "J1",
+      "pin": "A1",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 19.787108,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A4",
+      "net": "USB_5V",
+      "side": "T",
+      "X_mm": 20.586954,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A5",
+      "net": "J1_A5",
+      "side": "T",
+      "X_mm": 21.737066,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A6",
+      "net": "USB_DP",
+      "side": "T",
+      "X_mm": 22.737064,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A7",
+      "net": "USB_DM",
+      "side": "T",
+      "X_mm": 23.236936,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A8",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 24.236934,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A9",
+      "net": "USB_5V",
+      "side": "T",
+      "X_mm": 25.387046,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "A12",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 26.186892,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B1",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 26.186892,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B4",
+      "net": "USB_5V",
+      "side": "T",
+      "X_mm": 25.387046,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B5",
+      "net": "J1_B5",
+      "side": "T",
+      "X_mm": 24.73706,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B6",
+      "net": "USB_DP",
+      "side": "T",
+      "X_mm": 23.737062,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B7",
+      "net": "USB_DM",
+      "side": "T",
+      "X_mm": 22.236938,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B8",
+      "net": "NC",
+      "side": "T",
+      "X_mm": 21.23694,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B9",
+      "net": "USB_5V",
+      "side": "T",
+      "X_mm": 20.586954,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "B12",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 19.787108,
+      "Y_mm": 77.240384,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "SH",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 18.666968,
+      "Y_mm": 76.665328,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "SH",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 18.666968,
+      "Y_mm": 72.485504,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "SH",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 27.307032,
+      "Y_mm": 76.665328,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J1",
+      "pin": "SH",
+      "net": "GND",
+      "side": "T",
+      "X_mm": 27.307032,
+      "Y_mm": 72.485504,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "SW2",
+      "pin": "1",
+      "net": "BOOT_N",
+      "side": "B",
+      "X_mm": 16.884904,
+      "Y_mm": 76.779882,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "SW2",
+      "pin": "2",
+      "net": "BOOT_N",
+      "side": "B",
+      "X_mm": 16.135096,
+      "Y_mm": 76.779882,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "SW2",
+      "pin": "3",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 16.884904,
+      "Y_mm": 79.430118,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "SW2",
+      "pin": "4",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 16.135096,
+      "Y_mm": 79.430118,
+      "native_rotation_deg": "90"
+    },
+    {
+      "ref": "SW3",
+      "pin": "1",
+      "net": "MCU_EN",
+      "side": "B",
+      "X_mm": 19.025108,
+      "Y_mm": 74.874882,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "SW3",
+      "pin": "2",
+      "net": "MCU_EN",
+      "side": "B",
+      "X_mm": 19.025108,
+      "Y_mm": 74.125074,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "SW3",
+      "pin": "3",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 16.374872,
+      "Y_mm": 74.874882,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "SW3",
+      "pin": "4",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 16.374872,
+      "Y_mm": 74.125074,
+      "native_rotation_deg": "180"
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "net": "BAT_P",
+      "side": "B",
+      "X_mm": 22.087078,
+      "Y_mm": 71.501,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 23.886922,
+      "Y_mm": 71.501,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J4",
+      "pin": "1",
+      "net": "3V3",
+      "side": "B",
+      "X_mm": 23.28799,
+      "Y_mm": 86.36,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 24.187912,
+      "Y_mm": 86.36,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "net": "I2C_SDA",
+      "side": "B",
+      "X_mm": 25.088088,
+      "Y_mm": 86.36,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "net": "I2C_SCL",
+      "side": "B",
+      "X_mm": 25.98801,
+      "Y_mm": 86.36,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "net": "GND",
+      "side": "B",
+      "X_mm": 18.39341,
+      "Y_mm": 84.812886,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "net": "REG_EN",
+      "side": "B",
+      "X_mm": 20.193,
+      "Y_mm": 84.812886,
+      "native_rotation_deg": "0"
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "net": "VSYS",
+      "side": "B",
+      "X_mm": 21.993606,
+      "Y_mm": 84.812886,
+      "native_rotation_deg": "0"
+    }
+  ],
+  "outputs": {
+    "CPL_38件SMT_中心校正_仅审核_20261004.csv": "4fc824cc4efc322f151f21e77e4e344552e89532f9ba25897df11a6bd45c8e34",
+    "BOM_38件准确料号_仅审核_20261004.csv": "6c02bb4c18a2145e32020a370c40f7104a0e5e7dabdcfe9a2a07bfc44b2cda4b"
+  },
+  "inventory_checked": false,
+  "production_released": false
+}

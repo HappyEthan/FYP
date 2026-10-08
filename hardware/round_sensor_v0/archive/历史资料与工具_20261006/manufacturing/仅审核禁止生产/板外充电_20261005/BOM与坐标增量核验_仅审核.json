@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-05",
+  "native_rows": 41,
+  "SMT": 36,
+  "sides": {
+    "T": 6,
+    "B": 30
+  },
+  "unique_MPN": 21,
+  "removed": [
+    "U4",
+    "R10"
+  ],
+  "all_retained_native_CPL_rows_equal_to_button_baseline": true,
+  "all_retained_accurate_BOM_and_corrected_CPL_equal_to_previous": true,
+  "excluded": [
+    "C30",
+    "C31",
+    "J2",
+    "J4",
+    "SW1"
+  ],
+  "ANT1_only_review_correction": "Mid Y=Ref Y=80.67mm; previous verified footprint symmetry center reused",
+  "J1_machine_origin": "Existing about 1.30mm origin/body-center difference retained for factory confirmation",
+  "C9": "Still original 1uF/10V GRM155R61A105KE15D; 4.7uF recommendation not implemented",
+  "purchase_stock_or_factory_acceptance_refreshed": false,
+  "native_files_sha256": {
+    "BOM_板外充电_原生全位置_仅审核_20261005.csv": "545fc0754e363309d21970b3a4c89b0cda68b8c684a7694c0e0bed6ef1714b5c",
+    "CPL_板外充电_原生全位置_仅审核_20261005.csv": "6ec526971d8cd4a7936255195ba16c39c9e2dfee3169bc92fd583d81da6a195a"
+  },
+  "production_released": false
+}

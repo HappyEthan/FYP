@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-04",
+  "status": "仅审核禁止生产",
+  "project": "圆形传感板_SCH_A5",
+  "project_id": "3c2f1824ae2d4fd391ecd83abc2b3411",
+  "pcb": "PCB_圆形传感板_SCH_A5 copy",
+  "editor_url": "https://lceda.cn/editor#id=cca094630ebf453c98ae64b900f0d7f0",
+  "pcb_title_unsaved_marker": false,
+  "method": "原生桌面客户端6.5.51，界面点击检查DRC后读取设计管理器；本记录转录UI，并非原生导出报告",
+  "components": 43,
+  "network_panel": "21 / 21，绿色勾选",
+  "drc_count": 1,
+  "drc_text": "gge2100 - gge2115 (0.14mm，需要比DRC(0.15mm)大)",
+  "mapping": "Q1 2脚USB_5V与3脚VSYS",
+  "copper_rebuilt_this_run": false,
+  "limitations": [
+    "未重新运行原理图ERC",
+    "未完成原理图与PCB网表逐脚核对",
+    "未形成制造放行"
+  ]
+}

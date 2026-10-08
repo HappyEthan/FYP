@@ -1,0 +1,916 @@
+{
+  "time": "2026-10-06T17:29:16+08:00",
+  "scope": "85 round_sensor_v0 duplicate exports only",
+  "files": [
+    {
+      "name": "BOM_C9替料_原生全属性_仅审核_20261005.csv",
+      "bytes": 18800,
+      "sha256": "0366188c6e4eb847a3ba8314a01f1ccbdb82ffe1f9226bd07e997085b19eb18b",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/BOM_C9替料_原生全属性_仅审核_20261005.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BOM_C9替料_原生全属性_仅审核_20261005.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BOM_C9替料_原生全属性_仅审核_20261005.csv"
+    },
+    {
+      "name": "BOM_Q1直接修复_原生41位置_仅审核_20261006.csv",
+      "bytes": 19522,
+      "sha256": "f911e50b49cb9fc1310a5c470475d7216689681c5b78f9c8980439ca552536d8",
+      "matches": [
+        "manufacturing/仅审核禁止生产/Q1直接修复_20261006/BOM_Q1直接修复_原生41位置_仅审核_20261006.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BOM_Q1直接修复_原生41位置_仅审核_20261006.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BOM_Q1直接修复_原生41位置_仅审核_20261006.csv"
+    },
+    {
+      "name": "BOM_buttons_NATIVE_REVIEW_ONLY_20261004.csv",
+      "bytes": 19280,
+      "sha256": "d1d1d0ccf406b938c04278d44d8b4d9efa3634dd09acabe50f1a0099c8802f09",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM_原生43件_仅审核_20261004.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BOM_buttons_NATIVE_REVIEW_ONLY_20261004.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BOM_buttons_NATIVE_REVIEW_ONLY_20261004.csv"
+    },
+    {
+      "name": "BOM_工作板_原生_仅审核_20261004.csv",
+      "bytes": 14082,
+      "sha256": "b307e74dd5affb806a5889c7839e1d37ab91a364c9adb7d1a0e6f7bb72fca3ef",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/BOM_工作板_原生_仅审核_20261004.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BOM_工作板_原生_仅审核_20261004.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BOM_工作板_原生_仅审核_20261004.csv"
+    },
+    {
+      "name": "BOM_板外充电_原生全位置_仅审核_20261005.csv",
+      "bytes": 18436,
+      "sha256": "545fc0754e363309d21970b3a4c89b0cda68b8c684a7694c0e0bed6ef1714b5c",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/BOM_板外充电_原生全位置_仅审核_20261005.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BOM_板外充电_原生全位置_仅审核_20261005.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BOM_板外充电_原生全位置_仅审核_20261005.csv"
+    },
+    {
+      "name": "BackupProjects_e20261004.zipda_htyqpfoe_personal_1_20261004.zip",
+      "bytes": 299337,
+      "sha256": "8dbf81f2a26fdf59bacb969376599a6af4638352ffe507b97d8f69bef617ea59",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip"
+      ],
+      "zip_entries": [
+        "圆形传感板_SCH_A5_3c2f1824ae2d4fd391ecd83abc2b3411.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/BackupProjects_e20261004.zipda_htyqpfoe_personal_1_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/BackupProjects_e20261004.zipda_htyqpfoe_personal_1_20261004.zip"
+    },
+    {
+      "name": "CPL_C9替料_原生全41位置_仅审核_20261005.csv",
+      "bytes": 8546,
+      "sha256": "6073318879a5399de518dc986a45ed95d5782ccc8ba58459be84c98a6ac7b717",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/CPL_C9替料_原生全41位置_仅审核_20261005.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/CPL_C9替料_原生全41位置_仅审核_20261005.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/CPL_C9替料_原生全41位置_仅审核_20261005.csv"
+    },
+    {
+      "name": "CPL_Q1直接修复_原生41位置_仅审核_20261006.csv",
+      "bytes": 8570,
+      "sha256": "df9e3e3142e0603aa17bdaa70e42c287ffebf2c3d3f7a32f44cfa8942f032754",
+      "matches": [
+        "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CPL_Q1直接修复_原生41位置_仅审核_20261006.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/CPL_Q1直接修复_原生41位置_仅审核_20261006.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/CPL_Q1直接修复_原生41位置_仅审核_20261006.csv"
+    },
+    {
+      "name": "CPL_buttons_NATIVE_REVIEW_ONLY_20261004.csv",
+      "bytes": 8974,
+      "sha256": "f863ef6eefc979259a18f448d9526128f74b68936fc0d8e9bb4b71b66e41994e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_原生43件_仅审核_20261004.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/CPL_buttons_NATIVE_REVIEW_ONLY_20261004.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/CPL_buttons_NATIVE_REVIEW_ONLY_20261004.csv"
+    },
+    {
+      "name": "CPL_工作板_原生_仅审核_20261004.csv",
+      "bytes": 8978,
+      "sha256": "30574e4a1920b21bd4115b31189ba603597bf9e6d6428100aead78e235c1cb20",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/CPL_工作板_原生_仅审核_20261004.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/CPL_工作板_原生_仅审核_20261004.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/CPL_工作板_原生_仅审核_20261004.csv"
+    },
+    {
+      "name": "CPL_板外充电_原生全位置_仅审核_20261005.csv",
+      "bytes": 8542,
+      "sha256": "6ec526971d8cd4a7936255195ba16c39c9e2dfee3169bc92fd583d81da6a195a",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/CPL_板外充电_原生全位置_仅审核_20261005.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/CPL_板外充电_原生全位置_仅审核_20261005.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/CPL_板外充电_原生全位置_仅审核_20261005.csv"
+    },
+    {
+      "name": "GRM155R61A105KE15_ToBeDiscontinued.csv",
+      "bytes": 8069,
+      "sha256": "60d4e8a5269077d2821ee61e9bbf319b1a1e3d2f417aa94d318e9161d9372928",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂组合曲线.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/GRM155R61A105KE15_ToBeDiscontinued.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/GRM155R61A105KE15_ToBeDiscontinued.csv"
+    },
+    {
+      "name": "GRM155R61A225KE01_InProduction.csv",
+      "bytes": 8082,
+      "sha256": "0aba8a5f93d26c3b1284ed5597f5ef6b8332b9b05a77f440e14ed3b2c1ceb822",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/GRM155R61A225KE01_InProduction.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/GRM155R61A225KE01_InProduction.csv"
+    },
+    {
+      "name": "GRM155R61A475MEAA_InProduction.csv",
+      "bytes": 8307,
+      "sha256": "0e41a60fcfa562ad1e4e07634335bb23d6e71f854a71024635ff91581fcd2e8e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv"
+      ],
+      "original": "/Users/liuchunyu/Downloads/GRM155R61A475MEAA_InProduction.csv",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/GRM155R61A475MEAA_InProduction.csv"
+    },
+    {
+      "name": "Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip",
+      "bytes": 65990,
+      "sha256": "1607eada8838d3a60485c268a7a5e6f311b536bf47c3fac75a56dfa37b6cbad6",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip"
+    },
+    {
+      "name": "Gerber_C9替料_仅审核_20261005.zip",
+      "bytes": 65972,
+      "sha256": "405203473d8226ca9bf638fafe6d3e5d8cc44decabd9ece37f46ff417a5050a0",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_C9替料_仅审核_20261005.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_C9替料_仅审核_20261005.zip"
+    },
+    {
+      "name": "Gerber_Q1直接修复_仅审核_20261006.zip",
+      "bytes": 65519,
+      "sha256": "301d84d57f953f1de8c4003e839d98428a3be7f93f43bcfc38a88d6a591aaa88",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Q1直接修复_20261006/历史中间版_孔距未收尾_禁止制造/Gerber_Q1直接修复_仅审核_20261006.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_Q1直接修复_仅审核_20261006.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_Q1直接修复_仅审核_20261006.zip"
+    },
+    {
+      "name": "Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip",
+      "bytes": 65424,
+      "sha256": "ba62a8bb4b6417d00915a440b121e2b165f7230bd0a76ed1ab181b6194412356",
+      "matches": [
+        "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip"
+    },
+    {
+      "name": "Gerber_buttons_REVIEW_ONLY_20261004.zip",
+      "bytes": 64783,
+      "sha256": "7ff6341c1b4ba02196b33ebd6c7e16737a398a8d8c3efc9452e4821b183dbfad",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber_按键收拢_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_buttons_REVIEW_ONLY_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_buttons_REVIEW_ONLY_20261004.zip"
+    },
+    {
+      "name": "Gerber_finish_R2_review_only_20261004.zip",
+      "bytes": 64680,
+      "sha256": "001879749a9a1a2891f57b8c4b944b89709d5592fbdfd7864fff5767d1eb8efd",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造收尾R2_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_finish_R2_review_only_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_finish_R2_review_only_20261004.zip"
+    },
+    {
+      "name": "Gerber_finish_review_only_20261004.zip",
+      "bytes": 64774,
+      "sha256": "b93f67a465fe38a359f148ae5b7ec14dad0a65fe8174d2c0fef80c0f5589c368",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造局部收尾_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_finish_review_only_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_finish_review_only_20261004.zip"
+    },
+    {
+      "name": "Gerber_丝印终检_仅审核_20261004.zip",
+      "bytes": 64829,
+      "sha256": "cd29835d74264caf478d2ca343429f24350b56387b42f90bf0029eab679f62d5",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/Gerber_丝印终检_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_丝印终检_仅审核_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_丝印终检_仅审核_20261004.zip"
+    },
+    {
+      "name": "Gerber_工作板_仅审核_20261004.zip",
+      "bytes": 65051,
+      "sha256": "42d1477d3b73e4c626fc077e5f7c38ec0118f00f03c8cf8980f641fecd9c958f",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_工作板_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_工作板_仅审核_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_工作板_仅审核_20261004.zip"
+    },
+    {
+      "name": "Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+      "bytes": 64965,
+      "sha256": "d12375fdb4642225bc3a138077a2265c1f81b17909aee3e53bf2190067ddf72e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip"
+    },
+    {
+      "name": "Gerber_板外充电_仅审核_20261005.zip",
+      "bytes": 63776,
+      "sha256": "f0ea504fdd490eb46ba1740e9a730fee03d003b60422a5d51f8ab2de977d3a83",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber_板外充电_仅审核_20261005.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Gerber_板外充电_仅审核_20261005.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Gerber_板外充电_仅审核_20261005.zip"
+    },
+    {
+      "name": "PCBLIB_DMP2165UW_SOT323_原生库_20261006.json",
+      "bytes": 9788,
+      "sha256": "5522759d7081a5ef5a8b239f9e21472662ee2e776ba51f34d79b76e9e5be6eef",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCBLIB_DMP2165UW_SOT323_原生库_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCBLIB_DMP2165UW_SOT323_原生库_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCBLIB_DMP2165UW_SOT323_原生库_20261006.json"
+    },
+    {
+      "name": "PCBLIB_Q1_专用封装_已保存原生_20261006.json",
+      "bytes": 10094,
+      "sha256": "7d1b2eb7e959267bb1c3557a1ae1609ccc5c7055cd29f3d29baeca443eae3bc5",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_专用封装_已保存原生_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCBLIB_Q1_专用封装_已保存原生_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCBLIB_Q1_专用封装_已保存原生_20261006.json"
+    },
+    {
+      "name": "PCBLIB_Q1_个人库保存重开_20261006.json",
+      "bytes": 8188,
+      "sha256": "ffdac5167b2323ea70f2f6f551c884f20f5755d86ef7d6978bb75ec19059b566",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_个人库保存重开_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCBLIB_Q1_个人库保存重开_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCBLIB_Q1_个人库保存重开_20261006.json"
+    },
+    {
+      "name": "PCB_BOOT_RESET功能丝印_保存重开_20261005.json",
+      "bytes": 529789,
+      "sha256": "6d90eddcb7c6cd3fd5a2585ddff2b09579a416879178ff9f14675cda06250740",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印_保存重开_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_BOOT_RESET功能丝印_保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_BOOT_RESET功能丝印_保存重开_20261005.json"
+    },
+    {
+      "name": "PCB_BOOT_RESET标注前_20261005.json",
+      "bytes": 512134,
+      "sha256": "90675e1fbb536d1bb92c55582c0f41bcc3f437bdd1e14151e9c8b14a57aa5c0f",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET标注前_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_BOOT_RESET标注前_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_BOOT_RESET标注前_20261005.json"
+    },
+    {
+      "name": "PCB_C9候选_原生名称校正_20261005.json",
+      "bytes": 529780,
+      "sha256": "f7c8cde71c8ab8104fa6bd33b7497d000865b94f50c32bf462e55e12bb257367",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9候选_原生名称校正_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_C9候选_原生名称校正_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_C9候选_原生名称校正_20261005.json"
+    },
+    {
+      "name": "PCB_C9替料_保存重开_20261005.json",
+      "bytes": 441601,
+      "sha256": "5dc13f75d51ffe1639186bc051c4e9656abe6f7cca77e6f640024d3e2a223711",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料_保存重开_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_C9替料_保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_C9替料_保存重开_20261005.json"
+    },
+    {
+      "name": "PCB_C9替料_重铺保存重开_20261005.json",
+      "bytes": 529780,
+      "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json",
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1应用前_保存重开回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_C9替料_重铺保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_C9替料_重铺保存重开_20261005.json"
+    },
+    {
+      "name": "PCB_C9替料前_20261005.json",
+      "bytes": 529788,
+      "sha256": "a418a8248d5c1347d2ea543fcb547b7a46d2d7296e715bf1dd257298c58b47d5",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料前_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_C9替料前_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_C9替料前_20261005.json"
+    },
+    {
+      "name": "PCB_Q1修改前_原生回读_20261006.json",
+      "bytes": 529783,
+      "sha256": "104338789cb0e09d8fe32ea936048fd769a2379924382ee0988ad800f5a0006b",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/PCB_Q1修改前_原生回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1修改前_原生回读_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1修改前_原生回读_20261006.json"
+    },
+    {
+      "name": "PCB_Q1候选_原生重铺_DRC0_20261006.json",
+      "bytes": 533965,
+      "sha256": "c48816764f8c4827ebf52ffd100195456fce59274acecc0779b9ecce7338063a",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1候选_原生重铺_DRC0_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1候选_原生重铺_DRC0_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1候选_原生重铺_DRC0_20261006.json"
+    },
+    {
+      "name": "PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json",
+      "bytes": 533889,
+      "sha256": "af0ebf8210eed01f7f907629ea0590e675c052b70b515edbaeb52bea9ffba25b",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json"
+    },
+    {
+      "name": "PCB_Q1导出后_UI状态核对_未保存_20261006.json",
+      "bytes": 533892,
+      "sha256": "166f32327f88b4b016fadbb3a3bcf4585a082eaba09c20bf0058a440310afb31",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1导出后_UI状态核对_未保存_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1导出后_UI状态核对_未保存_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1导出后_UI状态核对_未保存_20261006.json"
+    },
+    {
+      "name": "PCB_Q1应用前_保存重开回读_20261006.json",
+      "bytes": 529780,
+      "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json",
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1应用前_保存重开回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1应用前_保存重开回读_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1应用前_保存重开回读_20261006.json"
+    },
+    {
+      "name": "PCB_Q1直接修复_保存重开_20261006.json",
+      "bytes": 533959,
+      "sha256": "1b7c7f32332820d85be81ce77ba352a4ff5b761c48ecb9ec1f06c5efa4ab794f",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_保存重开_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1直接修复_保存重开_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1直接修复_保存重开_20261006.json"
+    },
+    {
+      "name": "PCB_Q1直接修复_孔距收尾_保存重开_20261006.json",
+      "bytes": 620927,
+      "sha256": "b45751ba534a0a78d20714e056650274dc8f70d5eed32a22a7c11f110a2bbde4",
+      "matches": [
+        "archive/目录整理_20261006/PCB_目录整理后_改名重开_原生回读_20261006.json",
+        "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json"
+    },
+    {
+      "name": "PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json",
+      "bytes": 620927,
+      "sha256": "01bdc6f3ebbf06956df64acd06eedf64aa8167896c395bc4b5d5ec3b47a1077b",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json"
+    },
+    {
+      "name": "PCB_Q1直接修复_孔距收尾_重铺保存_20261006.json",
+      "bytes": 620927,
+      "sha256": "01bdc6f3ebbf06956df64acd06eedf64aa8167896c395bc4b5d5ec3b47a1077b",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1直接修复_孔距收尾_重铺保存_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1直接修复_孔距收尾_重铺保存_20261006.json"
+    },
+    {
+      "name": "PCB_Q1直接修复_重铺保存_20261006.json",
+      "bytes": 533959,
+      "sha256": "3f45832556404a6492fcde74a5955c5298c06a518ada5097174f09d1a9fa3e8f",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_重铺保存_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_Q1直接修复_重铺保存_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_Q1直接修复_重铺保存_20261006.json"
+    },
+    {
+      "name": "PCB_before_buttons_commit_20261004.json",
+      "bytes": 528979,
+      "sha256": "67dee562bcada7a68e5658974b278f50944ced78977fa202023e7cc28536b092",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_before_buttons_commit_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_before_buttons_commit_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_before_buttons_commit_20261004.json"
+    },
+    {
+      "name": "PCB_before_layout_20261004.json",
+      "bytes": 528979,
+      "sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/PCB_整板复审前_现场恢复_20261004.json",
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_布局优化前_现场恢复_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_布局优化前_现场恢复_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_before_layout_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_before_layout_20261004.json"
+    },
+    {
+      "name": "PCB_buttons_G_native_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_sync_before_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_G_native_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_buttons_G_native_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_buttons_G_native_20261004.json"
+    },
+    {
+      "name": "PCB_buttons_saved_reopen_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_sync_before_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_G_native_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_buttons_saved_reopen_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_buttons_saved_reopen_20261004.json"
+    },
+    {
+      "name": "PCB_finish_R2_saved_reopened_20261004.json",
+      "bytes": 528199,
+      "sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_start_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_finish_R2_saved_reopened_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_finish_R2_saved_reopened_20261004.json"
+    },
+    {
+      "name": "PCB_finish_before_commit_20261004.json",
+      "bytes": 528063,
+      "sha256": "48b817a4524695a755cf25f04fa0e382ea4d200ad82ff626b36ad06caf97b0c9",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_before_commit_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_finish_before_commit_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_finish_before_commit_20261004.json"
+    },
+    {
+      "name": "PCB_finish_native_candidate_20261004.json",
+      "bytes": 528167,
+      "sha256": "35847c6648fadef479d587b9e3e2e851e8a7c41e90954f1ff7c943148e100c07",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_native_candidate_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_finish_native_candidate_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_finish_native_candidate_20261004.json"
+    },
+    {
+      "name": "PCB_finish_saved_reopened_20261004.json",
+      "bytes": 528167,
+      "sha256": "35847c6648fadef479d587b9e3e2e851e8a7c41e90954f1ff7c943148e100c07",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_native_candidate_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_finish_saved_reopened_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_finish_saved_reopened_20261004.json"
+    },
+    {
+      "name": "PCB_full_review_live_20261004.json",
+      "bytes": 528979,
+      "sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/PCB_整板复审前_现场恢复_20261004.json",
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_布局优化前_现场恢复_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_布局优化前_现场恢复_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_full_review_live_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_full_review_live_20261004.json"
+    },
+    {
+      "name": "PCB_independent_cloud_read_20261004.json",
+      "bytes": 528063,
+      "sha256": "968381becf6f02d16998d06b140e89a698ae9267d8f2ddba1e11730a8d5ffe89",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_independent_cloud_read_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/PCB_independent_cloud_read_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_independent_cloud_read_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_independent_cloud_read_20261004.json"
+    },
+    {
+      "name": "PCB_silk_saved_reopened_20261004.json",
+      "bytes": 529613,
+      "sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电改动前_20261005.json",
+        "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_silk_saved_reopened_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_silk_saved_reopened_20261004.json"
+    },
+    {
+      "name": "PCB_silk_start_20261004.json",
+      "bytes": 528199,
+      "sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_start_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_silk_start_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_silk_start_20261004.json"
+    },
+    {
+      "name": "PCB_sync_before_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_sync_before_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_G_native_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_sync_before_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_sync_before_20261004.json"
+    },
+    {
+      "name": "PCB_手焊禁钢网_保存重开_20261004.json",
+      "bytes": 528979,
+      "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊禁钢网_保存重开_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_手焊禁钢网_保存重开_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_手焊禁钢网_保存重开_20261004.json"
+    },
+    {
+      "name": "PCB_手焊禁钢网_原生候选回读_20261004.json",
+      "bytes": 528979,
+      "sha256": "069464569ead70a3d0e90dd9dc9df5576e924ed67f46788bfa080c78de648738",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_原生候选回读_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_手焊禁钢网_原生候选回读_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_手焊禁钢网_原生候选回读_20261004.json"
+    },
+    {
+      "name": "PCB_手焊钢网修正前_恢复点_20261004.json",
+      "bytes": 528934,
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊钢网修正前_恢复点_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊钢网修正前_恢复点_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_钢网写回前_现场确认_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_手焊钢网修正前_恢复点_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_手焊钢网修正前_恢复点_20261004.json"
+    },
+    {
+      "name": "PCB_板外充电_保存重开_20261005.json",
+      "bytes": 512134,
+      "sha256": "57b67d2d0f2de9a4fe2511a1069ec17852bed81a3e244c796b008095251f0849",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电_保存重开_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_板外充电_保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_板外充电_保存重开_20261005.json"
+    },
+    {
+      "name": "PCB_板外充电改动前_20261005.json",
+      "bytes": 529613,
+      "sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电改动前_20261005.json",
+        "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_板外充电改动前_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_板外充电改动前_20261005.json"
+    },
+    {
+      "name": "PCB_目录整理前_原生回读_20261006.json",
+      "bytes": 620924,
+      "sha256": "957a6989aae4097bf3d949068d9c46070a037df3b837c962fcfaa4cfb9eb1d42",
+      "matches": [
+        "archive/目录整理_20261006/PCB_目录整理前_原生回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_目录整理前_原生回读_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_目录整理前_原生回读_20261006.json"
+    },
+    {
+      "name": "PCB_钢网写回前_现场确认_20261004.json",
+      "bytes": 528934,
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊钢网修正前_恢复点_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊钢网修正前_恢复点_20261004.json",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_钢网写回前_现场确认_20261004.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/PCB_钢网写回前_现场确认_20261004.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/PCB_钢网写回前_现场确认_20261004.json"
+    },
+    {
+      "name": "Project_buttons_full_20261004.zip",
+      "bytes": 299340,
+      "sha256": "320cf1603e5919784e2af3b816b025748f0818e2563b232c4b18a293f140c776",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/按键收拢_整工程恢复_20261004.zip"
+      ],
+      "zip_entries": [
+        "圆形传感板_SCH_A5_3c2f1824ae2d4fd391ecd83abc2b3411.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Project_buttons_full_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Project_buttons_full_20261004.zip"
+    },
+    {
+      "name": "Project_buttons_sync_20261004.zip",
+      "bytes": 299342,
+      "sha256": "c91c8a86b55d78f7146cd22afbae21283beb9321598089f3afa9eb8e28bbf746",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/按键收拢_原生编辑后_整工程备份_20261004.zip"
+      ],
+      "zip_entries": [
+        "圆形传感板_SCH_A5_3c2f1824ae2d4fd391ecd83abc2b3411.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Project_buttons_sync_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Project_buttons_sync_20261004.zip"
+    },
+    {
+      "name": "Project_full_review_20261004.zip",
+      "bytes": 299301,
+      "sha256": "125c46a43d669d15dee32a3d67cdcee97617a0950d3d38ccc027d910ed902b3e",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/整板复审_当前整工程备份_20261004.zip"
+      ],
+      "zip_entries": [
+        "圆形传感板_SCH_A5_3c2f1824ae2d4fd391ecd83abc2b3411.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/Project_full_review_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/Project_full_review_20261004.zip"
+    },
+    {
+      "name": "SCHLIB_DMP2165UW_C388477_原生库_20261006.json",
+      "bytes": 3655,
+      "sha256": "8eef32c49de98d1762650b3dcad538d1f6f4bc4cc8200d1ffb2550668453a53c",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCHLIB_DMP2165UW_C388477_原生库_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCHLIB_DMP2165UW_C388477_原生库_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCHLIB_DMP2165UW_C388477_原生库_20261006.json"
+    },
+    {
+      "name": "SCH_C9替料_五页保存重开_20261005.json",
+      "bytes": 95623,
+      "sha256": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json",
+        "easyeda_std/Q1直接修复_20261006/SCH_Q1修改前_五页原生回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_C9替料_五页保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_C9替料_五页保存重开_20261005.json"
+    },
+    {
+      "name": "SCH_C9替料_原生Protel全图_仅审核_20261005.net",
+      "bytes": 2595,
+      "sha256": "47d3433bada7c61a3c5f48310c6bd8ac52fd31e8c9b6fe34cd697aa73fe348b7",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/SCH_C9替料_原生Protel全图_仅审核_20261005.net"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_C9替料_原生Protel全图_仅审核_20261005.net",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_C9替料_原生Protel全图_仅审核_20261005.net"
+    },
+    {
+      "name": "SCH_C9替料前_五页_20261005.json",
+      "bytes": 95411,
+      "sha256": "44af0ab1a662759cb97fbbb7e8c63801c7fa9ded86a6e06e065f741f1438b5a9",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9替料前_五页_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_C9替料前_五页_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_C9替料前_五页_20261005.json"
+    },
+    {
+      "name": "SCH_Q1修改前_五页原生回读_20261006.json",
+      "bytes": 95623,
+      "sha256": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json",
+        "easyeda_std/Q1直接修复_20261006/SCH_Q1修改前_五页原生回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1修改前_五页原生回读_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1修改前_五页原生回读_20261006.json"
+    },
+    {
+      "name": "SCH_Q1替料_五页保存重开_20261006.json",
+      "bytes": 95790,
+      "sha256": "452ec9de62948e2e5ad1d838119dbd42c8f4be2ac4f9048427290503481b674b",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_五页保存重开_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1替料_五页保存重开_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1替料_五页保存重开_20261006.json"
+    },
+    {
+      "name": "SCH_Q1替料_原生属性保存_20261006.json",
+      "bytes": 95460,
+      "sha256": "d00987e65f642c6df0061b4aca675a31751abb9b8641625e5e4277d6d6e8b08d",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生属性保存_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1替料_原生属性保存_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1替料_原生属性保存_20261006.json"
+    },
+    {
+      "name": "SCH_Q1替料_原生整图网表_20261006.net",
+      "bytes": 2609,
+      "sha256": "97afcf53ce05125c163c0e53e548f134fcbf52f9fea3311625c137fc01cb3c29",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生整图网表_20261006.net"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1替料_原生整图网表_20261006.net",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1替料_原生整图网表_20261006.net"
+    },
+    {
+      "name": "SCH_Q1替料_最终五页回读_20261006.json",
+      "bytes": 95460,
+      "sha256": "2a1a585090742c89eee72219f31674d902c01ce4c85764fcc8b92ee54a25dfff",
+      "matches": [
+        "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_最终五页回读_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1替料_最终五页回读_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1替料_最终五页回读_20261006.json"
+    },
+    {
+      "name": "SCH_Q1替料_重开核对_20261006.json",
+      "bytes": 95623,
+      "sha256": "036ddc7f4220d470893af8e45cb0d064cffe958d5a397df8f396591c3d5eda58",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_重开核对_20261006.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_Q1替料_重开核对_20261006.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_Q1替料_重开核对_20261006.json"
+    },
+    {
+      "name": "SCH_五页原生网表_仅审核_20261004.net",
+      "bytes": 2732,
+      "sha256": "b46112b5e0c664c3532be8207ba95ddc4d95fd567473c6324f89ed37a18e9f31",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/SCH_五页原生网表_仅审核_20261004.net",
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/SCH_五页原生网表_仅审核_20261004.net"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_五页原生网表_仅审核_20261004.net",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_五页原生网表_仅审核_20261004.net"
+    },
+    {
+      "name": "SCH_板外充电_五页保存重开_20261005.json",
+      "bytes": 95411,
+      "sha256": "33a756e0a405092a7462858422c94fb38097e295949b13e5b2eb54ae46d1a6f7",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_板外充电_五页保存重开_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_板外充电_五页保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_板外充电_五页保存重开_20261005.json"
+    },
+    {
+      "name": "SCH_板外充电_保存重开_20261005.json",
+      "bytes": 12737,
+      "sha256": "873a64d35fc78edfedd8b5928740444459edd2380372fd0599d56b4316fc1c95",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/异常单页导出_已修复禁止恢复_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_板外充电_保存重开_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_板外充电_保存重开_20261005.json"
+    },
+    {
+      "name": "SCH_板外充电_原生Protel全图_仅审核_20261005.net",
+      "bytes": 2593,
+      "sha256": "64307150090fe4a4c71b37a67baca9bc411a961693554cecdfed07d5cc520291",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/SCH_板外充电_原生Protel全图_仅审核_20261005.net"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_板外充电_原生Protel全图_仅审核_20261005.net",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_板外充电_原生Protel全图_仅审核_20261005.net"
+    },
+    {
+      "name": "SCH_板外充电改动前_20261005.json",
+      "bytes": 98242,
+      "sha256": "d6826870709d53badc63451d3aa62441b7ea7c40cc26ef31e67c8f1c8be205d6",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_板外充电改动前_20261005.json"
+      ],
+      "original": "/Users/liuchunyu/Downloads/SCH_板外充电改动前_20261005.json",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/SCH_板外充电改动前_20261005.json"
+    },
+    {
+      "name": "image (1).png",
+      "bytes": 17857,
+      "sha256": "197407a0d207ff5a964d65f2b36a62fc63f21e41757ae7253f0318027ad23e39",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂曲线.png"
+      ],
+      "original": "/Users/liuchunyu/Downloads/image (1).png",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/image (1).png"
+    },
+    {
+      "name": "image.png",
+      "bytes": 21926,
+      "sha256": "bb26f0eaeb0654737a80d4df504ca18c6d81f83a13317de9e75dfba5dc52c921",
+      "matches": [
+        "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂曲线.png"
+      ],
+      "original": "/Users/liuchunyu/Downloads/image.png",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/image.png"
+    },
+    {
+      "name": "圆形传感板_最终审核_仅审核_20261004.zip",
+      "bytes": 299297,
+      "sha256": "3d337805a36eee0ac85e31557fbb95fccbd144791d2bc727956c44f16c4d3277",
+      "matches": [
+        "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/圆形传感板_最终审核_仅审核_20261004.zip"
+      ],
+      "original": "/Users/liuchunyu/Downloads/圆形传感板_最终审核_仅审核_20261004.zip",
+      "recoverable_trash": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20261006/圆形传感板_最终审核_仅审核_20261004.zip"
+    }
+  ],
+  "count": 85,
+  "bytes": 22640746,
+  "all_downloads_match_retained_project_files": true,
+  "permanent_deletions": 0,
+  "unrelated_downloads_unchanged_count": 13,
+  "current_CAD_manufacturing_source_modified": false,
+  "EDA_modified": false,
+  "all_moves_size_and_sha256_verified": true,
+  "all_retained_project_copies_sha256_verified": true,
+  "all_other_downloads_metadata_unchanged": true,
+  "remaining_Downloads_direct_entries": 13
+}

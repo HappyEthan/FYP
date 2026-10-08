@@ -1,0 +1,120 @@
+{
+  "status": "REVIEW ONLY",
+  "saved_source_sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+  "native_save_close_reopen": true,
+  "native_drc": {
+    "components": 43,
+    "connected_networks": "21/21",
+    "remaining": "gge2100-gge2115 historical Q1 pad clearance 0.14 vs 0.15 mm"
+  },
+  "all_non_silk_document_primitives_equal_start": true,
+  "all_nonshape_fields_equal_candidate": true,
+  "candidate_vs_saved_only_native_silk_numeric_rounding": [
+    {
+      "type": "TEXT",
+      "field": 2,
+      "max_mm": 7.599933996607434e-05
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 2.9997400406500675e-06
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 1.0200640006587492e-05
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 1.2600940033735241e-05
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 1.2600940033735241e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 1,
+      "max_mm": 7.599933996607434e-05
+    },
+    {
+      "type": "TEXT",
+      "field": 2,
+      "max_mm": 9.99998000334017e-05
+    },
+    {
+      "type": "TEXT",
+      "field": 3,
+      "max_mm": 5.599937998249516e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 1,
+      "max_mm": 7.999984004982253e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 2,
+      "max_mm": 6.800088000272808e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 3,
+      "max_mm": 1.599946000000324e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 4,
+      "max_mm": 6.5989200000092786e-06
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 7.216140035779972e-06
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 2.1081999975649522e-06
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 7.592059871967649e-06
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 9.804400038774475e-06
+    },
+    {
+      "type": "CIRCLE",
+      "field": 1,
+      "max_mm": 5.999480081300135e-06
+    },
+    {
+      "type": "CIRCLE",
+      "field": 2,
+      "max_mm": 1.9999959983579174e-05
+    },
+    {
+      "type": "CIRCLE",
+      "field": 1,
+      "max_mm": 0.00012599923998277517
+    },
+    {
+      "type": "CIRCLE",
+      "field": 2,
+      "max_mm": 0.00011599925993323268
+    },
+    {
+      "type": "TRACK",
+      "field": 4,
+      "max_mm": 6.349999839585508e-07
+    }
+  ],
+  "max_rounding_mm": 0.00012599923998277517
+}

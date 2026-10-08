@@ -1,0 +1,25 @@
+{
+  "source_sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e",
+  "candidate_sha256": "61bd844ba16ff4bd101bfb6f018ce874cfb26f4c612063fc3882e0348a7d066e",
+  "candidate_status": "local trial only, native acceptance pending",
+  "moved": [
+    "SW3"
+  ],
+  "sw3_center": [
+    17.60000010599997,
+    -74.50000009800003
+  ],
+  "sw3_angle": "0",
+  "old_button_distance": 12.599698127581906,
+  "new_button_distance": 3.7661816903197556,
+  "other_parts_exactly_equal": true,
+  "pad_ref_pin_net_unchanged": true,
+  "DRCRULE_equal": true,
+  "old_EN_branch_length_mm": 12.458866808065478,
+  "new_EN_branch_length_mm": 22.957962705046,
+  "limits": [
+    "trial retains original pours cache until native rebuild",
+    "longer RESET branch is a tradeoff for physical grouping; no EMI/assembly validation",
+    "USB/RF/power geometry unchanged except regenerated ground pours pending"
+  ]
+}

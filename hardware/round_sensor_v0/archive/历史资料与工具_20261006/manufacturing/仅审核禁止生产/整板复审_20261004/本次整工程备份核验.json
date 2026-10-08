@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-04",
+  "native_backup_generated_local_time": "11:22:46",
+  "project_id": "3c2f1824ae2d4fd391ecd83abc2b3411",
+  "backup": "整板复审_当前整工程备份_20261004.zip",
+  "backup_bytes": 299301,
+  "sha256": "125c46a43d669d15dee32a3d67cdcee97617a0950d3d38ccc027d910ed902b3e",
+  "previous_backup": "hardware/round_sensor_v0/easyeda_std/最终审核_20261004/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip",
+  "same_entry_names": true,
+  "all_entries_byte_identical": false,
+  "entries": [
+    {
+      "file": "1-PCB_圆形传感板_A5_当前工作版.json",
+      "bytes": 375093,
+      "sha256": "e0cf3e040a502467b54f6d12ad35877c80f96602a0d1f70917e5521aae992384",
+      "byte_identical_to_previous": true
+    },
+    {
+      "file": "2-PCB_PCB_圆形传感板_SCH_A5.json",
+      "bytes": 354984,
+      "sha256": "df4dce9b4697841278e2b479741c8fd1c73fd1ec9109411fb02ab85ae131c76c",
+      "byte_identical_to_previous": true
+    },
+    {
+      "file": "3-PCB_PCB_圆形传感板_SCH_A5 copy.json",
+      "bytes": 530444,
+      "sha256": "ecbeed2b2ebf24069360696c7db601cf2998fdb6a3335e10483dc923b8e68cd3",
+      "byte_identical_to_previous": false
+    },
+    {
+      "file": "1-Schematic_圆形传感板_SCH_A5.json",
+      "bytes": 97197,
+      "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47",
+      "byte_identical_to_previous": true
+    },
+    {
+      "file": "README.txt",
+      "bytes": 532,
+      "sha256": "c7851025a85a522417c2360e16043554b43f02f80a8d9384c4f952ca8776ae9c",
+      "byte_identical_to_previous": true
+    }
+  ],
+  "scope": "Native cloud full-project backup, obtained read-only. No PCB or schematic design edits during this review.",
+  "working_board_semantic_comparison": {
+    "shape_multiset_same": false,
+    "non_shape_differences": {}
+  },
+  "live_vs_cloud_child_differences": [
+    {
+      "lib_id": "ggeA5739",
+      "child_index": 5,
+      "live": "PAD~RECT~4106.957~3122.5~5.9055~7.874~2~BAT_P~1~0~4104.0042 3126.437 4109.9098 3126.437 4109.9098 3118.563 4104.0042 3118.563~180~gge1962~0~~Y~0~-11.811024~0.2~4106.957,3122.5",
+      "cloud_backup": "PAD~RECT~4106.957~3122.5~5.9055~7.874~2~BAT_P~1~0~4104.0042 3126.437 4109.9098 3126.437 4109.9098 3118.563 4104.0042 3118.563~180~gge1962~0~~Y~0~0~0.2~4106.957,3122.5",
+      "changed_fields": [
+        {
+          "index": 17,
+          "live": "-11.811024",
+          "cloud": "0"
+        }
+      ]
+    },
+    {
+      "lib_id": "ggeA5739",
+      "child_index": 6,
+      "live": "PAD~RECT~4114.043~3122.5~5.9055~7.874~2~GND~2~0~4111.0902 3126.437 4116.9958 3126.437 4116.9958 3118.563 4111.0902 3118.563~180~gge1977~0~~Y~0~-11.811024~0.2~4114.043,3122.5",
+      "cloud_backup": "PAD~RECT~4114.043~3122.5~5.9055~7.874~2~GND~2~0~4111.0902 3126.437 4116.9958 3126.437 4116.9958 3118.563 4111.0902 3118.563~180~gge1977~0~~Y~0~0~0.2~4114.043,3122.5",
+      "changed_fields": [
+        {
+          "index": 17,
+          "live": "-11.811024",
+          "cloud": "0"
+        }
+      ]
+    },
+    {
+      "lib_id": "ggeA5648",
+      "child_index": 6,
+      "live": "PAD~POLYGON~4092.415~3070.091~0~0~2~GND~1~0~4089.4619 3074.0266 4095.3669 3074.0266 4095.3669 3066.1526 4089.4619 3066.1526~180~gge2985~0~~Y~0~-11.811024~0.2~4092.414,3070.0896",
+      "cloud_backup": "PAD~POLYGON~4092.415~3070.091~0~0~2~GND~1~0~4089.4619 3074.0266 4095.3669 3074.0266 4095.3669 3066.1526 4089.4619 3066.1526~180~gge2985~0~~Y~0~0~0.2~4092.414,3070.0896",
+      "changed_fields": [
+        {
+          "index": 17,
+          "live": "-11.811024",
+          "cloud": "0"
+        }
+      ]
+    },
+    {
+      "lib_id": "ggeA5648",
+      "child_index": 7,
+      "live": "PAD~POLYGON~4099.5~3070.091~5.9058~7.874~2~REG_EN~2~0~4096.548 3074.0266 4102.4539 3074.0266 4102.4539 3066.1526 4096.548 3066.1526~180~gge3000~0~~Y~0~-11.811024~0.2~4099.501,3070.0896",
+      "cloud_backup": "PAD~POLYGON~4099.5~3070.091~5.9058~7.874~2~REG_EN~2~0~4096.548 3074.0266 4102.4539 3074.0266 4102.4539 3066.1526 4096.548 3066.1526~180~gge3000~0~~Y~0~0~0.2~4099.501,3070.0896",
+      "changed_fields": [
+        {
+          "index": 17,
+          "live": "-11.811024",
+          "cloud": "0"
+        }
+      ]
+    },
+    {
+      "lib_id": "ggeA5648",
+      "child_index": 8,
+      "live": "PAD~POLYGON~4106.589~3070.091~5.9053~7.874~2~VSYS~3~0~4103.6349 3074.0266 4109.54 3074.0266 4109.54 3066.1526 4103.6349 3066.1526~180~gge3015~0~~Y~0~-11.811024~0.2~4106.588,3070.0896",
+      "cloud_backup": "PAD~POLYGON~4106.589~3070.091~5.9053~7.874~2~VSYS~3~0~4103.6349 3074.0266 4109.54 3074.0266 4109.54 3066.1526 4103.6349 3066.1526~180~gge3015~0~~Y~0~0~0.2~4106.588,3070.0896",
+      "changed_fields": [
+        {
+          "index": 17,
+          "live": "-11.811024",
+          "cloud": "0"
+        }
+      ]
+    }
+  ],
+  "conclusion": "NOT_EQUIVALENT: fresh cloud full-project backup reverts five paste expansion fields for J2/SW1 from -11.811024 source units (-3mm) to 0. Copper, mask, positions, nets, models and rules are unchanged relative to earlier full backup. Current schematic is byte-identical. Do not use this fresh full backup as the final manufacturing recovery point. Cause not established; no save/repair was attempted during this read-only review.",
+  "all_five_changes_are_only_paste_field_17": true
+}

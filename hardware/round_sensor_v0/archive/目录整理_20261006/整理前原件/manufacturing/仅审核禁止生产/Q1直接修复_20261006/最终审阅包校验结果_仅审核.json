@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-06",
+  "package": "manufacturing/仅审核禁止生产/圆形传感板_Q1修复最终审阅_20261006.zip",
+  "sha256": "60122cfda4df56ac24f0a608cf5bf7a84969d1e03fde41541e9bff7368334223",
+  "bytes": 2343059,
+  "files": 34,
+  "one_current_Gerber": "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip",
+  "all_manifest_hashes_verified": true,
+  "zip_CRC_verified": true,
+  "PCB_saved_reopened_native_DRC_errors": 0,
+  "unconnected": 0,
+  "physical_board_tested": false,
+  "factory_process_approved": false,
+  "production_released": false,
+  "external_sent_uploaded_ordered": false,
+  "CAM_PDF_3_pages_rendered_and_visually_checked": true,
+  "Q1_mapping_PNG_visually_checked": true,
+  "prior_reports": "Historical evidence; old LP Q1 battery loss values and old production candidates are superseded.",
+  "postdoc_shared_project_access": "User confirmed; no third-party login or permission test performed",
+  "native_BOM_full_MPN_sync_pending": 22,
+  "ANT1_native_vs_corrected_CPL_Y_mm": [
+    81.43,
+    80.67
+  ],
+  "CAD_changed_this_clarification": false
+}

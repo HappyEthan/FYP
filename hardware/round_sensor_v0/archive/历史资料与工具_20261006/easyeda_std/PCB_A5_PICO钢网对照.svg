@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="740" viewBox="0 0 1140 740">
+<rect width="1140" height="740" fill="#f4f7fa"/>
+<g font-family="PingFang SC,Noto Sans CJK SC,sans-serif" fill="#182b42">
+<text x="40" y="45" font-size="25" font-weight="600">主控中央焊盘：钢网分窗候选</text>
+<text x="40" y="78" font-size="16">仅调整锡膏图形，不改 4×4 mm 接地铜、九个过孔、布局或电路。</text>
+<text x="290" y="120" font-size="21" text-anchor="middle">当前原生：单个开口</text>
+<g transform="translate(290,320) scale(80)">
+<rect x="-2" y="-2" width="4" height="4" fill="#f1d7a5" stroke="#9b7133" stroke-width=".025"/>
+<rect x="-1.5999967999999818" y="-1.5999968000000973" width="3.1999935999999636" height="3.199993600000079" fill="#75bec6" fill-opacity=".82" stroke="#166979" stroke-width=".018"/>
+<circle cx="-0.9998709999999482" cy="-0.00022860000011587546" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.9998709999999482" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.9998710000000638" cy="2.5399999935871167e-05" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.9998710000000638" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.9998709999999482" cy="-1.0002266000000901" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="1.000125" cy="-1.0002266000000901" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.00012700000002587332" cy="-0.00022860000011587546" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.0003809999999621141" cy="-0.999718600000102" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.00012700000002587332" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+</g>
+<text x="290" y="516" text-anchor="middle" font-size="17">3.2×3.2 mm · 覆盖全部九孔中心</text>
+<text x="850" y="120" font-size="21" text-anchor="middle">本地候选：四个开口</text>
+<g transform="translate(850,320) scale(80)">
+<rect x="-2" y="-2" width="4" height="4" fill="#f1d7a5" stroke="#9b7133" stroke-width=".025"/>
+<rect x="-1.7500000560000035" y="-1.750000056000119" width="1.60000010200006" height="1.60000010200006" fill="#75bec6" fill-opacity=".82" stroke="#166979" stroke-width=".018"/>
+<rect x="-1.7500000560000035" y="0.1499999539999435" width="1.60000010200006" height="1.6000001019999446" fill="#75bec6" fill-opacity=".82" stroke="#166979" stroke-width=".018"/>
+<rect x="0.149999954000059" y="-1.750000056000119" width="1.6000001019999446" height="1.60000010200006" fill="#75bec6" fill-opacity=".82" stroke="#166979" stroke-width=".018"/>
+<rect x="0.149999954000059" y="0.1499999539999435" width="1.6000001019999446" height="1.6000001019999446" fill="#75bec6" fill-opacity=".82" stroke="#166979" stroke-width=".018"/>
+<circle cx="-0.9998709999999482" cy="-0.00022860000011587546" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.9998709999999482" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.9998710000000638" cy="2.5399999935871167e-05" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.9998710000000638" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.9998709999999482" cy="-1.0002266000000901" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="1.000125" cy="-1.0002266000000901" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.00012700000002587332" cy="-0.00022860000011587546" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="-0.0003809999999621141" cy="-0.999718600000102" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+<circle cx="0.00012700000002587332" cy="0.9997693999999737" r="0.1524" fill="#fff" fill-opacity=".8" stroke="#b14436" stroke-width=".024"/>
+</g>
+<text x="850" y="516" text-anchor="middle" font-size="17">每窗 1.6×1.6 mm · 覆盖率仍为 64%</text>
+<text x="850" y="548" text-anchor="middle" font-size="16">筋宽 0.30 mm；外缘距铜边约 0.25 mm</text>
+<rect x="40" y="575" width="1060" height="130" rx="10" fill="#fff0dc"/>
+<text x="60" y="604" font-size="18" font-weight="600">前提：九个过孔全部填孔、整平并电镀盖帽；工厂尚未确认。</text>
+<text x="60" y="633" font-size="16">红圈为未填孔时的名义孔口投影。候选仍覆盖 4 个孔中心，并与 8 个孔口投影相交。</text>
+<text x="60" y="660" font-size="16">分窗不是阻焊隔离；不能用普通盖油代替填孔盖帽，也不能凭本图判断可焊。</text>
+<text x="60" y="687" font-size="16">候选未导入原生编辑器、未布线、未取得钢网厚度及贴装批准，禁止生产。</text>
+</g></svg>

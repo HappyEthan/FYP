@@ -1,0 +1,14 @@
+{
+  "status": "adopted, native save-close-reopen and Gerber verified; REVIEW ONLY",
+  "source_sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e",
+  "native_components": 43,
+  "native_connected_nets": "21/21",
+  "native_DRC": [
+    "gge2100 - gge2115: 0.14 mm versus 0.15 mm, historical Q1"
+  ],
+  "no_rule_relaxation": true,
+  "reopen_equals_candidate_shapes_and_other_fields": true,
+  "BOM_CPL_reused_from": "按键收拢_20261004",
+  "geometry_placement_nets_models_rules_unchanged": true,
+  "full_production_release": false
+}

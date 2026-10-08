@@ -1,0 +1,706 @@
+{
+  "日期": "2026-09-29",
+  "范围": "仅已识别的圆形传感板下载散文件",
+  "永久删除": false,
+  "云端变更": false,
+  "历史压缩包": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/archive/下载历史_20260929.zip",
+  "历史压缩包SHA256": "98c60b834be0b66a4663d3825ba72ab683c18adc379e936d6269f7dbf8910407",
+  "当前PCB": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/PCB_克隆板USB局部重布_原生回读_20260929.json",
+  "当前PCBSHA256": "c3c0d4e5630df0b756df07d380213af8edc1a5eab8da054e44c54a5e4e337954",
+  "文件": [
+    {
+      "source": "/Users/liuchunyu/Downloads/Gerber_圆形传感板_O_仅审核禁止生产_20260929.zip",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/Gerber_圆形传感板_O_仅审核禁止生产_20260929.zip",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "86bad54fdb8d7fc69fbf56643220c21ecba339a6dd64fb56bd643284a5e71959",
+      "bytes": 65027
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/Gerber_圆形传感板_R_仅审核禁止生产_20260929.zip",
+      "destination": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/Gerber_圆形传感板_R_仅审核禁止生产_20260929.zip",
+      "action": "当前制造审核包，禁止生产",
+      "sha256": "3660b1f776e00ce33d671d8ed88066fd348e57455e6e41f433869474edd8d3f1",
+      "bytes": 64977
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/MLX_ground_debug.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/MLX_ground_debug.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "df75acff8798e654cc0d674fbf5f937b02e92452789953711550487363acfe47",
+      "bytes": 185491
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBLIB_USB4105_GF_A_060_GCT_17PIN_2026-09-15.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBLIB_USB4105_GF_A_060_GCT_17PIN_2026-09-15.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9f397ab6765c089a840bb54b0fa25614eff2a5c027fee1671cdee446967240a2",
+      "bytes": 19184
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXBeforeR20260929.json",
+      "destination": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/archive/R核验与Q恢复_20260929/PCBMLXBeforeR20260929.json",
+      "action": "保留核验或恢复输入",
+      "sha256": "26cdf1c80dbe3e5bc43660953d9f6fdb41da61ddeb4cee2725395cdcbd236eb8",
+      "bytes": 503797
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXCloudReopenR20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBMLXCloudReopenR20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c3c0d4e5630df0b756df07d380213af8edc1a5eab8da054e44c54a5e4e337954",
+      "bytes": 505228
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXNativeR20260929.json",
+      "destination": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/archive/R核验与Q恢复_20260929/PCBMLXNativeR20260929.json",
+      "action": "保留核验或恢复输入",
+      "sha256": "aa0227ce2340d43c39341f66b20747049edb6b9e990939ee8f0d5c8269fe8d25",
+      "bytes": 505228
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXNativeR20260929.power.json",
+      "destination": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/archive/R核验与Q恢复_20260929/PCBMLXNativeR20260929.power.json",
+      "action": "保留核验或恢复输入",
+      "sha256": "203f75cee9eb3e1a0336f9a8e532ef0cf538ca669268c81d023a33419b875fa1",
+      "bytes": 7278
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXNativeR20260929.usb.json",
+      "destination": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/archive/R核验与Q恢复_20260929/PCBMLXNativeR20260929.usb.json",
+      "action": "保留核验或恢复输入",
+      "sha256": "c906e1e7a986df06286a0da6ba0778c41f18f3012123455f88b431671433b8d9",
+      "bytes": 29433
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXRTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBMLXRTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6c035394a3408cf96cc57723c2f2310b67c950de1499e69af7e658949b520671",
+      "bytes": 415614
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXRTrial20260929.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBMLXRTrial20260929.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "94144c4c5621288ff97cd9cd36c4f199e0e0b68b139d8d19c0f3f75541839edb",
+      "bytes": 137626
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBMLXRTrial20260929.power.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBMLXRTrial20260929.power.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "a07bf6eaba31cfbdecce6b7b7dda85c2520598d4d75d6afc29feecf5bea86752",
+      "bytes": 7278
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBbackup20260928.json.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBbackup20260928.json.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBbeforeM20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBbeforeM20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "92c080fde56c88d904f83f44bf65202c56a3f6b71d2421e27cbb0f2bc4b18476",
+      "bytes": 502253
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBbeforeN20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBbeforeN20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "7fc15f2b1a61949ca46f6dfedd23bde929286fab0f35aa89cf55bc23c10f3917",
+      "bytes": 502797
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBbeforeShortDM20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBbeforeShortDM20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "b1b25a52608797553aa1cd16d67085820bb0a9cc74903496b8f03ac3788a395b",
+      "bytes": 502140
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBchargerTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBchargerTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "d55ba7eb2366b34cb847b4cdb4cc0a37c8f638a25ce731baadd93563e0d23b1b",
+      "bytes": 1056
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBchargerTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBchargerTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "1b6892f72fd4062109084c70f3772d463eb3093e47f41d98469ffaca634efbfa",
+      "bytes": 412925
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBchargerTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBchargerTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "affd35cf82b20753b315a34644655bad7930dd75363c935867bb537f0c26b07a",
+      "bytes": 2389
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBcloudBeforeN20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBcloudBeforeN20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "a986d537b3a615a2df5b86bc8e35469beadb9b882f8286fd27fa7bf4b971c930",
+      "bytes": 408296
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBcloudReopenN20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBcloudReopenN20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "f998ec51c0e39f8677129d6a72361ed6ccfdadbf1a4a4367d3309032408a1c45",
+      "bytes": 503586
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBcloudReopenO20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBcloudReopenO20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "50cc5d7c2417931c8f61c0baab8dde430b13e5a49fc2826c03c5c9560b2952b4",
+      "bytes": 504024
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBcloudReopenP20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBcloudReopenP20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6290d0e973c52c67595c322b69f22d619a93941f7d6f21a56f51854f1904d319",
+      "bytes": 503981
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnative20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnative20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "38c45af68653d5a03b58d3b6570fab621023cf62e5e82180df50c13398437fc9",
+      "bytes": 477430
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeB20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeB20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "b9351ab16eec3b15c94ed70c5da36a06d689d86671cecd1002f2040a308faff9",
+      "bytes": 482010
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeC20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeC20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c23a7143651a816e32dafefce0f0361d4119f4b6f7e21d4bf6215ff39ca2c8c6",
+      "bytes": 486548
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeD20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeD20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "d2eed245e59b6b97233cb1cb3e94c0d66419ddebb87ae26b9d455389cdaa7c09",
+      "bytes": 485732
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeE20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeE20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "d6f9379de5fd311dac62c221923275ee33f9486ca27db2edf1a6dd077967370e",
+      "bytes": 487632
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeF20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeF20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "aff4759bb285f11a895c0e6e5a63778512eb7b905efa71690d54b2f39da618a5",
+      "bytes": 495474
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeG20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeG20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "81b13e07c406a5ec4dc76c1df81702f5c10ede20dd76da72c92ebbf8eeef6f23",
+      "bytes": 499672
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeH20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeH20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "7286c39c014f367d419500bb6c475e1720e8f3da37ac560300187c865728a84d",
+      "bytes": 502375
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeI20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeI20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "45d05885c044a57592b0f5b4f77088064a864ba3255b1a6bac931ccd733c23f5",
+      "bytes": 3221
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeI20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeI20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "b1b25a52608797553aa1cd16d67085820bb0a9cc74903496b8f03ac3788a395b",
+      "bytes": 502140
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeJ20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeJ20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "111efdf0f3fb2c754155dfb74d61c7751d499600bccb29de9ae97a0bee1f6e5e",
+      "bytes": 501349
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeJ20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeJ20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "f745353c051fa469b8164b3b80ae7784aa9e3678f59851a0fc094f50fbe00d8c",
+      "bytes": 30873
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeK20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeK20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c84df8693f8ea6c72a3e7b7bfd4c6d73981d3dd1e663c8f9e3c25d4ef8efb863",
+      "bytes": 501419
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeK20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeK20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "edecd63c11e8eb49676787b1683ab0b49b6fe9ea1a578892ddbaa63df57bd73d",
+      "bytes": 30689
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeL20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeL20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "66bd2734de881f1fe879cff9712950e9c07a5f7689cf25396034a722a69544c8",
+      "bytes": 502255
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeL20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeL20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6a12af4a7f6a7fb093f5c99fbcd3c60f5b9ad529b3ffbb7c58617c94685b1ab9",
+      "bytes": 30607
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeM20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeM20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "7fc15f2b1a61949ca46f6dfedd23bde929286fab0f35aa89cf55bc23c10f3917",
+      "bytes": 502797
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeM20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeM20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "bcbfd2f07c0535bdcdb3f34098ccffbc1d0d0528300ab9f963a65978d62067e0",
+      "bytes": 30588
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeN20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeN20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "f998ec51c0e39f8677129d6a72361ed6ccfdadbf1a4a4367d3309032408a1c45",
+      "bytes": 503586
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeN20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeN20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "cbf4fe5182756694100441f6cc27c9de6d58627704c26a811911487553c8a9fe",
+      "bytes": 29046
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeP20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeP20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6290d0e973c52c67595c322b69f22d619a93941f7d6f21a56f51854f1904d319",
+      "bytes": 503981
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBnativeP20260929.reference.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBnativeP20260929.reference.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "fc877b0ed66d1e48191662a41acced8dfaf2832a30e6241621f924d2fd021888",
+      "bytes": 29431
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBoutlineArcTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBoutlineArcTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6d2ae3bfde07d4a3fa462ae9e4912d86b5d444c2926514adf845bd6e59f92864",
+      "bytes": 504009
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBoutlineDiagnostic20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBoutlineDiagnostic20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "169baed32905f9de417f343146cc0bf5a1a70fb026939caee4263a0c4a7bfb10",
+      "bytes": 486140
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBresume20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBresume20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "81b13e07c406a5ec4dc76c1df81702f5c10ede20dd76da72c92ebbf8eeef6f23",
+      "bytes": 499672
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnMTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnMTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c3d8c0fa81be75935afa7467fa374055ef5fe47bccc51bb2e8dc43965f46d8bf",
+      "bytes": 3361
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnMTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnMTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "01159a05e3551985418f2513380052bfc8411ad13a0d549cdf0442f67c2ad5f1",
+      "bytes": 413572
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnMTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnMTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c7b9d4fce7f786368e9fe55bfafdbf0322fa98161b98b9ffce94b6ea832ebfa1",
+      "bytes": 705
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnNTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnNTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "1f3c0bd84161174f4bcc18883d0a3bd9488a1e2c091e1f86fb20430bad1a224e",
+      "bytes": 3504
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnNTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnNTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "22d02049e9150a38e09a9ebcee6334ce3148a7d36320d94d334c59e675b73ead",
+      "bytes": 413343
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBreturnNTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBreturnNTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9ee964feed265bcce4a901906b1876cff3248e37452d21974c2e21eb620aafde",
+      "bytes": 1025
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMKTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMKTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "07c3de3cf439206a352ffae212b2d97890d00d50637c1cb9f860fe3bbeedb11f",
+      "bytes": 3221
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMKTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMKTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "ab38bc3a693e217b75a29748e5a1dd8f19f7a477a62d09148b20fb91877a02f3",
+      "bytes": 413303
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMKTrial20260929.lengths.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMKTrial20260929.lengths.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "8480253460eade2d88498421aaad7c86c280304ef4052768c4fa227e89f0baf1",
+      "bytes": 556
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMLTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMLTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "096df41bbb658dbb1e47620a83ce9c6aca42c5729133185f5c8c87e7dddac84c",
+      "bytes": 3221
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMLTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMLTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "977adb949a5769404da022a1280a75e4df113f339d7701b9dc94bb7eb1430d56",
+      "bytes": 413409
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMLTrial20260929.lengths.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMLTrial20260929.lengths.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "c5ad0ffe98eca97ee601e77a451c022603d2aecff472060e926dfaab628a0bf0",
+      "bytes": 555
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMLTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMLTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "51ce34f2b03c3605a8319ffb90d65e1453f369a392a337e30fcb06e9e6a71154",
+      "bytes": 429
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMTrial20260929.independent.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMTrial20260929.independent.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "330a3df6931eff5107c07b0dc5f4f7795eed3c5865f1e7dc5a4815cd259b4d5a",
+      "bytes": 3220
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "ab38bc3a693e217b75a29748e5a1dd8f19f7a477a62d09148b20fb91877a02f3",
+      "bytes": 413303
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMTrial20260929.lengths.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMTrial20260929.lengths.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "40728ad89699a3c7c4bad6205b9b04b28fa82995f8578cd2213efeab01585925",
+      "bytes": 554
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBshortDMTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBshortDMTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "f8aecdb75995a8d564a5ad199f8f5e96c28a9b25ef2dd7558e6b50af0d900506",
+      "bytes": 431
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBsmallViaTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBsmallViaTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "1686d7610a3a5b1329dd58ac0bd43528dd268535939575bbe74f6eda3f41ec06",
+      "bytes": 413457
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBsmallViaTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBsmallViaTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "efc6d8d66f8020f621988b86e100d469cc4a21c79782a68a61c2fa0e7c2607ca",
+      "bytes": 1107
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBstitchTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBstitchTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "a3382e4672192be61c196544ea9183baa61c868caa6092a2778facd8e4c4d8ed",
+      "bytes": 413364
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBstitchTrial20260929.report.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBstitchTrial20260929.report.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "ba9a0383e657ae38e4c87e1d52b7c9c33d6b98ecf1e2f2508f8e507a3ac98631",
+      "bytes": 771
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBthinOutline20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBthinOutline20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "2c89ad287c353106b5dd9d2e8b427040aa56ca74306ab58320cca9fd26869bab",
+      "bytes": 485750
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBUSBwidthPTrial20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBUSBwidthPTrial20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "e4c72ea1f280f005a08eb3b5565ba8ee507e90269d9f3d583be3c553f323afc1",
+      "bytes": 413802
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_PCB_圆形传感板_SCH_A5-copy_2026-09-26.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_PCB_圆形传感板_SCH_A5-copy_2026-09-26.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "cdaee097a1ed9c59ff1cf1a162642dc9537a4102aa4f0c2abd89760212614707",
+      "bytes": 372110
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_PCB_圆形传感板_SCH_A5-copy_2026-09-28.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_PCB_圆形传感板_SCH_A5-copy_2026-09-28.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "84c07b1e9f9d279c34c4858e8f08a01691a59059aab6739dcfc5939640b7ecb0",
+      "bytes": 372110
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_round_sensor_SCH_A2_initial_2026-09-15.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_round_sensor_SCH_A2_initial_2026-09-15.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "d6bf7a362fd21ab11799ab3fdfd09165b11ef0829629f05523fc66e3038bbcf8",
+      "bytes": 366576
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_临时补线候选_写回前复核_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_临时补线候选_写回前复核_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板USB调整前_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板USB调整前_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板内层迁线_云端重开_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板内层迁线_云端重开_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6d7112ae34df0c4892a042c1df876adea6e0bd9398d1935ad963f2ea9eba7801",
+      "bytes": 387683
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板内层迁线_原生重建_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板内层迁线_原生重建_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "b86b27ce484e8422e682142d595e9f3355da6b15c33f378f6954ad45c7aa1f03",
+      "bytes": 387683
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板射频_重开排查_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板射频_重开排查_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "50b48c73c8d923f9476f88418506dc65fe7b515c4405d7b74c42571dc64ec9dc",
+      "bytes": 390816
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板射频短路径_原生回读_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板射频短路径_原生回读_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9b02aa10d6e692850d12197dada6d158d7b3f65010135971f016fcf5969ca832",
+      "bytes": 390816
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板射频调整前_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板射频调整前_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "5600ae8c27b1693d1d2c93d95d7cdae51f684dae1233f73f76016094cac43045",
+      "bytes": 387683
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板批量布线前_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板批量布线前_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "50b48c73c8d923f9476f88418506dc65fe7b515c4405d7b74c42571dc64ec9dc",
+      "bytes": 390816
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板批量补线_云端重开_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板批量补线_云端重开_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板批量补线_原生回读_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板批量补线_原生回读_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板权限错误后_只读核验_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板权限错误后_只读核验_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "50b48c73c8d923f9476f88418506dc65fe7b515c4405d7b74c42571dc64ec9dc",
+      "bytes": 390816
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板补线_待应用文本核对_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板补线_待应用文本核对_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCB_克隆板重新登录后_写回前_20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCB_克隆板重新登录后_写回前_20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "50b48c73c8d923f9476f88418506dc65fe7b515c4405d7b74c42571dc64ec9dc",
+      "bytes": 390816
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerBeforeQ20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerBeforeQ20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6290d0e973c52c67595c322b69f22d619a93941f7d6f21a56f51854f1904d319",
+      "bytes": 503981
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerCloudReopenQ20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerCloudReopenQ20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "4c2f7eeebbbbab424b2b52b8b5b9ec208d7bb90887e41c63603540249dbf39a1",
+      "bytes": 503796
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerNativeQ20260929.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerNativeQ20260929.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "334b0774b72335aed7885bfd4ab59ea9f3d8cd8f86b2c6c39c0d212d78b081c4",
+      "bytes": 503796
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerNativeQ20260929.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerNativeQ20260929.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "38ea93341cf00d1f6a51d6e4ee6ea3929b294fdd3e44e6abe1bfa19da65f291b",
+      "bytes": 117823
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerNativeQ20260929.power.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerNativeQ20260929.power.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "6c145779b990fbb7ba2222f781ca59187f58888a28d5c894a95312eade5eb4e7",
+      "bytes": 7281
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBpowerNativeQ20260929.usb.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBpowerNativeQ20260929.usb.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "27a86b3e9237b3c95e37daf709de07c256e9cfd88ec92d847840f48544d82b88",
+      "bytes": 29435
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/PCBstagingbackup20260928.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/PCBstagingbackup20260928.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068",
+      "bytes": 408297
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/SCH_round_sensor_SCH_A2_bound60_2026-09-15.json",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/SCH_round_sensor_SCH_A2_bound60_2026-09-15.json",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "925871e6dac455a309294df3c2a8e8d069732dccfcdd550e12e8e1d3cec072bf",
+      "bytes": 123089
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/SGM40567_land_check-14.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/SGM40567_land_check-14.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "26f86a7b18cb4fed0a1da7e84ca18f7d30138b62d0c687aee6add4503c2142ed",
+      "bytes": 88491
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/SGM40567_pin_check-03.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/SGM40567_pin_check-03.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "bb468311b6ec33f4accb98c39db256574d23f230726f57b87df7871521219318",
+      "bytes": 249538
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/USB_I_route_review.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/USB_I_route_review.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "8d2c964983c935d624bd9e40fe0370360493220404ccdb96077f8c9da9e2434f",
+      "bytes": 185211
+    },
+    {
+      "source": "/Users/liuchunyu/Downloads/charger_now.png",
+      "destination": "/Users/liuchunyu/.Trash/fyp_pcb_downloads_20260929/charger_now.png",
+      "action": "移入废纸篓；历史压缩包另有留档",
+      "sha256": "db7b8189a9092a8651b3ba4924fe35e6c6d3a58b5504f1d44e06ba9e34233930",
+      "bytes": 172353
+    }
+  ],
+  "状态": "全部移动完成，目标哈希核验通过"
+}

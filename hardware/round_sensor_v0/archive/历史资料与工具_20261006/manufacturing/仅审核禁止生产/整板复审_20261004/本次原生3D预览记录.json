@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-04",
+  "source": "PCB_整板复审前_现场恢复_20261004.json",
+  "native_preview_default_thickness_mm": 1.6,
+  "viewed_thickness_mm": 0.8,
+  "views": [
+    "top-oblique USB outward",
+    "bottom-side profile",
+    "full bottom-oblique"
+  ],
+  "observations": [
+    "Models loaded on both sides",
+    "USB opening points out of circular board",
+    "SW2/SW3 actuators face bottom side",
+    "No obvious model overlap seen in these views"
+  ],
+  "limitations": [
+    "J1/U4 model is an approximation of purchased part",
+    "40 attached models include C30/C31 DNP",
+    "No enclosure/battery/cable/plunger models verified",
+    "No exact mesh collision test",
+    "0.8mm preview is not stackup or finished-thickness acceptance"
+  ],
+  "PCB_changed": false
+}

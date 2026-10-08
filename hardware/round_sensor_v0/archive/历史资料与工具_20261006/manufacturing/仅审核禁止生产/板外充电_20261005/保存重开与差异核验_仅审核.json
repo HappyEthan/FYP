@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-05",
+  "pcb_sha256": "57b67d2d0f2de9a4fe2511a1069ec17852bed81a3e244c796b008095251f0849",
+  "schematic_sha256": "33a756e0a405092a7462858422c94fb38097e295949b13e5b2eb54ae46d1a6f7",
+  "removed_shape_ids": [
+    "ggeA5669",
+    "ggeA5697",
+    "ggeUSB0928T348",
+    "ggeUSB0928T349",
+    "ggeUSB0928T350",
+    "ggeUSB0928T351",
+    "ggeUSB0928T352",
+    "ggeUSB0928T353",
+    "ggeUSB0928T354",
+    "ggeUSB0928V324",
+    "ggeUSB0928V325"
+  ],
+  "retained_shapes_changed": [
+    "ggeUSB0928GNDL3",
+    "ggeUSB0928GNDBottom",
+    "ggeA5739",
+    "ggeINNER0928GND"
+  ],
+  "retained_components": 41,
+  "models": 38,
+  "retained_pin_nets_unchanged": true,
+  "schematic_page_normalization": [
+    {
+      "page": "01  主控最小系统",
+      "shapes": 115,
+      "only_native_LIB_metadata_pinpart_empty_colors_and_HTML_entities": true
+    },
+    {
+      "page": "02  传感器与总线",
+      "shapes": 95,
+      "only_native_LIB_metadata_pinpart_empty_colors_and_HTML_entities": true
+    },
+    {
+      "page": "03  USB-C 数据与保护",
+      "shapes": 107,
+      "only_native_LIB_metadata_pinpart_empty_colors_and_HTML_entities": true
+    },
+    {
+      "page": "04  供电切换、稳压与开关",
+      "shapes": 105,
+      "only_native_LIB_metadata_pinpart_empty_colors_and_HTML_entities": true
+    },
+    {
+      "page": "05 外接天线与启动按键",
+      "shapes": 62,
+      "only_native_LIB_metadata_pinpart_empty_colors_and_HTML_entities": true
+    }
+  ],
+  "native_checks": {
+    "pcb_components": 41,
+    "pcb_networks": "20/20",
+    "schematic_components": 41,
+    "schematic_networks": "20/20",
+    "DRC": [
+      {
+        "pads": [
+          "gge2100",
+          "gge2115"
+        ],
+        "display_mm": 0.14,
+        "rule_display_mm": 0.15
+      }
+    ],
+    "unconnected_errors": 0,
+    "full_electrical_type_ERC": false
+  },
+  "save_reopen": "Original schematic and unique PCB saved without star, closed without unsaved warning, reopened from original project tree and exported. All five pages reopened individually before full export.",
+  "repaired_native_apply_error": "Applying five-page source to existing single schematic page wrote the last page into page4. Detected via reopen export and duplicate refs; repaired with single-page source, saved/reopened, then all-five source and native netlist verified. Abnormal single-page export retained explicitly as prohibited recovery.",
+  "production_released": false
+}

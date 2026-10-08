@@ -1,0 +1,226 @@
+{
+  "scope": "仅审核；C9属性和名称替料增量；非生产放行；未提交订单",
+  "current_pcb": {
+    "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json",
+    "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84",
+    "document_id": "cca094630ebf453c98ae64b900f0d7f0",
+    "same_unique_document_saved_closed_reopened": true,
+    "only_changed_LIB": "C9",
+    "changed_fields": [
+      "LIB properties",
+      "hidden TEXT N regenerated to 4.7uF / 10V"
+    ],
+    "all_other_321_shapes_identical": true,
+    "C9_all_items_from_index_2_identical_including_pads_3D": true,
+    "nonshape_fields_identical": true,
+    "all_3_COPPERAREA_including_cache_identical_after_native_rebuild": true
+  },
+  "schematic": {
+    "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json",
+    "sha256": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1",
+    "native_property_edit_saved_closed_reopened_all_five": true,
+    "unique_ref_count": 41,
+    "pages": [
+      {
+        "page": 1,
+        "title": "01  主控最小系统",
+        "changed_LIB_count": 0,
+        "volatile_LIB_field_10_normalized": true
+      },
+      {
+        "page": 2,
+        "title": "02  传感器与总线",
+        "changed_LIB_count": 0,
+        "volatile_LIB_field_10_normalized": true
+      },
+      {
+        "page": 3,
+        "title": "03  USB-C 数据与保护",
+        "changed_LIB_count": 0,
+        "volatile_LIB_field_10_normalized": true
+      },
+      {
+        "page": 4,
+        "title": "04  供电切换、稳压与开关",
+        "changed_LIB_count": 1,
+        "volatile_LIB_field_10_normalized": true
+      },
+      {
+        "page": 5,
+        "title": "05 外接天线与启动按键",
+        "changed_LIB_count": 0,
+        "volatile_LIB_field_10_normalized": true
+      }
+    ],
+    "C9_Value_Name_MPN_Supplier_synchronized": true,
+    "legacy_spiceSymbolName": "1uF / 10V, native symbol identifier retained; not the active Value/Name or native netlist/BOM value"
+  },
+  "native_netlist": {
+    "sha256": "47d3433bada7c61a3c5f48310c6bd8ac52fd31e8c9b6fe34cd697aa73fe348b7",
+    "only_difference_C9_value_1_to_4_7_uF": true,
+    "previous_137_connected_49_NC_pin_audit_reusable": true,
+    "complete_independent_electrical_type_ERC_not_obtained": true
+  },
+  "native_check": {
+    "components": 41,
+    "nets_complete": 20,
+    "nets_total": 20,
+    "unconnected": 0,
+    "drc": 1,
+    "Q1": "gge2100 USB_5V pad2 to gge2115 VSYS pad3; 0.1398524mm < 0.1500124mm rule; retained",
+    "rules_loosened": false,
+    "ignored": false,
+    "source_apply_clear_pour_cache_detected_then_native_Shift_B_restored": true,
+    "failed_intermediate_recovery": "PCB_C9替料_保存重开_20261005.json has empty caches; not current and must not manufacture"
+  },
+  "bom_cpl": {
+    "SMT": 36,
+    "top": 6,
+    "bottom": 30,
+    "distinct_full_MPN": 22,
+    "only_accurate_BOM_C9_row_changed": true,
+    "native_BOM_C9_verified": true,
+    "all_machine_coordinates_rotations_identical_to_previous_corrected_CPL": true,
+    "C9_native_coordinates": {
+      "Designator": "C9",
+      "Footprint": "C0402",
+      "Mid X": "31.18mm",
+      "Mid Y": "77.77mm",
+      "Ref X": "31.18mm",
+      "Ref Y": "77.77mm",
+      "Pad X": "31.18mm",
+      "Pad Y": "77.35mm",
+      "Layer": "B",
+      "Rotation": "90",
+      "Comment": "4.7uF / 10V"
+    },
+    "ANT1_corrected_Mid_Y_kept_mm": 80.67,
+    "native_all_41_BOM_contains_nominal_values_handwire_DNP_not_order_BOM": true,
+    "factory_sourcing_and_machine_origin_pending": true
+  },
+  "gerber": {
+    "sha256": "405203473d8226ca9bf638fafe6d3e5d8cc44decabd9ece37f46ff417a5050a0",
+    "comparison_sha256": "1607eada8838d3a60485c268a7a5e6f311b536bf47c3fac75a56dfa37b6cbad6",
+    "layers": {
+      "Drill_NPTH_Through.DRL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 2,
+        "byte_identical": false
+      },
+      "Drill_PTH_Through.DRL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 85,
+        "byte_identical": false
+      },
+      "Drill_PTH_Through_Via.DRL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 81,
+        "byte_identical": false
+      },
+      "Gerber_TopLayer.GTL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 307,
+        "byte_identical": false
+      },
+      "Gerber_BottomLayer.GBL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 416,
+        "byte_identical": false
+      },
+      "Gerber_TopSilkscreenLayer.GTO": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 19,
+        "byte_identical": false
+      },
+      "Gerber_BottomSilkscreenLayer.GBO": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 32,
+        "byte_identical": false
+      },
+      "Gerber_TopPasteMaskLayer.GTP": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 82,
+        "byte_identical": false
+      },
+      "Gerber_BottomPasteMaskLayer.GBP": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 95,
+        "byte_identical": false
+      },
+      "Gerber_TopSolderMaskLayer.GTS": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 90,
+        "byte_identical": false
+      },
+      "Gerber_BottomSolderMaskLayer.GBS": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 97,
+        "byte_identical": false
+      },
+      "Gerber_BoardOutlineLayer.GKO": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 4,
+        "byte_identical": false
+      },
+      "Gerber_DocumentLayer.GDL": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 290,
+        "byte_identical": false
+      },
+      "Gerber_InnerLayer1.G1": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 122,
+        "byte_identical": false
+      },
+      "Gerber_InnerLayer2.G2": {
+        "finite_parsed_geometry_identical": true,
+        "primitive_count": 190,
+        "byte_identical": false
+      }
+    },
+    "copper_masks_silk_paste_outline_drills_identical": true,
+    "PTH": 85,
+    "NPTH": 2,
+    "via_subset_of_PTH": 81,
+    "production_acceptance": false
+  },
+  "C9_part": {
+    "MPN": "GRM155R61A475MEAAD",
+    "supplier_part": "C335105",
+    "capacitance_uF": 4.7,
+    "voltage_V": 10,
+    "dielectric": "X5R",
+    "tolerance_percent": 20,
+    "nonpolar": true,
+    "nominal_LWT_mm": [
+      1.0,
+      0.5,
+      0.5
+    ],
+    "max_LWT_mm": [
+      1.15,
+      0.65,
+      0.65
+    ],
+    "body_max_temperature_C": [
+      -55,
+      85
+    ],
+    "nominal_3D_model_retained": true,
+    "PIM_status_observed": "In Production",
+    "domestic_SMT_label_observed": "SMT扩展库",
+    "domestic_live_stock_and_acceptance_confirmed": false,
+    "sources": [
+      "https://pim.murata.com/en-us/pim/details/?productCategoryId=ceramicCapacitorSMD&partNum=GRM155R61A475MEAA%23",
+      "https://item.szlcsc.com/313626.html"
+    ],
+    "combined_curve_typical_with_negative_tolerance_screen_min_uF": 1.036,
+    "typical_not_guaranteed_manufacturer_minimum": true,
+    "C10_unchanged": true
+  },
+  "known_UI_source_application_issue": {
+    "raw_single_page": "existing project Apply rejected format, no save",
+    "single_page_native_container": "existing multi-page project replaced first open page, duplicate refs; discarded without saving and original reloaded",
+    "successful_method": "native C9 property panel editing; all-five save/reopen and netlist finite check passed"
+  }
+}

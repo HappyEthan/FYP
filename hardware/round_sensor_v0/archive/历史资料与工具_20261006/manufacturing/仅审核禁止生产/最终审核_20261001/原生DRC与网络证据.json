@@ -1,0 +1,41 @@
+{
+  "status": "仅审核，禁止生产",
+  "date_hk": "2026-10-01",
+  "source": "用户在保存重开文件名之后提供的原生面板截图",
+  "screenshot": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络_用户截图_20261001.png",
+  "screenshot_sha256": "f03200f82fd9e5b07d04e1a6f5ff0b7316876e732d3133673995f9abdc4380fa",
+  "pcb_source": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/模型补齐_20261001/PCB_最终审核_保存重开_20261001.json",
+  "pcb_source_sha256": "a2fecf72c3b36779a5ee6b5b50cf707d9891c05a9265016ec0386b2f4b22106f",
+  "visible_components": 43,
+  "visible_network_panel": "21 / 21，绿色勾选",
+  "visible_DRC_total": 1,
+  "visible_error_type": "间距→焊盘-焊盘",
+  "visible_object_ids": [
+    "gge2100",
+    "gge2115"
+  ],
+  "source_mapping": [
+    {
+      "ref": "Q1",
+      "pad": "2",
+      "net": "USB_5V",
+      "id": "gge2100"
+    },
+    {
+      "ref": "Q1",
+      "pad": "3",
+      "net": "VSYS",
+      "id": "gge2115"
+    }
+  ],
+  "visible_gap_mm": 0.14,
+  "source_geometric_gap_mm": 0.1398524,
+  "source_power_clearance_rule_mm": 0.1500124,
+  "unfinished_connection_observation": "截图未列出未连接项；网络显示21/21，不替代原理图到PCB的一致性审核",
+  "limitations": [
+    "截图未包括工作板标题/文档ID/星号，身份与保存重开步骤来自任务上下文及用户反馈；本轮未独立查看编辑器",
+    "报错行右侧被裁切，规则值采用同份源码复算，不伪称从截图完整读取",
+    "未放宽规则或忽略Q1，仍待国内实际阻焊/钢网/工艺审核",
+    "截图/本地源码不证明完成全部CAM或实物性能验证"
+  ]
+}

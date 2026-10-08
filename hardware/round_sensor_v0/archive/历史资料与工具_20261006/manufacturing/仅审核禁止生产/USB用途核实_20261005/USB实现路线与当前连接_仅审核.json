@@ -1,0 +1,262 @@
+{
+  "status": "REVIEW ONLY; read-only assessment of retained native source; no current EDA reread, edits, native DRC or hardware testing this turn",
+  "source": "easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+  "source_sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+  "requested_functions": [
+    "firmware download",
+    "serial diagnostics",
+    "sensor data to PC"
+  ],
+  "selected_implementation": "ESP32-S3 fixed-function USB Serial/JTAG CDC; software configuration recommendation, not built firmware",
+  "pad_net_records": {
+    "J1": [
+      {
+        "pin": "A1",
+        "net": "GND"
+      },
+      {
+        "pin": "A4",
+        "net": "USB_5V"
+      },
+      {
+        "pin": "A5",
+        "net": "J1_A5"
+      },
+      {
+        "pin": "A6",
+        "net": "USB_DP"
+      },
+      {
+        "pin": "A7",
+        "net": "USB_DM"
+      },
+      {
+        "pin": "A8",
+        "net": ""
+      },
+      {
+        "pin": "A9",
+        "net": "USB_5V"
+      },
+      {
+        "pin": "A12",
+        "net": "GND"
+      },
+      {
+        "pin": "B1",
+        "net": "GND"
+      },
+      {
+        "pin": "B4",
+        "net": "USB_5V"
+      },
+      {
+        "pin": "B5",
+        "net": "J1_B5"
+      },
+      {
+        "pin": "B6",
+        "net": "USB_DP"
+      },
+      {
+        "pin": "B7",
+        "net": "USB_DM"
+      },
+      {
+        "pin": "B8",
+        "net": ""
+      },
+      {
+        "pin": "B9",
+        "net": "USB_5V"
+      },
+      {
+        "pin": "B12",
+        "net": "GND"
+      },
+      {
+        "pin": "SH",
+        "net": "GND"
+      },
+      {
+        "pin": "SH",
+        "net": "GND"
+      },
+      {
+        "pin": "SH",
+        "net": "GND"
+      },
+      {
+        "pin": "SH",
+        "net": "GND"
+      }
+    ],
+    "R1": [
+      {
+        "pin": "2",
+        "net": "GND"
+      },
+      {
+        "pin": "1",
+        "net": "J1_A5"
+      }
+    ],
+    "R2": [
+      {
+        "pin": "2",
+        "net": "GND"
+      },
+      {
+        "pin": "1",
+        "net": "J1_B5"
+      }
+    ],
+    "R3": [
+      {
+        "pin": "2",
+        "net": "USB_DP_SOC"
+      },
+      {
+        "pin": "1",
+        "net": "USB_DP"
+      }
+    ],
+    "R4": [
+      {
+        "pin": "2",
+        "net": "USB_DM_SOC"
+      },
+      {
+        "pin": "1",
+        "net": "USB_DM"
+      }
+    ],
+    "U6": [
+      {
+        "pin": "1",
+        "net": "USB_DP"
+      },
+      {
+        "pin": "2",
+        "net": "USB_DM"
+      },
+      {
+        "pin": "3",
+        "net": "GND"
+      }
+    ],
+    "U4": [
+      {
+        "pin": "A1",
+        "net": "BAT_P"
+      },
+      {
+        "pin": "A2",
+        "net": "USB_5V"
+      },
+      {
+        "pin": "B1",
+        "net": "GND"
+      },
+      {
+        "pin": "B2",
+        "net": ""
+      },
+      {
+        "pin": "C1",
+        "net": "U4_C1"
+      },
+      {
+        "pin": "C2",
+        "net": "GND"
+      }
+    ],
+    "R10": [
+      {
+        "pin": "2",
+        "net": "GND"
+      },
+      {
+        "pin": "1",
+        "net": "U4_C1"
+      }
+    ],
+    "SW2": [
+      {
+        "pin": "1",
+        "net": "BOOT_N"
+      },
+      {
+        "pin": "2",
+        "net": "BOOT_N"
+      },
+      {
+        "pin": "3",
+        "net": "GND"
+      },
+      {
+        "pin": "4",
+        "net": "GND"
+      }
+    ],
+    "SW3": [
+      {
+        "pin": "1",
+        "net": "MCU_EN"
+      },
+      {
+        "pin": "2",
+        "net": "MCU_EN"
+      },
+      {
+        "pin": "3",
+        "net": "GND"
+      },
+      {
+        "pin": "4",
+        "net": "GND"
+      }
+    ],
+    "U1": [
+      {
+        "pin": "4",
+        "net": "MCU_EN"
+      },
+      {
+        "pin": "5",
+        "net": "BOOT_N"
+      },
+      {
+        "pin": "25",
+        "net": "USB_DM_SOC"
+      },
+      {
+        "pin": "26",
+        "net": "USB_DP_SOC"
+      }
+    ]
+  },
+  "conclusions": {
+    "basic_data_interface": "Existing D+/D- and BOOT/RESET match the selected controller. No USB-UART bridge or external PHY addition justified by these three functions. Signal integrity and actual operation remain unverified.",
+    "VBUS": "TinyUSB self_powered configuration is not the configuration of fixed-function Serial/JTAG. Missing VBUS sense alone does not prove flashing/CDC cannot function. Self-powered absence-of-VBUS signaling and physical attach/detach remain open; no USB compliance exemption inferred.",
+    "charger": "Fixed ~109mA nominal charge branch has no MCU inhibit. Changing USB controller does not solve total input-current, enumeration or suspend conditions.",
+    "firmware": "Existing mlx90393_sensor.ino reads one 0x0E device and uses Wire.begin(D1,D2); not accepted as final GPIO1/2 dual-MLX+IMU firmware. No firmware changed."
+  },
+  "official_sources": [
+    "https://docs.espressif.com/projects/esp-idf/en/v6.0/esp32s3/api-guides/usb-serial-jtag-console.html",
+    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_overview/usb_serial_jtag.html",
+    "https://docs.espressif.com/projects/esp-iot-solution/en/latest/usb/usb_overview/usb_device_self_power.html"
+  ],
+  "remaining_design_work": [
+    "define input-current budget and allowable host/charge conditions",
+    "resolve self-powered disconnect behavior for chosen implementation",
+    "verify C9/C10 effective capacitance at actual bias and power envelope"
+  ],
+  "factory_items_unchanged": [
+    "Q1 original-pad ENIG process",
+    "stencil and via-in-pad process",
+    "0.8mm stackup and impedance",
+    "J1 pick origin and component orientation"
+  ],
+  "manufacturing_files_changed": false
+}

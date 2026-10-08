@@ -1,0 +1,19 @@
+{
+  "source": "PCB_A5_18mm_trial_20260916.json",
+  "diameter_mm": 18.0,
+  "parts": 41,
+  "layers": {
+    "1": 8,
+    "2": 33
+  },
+  "pads": 191,
+  "embedded_vias": 9,
+  "nets": 23,
+  "net_mapping_unchanged": true,
+  "cross_part_clearance_below_0_15mm": [],
+  "edge_clearance_below_0_2mm": [],
+  "holes_to_other_copper_below_0_2mm": [],
+  "min_copper_edge_clearance_mm": 0.2571,
+  "min_copper_edge_item": "C20.1",
+  "scope": "仅现有铜焊盘/嵌入过孔/USB定位孔的几何初筛；不含布线可达性、器件本体/禁布区、丝印、钢网、热或整机机械验证，不是投板放行。"
+}

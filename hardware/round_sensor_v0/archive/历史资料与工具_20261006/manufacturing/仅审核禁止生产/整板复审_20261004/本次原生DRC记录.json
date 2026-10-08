@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-04",
+  "method": "Native EasyEDA Standard 6.5.51 Check DRC toolbar invoked during this re-audit",
+  "board_title": "PCB_圆形传感板_SCH_A5 copy",
+  "saved_tab_without_star": true,
+  "parts": 43,
+  "nets_connected": 21,
+  "nets_total": 21,
+  "remaining": [
+    {
+      "type": "pad-pad spacing",
+      "objects": [
+        "gge2100",
+        "gge2115"
+      ],
+      "actual_display_mm": 0.14,
+      "required_display_mm": 0.15
+    }
+  ],
+  "layout_modified": false,
+  "scope": "Native connectivity and configured design rules; not full ERC or assembly/factory acceptance."
+}

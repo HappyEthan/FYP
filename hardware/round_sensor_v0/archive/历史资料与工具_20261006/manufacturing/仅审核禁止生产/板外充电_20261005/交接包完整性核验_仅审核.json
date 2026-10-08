@@ -1,0 +1,16 @@
+{
+  "日期": "2026-10-05",
+  "用途": "仅审核禁止直接生产",
+  "archive": "manufacturing/仅审核禁止生产/圆形传感板_板外充电_仅审核_20261005.zip",
+  "bytes": 10940726,
+  "sha256": "1ea967e8c205a59db0c6edc8f15e50bdb6bfc71da5b4682993ea481608bee9af",
+  "文件数": 52,
+  "manifest文件记录数": 51,
+  "逐文件哈希一致": true,
+  "ZIP_CRC通过": true,
+  "Gerber数量": 1,
+  "source数量": 4,
+  "异常及临时候选纳入": false,
+  "生产放行": false,
+  "专题文件校验清单一致": true
+}

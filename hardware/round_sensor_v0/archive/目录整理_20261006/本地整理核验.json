@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-06",
+  "original_files_accounted": 740,
+  "original_bytes_accounted": 278854407,
+  "unchanged_files_or_verified_original_backups": true,
+  "modified_paths_with_original_backup": [
+    "README.md",
+    "README_USB供电审阅包_仅审核.md",
+    "AGENTS.md",
+    "CAD_HANDOFF.md",
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/本轮交接_仅审核.md",
+    "scripts/audit_q1_saved_outputs_20261006.py",
+    "scripts/audit_q1_direct_fix_20261006.py"
+  ],
+  "navigation_links_valid": true,
+  "retained_tool_syntax_valid": true,
+  "design_and_manufacturing_bytes_unchanged": true,
+  "old_generators_executed": false,
+  "permanent_deletions": 0,
+  "scope": "hardware/round_sensor_v0; other FYP files untouched",
+  "parser_import_chain_valid": true,
+  "relocated_Q1_audit_inputs_exist": true,
+  "EDA_after_rename_native_byte_equal_current_PCB": true,
+  "all_six_historical_EDA_projects_in_history_folder_after_server_refresh": true,
+  "final_original_files_accounted": 740,
+  "final_original_bytes_accounted": 278854407,
+  "modified_files_with_verified_original_backup": [
+    "README.md",
+    "README_USB供电审阅包_仅审核.md",
+    "AGENTS.md",
+    "CAD_HANDOFF.md",
+    "manufacturing/仅审核禁止生产/圆形传感板_Q1修复最终审阅_20261006.zip",
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/本轮交接_仅审核.md",
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/SHA256_最终审阅包文件清单.json",
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/最终审阅包校验结果_仅审核.json",
+    "scripts/audit_q1_saved_outputs_20261006.py",
+    "scripts/audit_q1_direct_fix_20261006.py"
+  ],
+  "final_package_file_count": 45,
+  "final_package_sha256": "38a1a3addded1faad1d3ee2db1c1277ebf438290706b2a2b7c35b1fc88a2d42a",
+  "final_package_CRC_and_every_manifest_hash_verified": true,
+  "current_CAD_BOM_CPL_Gerber_reference_assets_byte_preserved": true
+}

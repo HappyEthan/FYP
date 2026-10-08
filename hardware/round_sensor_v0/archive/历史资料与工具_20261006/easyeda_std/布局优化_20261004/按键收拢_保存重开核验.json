@@ -1,0 +1,15 @@
+{
+  "candidate_sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+  "reopened_sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c",
+  "all_shapes_equal": true,
+  "nonshape_different_keys": [],
+  "native_DRC_errors": 1,
+  "native_DRC_remaining": [
+    "Q1 gge2100-gge2115 0.1398524mm vs 0.1500124mm"
+  ],
+  "native_networks": "21/21",
+  "saved_without_star": true,
+  "close_without_prompt": true,
+  "reopened_same_working_doc": true,
+  "cloud_full_backup_verified": false
+}

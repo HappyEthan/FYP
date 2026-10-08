@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150"><rect width="1600" height="1150" fill="white"/>
+<text x="50" y="55" fill="#164B67" font-size="30.659" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">03  USB-C 数据与保护</text>
+<text x="50" y="85" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">板载接口，从笔杆侧面插线；D+/D− 接 ESP32-S3 原生 USB，无 USB 转串口芯片。</text>
+<rect x="25" y="20" width="1550" height="1110" stroke="#993333" fill="none"/>
+<rect x="190" y="170" width="235" height="830" stroke="#993333" fill="none"/>
+<text x="190" y="138" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">J1</text>
+<text x="190" y="158" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB4105-GF-A-060</text>
+<path d="M 170 470 l 20 0" fill="none" stroke="#880000"/>
+<text x="195" y="474" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SBU1</text>
+<text x="180.0" y="466.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A8</text>
+<path d="M 170 520 l 20 0" fill="none" stroke="#880000"/>
+<text x="195" y="524" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SBU2</text>
+<text x="180.0" y="516.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B8</text>
+<path d="M 445 230 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="234" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">D+</text>
+<text x="435.0" y="226.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A6</text>
+<path d="M 445 260 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="264" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">D+</text>
+<text x="435.0" y="256.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B6</text>
+<path d="M 445 350 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="354" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">D−</text>
+<text x="435.0" y="346.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A7</text>
+<path d="M 445 380 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="384" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">D−</text>
+<text x="435.0" y="376.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B7</text>
+<path d="M 445 470 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="474" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">CC1</text>
+<text x="435.0" y="466.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A5</text>
+<path d="M 445 560 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="564" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">CC2</text>
+<text x="435.0" y="556.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B5</text>
+<path d="M 445 680 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="684" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VBUS</text>
+<text x="435.0" y="676.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A4</text>
+<path d="M 445 710 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="714" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VBUS</text>
+<text x="435.0" y="706.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A9</text>
+<path d="M 445 740 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="744" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VBUS</text>
+<text x="435.0" y="736.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B4</text>
+<path d="M 445 770 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="774" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VBUS</text>
+<text x="435.0" y="766.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B9</text>
+<path d="M 445 840 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="844" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="435.0" y="836.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A1</text>
+<path d="M 445 870 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="874" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="435.0" y="866.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">A12</text>
+<path d="M 445 900 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="904" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="435.0" y="896.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B1</text>
+<path d="M 445 930 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="934" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="435.0" y="926.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">B12</text>
+<path d="M 445 960 l -20 0" fill="none" stroke="#880000"/>
+<text x="420" y="964" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="435.0" y="956.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">SH</text>
+<path d="M167,467 L173,473 M173,467 L167,473" stroke="#CC0000"/>
+<path d="M167,517 L173,523 M173,517 L167,523" stroke="#CC0000"/>
+<polyline points="445 230 500 230" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 260 500 260" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="500 230 500 260" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="500" y="225" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DP</text>
+<polyline points="445 350 540 350" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 380 540 380" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="540 350 540 380" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="540" y="345" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DM</text>
+<polyline points="1110 223 1150 223 1150 237 1110 237 1110 223" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="1102" y="198" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R3</text>
+<text x="1102" y="217" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">22Ω</text>
+<path d="M 1090 230 l 20 0" fill="none" stroke="#880000"/>
+<text x="1100.0" y="226.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1170 230 l -20 0" fill="none" stroke="#880000"/>
+<text x="1160.0" y="226.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1110 343 1150 343 1150 357 1110 357 1110 343" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="1102" y="318" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R4</text>
+<text x="1102" y="337" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">22Ω</text>
+<path d="M 1090 350 l 20 0" fill="none" stroke="#880000"/>
+<text x="1100.0" y="346.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1170 350 l -20 0" fill="none" stroke="#880000"/>
+<text x="1160.0" y="346.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="500 230 1090 230" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="540 350 1090 350" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1170 230 1310 230" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1310" y="225" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DP_SOC</text>
+<polyline points="1170 350 1310 350" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1310" y="345" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DM_SOC</text>
+<rect x="760" y="450" width="265" height="160" stroke="#993333" fill="none"/>
+<text x="760" y="418" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">U6</text>
+<text x="760" y="438" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">TPD2EUSB30ADRTR</text>
+<path d="M 740 490 l 20 0" fill="none" stroke="#880000"/>
+<text x="765" y="494" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IO1</text>
+<text x="750.0" y="486.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 740 530 l 20 0" fill="none" stroke="#880000"/>
+<text x="765" y="534" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IO2</text>
+<text x="750.0" y="526.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<path d="M 1045 570 l -20 0" fill="none" stroke="#880000"/>
+<text x="1020" y="574" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="1035.0" y="566.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">3</text>
+<polyline points="640 230 640 490 740 490" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="690 350 690 530 740 530" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1045 570 1100 570" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1100" y="565" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="1100 570 1100 578" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1090 578 1110 578" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1094 582 1106 582" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1098 586 1102 586" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="683 710 683 750 697 750 697 710 683 710" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="712" y="720" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R1</text>
+<text x="712" y="739" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">5.1k / 1%</text>
+<path d="M 690 690 l 0 20" fill="none" stroke="#880000"/>
+<text x="685.0" y="696.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 690 770 l 0 -20" fill="none" stroke="#880000"/>
+<text x="685.0" y="756.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<rect x="970" y="695" width="190" height="70" stroke="#993333" fill="none"/>
+<text x="970" y="663" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">D2</text>
+<text x="970" y="683" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
+<path d="M 950 730 l 20 0" fill="none" stroke="#880000"/>
+<text x="975" y="734" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IO</text>
+<text x="960.0" y="726.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1180 730 l -20 0" fill="none" stroke="#880000"/>
+<text x="1155" y="734" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="1170.0" y="726.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="445 470 550 470 550 660 690 660 690 690" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="690 660 930 660 930 730 950 730" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="690 770 690 795" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="690" y="790" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="690 795 690 803" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="680 803 700 803" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="684 807 696 807" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="688 811 692 811" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1180 730 1220 730" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1220" y="725" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="1220 730 1220 738" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1210 738 1230 738" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1214 742 1226 742" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1218 746 1222 746" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="743 910 743 950 757 950 757 910 743 910" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="772" y="920" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R2</text>
+<text x="772" y="939" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">5.1k / 1%</text>
+<path d="M 750 890 l 0 20" fill="none" stroke="#880000"/>
+<text x="745.0" y="896.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 750 970 l 0 -20" fill="none" stroke="#880000"/>
+<text x="745.0" y="956.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<rect x="1030" y="895" width="190" height="70" stroke="#993333" fill="none"/>
+<text x="1030" y="863" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">D3</text>
+<text x="1030" y="883" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
+<path d="M 1010 930 l 20 0" fill="none" stroke="#880000"/>
+<text x="1035" y="934" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IO</text>
+<text x="1020.0" y="926.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1240 930 l -20 0" fill="none" stroke="#880000"/>
+<text x="1215" y="934" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="1230.0" y="926.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="445 560 610 560 610 860 750 860 750 890" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="750 860 990 860 990 930 1010 930" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="750 970 750 995" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="750" y="990" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="750 995 750 1003" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="740 1003 760 1003" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="744 1007 756 1007" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="748 1011 752 1011" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1240 930 1280 930" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1280" y="925" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="1280 930 1280 938" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1270 938 1290 938" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1274 942 1286 942" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1278 946 1282 946" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="445 680 475 680" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 710 475 710" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 740 475 740" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 770 475 770" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="475 680 475 770" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="475" y="675" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_5V</text>
+<polyline points="445 840 495 840" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 870 495 870" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 900 495 900" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 930 495 930" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="445 960 495 960" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="495 840 495 960" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="495" y="980" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="495 985 495 993" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="485 993 505 993" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="489 997 501 997" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="493 1001 497 1001" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="495 960 495 985" fill="none" stroke="#008800" stroke-width="1.5"/>
+<rect x="1230" y="500" width="220" height="80" stroke="#993333" fill="none"/>
+<text x="1230" y="468" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">D1</text>
+<text x="1230" y="488" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">TPD1E10B06DPYR</text>
+<path d="M 1210 540 l 20 0" fill="none" stroke="#880000"/>
+<text x="1235" y="544" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IO</text>
+<text x="1220.0" y="536.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1470 540 l -20 0" fill="none" stroke="#880000"/>
+<text x="1445" y="544" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="1460.0" y="536.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1210 540 1155 540" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1155" y="535" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">USB_5V</text>
+<polyline points="1470 540 1505 540" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1505" y="535" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="1505 540 1505 548" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1495 548 1515 548" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1499 552 1511 552" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1503 556 1507 556" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="1090" y="990" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">CC1、CC2 各自 5.1 kΩ 下拉。</text>
+<text x="1090" y="1015" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">保护器靠近接口，回地尽量短。</text>
+<text x="1090" y="1040" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB 2.0 设备；不支持 USB-PD。</text>
+<circle cx="475" cy="710" r="2.5" fill="#CC0000"/>
+<circle cx="475" cy="740" r="2.5" fill="#CC0000"/>
+<circle cx="495" cy="870" r="2.5" fill="#CC0000"/>
+<circle cx="495" cy="900" r="2.5" fill="#CC0000"/>
+<circle cx="495" cy="930" r="2.5" fill="#CC0000"/>
+<circle cx="495" cy="960" r="2.5" fill="#CC0000"/>
+<circle cx="500" cy="230" r="2.5" fill="#CC0000"/>
+<circle cx="540" cy="350" r="2.5" fill="#CC0000"/>
+<circle cx="640" cy="230" r="2.5" fill="#CC0000"/>
+<circle cx="690" cy="350" r="2.5" fill="#CC0000"/>
+<circle cx="690" cy="660" r="2.5" fill="#CC0000"/>
+<circle cx="750" cy="860" r="2.5" fill="#CC0000"/>
+<text x="50" y="1100" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">圆形传感板 · SCH-A5 · 2026-09-16</text>
+<text x="50" y="1125" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start"> </text>
+</svg>

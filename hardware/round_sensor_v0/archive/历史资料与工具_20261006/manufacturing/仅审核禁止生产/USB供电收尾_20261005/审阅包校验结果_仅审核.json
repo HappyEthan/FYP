@@ -1,0 +1,13 @@
+{
+  "package": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/圆形传感板_USB供电审阅_仅审核_20261005.zip",
+  "date": "2026-10-05",
+  "sha256": "07c77b1bf9563621c38acc8a1f4ebf3e6eeddfdc668d64ef97e373089a04bf43",
+  "bytes": 27287977,
+  "files": 66,
+  "testzip": null,
+  "all_manifest_hashes_verified": true,
+  "only_one_current_Gerber": true,
+  "current_PCB_SCH_Gerber_unchanged": true,
+  "USB_firmware_and_bench_gates_passed": false,
+  "production_released": false
+}

@@ -1,0 +1,27 @@
+{
+  "source_sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8",
+  "live_sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e",
+  "shape_counter_equal": true,
+  "nonshape_difference_keys": [
+    "layers"
+  ],
+  "layers_differences": [
+    {
+      "live": "1~TopLayer~#FF0000~true~true~true~",
+      "baseline": "1~TopLayer~#FF0000~false~true~true~"
+    },
+    {
+      "live": "2~BottomLayer~#0000FF~false~false~true~",
+      "baseline": "2~BottomLayer~#0000FF~true~false~true~"
+    },
+    {
+      "live": "3~TopSilkLayer~#FFCC00~true~false~true~",
+      "baseline": "3~TopSilkLayer~#FFCC00~false~false~true~"
+    },
+    {
+      "live": "4~BottomSilkLayer~#66CC33~false~false~true~",
+      "baseline": "4~BottomSilkLayer~#66CC33~true~false~true~"
+    }
+  ],
+  "note": "Layer visibility/current layer display only; design shape counter identical. No board save or design write performed this re-audit."
+}

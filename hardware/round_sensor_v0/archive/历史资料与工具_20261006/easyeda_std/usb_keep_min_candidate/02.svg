@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150"><rect width="1600" height="1150" fill="white"/>
+<text x="50" y="55" fill="#164B67" font-size="30.659" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">02  传感器与总线</text>
+<text x="50" y="85" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">MLX90393 三轴磁传感器 + LSM6DSOX 六轴 IMU；同页总线直接连线。</text>
+<rect x="25" y="20" width="1550" height="1110" stroke="#993333" fill="none"/>
+<rect x="550" y="220" width="320" height="250" stroke="#993333" fill="none"/>
+<text x="550" y="188" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">U2</text>
+<text x="550" y="208" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">MLX90393SLQ-ABA-011-RE</text>
+<path d="M 530 270 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="274" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SCL</text>
+<text x="540.0" y="266.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 530 310 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="314" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SDA</text>
+<text x="540.0" y="306.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<path d="M 530 380 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="384" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">INT</text>
+<text x="540.0" y="376.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">8</text>
+<path d="M 530 430 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="434" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">MISO</text>
+<text x="540.0" y="426.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">3</text>
+<path d="M 890 260 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="264" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VDD_IO</text>
+<text x="880.0" y="256.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">4</text>
+<path d="M 890 300 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="304" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VDD</text>
+<text x="880.0" y="296.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">6</text>
+<path d="M 890 340 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="344" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">MS/CS</text>
+<text x="880.0" y="336.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">7</text>
+<path d="M 890 400 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="404" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VSS</text>
+<text x="880.0" y="396.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">5</text>
+<path d="M 890 440 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="444" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">EP</text>
+<text x="880.0" y="436.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">9</text>
+<path d="M527,427 L533,433 M533,427 L527,433" stroke="#CC0000"/>
+<rect x="550" y="650" width="320" height="340" stroke="#993333" fill="none"/>
+<text x="550" y="618" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">U3</text>
+<text x="550" y="638" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">LSM6DSOXTR</text>
+<path d="M 530 700 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="704" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SCL</text>
+<text x="540.0" y="696.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">13</text>
+<path d="M 530 740 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="744" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SDA</text>
+<text x="540.0" y="736.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">14</text>
+<path d="M 530 800 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="804" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">INT1</text>
+<text x="540.0" y="796.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">4</text>
+<path d="M 530 850 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="854" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">INT2</text>
+<text x="540.0" y="846.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">9</text>
+<path d="M 530 890 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="894" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">OCS_Aux</text>
+<text x="540.0" y="886.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">10</text>
+<path d="M 530 930 l 20 0" fill="none" stroke="#880000"/>
+<text x="555" y="934" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SDO_Aux</text>
+<text x="540.0" y="926.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">11</text>
+<path d="M 890 690 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="694" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VDDIO</text>
+<text x="880.0" y="686.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">5</text>
+<path d="M 890 730 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="734" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VDD</text>
+<text x="880.0" y="726.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">8</text>
+<path d="M 890 770 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="774" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">CS</text>
+<text x="880.0" y="766.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">12</text>
+<path d="M 890 830 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="834" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">SDO/SA0</text>
+<text x="880.0" y="826.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 890 860 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="864" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">SDx</text>
+<text x="880.0" y="856.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<path d="M 890 890 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="894" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">SCx</text>
+<text x="880.0" y="886.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">3</text>
+<path d="M 890 920 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="924" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="880.0" y="916.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">6</text>
+<path d="M 890 950 l -20 0" fill="none" stroke="#880000"/>
+<text x="865" y="954" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GND</text>
+<text x="880.0" y="946.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">7</text>
+<path d="M527,847 L533,853 M533,847 L527,853" stroke="#CC0000"/>
+<path d="M527,887 L533,893 M533,887 L527,893" stroke="#CC0000"/>
+<path d="M527,927 L533,933 M533,927 L527,933" stroke="#CC0000"/>
+<polyline points="293 165 293 205 307 205 307 165 293 165" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="322" y="175" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R6</text>
+<text x="322" y="194" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">4.7k</text>
+<path d="M 300 145 l 0 20" fill="none" stroke="#880000"/>
+<text x="295.0" y="151.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 300 225 l 0 -20" fill="none" stroke="#880000"/>
+<text x="295.0" y="211.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="413 165 413 205 427 205 427 165 413 165" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="442" y="175" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R5</text>
+<text x="442" y="194" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">4.7k</text>
+<path d="M 420 145 l 0 20" fill="none" stroke="#880000"/>
+<text x="415.0" y="151.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 420 225 l 0 -20" fill="none" stroke="#880000"/>
+<text x="415.0" y="211.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="300 145 300 125 420 125 420 145" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="360" y="120" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">3V3</text>
+<polyline points="300 225 300 700 530 700" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="300 270 530 270" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="300" y="545" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">I2C_SCL</text>
+<polyline points="420 225 420 740 530 740" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="420 310 530 310" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="420" y="585" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">I2C_SDA</text>
+<polyline points="530 380 505 380" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="505" y="375" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">MLX_INT</text>
+<polyline points="530 800 470 800" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="470" y="795" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">IMU_INT</text>
+<polyline points="890 260 960 260" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 300 960 300" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 340 960 340" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="960 260 960 340" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="960" y="255" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">3V3</text>
+<polyline points="890 400 930 400" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 440 930 440" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="930 400 930 440" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="930" y="460" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="930 465 930 473" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="920 473 940 473" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="924 477 936 477" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="928 481 932 481" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="930 440 930 465" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1122" y="359" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">100nF / 10V</text>
+<text x="1122" y="340" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C2</text>
+<polyline points="1100 330 1100 346" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1100 354 1100 370" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1087 346 1113 346" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1087 354 1113 354" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 1100 310 l 0 20" fill="none" stroke="#880000"/>
+<text x="1095.0" y="316.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1100 390 l 0 -20" fill="none" stroke="#880000"/>
+<text x="1095.0" y="376.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1100 310 1100 260 960 260" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1100 390 1100 440 930 440" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1332" y="359" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">100nF / 10V</text>
+<text x="1332" y="340" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C3</text>
+<polyline points="1310 330 1310 346" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1310 354 1310 370" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1297 346 1323 346" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1297 354 1323 354" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 1310 310 l 0 20" fill="none" stroke="#880000"/>
+<text x="1305.0" y="316.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1310 390 l 0 -20" fill="none" stroke="#880000"/>
+<text x="1305.0" y="376.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1310 310 1310 260 960 260" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1310 390 1310 440 930 440" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 690 960 690" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 730 960 730" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 770 960 770" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="960 690 960 770" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="960" y="685" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">3V3</text>
+<polyline points="890 830 930 830" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 860 930 860" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 890 930 890" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 920 930 920" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="890 950 930 950" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="930 830 930 950" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="930" y="970" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="930 975 930 983" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="920 983 940 983" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="924 987 936 987" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="928 991 932 991" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="930 950 930 975" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1122" y="789" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">100nF / 10V</text>
+<text x="1122" y="770" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C4</text>
+<polyline points="1100 760 1100 776" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1100 784 1100 800" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1087 776 1113 776" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1087 784 1113 784" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 1100 740 l 0 20" fill="none" stroke="#880000"/>
+<text x="1095.0" y="746.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1100 820 l 0 -20" fill="none" stroke="#880000"/>
+<text x="1095.0" y="806.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1100 740 1100 690 960 690" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1100 820 1100 950 930 950" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1332" y="789" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">100nF / 10V</text>
+<text x="1332" y="770" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C5</text>
+<polyline points="1310 760 1310 776" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1310 784 1310 800" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1297 776 1323 776" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1297 784 1323 784" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 1310 740 l 0 20" fill="none" stroke="#880000"/>
+<text x="1305.0" y="746.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1310 820 l 0 -20" fill="none" stroke="#880000"/>
+<text x="1305.0" y="806.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="1310 740 1310 690 960 690" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1310 820 1310 950 930 950" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="80" y="1000" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">I2C 地址：MLX90393 = 0x10；LSM6DSOX = 0x6A。</text>
+<text x="80" y="1025" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">两颗传感器分别保留电源去耦和中断；磁传感器远离充电回路、电池导线和铁磁件。</text>
+<text x="50" y="1100" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">圆形传感板 · SCH-A5 · 2026-09-16</text>
+<text x="50" y="1125" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start"> </text>
+<circle cx="300" cy="270" r="2.5" fill="#CC0000"/>
+<circle cx="420" cy="310" r="2.5" fill="#CC0000"/>
+<circle cx="930" cy="440" r="2.5" fill="#CC0000"/>
+<circle cx="930" cy="860" r="2.5" fill="#CC0000"/>
+<circle cx="930" cy="890" r="2.5" fill="#CC0000"/>
+<circle cx="930" cy="920" r="2.5" fill="#CC0000"/>
+<circle cx="930" cy="950" r="2.5" fill="#CC0000"/>
+<circle cx="960" cy="260" r="2.5" fill="#CC0000"/>
+<circle cx="960" cy="300" r="2.5" fill="#CC0000"/>
+<circle cx="960" cy="690" r="2.5" fill="#CC0000"/>
+<circle cx="960" cy="730" r="2.5" fill="#CC0000"/>
+<rect x="1160" y="500" width="275" height="175" stroke="#993333" fill="none"/>
+<text x="1160" y="468" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">J4</text>
+<text x="1160" y="488" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">笔头 MLX90393 飞线焊盘</text>
+<path d="M 1140 530 l 20 0" fill="none" stroke="#880000"/>
+<text x="1165" y="534" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">3.3V</text>
+<text x="1150.0" y="526.0" fill="#000000" font-size="9.331" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 1140 570 l 20 0" fill="none" stroke="#880000"/>
+<text x="1165" y="574" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<text x="1150.0" y="566.0" fill="#000000" font-size="9.331" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<path d="M 1140 610 l 20 0" fill="none" stroke="#880000"/>
+<text x="1165" y="614" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SDA</text>
+<text x="1150.0" y="606.0" fill="#000000" font-size="9.331" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">3</text>
+<path d="M 1140 650 l 20 0" fill="none" stroke="#880000"/>
+<text x="1165" y="654" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">SCL</text>
+<text x="1150.0" y="646.0" fill="#000000" font-size="9.331" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">4</text>
+<polyline points="1140 530 1045 530" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1045" y="525" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">3V3</text>
+<polyline points="1140 570 1045 570" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1045" y="565" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="1045 570 1045 578" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="1035 578 1055 578" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1039 582 1051 582" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1043 586 1047 586" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="1140 610 1045 610" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1045" y="605" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">I2C_SDA</text>
+<polyline points="1140 650 1045 650" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1045" y="645" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">I2C_SCL</text>
+<text x="70" y="1070" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">J4：3.3V/GND/SDA/SCL；笔头实测地址0x0E，板载U2固定0x10，共用R5/R6上拉。模块自带上拉与线长待实测。</text>
+</svg>

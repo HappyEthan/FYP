@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-06",
+  "project": "圆形传感板_SCH_A5",
+  "project_id": "3c2f1824ae2d4fd391ecd83abc2b3411",
+  "project_location_and_sharing_unchanged": true,
+  "PCB_document_id": "cca094630ebf453c98ae64b900f0d7f0",
+  "PCB_titles": {
+    "PCB_圆形传感板_SCH_A5 copy": "06 当前PCB_圆形传感板_A5",
+    "PCB_圆形传感板_SCH_A5": "90 历史PCB_A5原版_禁止下单",
+    "圆形传感板_A5_当前工作版": "91 历史PCB_A5旧工作版_禁止下单"
+  },
+  "history_folder": "90 历史工程_仅比较恢复",
+  "history_projects": [
+    "round_sensor_SCH_A1",
+    "round_sensor_SCH_A2",
+    "round_sensor_SCH_A2_WIRED",
+    "round_sensor_SCH_A2_WIRED_FINAL",
+    "圆形传感器_SCH_A2_中文最终版",
+    "圆形传感器_SCH_A3_中文电源修订版"
+  ],
+  "verification": "Native refresh list then All7projects and history folder expanded; all6 under folder, shared A5 remains root; five SCH pages01-05 retained",
+  "native_permission_and_move_error_seen_during_attempts": true,
+  "final_result_after_refresh": "All requested metadata and folder changes persisted",
+  "project_or_document_deleted_cloned": false,
+  "schematic_PCB_content_edits": false,
+  "old_generators_run": false,
+  "current_PCB_closed_reopened_after_rename": true,
+  "reopened_UI_title": "06 当前PCB_圆形传感板_A5",
+  "after_native_download_sha256": "b45751ba534a0a78d20714e056650274dc8f70d5eed32a22a7c11f110a2bbde4",
+  "after_download_byte_equal_authoritative_source": true,
+  "all_geometry_models_rules_preserved": true,
+  "final_refresh_errors": false
+}

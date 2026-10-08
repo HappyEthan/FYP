@@ -1,0 +1,57 @@
+{
+  "source": "PCB_手焊钢网修正前_恢复点_20261004.json",
+  "source_sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16",
+  "candidate": "PCB_手焊禁钢网_本地候选_20261004.json",
+  "candidate_sha256": "0ebd54c003d610cbde2bfb19c2a741356778e310f422159b5763a1b5ed5f323a",
+  "changes": [
+    {
+      "ref": "J2",
+      "pin": "1",
+      "id": "gge1962",
+      "field": 17,
+      "old": "0",
+      "new": "-11.811024",
+      "meaning": "助焊扩展 -3mm；仅禁钢网，保留阻焊/铜"
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "id": "gge1977",
+      "field": 17,
+      "old": "0",
+      "new": "-11.811024",
+      "meaning": "助焊扩展 -3mm；仅禁钢网，保留阻焊/铜"
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "id": "gge2985",
+      "field": 17,
+      "old": "0",
+      "new": "-11.811024",
+      "meaning": "助焊扩展 -3mm；仅禁钢网，保留阻焊/铜"
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "id": "gge3000",
+      "field": 17,
+      "old": "0",
+      "new": "-11.811024",
+      "meaning": "助焊扩展 -3mm；仅禁钢网，保留阻焊/铜"
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "id": "gge3015",
+      "field": 17,
+      "old": "0",
+      "new": "-11.811024",
+      "meaning": "助焊扩展 -3mm；仅禁钢网，保留阻焊/铜"
+    }
+  ],
+  "native_validated": true,
+  "applied_to_working_board": false,
+  "applied": true,
+  "verification_report": "手焊禁钢网_保存重开核验_20261004.json"
+}

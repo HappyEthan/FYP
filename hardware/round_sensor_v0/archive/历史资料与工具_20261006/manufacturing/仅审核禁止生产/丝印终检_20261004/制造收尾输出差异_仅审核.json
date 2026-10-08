@@ -1,0 +1,176 @@
+{
+  "status": "REVIEW ONLY; finite native-output delta check, not factory DFM",
+  "sha256": {
+    "easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684",
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/Gerber_丝印终检_仅审核_20261004.zip": "cd29835d74264caf478d2ca343429f24350b56387b42f90bf0029eab679f62d5",
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber_按键收拢_仅审核_20261004.zip": "7ff6341c1b4ba02196b33ebd6c7e16737a398a8d8c3efc9452e4821b183dbfad"
+  },
+  "layers": [
+    {
+      "name": "Drill_NPTH_Through.DRL",
+      "drill_instructions_equal": true
+    },
+    {
+      "name": "Drill_PTH_Through.DRL",
+      "drill_instructions_equal": true
+    },
+    {
+      "name": "Drill_PTH_Through_Via.DRL",
+      "drill_instructions_equal": true
+    },
+    {
+      "name": "Gerber_TopLayer.GTL",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_BottomLayer.GBL",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_TopSilkscreenLayer.GTO",
+      "primitives_equal": false,
+      "added": 11,
+      "removed": 21
+    },
+    {
+      "name": "Gerber_BottomSilkscreenLayer.GBO",
+      "primitives_equal": false,
+      "added": 15,
+      "removed": 161
+    },
+    {
+      "name": "Gerber_TopPasteMaskLayer.GTP",
+      "primitives_equal": false,
+      "added": 0,
+      "removed": 4
+    },
+    {
+      "name": "Gerber_BottomPasteMaskLayer.GBP",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_TopSolderMaskLayer.GTS",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_BottomSolderMaskLayer.GBS",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_BoardOutlineLayer.GKO",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_DocumentLayer.GDL",
+      "primitives_equal": false,
+      "added": 174,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_InnerLayer1.G1",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    },
+    {
+      "name": "Gerber_InnerLayer2.G2",
+      "primitives_equal": true,
+      "added": 0,
+      "removed": 0
+    }
+  ],
+  "silkscreen": [
+    {
+      "side": "Top",
+      "overlap_before_mm2": 0.12999320552078414,
+      "overlap_after_mm2": 0.0,
+      "within_0_15mm_after_mm2": 0.0
+    },
+    {
+      "side": "Bottom",
+      "overlap_before_mm2": 1.7636812740931398,
+      "overlap_after_mm2": 0.0,
+      "within_0_15mm_after_mm2": 0.0
+    }
+  ],
+  "DNP_and_handwire_paste": [
+    {
+      "ref": "C30",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C30",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "C31",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "paste_overlap_mm2": 0.0
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "paste_overlap_mm2": 0.0
+    }
+  ],
+  "remaining_silk_pad_overlaps": []
+}

@@ -1,0 +1,327 @@
+{
+  "changes": [
+    {
+      "ref": "U1",
+      "id": "gge3204",
+      "action": "translate silk marker only",
+      "before": [
+        "TEXT",
+        "P",
+        "4086",
+        "3077.5",
+        "0.6",
+        "0",
+        "0",
+        "3",
+        "",
+        "4.5",
+        "U1"
+      ],
+      "after": [
+        "TEXT",
+        "P",
+        "4085.60629921",
+        "3077.5",
+        "0.6",
+        "0",
+        "0",
+        "3",
+        "",
+        "4.5",
+        "U1"
+      ]
+    },
+    {
+      "ref": "U1",
+      "id": "gge3390",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge3390_silk_0"
+      ]
+    },
+    {
+      "ref": "U1",
+      "id": "gge3393",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge3393_silk_0"
+      ]
+    },
+    {
+      "ref": "U1",
+      "id": "gge3396",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge3396_silk_0"
+      ]
+    },
+    {
+      "ref": "U1",
+      "id": "gge3399",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge3399_silk_0"
+      ]
+    },
+    {
+      "ref": "U1",
+      "id": "gge3402",
+      "action": "translate silk marker only",
+      "before": [
+        "CIRCLE",
+        "4090.147",
+        "3071.954",
+        "0.295",
+        "0.5906",
+        "3",
+        "gge3402",
+        "0",
+        "",
+        ""
+      ],
+      "after": [
+        "CIRCLE",
+        "4089.75329921",
+        "3071.954",
+        "0.295",
+        "0.5906",
+        "3",
+        "gge3402",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "ref": "D1",
+      "id": "gge1344",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D1",
+      "id": "gge1347",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D1",
+      "id": "gge1350",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D2",
+      "id": "gge1425",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D2",
+      "id": "gge1428",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D2",
+      "id": "gge1431",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D3",
+      "id": "gge1506",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D3",
+      "id": "gge1509",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "D3",
+      "id": "gge1512",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "SW3",
+      "id": "gge3123",
+      "action": "translate silk marker only",
+      "before": [
+        "TEXT",
+        "P",
+        "4086.657",
+        "3113.972",
+        "0.6",
+        "180",
+        "1",
+        "4",
+        "",
+        "4.5",
+        "SW3"
+      ],
+      "after": [
+        "TEXT",
+        "P",
+        "4083.5073937",
+        "3114.20822047",
+        "0.6",
+        "180",
+        "1",
+        "4",
+        "",
+        "4.5",
+        "SW3"
+      ]
+    },
+    {
+      "ref": "SW1",
+      "id": "gge2976",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "SW1",
+      "id": "gge2982",
+      "action": "original ARC to Document; new 0.25 mm pin-1 dot outside pad at (17.15,-84.8)"
+    },
+    {
+      "ref": "U3",
+      "id": "gge4521",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge4521_silk_0"
+      ]
+    },
+    {
+      "ref": "U3",
+      "id": "gge4524",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge4524_silk_0"
+      ]
+    },
+    {
+      "ref": "U3",
+      "id": "gge4527",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge4527_silk_0"
+      ]
+    },
+    {
+      "ref": "U3",
+      "id": "gge4530",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge4530_silk_0"
+      ]
+    },
+    {
+      "ref": "U3",
+      "id": "gge4533",
+      "action": "translate silk marker only",
+      "before": [
+        "CIRCLE",
+        "4119",
+        "3077",
+        "0.295",
+        "0.5906",
+        "4",
+        "gge4533",
+        "0",
+        "",
+        ""
+      ],
+      "after": [
+        "CIRCLE",
+        "4119.68897638",
+        "3078.87007874",
+        "0.295",
+        "0.5906",
+        "4",
+        "gge4533",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "ref": "U5",
+      "id": "gge4935",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U5",
+      "id": "gge4938",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U5",
+      "id": "gge4941",
+      "action": "translate silk marker only",
+      "before": [
+        "CIRCLE",
+        "4129.075",
+        "3099.559",
+        "0.295",
+        "0.5906",
+        "4",
+        "gge4941",
+        "0",
+        "",
+        ""
+      ],
+      "after": [
+        "CIRCLE",
+        "4131.04350394",
+        "3102.90545669",
+        "0.295",
+        "0.5906",
+        "4",
+        "gge4941",
+        "0",
+        "",
+        ""
+      ]
+    },
+    {
+      "ref": "U6",
+      "id": "gge5103",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U6",
+      "id": "gge5106",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U6",
+      "id": "gge5109",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U6",
+      "id": "gge5112",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": []
+    },
+    {
+      "ref": "U6",
+      "id": "gge5115",
+      "action": "original to Document; retain clipped silk segments",
+      "new_ids": [
+        "gge5115_silk_0"
+      ]
+    }
+  ],
+  "remaining_source_screening": []
+}

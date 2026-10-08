@@ -1,0 +1,688 @@
+{
+  "status": "仅审核禁止生产；原生未过滤导出，非可直接下单清单",
+  "source_sha256": "ecbeed2b2ebf24069360696c7db601cf2998fdb6a3335e10483dc923b8e68cd3",
+  "native_exports": [
+    {
+      "file": "BOM_工作板_原生_仅审核_20261004.csv",
+      "sha256": "b307e74dd5affb806a5889c7839e1d37ab91a364c9adb7d1a0e6f7bb72fca3ef"
+    },
+    {
+      "file": "CPL_工作板_原生_仅审核_20261004.csv",
+      "sha256": "30574e4a1920b21bd4115b31189ba603597bf9e6d6428100aead78e235c1cb20"
+    }
+  ],
+  "bom_groups": 29,
+  "positions": 43,
+  "planned_smt": 38,
+  "raw_cpl_layers": {
+    "T": 8,
+    "B": 35
+  },
+  "non_smt_refs": [
+    "C30",
+    "C31",
+    "J2",
+    "J4",
+    "SW1"
+  ],
+  "supplier_part_empty_groups": 29,
+  "bom_fields_match_source": true,
+  "coordinate_checks": [
+    {
+      "ref": "ANT1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        2.019999999802735e-05,
+        6.40000000373675e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.76
+      ],
+      "layer": "T",
+      "native_export_rotation": 180.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.003999999999990678
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -1.1599999997002897e-05,
+        -1.1799999995787402e-05
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 180.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C3",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        1.959999999812112e-05,
+        0.00017679999999131724
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C4",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C5",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C6",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.0010000000000012221,
+        0.003999999999990678
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C7",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 180.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C9",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.000992000000000104,
+        -0.0009900000000016007
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C10",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.0009999999999976694,
+        0.0030000000000001137
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C20",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        9.399999999715192e-06,
+        3.1999999947629476e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C21",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -2.8000000007466497e-06,
+        5.600000008598727e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 270.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "C30",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.004000000000001336,
+        0.001999999999995339
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 270.0,
+      "kind": "DNP"
+    },
+    {
+      "ref": "C31",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.0010000000000047748
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 0.0,
+      "kind": "DNP"
+    },
+    {
+      "ref": "D1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.004999999999999005,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "D2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0019999999999988916,
+        -0.003999999999990678
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "D3",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.004000000000001336,
+        -0.001999999999995339
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "D4",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.004999999999999005,
+        0.0010000000000047748
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "J1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        -0.0029947999999961894
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "J2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        -0.0010000000000047748
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "纯飞线焊盘"
+    },
+    {
+      "ref": "J4",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0019999999999988916,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "纯飞线焊盘"
+    },
+    {
+      "ref": "Q1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.004999999999999005,
+        0.0049999999999954525
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -1.2399999999246347e-05,
+        4.4000000087862645e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.0010000000000012221,
+        8.999999991488039e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R3",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        9.600000002052411e-06,
+        4.4000000087862645e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R4",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        8.000000001118224e-06,
+        4.4000000087862645e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R5",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.004000000000001336,
+        -0.0010000000000047748
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R6",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -9.200000000930686e-06,
+        4.4000000087862645e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R7",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.000999999999990564
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R8",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.004000000000001336,
+        -0.0040000000000048885
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R9",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.0030000000000001137
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R10",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        4.400000001680837e-06,
+        1.4000000021496817e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R11",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.0030000000000001137,
+        -0.001999999999995339
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "R30",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.003999999999997783,
+        0.000999999999990564
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "SW1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.0030000000000001137,
+        -0.0029875999999973146
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "纯飞线焊盘"
+    },
+    {
+      "ref": "SW2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0,
+        0.0049999999999954525
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "SW3",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0010097999999985063,
+        0.000990200000003938
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 90.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U1",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030459999999976617,
+        0.00015839999998945586
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "T",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U2",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        2.4400000000923683e-05,
+        0.0001625999999959049
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U3",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        -0.003999999999997783,
+        0.0
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U4",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.003999999999997783,
+        -0.0019902000000087128
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U5",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        0.0030000000000001137,
+        0.0020000000000095497
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 0.0,
+      "kind": "拟贴装"
+    },
+    {
+      "ref": "U6",
+      "matches_source_export_convention": true,
+      "ref_rounding_error_mm": [
+        7.000000000090267e-06,
+        1.1999999998124622e-06
+      ],
+      "mid_minus_ref_mm": [
+        0.0,
+        0.0
+      ],
+      "layer": "B",
+      "native_export_rotation": 270.0,
+      "kind": "拟贴装"
+    }
+  ],
+  "export_options": {
+    "unit": "mm",
+    "mirror_bottom": false,
+    "panelized": false
+  },
+  "limits": [
+    "C30/C31 DNP以及J2/J4/SW1飞线焊盘仍出现在原生BOM/CPL，生产版本需要明确排除SMT任务",
+    "全部供应商编号为空，完整采购候选未写入原生BOM；不能自动按复用库链接采购",
+    "ANT1 Mid Y比Ref Y大0.76mm；吸取中心应按实际U.FL本体/工厂装配图确认，不能直接判为位置错误或自行归零",
+    "本轮验证原生坐标与源的映射；不等于已验证料带零度、实际1脚或工厂机器角度"
+  ]
+}

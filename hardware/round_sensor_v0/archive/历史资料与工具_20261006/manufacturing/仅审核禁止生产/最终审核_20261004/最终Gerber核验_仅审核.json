@@ -1,0 +1,497 @@
+{
+  "date": "2026-10-04",
+  "status": "Nominal CAM comparison and targeted manufacturing checks completed; review only",
+  "inputs": {
+    "pcb": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json",
+      "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8"
+    },
+    "gerber": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+      "sha256": "d12375fdb4642225bc3a138077a2265c1f81b17909aee3e53bf2190067ddf72e"
+    },
+    "baseline": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_工作板_仅审核_20261004.zip",
+      "sha256": "42d1477d3b73e4c626fc077e5f7c38ec0118f00f03c8cf8980f641fecd9c958f"
+    }
+  },
+  "native_export_settings": {
+    "layers": 4,
+    "size_estimate_mm": [
+      18,
+      18
+    ],
+    "thickness_dialog_mm": 0.8,
+    "finish_dialog": "沉金",
+    "note": "Dialog choices are not stackup or manufacturing acceptance; Gerber does not encode finished thickness."
+  },
+  "files": {
+    "Drill_NPTH_Through.DRL": {
+      "bytes": 296,
+      "sha256": "136511d0d05b750b81bda50c9884efc21e2a1c4900e97f4d387104f8c8dfa534"
+    },
+    "Drill_PTH_Through.DRL": {
+      "bytes": 1819,
+      "sha256": "4da759057b784a7bd7d0a88d28fa154515cdfd08353c917b406b968602a4463e"
+    },
+    "Drill_PTH_Through_Via.DRL": {
+      "bytes": 1658,
+      "sha256": "7b9ed26189c54b436b34b051781b5b368d6993ed748d22a558e5295fe0272ff4"
+    },
+    "Gerber_TopLayer.GTL": {
+      "bytes": 10515,
+      "sha256": "5b7593dbbef80bdd1ccaa7f1d1965ebb2f422f62dfdc60bd5d5773c4d939391b"
+    },
+    "Gerber_BottomLayer.GBL": {
+      "bytes": 56025,
+      "sha256": "c6c9300022bd29d7dcf9f5d0adc236dd0cd77c460b8f29b3c81210712af2fea4"
+    },
+    "Gerber_TopSilkscreenLayer.GTO": {
+      "bytes": 4496,
+      "sha256": "b2580b2be5e883ed75991ff303f96db1a793216764eb9c2e9fd77ff0cee207f3"
+    },
+    "Gerber_BottomSilkscreenLayer.GBO": {
+      "bytes": 19994,
+      "sha256": "c5c5894d6a6bbc8f56c0080eb2dd699904c56325d25257d6ec1e7a0d8a6e0fa8"
+    },
+    "Gerber_TopPasteMaskLayer.GTP": {
+      "bytes": 8041,
+      "sha256": "25016105cfd8bef90d06aca320a9bc6705e4b291f867b3c8bda087ce44507d32"
+    },
+    "Gerber_BottomPasteMaskLayer.GBP": {
+      "bytes": 7537,
+      "sha256": "8c8ba0b721bf4a8887f3082307c1284b8fd156d8f04d184d23c56872735ce3e8"
+    },
+    "Gerber_TopSolderMaskLayer.GTS": {
+      "bytes": 27040,
+      "sha256": "409f9f756400956f043c0f0a2b24083ed56ece7e05fdb9bc75966bb97b2bbcb0"
+    },
+    "Gerber_BottomSolderMaskLayer.GBS": {
+      "bytes": 10913,
+      "sha256": "5451cd9b8a4c9a0370526d1b1e528328ed10db39151f1bd7a20efcf1616d9291"
+    },
+    "Gerber_BoardOutlineLayer.GKO": {
+      "bytes": 680,
+      "sha256": "925d2356fa788e976f0024e7541ca44ff81461388010f4883dd3b4e51d839a10"
+    },
+    "Gerber_DocumentLayer.GDL": {
+      "bytes": 6402,
+      "sha256": "0d2cc73c241ba96e70871dbc76774b6eed2b7f8af546e6645929bc128cae2e5c"
+    },
+    "Gerber_InnerLayer1.G1": {
+      "bytes": 41172,
+      "sha256": "13c288104ff0e2f21c2ec48d94e7d974451887c8f59a2481acce23d66e378b0d"
+    },
+    "Gerber_InnerLayer2.G2": {
+      "bytes": 12884,
+      "sha256": "169a2f825bbca49f1662a4d8bb5086fd251a62ce7b1097551d461882d8372c44"
+    },
+    "PCB下单必读.txt": {
+      "bytes": 77,
+      "sha256": "6c64c2223b2524834160479f2b83d7d5e0d270500ea14db1123eaf8c826b931e"
+    }
+  },
+  "comparisons": {
+    "Drill_NPTH_Through.DRL": {
+      "count": 2,
+      "exact_geometry_equal": true
+    },
+    "Drill_PTH_Through.DRL": {
+      "count": 87,
+      "exact_geometry_equal": true
+    },
+    "Drill_PTH_Through_Via.DRL": {
+      "count": 83,
+      "exact_geometry_equal": true
+    },
+    "Gerber_TopLayer.GTL": {
+      "before_primitives": 315,
+      "after_primitives": 315,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_BottomLayer.GBL": {
+      "before_primitives": 444,
+      "after_primitives": 444,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_TopSilkscreenLayer.GTO": {
+      "before_primitives": 29,
+      "after_primitives": 29,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_BottomSilkscreenLayer.GBO": {
+      "before_primitives": 175,
+      "after_primitives": 175,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_TopPasteMaskLayer.GTP": {
+      "before_primitives": 86,
+      "after_primitives": 86,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_BottomPasteMaskLayer.GBP": {
+      "before_primitives": 108,
+      "after_primitives": 103,
+      "removed": 5,
+      "added": 0,
+      "same_polarity_runs": false,
+      "removed_primitives": [
+        {
+          "clear": false,
+          "rings": [
+            [
+              [
+                21.33707,
+                -72.501
+              ],
+              [
+                22.83707,
+                -72.501
+              ],
+              [
+                22.83707,
+                -70.501
+              ],
+              [
+                21.33707,
+                -70.501
+              ]
+            ]
+          ]
+        },
+        {
+          "clear": false,
+          "rings": [
+            [
+              [
+                23.13692,
+                -72.501
+              ],
+              [
+                24.63692,
+                -72.501
+              ],
+              [
+                24.63692,
+                -70.501
+              ],
+              [
+                23.13692,
+                -70.501
+              ]
+            ]
+          ]
+        },
+        {
+          "clear": false,
+          "rings": [
+            [
+              [
+                17.643349999999998,
+                -83.81324
+              ],
+              [
+                19.14315,
+                -83.81324
+              ],
+              [
+                19.14315,
+                -85.81324
+              ],
+              [
+                17.643349999999998,
+                -85.81324
+              ],
+              [
+                17.643349999999998,
+                -83.81324
+              ]
+            ]
+          ]
+        },
+        {
+          "clear": false,
+          "rings": [
+            [
+              [
+                19.44324,
+                -83.81324
+              ],
+              [
+                20.94324,
+                -83.81324
+              ],
+              [
+                20.94324,
+                -85.81324
+              ],
+              [
+                19.44324,
+                -85.81324
+              ],
+              [
+                19.44324,
+                -83.81324
+              ]
+            ]
+          ]
+        },
+        {
+          "clear": false,
+          "rings": [
+            [
+              [
+                21.24331,
+                -83.81324
+              ],
+              [
+                22.74311,
+                -83.81324
+              ],
+              [
+                22.74311,
+                -85.81324
+              ],
+              [
+                21.24331,
+                -85.81324
+              ],
+              [
+                21.24331,
+                -83.81324
+              ]
+            ]
+          ]
+        }
+      ],
+      "added_primitives": []
+    },
+    "Gerber_TopSolderMaskLayer.GTS": {
+      "before_primitives": 90,
+      "after_primitives": 90,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_BottomSolderMaskLayer.GBS": {
+      "before_primitives": 105,
+      "after_primitives": 105,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_BoardOutlineLayer.GKO": {
+      "before_primitives": 4,
+      "after_primitives": 4,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_DocumentLayer.GDL": {
+      "before_primitives": 121,
+      "after_primitives": 121,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_InnerLayer1.G1": {
+      "before_primitives": 123,
+      "after_primitives": 123,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    },
+    "Gerber_InnerLayer2.G2": {
+      "before_primitives": 185,
+      "after_primitives": 185,
+      "removed": 0,
+      "added": 0,
+      "same_polarity_runs": true,
+      "removed_primitives": [],
+      "added_primitives": []
+    }
+  },
+  "intentional_paste_fix": [
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "ref": "J2",
+      "pin": "1",
+      "removed_aperture_boundary_error_mm": 1.920000008936995e-05
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "ref": "J2",
+      "pin": "2",
+      "removed_aperture_boundary_error_mm": 1.3199999923330097e-05
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "ref": "SW1",
+      "pin": "1",
+      "removed_aperture_boundary_error_mm": 4.259999999689512e-05
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "ref": "SW1",
+      "pin": "2",
+      "removed_aperture_boundary_error_mm": 5.060000011170018e-05
+    },
+    {
+      "layer": "Gerber_BottomPasteMaskLayer.GBP",
+      "ref": "SW1",
+      "pin": "3",
+      "removed_aperture_boundary_error_mm": 4.999999999100169e-05
+    }
+  ],
+  "flying_wire_paste_exclusions": [
+    {
+      "ref": "J4",
+      "pin": "1",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.865006399999956
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.6350220000000206
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.8890020000000192
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.5432335999999651
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.5432335999999651
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "paste_overlap": false,
+      "nearest_paste_gap_mm": 0.7980600000000067
+    }
+  ],
+  "Q1": {
+    "copper_gap_2_3_mm": 0.13985239999988153,
+    "nominal_mask_web_2_3_mm": 0.139850000000024,
+    "rule_mm": 0.15001240000000002,
+    "conclusion": "Retain original pads and DRC warning; nominal mask web is not a factory yield guarantee."
+  },
+  "holes": {
+    "total": 89,
+    "plated": 87,
+    "NPTH": 2,
+    "minimum_hole_edge_gap_mm": 0.24802506186955028,
+    "NPTH_copper_gaps": [
+      {
+        "hole": {
+          "a": [
+            20.097,
+            -76.165
+          ],
+          "b": [
+            20.097,
+            -76.165
+          ],
+          "diameter": 0.651
+        },
+        "gaps_mm": {
+          "Gerber_TopLayer.GTL": 0.20967390762255111,
+          "Gerber_BottomLayer.GBL": 0.20994905948340037,
+          "Gerber_InnerLayer1.G1": 0.20175818816548585,
+          "Gerber_InnerLayer2.G2": 0.22954000000000108
+        }
+      },
+      {
+        "hole": {
+          "a": [
+            25.877,
+            -76.165
+          ],
+          "b": [
+            25.877,
+            -76.165
+          ],
+          "diameter": 0.651
+        },
+        "gaps_mm": {
+          "Gerber_TopLayer.GTL": 0.20967745701775475,
+          "Gerber_BottomLayer.GBL": 0.21635307169654416,
+          "Gerber_InnerLayer1.G1": 0.20176391165900753,
+          "Gerber_InnerLayer2.G2": 0.2518613019664414
+        }
+      }
+    ]
+  },
+  "PICO_EP": {
+    "via_count": 10,
+    "paste_opening_count": 1,
+    "paste_area_mm2": 10.239360009999928,
+    "pad_area_mm2": 15.999936000064508,
+    "factory_decision": "Via filling/capping, paste quantity and one-reflow/double-sided process remain postdoc/factory confirmation."
+  },
+  "limits": [
+    "Finite native format parser; arc parameters retained exactly for all-positive layers.",
+    "Polygon/circle distance calculations use bounded polygon approximations; manufacturing tolerances and process yield are not simulated.",
+    "Electrical continuity is covered separately by native DRC and schematic/PCB net assignment comparison."
+  ],
+  "production_released": false
+}

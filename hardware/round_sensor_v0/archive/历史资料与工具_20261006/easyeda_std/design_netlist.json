@@ -1,0 +1,2524 @@
+{
+  "revision": "SCH-A5",
+  "components": [
+    {
+      "ref": "U1",
+      "value": "ESP32-S3-PICO-1-N8R8",
+      "package_candidate": "LGA-56 + EP / 7x7 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "保留所有57个端子；PSRAM内部引脚及VDD_SPI输出不外接",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "2",
+          "name": "VDD3P3",
+          "net": "3V3",
+          "x": 590,
+          "y": 210,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "VDD3P3",
+          "net": "3V3",
+          "x": 590,
+          "y": 239,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "20",
+          "name": "VDD3P3_RTC",
+          "net": "3V3",
+          "x": 590,
+          "y": 268,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "46",
+          "name": "VDD3P3_CPU",
+          "net": "3V3",
+          "x": 590,
+          "y": 297,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "55",
+          "name": "VDDA",
+          "net": "3V3",
+          "x": 590,
+          "y": 326,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "56",
+          "name": "VDDA",
+          "net": "3V3",
+          "x": 590,
+          "y": 355,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "4",
+          "name": "CHIP_PU",
+          "net": "MCU_EN",
+          "x": 590,
+          "y": 384,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "5",
+          "name": "GPIO0",
+          "net": "BOOT_N",
+          "x": 590,
+          "y": 413,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "57",
+          "name": "GND_EP",
+          "net": "GND",
+          "x": 590,
+          "y": 442,
+          "side": "L",
+          "electrical": 4,
+          "show": true
+        },
+        {
+          "number": "1",
+          "name": "LNA_IN",
+          "net": "RF_SOC",
+          "x": 590,
+          "y": 471,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "21",
+          "name": "GPIO15",
+          "net": null,
+          "x": 590,
+          "y": 500,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "22",
+          "name": "GPIO16",
+          "net": null,
+          "x": 590,
+          "y": 529,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "8",
+          "name": "GPIO3",
+          "net": null,
+          "x": 590,
+          "y": 558,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "11",
+          "name": "GPIO6",
+          "net": null,
+          "x": 590,
+          "y": 587,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "12",
+          "name": "GPIO7",
+          "net": null,
+          "x": 590,
+          "y": 616,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "13",
+          "name": "GPIO8",
+          "net": null,
+          "x": 590,
+          "y": 645,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "14",
+          "name": "GPIO9",
+          "net": null,
+          "x": 590,
+          "y": 674,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "15",
+          "name": "GPIO10",
+          "net": null,
+          "x": 590,
+          "y": 703,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "16",
+          "name": "GPIO11",
+          "net": null,
+          "x": 590,
+          "y": 732,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "17",
+          "name": "GPIO12",
+          "net": null,
+          "x": 590,
+          "y": 761,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "18",
+          "name": "GPIO13",
+          "net": null,
+          "x": 590,
+          "y": 790,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "19",
+          "name": "GPIO14",
+          "net": null,
+          "x": 590,
+          "y": 819,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "23",
+          "name": "GPIO17",
+          "net": null,
+          "x": 590,
+          "y": 848,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "24",
+          "name": "GPIO18",
+          "net": null,
+          "x": 590,
+          "y": 877,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "27",
+          "name": "GPIO21",
+          "net": null,
+          "x": 590,
+          "y": 906,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "36",
+          "name": "GPIO48",
+          "net": null,
+          "x": 590,
+          "y": 935,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "37",
+          "name": "GPIO47",
+          "net": null,
+          "x": 590,
+          "y": 964,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "25",
+          "name": "GPIO19",
+          "net": "USB_DM_SOC",
+          "x": 1010,
+          "y": 210,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "26",
+          "name": "GPIO20",
+          "net": "USB_DP_SOC",
+          "x": 1010,
+          "y": 239,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "6",
+          "name": "GPIO1",
+          "net": "I2C_SDA",
+          "x": 1010,
+          "y": 268,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "7",
+          "name": "GPIO2",
+          "net": "I2C_SCL",
+          "x": 1010,
+          "y": 297,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "9",
+          "name": "GPIO4",
+          "net": "MLX_INT",
+          "x": 1010,
+          "y": 326,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "10",
+          "name": "GPIO5",
+          "net": "IMU_INT",
+          "x": 1010,
+          "y": 355,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "49",
+          "name": "U0TXD / GPIO43",
+          "net": "UART_TX",
+          "x": 1010,
+          "y": 384,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "50",
+          "name": "U0RXD / GPIO44",
+          "net": "UART_RX",
+          "x": 1010,
+          "y": 413,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "28",
+          "name": "SPICS1 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 442,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "29",
+          "name": "VDD_SPI_OUT",
+          "net": null,
+          "x": 1010,
+          "y": 471,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "30",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 500,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "31",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 529,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "32",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 558,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "33",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 587,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "34",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 616,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "35",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 645,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "38",
+          "name": "GPIO33 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 674,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "39",
+          "name": "GPIO34 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 703,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "40",
+          "name": "GPIO35 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 732,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "41",
+          "name": "GPIO36 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 761,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "42",
+          "name": "GPIO37 / PSRAM",
+          "net": null,
+          "x": 1010,
+          "y": 790,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "43",
+          "name": "GPIO38",
+          "net": null,
+          "x": 1010,
+          "y": 819,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "44",
+          "name": "GPIO39",
+          "net": null,
+          "x": 1010,
+          "y": 848,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "45",
+          "name": "GPIO40",
+          "net": null,
+          "x": 1010,
+          "y": 877,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "47",
+          "name": "GPIO41",
+          "net": null,
+          "x": 1010,
+          "y": 906,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "48",
+          "name": "GPIO42",
+          "net": null,
+          "x": 1010,
+          "y": 935,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "51",
+          "name": "GPIO45",
+          "net": null,
+          "x": 1010,
+          "y": 964,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "52",
+          "name": "GPIO46",
+          "net": null,
+          "x": 1010,
+          "y": 993,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "53",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 1022,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "54",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 1051,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "C20",
+      "value": "22uF / 10V",
+      "package_candidate": "0805",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 250,
+          "y": 235,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 250,
+          "y": 315,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C21",
+      "value": "100nF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 400,
+          "y": 235,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 400,
+          "y": 315,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R7",
+      "value": "10k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 180,
+          "y": 384,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "MCU_EN",
+          "x": 260,
+          "y": 384,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C1",
+      "value": "1uF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "MCU_EN",
+          "x": 380,
+          "y": 429,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 380,
+          "y": 509,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R8",
+      "value": "10k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "01_MCU",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 180,
+          "y": 598,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "BOOT_N",
+          "x": 260,
+          "y": 598,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "U2",
+      "value": "MLX90393SLQ-ABA-011-RE",
+      "package_candidate": "UTDFN-8 + EP / 2.5x2 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "SCL",
+          "net": "I2C_SCL",
+          "x": 530,
+          "y": 270,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "SDA",
+          "net": "I2C_SDA",
+          "x": 530,
+          "y": 310,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "8",
+          "name": "INT",
+          "net": "MLX_INT",
+          "x": 530,
+          "y": 380,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "MISO",
+          "net": null,
+          "x": 530,
+          "y": 430,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "4",
+          "name": "VDD_IO",
+          "net": "3V3",
+          "x": 890,
+          "y": 260,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "6",
+          "name": "VDD",
+          "net": "3V3",
+          "x": 890,
+          "y": 300,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "7",
+          "name": "MS/CS",
+          "net": "3V3",
+          "x": 890,
+          "y": 340,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "5",
+          "name": "VSS",
+          "net": "GND",
+          "x": 890,
+          "y": 400,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "9",
+          "name": "EP",
+          "net": "GND",
+          "x": 890,
+          "y": 440,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "U3",
+      "value": "LSM6DSOXTR",
+      "package_candidate": "LGA-14 / 2.5x3 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "13",
+          "name": "SCL",
+          "net": "I2C_SCL",
+          "x": 530,
+          "y": 700,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "14",
+          "name": "SDA",
+          "net": "I2C_SDA",
+          "x": 530,
+          "y": 740,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "4",
+          "name": "INT1",
+          "net": "IMU_INT",
+          "x": 530,
+          "y": 800,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "9",
+          "name": "INT2",
+          "net": null,
+          "x": 530,
+          "y": 850,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "10",
+          "name": "OCS_Aux",
+          "net": null,
+          "x": 530,
+          "y": 890,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "11",
+          "name": "SDO_Aux",
+          "net": null,
+          "x": 530,
+          "y": 930,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "5",
+          "name": "VDDIO",
+          "net": "3V3",
+          "x": 890,
+          "y": 690,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "8",
+          "name": "VDD",
+          "net": "3V3",
+          "x": 890,
+          "y": 730,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "12",
+          "name": "CS",
+          "net": "3V3",
+          "x": 890,
+          "y": 770,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "1",
+          "name": "SDO/SA0",
+          "net": "GND",
+          "x": 890,
+          "y": 830,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "SDx",
+          "net": "GND",
+          "x": 890,
+          "y": 860,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "SCx",
+          "net": "GND",
+          "x": 890,
+          "y": 890,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "6",
+          "name": "GND",
+          "net": "GND",
+          "x": 890,
+          "y": 920,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "7",
+          "name": "GND",
+          "net": "GND",
+          "x": 890,
+          "y": 950,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R6",
+      "value": "4.7k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 300,
+          "y": 145,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "I2C_SCL",
+          "x": 300,
+          "y": 225,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R5",
+      "value": "4.7k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 420,
+          "y": 145,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "I2C_SDA",
+          "x": 420,
+          "y": 225,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C2",
+      "value": "100nF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 1100,
+          "y": 310,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1100,
+          "y": 390,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C3",
+      "value": "100nF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 1310,
+          "y": 310,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1310,
+          "y": 390,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C4",
+      "value": "100nF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 1100,
+          "y": 740,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1100,
+          "y": 820,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C5",
+      "value": "100nF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "02_SENSORS",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 1310,
+          "y": 740,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1310,
+          "y": 820,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "J1",
+      "value": "USB4105-GF-A-060",
+      "package_candidate": "USB-C 16 contacts + SH",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "A8",
+          "name": "SBU1",
+          "net": null,
+          "x": 170,
+          "y": 470,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B8",
+          "name": "SBU2",
+          "net": null,
+          "x": 170,
+          "y": 520,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A6",
+          "name": "D+",
+          "net": "USB_DP",
+          "x": 445,
+          "y": 230,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B6",
+          "name": "D+",
+          "net": "USB_DP",
+          "x": 445,
+          "y": 260,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A7",
+          "name": "D−",
+          "net": "USB_DM",
+          "x": 445,
+          "y": 350,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B7",
+          "name": "D−",
+          "net": "USB_DM",
+          "x": 445,
+          "y": 380,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A5",
+          "name": "CC1",
+          "net": "CC1",
+          "x": 445,
+          "y": 470,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B5",
+          "name": "CC2",
+          "net": "CC2",
+          "x": 445,
+          "y": 560,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A4",
+          "name": "VBUS",
+          "net": "USB_5V",
+          "x": 445,
+          "y": 680,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A9",
+          "name": "VBUS",
+          "net": "USB_5V",
+          "x": 445,
+          "y": 710,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B4",
+          "name": "VBUS",
+          "net": "USB_5V",
+          "x": 445,
+          "y": 740,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B9",
+          "name": "VBUS",
+          "net": "USB_5V",
+          "x": 445,
+          "y": 770,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A1",
+          "name": "GND",
+          "net": "GND",
+          "x": 445,
+          "y": 840,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A12",
+          "name": "GND",
+          "net": "GND",
+          "x": 445,
+          "y": 870,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B1",
+          "name": "GND",
+          "net": "GND",
+          "x": 445,
+          "y": 900,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B12",
+          "name": "GND",
+          "net": "GND",
+          "x": 445,
+          "y": 930,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "SH",
+          "name": "GND",
+          "net": "GND",
+          "x": 445,
+          "y": 960,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R3",
+      "value": "22Ω",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "USB_DP",
+          "x": 1090,
+          "y": 230,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "USB_DP_SOC",
+          "x": 1170,
+          "y": 230,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R4",
+      "value": "22Ω",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "USB_DM",
+          "x": 1090,
+          "y": 350,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "USB_DM_SOC",
+          "x": 1170,
+          "y": 350,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "U6",
+      "value": "TPD2EUSB30ADRTR",
+      "package_candidate": "SOT-DRT-3 / 1.0x0.8 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "IO1",
+          "net": "USB_DP",
+          "x": 740,
+          "y": 490,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "IO2",
+          "net": "USB_DM",
+          "x": 740,
+          "y": 530,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "net": "GND",
+          "x": 1045,
+          "y": 570,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R1",
+      "value": "5.1k / 1%",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "CC1",
+          "x": 690,
+          "y": 690,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 690,
+          "y": 770,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "D2",
+      "value": "TPD1E10B06DPYR",
+      "package_candidate": "X1SON-2 / 1.0x0.6 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "IO",
+          "net": "CC1",
+          "x": 950,
+          "y": 730,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "net": "GND",
+          "x": 1180,
+          "y": 730,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R2",
+      "value": "5.1k / 1%",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "CC2",
+          "x": 750,
+          "y": 890,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 750,
+          "y": 970,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "D3",
+      "value": "TPD1E10B06DPYR",
+      "package_candidate": "X1SON-2 / 1.0x0.6 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "IO",
+          "net": "CC2",
+          "x": 1010,
+          "y": 930,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "net": "GND",
+          "x": 1240,
+          "y": 930,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "D1",
+      "value": "TPD1E10B06DPYR",
+      "package_candidate": "X1SON-2 / 1.0x0.6 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "03_USB",
+      "pins": [
+        {
+          "number": "1",
+          "name": "IO",
+          "net": "USB_5V",
+          "x": 1210,
+          "y": 540,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "net": "GND",
+          "x": 1470,
+          "y": 540,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "Q1",
+      "value": "LP0404N3T5G",
+      "package_candidate": "SOT-883-3 / 1.0x0.6 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "D=1接电池，G=2接USB，S=3接系统；体二极管BAT_P至VSYS；按XIAO焊盘编号核对封装",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "D",
+          "net": "BAT_P",
+          "x": 350,
+          "y": 220,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "G",
+          "net": "USB_5V",
+          "x": 350,
+          "y": 280,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "S",
+          "net": "VSYS",
+          "x": 630,
+          "y": 220,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "D4",
+      "value": "LMBR4010BST5G",
+      "package_candidate": "SOD-882 / 1.0x0.6 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "VSYS",
+          "x": 460,
+          "y": 400,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "USB_5V",
+          "x": 540,
+          "y": 400,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R9",
+      "value": "100k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "USB_5V",
+          "x": 270,
+          "y": 560,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 270,
+          "y": 640,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "U5",
+      "value": "TLV75533PDRVR",
+      "package_candidate": "WSON-6 + EP / 2x2 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "6",
+          "name": "IN",
+          "net": "VSYS",
+          "x": 1010,
+          "y": 220,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "4",
+          "name": "EN",
+          "net": "REG_EN",
+          "x": 1010,
+          "y": 290,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "NC",
+          "net": null,
+          "x": 1010,
+          "y": 340,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "1",
+          "name": "OUT",
+          "net": "3V3",
+          "x": 1290,
+          "y": 220,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "GND",
+          "net": "GND",
+          "x": 1290,
+          "y": 280,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "7",
+          "name": "EP",
+          "net": "GND",
+          "x": 1290,
+          "y": 310,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "5",
+          "name": "NC",
+          "net": null,
+          "x": 1290,
+          "y": 350,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "C9",
+      "value": "1uF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "VSYS",
+          "x": 850,
+          "y": 260,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 850,
+          "y": 340,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C10",
+      "value": "1uF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "3V3",
+          "x": 1430,
+          "y": 260,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1430,
+          "y": 340,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "SW1",
+      "value": "电源开关焊盘",
+      "package_candidate": "SWITCH_WIRE_3PAD_COMPACT",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "3",
+          "name": "开 / VSYS",
+          "net": "VSYS",
+          "x": 870,
+          "y": 520,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "1",
+          "name": "关 / GND",
+          "net": "GND",
+          "x": 870,
+          "y": 590,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "公共端 / EN",
+          "net": "REG_EN",
+          "x": 1130,
+          "y": 550,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "U4",
+      "value": "SGM40567-4.2XG/TR",
+      "package_candidate": "WLCSP-0.92x1.16-6B / 0.4 mm",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "F必须接地以选择4.2V；电池必须自带保护；无电芯温度检测",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "A2",
+          "name": "VIN",
+          "net": "USB_5V",
+          "x": 480,
+          "y": 800,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "C1",
+          "name": "IREF",
+          "net": "IREF_SET",
+          "x": 480,
+          "y": 880,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B1",
+          "name": "F",
+          "net": "GND",
+          "x": 480,
+          "y": 940,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "A1",
+          "name": "BAT",
+          "net": "BAT_P",
+          "x": 830,
+          "y": 800,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "B2",
+          "name": "nCHG",
+          "net": null,
+          "x": 830,
+          "y": 870,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "C2",
+          "name": "GND",
+          "net": "GND",
+          "x": 830,
+          "y": 940,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "C6",
+      "value": "1uF / 16V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "USB_5V",
+          "x": 190,
+          "y": 820,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 190,
+          "y": 900,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "R10",
+      "value": "220k / 1%",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "IREF_SET",
+          "x": 365,
+          "y": 900,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 365,
+          "y": 980,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C7",
+      "value": "1uF / 10V",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "BAT_P",
+          "x": 990,
+          "y": 820,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 990,
+          "y": 900,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "J2",
+      "value": "单节锂电池焊盘",
+      "package_candidate": "BATTERY_WIRE_2PAD_COMPACT",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "外接带过充、过放及短路保护的4.2V单节电池",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "电池正极",
+          "net": "BAT_P",
+          "x": 1200,
+          "y": 800,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "电池负极",
+          "net": "GND",
+          "x": 1200,
+          "y": 900,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R30",
+      "value": "0Ω / 射频串联",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "05_RF_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "RF_SOC",
+          "x": 620,
+          "y": 300,
+          "side": "L",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "RF_ANT",
+          "x": 700,
+          "y": 300,
+          "side": "R",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C30",
+      "value": "匹配预留 / 不装",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": false,
+      "notes": "",
+      "sheet": "05_RF_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "RF_SOC",
+          "x": 430,
+          "y": 380,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 430,
+          "y": 460,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "C31",
+      "value": "匹配预留 / 不装",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": false,
+      "notes": "",
+      "sheet": "05_RF_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "RF_ANT",
+          "x": 870,
+          "y": 380,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 870,
+          "y": 460,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    },
+    {
+      "ref": "ANT1",
+      "value": "U.FL-R-SMT-1 + FXP75.07.0045B",
+      "package_candidate": "U.FL-R-SMT-1 / Hirose",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "05_RF_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "射频信号",
+          "net": "RF_ANT",
+          "x": 1090,
+          "y": 300,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "外壳",
+          "net": "GND",
+          "x": 1450,
+          "y": 340,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "外壳",
+          "net": "GND",
+          "x": 1450,
+          "y": 390,
+          "side": "R",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "J3",
+      "value": "下载与测试焊盘",
+      "package_candidate": "DEBUG_POGO_6PAD_1MM",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "05_RF_DEBUG",
+      "pins": [
+        {
+          "number": "1",
+          "name": "GND",
+          "net": "GND",
+          "x": 540,
+          "y": 770,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "2",
+          "name": "3V3",
+          "net": "3V3",
+          "x": 540,
+          "y": 805,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "3",
+          "name": "EN",
+          "net": "MCU_EN",
+          "x": 540,
+          "y": 840,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "4",
+          "name": "BOOT",
+          "net": "BOOT_N",
+          "x": 540,
+          "y": 875,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "5",
+          "name": "TX",
+          "net": "UART_TX",
+          "x": 540,
+          "y": 910,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        },
+        {
+          "number": "6",
+          "name": "RX",
+          "net": "UART_RX",
+          "x": 540,
+          "y": 945,
+          "side": "L",
+          "electrical": 0,
+          "show": true
+        }
+      ]
+    },
+    {
+      "ref": "R11",
+      "value": "100k",
+      "package_candidate": "0402",
+      "footprint_bound": false,
+      "fitted": true,
+      "notes": "",
+      "sheet": "04_POWER",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "net": "REG_EN",
+          "x": 1180,
+          "y": 615,
+          "side": "T",
+          "electrical": 0,
+          "show": false
+        },
+        {
+          "number": "2",
+          "name": "",
+          "net": "GND",
+          "x": 1180,
+          "y": 695,
+          "side": "B",
+          "electrical": 0,
+          "show": false
+        }
+      ]
+    }
+  ],
+  "nets": {
+    "3V3": [
+      "U1.2",
+      "U1.3",
+      "U1.20",
+      "U1.46",
+      "U1.55",
+      "U1.56",
+      "C20.1",
+      "C21.1",
+      "R7.1",
+      "R8.1",
+      "U2.4",
+      "U2.6",
+      "U2.7",
+      "U3.5",
+      "U3.8",
+      "U3.12",
+      "R6.1",
+      "R5.1",
+      "C2.1",
+      "C3.1",
+      "C4.1",
+      "C5.1",
+      "U5.1",
+      "C10.1",
+      "J3.2"
+    ],
+    "MCU_EN": [
+      "U1.4",
+      "R7.2",
+      "C1.1",
+      "J3.3"
+    ],
+    "BOOT_N": [
+      "U1.5",
+      "R8.2",
+      "J3.4"
+    ],
+    "GND": [
+      "U1.57",
+      "C20.2",
+      "C21.2",
+      "C1.2",
+      "U2.5",
+      "U2.9",
+      "U3.1",
+      "U3.2",
+      "U3.3",
+      "U3.6",
+      "U3.7",
+      "C2.2",
+      "C3.2",
+      "C4.2",
+      "C5.2",
+      "J1.A1",
+      "J1.A12",
+      "J1.B1",
+      "J1.B12",
+      "J1.SH",
+      "U6.3",
+      "R1.2",
+      "D2.2",
+      "R2.2",
+      "D3.2",
+      "D1.2",
+      "R9.2",
+      "U5.3",
+      "U5.7",
+      "C9.2",
+      "C10.2",
+      "SW1.1",
+      "U4.B1",
+      "U4.C2",
+      "C6.2",
+      "R10.2",
+      "C7.2",
+      "J2.2",
+      "C30.2",
+      "C31.2",
+      "ANT1.2",
+      "ANT1.3",
+      "J3.1",
+      "R11.2"
+    ],
+    "RF_SOC": [
+      "U1.1",
+      "R30.1",
+      "C30.1"
+    ],
+    "USB_DM_SOC": [
+      "U1.25",
+      "R4.2"
+    ],
+    "USB_DP_SOC": [
+      "U1.26",
+      "R3.2"
+    ],
+    "I2C_SDA": [
+      "U1.6",
+      "U2.2",
+      "U3.14",
+      "R5.2"
+    ],
+    "I2C_SCL": [
+      "U1.7",
+      "U2.1",
+      "U3.13",
+      "R6.2"
+    ],
+    "MLX_INT": [
+      "U1.9",
+      "U2.8"
+    ],
+    "IMU_INT": [
+      "U1.10",
+      "U3.4"
+    ],
+    "UART_TX": [
+      "U1.49",
+      "J3.5"
+    ],
+    "UART_RX": [
+      "U1.50",
+      "J3.6"
+    ],
+    "USB_DP": [
+      "J1.A6",
+      "J1.B6",
+      "R3.1",
+      "U6.1"
+    ],
+    "USB_DM": [
+      "J1.A7",
+      "J1.B7",
+      "R4.1",
+      "U6.2"
+    ],
+    "CC1": [
+      "J1.A5",
+      "R1.1",
+      "D2.1"
+    ],
+    "CC2": [
+      "J1.B5",
+      "R2.1",
+      "D3.1"
+    ],
+    "USB_5V": [
+      "J1.A4",
+      "J1.A9",
+      "J1.B4",
+      "J1.B9",
+      "D1.1",
+      "Q1.2",
+      "D4.2",
+      "R9.1",
+      "U4.A2",
+      "C6.1"
+    ],
+    "BAT_P": [
+      "Q1.1",
+      "U4.A1",
+      "C7.1",
+      "J2.1"
+    ],
+    "VSYS": [
+      "Q1.3",
+      "D4.1",
+      "U5.6",
+      "C9.1",
+      "SW1.3"
+    ],
+    "REG_EN": [
+      "U5.4",
+      "SW1.2",
+      "R11.1"
+    ],
+    "IREF_SET": [
+      "U4.C1",
+      "R10.1"
+    ],
+    "RF_ANT": [
+      "R30.2",
+      "C31.1",
+      "ANT1.1"
+    ]
+  }
+}

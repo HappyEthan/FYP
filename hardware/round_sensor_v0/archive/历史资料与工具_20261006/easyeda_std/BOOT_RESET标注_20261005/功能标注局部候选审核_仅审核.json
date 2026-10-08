@@ -1,0 +1,53 @@
+{
+  "source": "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET标注前_20261005.json",
+  "source_sha256": "90675e1fbb536d1bb92c55582c0f41bcc3f437bdd1e14151e9c8b14a57aa5c0f",
+  "candidate": "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印候选_仅审核_20261005.json",
+  "candidate_sha256": "e715de78b349686ae1d2679ebec4195fab932fd59973f41c04ff9d18f733703c",
+  "changes": [
+    {
+      "ref": "SW2",
+      "id": "gge3042",
+      "change": "prefix silk to document only",
+      "old_layer": "4"
+    },
+    {
+      "ref": "SW3",
+      "id": "gge3123",
+      "change": "prefix silk to document only",
+      "old_layer": "4"
+    }
+  ],
+  "labels": [
+    {
+      "text": "BOOT",
+      "ref": "SW2",
+      "center_source_mm": [
+        15.110000000000001,
+        -78.205
+      ],
+      "bottom_reader_rotation": 90,
+      "cap_height_mm": 0.95,
+      "stroke_mm": 0.127,
+      "mask_clearance_mm": 0.1607900000000004,
+      "body_clearance_mm": 0.2115901999999874,
+      "board_clearance_mm": 0.26346862164707197
+    },
+    {
+      "text": "RESET",
+      "ref": "SW3",
+      "center_source_mm": [
+        16.399989999999985,
+        -75.8000034
+      ],
+      "bottom_reader_rotation": 0,
+      "cap_height_mm": 0.75,
+      "stroke_mm": 0.127,
+      "mask_clearance_mm": 0.1526710000000122,
+      "body_clearance_mm": 0.21159019999997497,
+      "board_clearance_mm": 0.28813367029223014
+    }
+  ],
+  "only_two_prefix_layer_moves_and_two_labels": true,
+  "native_verified": false,
+  "format_reference": "https://docs.easyeda.com/en/DocumentFormat/3-EasyEDA-PCB-File-Format/"
+}

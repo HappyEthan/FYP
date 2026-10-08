@@ -1,0 +1,1157 @@
+{
+  "date": "2026-10-06",
+  "status": "PASS",
+  "scope": "Native Protel schematic export vs saved schematic geometry/NC and PCB pad net assignments. Not copper continuity or full electrical-type ERC.",
+  "inputs": {
+    "schematic": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_最终五页回读_20261006.json",
+      "sha256": "2a1a585090742c89eee72219f31674d902c01ce4c85764fcc8b92ee54a25dfff"
+    },
+    "pcb": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/Q1直接修复_20261006/PCB_Q1候选_已绑定原生库_20261006.json",
+      "sha256": "b508e3d458ca194c72eabcaaf85dbd87a78b71f10496d15c92a9b37a2a1d873e"
+    },
+    "netlist": {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生整图网表_20261006.net",
+      "sha256": "97afcf53ce05125c163c0e53e548f134fcbf52f9fea3311625c137fc01cb3c29"
+    }
+  },
+  "counts": {
+    "schematic_refs": 41,
+    "pcb_refs": 41,
+    "schematic_pins": 186,
+    "pcb_unique_pins": 186,
+    "physical_pads": 189,
+    "native_nets": 20,
+    "connected_pins": 137,
+    "explicit_NC_pins": 49
+  },
+  "ref_difference": [],
+  "geometry_faults": [],
+  "pin_net_mismatches": [],
+  "duplicate_physical_pads": {
+    "J1.SH": [
+      "gge1887",
+      "gge1902",
+      "gge1917",
+      "gge1932"
+    ]
+  },
+  "native_networks": {
+    "GND": [
+      "SW3.4",
+      "SW3.3",
+      "SW2.4",
+      "SW2.3",
+      "ANT1.3",
+      "ANT1.2",
+      "C31.2",
+      "C30.2",
+      "R11.2",
+      "J2.2",
+      "C7.2",
+      "C6.2",
+      "SW1.1",
+      "U5.7",
+      "U5.3",
+      "C10.2",
+      "C9.2",
+      "R9.2",
+      "D1.2",
+      "J1.SH",
+      "J1.A1",
+      "J1.A12",
+      "J1.B1",
+      "J1.B12",
+      "D3.2",
+      "R2.2",
+      "D2.2",
+      "R1.2",
+      "U6.3",
+      "J4.2",
+      "U3.7",
+      "U3.1",
+      "C4.2",
+      "C5.2",
+      "U3.2",
+      "U3.3",
+      "U3.6",
+      "U2.9",
+      "U2.5",
+      "C2.2",
+      "C3.2",
+      "U1.57",
+      "C1.2",
+      "C21.2",
+      "C20.2"
+    ],
+    "USB_5V": [
+      "C6.1",
+      "Q1.2",
+      "D4.2",
+      "R9.1",
+      "D1.1",
+      "J1.B9",
+      "J1.A4",
+      "J1.A9",
+      "J1.B4"
+    ],
+    "BAT_P": [
+      "J2.1",
+      "C7.1",
+      "Q1.1"
+    ],
+    "BOOT_N": [
+      "SW2.2",
+      "SW2.1",
+      "U1.5",
+      "R8.2"
+    ],
+    "3V3": [
+      "C10.1",
+      "U5.1",
+      "J4.1",
+      "U3.12",
+      "U3.5",
+      "C4.1",
+      "C5.1",
+      "U3.8",
+      "U2.7",
+      "U2.4",
+      "C2.1",
+      "C3.1",
+      "U2.6",
+      "R5.1",
+      "R6.1",
+      "R8.1",
+      "R7.1",
+      "U1.56",
+      "U1.2",
+      "C20.1",
+      "C21.1",
+      "U1.3",
+      "U1.20",
+      "U1.46",
+      "U1.55"
+    ],
+    "RF_SOC": [
+      "R30.1",
+      "C30.1",
+      "U1.1"
+    ],
+    "USB_DM_SOC": [
+      "R4.2",
+      "U1.25"
+    ],
+    "USB_DP_SOC": [
+      "R3.2",
+      "U1.26"
+    ],
+    "I2C_SDA": [
+      "J4.3",
+      "U3.14",
+      "R5.2",
+      "U2.2",
+      "U1.6"
+    ],
+    "I2C_SCL": [
+      "J4.4",
+      "U3.13",
+      "R6.2",
+      "U2.1",
+      "U1.7"
+    ],
+    "MLX_INT": [
+      "U2.8",
+      "U1.9"
+    ],
+    "IMU_INT": [
+      "U3.4",
+      "U1.10"
+    ],
+    "MCU_EN": [
+      "SW3.2",
+      "SW3.1",
+      "U1.4",
+      "R7.2",
+      "C1.1"
+    ],
+    "USB_DP": [
+      "R3.1",
+      "J1.B6",
+      "J1.A6",
+      "U6.1"
+    ],
+    "USB_DM": [
+      "R4.1",
+      "J1.B7",
+      "J1.A7",
+      "U6.2"
+    ],
+    "J1_A5": [
+      "R1.1",
+      "J1.A5",
+      "D2.1"
+    ],
+    "J1_B5": [
+      "R2.1",
+      "J1.B5",
+      "D3.1"
+    ],
+    "VSYS": [
+      "SW1.3",
+      "D4.1",
+      "Q1.3",
+      "U5.6",
+      "C9.1"
+    ],
+    "REG_EN": [
+      "U5.4",
+      "SW1.2",
+      "R11.1"
+    ],
+    "R30_2": [
+      "ANT1.1",
+      "R30.2",
+      "C31.1"
+    ]
+  },
+  "pin_comparison": [
+    {
+      "pin": "ANT1.1",
+      "schematic": "R30_2",
+      "pcb": "R30_2"
+    },
+    {
+      "pin": "ANT1.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "ANT1.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C1.1",
+      "schematic": "MCU_EN",
+      "pcb": "MCU_EN"
+    },
+    {
+      "pin": "C1.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C10.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C10.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C2.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C2.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C20.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C20.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C21.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C21.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C3.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C3.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C30.1",
+      "schematic": "RF_SOC",
+      "pcb": "RF_SOC"
+    },
+    {
+      "pin": "C30.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C31.1",
+      "schematic": "R30_2",
+      "pcb": "R30_2"
+    },
+    {
+      "pin": "C31.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C4.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C4.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C5.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "C5.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C6.1",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "C6.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C7.1",
+      "schematic": "BAT_P",
+      "pcb": "BAT_P"
+    },
+    {
+      "pin": "C7.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "C9.1",
+      "schematic": "VSYS",
+      "pcb": "VSYS"
+    },
+    {
+      "pin": "C9.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "D1.1",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "D1.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "D2.1",
+      "schematic": "J1_A5",
+      "pcb": "J1_A5"
+    },
+    {
+      "pin": "D2.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "D3.1",
+      "schematic": "J1_B5",
+      "pcb": "J1_B5"
+    },
+    {
+      "pin": "D3.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "D4.1",
+      "schematic": "VSYS",
+      "pcb": "VSYS"
+    },
+    {
+      "pin": "D4.2",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "J1.A1",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J1.A12",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J1.A4",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "J1.A5",
+      "schematic": "J1_A5",
+      "pcb": "J1_A5"
+    },
+    {
+      "pin": "J1.A6",
+      "schematic": "USB_DP",
+      "pcb": "USB_DP"
+    },
+    {
+      "pin": "J1.A7",
+      "schematic": "USB_DM",
+      "pcb": "USB_DM"
+    },
+    {
+      "pin": "J1.A8",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "J1.A9",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "J1.B1",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J1.B12",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J1.B4",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "J1.B5",
+      "schematic": "J1_B5",
+      "pcb": "J1_B5"
+    },
+    {
+      "pin": "J1.B6",
+      "schematic": "USB_DP",
+      "pcb": "USB_DP"
+    },
+    {
+      "pin": "J1.B7",
+      "schematic": "USB_DM",
+      "pcb": "USB_DM"
+    },
+    {
+      "pin": "J1.B8",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "J1.B9",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "J1.SH",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J2.1",
+      "schematic": "BAT_P",
+      "pcb": "BAT_P"
+    },
+    {
+      "pin": "J2.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J4.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "J4.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "J4.3",
+      "schematic": "I2C_SDA",
+      "pcb": "I2C_SDA"
+    },
+    {
+      "pin": "J4.4",
+      "schematic": "I2C_SCL",
+      "pcb": "I2C_SCL"
+    },
+    {
+      "pin": "Q1.1",
+      "schematic": "BAT_P",
+      "pcb": "BAT_P"
+    },
+    {
+      "pin": "Q1.2",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "Q1.3",
+      "schematic": "VSYS",
+      "pcb": "VSYS"
+    },
+    {
+      "pin": "R1.1",
+      "schematic": "J1_A5",
+      "pcb": "J1_A5"
+    },
+    {
+      "pin": "R1.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "R11.1",
+      "schematic": "REG_EN",
+      "pcb": "REG_EN"
+    },
+    {
+      "pin": "R11.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "R2.1",
+      "schematic": "J1_B5",
+      "pcb": "J1_B5"
+    },
+    {
+      "pin": "R2.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "R3.1",
+      "schematic": "USB_DP",
+      "pcb": "USB_DP"
+    },
+    {
+      "pin": "R3.2",
+      "schematic": "USB_DP_SOC",
+      "pcb": "USB_DP_SOC"
+    },
+    {
+      "pin": "R30.1",
+      "schematic": "RF_SOC",
+      "pcb": "RF_SOC"
+    },
+    {
+      "pin": "R30.2",
+      "schematic": "R30_2",
+      "pcb": "R30_2"
+    },
+    {
+      "pin": "R4.1",
+      "schematic": "USB_DM",
+      "pcb": "USB_DM"
+    },
+    {
+      "pin": "R4.2",
+      "schematic": "USB_DM_SOC",
+      "pcb": "USB_DM_SOC"
+    },
+    {
+      "pin": "R5.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "R5.2",
+      "schematic": "I2C_SDA",
+      "pcb": "I2C_SDA"
+    },
+    {
+      "pin": "R6.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "R6.2",
+      "schematic": "I2C_SCL",
+      "pcb": "I2C_SCL"
+    },
+    {
+      "pin": "R7.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "R7.2",
+      "schematic": "MCU_EN",
+      "pcb": "MCU_EN"
+    },
+    {
+      "pin": "R8.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "R8.2",
+      "schematic": "BOOT_N",
+      "pcb": "BOOT_N"
+    },
+    {
+      "pin": "R9.1",
+      "schematic": "USB_5V",
+      "pcb": "USB_5V"
+    },
+    {
+      "pin": "R9.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "SW1.1",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "SW1.2",
+      "schematic": "REG_EN",
+      "pcb": "REG_EN"
+    },
+    {
+      "pin": "SW1.3",
+      "schematic": "VSYS",
+      "pcb": "VSYS"
+    },
+    {
+      "pin": "SW2.1",
+      "schematic": "BOOT_N",
+      "pcb": "BOOT_N"
+    },
+    {
+      "pin": "SW2.2",
+      "schematic": "BOOT_N",
+      "pcb": "BOOT_N"
+    },
+    {
+      "pin": "SW2.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "SW2.4",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "SW3.1",
+      "schematic": "MCU_EN",
+      "pcb": "MCU_EN"
+    },
+    {
+      "pin": "SW3.2",
+      "schematic": "MCU_EN",
+      "pcb": "MCU_EN"
+    },
+    {
+      "pin": "SW3.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "SW3.4",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U1.1",
+      "schematic": "RF_SOC",
+      "pcb": "RF_SOC"
+    },
+    {
+      "pin": "U1.10",
+      "schematic": "IMU_INT",
+      "pcb": "IMU_INT"
+    },
+    {
+      "pin": "U1.11",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.12",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.13",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.14",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.15",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.16",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.17",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.18",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.19",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.2",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.20",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.21",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.22",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.23",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.24",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.25",
+      "schematic": "USB_DM_SOC",
+      "pcb": "USB_DM_SOC"
+    },
+    {
+      "pin": "U1.26",
+      "schematic": "USB_DP_SOC",
+      "pcb": "USB_DP_SOC"
+    },
+    {
+      "pin": "U1.27",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.28",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.29",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.3",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.30",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.31",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.32",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.33",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.34",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.35",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.36",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.37",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.38",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.39",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.4",
+      "schematic": "MCU_EN",
+      "pcb": "MCU_EN"
+    },
+    {
+      "pin": "U1.40",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.41",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.42",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.43",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.44",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.45",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.46",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.47",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.48",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.49",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.5",
+      "schematic": "BOOT_N",
+      "pcb": "BOOT_N"
+    },
+    {
+      "pin": "U1.50",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.51",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.52",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.53",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.54",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.55",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.56",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U1.57",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U1.6",
+      "schematic": "I2C_SDA",
+      "pcb": "I2C_SDA"
+    },
+    {
+      "pin": "U1.7",
+      "schematic": "I2C_SCL",
+      "pcb": "I2C_SCL"
+    },
+    {
+      "pin": "U1.8",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U1.9",
+      "schematic": "MLX_INT",
+      "pcb": "MLX_INT"
+    },
+    {
+      "pin": "U2.1",
+      "schematic": "I2C_SCL",
+      "pcb": "I2C_SCL"
+    },
+    {
+      "pin": "U2.2",
+      "schematic": "I2C_SDA",
+      "pcb": "I2C_SDA"
+    },
+    {
+      "pin": "U2.3",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U2.4",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U2.5",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U2.6",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U2.7",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U2.8",
+      "schematic": "MLX_INT",
+      "pcb": "MLX_INT"
+    },
+    {
+      "pin": "U2.9",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.1",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.10",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U3.11",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U3.12",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U3.13",
+      "schematic": "I2C_SCL",
+      "pcb": "I2C_SCL"
+    },
+    {
+      "pin": "U3.14",
+      "schematic": "I2C_SDA",
+      "pcb": "I2C_SDA"
+    },
+    {
+      "pin": "U3.2",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.4",
+      "schematic": "IMU_INT",
+      "pcb": "IMU_INT"
+    },
+    {
+      "pin": "U3.5",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U3.6",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.7",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U3.8",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U3.9",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U5.1",
+      "schematic": "3V3",
+      "pcb": "3V3"
+    },
+    {
+      "pin": "U5.2",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U5.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U5.4",
+      "schematic": "REG_EN",
+      "pcb": "REG_EN"
+    },
+    {
+      "pin": "U5.5",
+      "schematic": "",
+      "pcb": ""
+    },
+    {
+      "pin": "U5.6",
+      "schematic": "VSYS",
+      "pcb": "VSYS"
+    },
+    {
+      "pin": "U5.7",
+      "schematic": "GND",
+      "pcb": "GND"
+    },
+    {
+      "pin": "U6.1",
+      "schematic": "USB_DP",
+      "pcb": "USB_DP"
+    },
+    {
+      "pin": "U6.2",
+      "schematic": "USB_DM",
+      "pcb": "USB_DM"
+    },
+    {
+      "pin": "U6.3",
+      "schematic": "GND",
+      "pcb": "GND"
+    }
+  ],
+  "native_schematic_UI": {
+    "refreshed_design_manager": "原生属性保存并关闭重开五页",
+    "scope_reference": "https://docs.lceda.cn/cn/Schematic/Design-Manager/",
+    "ERC": "No standalone electrical-type ERC command found in Standard 6.5.51 Design/Tools menus. Record native network check plus explicit design review; do not claim full ERC passed."
+  },
+  "production_released": false
+}

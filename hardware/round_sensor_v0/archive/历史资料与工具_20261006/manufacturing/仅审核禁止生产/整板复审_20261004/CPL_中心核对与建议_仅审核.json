@@ -1,0 +1,905 @@
+{
+  "source": "manufacturing_geometry.json",
+  "all38": [
+    {
+      "ref": "ANT1",
+      "CPL_source_xy_mm": [
+        29.15,
+        -80.67
+      ],
+      "LIB_source_xy_mm": [
+        29.149979800000107,
+        -80.66999359999997
+      ],
+      "pad_array_bbox_center_mm": [
+        29.15005600000003,
+        -81.43239999999997
+      ],
+      "CPL_minus_LIB_mm": [
+        2.019999989144594e-05,
+        -6.400000032158459e-06
+      ],
+      "CPL_rotation": "180",
+      "LIB_rotation": "180",
+      "side": "T",
+      "body_axis_mm": [
+        29.149979800000107,
+        -80.66999359999997
+      ],
+      "evidence": "Hirose U.FL catalogue p12 ground pad centerline coax axis, retained correction matches."
+    },
+    {
+      "ref": "C1",
+      "CPL_source_xy_mm": [
+        24.26,
+        -83.57
+      ],
+      "LIB_source_xy_mm": [
+        24.257,
+        -83.566
+      ],
+      "pad_array_bbox_center_mm": [
+        24.256999999999998,
+        -83.566
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        -0.003999999999990678
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C2",
+      "CPL_source_xy_mm": [
+        19.6,
+        -83.0
+      ],
+      "LIB_source_xy_mm": [
+        19.600011599999966,
+        -83.00001179999994
+      ],
+      "pad_array_bbox_center_mm": [
+        19.60003700000007,
+        -83.00008799999999
+      ],
+      "CPL_minus_LIB_mm": [
+        -1.1599999965028474e-05,
+        1.1799999938943984e-05
+      ],
+      "CPL_rotation": "180",
+      "LIB_rotation": "",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C3",
+      "CPL_source_xy_mm": [
+        16.15,
+        -82.05
+      ],
+      "LIB_source_xy_mm": [
+        16.149980400000047,
+        -82.0498232
+      ],
+      "pad_array_bbox_center_mm": [
+        16.149954999999995,
+        -82.04987399999999
+      ],
+      "CPL_minus_LIB_mm": [
+        1.9599999951935843e-05,
+        -0.00017679999999131724
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C4",
+      "CPL_source_xy_mm": [
+        29.21,
+        -83.82
+      ],
+      "LIB_source_xy_mm": [
+        29.21,
+        -83.82000000000001
+      ],
+      "pad_array_bbox_center_mm": [
+        29.21,
+        -83.82
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0,
+        1.4210854715202004e-14
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C5",
+      "CPL_source_xy_mm": [
+        24.26,
+        -82.55
+      ],
+      "LIB_source_xy_mm": [
+        24.257,
+        -82.55
+      ],
+      "pad_array_bbox_center_mm": [
+        24.256999999999998,
+        -82.55
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        0.0
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C6",
+      "CPL_source_xy_mm": [
+        20.7,
+        -73.41
+      ],
+      "LIB_source_xy_mm": [
+        20.701,
+        -73.406
+      ],
+      "pad_array_bbox_center_mm": [
+        20.701,
+        -73.406
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.0010000000000012221,
+        -0.003999999999990678
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C7",
+      "CPL_source_xy_mm": [
+        24.26,
+        -73.66
+      ],
+      "LIB_source_xy_mm": [
+        24.257,
+        -73.66
+      ],
+      "pad_array_bbox_center_mm": [
+        24.256999999999998,
+        -73.66
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        0.0
+      ],
+      "CPL_rotation": "180",
+      "LIB_rotation": "",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C9",
+      "CPL_source_xy_mm": [
+        31.18,
+        -77.77
+      ],
+      "LIB_source_xy_mm": [
+        31.179008000000103,
+        -77.77098999999998
+      ],
+      "pad_array_bbox_center_mm": [
+        31.179008000000103,
+        -77.77098999999998
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0009919999998970752,
+        0.0009899999999873899
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C10",
+      "CPL_source_xy_mm": [
+        27.05,
+        -78.87
+      ],
+      "LIB_source_xy_mm": [
+        27.051000000000002,
+        -78.867
+      ],
+      "pad_array_bbox_center_mm": [
+        27.051000000000002,
+        -78.86687299999997
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.0010000000000012221,
+        -0.0030000000000001137
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C20",
+      "CPL_source_xy_mm": [
+        22.48,
+        -86.69
+      ],
+      "LIB_source_xy_mm": [
+        22.479990599999926,
+        -86.68999679999999
+      ],
+      "pad_array_bbox_center_mm": [
+        22.480015999999978,
+        -86.68994599999999
+      ],
+      "CPL_minus_LIB_mm": [
+        9.400000074322179e-06,
+        -3.2000000089738023e-06
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "",
+      "side": "T",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "C21",
+      "CPL_source_xy_mm": [
+        25.27,
+        -86.62
+      ],
+      "LIB_source_xy_mm": [
+        25.270002799999943,
+        -86.6199944
+      ],
+      "pad_array_bbox_center_mm": [
+        25.26995200000007,
+        -86.619969
+      ],
+      "CPL_minus_LIB_mm": [
+        -2.799999943903231e-06,
+        -5.600000008598727e-06
+      ],
+      "CPL_rotation": "270",
+      "LIB_rotation": "270",
+      "side": "T",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "D1",
+      "CPL_source_xy_mm": [
+        26.04,
+        -77.47
+      ],
+      "LIB_source_xy_mm": [
+        26.035,
+        -77.47
+      ],
+      "pad_array_bbox_center_mm": [
+        26.035,
+        -77.47
+      ],
+      "CPL_minus_LIB_mm": [
+        0.004999999999999005,
+        0.0
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "D2",
+      "CPL_source_xy_mm": [
+        24.64,
+        -76.45
+      ],
+      "LIB_source_xy_mm": [
+        24.638,
+        -76.45400000000001
+      ],
+      "pad_array_bbox_center_mm": [
+        24.638,
+        -76.45400000000001
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0019999999999988916,
+        0.0040000000000048885
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "D3",
+      "CPL_source_xy_mm": [
+        21.34,
+        -75.69
+      ],
+      "LIB_source_xy_mm": [
+        21.336,
+        -75.69200000000001
+      ],
+      "pad_array_bbox_center_mm": [
+        21.336,
+        -75.69200000000001
+      ],
+      "CPL_minus_LIB_mm": [
+        0.004000000000001336,
+        0.0020000000000095497
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "D4",
+      "CPL_source_xy_mm": [
+        26.04,
+        -73.28
+      ],
+      "LIB_source_xy_mm": [
+        26.035,
+        -73.279
+      ],
+      "pad_array_bbox_center_mm": [
+        26.035,
+        -73.279
+      ],
+      "CPL_minus_LIB_mm": [
+        0.004999999999999005,
+        -0.0010000000000047748
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "J1",
+      "CPL_source_xy_mm": [
+        22.99,
+        -74.86
+      ],
+      "LIB_source_xy_mm": [
+        22.987000000000002,
+        -74.86299479999995
+      ],
+      "pad_array_bbox_center_mm": [
+        22.987000000000002,
+        -74.86294400000003
+      ],
+      "CPL_minus_LIB_mm": [
+        0.002999999999996561,
+        0.002994799999953557
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "",
+      "side": "T",
+      "official_body_center_mm": [
+        22.987,
+        -73.56050400000005
+      ],
+      "CPL_minus_body_mm": [
+        0.0030000000000001137,
+        -1.299495999999948
+      ],
+      "suggested_body_center_CPL_mm": [
+        22.99,
+        73.56
+      ],
+      "evidence": "GCT USB4105 Rev B4 p1 shell7.35 and front stake row2.6 from face, plus current pad/stake/NPTH registration. No manufacturer pick point seen in retained sheet; machine offset remains unresolved."
+    },
+    {
+      "ref": "Q1",
+      "CPL_source_xy_mm": [
+        26.04,
+        -74.3
+      ],
+      "LIB_source_xy_mm": [
+        26.035,
+        -74.295
+      ],
+      "pad_array_bbox_center_mm": [
+        26.035,
+        -74.295
+      ],
+      "CPL_minus_LIB_mm": [
+        0.004999999999999005,
+        -0.0049999999999954525
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R1",
+      "CPL_source_xy_mm": [
+        19.2,
+        -78.4
+      ],
+      "LIB_source_xy_mm": [
+        19.2000124,
+        -78.3999956
+      ],
+      "pad_array_bbox_center_mm": [
+        19.20011400000003,
+        -78.39989400000002
+      ],
+      "CPL_minus_LIB_mm": [
+        -1.2399999999246347e-05,
+        -4.4000000087862645e-06
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R2",
+      "CPL_source_xy_mm": [
+        20.7,
+        -74.35
+      ],
+      "LIB_source_xy_mm": [
+        20.701,
+        -74.349991
+      ],
+      "pad_array_bbox_center_mm": [
+        20.701,
+        -74.35011800000002
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.0010000000000012221,
+        -8.999999991488039e-06
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R3",
+      "CPL_source_xy_mm": [
+        23.85,
+        -78.4
+      ],
+      "LIB_source_xy_mm": [
+        23.84999040000006,
+        -78.3999956
+      ],
+      "pad_array_bbox_center_mm": [
+        23.850092000000036,
+        -78.39989399999996
+      ],
+      "CPL_minus_LIB_mm": [
+        9.599999941656279e-06,
+        -4.4000000087862645e-06
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R4",
+      "CPL_source_xy_mm": [
+        23.05,
+        -78.4
+      ],
+      "LIB_source_xy_mm": [
+        23.049991999999897,
+        -78.3999956
+      ],
+      "pad_array_bbox_center_mm": [
+        23.049991999999897,
+        -78.39989399999996
+      ],
+      "CPL_minus_LIB_mm": [
+        8.00000010414692e-06,
+        -4.4000000087862645e-06
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R5",
+      "CPL_source_xy_mm": [
+        24.38,
+        -80.39
+      ],
+      "LIB_source_xy_mm": [
+        24.384,
+        -80.391
+      ],
+      "pad_array_bbox_center_mm": [
+        24.384,
+        -80.391
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.004000000000001336,
+        0.0010000000000047748
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R6",
+      "CPL_source_xy_mm": [
+        20.8,
+        -78.4
+      ],
+      "LIB_source_xy_mm": [
+        20.80000919999998,
+        -78.3999956
+      ],
+      "pad_array_bbox_center_mm": [
+        20.800059999999966,
+        -78.39989400000002
+      ],
+      "CPL_minus_LIB_mm": [
+        -9.199999979614404e-06,
+        -4.4000000087862645e-06
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R7",
+      "CPL_source_xy_mm": [
+        24.26,
+        -84.71
+      ],
+      "LIB_source_xy_mm": [
+        24.257,
+        -84.709
+      ],
+      "pad_array_bbox_center_mm": [
+        24.256999999999998,
+        -84.709
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        -0.000999999999990564
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R8",
+      "CPL_source_xy_mm": [
+        24.38,
+        -81.53
+      ],
+      "LIB_source_xy_mm": [
+        24.384,
+        -81.534
+      ],
+      "pad_array_bbox_center_mm": [
+        24.384,
+        -81.534
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.004000000000001336,
+        0.0040000000000048885
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R9",
+      "CPL_source_xy_mm": [
+        24.26,
+        -75.06
+      ],
+      "LIB_source_xy_mm": [
+        24.257,
+        -75.057
+      ],
+      "pad_array_bbox_center_mm": [
+        24.256999999999998,
+        -75.057
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        -0.0030000000000001137
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R10",
+      "CPL_source_xy_mm": [
+        21.25,
+        -76.9
+      ],
+      "LIB_source_xy_mm": [
+        21.24999559999999,
+        -76.89999860000003
+      ],
+      "pad_array_bbox_center_mm": [
+        21.249894000000012,
+        -76.90002399999996
+      ],
+      "CPL_minus_LIB_mm": [
+        4.4000000087862645e-06,
+        -1.3999999737279722e-06
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R11",
+      "CPL_source_xy_mm": [
+        30.35,
+        -75.69
+      ],
+      "LIB_source_xy_mm": [
+        30.353,
+        -75.69200000000001
+      ],
+      "pad_array_bbox_center_mm": [
+        30.353,
+        -75.69200000000001
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.0030000000000001137,
+        0.0020000000000095497
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "R30",
+      "CPL_source_xy_mm": [
+        28.19,
+        -84.71
+      ],
+      "LIB_source_xy_mm": [
+        28.194,
+        -84.709
+      ],
+      "pad_array_bbox_center_mm": [
+        28.194000000000003,
+        -84.709
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.003999999999997783,
+        -0.000999999999990564
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "",
+      "side": "T",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "SW2",
+      "CPL_source_xy_mm": [
+        16.51,
+        -78.11
+      ],
+      "LIB_source_xy_mm": [
+        16.51,
+        -78.105
+      ],
+      "pad_array_bbox_center_mm": [
+        16.509999999999998,
+        -78.10499999999999
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0,
+        -0.0049999999999954525
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "SW3",
+      "CPL_source_xy_mm": [
+        28.65,
+        -74.73
+      ],
+      "LIB_source_xy_mm": [
+        28.648990199999965,
+        -74.72900980000003
+      ],
+      "pad_array_bbox_center_mm": [
+        28.648913999999927,
+        -74.72908600000002
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0010098000000340335,
+        -0.0009901999999755162
+      ],
+      "CPL_rotation": "90",
+      "LIB_rotation": "270",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U1",
+      "CPL_source_xy_mm": [
+        21.86,
+        -81.74
+      ],
+      "LIB_source_xy_mm": [
+        21.856954000000098,
+        -81.73984159999996
+      ],
+      "pad_array_bbox_center_mm": [
+        21.85708099999995,
+        -81.739867
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030459999999017384,
+        -0.00015840000003208843
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "",
+      "side": "T",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U2",
+      "CPL_source_xy_mm": [
+        18.55,
+        -81.3
+      ],
+      "LIB_source_xy_mm": [
+        18.54997559999996,
+        -81.29983740000004
+      ],
+      "pad_array_bbox_center_mm": [
+        18.550001000000016,
+        -81.299812
+      ],
+      "CPL_minus_LIB_mm": [
+        2.4400000040003533e-05,
+        -0.00016259999995327235
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U3",
+      "CPL_source_xy_mm": [
+        26.92,
+        -83.82
+      ],
+      "LIB_source_xy_mm": [
+        26.924,
+        -83.82000000000001
+      ],
+      "pad_array_bbox_center_mm": [
+        26.924,
+        -83.82
+      ],
+      "CPL_minus_LIB_mm": [
+        -0.003999999999997783,
+        1.4210854715202004e-14
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U4",
+      "CPL_source_xy_mm": [
+        22.61,
+        -74.24
+      ],
+      "LIB_source_xy_mm": [
+        22.606,
+        -74.24199019999996
+      ],
+      "pad_array_bbox_center_mm": [
+        22.606,
+        -74.24191399999998
+      ],
+      "CPL_minus_LIB_mm": [
+        0.003999999999997783,
+        0.00199019999996608
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U5",
+      "CPL_source_xy_mm": [
+        29.34,
+        -77.98
+      ],
+      "LIB_source_xy_mm": [
+        29.337,
+        -77.978
+      ],
+      "pad_array_bbox_center_mm": [
+        29.337,
+        -77.97800000000001
+      ],
+      "CPL_minus_LIB_mm": [
+        0.0030000000000001137,
+        -0.0020000000000095497
+      ],
+      "CPL_rotation": "0",
+      "LIB_rotation": "180",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    },
+    {
+      "ref": "U6",
+      "CPL_source_xy_mm": [
+        22.55,
+        -76.8
+      ],
+      "LIB_source_xy_mm": [
+        22.54999299999991,
+        -76.79999880000001
+      ],
+      "pad_array_bbox_center_mm": [
+        22.549993000000025,
+        -76.80007499999999
+      ],
+      "CPL_minus_LIB_mm": [
+        7.000000092460823e-06,
+        -1.1999999856016075e-06
+      ],
+      "CPL_rotation": "270",
+      "LIB_rotation": "90",
+      "side": "B",
+      "evidence": "Symmetric footprint pad-array center matches LIB. This validates coordinate rounding/geometric self-consistency only; not manufacturer machine library or tape/nozzle orientation."
+    }
+  ],
+  "proposed_data_change": {
+    "ref": "J1",
+    "old_MidX_mm": 22.99,
+    "old_MidY_mm": 74.86,
+    "body_center_MidX_mm": 22.99,
+    "body_center_MidY_mm": 73.56,
+    "status": "候选几何基准，未修改CPL。需厂家确认以体中心还是既有焊盘基准编程；不得自动当成吸取点。"
+  },
+  "ANT1": "已校正值与同轴中心相符",
+  "U1": "无0.20mm偏差。全PAD阵列和EP中心吻合LIB，先前手算疑点已排除。"
+}

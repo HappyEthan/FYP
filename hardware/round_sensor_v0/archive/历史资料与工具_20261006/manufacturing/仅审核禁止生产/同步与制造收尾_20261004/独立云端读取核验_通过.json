@@ -1,0 +1,20 @@
+{
+  "status": "PASS: independent editor opened from cloud project reads adopted button layout plus latest SW3 note",
+  "cloud_project": "3c2f1824ae2d4fd391ecd83abc2b3411",
+  "document": "cca094630ebf453c98ae64b900f0d7f0",
+  "sha256": "968381becf6f02d16998d06b140e89a698ae9267d8f2ddba1e11730a8d5ffe89",
+  "all_geometry_models_nets_rules_equal": true,
+  "other_nonshape_fields_equal": true,
+  "shape_order_changed": true,
+  "sole_attribute_difference_SW3": {
+    "审查备注": [
+      "常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮",
+      "常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮；2026-10-04 RESET收拢原生核验，21/21网络，仅历史Q1间距提示"
+    ],
+    "link": [
+      "",
+      null
+    ]
+  },
+  "backup_boundary": "12:24 and 21:02 batch backups remain old button layout; exact snapshot caching cause not established. Do not use stale batch PCB to restore latest board."
+}

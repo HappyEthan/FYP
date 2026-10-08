@@ -43,3 +43,16 @@ PROJECT_MEMORY.md
 
 # 其他本地 PDF 资料
 physical_agent/**/*.pdf
+
+# 本地传感器原始采集；体积大且每台硬件基线不同
+data/sensor/raw/
+
+# Local render, preview, and operating-system artifacts
+.DS_Store
+tmp/
+.codex_ppt_review/
+archive/presentations/
+output/
+
+# Local sensor capture package; the tracked root manifest remains the index
+data/sensor/delta_b/

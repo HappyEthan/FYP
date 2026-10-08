@@ -1,0 +1,31 @@
+{
+  "restoring_two_prefix_layer_fields_and_removing_two_labels_reproduces_original_exactly": true,
+  "source_sha256": "6d90eddcb7c6cd3fd5a2585ddff2b09579a416879178ff9f14675cda06250740",
+  "before_sha256": "90675e1fbb536d1bb92c55582c0f41bcc3f437bdd1e14151e9c8b14a57aa5c0f",
+  "unchanged": [
+    "all copper",
+    "all footprint placements and pads",
+    "all tracks/vias/pours",
+    "all rules",
+    "all nets",
+    "all 3D model bindings",
+    "all other source fields"
+  ],
+  "native_ui": {
+    "save_no_star_then_close_reopen": true,
+    "components": 41,
+    "nets_complete": 20,
+    "nets_total": 20,
+    "unconnected": 0,
+    "drc_count": 1,
+    "drc": "gge2100 - gge2115 (0.14mm < 0.15mm) retained, no ignore or rule change"
+  },
+  "changes": {
+    "SW2_prefix_document_layer": 12,
+    "SW3_prefix_document_layer": 12,
+    "functional_text_bottom_silk": [
+      "BOOT",
+      "RESET"
+    ]
+  }
+}

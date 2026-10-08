@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-04",
+  "gerber_sha256": "d12375fdb4642225bc3a138077a2265c1f81b17909aee3e53bf2190067ddf72e",
+  "viewed": [
+    "Gerber视觉核对_1.png",
+    "Gerber视觉核对_2.png",
+    "Gerber视觉核对_3.png"
+  ],
+  "assembly_pdf_rendered_and_viewed_pages": [
+    1,
+    2
+  ],
+  "scope": "12 Gerber layers and 89 drill/slot overlays; final assembly PDF rendered for layout and pin-marker check",
+  "result": "No additional obvious layer omission or unexpected change observed; targeted geometry comparison is in final CAM report",
+  "limitations": [
+    "Local bounded renderer, not factory CAM/DFM",
+    "Manufacturing tolerances, solderability and hardware operation not accepted"
+  ],
+  "production_released": false
+}

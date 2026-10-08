@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-04",
+  "project_id": "3c2f1824ae2d4fd391ecd83abc2b3411",
+  "outer_sha256": "8dbf81f2a26fdf59bacb969376599a6af4638352ffe507b97d8f69bef617ea59",
+  "entries": {
+    "1-PCB_圆形传感板_A5_当前工作版.json": {
+      "sha256": "e0cf3e040a502467b54f6d12ad35877c80f96602a0d1f70917e5521aae992384",
+      "bytes": 375093
+    },
+    "2-PCB_PCB_圆形传感板_SCH_A5.json": {
+      "sha256": "df4dce9b4697841278e2b479741c8fd1c73fd1ec9109411fb02ab85ae131c76c",
+      "bytes": 354984
+    },
+    "3-PCB_PCB_圆形传感板_SCH_A5 copy.json": {
+      "sha256": "aefc262dc3cc678d01deddbd0d5cb2837aaa77f366b1c6f4b096852e01ad1dcc",
+      "bytes": 530489
+    },
+    "1-Schematic_圆形传感板_SCH_A5.json": {
+      "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47",
+      "bytes": 97197
+    },
+    "README.txt": {
+      "sha256": "c7851025a85a522417c2360e16043554b43f02f80a8d9384c4f952ca8776ae9c",
+      "bytes": 532
+    }
+  },
+  "working_board": {
+    "entry": "3-PCB_PCB_圆形传感板_SCH_A5 copy.json",
+    "shape_equal": true,
+    "nonshape_difference_keys": [
+      "netColors",
+      "head"
+    ],
+    "nonshape_differences": "Only empty head.c_para and netColors export as [] in project backup versus {} in source export; all other fields equal."
+  },
+  "schematic_semantically_unchanged": true
+}

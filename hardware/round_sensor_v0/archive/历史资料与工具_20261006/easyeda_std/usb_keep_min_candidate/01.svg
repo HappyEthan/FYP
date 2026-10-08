@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150"><rect width="1600" height="1150" fill="white"/>
+<text x="50" y="55" fill="#164B67" font-size="30.659" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">01  主控最小系统</text>
+<text x="50" y="85" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">ESP32-S3-PICO-1：封装内含 Flash、PSRAM 和 40 MHz 晶振；不再外接重复器件。</text>
+<rect x="25" y="20" width="1550" height="1110" stroke="#993333" fill="none"/>
+<rect x="610" y="180" width="380" height="900" stroke="#993333" fill="none"/>
+<text x="610" y="148" fill="#164B67" font-size="15.995999999999999" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">U1</text>
+<text x="610" y="168" fill="#164B67" font-size="13.33" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">ESP32-S3-PICO-1-N8R8</text>
+<path d="M 590 210 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="214" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDD3P3</text>
+<text x="600.0" y="206.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<path d="M 590 239 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="243" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDD3P3</text>
+<text x="600.0" y="235.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">3</text>
+<path d="M 590 268 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="272" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDD3P3_RTC</text>
+<text x="600.0" y="264.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">20</text>
+<path d="M 590 297 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="301" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDD3P3_CPU</text>
+<text x="600.0" y="293.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">46</text>
+<path d="M 590 326 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="330" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDDA</text>
+<text x="600.0" y="322.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">55</text>
+<path d="M 590 355 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="359" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">VDDA</text>
+<text x="600.0" y="351.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">56</text>
+<path d="M 590 384 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="388" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">CHIP_PU</text>
+<text x="600.0" y="380.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">4</text>
+<path d="M 590 413 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="417" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO0</text>
+<text x="600.0" y="409.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">5</text>
+<path d="M 590 442 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="446" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND_EP</text>
+<text x="600.0" y="438.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">57</text>
+<path d="M 590 471 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="475" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">LNA_IN</text>
+<text x="600.0" y="467.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 590 500 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="504" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO15</text>
+<text x="600.0" y="496.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">21</text>
+<path d="M 590 529 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="533" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO16</text>
+<text x="600.0" y="525.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">22</text>
+<path d="M 590 558 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="562" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO3</text>
+<text x="600.0" y="554.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">8</text>
+<path d="M 590 587 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="591" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO6</text>
+<text x="600.0" y="583.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">11</text>
+<path d="M 590 616 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="620" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO7</text>
+<text x="600.0" y="612.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">12</text>
+<path d="M 590 645 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="649" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO8</text>
+<text x="600.0" y="641.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">13</text>
+<path d="M 590 674 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="678" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO9</text>
+<text x="600.0" y="670.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">14</text>
+<path d="M 590 703 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="707" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO10</text>
+<text x="600.0" y="699.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">15</text>
+<path d="M 590 732 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="736" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO11</text>
+<text x="600.0" y="728.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">16</text>
+<path d="M 590 761 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="765" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO12</text>
+<text x="600.0" y="757.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">17</text>
+<path d="M 590 790 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="794" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO13</text>
+<text x="600.0" y="786.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">18</text>
+<path d="M 590 819 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="823" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO14</text>
+<text x="600.0" y="815.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">19</text>
+<path d="M 590 848 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="852" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO17</text>
+<text x="600.0" y="844.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">23</text>
+<path d="M 590 877 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="881" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO18</text>
+<text x="600.0" y="873.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">24</text>
+<path d="M 590 906 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="910" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO21</text>
+<text x="600.0" y="902.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">27</text>
+<path d="M 590 935 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="939" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO48</text>
+<text x="600.0" y="931.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">36</text>
+<path d="M 590 964 l 20 0" fill="none" stroke="#880000"/>
+<text x="615" y="968" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GPIO47</text>
+<text x="600.0" y="960.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">37</text>
+<path d="M 1010 210 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="214" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO19</text>
+<text x="1000.0" y="206.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">25</text>
+<path d="M 1010 239 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="243" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO20</text>
+<text x="1000.0" y="235.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">26</text>
+<path d="M 1010 268 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="272" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO1</text>
+<text x="1000.0" y="264.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">6</text>
+<path d="M 1010 297 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="301" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO2</text>
+<text x="1000.0" y="293.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">7</text>
+<path d="M 1010 326 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="330" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO4</text>
+<text x="1000.0" y="322.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">9</text>
+<path d="M 1010 355 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="359" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO5</text>
+<text x="1000.0" y="351.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">10</text>
+<path d="M 1010 384 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="388" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">U0TXD / GPIO43</text>
+<text x="1000.0" y="380.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">49</text>
+<path d="M 1010 413 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="417" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">U0RXD / GPIO44</text>
+<text x="1000.0" y="409.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">50</text>
+<path d="M 1010 442 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="446" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">SPICS1 / PSRAM</text>
+<text x="1000.0" y="438.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">28</text>
+<path d="M 1010 471 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="475" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">VDD_SPI_OUT</text>
+<text x="1000.0" y="467.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">29</text>
+<path d="M 1010 500 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="504" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="496.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">30</text>
+<path d="M 1010 529 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="533" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="525.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">31</text>
+<path d="M 1010 558 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="562" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="554.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">32</text>
+<path d="M 1010 587 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="591" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="583.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">33</text>
+<path d="M 1010 616 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="620" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="612.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">34</text>
+<path d="M 1010 645 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="649" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="641.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">35</text>
+<path d="M 1010 674 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="678" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO33 / PSRAM</text>
+<text x="1000.0" y="670.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">38</text>
+<path d="M 1010 703 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="707" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO34 / PSRAM</text>
+<text x="1000.0" y="699.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">39</text>
+<path d="M 1010 732 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="736" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO35 / PSRAM</text>
+<text x="1000.0" y="728.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">40</text>
+<path d="M 1010 761 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="765" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO36 / PSRAM</text>
+<text x="1000.0" y="757.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">41</text>
+<path d="M 1010 790 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="794" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO37 / PSRAM</text>
+<text x="1000.0" y="786.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">42</text>
+<path d="M 1010 819 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="823" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO38</text>
+<text x="1000.0" y="815.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">43</text>
+<path d="M 1010 848 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="852" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO39</text>
+<text x="1000.0" y="844.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">44</text>
+<path d="M 1010 877 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="881" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO40</text>
+<text x="1000.0" y="873.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">45</text>
+<path d="M 1010 906 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="910" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO41</text>
+<text x="1000.0" y="902.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">47</text>
+<path d="M 1010 935 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="939" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO42</text>
+<text x="1000.0" y="931.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">48</text>
+<path d="M 1010 964 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="968" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO45</text>
+<text x="1000.0" y="960.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">51</text>
+<path d="M 1010 993 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="997" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">GPIO46</text>
+<text x="1000.0" y="989.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">52</text>
+<path d="M 1010 1022 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="1026" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="1018.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">53</text>
+<path d="M 1010 1051 l -20 0" fill="none" stroke="#880000"/>
+<text x="985" y="1055" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">NC</text>
+<text x="1000.0" y="1047.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">54</text>
+<path d="M587,497 L593,503 M593,497 L587,503" stroke="#CC0000"/>
+<path d="M587,526 L593,532 M593,526 L587,532" stroke="#CC0000"/>
+<path d="M587,555 L593,561 M593,555 L587,561" stroke="#CC0000"/>
+<path d="M587,584 L593,590 M593,584 L587,590" stroke="#CC0000"/>
+<path d="M587,613 L593,619 M593,613 L587,619" stroke="#CC0000"/>
+<path d="M587,642 L593,648 M593,642 L587,648" stroke="#CC0000"/>
+<path d="M587,671 L593,677 M593,671 L587,677" stroke="#CC0000"/>
+<path d="M587,700 L593,706 M593,700 L587,706" stroke="#CC0000"/>
+<path d="M587,729 L593,735 M593,729 L587,735" stroke="#CC0000"/>
+<path d="M587,758 L593,764 M593,758 L587,764" stroke="#CC0000"/>
+<path d="M587,787 L593,793 M593,787 L587,793" stroke="#CC0000"/>
+<path d="M587,816 L593,822 M593,816 L587,822" stroke="#CC0000"/>
+<path d="M587,845 L593,851 M593,845 L587,851" stroke="#CC0000"/>
+<path d="M587,874 L593,880 M593,874 L587,880" stroke="#CC0000"/>
+<path d="M587,903 L593,909 M593,903 L587,909" stroke="#CC0000"/>
+<path d="M587,932 L593,938 M593,932 L587,938" stroke="#CC0000"/>
+<path d="M587,961 L593,967 M593,961 L587,967" stroke="#CC0000"/>
+<path d="M1007,439 L1013,445 M1013,439 L1007,445" stroke="#CC0000"/>
+<path d="M1007,468 L1013,474 M1013,468 L1007,474" stroke="#CC0000"/>
+<path d="M1007,497 L1013,503 M1013,497 L1007,503" stroke="#CC0000"/>
+<path d="M1007,526 L1013,532 M1013,526 L1007,532" stroke="#CC0000"/>
+<path d="M1007,555 L1013,561 M1013,555 L1007,561" stroke="#CC0000"/>
+<path d="M1007,584 L1013,590 M1013,584 L1007,590" stroke="#CC0000"/>
+<path d="M1007,613 L1013,619 M1013,613 L1007,619" stroke="#CC0000"/>
+<path d="M1007,642 L1013,648 M1013,642 L1007,648" stroke="#CC0000"/>
+<path d="M1007,671 L1013,677 M1013,671 L1007,677" stroke="#CC0000"/>
+<path d="M1007,700 L1013,706 M1013,700 L1007,706" stroke="#CC0000"/>
+<path d="M1007,729 L1013,735 M1013,729 L1007,735" stroke="#CC0000"/>
+<path d="M1007,758 L1013,764 M1013,758 L1007,764" stroke="#CC0000"/>
+<path d="M1007,787 L1013,793 M1013,787 L1007,793" stroke="#CC0000"/>
+<path d="M1007,816 L1013,822 M1013,816 L1007,822" stroke="#CC0000"/>
+<path d="M1007,845 L1013,851 M1013,845 L1007,851" stroke="#CC0000"/>
+<path d="M1007,874 L1013,880 M1013,874 L1007,880" stroke="#CC0000"/>
+<path d="M1007,903 L1013,909 M1013,903 L1007,909" stroke="#CC0000"/>
+<path d="M1007,932 L1013,938 M1013,932 L1007,938" stroke="#CC0000"/>
+<path d="M1007,961 L1013,967 M1013,961 L1007,967" stroke="#CC0000"/>
+<path d="M1007,990 L1013,996 M1013,990 L1007,996" stroke="#CC0000"/>
+<path d="M1007,1019 L1013,1025 M1013,1019 L1007,1025" stroke="#CC0000"/>
+<path d="M1007,1048 L1013,1054 M1013,1048 L1007,1054" stroke="#CC0000"/>
+<polyline points="590 210 550 210" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="590 239 550 239" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="590 268 550 268" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="590 297 550 297" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="590 326 550 326" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="590 355 550 355" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="550 210 550 355" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="550" y="205" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">3V3</text>
+<text x="272" y="284" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">22uF / 10V</text>
+<text x="272" y="265" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C20</text>
+<polyline points="250 255 250 271" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="250 279 250 295" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="237 271 263 271" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="237 279 263 279" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 250 235 l 0 20" fill="none" stroke="#880000"/>
+<text x="245.0" y="241.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 250 315 l 0 -20" fill="none" stroke="#880000"/>
+<text x="245.0" y="301.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<text x="422" y="284" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">100nF / 10V</text>
+<text x="422" y="265" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C21</text>
+<polyline points="400 255 400 271" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="400 279 400 295" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="387 271 413 271" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="387 279 413 279" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 400 235 l 0 20" fill="none" stroke="#880000"/>
+<text x="395.0" y="241.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 400 315 l 0 -20" fill="none" stroke="#880000"/>
+<text x="395.0" y="301.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="250 235 250 210 550 210" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="400 235 400 210" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="250 315 250 350 400 350 400 315" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="325" y="345" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="325 350 325 358" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="315 358 335 358" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="319 362 331 362" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="323 366 327 366" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="200 377 240 377 240 391 200 391 200 377" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="192" y="352" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R7</text>
+<text x="192" y="371" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">10k</text>
+<path d="M 180 384 l 20 0" fill="none" stroke="#880000"/>
+<text x="190.0" y="380.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 260 384 l -20 0" fill="none" stroke="#880000"/>
+<text x="250.0" y="380.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<text x="402" y="478" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">1uF / 10V</text>
+<text x="402" y="459" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C1</text>
+<polyline points="380 449 380 465" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="380 473 380 489" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="367 465 393 465" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="367 473 393 473" fill="none" stroke="#993333" stroke-width="1.5"/>
+<path d="M 380 429 l 0 20" fill="none" stroke="#880000"/>
+<text x="375.0" y="435.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 380 509 l 0 -20" fill="none" stroke="#880000"/>
+<text x="375.0" y="495.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="260 384 590 384" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="380 384 380 429" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="180 384 125 384" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="125" y="379" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">3V3</text>
+<polyline points="380 509 380 534" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="380" y="529" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="380 534 380 542" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="370 542 390 542" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="374 546 386 546" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="378 550 382 550" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="290" y="379" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">MCU_EN</text>
+<polyline points="200 591 240 591 240 605 200 605 200 591" fill="none" stroke="#993333" stroke-width="1.5"/>
+<text x="192" y="566" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">R8</text>
+<text x="192" y="585" fill="#164B67" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">10k</text>
+<path d="M 180 598 l 20 0" fill="none" stroke="#880000"/>
+<text x="190.0" y="594.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">1</text>
+<path d="M 260 598 l -20 0" fill="none" stroke="#880000"/>
+<text x="250.0" y="594.0" fill="#000000" font-size="11.997" font-family="Arial,PingFang SC,sans-serif" text-anchor="middle">2</text>
+<polyline points="180 598 125 598" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="125" y="593" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">3V3</text>
+<polyline points="260 598 480 598 480 413 590 413" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="290" y="593" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">BOOT_N</text>
+<polyline points="590 442 535 442" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="535" y="437" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">GND</text>
+<polyline points="535 442 535 450" fill="none" stroke="#008800" stroke-width="1.5"/>
+<polyline points="525 450 545 450" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="529 454 541 454" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="533 458 537 458" fill="none" stroke="#993333" stroke-width="1.5"/>
+<polyline points="590 471 535 471" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="535" y="466" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="end">RF_SOC</text>
+<polyline points="1010 210 1110 210" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="205" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DM_SOC</text>
+<polyline points="1010 239 1110 239" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="234" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">USB_DP_SOC</text>
+<polyline points="1010 268 1110 268" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="263" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">I2C_SDA</text>
+<polyline points="1010 297 1110 297" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="292" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">I2C_SCL</text>
+<polyline points="1010 326 1110 326" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="321" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">MLX_INT</text>
+<polyline points="1010 355 1110 355" fill="none" stroke="#008800" stroke-width="1.5"/>
+<text x="1110" y="350" fill="#006A49" font-size="12" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">IMU_INT</text>
+<text x="80" y="780" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">启动与下载：</text>
+<text x="80" y="805" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">BOOT/RESET 使用实体按键；保留原生 USB 下载，不另设测试焊盘。</text>
+<text x="80" y="830" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">正常启动 BOOT 保持上拉；下载时先拉低 BOOT，再复位。</text>
+<text x="80" y="855" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">未用引脚画不连接标记，不安装扩展排针。</text>
+<text x="80" y="880" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">C20/C21 紧靠主控电源；裸露焊盘接完整地平面。</text>
+<circle cx="380" cy="384" r="2.5" fill="#CC0000"/>
+<circle cx="400" cy="210" r="2.5" fill="#CC0000"/>
+<circle cx="550" cy="210" r="2.5" fill="#CC0000"/>
+<circle cx="550" cy="239" r="2.5" fill="#CC0000"/>
+<circle cx="550" cy="268" r="2.5" fill="#CC0000"/>
+<circle cx="550" cy="297" r="2.5" fill="#CC0000"/>
+<circle cx="550" cy="326" r="2.5" fill="#CC0000"/>
+<text x="50" y="1100" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start">圆形传感板 · SCH-A5 · 2026-09-16</text>
+<text x="50" y="1125" fill="#164B67" font-size="14.663" font-family="Arial,PingFang SC,sans-serif" text-anchor="start"> </text>
+<path d="M1007.0,381.0 L1013.0,387.0 M1013.0,381.0 L1007.0,387.0" stroke="#CC0000"/>
+<path d="M1007.0,410.0 L1013.0,416.0 M1013.0,410.0 L1007.0,416.0" stroke="#CC0000"/>
+</svg>

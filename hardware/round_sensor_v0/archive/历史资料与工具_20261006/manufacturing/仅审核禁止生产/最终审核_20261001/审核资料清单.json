@@ -1,0 +1,44 @@
+{
+  "status": "仅审核，禁止生产；制造输出及工厂审核未闭环",
+  "date_hk": "2026-10-01",
+  "pcb_sha256": "a2fecf72c3b36779a5ee6b5b50cf707d9891c05a9265016ec0386b2f4b22106f",
+  "files": [
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/easyeda_std/模型补齐_20261001/PCB_最终审核_保存重开_20261001.json",
+      "bytes": 528934,
+      "sha256": "a2fecf72c3b36779a5ee6b5b50cf707d9891c05a9265016ec0386b2f4b22106f"
+    },
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/当前保存重开回读审核.json",
+      "bytes": 178544,
+      "sha256": "9d1713454b8393982e9be173415401af0a278544eee3da8c0182495beb89336c"
+    },
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络证据.json",
+      "bytes": 1771,
+      "sha256": "2d5302edcd09014ca71bc3aa36f0aaf41272ecfca6a35040ca1d7789745ba4d5"
+    },
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络_用户截图_20261001.png",
+      "bytes": 51705,
+      "sha256": "f03200f82fd9e5b07d04e1a6f5ff0b7316876e732d3133673995f9abdc4380fa"
+    },
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/BOM与源坐标_仅审核.json",
+      "bytes": 93972,
+      "sha256": "0e58d97720139a35bf3b1d2435e25c0acc3d24d762a3441c3dff77d4052da842"
+    },
+    {
+      "path": "/Users/liuchunyu/Documents/fyp/hardware/round_sensor_v0/manufacturing/仅审核禁止生产/最终审核_20261001/BOM与贴装审核_仅审核.md",
+      "bytes": 6918,
+      "sha256": "ea126ff815c02331c9caad893f73b6d8552b7cc697469a8f00f541362a96664d"
+    }
+  ],
+  "pending_native_exports": [
+    "当前工程备份含五页原理图",
+    "当前PCB原生BOM",
+    "当前PCB原生CPL",
+    "同冻结源Gerber/钻孔及装配图"
+  ],
+  "legacy_Gerber": "既有T Gerber只复用局部几何证据，不列为当前源新导出或生产文件"
+}

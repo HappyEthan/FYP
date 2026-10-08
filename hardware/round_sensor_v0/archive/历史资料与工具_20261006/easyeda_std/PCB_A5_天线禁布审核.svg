@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="1140" viewBox="0 0 1140 1140">
+<rect width="1140" height="1140" fill="#f7f9fc"/>
+<style>text{font-family:"PingFang SC",Arial,sans-serif;fill:#1a2a40}</style>
+<text x="30" y="40" font-size="25">天线连接器下方净空审核｜局部候选，尚未写入原生规则</text>
+<text x="35" y="83" font-size="21">顶面</text>
+<polygon points="175.80,166.80 391.80,166.80 391.80,390.00 175.80,390.00" fill="#fff1d8" stroke="#d97706" stroke-width="2" stroke-dasharray="8 5"/>
+<polygon points="215.40,199.20 352.20,199.20 352.20,350.40 215.40,350.40" fill="#dceafa" stroke="none"/>
+<polygon points="215.40,350.40 247.80,350.40 247.80,357.60 215.40,357.60" fill="#dceafa" stroke="none"/>
+<polygon points="319.80,350.40 352.20,350.40 352.20,357.60 319.80,357.60" fill="#dceafa" stroke="none"/>
+<polygon points="247.80,350.40 319.80,350.40 319.80,426.00 247.80,426.00" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="139.80,199.20 215.40,199.20 215.40,357.60 139.80,357.60" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="352.20,199.20 427.80,199.20 427.80,357.60 352.20,357.60" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="121.08,523.20 121.08,559.20 82.20,559.20 82.20,523.20" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="303.24,456.96 339.24,456.96 339.24,495.84 303.24,495.84" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="242.76,456.96 278.76,456.96 278.76,495.84 242.76,495.84" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="201.00,560.64 201.00,521.76 241.73,521.76 241.73,560.64" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="179.40,560.64 179.40,521.76 138.67,521.76 138.67,560.64" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<path d="M 283.80 315.00 L 65 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="32" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="35" y="590" font-size="16">ANT1</text>
+<path d="M 101.64 541.20 L 235 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="202" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="205" y="590" font-size="16">C30</text>
+<path d="M 291.00 476.40 L 405 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="372" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="375" y="590" font-size="16">C31</text>
+<path d="M 190.20 541.20 L 65 601" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="32" y="601" width="77" height="23" fill="#f7f9fc"/>
+<text x="35" y="618" font-size="16">R30</text>
+<text x="595" y="83" font-size="21">底面（顶视投影）</text>
+<polygon points="735.80,166.80 951.80,166.80 951.80,390.00 735.80,390.00" fill="#fff1d8" stroke="#d97706" stroke-width="2" stroke-dasharray="8 5"/>
+<polygon points="775.40,199.20 912.20,199.20 912.20,350.40 775.40,350.40" fill="#dceafa" stroke="none"/>
+<polygon points="775.40,350.40 807.80,350.40 807.80,357.60 775.40,357.60" fill="#dceafa" stroke="none"/>
+<polygon points="879.80,350.40 912.20,350.40 912.20,357.60 879.80,357.60" fill="#dceafa" stroke="none"/>
+<polygon points="845.96,483.60 845.96,519.60 884.84,519.60 884.84,483.60" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="964.76,115.68 964.76,151.68 1003.64,151.68 1003.64,115.68" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="645.80,297.84 645.80,258.96 686.53,258.96 686.53,297.84" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="645.80,236.64 645.80,197.76 686.53,197.76 686.53,236.64" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="696.20,171.84 696.20,132.96 655.47,132.96 655.47,171.84" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="717.80,171.84 717.80,132.96 758.53,132.96 758.53,171.84" fill="#ce3749" fill-opacity=".78" stroke="#ce3749" stroke-width="1"/>
+<polygon points="829.40,408.00 786.20,408.00 786.20,422.40 829.40,422.40" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="829.40,436.80 786.20,436.80 786.20,451.20 829.40,451.20" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="829.40,465.60 786.20,465.60 786.20,480.00 829.40,480.00" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="829.40,494.40 786.20,494.40 786.20,508.80 829.40,508.80" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="768.20,402.60 674.60,402.60 674.60,514.20 768.20,514.20" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="897.80,62.40 825.80,62.40 825.80,177.60 897.80,177.60" fill="#ce3749" fill-opacity=".78" stroke="#ce3749" stroke-width="1"/>
+<polygon points="948.20,109.20 915.80,109.20 915.80,130.80 948.20,130.80" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<polygon points="948.20,156.00 915.80,156.00 915.80,177.60 948.20,177.60" fill="#ce3749" fill-opacity=".78" stroke="#ce3749" stroke-width="1"/>
+<polygon points="807.80,156.00 775.40,156.00 775.40,177.60 807.80,177.60" fill="#ce3749" fill-opacity=".78" stroke="#ce3749" stroke-width="1"/>
+<polygon points="807.80,109.20 775.40,109.20 775.40,130.80 807.80,130.80" fill="#478b77" fill-opacity=".78" stroke="#478b77" stroke-width="1"/>
+<path d="M 984.20 133.68 L 625 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="592" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="595" y="590" font-size="16">C10</text>
+<path d="M 865.40 501.60 L 795 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="762" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="765" y="590" font-size="16">C2</text>
+<path d="M 707.00 152.40 L 965 573" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="932" y="573" width="77" height="23" fill="#f7f9fc"/>
+<text x="935" y="590" font-size="16">R11</text>
+<path d="M 666.16 278.40 L 625 601" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="592" y="601" width="77" height="23" fill="#f7f9fc"/>
+<text x="595" y="618" font-size="16">R5</text>
+<path d="M 666.16 217.20 L 795 601" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="762" y="601" width="77" height="23" fill="#f7f9fc"/>
+<text x="765" y="618" font-size="16">R6</text>
+<path d="M 790.52 458.40 L 965 601" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="932" y="601" width="77" height="23" fill="#f7f9fc"/>
+<text x="935" y="618" font-size="16">U2</text>
+<path d="M 861.80 138.72 L 625 629" fill="none" stroke="#8494a8" stroke-width=".7"/>
+<rect x="592" y="629" width="77" height="23" fill="#f7f9fc"/>
+<text x="595" y="646" font-size="16">U5</text>
+<text x="30" y="697" font-size="17">蓝：中心禁走线区　橙框：3.00 × 3.10 mm 本体净空工程候选　红：进入候选范围的背面焊盘</text>
+<text x="30" y="725" font-size="16">中心区未发现侵入；较大候选范围与 U5、R11 冲突。图不表示真实器件高度，也不是布线完成图。</text>
+<path d="M 30 765 H 1110" stroke="#bbc6d5"/>
+<text x="30" y="815" font-size="24">局部调整之前，先区分两种检查</text>
+<text x="30" y="858" font-size="20">① 中心区域：按原厂焊盘间隙构造，排除信号焊盘自身；当前未发现铜侵入。</text>
+<text x="30" y="899" font-size="20">② 本体范围：全层净空工程候选，并非厂家给出的有公差禁布尺寸。</text>
+<text x="30" y="940" font-size="20">冲突焊盘：底面 R11.1、U5.7、U5.3、U5.4；顶层连接器自身焊盘必须保留。</text>
+<text x="30" y="999" font-size="20">下一步：局部重排 → 原生禁布规则 → 走线／过孔／铺铜验证 → 射频布线。</text>
+<text x="30" y="1060" font-size="18">审核输入：生产字号回读版（2026-09-16）　核查日期：2026-09-17　在线工程未修改</text>
+</svg>

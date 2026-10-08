@@ -1,0 +1,242 @@
+{
+  "status": "仅审核；本地输出核验，不替代原生DRC与工厂DFM",
+  "changed_components": [
+    "SW3"
+  ],
+  "other_42_components_exact_equal": true,
+  "pad_net_assignments_equal": true,
+  "rules_equal": true,
+  "tracks_removed": [
+    "ggeUSB0928T240",
+    "ggeUSB0928T244",
+    "ggeUSB0928T245"
+  ],
+  "tracks_added": [
+    "ggeLAY1004ENFeed",
+    "ggeLAY1004ENMain",
+    "ggeLAY1004ENPair",
+    "ggeLAY1004GNDPair"
+  ],
+  "other_tracks_equal": true,
+  "via_counts_before_after": [
+    74,
+    74
+  ],
+  "button_distance_before_after_mm": [
+    12.599698127581906,
+    3.796324101826867
+  ],
+  "EN_branch_lengths": {
+    "old_EN_branch_mm": 12.458866808065478,
+    "new_EN_branch_mm": 22.928955758338272
+  },
+  "native_CPL_delta": [
+    {
+      "ref": "SW3",
+      "before": {
+        "Designator": "SW3",
+        "Footprint": "按键_EVPBB_官方铜焊盘",
+        "Mid X": "28.65mm",
+        "Mid Y": "74.73mm",
+        "Ref X": "28.65mm",
+        "Ref Y": "74.73mm",
+        "Pad X": "29.02mm",
+        "Pad Y": "73.4mm",
+        "Layer": "B",
+        "Rotation": "90",
+        "Comment": "EVPBB2A9B000"
+      },
+      "after": {
+        "Designator": "SW3",
+        "Footprint": "按键_EVPBB_官方铜焊盘",
+        "Mid X": "17.7mm",
+        "Mid Y": "74.5mm",
+        "Ref X": "17.7mm",
+        "Ref Y": "74.5mm",
+        "Pad X": "19.03mm",
+        "Pad Y": "74.88mm",
+        "Layer": "B",
+        "Rotation": "180",
+        "Comment": "EVPBB2A9B000"
+      }
+    }
+  ],
+  "native_BOM_43_positions_attributes_equal_after_expanding_merged_old_rows": true,
+  "CAM_delta": {
+    "Drill_NPTH_Through.DRL": {
+      "old_count": 2,
+      "new_count": 2,
+      "removed": [],
+      "added": []
+    },
+    "Drill_PTH_Through.DRL": {
+      "old_count": 87,
+      "new_count": 87,
+      "removed": [
+        {
+          "a": [
+            26.924,
+            -75.344
+          ],
+          "b": [
+            26.924,
+            -75.344
+          ],
+          "diameter": 0.151
+        }
+      ],
+      "added": [
+        {
+          "a": [
+            19.15,
+            -73.55
+          ],
+          "b": [
+            19.15,
+            -73.55
+          ],
+          "diameter": 0.151
+        }
+      ]
+    },
+    "Drill_PTH_Through_Via.DRL": {
+      "old_count": 83,
+      "new_count": 83,
+      "removed": [
+        {
+          "a": [
+            26.924,
+            -75.344
+          ],
+          "b": [
+            26.924,
+            -75.344
+          ],
+          "diameter": 0.151
+        }
+      ],
+      "added": [
+        {
+          "a": [
+            19.15,
+            -73.55
+          ],
+          "b": [
+            19.15,
+            -73.55
+          ],
+          "diameter": 0.151
+        }
+      ]
+    },
+    "Gerber_TopLayer.GTL": {
+      "removed": 1,
+      "added": 1,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_BottomLayer.GBL": {
+      "removed": 11,
+      "added": 10,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_TopSilkscreenLayer.GTO": {
+      "removed": 0,
+      "added": 0,
+      "same_ordered_polarity_runs": true
+    },
+    "Gerber_BottomSilkscreenLayer.GBO": {
+      "removed": 3,
+      "added": 3,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_TopPasteMaskLayer.GTP": {
+      "removed": 0,
+      "added": 0,
+      "same_ordered_polarity_runs": true
+    },
+    "Gerber_BottomPasteMaskLayer.GBP": {
+      "removed": 4,
+      "added": 4,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_TopSolderMaskLayer.GTS": {
+      "removed": 0,
+      "added": 0,
+      "same_ordered_polarity_runs": true
+    },
+    "Gerber_BottomSolderMaskLayer.GBS": {
+      "removed": 4,
+      "added": 4,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_BoardOutlineLayer.GKO": {
+      "removed": 0,
+      "added": 0,
+      "same_ordered_polarity_runs": true
+    },
+    "Gerber_DocumentLayer.GDL": {
+      "removed": 4,
+      "added": 4,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_InnerLayer1.G1": {
+      "removed": 2,
+      "added": 2,
+      "same_ordered_polarity_runs": false
+    },
+    "Gerber_InnerLayer2.G2": {
+      "removed": 7,
+      "added": 13,
+      "same_ordered_polarity_runs": false
+    }
+  },
+  "handwire_no_paste": [
+    {
+      "ref": "J4",
+      "pin": "1",
+      "min_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "2",
+      "min_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "3",
+      "min_gap_mm": 0.8807763999999594
+    },
+    {
+      "ref": "J4",
+      "pin": "4",
+      "min_gap_mm": 0.865006399999956
+    },
+    {
+      "ref": "J2",
+      "pin": "1",
+      "min_gap_mm": 0.6350220000000206
+    },
+    {
+      "ref": "J2",
+      "pin": "2",
+      "min_gap_mm": 0.8890020000000192
+    },
+    {
+      "ref": "SW1",
+      "pin": "1",
+      "min_gap_mm": 0.5432335999999651
+    },
+    {
+      "ref": "SW1",
+      "pin": "2",
+      "min_gap_mm": 0.5432335999999651
+    },
+    {
+      "ref": "SW1",
+      "pin": "3",
+      "min_gap_mm": 0.7980600000000067
+    }
+  ],
+  "hole_count": 89,
+  "production_released": false
+}

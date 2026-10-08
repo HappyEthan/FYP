@@ -1,0 +1,134 @@
+{
+  "AGENTS.md": {
+    "sha256": "91ecb7d5cc219260378ea552e6acc8519e7586ae488936991c3dbfde7d123e6a",
+    "bytes": 5552
+  },
+  "CAD_HANDOFF.md": {
+    "sha256": "5794860c3f733e246765acfa0561d72ce0c7383ff7ebad24f262ace92f76055d",
+    "bytes": 63984
+  },
+  "DESIGN_BASELINE_XIAO_PICO.md": {
+    "sha256": "5472d44a5a8a208ca7848fb73ee91dd1966ec19252925f0d0b5abe362513ddce",
+    "bytes": 5666
+  },
+  "README_USB供电审阅包_仅审核.md": {
+    "sha256": "51d44697eb7c12e9c249078b60912cc5373692b4bfd031f3b880e992e6c17ec2",
+    "bytes": 3842
+  },
+  "easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_个人库保存重开_20261006.json": {
+    "sha256": "ffdac5167b2323ea70f2f6f551c884f20f5755d86ef7d6978bb75ec19059b566",
+    "bytes": 8188
+  },
+  "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_保存重开_20261006.json": {
+    "sha256": "b45751ba534a0a78d20714e056650274dc8f70d5eed32a22a7c11f110a2bbde4",
+    "bytes": 620927
+  },
+  "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_孔距收尾_原生保存后_20261006.json": {
+    "sha256": "01bdc6f3ebbf06956df64acd06eedf64aa8167896c395bc4b5d5ec3b47a1077b",
+    "bytes": 620927
+  },
+  "easyeda_std/Q1直接修复_20261006/Q1候选几何初筛_仅审核.json": {
+    "sha256": "4587122ffe70f15a2ff93df9108c19707fcbfb1d7e8a327faf97fae802aafc40",
+    "bytes": 291746
+  },
+  "easyeda_std/Q1直接修复_20261006/Q1直接修复_整图逐脚核验_保存重开.json": {
+    "sha256": "e4a9dda7f43bc48ba85a901f0304be1e70fb0c8f337e2a7c34e12ad0038edc9b",
+    "bytes": 19297
+  },
+  "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_五页保存重开_20261006.json": {
+    "sha256": "452ec9de62948e2e5ad1d838119dbd42c8f4be2ac4f9048427290503481b674b",
+    "bytes": 95790
+  },
+  "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生整图网表_20261006.net": {
+    "sha256": "97afcf53ce05125c163c0e53e548f134fcbf52f9fea3311625c137fc01cb3c29",
+    "bytes": 2609
+  },
+  "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_最终五页回读_20261006.json": {
+    "sha256": "2a1a585090742c89eee72219f31674d902c01ce4c85764fcc8b92ee54a25dfff",
+    "bytes": 95460
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/C9最大实体包络_仅审核.json": {
+    "sha256": "75b5a4eb7742bada247933218cc2b1821427c729621503553ef7585a9bc95207",
+    "bytes": 1787
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/本轮交接_仅审核.md": {
+    "sha256": "43904f495909cd9fa4bc6eaf9a8a98064a2e8863eb52ecd8160ebfb0b3ddee32",
+    "bytes": 5217
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/BOM_36件准确料号_Q1修复_仅审核_20261006.csv": {
+    "sha256": "a97cacf9531d173644da17978dd681938999581fb0fa0eb47a1b161fdb5475db",
+    "bytes": 3489
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/BOM_Q1直接修复_原生41位置_仅审核_20261006.csv": {
+    "sha256": "f911e50b49cb9fc1310a5c470475d7216689681c5b78f9c8980439ca552536d8",
+    "bytes": 19522
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CAM全层视觉核对/Gerber全层视觉核对_仅审核.pdf": {
+    "sha256": "503aee0785ca274aa0ed2a301c1826333f11edccac0043e856e6efa049b3ca6d",
+    "bytes": 533905
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CAM全层视觉核对/Gerber视觉核对_1.png": {
+    "sha256": "fd14ec5de5d388a522ed11c659fb2cef094599f67d64b24a1656b1e9a5d12558",
+    "bytes": 339730
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CAM全层视觉核对/Gerber视觉核对_2.png": {
+    "sha256": "030801aa8666b067df555c929ea039ef87799bcc76440e97a4c0afec16c3c9c8",
+    "bytes": 200778
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CAM全层视觉核对/Gerber视觉核对_3.png": {
+    "sha256": "06dba3ddd7a573de09293bef9602e5b2784b5d090cd7b2f66b8a97ab70701e00",
+    "bytes": 209310
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CPL_36件SMT_中心校正_Q1修复_仅审核_20261006.csv": {
+    "sha256": "0e095f177ea729fc68dd2f7f61bac65be8fb564b77bd8eca1b9d95645e275e69",
+    "bytes": 3061
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/CPL_Q1直接修复_原生41位置_仅审核_20261006.csv": {
+    "sha256": "df9e3e3142e0603aa17bdaa70e42c287ffebf2c3d3f7a32f44cfa8942f032754",
+    "bytes": 8570
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Gerber_Q1直接修复_孔距收尾_仅审核_20261006.zip": {
+    "sha256": "ba62a8bb4b6417d00915a440b121e2b165f7230bd0a76ed1ab181b6194412356",
+    "bytes": 65424
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Q1保存重开与制造增量核验_仅审核.json": {
+    "sha256": "35dae594d27817175b3e16d9bc7c64bcd62b06d46b2b821fb7d97e8f5cb09a73",
+    "bytes": 18502
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/Q1装配脚号映射_仅审核.png": {
+    "sha256": "166eb93eb9b6ec893ba1bdc49946a5a249aac3c1bc3f0880357c4f3f6ddb9987",
+    "bytes": 102672
+  },
+  "manufacturing/仅审核禁止生产/Q1直接修复_20261006/本轮交接_仅审核.md": {
+    "sha256": "092a4c521259d967e120ce61e048ab0fbdd22875672a83654834cdb872a08a09",
+    "bytes": 3033
+  },
+  "manufacturing/仅审核禁止生产/USB供电收尾_20261005/USB供电审核结论_仅审核.md": {
+    "sha256": "24b2f6f9f57c8062d363bf821f9eea4e4a336391ab5f661968b00ea885e9e9f9",
+    "bytes": 12560
+  },
+  "manufacturing/仅审核禁止生产/USB供电收尾_20261005/当前USB供电与无充电预算_仅审核.json": {
+    "sha256": "8a008a3683d06b84e535599b452f1e9c97b9cc812612bc5b64cd8c1e98d46293",
+    "bytes": 11263
+  },
+  "manufacturing/仅审核禁止生产/USB供电收尾_20261005/给博后的待确认清单_仅审核.md": {
+    "sha256": "651e1841191a7c89488d035861a8b95c5a5c72bf7fe01b868047004df812897a",
+    "bytes": 3918
+  },
+  "manufacturing/仅审核禁止生产/丝印终检_20261004/J1贴装基准交接_仅审核.md": {
+    "sha256": "ad09c745f6b9f3164180a12b0eecd23c15ff563ae4697160abca722eae2525dc",
+    "bytes": 1696
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/整板复审结论_仅审核.md": {
+    "sha256": "52e9da64d9513fa8f2da2bdf9e1c2f7dc8d87102a11fb0b49cf353a6e316ca40",
+    "bytes": 11896
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/本轮交接_仅审核.md": {
+    "sha256": "a2cafdf55a80e1a07ea8393079a82c6ee42491f50d8cb3378a52b54a70e47981",
+    "bytes": 7033
+  },
+  "references/DMP2165UW_Q1候选_原厂_20261006.pdf": {
+    "sha256": "f82184aec2a1a2f57afa13aeef829b6174ef30dd543a4771598070475ed0c618",
+    "bytes": 429070
+  }
+}

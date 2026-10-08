@@ -1,0 +1,230 @@
+{
+  "AGENTS.md": {
+    "sha256": "b4a5b3f069188aaec479eb047bd179a31bb020edf426c2a7c7c4d5f70e8635fa",
+    "bytes": 5139
+  },
+  "CAD_HANDOFF.md": {
+    "sha256": "ab391089de7b5c33716d09541b0f202290f4e649807a3b4f79e807decaa8b61b",
+    "bytes": 57887
+  },
+  "DESIGN_BASELINE_XIAO_PICO.md": {
+    "sha256": "acc6a0716fcf59cffc892a456f8017fea6cc0a3634a50b6ce82bf0fda54a59b9",
+    "bytes": 4596
+  },
+  "README_C9替料审阅包_仅审核.md": {
+    "sha256": "f7eee0e7992e4ada6ad763dab1d733d5ce0a5ca486f0bd2fbad564f7d75dee99",
+    "bytes": 2162
+  },
+  "easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json": {
+    "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84",
+    "bytes": 529780
+  },
+  "easyeda_std/C9替料_20261005/PCB_C9替料前_20261005.json": {
+    "sha256": "a418a8248d5c1347d2ea543fcb547b7a46d2d7296e715bf1dd257298c58b47d5",
+    "bytes": 529788
+  },
+  "easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json": {
+    "sha256": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1",
+    "bytes": 95623
+  },
+  "easyeda_std/C9替料_20261005/SCH_C9替料前_五页_20261005.json": {
+    "sha256": "44af0ab1a662759cb97fbbb7e8c63801c7fa9ded86a6e06e065f741f1438b5a9",
+    "bytes": 95411
+  },
+  "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/BOOT_RESET底面功能丝印_原生Gerber核对.png": {
+    "sha256": "ebc72899bf44acc71d23ac972587afd39d0182703be6224be53866006583c420",
+    "bytes": 64184
+  },
+  "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber功能丝印增量核验_仅审核.json": {
+    "sha256": "47c92b4a3309e71eeca45dcbef060c908f3c42e7e27b9514508695fb0d9d15ef",
+    "bytes": 3641
+  },
+  "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/保存重开与丝印差异_仅审核.json": {
+    "sha256": "ad2eb76dc86cb12079f0f2ac1225a8f3d7bac5ceaa0394c5a57dcff9e6ae3e3e",
+    "bytes": 902
+  },
+  "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/本轮交接_仅审核.md": {
+    "sha256": "adb9db1692cf041c7875d616e05c3ace3f97353dd96653f532244f5263ee0d78",
+    "bytes": 3262
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/BOM_36件准确料号_C9替料_仅审核_20261005.csv": {
+    "sha256": "712a09dbc3601061c7097bdff48d9b7d69cb390b1aad5bc085db30af2b364b7e",
+    "bytes": 3339
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/BOM_C9替料_原生全属性_仅审核_20261005.csv": {
+    "sha256": "0366188c6e4eb847a3ba8314a01f1ccbdb82ffe1f9226bd07e997085b19eb18b",
+    "bytes": 18800
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/C9保存重开与制造增量核验_仅审核.json": {
+    "sha256": "263a1d74f1fc3ba4909e4ac5ef8ecfdc3d4ecc32c8687e5c7d88992da1830f44",
+    "bytes": 7823
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/C9增量核验_只读脚本.py": {
+    "sha256": "0869868263fde02300382d886ef12badbfd8f960552701bee20fb759a6b2f00d",
+    "bytes": 10027
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/C9最大实体包络_仅审核.json": {
+    "sha256": "75b5a4eb7742bada247933218cc2b1821427c729621503553ef7585a9bc95207",
+    "bytes": 1787
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/CPL_36件SMT_中心校正_C9替料_仅审核_20261005.csv": {
+    "sha256": "e1ca93e0dcc0f9b1a22ded117dee0307a2b35040844a99a099e75e726be333e0",
+    "bytes": 3049
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/CPL_C9替料_原生全41位置_仅审核_20261005.csv": {
+    "sha256": "6073318879a5399de518dc986a45ed95d5782ccc8ba58459be84c98a6ac7b717",
+    "bytes": 8546
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip": {
+    "sha256": "405203473d8226ca9bf638fafe6d3e5d8cc44decabd9ece37f46ff417a5050a0",
+    "bytes": 65972
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/SCH_C9替料_原生Protel全图_仅审核_20261005.net": {
+    "sha256": "47d3433bada7c61a3c5f48310c6bd8ac52fd31e8c9b6fe34cd697aa73fe348b7",
+    "bytes": 2595
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/原生C9替料属性_20261005.png": {
+    "sha256": "837810a13fe40a844b7a46d091d2696306039df92aae25ca74cd74acfd3d1c82",
+    "bytes": 1017381
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/原生保存重开_DRC与网络_20261005.png": {
+    "sha256": "4ba7529f459cee675a427084446324d401353c881437a3c35d92187573ef597c",
+    "bytes": 984853
+  },
+  "manufacturing/仅审核禁止生产/C9替料_20261005/本轮交接_仅审核.md": {
+    "sha256": "43904f495909cd9fa4bc6eaf9a8a98064a2e8863eb52ecd8160ebfb0b3ddee32",
+    "bytes": 5217
+  },
+  "manufacturing/仅审核禁止生产/丝印终检_20261004/J1贴装基准交接_仅审核.md": {
+    "sha256": "ad09c745f6b9f3164180a12b0eecd23c15ff563ae4697160abca722eae2525dc",
+    "bytes": 1696
+  },
+  "manufacturing/仅审核禁止生产/丝印终检_20261004/本轮交接_仅审核.md": {
+    "sha256": "3bfb4d619ae7e8164b3892bc8134f5af0af8b2eb05965f9dc32db2b3f32859fb",
+    "bytes": 3385
+  },
+  "manufacturing/仅审核禁止生产/按键收拢_20261004/按键收拢结果与交接_仅审核.md": {
+    "sha256": "8d6c32409275bcd71c4cb18a354ff3e3f28aff4273b7b0ee5f0a6b20058f34c0",
+    "bytes": 5645
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/CPL_中心核对与建议_仅审核.json": {
+    "sha256": "e59a1a4e3e6721a110f1d170744f3a7b866093f9dbd3c9dd47c609172875b533",
+    "bytes": 25086
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/manufacturing_review.md": {
+    "sha256": "8fd388a7083bd31a8e4f11308855a8dcebb5999230664c9b34e8904a361f67d3",
+    "bytes": 10260
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_USB_RF_仅审核.md": {
+    "sha256": "5ff47ddf296bddf9a22a6586f41d31563546939c629f4594d53ea46f081cad1d",
+    "bytes": 8081
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_电源与去耦_仅审核.md": {
+    "sha256": "8ffafb1b157748b4c9992351343114574af79a26749bdc3451e3ba9c38f2c125",
+    "bytes": 9267
+  },
+  "manufacturing/仅审核禁止生产/整板复审_20261004/整板复审结论_仅审核.md": {
+    "sha256": "52e9da64d9513fa8f2da2bdf9e1c2f7dc8d87102a11fb0b49cf353a6e316ca40",
+    "bytes": 11896
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/BOM与坐标增量核验_仅审核.json": {
+    "sha256": "7a08bfcc8c78a5e2b9cce757444f008bd99b3585553d58fcc5656825c8ed14c4",
+    "bytes": 1069
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber增量与工艺核验_仅审核.json": {
+    "sha256": "001ba8417bb549244775b8e1c85d1897df8d993706669a68a363e5262eb001d4",
+    "bytes": 6765
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/保存重开与差异核验_仅审核.json": {
+    "sha256": "e86246560b81e04592d67d735f5cb0d519d18f8b3dc68070e29e9bf870a99eec",
+    "bytes": 2462
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/关键脚向_仅审核.png": {
+    "sha256": "ee4ed455c717efdd9877d4fa9c1a1586968fcdce640a4a374b0ea34702dd8a7b",
+    "bytes": 221823
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/原生网表与PCB逐脚核验_仅审核.json": {
+    "sha256": "383a3d963f0611f5288f0144d6f799a3f4e02005b100ac38b41de714caa674dd",
+    "bytes": 19347
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/最后重开原生DRC记录_仅审核.json": {
+    "sha256": "09a28a7e1394b7d3a9e0583b1b1506cadcf79ac563a72d222e71a818833c2845",
+    "bytes": 1131
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/本轮交接_仅审核.md": {
+    "sha256": "a2cafdf55a80e1a07ea8393079a82c6ee42491f50d8cb3378a52b54a70e47981",
+    "bytes": 7033
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/装配定位_仅审核.png": {
+    "sha256": "0ad6e9e9f84a2ae4099b718e73afef7686585c34c1c1d192603d719fff2bcdf4",
+    "bytes": 199212
+  },
+  "manufacturing/仅审核禁止生产/板外充电_20261005/装配定位与关键脚向_仅审核_20261005.pdf": {
+    "sha256": "2ae02c64ded66c14a0007f0490a89f97e99203f955f1d0521ca5c3690191e435",
+    "bytes": 113149
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv": {
+    "sha256": "0aba8a5f93d26c3b1284ed5597f5ef6b8332b9b05a77f440e14ed3b2c1ceb822",
+    "bytes": 8082
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂曲线.png": {
+    "sha256": "197407a0d207ff5a964d65f2b36a62fc63f21e41757ae7253f0318027ad23e39",
+    "bytes": 17857
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv": {
+    "sha256": "0e41a60fcfa562ad1e4e07634335bb23d6e71f854a71024635ff91581fcd2e8e",
+    "bytes": 8307
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂曲线.png": {
+    "sha256": "bb26f0eaeb0654737a80d4df504ca18c6d81f83a13317de9e75dfba5dc52c921",
+    "bytes": 21926
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂组合曲线.csv": {
+    "sha256": "60d4e8a5269077d2821ee61e9bbf319b1a1e3d2f417aa94d318e9161d9372928",
+    "bytes": 8069
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/文件校验清单.json": {
+    "sha256": "5ad4ddfa857dc4cc12bfd4bff04569bd863647b78a7029b0490c023d83b52b66",
+    "bytes": 1378
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/本轮结论与变更建议_仅审核.md": {
+    "sha256": "5bb8a14f99c891f3a9684591fc3c2de5d92f362caa25c58745cde4a266498aee",
+    "bytes": 9424
+  },
+  "manufacturing/仅审核禁止生产/电容与USB方案_20261005/组合曲线审核_仅审核.json": {
+    "sha256": "492a3210cd0973a4e0381a187808f0f348bd7aaba27a8b5e920551d3e5fead3c",
+    "bytes": 6785
+  },
+  "manufacturing/仅审核禁止生产/电源定量复核_20261005/电源与电容定量审核_仅审核.json": {
+    "sha256": "4592dd649b8b51264cbae35282119fab2509eb8b3d9e10b1436a0ee47fc08931",
+    "bytes": 11943
+  },
+  "references/esp32-s3-pico-1.pdf": {
+    "sha256": "44daca9121111a9c7df437e18c3c153258a20e68fe57fcd3bd9be593ad162979",
+    "bytes": 774379
+  },
+  "references/lmbr4010bst5g.pdf": {
+    "sha256": "01ccbfe48afb88d1bf5ba8c0556b1b8ebcf9d181f20eb6c6911c0f8eca804e0d",
+    "bytes": 297475
+  },
+  "references/lp0404n3t5g.pdf": {
+    "sha256": "91e2985ebe6ca06cdec25d6de220c7da46140aaa355f69a91bc752d62c1b10c4",
+    "bytes": 4036726
+  },
+  "references/mlx90393.pdf": {
+    "sha256": "b622dfc463eeb13cee8397ad3f01a5df2d8c506197fdb37154845449845cbfa2",
+    "bytes": 800847
+  },
+  "references/panasonic_evpbb.pdf": {
+    "sha256": "b1263b8c2f98a2b9768b9851b49b673521c682c6862b133402f3abd0e72b78a5",
+    "bytes": 130040
+  },
+  "references/tlv755p.pdf": {
+    "sha256": "c0fe7be9fea4e4c8d933142f59758f7a951e195a45ca4e7e17684153da018cbb",
+    "bytes": 3072276
+  },
+  "references/usb4105.pdf": {
+    "sha256": "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5",
+    "bytes": 164547
+  }
+}

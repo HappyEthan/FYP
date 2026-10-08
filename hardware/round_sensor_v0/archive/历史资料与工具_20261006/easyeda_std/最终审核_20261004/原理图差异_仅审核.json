@@ -1,0 +1,1066 @@
+{
+  "status": "仅审核禁止生产；源差异比较不替代原生ERC或原理图与PCB网表一致性",
+  "baseline": {
+    "path": "hardware/round_sensor_v0/easyeda_std/usb_keep_min_candidate/原生回读_全部封装绑定.json",
+    "sha256": "0f59ca7f783b71e3960a888bd03df6a802ee880eaf73133de7f2530a92fd1e15"
+  },
+  "current": {
+    "path": "hardware/round_sensor_v0/easyeda_std/最终审核_20261004/1-Schematic_圆形传感板_SCH_A5.json",
+    "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47"
+  },
+  "sheets": [
+    {
+      "title": "01  主控最小系统",
+      "uuid": "9bc2af7334a44d9590a022dc08778cac",
+      "instances": 6,
+      "same_instance_ids": true,
+      "nonLIB_exact_equal": true,
+      "other_fields_changed": {
+        "head": {
+          "before": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "sheet_00048326482982496977",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          },
+          "after": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "9bc2af7334a44d9590a022dc08778cac",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          }
+        },
+        "colors": {
+          "before": {},
+          "after": []
+        }
+      },
+      "component_changes": [
+        {
+          "instance_id": "ggeA57",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "6b67061c29d920ed",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~610~148~0~#164B67~Arial~12pt~~~~comment~U1~1~start~ggeA55~0~pinpart",
+            "T~N~610~168~0~#164B67~Arial~10pt~~~~comment~ESP32-S3-PICO-1-N8R8~1~start~ggeA56~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~610~148~0~#164B67~Arial~12pt~~~~comment~U1~1~start~ggeA55~0~",
+            "T~N~610~168~0~#164B67~Arial~10pt~~~~comment~ESP32-S3-PICO-1-N8R8~1~start~ggeA56~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5118",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "65644fb11ac417b8",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~272~284~0~#164B67~Arial~9pt~~~~comment~22uF / 10V~1~start~ggeA5117~0~pinpart",
+            "T~P~272~265~0~#164B67~Arial~11pt~~~~comment~C20~1~start~ggeA5116~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~272~284~0~#164B67~Arial~9pt~~~~comment~22uF / 10V~1~start~ggeA5117~0~",
+            "T~P~272~265~0~#164B67~Arial~11pt~~~~comment~C20~1~start~ggeA5116~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5127",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "64a4299128b71a7b",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~422~284~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5126~0~pinpart",
+            "T~P~422~265~0~#164B67~Arial~11pt~~~~comment~C21~1~start~ggeA5125~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~422~284~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5126~0~",
+            "T~P~422~265~0~#164B67~Arial~11pt~~~~comment~C21~1~start~ggeA5125~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5141",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "25ed96db19a3911d",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~192~352~0~#164B67~Arial~11pt~~~~comment~R7~1~start~ggeA5139~0~pinpart",
+            "T~N~192~371~0~#164B67~Arial~9pt~~~~comment~10k~1~start~ggeA5140~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~192~352~0~#164B67~Arial~11pt~~~~comment~R7~1~start~ggeA5139~0~",
+            "T~N~192~371~0~#164B67~Arial~9pt~~~~comment~10k~1~start~ggeA5140~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5150",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "4321b715ed6761b5",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~402~478~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5149~0~pinpart",
+            "T~P~402~459~0~#164B67~Arial~11pt~~~~comment~C1~1~start~ggeA5148~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~402~478~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5149~0~",
+            "T~P~402~459~0~#164B67~Arial~11pt~~~~comment~C1~1~start~ggeA5148~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5167",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "a8377b8da8a67820",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~192~566~0~#164B67~Arial~11pt~~~~comment~R8~1~start~ggeA5165~0~pinpart",
+            "T~N~192~585~0~#164B67~Arial~9pt~~~~comment~10k~1~start~ggeA5166~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~192~566~0~#164B67~Arial~11pt~~~~comment~R8~1~start~ggeA5165~0~",
+            "T~N~192~585~0~#164B67~Arial~9pt~~~~comment~10k~1~start~ggeA5166~0~"
+          ]
+        }
+      ],
+      "nonLIB_before_only": [],
+      "nonLIB_after_only": []
+    },
+    {
+      "title": "02  传感器与总线",
+      "uuid": "fb2ef9dcfdb0421ea8f8b75dacc98b56",
+      "instances": 9,
+      "same_instance_ids": true,
+      "nonLIB_exact_equal": false,
+      "other_fields_changed": {
+        "head": {
+          "before": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "sheet_22488084259175078",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          },
+          "after": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "fb2ef9dcfdb0421ea8f8b75dacc98b56",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          }
+        },
+        "colors": {
+          "before": {},
+          "after": []
+        }
+      },
+      "component_changes": [
+        {
+          "instance_id": "ggeA5218",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "25ed88820e69ce18",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~550~188~0~#164B67~Arial~12pt~~~~comment~U2~1~start~ggeA5216~0~pinpart",
+            "T~N~550~208~0~#164B67~Arial~10pt~~~~comment~MLX90393SLQ-ABA-011-RE~1~start~ggeA5217~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~550~188~0~#164B67~Arial~12pt~~~~comment~U2~1~start~ggeA5216~0~",
+            "T~N~550~208~0~#164B67~Arial~10pt~~~~comment~MLX90393SLQ-ABA-011-RE~1~start~ggeA5217~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5232",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "a5ffff6d98b62745",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~550~618~0~#164B67~Arial~12pt~~~~comment~U3~1~start~ggeA5230~0~pinpart",
+            "T~N~550~638~0~#164B67~Arial~10pt~~~~comment~LSM6DSOXTR~1~start~ggeA5231~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~550~618~0~#164B67~Arial~12pt~~~~comment~U3~1~start~ggeA5230~0~",
+            "T~N~550~638~0~#164B67~Arial~10pt~~~~comment~LSM6DSOXTR~1~start~ggeA5231~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5253",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "790292005b107aca",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~322~175~0~#164B67~Arial~11pt~~~~comment~R6~1~start~ggeA5251~0~pinpart",
+            "T~N~322~194~0~#164B67~Arial~9pt~~~~comment~4.7k~1~start~ggeA5252~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~322~175~0~#164B67~Arial~11pt~~~~comment~R6~1~start~ggeA5251~0~",
+            "T~N~322~194~0~#164B67~Arial~9pt~~~~comment~4.7k~1~start~ggeA5252~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5259",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "ee1c620c884d3e5b",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~442~175~0~#164B67~Arial~11pt~~~~comment~R5~1~start~ggeA5257~0~pinpart",
+            "T~N~442~194~0~#164B67~Arial~9pt~~~~comment~4.7k~1~start~ggeA5258~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~442~175~0~#164B67~Arial~11pt~~~~comment~R5~1~start~ggeA5257~0~",
+            "T~N~442~194~0~#164B67~Arial~9pt~~~~comment~4.7k~1~start~ggeA5258~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5294",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "3aa1cb0f2cc7494f",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1122~359~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5293~0~pinpart",
+            "T~P~1122~340~0~#164B67~Arial~11pt~~~~comment~C2~1~start~ggeA5292~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1122~359~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5293~0~",
+            "T~P~1122~340~0~#164B67~Arial~11pt~~~~comment~C2~1~start~ggeA5292~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5305",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "a05523557da59ebf",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1332~359~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5304~0~pinpart",
+            "T~P~1332~340~0~#164B67~Arial~11pt~~~~comment~C3~1~start~ggeA5303~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1332~359~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5304~0~",
+            "T~P~1332~340~0~#164B67~Arial~11pt~~~~comment~C3~1~start~ggeA5303~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5333",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "9dc8a38eb6d53877",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1122~789~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5332~0~pinpart",
+            "T~P~1122~770~0~#164B67~Arial~11pt~~~~comment~C4~1~start~ggeA5331~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1122~789~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5332~0~",
+            "T~P~1122~770~0~#164B67~Arial~11pt~~~~comment~C4~1~start~ggeA5331~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5344",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "036b6fe485fb7f07",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1332~789~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5343~0~pinpart",
+            "T~P~1332~770~0~#164B67~Arial~11pt~~~~comment~C5~1~start~ggeA5342~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1332~789~0~#164B67~Arial~9pt~~~~comment~100nF / 10V~1~start~ggeA5343~0~",
+            "T~P~1332~770~0~#164B67~Arial~11pt~~~~comment~C5~1~start~ggeA5342~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5120006",
+          "header_delta": [],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [],
+          "children_after_only": []
+        }
+      ],
+      "nonLIB_before_only": [
+        "T~L~70~1070~0~#164B67~Arial~11pt~~~~comment~J4 为笔头四线飞线接口：3.3V、GND、SDA、SCL；板载与笔头 MLX90393 同时保留。未制造放行。~1~start~ggeA5120023~0~pinpart"
+      ],
+      "nonLIB_after_only": [
+        "T~L~70~1070~0~#164B67~Arial~11pt~~~~comment~J4：3.3V/GND/SDA/SCL；笔头实测地址0x0E，板载U2固定0x10，共用R5/R6上拉。模块自带上拉与线长待实测。~1~start~ggeA5120023~0~pinpart"
+      ]
+    },
+    {
+      "title": "03  USB-C 数据与保护",
+      "uuid": "b59de06dd6b74220bcc23af885caeee6",
+      "instances": 9,
+      "same_instance_ids": true,
+      "nonLIB_exact_equal": true,
+      "other_fields_changed": {
+        "head": {
+          "before": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "sheet_6618021209244507",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          },
+          "after": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "b59de06dd6b74220bcc23af885caeee6",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          }
+        },
+        "colors": {
+          "before": {},
+          "after": []
+        }
+      },
+      "component_changes": [
+        {
+          "instance_id": "ggeA5374",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "27f3ec88b18c9aa2",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~190~138~0~#164B67~Arial~12pt~~~~comment~J1~1~start~ggeA5372~0~pinpart",
+            "T~N~190~158~0~#164B67~Arial~10pt~~~~comment~USB4105-GF-A-060~1~start~ggeA5373~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~190~138~0~#164B67~Arial~12pt~~~~comment~J1~1~start~ggeA5372~0~",
+            "T~N~190~158~0~#164B67~Arial~10pt~~~~comment~USB4105-GF-A-060~1~start~ggeA5373~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5405",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "c691adaa9b1a81f7",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1102~198~0~#164B67~Arial~11pt~~~~comment~R3~1~start~ggeA5403~0~pinpart",
+            "T~N~1102~217~0~#164B67~Arial~9pt~~~~comment~22Ω~1~start~ggeA5404~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1102~198~0~#164B67~Arial~11pt~~~~comment~R3~1~start~ggeA5403~0~",
+            "T~N~1102~217~0~#164B67~Arial~9pt~~~~comment~22Ω~1~start~ggeA5404~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5411",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "25f764192f6a7dc7",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1102~318~0~#164B67~Arial~11pt~~~~comment~R4~1~start~ggeA5409~0~pinpart",
+            "T~N~1102~337~0~#164B67~Arial~9pt~~~~comment~22Ω~1~start~ggeA5410~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1102~318~0~#164B67~Arial~11pt~~~~comment~R4~1~start~ggeA5409~0~",
+            "T~N~1102~337~0~#164B67~Arial~9pt~~~~comment~22Ω~1~start~ggeA5410~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5423",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "b09cc7ca6166350c",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~760~418~0~#164B67~Arial~12pt~~~~comment~U6~1~start~ggeA5421~0~pinpart",
+            "T~N~760~438~0~#164B67~Arial~10pt~~~~comment~TPD2EUSB30ADRTR~1~start~ggeA5422~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~760~418~0~#164B67~Arial~12pt~~~~comment~U6~1~start~ggeA5421~0~",
+            "T~N~760~438~0~#164B67~Arial~10pt~~~~comment~TPD2EUSB30ADRTR~1~start~ggeA5422~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5438",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "740417fce89f0c79",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~712~720~0~#164B67~Arial~11pt~~~~comment~R1~1~start~ggeA5436~0~pinpart",
+            "T~N~712~739~0~#164B67~Arial~9pt~~~~comment~5.1k / 1%~1~start~ggeA5437~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~712~720~0~#164B67~Arial~11pt~~~~comment~R1~1~start~ggeA5436~0~",
+            "T~N~712~739~0~#164B67~Arial~9pt~~~~comment~5.1k / 1%~1~start~ggeA5437~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5444",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "74fab36ed928f6c5",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~970~663~0~#164B67~Arial~12pt~~~~comment~D2~1~start~ggeA5442~0~pinpart",
+            "T~N~970~683~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5443~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~970~663~0~#164B67~Arial~12pt~~~~comment~D2~1~start~ggeA5442~0~",
+            "T~N~970~683~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5443~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5464",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "73a9c057b1fd63cb",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~772~920~0~#164B67~Arial~11pt~~~~comment~R2~1~start~ggeA5462~0~pinpart",
+            "T~N~772~939~0~#164B67~Arial~9pt~~~~comment~5.1k / 1%~1~start~ggeA5463~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~772~920~0~#164B67~Arial~11pt~~~~comment~R2~1~start~ggeA5462~0~",
+            "T~N~772~939~0~#164B67~Arial~9pt~~~~comment~5.1k / 1%~1~start~ggeA5463~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5470",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "cff6a6ba2ca1dfab",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1030~863~0~#164B67~Arial~12pt~~~~comment~D3~1~start~ggeA5468~0~pinpart",
+            "T~N~1030~883~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5469~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1030~863~0~#164B67~Arial~12pt~~~~comment~D3~1~start~ggeA5468~0~",
+            "T~N~1030~883~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5469~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5508",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "7a2de9cb2ee04048",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1230~468~0~#164B67~Arial~12pt~~~~comment~D1~1~start~ggeA5506~0~pinpart",
+            "T~N~1230~488~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5507~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1230~468~0~#164B67~Arial~12pt~~~~comment~D1~1~start~ggeA5506~0~",
+            "T~N~1230~488~0~#164B67~Arial~10pt~~~~comment~TPD1E10B06DPYR~1~start~ggeA5507~0~"
+          ]
+        }
+      ],
+      "nonLIB_before_only": [],
+      "nonLIB_after_only": []
+    },
+    {
+      "title": "04  充电、供电切换与开关",
+      "uuid": "ab32832a4bf64a268a3a58aad92022e3",
+      "instances": 13,
+      "same_instance_ids": true,
+      "nonLIB_exact_equal": true,
+      "other_fields_changed": {
+        "head": {
+          "before": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "sheet_3079814753391523",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          },
+          "after": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "ab32832a4bf64a268a3a58aad92022e3",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          }
+        },
+        "colors": {
+          "before": {},
+          "after": []
+        }
+      },
+      "component_changes": [
+        {
+          "instance_id": "ggeA5557",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "365b2edc176c5f30",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~450~152~0~#164B67~Arial~10pt~~~~comment~LP0404N3T5G~1~start~ggeA5540~0~pinpart",
+            "T~P~450~132~0~#164B67~Arial~12pt~~~~comment~Q1~1~start~ggeA5539~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~450~152~0~#164B67~Arial~10pt~~~~comment~LP0404N3T5G~1~start~ggeA5540~0~",
+            "T~P~450~132~0~#164B67~Arial~12pt~~~~comment~Q1~1~start~ggeA5539~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5569",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "176bceb0e276da7d",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~472~387~0~#164B67~Arial~9pt~~~~comment~LMBR4010BST5G~1~start~ggeA5568~0~pinpart",
+            "T~P~472~368~0~#164B67~Arial~11pt~~~~comment~D4~1~start~ggeA5567~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~472~387~0~#164B67~Arial~9pt~~~~comment~LMBR4010BST5G~1~start~ggeA5568~0~",
+            "T~P~472~368~0~#164B67~Arial~11pt~~~~comment~D4~1~start~ggeA5567~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5578",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "9f708ac355696d38",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~292~590~0~#164B67~Arial~11pt~~~~comment~R9~1~start~ggeA5576~0~pinpart",
+            "T~N~292~609~0~#164B67~Arial~9pt~~~~comment~100k~1~start~ggeA5577~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~292~590~0~#164B67~Arial~11pt~~~~comment~R9~1~start~ggeA5576~0~",
+            "T~N~292~609~0~#164B67~Arial~9pt~~~~comment~100k~1~start~ggeA5577~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5591",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "36269990b90a494f",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1030~148~0~#164B67~Arial~12pt~~~~comment~U5~1~start~ggeA5589~0~pinpart",
+            "T~N~1030~168~0~#164B67~Arial~10pt~~~~comment~TLV75533PDRVR~1~start~ggeA5590~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1030~148~0~#164B67~Arial~12pt~~~~comment~U5~1~start~ggeA5589~0~",
+            "T~N~1030~168~0~#164B67~Arial~10pt~~~~comment~TLV75533PDRVR~1~start~ggeA5590~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5609",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "36f2b0850eb036d9",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~872~309~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5608~0~pinpart",
+            "T~P~872~290~0~#164B67~Arial~11pt~~~~comment~C9~1~start~ggeA5607~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~872~309~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5608~0~",
+            "T~P~872~290~0~#164B67~Arial~11pt~~~~comment~C9~1~start~ggeA5607~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5625",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "4c117c3daa78f143",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1452~309~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5624~0~pinpart",
+            "T~P~1452~290~0~#164B67~Arial~11pt~~~~comment~C10~1~start~ggeA5623~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1452~309~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5624~0~",
+            "T~P~1452~290~0~#164B67~Arial~11pt~~~~comment~C10~1~start~ggeA5623~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5648",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "e354d83736e042b7",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~890~448~0~#164B67~Arial~12pt~~~~comment~SW1~1~start~ggeA5646~0~pinpart",
+            "T~N~890~468~0~#164B67~Arial~10pt~~~~comment~电源开关焊盘~1~start~ggeA5647~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~890~448~0~#164B67~Arial~12pt~~~~comment~SW1~1~start~ggeA5646~0~",
+            "T~N~890~468~0~#164B67~Arial~10pt~~~~comment~电源开关焊盘~1~start~ggeA5647~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5669",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "a1f6d37515a67804",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~500~728~0~#164B67~Arial~12pt~~~~comment~U4~1~start~ggeA5667~0~pinpart",
+            "T~N~500~748~0~#164B67~Arial~10pt~~~~comment~SGM40567-4.2XG/TR~1~start~ggeA5668~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~500~728~0~#164B67~Arial~12pt~~~~comment~U4~1~start~ggeA5667~0~",
+            "T~N~500~748~0~#164B67~Arial~10pt~~~~comment~SGM40567-4.2XG/TR~1~start~ggeA5668~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5683",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "eed07bf91cceee6d",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~212~869~0~#164B67~Arial~9pt~~~~comment~1uF / 16V~1~start~ggeA5682~0~pinpart",
+            "T~P~212~850~0~#164B67~Arial~11pt~~~~comment~C6~1~start~ggeA5681~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~212~869~0~#164B67~Arial~9pt~~~~comment~1uF / 16V~1~start~ggeA5682~0~",
+            "T~P~212~850~0~#164B67~Arial~11pt~~~~comment~C6~1~start~ggeA5681~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5697",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "991b82af8168067e",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~387~930~0~#164B67~Arial~11pt~~~~comment~R10~1~start~ggeA5695~0~pinpart",
+            "T~N~387~949~0~#164B67~Arial~9pt~~~~comment~220k / 1%~1~start~ggeA5696~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~387~930~0~#164B67~Arial~11pt~~~~comment~R10~1~start~ggeA5695~0~",
+            "T~N~387~949~0~#164B67~Arial~9pt~~~~comment~220k / 1%~1~start~ggeA5696~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5725",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "5fadb62d17a06072",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~1012~869~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5724~0~pinpart",
+            "T~P~1012~850~0~#164B67~Arial~11pt~~~~comment~C7~1~start~ggeA5723~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~1012~869~0~#164B67~Arial~9pt~~~~comment~1uF / 10V~1~start~ggeA5724~0~",
+            "T~P~1012~850~0~#164B67~Arial~11pt~~~~comment~C7~1~start~ggeA5723~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5739",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "3f4f8d421e39e7c5",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1220~738~0~#164B67~Arial~12pt~~~~comment~J2~1~start~ggeA5737~0~pinpart",
+            "T~N~1220~758~0~#164B67~Arial~10pt~~~~comment~单节锂电池焊盘~1~start~ggeA5738~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1220~738~0~#164B67~Arial~12pt~~~~comment~J2~1~start~ggeA5737~0~",
+            "T~N~1220~758~0~#164B67~Arial~10pt~~~~comment~单节锂电池焊盘~1~start~ggeA5738~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5847",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "059a1aa16fcb1458",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1202~645~0~#164B67~Arial~11pt~~~~comment~R11~1~start~ggeA5845~0~pinpart",
+            "T~N~1202~664~0~#164B67~Arial~9pt~~~~comment~100k~1~start~ggeA5846~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1202~645~0~#164B67~Arial~11pt~~~~comment~R11~1~start~ggeA5845~0~",
+            "T~N~1202~664~0~#164B67~Arial~9pt~~~~comment~100k~1~start~ggeA5846~0~"
+          ]
+        }
+      ],
+      "nonLIB_before_only": [],
+      "nonLIB_after_only": []
+    },
+    {
+      "title": "05 外接天线与启动按键",
+      "uuid": "732455fb88bf463ebaabe0f3a4b019b5",
+      "instances": 6,
+      "same_instance_ids": true,
+      "nonLIB_exact_equal": true,
+      "other_fields_changed": {
+        "head": {
+          "before": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "sheet_8036993937627059",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          },
+          "after": {
+            "docType": "1",
+            "editorVersion": "6.5.51",
+            "newgId": true,
+            "c_para": {
+              "Prefix Start": "1"
+            },
+            "c_spiceCmd": "null",
+            "uuid": "732455fb88bf463ebaabe0f3a4b019b5",
+            "x": "0",
+            "y": "0",
+            "portOfADImportHack": "",
+            "importFlag": 0,
+            "transformList": "",
+            "hasIdFlag": true
+          }
+        },
+        "colors": {
+          "before": {},
+          "after": []
+        }
+      },
+      "component_changes": [
+        {
+          "instance_id": "ggeA5759",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "3c817f1541a35b75",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~632~268~0~#164B67~Arial~11pt~~~~comment~R30~1~start~ggeA5757~0~pinpart",
+            "T~N~632~287~0~#164B67~Arial~9pt~~~~comment~0Ω / 射频串联~1~start~ggeA5758~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~632~268~0~#164B67~Arial~11pt~~~~comment~R30~1~start~ggeA5757~0~",
+            "T~N~632~287~0~#164B67~Arial~9pt~~~~comment~0Ω / 射频串联~1~start~ggeA5758~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5768",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "daf7b48007afd59f",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~452~429~0~#164B67~Arial~9pt~~~~comment~匹配预留 / 不装~1~start~ggeA5767~0~pinpart",
+            "T~P~452~410~0~#164B67~Arial~11pt~~~~comment~C30~1~start~ggeA5766~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~452~429~0~#164B67~Arial~9pt~~~~comment~匹配预留 / 不装~1~start~ggeA5767~0~",
+            "T~P~452~410~0~#164B67~Arial~11pt~~~~comment~C30~1~start~ggeA5766~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5777",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "ddda1dbf247453f6",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~N~892~429~0~#164B67~Arial~9pt~~~~comment~匹配预留 / 不装~1~start~ggeA5776~0~pinpart",
+            "T~P~892~410~0~#164B67~Arial~11pt~~~~comment~C31~1~start~ggeA5775~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~N~892~429~0~#164B67~Arial~9pt~~~~comment~匹配预留 / 不装~1~start~ggeA5776~0~",
+            "T~P~892~410~0~#164B67~Arial~11pt~~~~comment~C31~1~start~ggeA5775~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5786",
+          "header_delta": [
+            {
+              "index": 10,
+              "before": "9613db698665d83e",
+              "after": ""
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [
+            "T~P~1110~228~0~#164B67~Arial~12pt~~~~comment~ANT1~1~start~ggeA5784~0~pinpart",
+            "T~N~1110~248~0~#164B67~Arial~10pt~~~~comment~U.FL-R-SMT-1 + FXP75.07.0045B~1~start~ggeA5785~0~pinpart"
+          ],
+          "children_after_only": [
+            "T~P~1110~228~0~#164B67~Arial~12pt~~~~comment~ANT1~1~start~ggeA5784~0~",
+            "T~N~1110~248~0~#164B67~Arial~10pt~~~~comment~U.FL-R-SMT-1 + FXP75.07.0045B~1~start~ggeA5785~0~"
+          ]
+        },
+        {
+          "instance_id": "ggeA5120032",
+          "header_delta": [
+            {
+              "index": 3,
+              "before": "package`按键_EVPBB_官方铜焊盘`nameAlias`Value`Value`EVPBB2A9B000`spicePre`SW`spiceSymbolName`EVPBB2A9B000`Manufacturer Part`EVPBB2A9B000`Package candidate`EVPBB_3.2x1.3_LAND_待绑定`审查备注`常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮`装配状态`装配`封装来源`个人库保存重开回读；原理图原生封装管理器验证待完成`",
+              "after": "package`按键_EVPBB_官方铜焊盘`nameAlias`Value`Value`EVPBB2A9B000`spicePre`SW`spiceSymbolName`EVPBB2A9B000`Manufacturer Part`EVPBB2A9B000`Package candidate`EVPBB_3.2x1.3_LAND_待绑定`审查备注`常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮`装配状态`装配`封装来源`个人库保存重开回读；原理图原生封装管理器已验证`"
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [],
+          "children_after_only": []
+        },
+        {
+          "instance_id": "ggeA5120058",
+          "header_delta": [
+            {
+              "index": 3,
+              "before": "package`按键_EVPBB_官方铜焊盘`nameAlias`Value`Value`EVPBB2A9B000`spicePre`SW`spiceSymbolName`EVPBB2A9B000`Manufacturer Part`EVPBB2A9B000`Package candidate`EVPBB_3.2x1.3_LAND_待绑定`审查备注`常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮`装配状态`装配`封装来源`个人库保存重开回读；原理图原生封装管理器验证待完成`",
+              "after": "package`按键_EVPBB_官方铜焊盘`nameAlias`Value`Value`EVPBB2A9B000`spicePre`SW`spiceSymbolName`EVPBB2A9B000`Manufacturer Part`EVPBB2A9B000`Package candidate`EVPBB_3.2x1.3_LAND_待绑定`审查备注`常开瞬时；1/2 同组，3/4 同组；禁止以旧 J3 焊盘冒充按钮`装配状态`装配`封装来源`个人库保存重开回读；原理图原生封装管理器已验证`"
+            }
+          ],
+          "children_equal_after_text_pinpart_suffix_removed": true,
+          "children_before_only": [],
+          "children_after_only": []
+        }
+      ],
+      "nonLIB_before_only": [],
+      "nonLIB_after_only": []
+    }
+  ],
+  "conclusion": "未见电路连线、引脚、符号位置或封装绑定变化。差异为页面UUID、空colors类型、LIB头第10字段清空、位号/值文本末尾pinpart标记清空、SW2/SW3封装来源说明、第二页J4说明。说明中的笔头实测地址0x0E不是本轮实测证据，不据此更改验收状态。"
+}

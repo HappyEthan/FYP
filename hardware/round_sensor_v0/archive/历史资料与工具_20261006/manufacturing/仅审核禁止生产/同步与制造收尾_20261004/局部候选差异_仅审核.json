@@ -1,0 +1,516 @@
+{
+  "status": "Change log adopted into R2; native save/reopen and Gerber verified. See 保存重开与复用核验_仅审核.json. Review only.",
+  "input": "hardware/round_sensor_v0/easyeda_std/云端同步_20261004/PCB_independent_cloud_read_20261004.json",
+  "input_sha256": "968381becf6f02d16998d06b140e89a698ae9267d8f2ddba1e11730a8d5ffe89",
+  "candidate_sha256": "db1f209fbb1a30cda2342db6a16e53d5b9347b131add8c09f8e1e5dd8d12b57c",
+  "changes": [
+    {
+      "ref": "C30",
+      "shape_id": "gge1053",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.1005352000000883
+    },
+    {
+      "ref": "C30",
+      "shape_id": "gge1056",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.07681080000000406
+    },
+    {
+      "ref": "C30",
+      "shape_id": "gge1059",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.10264339999996251
+    },
+    {
+      "ref": "C30",
+      "shape_id": "gge1062",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.1005098000000366
+    },
+    {
+      "ref": "C30",
+      "shape_id": "gge1065",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.10261799999991084
+    },
+    {
+      "ref": "C30",
+      "shape_id": "gge1068",
+      "change": "RC_silk_to_document",
+      "original_layer": "3",
+      "mask_distance_mm": 0.07680080000000089
+    },
+    {
+      "ref": "C30",
+      "pin": "2",
+      "change": "paste_expansion_only",
+      "before": "0",
+      "after": "-11.811024"
+    },
+    {
+      "ref": "C30",
+      "pin": "1",
+      "change": "paste_expansion_only",
+      "before": "0",
+      "after": "-11.811024"
+    },
+    {
+      "ref": "C31",
+      "pin": "2",
+      "change": "paste_expansion_only",
+      "before": "0",
+      "after": "-11.811024"
+    },
+    {
+      "ref": "C31",
+      "pin": "1",
+      "change": "paste_expansion_only",
+      "before": "0",
+      "after": "-11.811024"
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge102",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10053519999996752
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge105",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680080000000088
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge108",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10264339999994831
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge111",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10050980000002595
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge114",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10261800000002097
+    },
+    {
+      "ref": "C1",
+      "shape_id": "gge117",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07681080000000406
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge198",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10053700000001696
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge201",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680239999996986
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge204",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10264160000001253
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge207",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1005079999999765
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge210",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10261979999995674
+    },
+    {
+      "ref": "C2",
+      "shape_id": "gge213",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07679920000003548
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge294",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10051660000003436
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge297",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680580000000603
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge300",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1026365999999541
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge303",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1005283999999591
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge306",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.052679600000029574
+    },
+    {
+      "ref": "C3",
+      "shape_id": "gge309",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge486",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10051980000002914
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge489",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680080000000088
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge492",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10263339999995935
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge495",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10052519999996434
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge498",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10262800000002414
+    },
+    {
+      "ref": "C5",
+      "shape_id": "gge501",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07681080000000406
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge582",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10052980000003231
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge585",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680080000000089
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge588",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.047341199999976886
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge591",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.04947480000002713
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge594",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10261259999997206
+    },
+    {
+      "ref": "C6",
+      "shape_id": "gge597",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07681080000000406
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge678",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1005351999999675
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge681",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07681080000000406
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge684",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1026433999999483
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge687",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10050980000002596
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge690",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10261800000002097
+    },
+    {
+      "ref": "C7",
+      "shape_id": "gge693",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680080000000089
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge870",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.1005352000000883
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge873",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07680620000004978
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge876",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10264339999995896
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge879",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10050980000003305
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge882",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10261799999991439
+    },
+    {
+      "ref": "C10",
+      "shape_id": "gge885",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.07681539999995834
+    },
+    {
+      "ref": "R1",
+      "shape_id": "gge2163",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.05903760000006742
+    },
+    {
+      "ref": "R1",
+      "shape_id": "gge2166",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R2",
+      "shape_id": "gge2235",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.04839439999999229
+    },
+    {
+      "ref": "R2",
+      "shape_id": "gge2238",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.04839439999999229
+    },
+    {
+      "ref": "R3",
+      "shape_id": "gge2298",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R3",
+      "shape_id": "gge2301",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R4",
+      "shape_id": "gge2361",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R4",
+      "shape_id": "gge2364",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R5",
+      "shape_id": "gge2433",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10160200000004238
+    },
+    {
+      "ref": "R5",
+      "shape_id": "gge2436",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10160200000004238
+    },
+    {
+      "ref": "R6",
+      "shape_id": "gge2505",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    },
+    {
+      "ref": "R6",
+      "shape_id": "gge2508",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10158100000001012
+    },
+    {
+      "ref": "R7",
+      "shape_id": "gge2577",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10160200000004238
+    },
+    {
+      "ref": "R7",
+      "shape_id": "gge2580",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10160200000004238
+    },
+    {
+      "ref": "R8",
+      "shape_id": "gge2649",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10158659999999031
+    },
+    {
+      "ref": "R8",
+      "shape_id": "gge2652",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10158659999999031
+    },
+    {
+      "ref": "R9",
+      "shape_id": "gge2721",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10159659999997928
+    },
+    {
+      "ref": "R9",
+      "shape_id": "gge2724",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10159659999997928
+    },
+    {
+      "ref": "R10",
+      "shape_id": "gge2793",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.10159340000001292
+    },
+    {
+      "ref": "R10",
+      "shape_id": "gge2796",
+      "change": "RC_silk_to_document",
+      "original_layer": "4",
+      "mask_distance_mm": 0.0
+    }
+  ],
+  "all_copper_geometry_equal": true,
+  "board_shapes_and_rules_equal": true,
+  "remaining": "Remaining non-RC silkscreen and electrical/manufacturing gates are listed in current handoff.",
+  "candidate_generation_status": "仅本地部分收尾候选；未写回EDA、未原生DRC、未导出候选Gerber。不是当前工作板。"
+}

@@ -1,0 +1,3211 @@
+{
+  "date": "2026-10-06",
+  "scope": "round_sensor_v0 only; reversible moves; no CAD changes",
+  "files": {
+    "PCB_A5_PICO钢网与填孔候选.md": {
+      "to": "archive/历史资料与工具_20261006/PCB_A5_PICO钢网与填孔候选.md",
+      "bytes": 16348,
+      "sha256": "f5b38e85a87ef8497b9d6908ad75d11e253eab5cc888e450a34bc34633b51ad0"
+    },
+    "PCB_A5_嘉立创物料与层叠准备.md": {
+      "to": "archive/历史资料与工具_20261006/PCB_A5_嘉立创物料与层叠准备.md",
+      "bytes": 15800,
+      "sha256": "36fc3e102f0a83864d1c602cca23fc0175af458b7be9371e1c063d36d7c6db27"
+    },
+    "PCB_A5_射频首段审核_20260918.md": {
+      "to": "archive/历史资料与工具_20261006/PCB_A5_射频首段审核_20260918.md",
+      "bytes": 4208,
+      "sha256": "616371347fb4f8e4941df4508b0bb2fd7d7e66345ae41a90dd9ed8354e88f38f"
+    },
+    "PCB_A5_布线前制造审核.md": {
+      "to": "archive/历史资料与工具_20261006/PCB_A5_布线前制造审核.md",
+      "bytes": 11039,
+      "sha256": "3a540dd611f12331448a268afc0bf708c759dd3d6f840c2f1888ccdb607beea9"
+    },
+    "PCB_A5_机械审核.md": {
+      "to": "archive/历史资料与工具_20261006/PCB_A5_机械审核.md",
+      "bytes": 10256,
+      "sha256": "fa736f37f1f420b132978fa3f24f10680223a05d249bfb13d038ae57e61782ab"
+    },
+    "README_BOOT_RESET审阅包_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/README_BOOT_RESET审阅包_仅审核.md",
+      "bytes": 2416,
+      "sha256": "fd177a57ffd029538dd2d4fdf00764f681128762a2a85a2a235a9f4d93a068f6"
+    },
+    "README_C9替料审阅包_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/README_C9替料审阅包_仅审核.md",
+      "bytes": 2162,
+      "sha256": "f7eee0e7992e4ada6ad763dab1d733d5ce0a5ca486f0bd2fbad564f7d75dee99"
+    },
+    "README_板外充电审阅包_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/README_板外充电审阅包_仅审核.md",
+      "bytes": 3752,
+      "sha256": "a89588826b1fc730a163b1d95d2559cee92645b944e4464fd8b3cf4de61d5387"
+    },
+    "SCH_A5_电气与制造审核.md": {
+      "to": "archive/历史资料与工具_20261006/SCH_A5_电气与制造审核.md",
+      "bytes": 9906,
+      "sha256": "8b92ad0c441422bc57695118f322dc3abb7cdfcfb6d7c84c93b4cb495e342971"
+    },
+    "SCH_A5_续航放宽与电源取舍.md": {
+      "to": "archive/历史资料与工具_20261006/SCH_A5_续航放宽与电源取舍.md",
+      "bytes": 5624,
+      "sha256": "0f60358676cd7517d074ad6fed9f0cede07dae487a87d80ad8d3479ad575c6d8"
+    },
+    "双MLX90393_I2C审核_20260918.md": {
+      "to": "archive/历史资料与工具_20261006/双MLX90393_I2C审核_20260918.md",
+      "bytes": 3282,
+      "sha256": "95d90ac730c78bb796f2c127cef49df722f350a074e2e5b09c053eb197d71969"
+    },
+    "封装差异审核_T_20261001.md": {
+      "to": "archive/历史资料与工具_20261006/封装差异审核_T_20261001.md",
+      "bytes": 6779,
+      "sha256": "88291af7ea2019fedf0b111e4ba2f183ac8c72fd74d101d56fdbbc0326e8205c"
+    },
+    "小型化调整方案.md": {
+      "to": "archive/历史资料与工具_20261006/小型化调整方案.md",
+      "bytes": 1712,
+      "sha256": "ff5283b2b578ab05c926f22d60fa2ca5bee548200fa6e745f2523a7655f5d0df"
+    },
+    "清理清单_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/清理清单_20260918.json",
+      "bytes": 91612,
+      "sha256": "98a18b267a2f74b5961cfc6ed8c12dfd7660f9895409c30635a0bd5671df5530"
+    },
+    "清理清单_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/清理清单_20260929.json",
+      "bytes": 38083,
+      "sha256": "c3135e55690260baf122f3b0a62490953d2ac2f8998bcecf395badc39a1557f0"
+    },
+    "电源审核_R_20260929.md": {
+      "to": "archive/历史资料与工具_20261006/电源审核_R_20260929.md",
+      "bytes": 23008,
+      "sha256": "8318a88ea80471a53608a2409892a9075f0c07ec426fd0c12cbb18344d21c312"
+    },
+    "easyeda_std/.DS_Store": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/.DS_Store",
+      "bytes": 6148,
+      "sha256": "655576cd34d5523628a394e35391793d8184fbe1a86b7074e20c9b9e529e723a"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/BOOT_RESET底面标注候选.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/BOOT_RESET底面标注候选.png",
+      "bytes": 72632,
+      "sha256": "c30786fa390133a514692e964d34864d6de246288b4afcb9a40fb67334589327"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印_保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印_保存重开_20261005.json",
+      "bytes": 529789,
+      "sha256": "6d90eddcb7c6cd3fd5a2585ddff2b09579a416879178ff9f14675cda06250740"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印候选_仅审核_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印候选_仅审核_20261005.json",
+      "bytes": 514478,
+      "sha256": "e715de78b349686ae1d2679ebec4195fab932fd59973f41c04ff9d18f733703c"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印候选_轮廓修正_仅审核_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET功能丝印候选_轮廓修正_仅审核_20261005.json",
+      "bytes": 529824,
+      "sha256": "18e0b82e711ee9ac1fdeb9f6f7537f4d876fa429ab63e495ca179b417a16d5c5"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET标注前_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/PCB_BOOT_RESET标注前_20261005.json",
+      "bytes": 512134,
+      "sha256": "90675e1fbb536d1bb92c55582c0f41bcc3f437bdd1e14151e9c8b14a57aa5c0f"
+    },
+    "easyeda_std/BOOT_RESET标注_20261005/功能标注局部候选审核_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/BOOT_RESET标注_20261005/功能标注局部候选审核_仅审核.json",
+      "bytes": 1595,
+      "sha256": "ad5c1730837bff1770ea556d5a219fd9890fc9fe5a6c80e94624fd16de19a46a"
+    },
+    "easyeda_std/C9替料_20261005/PCB_C9候选_原生名称校正_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9候选_原生名称校正_20261005.json",
+      "bytes": 529780,
+      "sha256": "f7c8cde71c8ab8104fa6bd33b7497d000865b94f50c32bf462e55e12bb257367"
+    },
+    "easyeda_std/C9替料_20261005/PCB_C9属性候选_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9属性候选_20261005.json",
+      "bytes": 530001,
+      "sha256": "f641dacb6d58d77f97f737b8583ea8a5f874322cfe674d0f1e44471c8103bc2b"
+    },
+    "easyeda_std/C9替料_20261005/PCB_C9替料_保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料_保存重开_20261005.json",
+      "bytes": 441601,
+      "sha256": "5dc13f75d51ffe1639186bc051c4e9656abe6f7cca77e6f640024d3e2a223711"
+    },
+    "easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料_重铺保存重开_20261005.json",
+      "bytes": 529780,
+      "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84"
+    },
+    "easyeda_std/C9替料_20261005/PCB_C9替料前_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/PCB_C9替料前_20261005.json",
+      "bytes": 529788,
+      "sha256": "a418a8248d5c1347d2ea543fcb547b7a46d2d7296e715bf1dd257298c58b47d5"
+    },
+    "easyeda_std/C9替料_20261005/SCH_C9候选_仅第4页_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9候选_仅第4页_20261005.json",
+      "bytes": 19996,
+      "sha256": "f073baea836ad7979e9e3e758446b16720102176a5fdb658347db172d636586c"
+    },
+    "easyeda_std/C9替料_20261005/SCH_C9候选_第4页原生容器_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9候选_第4页原生容器_20261005.json",
+      "bytes": 21064,
+      "sha256": "5d157830d40ba013aa55d79250ffea8d2424ecb5f2415bd92ff1bf6a870dd63c"
+    },
+    "easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9替料_五页保存重开_20261005.json",
+      "bytes": 95623,
+      "sha256": "f12df6b7c3b48995aeb676819535489141a1fa7e1d8c71d9f2a18f62c824a4c1"
+    },
+    "easyeda_std/C9替料_20261005/SCH_C9替料前_五页_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/C9替料_20261005/SCH_C9替料前_五页_20261005.json",
+      "bytes": 95411,
+      "sha256": "44af0ab1a662759cb97fbbb7e8c63801c7fa9ded86a6e06e065f741f1438b5a9"
+    },
+    "easyeda_std/PCB_A5_18mm_trial.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_18mm_trial.svg",
+      "bytes": 69105,
+      "sha256": "ac848c6e27943f35dc02b4aec008860b5ec3ed008e47ca03546dacbf044b453e"
+    },
+    "easyeda_std/PCB_A5_18mm_trial_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_18mm_trial_20260916.json",
+      "bytes": 334592,
+      "sha256": "e8ce3b1ebe6536ae772cc1d348bd58c222d44393da6c3a4b50dd01cba0842493"
+    },
+    "easyeda_std/PCB_A5_MLX040_verified_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_MLX040_verified_20260916.json",
+      "bytes": 333101,
+      "sha256": "6fe8ee55a221747a317b48ca7cffc941d75dd04526f61258322b3db487862c0c"
+    },
+    "easyeda_std/PCB_A5_PICO分窗_仅候选禁止生产_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_PICO分窗_仅候选禁止生产_20260917.json",
+      "bytes": 338920,
+      "sha256": "3fc8db2491b8ae2d82bb99eb4f625bffe014d53bdc36982e944089e640caeb04"
+    },
+    "easyeda_std/PCB_A5_PICO钢网对照.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_PICO钢网对照.svg",
+      "bytes": 5289,
+      "sha256": "7bf2c240df3c358edb792d1f8bf7a48f17dab19c7a7186ee4b9fa103ebea5006"
+    },
+    "easyeda_std/PCB_A5_USB主控侧_云端重开回读_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_USB主控侧_云端重开回读_20260917.json",
+      "bytes": 361955,
+      "sha256": "c141e3ac3c2a1830652e99aaf9db58f33591925196debad1bfec956f78543533"
+    },
+    "easyeda_std/PCB_A5_USB主控侧重布候选_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_USB主控侧重布候选_20260917.json",
+      "bytes": 362980,
+      "sha256": "a8b3621693caf248965d56b63814efd05739d39cc26e6136b5f77a5b824ff8d6"
+    },
+    "easyeda_std/PCB_A5_USB区域重新摆位候选_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_USB区域重新摆位候选_20260917.json",
+      "bytes": 368583,
+      "sha256": "537b7f542cd7b6b25fee2b7841f3e5061a35778f4840e4ec068f8479260f2bc7"
+    },
+    "easyeda_std/PCB_A5_USB区域重新摆位对照.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_USB区域重新摆位对照.svg",
+      "bytes": 38650,
+      "sha256": "29aec514f2e86de959513708a0c96c8021a6ff088af036cf9fe081f2b7e1d08b"
+    },
+    "easyeda_std/PCB_A5_USB接口侧局部重布候选_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_USB接口侧局部重布候选_20260917.json",
+      "bytes": 367727,
+      "sha256": "8ff769caeac105e48d7bc678fa76868626f946d6aa67662fe364d1f89ab0ead3"
+    },
+    "easyeda_std/PCB_A5_cloud_reopened_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_cloud_reopened_20260916.json",
+      "bytes": 334031,
+      "sha256": "a3a348c513644ef5c89573dfc6dc879f2166694751a4a577c2fddc88f5fc6149"
+    },
+    "easyeda_std/PCB_A5_layout_before_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_layout_before_20260916.json",
+      "bytes": 330635,
+      "sha256": "0d8c3998621b11b4a96bcf0a2def48ef3c9c0ce824d1ff99f4b11dd958882bb2"
+    },
+    "easyeda_std/PCB_A5_native_unplaced_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_native_unplaced_20260916.json",
+      "bytes": 306317,
+      "sha256": "a210f20c1df4cf7cf68d5bc17a7d4d23881661765e5c0affdf7ab337c502dfca"
+    },
+    "easyeda_std/PCB_A5_production_silk_verified_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_production_silk_verified_20260916.json",
+      "bytes": 338466,
+      "sha256": "91a51ef1cac83dc450a7c64d87d2fbf01e4533c5d2a11f0f601fdbba7e6ccbbe"
+    },
+    "easyeda_std/PCB_A5_silk_before_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_silk_before_20260916.json",
+      "bytes": 330706,
+      "sha256": "ffbc863b39a15dc33e4d6fea84c1fc068b998b8a8552b5da4e7c13ac0efec4bf"
+    },
+    "easyeda_std/PCB_A5_silk_candidate_20260916.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_silk_candidate_20260916.json",
+      "bytes": 331588,
+      "sha256": "7af02cff05b90df9f35fca8cac8d53a380ce0a400616d99082c40352f3b63e56"
+    },
+    "easyeda_std/PCB_A5_丝印预览.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_丝印预览.svg",
+      "bytes": 150410,
+      "sha256": "2f86286ab5053a20f0c07504ac8c7dc09f0f9f23484cd773637bf12f2f75e80f"
+    },
+    "easyeda_std/PCB_A5_保留自动布线_局部重布候选_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_保留自动布线_局部重布候选_20260917.json",
+      "bytes": 362137,
+      "sha256": "b7b0bf5efbf214aaede52f4a3a111c9c4e031873f956f613158f03cb6880a02c"
+    },
+    "easyeda_std/PCB_A5_天线净空布局候选_未原生验证_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_天线净空布局候选_未原生验证_20260917.json",
+      "bytes": 342919,
+      "sha256": "c1d7ae1be133bfe1178ed4db78e2a69aa215c5b560d41e27ff4f423cf6a71da5"
+    },
+    "easyeda_std/PCB_A5_天线净空调整对照.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_天线净空调整对照.svg",
+      "bytes": 11471,
+      "sha256": "965ceb99eb781a2d71cd7290c2c1e6302846e0c05cae582afb64ca6763554a4d"
+    },
+    "easyeda_std/PCB_A5_天线禁布审核.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_天线禁布审核.svg",
+      "bytes": 8154,
+      "sha256": "cfea64f8b86ff3f4cdd29c0898c4af004723fbbaacff5901f27770538d24ffd4"
+    },
+    "easyeda_std/PCB_A5_布局优化预检.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_布局优化预检.svg",
+      "bytes": 151141,
+      "sha256": "26f5093c610a4fe650f4506fd07eb2007cf2602b5f4f41e23a4fc94cc4d25b06"
+    },
+    "easyeda_std/PCB_A5_机械空间审核.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_机械空间审核.svg",
+      "bytes": 80986,
+      "sha256": "63b9e589cd7b6710c7e85b8b24d99fbde4037c786b0e1ff332406079f2d02baf"
+    },
+    "easyeda_std/PCB_A5_用户布线副本_调整前备份_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_用户布线副本_调整前备份_20260917.json",
+      "bytes": 359470,
+      "sha256": "6b571b8bfc231e56458c0af80c835215c6809e27611e5422f25e6f58e231a443"
+    },
+    "easyeda_std/PCB_A5_装配定位图.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_A5_装配定位图.svg",
+      "bytes": 156569,
+      "sha256": "14503cbba3c3aeab66fd07acb78630731253172e93bdf43861b3e9ad88118446"
+    },
+    "easyeda_std/PCB_克隆板GND孔距修正_云端回读_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板GND孔距修正_云端回读_20260929.json",
+      "bytes": 505225,
+      "sha256": "44068c11869d448597dd402fda149b6a929255ddf088eb1769f0a28e4298a0c4"
+    },
+    "easyeda_std/PCB_克隆板USB局部重布_原生回读_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板USB局部重布_原生回读_20260929.json",
+      "bytes": 505228,
+      "sha256": "c3c0d4e5630df0b756df07d380213af8edc1a5eab8da054e44c54a5e4e337954"
+    },
+    "easyeda_std/PCB_克隆板USB局部重布_未验收候选_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板USB局部重布_未验收候选_20260928.json",
+      "bytes": 505229,
+      "sha256": "5a92c735b4be8a2a7ece71fafb9173a57b2daaa9a72dc6ffa8713592354ee8fa"
+    },
+    "easyeda_std/PCB_克隆板USB接口工艺修正_云端回读_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板USB接口工艺修正_云端回读_20260929.json",
+      "bytes": 505146,
+      "sha256": "da4c0f91b4f801b84ef4a8f01209e901b6120975983f225b010f202953042699"
+    },
+    "easyeda_std/PCB_克隆板内层迁线_云端重开_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板内层迁线_云端重开_20260928.json",
+      "bytes": 387683,
+      "sha256": "6d7112ae34df0c4892a042c1df876adea6e0bd9398d1935ad963f2ea9eba7801"
+    },
+    "easyeda_std/PCB_克隆板内层迁线候选_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板内层迁线候选_20260928.json",
+      "bytes": 376960,
+      "sha256": "5806e55d47e189c9d0e165eb2e5d2cea4b35d9ef21376117c6203209b93d6f34"
+    },
+    "easyeda_std/PCB_克隆板射频短路径_云端重开_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板射频短路径_云端重开_20260928.json",
+      "bytes": 390816,
+      "sha256": "50b48c73c8d923f9476f88418506dc65fe7b515c4405d7b74c42571dc64ec9dc"
+    },
+    "easyeda_std/PCB_克隆板射频短路径候选_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板射频短路径候选_20260928.json",
+      "bytes": 378041,
+      "sha256": "b3635d117f7d4e995b414fcc286f84bd449bf567963cc4c7ffbc9a8056508f4e"
+    },
+    "easyeda_std/PCB_克隆板批量补线_原生回读_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板批量补线_原生回读_20260928.json",
+      "bytes": 408297,
+      "sha256": "9d75f1244549d9def425d98eda4fd0a8496061458a9061c360e269ae1f0c8068"
+    },
+    "easyeda_std/PCB_克隆板批量补线候选_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_克隆板批量补线候选_20260928.json",
+      "bytes": 384558,
+      "sha256": "29bbd2c2453516ac8114c6520b0860cd7d929d219a2fd75f2e2d47209950edf5"
+    },
+    "easyeda_std/PCB_射频布线前现场备份_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_射频布线前现场备份_20260918.json",
+      "bytes": 392583,
+      "sha256": "49911ce6a0e6e46d64e5e532874f1a15b71698ceed2585abeb67ecbf15b6db79"
+    },
+    "easyeda_std/PCB_射频首段_云端重开回读_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_射频首段_云端重开回读_20260918.json",
+      "bytes": 395148,
+      "sha256": "d22b484a763e2224d73e1be1d723be3be5c914914e04d1afcca2d497c79c5446"
+    },
+    "easyeda_std/PCB_射频首段_原生回读_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_射频首段_原生回读_20260918.json",
+      "bytes": 395164,
+      "sha256": "b8456e67199106671681eb29cf180cdf4c363e82f22319860d59f78341339a17"
+    },
+    "easyeda_std/PCB_射频首段候选_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_射频首段候选_20260918.json",
+      "bytes": 395513,
+      "sha256": "84c8190f8dcb94df78dbe8600bbf5a5a1d227515afb6fb88b0f93a39bf7cc2de"
+    },
+    "easyeda_std/PCB_局部重排_槽孔修正后云端回读_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_局部重排_槽孔修正后云端回读_20260918.json",
+      "bytes": 366463,
+      "sha256": "45405df1734ccd60cbab39ace39a9e58210ab57bbf10022d86609de2814b63cc"
+    },
+    "easyeda_std/PCB_局部重排候选_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_局部重排候选_20260918.json",
+      "bytes": 368766,
+      "sha256": "d2acb28940f8b6fd46fc3192751e91c8c984a477f78b648477a2adf1b87c1d74"
+    },
+    "easyeda_std/PCB_局部重排前备份_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_局部重排前备份_20260918.json",
+      "bytes": 350070,
+      "sha256": "86b8873bda296c1af7dba83a6808e389ddc50203899594760dbc7536653f5385"
+    },
+    "easyeda_std/PCB_布线前关键区局部候选_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_布线前关键区局部候选_20260918.json",
+      "bytes": 394939,
+      "sha256": "59f490998b0efb357c0311b354986010b5d12014014fe7f791ce59a058e846e5"
+    },
+    "easyeda_std/PCB_布线前关键区布局_云端重开回读_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/PCB_布线前关键区布局_云端重开回读_20260918.json",
+      "bytes": 392583,
+      "sha256": "49911ce6a0e6e46d64e5e532874f1a15b71698ceed2585abeb67ecbf15b6db79"
+    },
+    "easyeda_std/README.md": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/README.md",
+      "bytes": 3387,
+      "sha256": "9ebe17d394330715323af59b8ae0fbc15211179c019e5572bea4e20304246659"
+    },
+    "easyeda_std/R制造输出局部审核_20260929.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/R制造输出局部审核_20260929.png",
+      "bytes": 125189,
+      "sha256": "245319d531c6992b00275f940d602618c93e48fef07dad4381ff158b096a0bc7"
+    },
+    "easyeda_std/cloud_presync_20260918/原理图_云端同步前备份.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/cloud_presync_20260918/原理图_云端同步前备份.json",
+      "bytes": 94465,
+      "sha256": "d743541b21f40b6b93f865881ce020e44a67e43fd240c65deb40f89e297c548f"
+    },
+    "easyeda_std/design_netlist.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/design_netlist.json",
+      "bytes": 51835,
+      "sha256": "90b97662458c6a654f1acbac513636d1728d6c77351e49cd7764b33adc5bd1b5"
+    },
+    "easyeda_std/footprints/BATTERY_WIRE_2PAD_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/BATTERY_WIRE_2PAD_A5.json",
+      "bytes": 3835,
+      "sha256": "a86f81a2891020ebf307ac7b6b43baddca6e6bf4bfe503d95bc87a260668e0eb"
+    },
+    "easyeda_std/footprints/LMBR4010_SOD882_LRC_LAND_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/LMBR4010_SOD882_LRC_LAND_A5.json",
+      "bytes": 3777,
+      "sha256": "a5c81b99d4708e3bb80e3bf020fbba9a7a0fc4b00baa896e86ac4cbc3a7826bd"
+    },
+    "easyeda_std/footprints/LP0404N3_SOT883_LRC_LAND_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/LP0404N3_SOT883_LRC_LAND_A5.json",
+      "bytes": 3910,
+      "sha256": "fc2669dc78ec0b78aff7e92555daf6387517f85ce7410798dae818e07ed86c4a"
+    },
+    "easyeda_std/footprints/MLX90393_LQ_8_EP_P040_A5_R1.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/MLX90393_LQ_8_EP_P040_A5_R1.json",
+      "bytes": 6728,
+      "sha256": "e57d152e2257d4a67fcc2bbe4082e73ab81c88e173340611564457043ce9c93d"
+    },
+    "easyeda_std/footprints/MLX90393_封装设计说明.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/MLX90393_封装设计说明.json",
+      "bytes": 2169,
+      "sha256": "cc0840f928d98f98dd0f565602c3565a64d9c7ef7a9ee1ba1582c99a9646216a"
+    },
+    "easyeda_std/footprints/SGM40567_WLCSP_6B_SGM_LAND_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/SGM40567_WLCSP_6B_SGM_LAND_A5.json",
+      "bytes": 4175,
+      "sha256": "6f29fcbe029ffa6010c7d2b0ce324bdf1faad3338d32fcde60fd077410a56c6c"
+    },
+    "easyeda_std/footprints/U_FL_R_SMT_1_HIROSE_LAND_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/U_FL_R_SMT_1_HIROSE_LAND_A5.json",
+      "bytes": 3950,
+      "sha256": "76e5dc002d30c8eb7d0024770dbce47aa985772a501b749ff188daa4cb530c01"
+    },
+    "easyeda_std/footprints/原生焊盘回读.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/原生焊盘回读.json",
+      "bytes": 2516,
+      "sha256": "1a3fd48cf9eaddfaa0a6415462ae46ff1fdef75d18d0737d83aedea589b0024f"
+    },
+    "easyeda_std/footprints/封装几何清单.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/封装几何清单.json",
+      "bytes": 3929,
+      "sha256": "6d2c80c115733a40464167856ef3942e514920d9fc55dd58162929709ed9a205"
+    },
+    "easyeda_std/footprints/封装原生核验报告.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/footprints/封装原生核验报告.json",
+      "bytes": 2636,
+      "sha256": "bedeefe4ae11a832f9d7871fc52b07544cb11fdd4ac66753cad83263d7560b46"
+    },
+    "easyeda_std/pcb_a5_geometry_audit.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_geometry_audit.json",
+      "bytes": 606,
+      "sha256": "3cd1cd8b882ec1e5367509a1719bc94a7e4045d2c03d141a6724b1b508c3285d"
+    },
+    "easyeda_std/pcb_a5_label_positions.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_label_positions.json",
+      "bytes": 40014,
+      "sha256": "432fbad7c8799152a01957bb17efbff251c53bb6b54ab78fe5c5b41ca5c098b9"
+    },
+    "easyeda_std/pcb_a5_layout_plan.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_layout_plan.json",
+      "bytes": 5341,
+      "sha256": "3bc9f299d024071d2bcfd2555baf9888f5a37625d6ba4193d790ec26faf93ad6"
+    },
+    "easyeda_std/pcb_a5_mechanical_audit.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_mechanical_audit.json",
+      "bytes": 31883,
+      "sha256": "d7804744abf80b7d798f860385147f9633d56552eb1dcaf3c69a9beb0db9a064"
+    },
+    "easyeda_std/pcb_a5_pico_stencil_candidate_check.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_pico_stencil_candidate_check.json",
+      "bytes": 1936,
+      "sha256": "4dd66bc67aafd4caaee7b54beb9c392a7cc926c1029e28390f46645905713c6f"
+    },
+    "easyeda_std/pcb_a5_rf_clearance_layout_check.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_rf_clearance_layout_check.json",
+      "bytes": 3762,
+      "sha256": "f4df58a994bc25b4d42c3da305dfd724a868f071a0d592501599b2d2d72c4064"
+    },
+    "easyeda_std/pcb_a5_routed_snapshot_audit.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_routed_snapshot_audit.json",
+      "bytes": 9032,
+      "sha256": "376f763f63a25a62edcd66ab8cb435ae52b18c7c7f1f0f21619954ebe500cf3d"
+    },
+    "easyeda_std/pcb_a5_ufl_keepout_audit.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_ufl_keepout_audit.json",
+      "bytes": 6350,
+      "sha256": "675e737bf896759052641ef94f78c40db857a6045b6e6ea68843784a59f9ef44"
+    },
+    "easyeda_std/pcb_a5_usb_front_candidate_check_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_usb_front_candidate_check_20260917.json",
+      "bytes": 8093,
+      "sha256": "df522a229e8369091d4ce44ee74122c6fea1c92ba5fb9ba83e7bb7e71463f940"
+    },
+    "easyeda_std/pcb_a5_usb_soc_fanout_check.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_usb_soc_fanout_check.json",
+      "bytes": 3434,
+      "sha256": "2bdfce4aecbdb77f78a4ae9a335afc273609cfcfbd64f41ed74c7310770e14a2"
+    },
+    "easyeda_std/pcb_a5_usb_zone_placement_check_20260917.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/pcb_a5_usb_zone_placement_check_20260917.json",
+      "bytes": 2599,
+      "sha256": "0076f930de0d24591ff0364b6f7417f5e3091d75ec24da36c554d5912af0a3e7"
+    },
+    "easyeda_std/ufl_footprint_geometry_check.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/ufl_footprint_geometry_check.json",
+      "bytes": 464,
+      "sha256": "a359509f72300dd187b0b109139311930b354c85c5ab523eaeb68604e8a19129"
+    },
+    "easyeda_std/usb_keep_min_candidate/01.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/01.svg",
+      "bytes": 33420,
+      "sha256": "fc035acba65e36be680aae13403e30b1168b730ffcad588e130fd62d6d73ee9b"
+    },
+    "easyeda_std/usb_keep_min_candidate/02.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/02.svg",
+      "bytes": 23695,
+      "sha256": "6e643a50b5bf6288b300f96af550a73a154f996c1013a28d88e33225a894de08"
+    },
+    "easyeda_std/usb_keep_min_candidate/03.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/03.svg",
+      "bytes": 22517,
+      "sha256": "1b0e17fbcaf13b73c890b027f8c6af00c83e5fc9ff32bf9a1c15439ff46398ed"
+    },
+    "easyeda_std/usb_keep_min_candidate/04.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/04.svg",
+      "bytes": 28871,
+      "sha256": "405755e3ce1730ad86b7e5a19eb816b2293f1ef9854d3ec1d3b1afc53457ed14"
+    },
+    "easyeda_std/usb_keep_min_candidate/05.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/05.svg",
+      "bytes": 14411,
+      "sha256": "180bd7fe5b66e6e3428b6f4ae0b399589bbd756f341f3d428066ad09f41b69cd"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/封装清单.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/封装清单.json",
+      "bytes": 3025,
+      "sha256": "bf88c1306e2f3beb68c91077d2dcd605a5c24a8fa9a08489da8515c2b81efd7a"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.json",
+      "bytes": 4044,
+      "sha256": "ce713b84981d63db521216c6fa494cae0828a5653ff36df41c7cd2f646f11b7d"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/按键_EVPBB_官方铜焊盘.svg",
+      "bytes": 1288,
+      "sha256": "4174daeba07cccf16fe1756e981ab6e89c2218af50327c7a7a7c9d49b9c62402"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/按键_原生核验.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/按键_原生核验.json",
+      "bytes": 1780,
+      "sha256": "c74fcab0b161d5b02bf18a2f8d54527a4a100fcf467a135acc2be70c5c5d97e4"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.json",
+      "bytes": 4148,
+      "sha256": "1d5c43ec9d715a26443f7714184f1cbf800aa7247609663781c6fbb00602c1f0"
+    },
+    "easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.svg": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/footprints/笔头四线_焊线焊盘候选.svg",
+      "bytes": 1210,
+      "sha256": "48aa7a41a96e61d0608eb89b64ba64ddefb9fddbb502243da2098794698a6c07"
+    },
+    "easyeda_std/usb_keep_min_candidate/制造规则候选.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/制造规则候选.json",
+      "bytes": 1433,
+      "sha256": "1c23a5b9ce18ed9176e4ce91964ec98f08c92c6e85e116a089c5500f91be56bc"
+    },
+    "easyeda_std/usb_keep_min_candidate/原理图_保留USB小型化候选.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/原理图_保留USB小型化候选.json",
+      "bytes": 98542,
+      "sha256": "c96227cd925b4c7cc6088c6b577680e4a7ffcea2c2f8a41eb509180ff0bd701c"
+    },
+    "easyeda_std/usb_keep_min_candidate/原生回读_全部封装绑定.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/原生回读_全部封装绑定.json",
+      "bytes": 99042,
+      "sha256": "0f59ca7f783b71e3960a888bd03df6a802ee880eaf73133de7f2530a92fd1e15"
+    },
+    "easyeda_std/usb_keep_min_candidate/原生回读_按键绑定.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/原生回读_按键绑定.json",
+      "bytes": 99058,
+      "sha256": "fc802e1723ebece675925cead6b54030f55ad8e7ab91287965751ae708290448"
+    },
+    "easyeda_std/usb_keep_min_candidate/原生验证进度.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/原生验证进度.json",
+      "bytes": 2705,
+      "sha256": "f31b8decbcc27765156514751881891248eeedb1b952f3920ba1eb4371368a70"
+    },
+    "easyeda_std/usb_keep_min_candidate/接线检查.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/接线检查.json",
+      "bytes": 3173,
+      "sha256": "f29730b06eac634efaa131368f6d421d53dbef5a63012f97ae3a18bb04c0fd8a"
+    },
+    "easyeda_std/usb_keep_min_candidate/预期接线.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/预期接线.json",
+      "bytes": 3577,
+      "sha256": "d5c5b550ad08aad4f183f6a1a5ea62f1104362aa3cae982f3cb05ea625e59882"
+    },
+    "easyeda_std/usb_keep_min_candidate/预览.html": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/usb_keep_min_candidate/预览.html",
+      "bytes": 718,
+      "sha256": "8dbaf22daee91097a6b3a7f659bfc18f6320b01f89b81d7736134c0a6e030549"
+    },
+    "easyeda_std/丝印终检_20261004/PCB_silk_candidate_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_candidate_20261004.json",
+      "bytes": 525305,
+      "sha256": "648fe4dab1610c8327e434930c89940ab0b2b04feefcff27bfb9a916b5b551d6"
+    },
+    "easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+      "bytes": 529613,
+      "sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684"
+    },
+    "easyeda_std/丝印终检_20261004/PCB_silk_start_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/PCB_silk_start_20261004.json",
+      "bytes": 528199,
+      "sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e"
+    },
+    "easyeda_std/丝印终检_20261004/丝印候选差异.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/丝印终检_20261004/丝印候选差异.json",
+      "bytes": 6535,
+      "sha256": "4805180010e98e5bfe85ad4a3fdbede77fac0ce7765a2e1f4234d138f0689540"
+    },
+    "easyeda_std/云端同步_20261004/PCB_independent_cloud_read_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/PCB_independent_cloud_read_20261004.json",
+      "bytes": 528063,
+      "sha256": "968381becf6f02d16998d06b140e89a698ae9267d8f2ddba1e11730a8d5ffe89"
+    },
+    "easyeda_std/云端同步_20261004/PCB_云端整备份回读_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/PCB_云端整备份回读_20261004.json",
+      "bytes": 530489,
+      "sha256": "aefc262dc3cc678d01deddbd0d5cb2837aaa77f366b1c6f4b096852e01ad1dcc"
+    },
+    "easyeda_std/云端同步_20261004/按键收拢_原生编辑后_整工程备份_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/按键收拢_原生编辑后_整工程备份_20261004.zip",
+      "bytes": 299342,
+      "sha256": "c91c8a86b55d78f7146cd22afbae21283beb9321598089f3afa9eb8e28bbf746"
+    },
+    "easyeda_std/云端同步_20261004/服务器同步二次核验_未通过.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/服务器同步二次核验_未通过.json",
+      "bytes": 1207,
+      "sha256": "01178e346a3df072815d3b86ddd6fd969b0d80bee56e2e58bed450cfa48c6b4e"
+    },
+    "easyeda_std/云端同步_20261004/独立云端读取核验_通过.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/云端同步_20261004/独立云端读取核验_通过.json",
+      "bytes": 957,
+      "sha256": "82800290c66230732b7ce88ba83f4ef52f6444125215d7cce04ee531c93320bf"
+    },
+    "easyeda_std/传感器接地局部_20260929.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/传感器接地局部_20260929.png",
+      "bytes": 268058,
+      "sha256": "82bd8ff6a9847b4ff31ad75ddd6f953f2577e4f654ca362230af0083a2e2b66a"
+    },
+    "easyeda_std/传感器电源P局部_20260929.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/传感器电源P局部_20260929.png",
+      "bytes": 183914,
+      "sha256": "dfbcdfd27d8cf896f696b7e5fb8b92380738f739655d2dec63a2b5e3a12d9fe5"
+    },
+    "easyeda_std/克隆板C10短接Q云端核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板C10短接Q云端核验_20260929.json",
+      "bytes": 1896,
+      "sha256": "d725d6c6d61a7ee9e435aa0ab544e9c37a6ebc91f7a970cfe93e155a2f07ac8f"
+    },
+    "easyeda_std/克隆板GND孔距S云端与制造核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板GND孔距S云端与制造核验_20260929.json",
+      "bytes": 1936,
+      "sha256": "a564cefb3a9bc75ed9322b34ed2626643f0f6b520d6a5e7e870808c33203357e"
+    },
+    "easyeda_std/克隆板MLX去耦R云端核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板MLX去耦R云端核验_20260929.json",
+      "bytes": 1967,
+      "sha256": "f210079d96fb295db0b1aeea2d0f94f5ada4d5885d7f0cf1a4fdaecf07fb63eb"
+    },
+    "easyeda_std/克隆板P电源分支审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板P电源分支审核_20260929.json",
+      "bytes": 7376,
+      "sha256": "9eb64a8d8c05fb3acef52223a4df7333f769fc31f3dce523975ee784db846467"
+    },
+    "easyeda_std/克隆板Q_MLX去耦空间初筛_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板Q_MLX去耦空间初筛_20260929.json",
+      "bytes": 608,
+      "sha256": "314e750bbf6b5e719f33e1b5737f23797ef8a2bc0b5b89781c2a32fac834a1b9"
+    },
+    "easyeda_std/克隆板Q电源分支审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板Q电源分支审核_20260929.json",
+      "bytes": 7308,
+      "sha256": "6e6948fc1aeeee08d8f21cc4e601a8f4a3db0fc25cb40aa87e5693659279519b"
+    },
+    "easyeda_std/克隆板R制造输出局部审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板R制造输出局部审核_20260929.json",
+      "bytes": 13417,
+      "sha256": "0b6b54dbf2bc493c04dd2afc04862f60d44b969bff243867f1980ff8170f72c6"
+    },
+    "easyeda_std/克隆板R电容选料筛查.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板R电容选料筛查.json",
+      "bytes": 122959,
+      "sha256": "67dfacc99d5966c40f3997f8b226681a06623689c5efa60797196fe110223dee"
+    },
+    "easyeda_std/克隆板R电源分支审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板R电源分支审核_20260929.json",
+      "bytes": 7301,
+      "sha256": "d7f1b4c6d16c525773d6ee5393d2498b64eab95907b80695db16c0ce26aa2a87"
+    },
+    "easyeda_std/克隆板R电源预算审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板R电源预算审核_20260929.json",
+      "bytes": 7354,
+      "sha256": "02dfbc33b83e7b0244b972441e90e52f8f53cf02ce80ec30950493af67f081b8"
+    },
+    "easyeda_std/克隆板S连接器孔与开窗审核_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板S连接器孔与开窗审核_20260929.json",
+      "bytes": 12740,
+      "sha256": "dcb5a66400b847d6631cd41d0e02eec7238367e675b7c21d96fc766a93084c1f"
+    },
+    "easyeda_std/克隆板T接口云端与制造核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板T接口云端与制造核验_20260929.json",
+      "bytes": 5555,
+      "sha256": "6c02f8234518f20816e58341b1e05e9939a9a617715122b8895f120f12fba490"
+    },
+    "easyeda_std/克隆板USB云端保存核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB云端保存核验_20260929.json",
+      "bytes": 1512,
+      "sha256": "8476b28eed635b78272399505cf49fb846127d08d9cc000aa2f032ea20876c5c"
+    },
+    "easyeda_std/克隆板USB剩余参考地定位_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB剩余参考地定位_20260929.json",
+      "bytes": 83157,
+      "sha256": "6d04a54f8b607731af221457790b8662bed7297ebe7e911db1d1ed0c49662258"
+    },
+    "easyeda_std/克隆板USB回流地孔可放置性_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB回流地孔可放置性_20260929.json",
+      "bytes": 4020,
+      "sha256": "cf769fd32bd1becb669ea250cc675229bd377ad7a3ea82d9734f43d25d8bd48d"
+    },
+    "easyeda_std/克隆板USB局部重布_预览_20260928.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB局部重布_预览_20260928.png",
+      "bytes": 385752,
+      "sha256": "bbd3501027e630f7c04a4cc4eb2b94f09fdb9aca46689936c95d96d3aee40f5a"
+    },
+    "easyeda_std/克隆板USB局部重布检查_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB局部重布检查_20260928.json",
+      "bytes": 227187,
+      "sha256": "37f28c2b50d5ad8bbcdfb2bc9c4b50833e03720ae1788a867d076cf75a139376"
+    },
+    "easyeda_std/克隆板USB局部重布独立检查_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB局部重布独立检查_20260928.json",
+      "bytes": 3544,
+      "sha256": "c34b596bafd76db8eb3035563ae8beeb100efe6c59576398b63f2e428b42bd10"
+    },
+    "easyeda_std/克隆板USB局部预检_20260928.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB局部预检_20260928.png",
+      "bytes": 188207,
+      "sha256": "f7f62d04e1d7f3bf07e941238c6b74764e52b783a9a8976b3458cbeb1fcffb7e"
+    },
+    "easyeda_std/克隆板USB扇出障碍核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB扇出障碍核验_20260928.json",
+      "bytes": 2931,
+      "sha256": "4c4d9a1f8c4b7332a65a78d29f2bc7fa16d0879a8ddf853c7aaa11eb3a7f5425"
+    },
+    "easyeda_std/克隆板USB换层回流细查_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB换层回流细查_20260929.json",
+      "bytes": 29470,
+      "sha256": "09ee2ec36728cc6d6c6be57bef92dd65dbc8492f236390378186c5e6aa4fe824"
+    },
+    "easyeda_std/克隆板USB正反插路径检查_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB正反插路径检查_20260929.json",
+      "bytes": 2693,
+      "sha256": "cc175583ef2ef3a6d5e40db590f2e88933c966421979fbf53d9b111a28b6e70a"
+    },
+    "easyeda_std/克隆板USB线宽P云端核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板USB线宽P云端核验_20260929.json",
+      "bytes": 2331,
+      "sha256": "4adf4a300488bdc123433cffb419890a0ccb7eb1be8e7cf46a2f66063f55f9eb"
+    },
+    "easyeda_std/克隆板内层迁线检查_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板内层迁线检查_20260928.json",
+      "bytes": 2602,
+      "sha256": "3fc59c71748997048e095e8ba79bc83a34fc6c8d6f952847ea0e028952673f22"
+    },
+    "easyeda_std/克隆板圆板框重开修复核验_20260929.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板圆板框重开修复核验_20260929.json",
+      "bytes": 1922,
+      "sha256": "7b4d53baa8e50b515d6a5fcf4672fab81cb175534f2cb5a937942835f1353817"
+    },
+    "easyeda_std/克隆板射频云端核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板射频云端核验_20260928.json",
+      "bytes": 2233,
+      "sha256": "93a0548662fa5fb92a834e988c2973cae50ea90e14cb85fb77af1d17a400436a"
+    },
+    "easyeda_std/克隆板射频原生核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板射频原生核验_20260928.json",
+      "bytes": 1868,
+      "sha256": "49244dc4781e21a8a7cd5ae952481e0ba1dbd9ed53849cc87ce7b1aeb3ad22d1"
+    },
+    "easyeda_std/克隆板射频短路径检查_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板射频短路径检查_20260928.json",
+      "bytes": 1315,
+      "sha256": "1990b5711b5975cb01423f19ce9b2039366b988e2001cd6e40b0814777db9f4b"
+    },
+    "easyeda_std/克隆板射频迁线预检_20260928.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板射频迁线预检_20260928.png",
+      "bytes": 144172,
+      "sha256": "12a2e60d4bbf387a2620d8d901759b5c17d7eeea4150c5051e37133a460aa4a1"
+    },
+    "easyeda_std/克隆板批量云端核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量云端核验_20260928.json",
+      "bytes": 1032,
+      "sha256": "0db7e23f62bdf1300a4d05602c0bc66547957a9830194fe77c9fad3d7311d999"
+    },
+    "easyeda_std/克隆板批量原生核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量原生核验_20260928.json",
+      "bytes": 2399,
+      "sha256": "1f4531792b2825663594382e6487dd9ffab0c1e890685491f369ff1851cd8777"
+    },
+    "easyeda_std/克隆板批量原生界面记录_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量原生界面记录_20260928.json",
+      "bytes": 1104,
+      "sha256": "fc9f45dce988a9a90738f9cfedd98ca533c5ca992bdddd09c9fdbb1b445af8e2"
+    },
+    "easyeda_std/克隆板批量独立核验_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量独立核验_20260928.json",
+      "bytes": 2634,
+      "sha256": "80e03aa60c6382dccf65bbd0f5ed67e16cfecce98fbcd1ef38414019bd454a37"
+    },
+    "easyeda_std/克隆板批量补线分层预检_20260928.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量补线分层预检_20260928.png",
+      "bytes": 280872,
+      "sha256": "c76c923693b9feea3d0db8c8e111605bb5fadbbdd2e38c8795a4fc3d3765f68a"
+    },
+    "easyeda_std/克隆板批量补线检查_20260928.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/克隆板批量补线检查_20260928.json",
+      "bytes": 20846,
+      "sha256": "207030b60bf7a6f23ba5601ae89fbea388e5e983cb7e937bef530edaa203f593"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_finish_R2_candidate_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_R2_candidate_20261004.json",
+      "bytes": 523765,
+      "sha256": "5af552666b3c8140ddfe3b0a3ad6246a9f84ff036272486a704d0a130a87e2a3"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+      "bytes": 528199,
+      "sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_finish_before_commit_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_before_commit_20261004.json",
+      "bytes": 528063,
+      "sha256": "48b817a4524695a755cf25f04fa0e382ea4d200ad82ff626b36ad06caf97b0c9"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_finish_native_candidate_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_native_candidate_20261004.json",
+      "bytes": 528167,
+      "sha256": "35847c6648fadef479d587b9e3e2e851e8a7c41e90954f1ff7c943148e100c07"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_finish_saved_reopened_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_finish_saved_reopened_20261004.json",
+      "bytes": 528167,
+      "sha256": "35847c6648fadef479d587b9e3e2e851e8a7c41e90954f1ff7c943148e100c07"
+    },
+    "easyeda_std/制造收尾_20261004/PCB_阻容外框与DNP钢网_局部候选_未原生验证.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/PCB_阻容外框与DNP钢网_局部候选_未原生验证.json",
+      "bytes": 523733,
+      "sha256": "db1f209fbb1a30cda2342db6a16e53d5b9347b131add8c09f8e1e5dd8d12b57c"
+    },
+    "easyeda_std/制造收尾_20261004/圆弧增量候选差异.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/圆弧增量候选差异.json",
+      "bytes": 3567,
+      "sha256": "144f86d1a7204c6fbd7335d76cb28a2dcb052704f3d111f47343837e70f63f11"
+    },
+    "easyeda_std/制造收尾_20261004/局部候选差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/制造收尾_20261004/局部候选差异_仅审核.json",
+      "bytes": 12985,
+      "sha256": "248092a5aa210b1731bba1c855349f277fd52f2c6d3380a97c6bf7b60dfe469e"
+    },
+    "easyeda_std/射频首段云端核验_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/射频首段云端核验_20260918.json",
+      "bytes": 1228,
+      "sha256": "35b3eb5c77622b74ed18ed8aa1a420ed2d22a60a65ffce9ae19784848cd2d74e"
+    },
+    "easyeda_std/射频首段原生核验_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/射频首段原生核验_20260918.json",
+      "bytes": 1062,
+      "sha256": "9c5f274f2c633cc79cd8ed64b9c8b93fd0b2a9fcb9a62af3d8fea4c6acd6486c"
+    },
+    "easyeda_std/射频首段检查_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/射频首段检查_20260918.json",
+      "bytes": 1548,
+      "sha256": "ae9dd132cf23ddaf829d28975624c13309535132de429195a80d749f05ca219f"
+    },
+    "easyeda_std/局部重排检查_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/局部重排检查_20260918.json",
+      "bytes": 1448,
+      "sha256": "7012d90226b907c3ac492b721242a1818e652fff72bcd3803f3568d138e2aa05"
+    },
+    "easyeda_std/布局优化_20261004/PCB_before_buttons_commit_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_before_buttons_commit_20261004.json",
+      "bytes": 528979,
+      "sha256": "67dee562bcada7a68e5658974b278f50944ced78977fa202023e7cc28536b092"
+    },
+    "easyeda_std/布局优化_20261004/PCB_buttons_G_native_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_G_native_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c"
+    },
+    "easyeda_std/布局优化_20261004/PCB_buttons_trial_A.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_trial_A.json",
+      "bytes": 524348,
+      "sha256": "42384acdc4d20df1dd28591b90f6cc5d166d2cd7b6db335e792f97874052b0c6"
+    },
+    "easyeda_std/布局优化_20261004/PCB_buttons_trial_D.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_trial_D.json",
+      "bytes": 524348,
+      "sha256": "a2de2afab2529a6fae374248709070cdd35fae8e76bb0c36e58fa156ad812180"
+    },
+    "easyeda_std/布局优化_20261004/PCB_buttons_trial_F.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_trial_F.json",
+      "bytes": 524618,
+      "sha256": "61bd844ba16ff4bd101bfb6f018ce874cfb26f4c612063fc3882e0348a7d066e"
+    },
+    "easyeda_std/布局优化_20261004/PCB_buttons_trial_G.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_buttons_trial_G.json",
+      "bytes": 524613,
+      "sha256": "5eaff4270557b914e719ca92ffd219a30b745e4ff1fd8ab066e77d6e8b0406f0"
+    },
+    "easyeda_std/布局优化_20261004/PCB_sync_before_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_sync_before_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c"
+    },
+    "easyeda_std/布局优化_20261004/PCB_布局优化前_现场恢复_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_布局优化前_现场恢复_20261004.json",
+      "bytes": 528979,
+      "sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e"
+    },
+    "easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/PCB_按键收拢_保存重开_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c"
+    },
+    "easyeda_std/布局优化_20261004/README_恢复与候选说明.md": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/README_恢复与候选说明.md",
+      "bytes": 714,
+      "sha256": "28052df9dc489ac7c71cf0f15e4ae8e47d0b34616aa0d6aa6c780adf21f8730f"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_A.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_A.png",
+      "bytes": 314146,
+      "sha256": "dc975146fde629bae0759f7331393bb9517863ac66351140f17859c6cdf033cf"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_A_routes.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_A_routes.json",
+      "bytes": 1087,
+      "sha256": "5c58d8b765fdeaa71b2f74e6878cc948e1e2aeeec6a08eae44124f6f9c5b4f12"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_D.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_D.png",
+      "bytes": 314905,
+      "sha256": "106accbda7a737e0744530acc9cdf5213a7a8f3a317a70b139679ea6a7e3b33f"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_D_routes.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_D_routes.json",
+      "bytes": 1090,
+      "sha256": "1178209c2c6c6178e0f1a5f23d646bf45a0a167e7d11cf680b163d1520de46f9"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_F.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_F.png",
+      "bytes": 310076,
+      "sha256": "9fa9a03969f9dd7928781cc7b19c6fbf10327602c8bbbf0bc75dca783d2055db"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_F_routes.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_F_routes.json",
+      "bytes": 1044,
+      "sha256": "855af19ffe25aab3e69d9659920287c7556824c29d4664a68f27ddcd329d9fb3"
+    },
+    "easyeda_std/布局优化_20261004/buttons_trial_G.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_trial_G.png",
+      "bytes": 309945,
+      "sha256": "8037a4c275884c45590c1d46c2eae5702713e2397b69c1b7a2b772dc19546b05"
+    },
+    "easyeda_std/布局优化_20261004/buttons_unrouted.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/buttons_unrouted.png",
+      "bytes": 284265,
+      "sha256": "361d4ba4d39769f4d9c63f146dcab838478264f33ed4188fafa1fbfafceb9046"
+    },
+    "easyeda_std/布局优化_20261004/备份链接未登录响应_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/备份链接未登录响应_20261004.json",
+      "bytes": 107,
+      "sha256": "3b6ad4a76090ab726a1961a8170c8ecd2d018cbd2dd3eea43bace814b36f2101"
+    },
+    "easyeda_std/布局优化_20261004/按键候选F_本地核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/按键候选F_本地核验_仅审核.json",
+      "bytes": 900,
+      "sha256": "9ab845b2955ac23b9f24e1981a5cecfd99ae6d68711c3cb34df779a516f99c6d"
+    },
+    "easyeda_std/布局优化_20261004/按键收拢_保存重开核验.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/按键收拢_保存重开核验.json",
+      "bytes": 521,
+      "sha256": "aaa0b10e7803569c8ebe6727e08971fb004e8a5264ff0beff5c1e010e42627b7"
+    },
+    "easyeda_std/布局优化_20261004/按键收拢_整工程备份核验.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/按键收拢_整工程备份核验.json",
+      "bytes": 233009,
+      "sha256": "6de245941effb93d450ecaa7cbfb211be76540a8df6b60f9d4b7bc0ec6e2d879"
+    },
+    "easyeda_std/布局优化_20261004/按键收拢_整工程恢复_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/按键收拢_整工程恢复_20261004.zip",
+      "bytes": 299340,
+      "sha256": "320cf1603e5919784e2af3b816b025748f0818e2563b232c4b18a293f140c776"
+    },
+    "easyeda_std/布局优化_20261004/整工程备份_工作PCB回读.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布局优化_20261004/整工程备份_工作PCB回读.json",
+      "bytes": 530489,
+      "sha256": "aefc262dc3cc678d01deddbd0d5cb2837aaa77f366b1c6f4b096852e01ad1dcc"
+    },
+    "easyeda_std/布线前关键区局部候选检查_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布线前关键区局部候选检查_20260918.json",
+      "bytes": 1147,
+      "sha256": "9ff915111d5cfa760314d6bd4664a5197c67e27dfd9d396f4c95baeb948dc578"
+    },
+    "easyeda_std/布线前关键区布局_云端核验记录_20260918.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/布线前关键区布局_云端核验记录_20260918.json",
+      "bytes": 1756,
+      "sha256": "4adce16d305493be6d3e4a04ad3ff46c146c68ed8d4de1fa44c64cd29c62f915"
+    },
+    "easyeda_std/最终审核_20261004/1-PCB_圆形传感板_A5_当前工作版.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/1-PCB_圆形传感板_A5_当前工作版.json",
+      "bytes": 375093,
+      "sha256": "e0cf3e040a502467b54f6d12ad35877c80f96602a0d1f70917e5521aae992384"
+    },
+    "easyeda_std/最终审核_20261004/1-Schematic_圆形传感板_SCH_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/1-Schematic_圆形传感板_SCH_A5.json",
+      "bytes": 97197,
+      "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47"
+    },
+    "easyeda_std/最终审核_20261004/2-PCB_PCB_圆形传感板_SCH_A5.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/2-PCB_PCB_圆形传感板_SCH_A5.json",
+      "bytes": 354984,
+      "sha256": "df4dce9b4697841278e2b479741c8fd1c73fd1ec9109411fb02ab85ae131c76c"
+    },
+    "easyeda_std/最终审核_20261004/3-PCB_PCB_圆形传感板_SCH_A5 copy.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/3-PCB_PCB_圆形传感板_SCH_A5 copy.json",
+      "bytes": 530444,
+      "sha256": "ecbeed2b2ebf24069360696c7db601cf2998fdb6a3335e10483dc923b8e68cd3"
+    },
+    "easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_保存重开_20261004.json",
+      "bytes": 528979,
+      "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8"
+    },
+    "easyeda_std/最终审核_20261004/PCB_手焊禁钢网_原生候选回读_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_原生候选回读_20261004.json",
+      "bytes": 528979,
+      "sha256": "069464569ead70a3d0e90dd9dc9df5576e924ed67f46788bfa080c78de648738"
+    },
+    "easyeda_std/最终审核_20261004/PCB_手焊禁钢网_本地候选_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊禁钢网_本地候选_20261004.json",
+      "bytes": 524550,
+      "sha256": "0ebd54c003d610cbde2bfb19c2a741356778e310f422159b5763a1b5ed5f323a"
+    },
+    "easyeda_std/最终审核_20261004/PCB_手焊钢网修正前_恢复点_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_手焊钢网修正前_恢复点_20261004.json",
+      "bytes": 528934,
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16"
+    },
+    "easyeda_std/最终审核_20261004/PCB_钢网写回前_现场确认_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/PCB_钢网写回前_现场确认_20261004.json",
+      "bytes": 528934,
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16"
+    },
+    "easyeda_std/最终审核_20261004/README.txt": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/README.txt",
+      "bytes": 532,
+      "sha256": "c7851025a85a522417c2360e16043554b43f02f80a8d9384c4f952ca8776ae9c"
+    },
+    "easyeda_std/最终审核_20261004/SCH_五页原生网表_仅审核_20261004.net": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/SCH_五页原生网表_仅审核_20261004.net",
+      "bytes": 2732,
+      "sha256": "b46112b5e0c664c3532be8207ba95ddc4d95fd567473c6324f89ed37a18e9f31"
+    },
+    "easyeda_std/最终审核_20261004/原理图差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/原理图差异_仅审核.json",
+      "bytes": 40554,
+      "sha256": "88b96b03efc30ef6f9b6b4960b9cf244a3e940e94740f8ae6a3af5bd02975169"
+    },
+    "easyeda_std/最终审核_20261004/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip",
+      "bytes": 299337,
+      "sha256": "8dbf81f2a26fdf59bacb969376599a6af4638352ffe507b97d8f69bef617ea59"
+    },
+    "easyeda_std/最终审核_20261004/圆形传感板_最终审核_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/圆形传感板_最终审核_仅审核_20261004.zip",
+      "bytes": 299297,
+      "sha256": "3d337805a36eee0ac85e31557fbb95fccbd144791d2bc727956c44f16c4d3277"
+    },
+    "easyeda_std/最终审核_20261004/工作板差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/工作板差异_仅审核.json",
+      "bytes": 178681,
+      "sha256": "105b7bcf3944a2840de6f3bc17491b2e352cb9d4529428a2f8a50bb6c891616b"
+    },
+    "easyeda_std/最终审核_20261004/手焊禁钢网_保存重开核验_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/手焊禁钢网_保存重开核验_20261004.json",
+      "bytes": 3192,
+      "sha256": "bed954503bdf23f27843fcd4c742132f717f51f53bdc3133c8b750153e9dd24f"
+    },
+    "easyeda_std/最终审核_20261004/手焊禁钢网修改计划_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/手焊禁钢网修改计划_仅审核.json",
+      "bytes": 1533,
+      "sha256": "50f8b75630f2533e80ebb9e58670dbf4d7802beca780f85b68d46c8caa5c845d"
+    },
+    "easyeda_std/最终审核_20261004/文件校验.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/文件校验.json",
+      "bytes": 962,
+      "sha256": "aecebd6930a32a8781fd1aa1533b9c43bbc6104abc711784566a42c88608b964"
+    },
+    "easyeda_std/最终审核_20261004/最终整工程备份核验_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/最终整工程备份核验_20261004.json",
+      "bytes": 1345,
+      "sha256": "4613573af3aa2e32c3c20ef76a8cb9814b81ea084479a39fb264b9076a48da2a"
+    },
+    "easyeda_std/最终审核_20261004/本轮原生核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/最终审核_20261004/本轮原生核验_仅审核.json",
+      "bytes": 819,
+      "sha256": "5c539176a429b154237d24fcdd2d3d016e2e3c46cf5f1a296e1cc86a7e0a0ab2"
+    },
+    "easyeda_std/板外充电_20261005/PCB_板外充电_保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电_保存重开_20261005.json",
+      "bytes": 512134,
+      "sha256": "57b67d2d0f2de9a4fe2511a1069ec17852bed81a3e244c796b008095251f0849"
+    },
+    "easyeda_std/板外充电_20261005/PCB_板外充电候选_仅审核_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电候选_仅审核_20261005.json",
+      "bytes": 513291,
+      "sha256": "027071be4eecc3a4a61ce410194fb8a652043c653aba36eb77dc5cf473d89ada"
+    },
+    "easyeda_std/板外充电_20261005/PCB_板外充电改动前_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/PCB_板外充电改动前_20261005.json",
+      "bytes": 529613,
+      "sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684"
+    },
+    "easyeda_std/板外充电_20261005/SCH_板外充电_五页保存重开_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_板外充电_五页保存重开_20261005.json",
+      "bytes": 95411,
+      "sha256": "33a756e0a405092a7462858422c94fb38097e295949b13e5b2eb54ae46d1a6f7"
+    },
+    "easyeda_std/板外充电_20261005/SCH_板外充电候选_仅审核_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_板外充电候选_仅审核_20261005.json",
+      "bytes": 94484,
+      "sha256": "46df14d626c611cc0734788c264f8f9fcceb856400756403491609cbe7f1d7ad"
+    },
+    "easyeda_std/板外充电_20261005/SCH_板外充电改动前_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_板外充电改动前_20261005.json",
+      "bytes": 98242,
+      "sha256": "d6826870709d53badc63451d3aa62441b7ea7c40cc26ef31e67c8f1c8be205d6"
+    },
+    "easyeda_std/板外充电_20261005/SCH_第4页_板外充电候选_仅审核_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/SCH_第4页_板外充电候选_仅审核_20261005.json",
+      "bytes": 20809,
+      "sha256": "5919bbdaedbc03094bcf2e6e44171b6d426ce6ae51694a87b4094b25dedcfb6b"
+    },
+    "easyeda_std/板外充电_20261005/异常单页导出_已修复禁止恢复_20261005.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/板外充电_20261005/异常单页导出_已修复禁止恢复_20261005.json",
+      "bytes": 12737,
+      "sha256": "873a64d35fc78edfedd8b5928740444459edd2380372fd0599d56b4316fc1c95"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_云端工作板_模型覆盖前_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_云端工作板_模型覆盖前_20261001.json",
+      "bytes": 505146,
+      "sha256": "da4c0f91b4f801b84ef4a8f01209e901b6120975983f225b010f202953042699"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_工作板模型应用_保存前核验_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_工作板模型应用_保存前核验_20261001.json",
+      "bytes": 528933,
+      "sha256": "a64e88a4c7f82c28eb1378429aa838091806f88a8efd481221804116d8ca87f0"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_最终审核_保存前_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_最终审核_保存前_20261001.json",
+      "bytes": 528925,
+      "sha256": "0c194e350d9e062526a5646fba71c32590aa9a9f3472008ccdfb8c8eef78f75f"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_最终审核_保存重开_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_最终审核_保存重开_20261001.json",
+      "bytes": 528934,
+      "sha256": "a2fecf72c3b36779a5ee6b5b50cf707d9891c05a9265016ec0386b2f4b22106f"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_最终审核交接恢复点_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_最终审核交接恢复点_20261001.json",
+      "bytes": 528933,
+      "sha256": "9296c62e705f27aaebd886454c903675b56ae6ba91d838f6cb7bb46e3470e5c1"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_模型校准前_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_模型校准前_20261001.json",
+      "bytes": 523914,
+      "sha256": "5f9fed9e4a9d4343f7f3c1447e1811a76e94e35ae686ce8a47e66ee50b60e282"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_模型校准后_未保存候选_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_模型校准后_未保存候选_20261001.json",
+      "bytes": 529093,
+      "sha256": "e73df944a3df2e80ed510f5801760b941211f406c95da41d6773fab53401f12e"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_模型补齐_云端保存重开回读_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_模型补齐_云端保存重开回读_20261001.json",
+      "bytes": 528933,
+      "sha256": "9296c62e705f27aaebd886454c903675b56ae6ba91d838f6cb7bb46e3470e5c1"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_模型补齐前_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_模型补齐前_20261001.json",
+      "bytes": 505146,
+      "sha256": "da4c0f91b4f801b84ef4a8f01209e901b6120975983f225b010f202953042699"
+    },
+    "easyeda_std/模型补齐_20261001/PCB_用户模型更新_审核回读_20261001.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/模型补齐_20261001/PCB_用户模型更新_审核回读_20261001.json",
+      "bytes": 523914,
+      "sha256": "5f9fed9e4a9d4343f7f3c1447e1811a76e94e35ae686ce8a47e66ee50b60e282"
+    },
+    "easyeda_std/电源局部检查_20260929.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/电源局部检查_20260929.png",
+      "bytes": 232283,
+      "sha256": "f99d053131bd06252292a5619c31c6fae3e5ebf5a4fdb439fd01c2aec32edbe6"
+    },
+    "easyeda_std/稳压器C10_Q局部_20260929.png": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/稳压器C10_Q局部_20260929.png",
+      "bytes": 117800,
+      "sha256": "5f3a5529ecd09447c5166248b5af4cc7093caedee6a04e94e0812a8d61ac6230"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCBLIB_DMP2165UW_SOT323_原生库_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCBLIB_DMP2165UW_SOT323_原生库_20261006.json",
+      "bytes": 9788,
+      "sha256": "5522759d7081a5ef5a8b239f9e21472662ee2e776ba51f34d79b76e9e5be6eef"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_DMP2165UW_原厂盘_自定义DGS_候选.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_DMP2165UW_原厂盘_自定义DGS_候选.json",
+      "bytes": 10241,
+      "sha256": "6b3d7459c6e5aff18a2da25c09a94399a194d0884676cf8867a3f131ed7f7644"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_专用封装_已保存原生_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCBLIB_Q1_专用封装_已保存原生_20261006.json",
+      "bytes": 10094,
+      "sha256": "7d1b2eb7e959267bb1c3557a1ae1609ccc5c7055cd29f3d29baeca443eae3bc5"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1候选_原生重铺_DRC0_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1候选_原生重铺_DRC0_20261006.json",
+      "bytes": 533965,
+      "sha256": "c48816764f8c4827ebf52ffd100195456fce59274acecc0779b9ecce7338063a"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1候选_已绑定原生库_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1候选_已绑定原生库_20261006.json",
+      "bytes": 533960,
+      "sha256": "b508e3d458ca194c72eabcaaf85dbd87a78b71f10496d15c92a9b37a2a1d873e"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1候选_模型丝印校正_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1候选_模型丝印校正_20261006.json",
+      "bytes": 533970,
+      "sha256": "42a4f3c1407a04af8c013c7c03c5c02381e66b99bb5c02decc7f4906fa83d47b"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1孔距收尾_独立候选_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1孔距收尾_独立候选_20261006.json",
+      "bytes": 529653,
+      "sha256": "5ad687d325c4828c8a7bdaca0f6d37ba1c4abaa9ec74fc770bf65aa35591abbe"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1孔距收尾_独立候选_原生重铺_DRC0_20261006.json",
+      "bytes": 533889,
+      "sha256": "af0ebf8210eed01f7f907629ea0590e675c052b70b515edbaeb52bea9ffba25b"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1导出后_UI状态核对_未保存_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1导出后_UI状态核对_未保存_20261006.json",
+      "bytes": 533892,
+      "sha256": "166f32327f88b4b016fadbb3a3bcf4585a082eaba09c20bf0058a440310afb31"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1应用前_保存重开回读_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1应用前_保存重开回读_20261006.json",
+      "bytes": 529780,
+      "sha256": "9bf591e459d91d93a55d6c76143323030acbc7299e75c267a41acebdb0801e84"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_保存重开_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_保存重开_20261006.json",
+      "bytes": 533959,
+      "sha256": "1b7c7f32332820d85be81ce77ba352a4ff5b761c48ecb9ec1f06c5efa4ab794f"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_局部候选_仅审核_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_局部候选_仅审核_20261006.json",
+      "bytes": 533497,
+      "sha256": "416c1c3cf28e07377ce69aaf46a61f2f5bd9856d632499e7ac34433fd08841a9"
+    },
+    "easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_重铺保存_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/PCB_Q1直接修复_重铺保存_20261006.json",
+      "bytes": 533959,
+      "sha256": "3f45832556404a6492fcde74a5955c5298c06a518ada5097174f09d1a9fa3e8f"
+    },
+    "easyeda_std/Q1直接修复_20261006/Q1候选变更范围_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/Q1候选变更范围_仅审核.json",
+      "bytes": 2374,
+      "sha256": "1f57cb4ab7355485e05950a1bbc5255658a54695d5b677357eb60dab5cec327a"
+    },
+    "easyeda_std/Q1直接修复_20261006/Q1替料_整图逐脚核验_候选.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/Q1替料_整图逐脚核验_候选.json",
+      "bytes": 19222,
+      "sha256": "babb9c14e7cf5280941995b41e6d617b2dba4c38232af23a992428a4e58c060b"
+    },
+    "easyeda_std/Q1直接修复_20261006/SCHLIB_DMP2165UW_C388477_原生库_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCHLIB_DMP2165UW_C388477_原生库_20261006.json",
+      "bytes": 3655,
+      "sha256": "8eef32c49de98d1762650b3dcad538d1f6f4bc4cc8200d1ffb2550668453a53c"
+    },
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生属性保存_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_原生属性保存_20261006.json",
+      "bytes": 95460,
+      "sha256": "d00987e65f642c6df0061b4aca675a31751abb9b8641625e5e4277d6d6e8b08d"
+    },
+    "easyeda_std/Q1直接修复_20261006/SCH_Q1替料_重开核对_20261006.json": {
+      "to": "archive/历史资料与工具_20261006/easyeda_std/Q1直接修复_20261006/SCH_Q1替料_重开核对_20261006.json",
+      "bytes": 95623,
+      "sha256": "036ddc7f4220d470893af8e45cb0d064cffe958d5a397df8f396591c3d5eda58"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/BOOT_RESET底面功能丝印_原生Gerber核对.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/BOOT_RESET底面功能丝印_原生Gerber核对.png",
+      "bytes": 64184,
+      "sha256": "ebc72899bf44acc71d23ac972587afd39d0182703be6224be53866006583c420"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber_BOOT_RESET功能丝印_仅审核_20261005.zip",
+      "bytes": 65990,
+      "sha256": "1607eada8838d3a60485c268a7a5e6f311b536bf47c3fac75a56dfa37b6cbad6"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber功能丝印增量核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/Gerber功能丝印增量核验_仅审核.json",
+      "bytes": 3641,
+      "sha256": "47c92b4a3309e71eeca45dcbef060c908f3c42e7e27b9514508695fb0d9d15ef"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/SHA256_审阅包文件清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/SHA256_审阅包文件清单.json",
+      "bytes": 8905,
+      "sha256": "f82397bf254b2c2f4383cf7541901af63df2c86e570ae333c70efc451e6bd983"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/保存重开与丝印差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/保存重开与丝印差异_仅审核.json",
+      "bytes": 902,
+      "sha256": "ad2eb76dc86cb12079f0f2ac1225a8f3d7bac5ceaa0394c5a57dcff9e6ae3e3e"
+    },
+    "manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/本轮交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/BOOT_RESET标注_20261005/本轮交接_仅审核.md",
+      "bytes": 3262,
+      "sha256": "adb9db1692cf041c7875d616e05c3ace3f97353dd96653f532244f5263ee0d78"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/BOM_36件准确料号_C9替料_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/BOM_36件准确料号_C9替料_仅审核_20261005.csv",
+      "bytes": 3339,
+      "sha256": "712a09dbc3601061c7097bdff48d9b7d69cb390b1aad5bc085db30af2b364b7e"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/BOM_C9替料_原生全属性_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/BOM_C9替料_原生全属性_仅审核_20261005.csv",
+      "bytes": 18800,
+      "sha256": "0366188c6e4eb847a3ba8314a01f1ccbdb82ffe1f9226bd07e997085b19eb18b"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/C9保存重开与制造增量核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/C9保存重开与制造增量核验_仅审核.json",
+      "bytes": 7823,
+      "sha256": "263a1d74f1fc3ba4909e4ac5ef8ecfdc3d4ecc32c8687e5c7d88992da1830f44"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/C9增量核验_只读脚本.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/C9增量核验_只读脚本.py",
+      "bytes": 10027,
+      "sha256": "0869868263fde02300382d886ef12badbfd8f960552701bee20fb759a6b2f00d"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/C9最大实体包络_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/C9最大实体包络_仅审核.json",
+      "bytes": 1787,
+      "sha256": "75b5a4eb7742bada247933218cc2b1821427c729621503553ef7585a9bc95207"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/CPL_36件SMT_中心校正_C9替料_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/CPL_36件SMT_中心校正_C9替料_仅审核_20261005.csv",
+      "bytes": 3049,
+      "sha256": "e1ca93e0dcc0f9b1a22ded117dee0307a2b35040844a99a099e75e726be333e0"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/CPL_C9替料_原生全41位置_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/CPL_C9替料_原生全41位置_仅审核_20261005.csv",
+      "bytes": 8546,
+      "sha256": "6073318879a5399de518dc986a45ed95d5782ccc8ba58459be84c98a6ac7b717"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/Gerber_C9替料_仅审核_20261005.zip",
+      "bytes": 65972,
+      "sha256": "405203473d8226ca9bf638fafe6d3e5d8cc44decabd9ece37f46ff417a5050a0"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/SCH_C9替料_原生Protel全图_仅审核_20261005.net": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/SCH_C9替料_原生Protel全图_仅审核_20261005.net",
+      "bytes": 2595,
+      "sha256": "47d3433bada7c61a3c5f48310c6bd8ac52fd31e8c9b6fe34cd697aa73fe348b7"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/SHA256_审阅包文件清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/SHA256_审阅包文件清单.json",
+      "bytes": 11134,
+      "sha256": "412a4bc01becc5bb6c4902e71066a31890f25c90fade20606b32d3b7da9d6e6c"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/原生C9替料属性_20261005.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/原生C9替料属性_20261005.png",
+      "bytes": 1017381,
+      "sha256": "837810a13fe40a844b7a46d091d2696306039df92aae25ca74cd74acfd3d1c82"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/原生保存重开_DRC与网络_20261005.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/原生保存重开_DRC与网络_20261005.png",
+      "bytes": 984853,
+      "sha256": "4ba7529f459cee675a427084446324d401353c881437a3c35d92187573ef597c"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/审阅包校验结果_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/审阅包校验结果_仅审核.json",
+      "bytes": 366,
+      "sha256": "c6cd434e2eb1e8c441b93f9714ce9dfa0b135b77f0198b668dff568e98f200ab"
+    },
+    "manufacturing/仅审核禁止生产/C9替料_20261005/本轮交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/C9替料_20261005/本轮交接_仅审核.md",
+      "bytes": 5217,
+      "sha256": "43904f495909cd9fa4bc6eaf9a8a98064a2e8863eb52ecd8160ebfb0b3ddee32"
+    },
+    "manufacturing/仅审核禁止生产/Gerber_圆形传感板_R_仅审核禁止生产_20260929.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Gerber_圆形传感板_R_仅审核禁止生产_20260929.zip",
+      "bytes": 64977,
+      "sha256": "3660b1f776e00ce33d671d8ed88066fd348e57455e6e41f433869474edd8d3f1"
+    },
+    "manufacturing/仅审核禁止生产/Gerber_圆形传感板_S_仅审核禁止生产_20260929.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Gerber_圆形传感板_S_仅审核禁止生产_20260929.zip",
+      "bytes": 64962,
+      "sha256": "38efca8874731fa7c59af042fbb8200ef5a4931908754dd07d695cfb3cc2126d"
+    },
+    "manufacturing/仅审核禁止生产/Gerber_圆形传感板_T_仅审核禁止生产_20260929.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Gerber_圆形传感板_T_仅审核禁止生产_20260929.zip",
+      "bytes": 65001,
+      "sha256": "fcd4dfe500d58ef70905bebf69cef1cceee4b2d25350c245e959b8e7224761a5"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/SHA256_审阅包文件清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/SHA256_审阅包文件清单.json",
+      "bytes": 12648,
+      "sha256": "473119d14064066c83e95f585a39fecceb675d9d033573f8cc831e6656a7be0a"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/USB供电审核结论_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/USB供电审核结论_仅审核.md",
+      "bytes": 12560,
+      "sha256": "24b2f6f9f57c8062d363bf821f9eea4e4a336391ab5f661968b00ea885e9e9f9"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/审阅包校验结果_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/审阅包校验结果_仅审核.json",
+      "bytes": 524,
+      "sha256": "04b3015ada34eeaa34d4be084feee3806a7e59a7e391081ba695c37c99fb820c"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/当前USB供电与无充电预算_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/当前USB供电与无充电预算_仅审核.json",
+      "bytes": 11263,
+      "sha256": "8a008a3683d06b84e535599b452f1e9c97b9cc812612bc5b64cd8c1e98d46293"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/打包当前审阅资料_仅审核.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/打包当前审阅资料_仅审核.py",
+      "bytes": 3112,
+      "sha256": "36fb8d7b51f929a3a8f12b416f7b3b8d6760103607f45faa395e9af0d1fda227"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/核验当前电源_仅审核.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/核验当前电源_仅审核.py",
+      "bytes": 9187,
+      "sha256": "1161964b0da662cb4941fc4547e153cd9c40ec47c7613a217ec95eb7cc2840e4"
+    },
+    "manufacturing/仅审核禁止生产/USB供电收尾_20261005/给博后的待确认清单_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB供电收尾_20261005/给博后的待确认清单_仅审核.md",
+      "bytes": 3918,
+      "sha256": "651e1841191a7c89488d035861a8b95c5a5c72bf7fe01b868047004df812897a"
+    },
+    "manufacturing/仅审核禁止生产/USB用途核实_20261005/USB实现路线与当前连接_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/USB用途核实_20261005/USB实现路线与当前连接_仅审核.json",
+      "bytes": 5602,
+      "sha256": "e7da9fe7339e94dec8f3824b6d2935861639367c9711d38f388f561cd914b6c0"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/BOM_38件准确料号_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/BOM_38件准确料号_仅审核_20261004.csv",
+      "bytes": 3428,
+      "sha256": "6c02bb4c18a2145e32020a370c40f7104a0e5e7dabdcfe9a2a07bfc44b2cda4b"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/CAD_HANDOFF_本轮快照.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/CAD_HANDOFF_本轮快照.md",
+      "bytes": 62273,
+      "sha256": "f3b326fc63c81d56f87f0f0fb2b4ee0857bc45a6ea64af7e48f4b3eeb6ec6b05"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv",
+      "bytes": 3221,
+      "sha256": "4fc824cc4efc322f151f21e77e4e344552e89532f9ba25897df11a6bd45c8e34"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/Gerber_丝印终检_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/Gerber_丝印终检_仅审核_20261004.zip",
+      "bytes": 64829,
+      "sha256": "cd29835d74264caf478d2ca343429f24350b56387b42f90bf0029eab679f62d5"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/J1贴装基准交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/J1贴装基准交接_仅审核.md",
+      "bytes": 1696,
+      "sha256": "ad09c745f6b9f3164180a12b0eecd23c15ff563ae4697160abca722eae2525dc"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/PCB_silk_saved_reopened_20261004.json",
+      "bytes": 529613,
+      "sha256": "2e0d929363ae3aedd6cba3ed2f054e4dfec2dcc4f4c2163a172b2ec17fac1684"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/SHA256_本轮交付清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/SHA256_本轮交付清单.json",
+      "bytes": 1660,
+      "sha256": "895ad94de2dabbacf2a3bb8e8027635613681c264d3a4b0c1ce2f4d31aad3489"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/丝印候选差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/丝印候选差异_仅审核.json",
+      "bytes": 6535,
+      "sha256": "4805180010e98e5bfe85ad4a3fdbede77fac0ce7765a2e1f4234d138f0689540"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/丝印剩余开窗交叠_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/丝印剩余开窗交叠_仅审核.png",
+      "bytes": 127668,
+      "sha256": "d7ba9d471c9a102c96bdbc7ab489b31cbd218970515dd77d52d37703c2cc9dd5"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/丝印终检开窗对照_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/丝印终检开窗对照_仅审核.png",
+      "bytes": 127668,
+      "sha256": "d7ba9d471c9a102c96bdbc7ab489b31cbd218970515dd77d52d37703c2cc9dd5"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/丝印终检输出差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/丝印终检输出差异_仅审核.json",
+      "bytes": 3873,
+      "sha256": "e9843f262607c32c4ab7984f8d49d77e86389394cdb8f12a980cb109fea4b5d2"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/保存重开差异核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/保存重开差异核验_仅审核.json",
+      "bytes": 2476,
+      "sha256": "3e57e6265c67eb61db9227bb4624b1ad09862f9fab88289fdffccae668f59203"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/制造收尾输出差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/制造收尾输出差异_仅审核.json",
+      "bytes": 3880,
+      "sha256": "53ae25d0f5e03340c08b23c27b8a2b03b58a8898ecab3592f353725e5f9d68c6"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/原生DRC_保存重开后.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/原生DRC_保存重开后.png",
+      "bytes": 871508,
+      "sha256": "1dcfd680fa4b113a7a8d696acf2da078f9cc7096edb90b7c5385582529932a60"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/本轮交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/本轮交接_仅审核.md",
+      "bytes": 3385,
+      "sha256": "3bfb4d619ae7e8164b3892bc8134f5af0af8b2eb05965f9dc32db2b3f32859fb"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/电容与USB补充证据_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/电容与USB补充证据_仅审核.md",
+      "bytes": 2512,
+      "sha256": "4abbc09e17c204688fa4d508163aa254ad40dc969eb869902ab8d4d083dc38c5"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/装配定位_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/装配定位_仅审核.png",
+      "bytes": 201557,
+      "sha256": "72de6154a949285afa68e331b2b38d05faa476aad9183309993bec31849ebe27"
+    },
+    "manufacturing/仅审核禁止生产/丝印终检_20261004/装配定位与关键脚向_仅审核_20261004.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/丝印终检_20261004/装配定位与关键脚向_仅审核_20261004.pdf",
+      "bytes": 117629,
+      "sha256": "11539860f0b08f7b7797d5038f4ae1f2b06de15f054cbb9dcce1cca3d0879eee"
+    },
+    "manufacturing/仅审核禁止生产/原交接包复审状态说明_20261004.txt": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/原交接包复审状态说明_20261004.txt",
+      "bytes": 1256,
+      "sha256": "5e1fedbaeee5cd5aa2915f196ef0854f9dbf338c4dafdc36123b1ca0a3d6f332"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/BOM_38件准确料号_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/BOM_38件准确料号_仅审核_20261004.csv",
+      "bytes": 3428,
+      "sha256": "6c02bb4c18a2145e32020a370c40f7104a0e5e7dabdcfe9a2a07bfc44b2cda4b"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/CAD_HANDOFF_本轮快照.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/CAD_HANDOFF_本轮快照.md",
+      "bytes": 61818,
+      "sha256": "2d2213ad72177cedc73402bc638cb9d01c9eb0e8ec84d97587601d63afd55acc"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv",
+      "bytes": 3221,
+      "sha256": "4fc824cc4efc322f151f21e77e4e344552e89532f9ba25897df11a6bd45c8e34"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造局部收尾_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造局部收尾_仅审核_20261004.zip",
+      "bytes": 64774,
+      "sha256": "b93f67a465fe38a359f148ae5b7ec14dad0a65fe8174d2c0fef80c0f5589c368"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造收尾R2_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/Gerber_制造收尾R2_仅审核_20261004.zip",
+      "bytes": 64680,
+      "sha256": "001879749a9a1a2891f57b8c4b944b89709d5592fbdfd7864fff5767d1eb8efd"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/J1贴装基准交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/J1贴装基准交接_仅审核.md",
+      "bytes": 1696,
+      "sha256": "ad09c745f6b9f3164180a12b0eecd23c15ff563ae4697160abca722eae2525dc"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_finish_R2_saved_reopened_20261004.json",
+      "bytes": 528199,
+      "sha256": "6d7f2ef3b6c2fd0a855bf306228b3910b1ea2db61e71e96b654f64663709052e"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_independent_cloud_read_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/PCB_independent_cloud_read_20261004.json",
+      "bytes": 528063,
+      "sha256": "968381becf6f02d16998d06b140e89a698ae9267d8f2ddba1e11730a8d5ffe89"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/SHA256_本轮交付清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/SHA256_本轮交付清单.json",
+      "bytes": 1897,
+      "sha256": "405231dcba907dc1dcce0bede85550c3c8978eda51ce0be043158568943c3c37"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/丝印剩余开窗交叠_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/丝印剩余开窗交叠_仅审核.png",
+      "bytes": 130329,
+      "sha256": "8caa0d171e3c69ee879ed2d507864495c67446da5cf632abcac5564911d38a9d"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/保存重开与复用核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/保存重开与复用核验_仅审核.json",
+      "bytes": 554,
+      "sha256": "809a65c1150f3415f38cb438c74fbca47499774c6850c767e1ca71e7f9fa4273"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/制造收尾输出差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/制造收尾输出差异_仅审核.json",
+      "bytes": 4758,
+      "sha256": "a4feb3209f65304732f3d1a088ef07f6de8f0e9a77dab0b5efa9e10a87bd094a"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/原生DRC_R2保存重开后.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/原生DRC_R2保存重开后.png",
+      "bytes": 873357,
+      "sha256": "9f9d34d57c10b6c088ca6a71550df8fe12961c42e7afe31dd12a95c0f3ef21fb"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/原生DRC_保存重开后.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/原生DRC_保存重开后.png",
+      "bytes": 869841,
+      "sha256": "5961ec539961e93fcb43e98ed06dcd788fc7dc59c393fff64a92d6f5f59231c3"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/圆弧增量候选差异.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/圆弧增量候选差异.json",
+      "bytes": 3711,
+      "sha256": "a54bd52bf69a2a747bc105fe5ec1e9b4b0263f5a806b2f9adc0c1c18c3735aa7"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/局部候选差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/局部候选差异_仅审核.json",
+      "bytes": 13088,
+      "sha256": "5fbe0bd68773dd58839702c404ce6f1a7e2a6e9218577c46aa6d1ba2996a5878"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/局部候选差异_未实施.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/局部候选差异_未实施.json",
+      "bytes": 13016,
+      "sha256": "3e5407e05f79c245c9d4c1361dba819fb85e258f167353f193d765a3f431a8a4"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/服务器同步二次核验_未通过.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/服务器同步二次核验_未通过.json",
+      "bytes": 1207,
+      "sha256": "01178e346a3df072815d3b86ddd6fd969b0d80bee56e2e58bed450cfa48c6b4e"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/本轮进展与阻塞_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/本轮进展与阻塞_仅审核.md",
+      "bytes": 3725,
+      "sha256": "7ef83e9f5d37c96924eb5e965e053100c1a926a62405440b95e03deb3d3300a3"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/独立云端读取核验_通过.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/独立云端读取核验_通过.json",
+      "bytes": 957,
+      "sha256": "82800290c66230732b7ce88ba83f4ef52f6444125215d7cce04ee531c93320bf"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/装配定位_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/装配定位_仅审核.png",
+      "bytes": 201557,
+      "sha256": "72de6154a949285afa68e331b2b38d05faa476aad9183309993bec31849ebe27"
+    },
+    "manufacturing/仅审核禁止生产/同步与制造收尾_20261004/装配定位与关键脚向_仅审核_20261004.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/同步与制造收尾_20261004/装配定位与关键脚向_仅审核_20261004.pdf",
+      "bytes": 117629,
+      "sha256": "11539860f0b08f7b7797d5038f4ae1f2b06de15f054cbb9dcce1cca3d0879eee"
+    },
+    "manufacturing/仅审核禁止生产/启动模式交接_20261006/SHA256_审阅包文件清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/启动模式交接_20261006/SHA256_审阅包文件清单.json",
+      "bytes": 12856,
+      "sha256": "acc0117ded8d62f6960aecd1027615a1ba69070cc130bed27b541604a964ebfe"
+    },
+    "manufacturing/仅审核禁止生产/启动模式交接_20261006/审阅包校验结果_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/启动模式交接_20261006/审阅包校验结果_仅审核.json",
+      "bytes": 835,
+      "sha256": "add82d3607722bc832f91b55c0e5b263ac7ff4630f1b4f24231fbf0b0314438d"
+    },
+    "manufacturing/仅审核禁止生产/启动模式交接_20261006/打包模式交接_仅审核.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/启动模式交接_20261006/打包模式交接_仅审核.py",
+      "bytes": 3428,
+      "sha256": "023dd0fddc05ba140638fe12432bba6d1ff84ff2837d214a960ec1d98770618c"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_BOOT_RESET标注_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_BOOT_RESET标注_仅审核_20261005.zip",
+      "bytes": 10025692,
+      "sha256": "334c542f8853a9aeb784fb81bf724cbd2519dab0404e2d159efef3c9837591f1"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_C9替料_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_C9替料_仅审核_20261005.zip",
+      "bytes": 11438762,
+      "sha256": "41b73f297fc5e72d225c92484230d815d161424d9da7941f0a06c26a48b5abd8"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_USB供电审阅_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_USB供电审阅_仅审核_20261005.zip",
+      "bytes": 27287977,
+      "sha256": "07c77b1bf9563621c38acc8a1f4ebf3e6eeddfdc668d64ef97e373089a04bf43"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_丝印终检更新包_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_丝印终检更新包_仅审核_20261005.zip",
+      "bytes": 1294190,
+      "sha256": "1223cf3ee825df457c5b3c9b8e5553ff5bccc2a90bda120c02cede0d95574f35"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_制造收尾更新包_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_制造收尾更新包_仅审核_20261004.zip",
+      "bytes": 1422525,
+      "sha256": "58de05573033d440308ea9de84d0957dd30891355d83973cd405438ada4c3c3d"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/00_博后交接单_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/00_博后交接单_仅审核.md",
+      "bytes": 2661,
+      "sha256": "c9ec48bb2f904c8a77dad9df70dfff16ccd79b7f10eebb399f8d82df2cc8e224"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/BOM_38件准确料号_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/BOM_38件准确料号_仅审核_20261004.csv",
+      "bytes": 3427,
+      "sha256": "fe32ede058988361c894d9dd900f5f6b5b30d51188cd1f0298a06a0c473629e1"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/CPL_38件SMT_中心校正_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/CPL_38件SMT_中心校正_仅审核_20261004.csv",
+      "bytes": 3223,
+      "sha256": "7a33f75d1950336010e156f3bc7dca95ec707b861e5dc021676bea55eb4408fd"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/01_制造审核文件/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+      "bytes": 64965,
+      "sha256": "d12375fdb4642225bc3a138077a2265c1f81b17909aee3e53bf2190067ddf72e"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/Gerber全层视觉核对_仅审核.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/Gerber全层视觉核对_仅审核.pdf",
+      "bytes": 536420,
+      "sha256": "549bceb643417063055e0070560dd1c91a76bb58ec9664c924805cf25ab6cd90"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/USB_RF历史依据摘录_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/USB_RF历史依据摘录_仅审核.md",
+      "bytes": 4746,
+      "sha256": "7a69593a8194e64d45def29ee32cde156ae6d1ddaca963395a2e0d8a67618302"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/电源审核_R_20260929.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/电源审核_R_20260929.md",
+      "bytes": 23086,
+      "sha256": "8a557d8702882b46114a380b249285f283ee5694e3bc1be0dbe90da730b2a5dd"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/装配定位与关键脚向_仅审核_20261004.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/装配定位与关键脚向_仅审核_20261004.pdf",
+      "bytes": 116338,
+      "sha256": "da1500087f157cb318ce46c8db7bda1e580134b15e7545876398facb209c9c90"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/设计与装配终审说明_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/02_装配与设计说明/设计与装配终审说明_仅审核.md",
+      "bytes": 13840,
+      "sha256": "d7223bcb4937690d0e9edf83e16a858311aac1fd76b52b5cfd322ba73659b8c2"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/1-Schematic_圆形传感板_SCH_A5.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/1-Schematic_圆形传感板_SCH_A5.json",
+      "bytes": 97197,
+      "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊禁钢网_保存重开_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊禁钢网_保存重开_20261004.json",
+      "bytes": 528979,
+      "sha256": "a8684a5901e8e6eeb518c6be978b76a4d726909f01af73e78e8c9d96e2d8a9c8"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊钢网修正前_恢复点_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/PCB_手焊钢网修正前_恢复点_20261004.json",
+      "bytes": 528934,
+      "sha256": "fae7314c74b72688a467d2a6f6e5caeaeddcb6c1593e22528f34eb5eeddd9e16"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/SCH_五页原生网表_仅审核_20261004.net": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/SCH_五页原生网表_仅审核_20261004.net",
+      "bytes": 2732,
+      "sha256": "b46112b5e0c664c3532be8207ba95ddc4d95fd567473c6324f89ed37a18e9f31"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/圆形传感板_手焊禁钢网后_整工程恢复_20261004.zip",
+      "bytes": 299337,
+      "sha256": "8dbf81f2a26fdf59bacb969376599a6af4638352ffe507b97d8f69bef617ea59"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/恢复说明.txt": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/03_源文件与恢复/恢复说明.txt",
+      "bytes": 423,
+      "sha256": "38e37931ef5b14c43a163e2c46a9e5ad9950bacf465404626b015b542232a69a"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/原生网表与PCB逐脚核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/原生网表与PCB逐脚核验_仅审核.json",
+      "bytes": 20036,
+      "sha256": "a4ca11c76ef84ed58a6e2f506d8c8a65e8657f21f23ae68baea838bfcb128456"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/当前装配空间核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/当前装配空间核验_仅审核.json",
+      "bytes": 43568,
+      "sha256": "31a2db7ff925bb4512ff38ecc9e63cca859b81f35312b56e09d467759f3e4bc7"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/手焊禁钢网_保存重开核验_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/手焊禁钢网_保存重开核验_20261004.json",
+      "bytes": 3192,
+      "sha256": "bed954503bdf23f27843fcd4c742132f717f51f53bdc3133c8b750153e9dd24f"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/最终Gerber核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/最终Gerber核验_仅审核.json",
+      "bytes": 13385,
+      "sha256": "93695bd1fcd6a03b5c44d22845d481bf484bed3b2c57ff6c280257e059ed3bdd"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/最终整工程备份核验_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/最终整工程备份核验_20261004.json",
+      "bytes": 1345,
+      "sha256": "4613573af3aa2e32c3c20ef76a8cb9814b81ea084479a39fb264b9076a48da2a"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/装配数据核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/装配数据核验_仅审核.json",
+      "bytes": 27691,
+      "sha256": "920fc003546f48726efd9f36a455f9f13b36fb08726f601c3fe90a7b075f40a8"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/视觉审阅记录_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/04_核验记录/视觉审阅记录_仅审核.json",
+      "bytes": 735,
+      "sha256": "e66f46c0d7aa130a0c9d7a169f04886f7f1b918372310f64b41eabcdf48d16e2"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/Hirose_U.FL_catalog.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/Hirose_U.FL_catalog.pdf",
+      "bytes": 1170598,
+      "sha256": "440490c5babe075dac69d78d6f4e0aecef0bf571f31c4a7268fab5d959a511bd"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/esp32-s3-pico-1.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/esp32-s3-pico-1.pdf",
+      "bytes": 774379,
+      "sha256": "44daca9121111a9c7df437e18c3c153258a20e68fe57fcd3bd9be593ad162979"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/lmbr4010bst5g.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/lmbr4010bst5g.pdf",
+      "bytes": 297475,
+      "sha256": "01ccbfe48afb88d1bf5ba8c0556b1b8ebcf9d181f20eb6c6911c0f8eca804e0d"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/lp0404n3t5g.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/lp0404n3t5g.pdf",
+      "bytes": 4036726,
+      "sha256": "91e2985ebe6ca06cdec25d6de220c7da46140aaa355f69a91bc752d62c1b10c4"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/mlx90393.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/mlx90393.pdf",
+      "bytes": 800847,
+      "sha256": "b622dfc463eeb13cee8397ad3f01a5df2d8c506197fdb37154845449845cbfa2"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/panasonic_evpbb.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/panasonic_evpbb.pdf",
+      "bytes": 130040,
+      "sha256": "b1263b8c2f98a2b9768b9851b49b673521c682c6862b133402f3abd0e72b78a5"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/sgm40567.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/sgm40567.pdf",
+      "bytes": 749798,
+      "sha256": "19f44476cba9a27dbde9ca29e8f729c91381648c0d57545b2992f6f41abe38a9"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tlv755p.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tlv755p.pdf",
+      "bytes": 3072276,
+      "sha256": "c0fe7be9fea4e4c8d933142f59758f7a951e195a45ca4e7e17684153da018cbb"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tpd1e10b06.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tpd1e10b06.pdf",
+      "bytes": 2371535,
+      "sha256": "6ffe72cb5f5e607fcafd05eef9809632402241eb44cd859a3652f43a35323da9"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tpd2eusb30a.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/tpd2eusb30a.pdf",
+      "bytes": 2257950,
+      "sha256": "a2c0dd845043a5bbfe610f673879c29e38649544385dea51dbe0a4c49df39136"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/usb4105.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/05_原厂资料/usb4105.pdf",
+      "bytes": 164547,
+      "sha256": "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/MANIFEST.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/MANIFEST.json",
+      "bytes": 7403,
+      "sha256": "fe0d8768d76f646e339ca4edc443bce7efc8a747cf4fd04d79f0bf439690e17e"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/MANIFEST.sha256": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/MANIFEST.sha256",
+      "bytes": 4059,
+      "sha256": "e1e049a15970fa932e219878b7fc86d8f868cf4da35cc09fb52af83a4b00af0f"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/README_仅审核.txt": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004/README_仅审核.txt",
+      "bytes": 521,
+      "sha256": "f8317e13ee59ff761b72146a25ab2c63fb767c8b69c5ca5edd814f5534889b57"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_博后交接_仅审核_20261004.zip",
+      "bytes": 15883606,
+      "sha256": "6de3134d3d32986897a3124119c481f2d888d23c94e01f75ef4200b7f7bb7d39"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_启动模式交接_仅审核_20261006.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_启动模式交接_仅审核_20261006.zip",
+      "bytes": 27292341,
+      "sha256": "e88f05d8fffb9f4d5470c718662cbf9cc84b89cf3ad129c6b95721ac95a1ae8b"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_按键收拢更新包_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_按键收拢更新包_仅审核_20261004.zip",
+      "bytes": 2150617,
+      "sha256": "0de8234eec208b66a13898dd3809819d883c2359f9d4692385ea7ed049e9e0e0"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_整板复审补充_仅审核_20261004.sha256": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_整板复审补充_仅审核_20261004.sha256",
+      "bytes": 124,
+      "sha256": "de5973eec8e2570547a92d278c2735d5c3640db16d40daf50de92543a22cc7fe"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_整板复审补充_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_整板复审补充_仅审核_20261004.zip",
+      "bytes": 677771,
+      "sha256": "248d7a72629f7bd7839b5f7431f6201e408038279209e67b93d76e13d391b50b"
+    },
+    "manufacturing/仅审核禁止生产/圆形传感板_板外充电_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/圆形传感板_板外充电_仅审核_20261005.zip",
+      "bytes": 10940726,
+      "sha256": "1ea967e8c205a59db0c6edc8f15e50bdb6bfc71da5b4682993ea481608bee9af"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/BOM_38件准确料号_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM_38件准确料号_仅审核_20261004.csv",
+      "bytes": 3428,
+      "sha256": "6c02bb4c18a2145e32020a370c40f7104a0e5e7dabdcfe9a2a07bfc44b2cda4b"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/BOM_原生43件_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM_原生43件_仅审核_20261004.csv",
+      "bytes": 19280,
+      "sha256": "d1d1d0ccf406b938c04278d44d8b4d9efa3634dd09acabe50f1a0099c8802f09"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/BOM与源坐标_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM与源坐标_仅审核.json",
+      "bytes": 94021,
+      "sha256": "7bd1da04cdc4d559db21402a3a4fbfd646d7991a93312cbc6e7522fbc41aab66"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/BOM与贴装审核_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/BOM与贴装审核_仅审核.md",
+      "bytes": 6916,
+      "sha256": "9d39e148e8fb4e0bd99b2daa046928a6f94a6b0a6175f3c9d5efa7b5325ffa75"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/CAD_HANDOFF_状态快照.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/CAD_HANDOFF_状态快照.md",
+      "bytes": 60915,
+      "sha256": "6a992f9b1eee54700c9f15d71a389a5d427b1fbae54d78ccbae2aae8daf20e55"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv",
+      "bytes": 3221,
+      "sha256": "4fc824cc4efc322f151f21e77e4e344552e89532f9ba25897df11a6bd45c8e34"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_原生43件_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/CPL_原生43件_仅审核_20261004.csv",
+      "bytes": 8974,
+      "sha256": "f863ef6eefc979259a18f448d9526128f74b68936fc0d8e9bb4b71b66e41994e"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber_按键收拢_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber_按键收拢_仅审核_20261004.zip",
+      "bytes": 64783,
+      "sha256": "7ff6341c1b4ba02196b33ebd6c7e16737a398a8d8c3efc9452e4821b183dbfad"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber全层视觉核对_仅审核.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber全层视觉核对_仅审核.pdf",
+      "bytes": 539823,
+      "sha256": "d0d84e3238c6fdddde2dbc2fb2dcbb7b1e9628736b45f6ad237496d9be02daaa"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_1.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_1.png",
+      "bytes": 346593,
+      "sha256": "aecc12f2d9d9e074bdb5ddbec8972e91c7166c1b3774f439f1e95fadfe3cc513"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_2.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_2.png",
+      "bytes": 205340,
+      "sha256": "76c662cbad39af90b40e6e3aa98ac58aee4ccafbf85f69bebab84c28e0033eea"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_3.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/Gerber视觉核对_3.png",
+      "bytes": 205524,
+      "sha256": "f43cf52352482ad28bbc10a4129a2a812c6dd3795154bf7cd79b5e3c4a4bed7c"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_布局优化前_现场恢复_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_布局优化前_现场恢复_20261004.json",
+      "bytes": 528979,
+      "sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_按键收拢_保存重开_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/PCB_按键收拢_保存重开_20261004.json",
+      "bytes": 527992,
+      "sha256": "2e21141779265b5f93612d5eaae7968a49a72865f2bcdd1d4e26698caafab82c"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/SHA256_完整性清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/SHA256_完整性清单.json",
+      "bytes": 2533,
+      "sha256": "94053054e0e6f93e4f31670f59714168bdd13aacd79be9d0989ee6933f1a4c6b"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/关键脚向_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/关键脚向_仅审核.png",
+      "bytes": 235154,
+      "sha256": "01674ef4f8d47db6912f831d0c2ef57aae547fec671594003800926c5fabc729"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/原理图_复用已核对五页_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/原理图_复用已核对五页_20261004.json",
+      "bytes": 97197,
+      "sha256": "60787f1aa54d2a8128dd6fd2c43f6c0a0eb22e5231ef70e6101707aaa51bdc47"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/布局差异审核_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/布局差异审核_仅审核.json",
+      "bytes": 206351,
+      "sha256": "d8a1dc0d26cfbd1cd3984507ef6908572e740ef2635b49f7faabed895cf6e219"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/按键收拢_保存重开核验.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/按键收拢_保存重开核验.json",
+      "bytes": 521,
+      "sha256": "aaa0b10e7803569c8ebe6727e08971fb004e8a5264ff0beff5c1e010e42627b7"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/按键收拢结果与交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/按键收拢结果与交接_仅审核.md",
+      "bytes": 5645,
+      "sha256": "8d6c32409275bcd71c4cb18a354ff3e3f28aff4273b7b0ee5f0a6b20058f34c0"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/装配定位_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/装配定位_仅审核.png",
+      "bytes": 201557,
+      "sha256": "72de6154a949285afa68e331b2b38d05faa476aad9183309993bec31849ebe27"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/装配定位与关键脚向_仅审核_20261004.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/装配定位与关键脚向_仅审核_20261004.pdf",
+      "bytes": 117629,
+      "sha256": "11539860f0b08f7b7797d5038f4ae1f2b06de15f054cbb9dcce1cca3d0879eee"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/装配数据核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/装配数据核验_仅审核.json",
+      "bytes": 27689,
+      "sha256": "ff95178075dfd0e6c2dcdf9409cb41351ec20444c54397babd62bc03b9be93b7"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢_20261004/输出差异与制造核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢_20261004/输出差异与制造核验_仅审核.json",
+      "bytes": 5112,
+      "sha256": "9e13a1790f68642ff63e290b41b7d96ca4806fc1a74ec0359c83eb4bbd590cd4"
+    },
+    "manufacturing/仅审核禁止生产/按键收拢更新包_后续状态说明_20261004.txt": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/按键收拢更新包_后续状态说明_20261004.txt",
+      "bytes": 261,
+      "sha256": "da3aeff212b1bc6784f926a7a889f96859787700b272def7d3143fbd10d8d200"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/CPL_中心核对与建议_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/CPL_中心核对与建议_仅审核.json",
+      "bytes": 25086,
+      "sha256": "e59a1a4e3e6721a110f1d170744f3a7b866093f9dbd3c9dd47c609172875b533"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/MANIFEST.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/MANIFEST.json",
+      "bytes": 4395,
+      "sha256": "3845dc7e30e0ed554fc72467e5f6d6b4069b2e04712397bb6ae39138222f54d5"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/MANIFEST.sha256": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/MANIFEST.sha256",
+      "bytes": 2477,
+      "sha256": "ae25cef6a0433f0e41dc8ef985ee37bcdcbd5eda60db9214e891ed2af6cef70f"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/PCB_整板复审前_现场恢复_20261004.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/PCB_整板复审前_现场恢复_20261004.json",
+      "bytes": 528979,
+      "sha256": "0a704465a2fa146a4456e65da604797a474fd09ab1532952b743e7f57668e56e"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/README.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/README.md",
+      "bytes": 1087,
+      "sha256": "3905b25f1d7f9711d5fca7994ef69e6b1eb77fb6a71420b826b8ade6c425bd50"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/button_position_screen.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/button_position_screen.py",
+      "bytes": 4375,
+      "sha256": "ced6e95fc84e3ebe482088d3cbf12878c22650e5209646d39c33e7d161d1c122"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/electrical_pin_evidence.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/electrical_pin_evidence.json",
+      "bytes": 8535,
+      "sha256": "afe94dbcfebcc626ebbf06b37887719df02603e5e61fc156b4b08d61b277631e"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/electrical_review.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/electrical_review.md",
+      "bytes": 15052,
+      "sha256": "051bde445d9e671e3fbf888c70f7a5d6dcf6a2f7667e1792faa4865e16199c81"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/independent_manufacturing_geometry.py": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/independent_manufacturing_geometry.py",
+      "bytes": 9883,
+      "sha256": "8d88925d3ca6d97af8dffa644157096cf0a4d520b777faac8ec25a026f6efaee"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/manufacturing_geometry.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/manufacturing_geometry.json",
+      "bytes": 166911,
+      "sha256": "b4eac253d35c50542f8a88de72b9e5479f7ad1e14b0cb9ea465eaa6a3bf95e7b"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/manufacturing_review.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/manufacturing_review.md",
+      "bytes": 10260,
+      "sha256": "8fd388a7083bd31a8e4f11308855a8dcebb5999230664c9b34e8904a361f67d3"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/rf_usb_mechanical_review.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/rf_usb_mechanical_review.md",
+      "bytes": 11854,
+      "sha256": "1b5bd010f420348698022fd17504c0a4a3aba9d367dafb4483d37539451413e8"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/silkscreen_mask_overlap.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/silkscreen_mask_overlap.png",
+      "bytes": 173583,
+      "sha256": "7c690a9e21cb9212c091725a1614f8d846086f9f8edae9d6afb83e448bce716c"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/交付包独立完整性复核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/交付包独立完整性复核.json",
+      "bytes": 367,
+      "sha256": "47321f853fbe22ad65812f694302bc4555a9925f85ae461fa05e3bf6da2f5644"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_USB_RF_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_USB_RF_仅审核.md",
+      "bytes": 8081,
+      "sha256": "5ff47ddf296bddf9a22a6586f41d31563546939c629f4594d53ea46f081cad1d"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_电源与去耦_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_电源与去耦_仅审核.md",
+      "bytes": 9267,
+      "sha256": "8ffafb1b157748b4c9992351343114574af79a26749bdc3451e3ba9c38f2c125"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_电源路径数据_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_电源路径数据_仅审核.json",
+      "bytes": 22587,
+      "sha256": "998f61617001c887e50c0746f03d08cbb584d559163976757f049769b4ffa5ec"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_装配与接口_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/布局优化_装配与接口_仅审核.md",
+      "bytes": 6314,
+      "sha256": "4902425bfcadf50724929d37a5ccd4e2696a2dc365cbb8bb8414175c33901efc"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/布局布线优化建议_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/布局布线优化建议_仅审核.md",
+      "bytes": 6961,
+      "sha256": "751848f980dea427ec219321289dbd8e32921812ed70e9bf73aa89f43127d2fc"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/按键靠拢_有限空间筛查.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/按键靠拢_有限空间筛查.json",
+      "bytes": 3188,
+      "sha256": "c2563b805f318b97187a621e38d8edd890b82c9999b09afc2749d40ea31f2eb1"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/整板复审_当前整工程备份_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/整板复审_当前整工程备份_20261004.zip",
+      "bytes": 299301,
+      "sha256": "125c46a43d669d15dee32a3d67cdcee97617a0950d3d38ccc027d910ed902b3e"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/整板复审结论_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/整板复审结论_仅审核.md",
+      "bytes": 11896,
+      "sha256": "52e9da64d9513fa8f2da2bdf9e1c2f7dc8d87102a11fb0b49cf353a6e316ca40"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/本次原生3D预览记录.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/本次原生3D预览记录.json",
+      "bytes": 781,
+      "sha256": "0780fa602908bc68bd641c139f856ccb5c122eca8ae99e8343e338c6835f9e22"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/本次原生DRC记录.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/本次原生DRC记录.json",
+      "bytes": 600,
+      "sha256": "bb763d2fee341c7cf83c786d48fbb9d2c6572a46ce26d5b2d70d70d18a21ac95"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/本次整工程备份核验.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/本次整工程备份核验.json",
+      "bytes": 5313,
+      "sha256": "af9105c548d7a3e1b57d24a8e9359b35237cc9f3af9c5edfc449456697fea664"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/现场源与交付源核对.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/现场源与交付源核对.json",
+      "bytes": 949,
+      "sha256": "2561eea228d346c90bad7deaac18fbd5974e85f07046ea4b518e8d564354e56c"
+    },
+    "manufacturing/仅审核禁止生产/整板复审_20261004/逐脚一致性重算.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/整板复审_20261004/逐脚一致性重算.json",
+      "bytes": 20064,
+      "sha256": "0a6076d550c798774be8ff38924ebfcb6dffdb7813144bbd3281e4e9a4d1dd4d"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/BOM与源坐标_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/BOM与源坐标_仅审核.json",
+      "bytes": 93972,
+      "sha256": "0e58d97720139a35bf3b1d2435e25c0acc3d24d762a3441c3dff77d4052da842"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/BOM与贴装审核_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/BOM与贴装审核_仅审核.md",
+      "bytes": 6918,
+      "sha256": "ea126ff815c02331c9caad893f73b6d8552b7cc697469a8f00f541362a96664d"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络_用户截图_20261001.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络_用户截图_20261001.png",
+      "bytes": 51705,
+      "sha256": "f03200f82fd9e5b07d04e1a6f5ff0b7316876e732d3133673995f9abdc4380fa"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络证据.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/原生DRC与网络证据.json",
+      "bytes": 1771,
+      "sha256": "2d5302edcd09014ca71bc3aa36f0aaf41272ecfca6a35040ca1d7789745ba4d5"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/审核资料清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/审核资料清单.json",
+      "bytes": 2182,
+      "sha256": "96f5308b7f256926794d82f24d11c4bf1fc3fe12c12a251ea94026cdff7f0296"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/当前保存前回读差异.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/当前保存前回读差异.json",
+      "bytes": 184513,
+      "sha256": "402a540cd60b205cd3a423acf51f81210f7477d564662d845ed65502ea8023c3"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/当前保存重开回读审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/当前保存重开回读审核.json",
+      "bytes": 178544,
+      "sha256": "9d1713454b8393982e9be173415401af0a278544eee3da8c0182495beb89336c"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261001/本地交接快照预审.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261001/本地交接快照预审.json",
+      "bytes": 156428,
+      "sha256": "9b7622a53dea2f4dffd382740599571c6b75a382b2d5411b156155e1752005c1"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/BOM_38件准确料号_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/BOM_38件准确料号_仅审核_20261004.csv",
+      "bytes": 3427,
+      "sha256": "fe32ede058988361c894d9dd900f5f6b5b30d51188cd1f0298a06a0c473629e1"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/BOM_工作板_原生_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/BOM_工作板_原生_仅审核_20261004.csv",
+      "bytes": 14082,
+      "sha256": "b307e74dd5affb806a5889c7839e1d37ab91a364c9adb7d1a0e6f7bb72fca3ef"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/CPL_38件SMT_中心校正_仅审核_20261004.csv",
+      "bytes": 3223,
+      "sha256": "7a33f75d1950336010e156f3bc7dca95ec707b861e5dc021676bea55eb4408fd"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/CPL_38件SMT_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/CPL_38件SMT_仅审核_20261004.csv",
+      "bytes": 3223,
+      "sha256": "5c1c17655946f0a4a5c7805f8f2086a6dc51491db70e3b960184c6c8711c9bf9"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/CPL_工作板_原生_仅审核_20261004.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/CPL_工作板_原生_仅审核_20261004.csv",
+      "bytes": 8978,
+      "sha256": "30574e4a1920b21bd4115b31189ba603597bf9e6d6428100aead78e235c1cb20"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_工作板_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_工作板_仅审核_20261004.zip",
+      "bytes": 65051,
+      "sha256": "42d1477d3b73e4c626fc077e5f7c38ec0118f00f03c8cf8980f641fecd9c958f"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber_手焊禁钢网_保存重开_仅审核_20261004.zip",
+      "bytes": 64965,
+      "sha256": "d12375fdb4642225bc3a138077a2265c1f81b17909aee3e53bf2190067ddf72e"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber全层视觉核对_仅审核.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber全层视觉核对_仅审核.pdf",
+      "bytes": 536420,
+      "sha256": "549bceb643417063055e0070560dd1c91a76bb58ec9664c924805cf25ab6cd90"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_1.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_1.png",
+      "bytes": 340405,
+      "sha256": "5285620ef35ebf75d3b2f7bc0a4f827bf4634900c6ff8affa44b2ed49cf17cd6"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_2.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_2.png",
+      "bytes": 205331,
+      "sha256": "bfbd939ddae9d90fbe8d15058c04ab670efb29129164b76b8f795ae3729271f4"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_3.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/Gerber视觉核对_3.png",
+      "bytes": 205766,
+      "sha256": "782f62045a63920ae543181c5613402fa7c892dfc75958254424648958f8ab58"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/SMT排除核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/SMT排除核验_仅审核.json",
+      "bytes": 852,
+      "sha256": "81329bf71a08939d5965be0ac6a78cc5b371e377a069633cf11adbf6837416dc"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/交付包核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/交付包核验_仅审核.json",
+      "bytes": 437,
+      "sha256": "e4a1d02ec086d38fd303d8a8e8e7e6699fe8761673e349e1f2b058a0b381b7cf"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/关键脚向_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/关键脚向_仅审核.png",
+      "bytes": 230102,
+      "sha256": "bf642c45adc28f64d2eb989ebf078a22b7269a5d9f52d1734f4f7bde57593400"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/博后交接单_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/博后交接单_仅审核.md",
+      "bytes": 3638,
+      "sha256": "27dbde286afda4663d4e3a171f24da6574b6bb7fd3815976059c1e1049acb30a"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/原生BOM与坐标核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/原生BOM与坐标核验_仅审核.json",
+      "bytes": 15420,
+      "sha256": "de1adc85ae8ce144139e1cc7b6ba624657226dfea25c4a0dfe4b8ce6707f4247"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/原生网表与PCB逐脚核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/原生网表与PCB逐脚核验_仅审核.json",
+      "bytes": 20036,
+      "sha256": "a4ca11c76ef84ed58a6e2f506d8c8a65e8657f21f23ae68baea838bfcb128456"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/当前Gerber核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/当前Gerber核验_仅审核.json",
+      "bytes": 9859,
+      "sha256": "66d7c7b8d6d030d075b2daefe0139385aeadb100606701933778e9ebae9eb7af"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/当前装配空间核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/当前装配空间核验_仅审核.json",
+      "bytes": 43568,
+      "sha256": "31a2db7ff925bb4512ff38ecc9e63cca859b81f35312b56e09d467759f3e4bc7"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/最终Gerber核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/最终Gerber核验_仅审核.json",
+      "bytes": 13385,
+      "sha256": "93695bd1fcd6a03b5c44d22845d481bf484bed3b2c57ff6c280257e059ed3bdd"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/本轮审核摘要_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/本轮审核摘要_仅审核.md",
+      "bytes": 2959,
+      "sha256": "ba08e0cae90879adb225fec12bace2aab3d35a808ce2bea468e4698aec8380cb"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/网表与制造增量审核_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/网表与制造增量审核_仅审核.md",
+      "bytes": 5039,
+      "sha256": "0267ba7417cb9a5c523d437670b45b186dab76cd3b5750227a15d96ae49f08f8"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/装配定位_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/装配定位_仅审核.png",
+      "bytes": 197619,
+      "sha256": "1de211b9e58568df9913e5d0248a261582dc5dc0d6abf746fab9f3eff5392af2"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/装配定位与关键脚向_仅审核_20261004.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/装配定位与关键脚向_仅审核_20261004.pdf",
+      "bytes": 116338,
+      "sha256": "da1500087f157cb318ce46c8db7bda1e580134b15e7545876398facb209c9c90"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/装配数据核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/装配数据核验_仅审核.json",
+      "bytes": 27691,
+      "sha256": "920fc003546f48726efd9f36a455f9f13b36fb08726f601c3fe90a7b075f40a8"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/视觉审阅记录_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/视觉审阅记录_仅审核.json",
+      "bytes": 735,
+      "sha256": "e66f46c0d7aa130a0c9d7a169f04886f7f1b918372310f64b41eabcdf48d16e2"
+    },
+    "manufacturing/仅审核禁止生产/最终审核_20261004/设计与装配终审说明_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/最终审核_20261004/设计与装配终审说明_仅审核.md",
+      "bytes": 14505,
+      "sha256": "7487bd1a96cae7a62ab29483bb398836cc9d5fdcd863dcd3260a526d1d9f2efd"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/BOM_36件准确料号_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/BOM_36件准确料号_仅审核_20261005.csv",
+      "bytes": 3249,
+      "sha256": "407932cdafd698e84133fed40488ffe2c77c6ef30ee53c2e7a362830fc448c14"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/BOM_板外充电_原生全位置_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/BOM_板外充电_原生全位置_仅审核_20261005.csv",
+      "bytes": 18436,
+      "sha256": "545fc0754e363309d21970b3a4c89b0cda68b8c684a7694c0e0bed6ef1714b5c"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/BOM与坐标增量核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/BOM与坐标增量核验_仅审核.json",
+      "bytes": 1069,
+      "sha256": "7a08bfcc8c78a5e2b9cce757444f008bd99b3585553d58fcc5656825c8ed14c4"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/CPL_36件SMT_中心校正_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/CPL_36件SMT_中心校正_仅审核_20261005.csv",
+      "bytes": 3047,
+      "sha256": "ac5ff28fe119ab6610d3172ebdaf0fc8ca61354de9f70c0e9ec4df794146022b"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/CPL_板外充电_原生全位置_仅审核_20261005.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/CPL_板外充电_原生全位置_仅审核_20261005.csv",
+      "bytes": 8542,
+      "sha256": "6ec526971d8cd4a7936255195ba16c39c9e2dfee3169bc92fd583d81da6a195a"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber_板外充电_仅审核_20261005.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber_板外充电_仅审核_20261005.zip",
+      "bytes": 63776,
+      "sha256": "f0ea504fdd490eb46ba1740e9a730fee03d003b60422a5d51f8ab2de977d3a83"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber全层视觉核对_仅审核.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber全层视觉核对_仅审核.pdf",
+      "bytes": 532964,
+      "sha256": "91f5b48d35cd5453c7d561af8aab94d41a06579b3935259d9fb5a2a9a01bb2f1"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber增量与工艺核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber增量与工艺核验_仅审核.json",
+      "bytes": 6765,
+      "sha256": "001ba8417bb549244775b8e1c85d1897df8d993706669a68a363e5262eb001d4"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_1.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_1.png",
+      "bytes": 341821,
+      "sha256": "b6e43af295ff36c4a2829b1142f557f3bf6a043be87b768364f12f28d22628f8"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_2.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_2.png",
+      "bytes": 201427,
+      "sha256": "7709dc5f0136b92ba1ceb16d04d7842927af793cb8d6a3fd192a4e14478e522e"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_3.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/Gerber视觉核对_3.png",
+      "bytes": 205597,
+      "sha256": "94193ecea78bf127b848c0563c55e8f0b2d3200c07da3e4ab8a4dc6f9e3992be"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/SCH_板外充电_原生Protel全图_仅审核_20261005.net": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/SCH_板外充电_原生Protel全图_仅审核_20261005.net",
+      "bytes": 2593,
+      "sha256": "64307150090fe4a4c71b37a67baca9bc411a961693554cecdfed07d5cc520291"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/SHA256_审阅包文件清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/SHA256_审阅包文件清单.json",
+      "bytes": 11809,
+      "sha256": "4932314c514c770a3ddcb000f0d5b9e6eb6ab3d2f2afdc48f9c437ba1e3e6e92"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/交接包完整性核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/交接包完整性核验_仅审核.json",
+      "bytes": 536,
+      "sha256": "efa8dc8ba402ee75243afe664b20756452477ba05553017a8c56b70c9da73f73"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/保存重开与差异核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/保存重开与差异核验_仅审核.json",
+      "bytes": 2462,
+      "sha256": "e86246560b81e04592d67d735f5cb0d519d18f8b3dc68070e29e9bf870a99eec"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/关键脚向_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/关键脚向_仅审核.png",
+      "bytes": 221823,
+      "sha256": "ee4ed455c717efdd9877d4fa9c1a1586968fcdce640a4a374b0ea34702dd8a7b"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/原生网表与PCB逐脚核验_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/原生网表与PCB逐脚核验_仅审核.json",
+      "bytes": 19347,
+      "sha256": "383a3d963f0611f5288f0144d6f799a3f4e02005b100ac38b41de714caa674dd"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/变更范围与预算_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/变更范围与预算_仅审核.json",
+      "bytes": 9946,
+      "sha256": "06ffff5bad553881eb7e9b7ba1e65ee7c3a690bd5985c2ba25147c238a1b2806"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/局部候选差异_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/局部候选差异_仅审核.json",
+      "bytes": 17050,
+      "sha256": "1f3fea2e5a66fb651701e1bf7a44bdbfccfe3c8d479a982da336d0b427dfe4ef"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/改动前CAD_HANDOFF_历史_勿作当前.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/改动前CAD_HANDOFF_历史_勿作当前.md",
+      "bytes": 76855,
+      "sha256": "08be2ba776aadd514eebb0f4b064e8ae9849ccbbe3e64edc3004c609a90bcf1e"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/改动范围_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/改动范围_仅审核.md",
+      "bytes": 3914,
+      "sha256": "d80c6c2e1fefa2ee806aeb39583f09c30196d181c07e9560811054e0f92664c5"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/最后重开原生DRC记录_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/最后重开原生DRC记录_仅审核.json",
+      "bytes": 1131,
+      "sha256": "09a28a7e1394b7d3a9e0583b1b1506cadcf79ac563a72d222e71a818833c2845"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/本轮交接_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/本轮交接_仅审核.md",
+      "bytes": 7033,
+      "sha256": "a2cafdf55a80e1a07ea8393079a82c6ee42491f50d8cb3378a52b54a70e47981"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/装配定位_仅审核.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/装配定位_仅审核.png",
+      "bytes": 199212,
+      "sha256": "0ad6e9e9f84a2ae4099b718e73afef7686585c34c1c1d192603d719fff2bcdf4"
+    },
+    "manufacturing/仅审核禁止生产/板外充电_20261005/装配定位与关键脚向_仅审核_20261005.pdf": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/板外充电_20261005/装配定位与关键脚向_仅审核_20261005.pdf",
+      "bytes": 113149,
+      "sha256": "2ae02c64ded66c14a0007f0490a89f97e99203f955f1d0521ca5c3690191e435"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/2.2uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8082,
+      "sha256": "0aba8a5f93d26c3b1284ed5597f5ef6b8332b9b05a77f440e14ed3b2c1ceb822"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂曲线.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂曲线.png",
+      "bytes": 17857,
+      "sha256": "197407a0d207ff5a964d65f2b36a62fc63f21e41757ae7253f0318027ad23e39"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/4.7uF候选_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8307,
+      "sha256": "0e41a60fcfa562ad1e4e07634335bb23d6e71f854a71024635ff91581fcd2e8e"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂曲线.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂曲线.png",
+      "bytes": 21926,
+      "sha256": "bb26f0eaeb0654737a80d4df504ca18c6d81f83a13317de9e75dfba5dc52c921"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂组合曲线.csv": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/原1uF_DC5.5V_AC10mV_原厂组合曲线.csv",
+      "bytes": 8069,
+      "sha256": "60d4e8a5269077d2821ee61e9bbf319b1a1e3d2f417aa94d318e9161d9372928"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/文件校验清单.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/文件校验清单.json",
+      "bytes": 1378,
+      "sha256": "5ad4ddfa857dc4cc12bfd4bff04569bd863647b78a7029b0490c023d83b52b66"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/本轮结论与变更建议_仅审核.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/本轮结论与变更建议_仅审核.md",
+      "bytes": 9424,
+      "sha256": "5bb8a14f99c891f3a9684591fc3c2de5d92f362caa25c58745cde4a266498aee"
+    },
+    "manufacturing/仅审核禁止生产/电容与USB方案_20261005/组合曲线审核_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电容与USB方案_20261005/组合曲线审核_仅审核.json",
+      "bytes": 6785,
+      "sha256": "492a3210cd0973a4e0381a187808f0f348bd7aaba27a8b5e920551d3e5fead3c"
+    },
+    "manufacturing/仅审核禁止生产/电源定量复核_20261005/16V候选_原厂旧版曲线页2.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电源定量复核_20261005/16V候选_原厂旧版曲线页2.png",
+      "bytes": 456434,
+      "sha256": "392c4d4ba7e52e6d182971c9b98ee7c5a577ad244dbc00a101b3e7c816dbceb8"
+    },
+    "manufacturing/仅审核禁止生产/电源定量复核_20261005/原10V电容_原厂典型曲线页3.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电源定量复核_20261005/原10V电容_原厂典型曲线页3.png",
+      "bytes": 309368,
+      "sha256": "7cfc7ceb0b06c37eb6bbbe2827499b7926e9d8045c3e48483816246a31aa6024"
+    },
+    "manufacturing/仅审核禁止生产/电源定量复核_20261005/原10V电容_原厂典型曲线页4.png": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电源定量复核_20261005/原10V电容_原厂典型曲线页4.png",
+      "bytes": 205504,
+      "sha256": "702e1fdb1e17ad4d2f5f4969c1c129f1abc3f92c3dd158bdea69bf3cc5175085"
+    },
+    "manufacturing/仅审核禁止生产/电源定量复核_20261005/电源与电容定量审核_仅审核.json": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/电源定量复核_20261005/电源与电容定量审核_仅审核.json",
+      "bytes": 11943,
+      "sha256": "4592dd649b8b51264cbae35282119fab2509eb8b3d9e10b1436a0ee47fc08931"
+    },
+    "scripts/__pycache__/audit_current_netlist.cpython-312.pyc": {
+      "to": "archive/历史资料与工具_20261006/scripts/__pycache__/audit_current_netlist.cpython-312.pyc",
+      "bytes": 13892,
+      "sha256": "cca2913c5a70b8f9b3da2c5ce3d73c24180e2903b1d5afb7dc10069dde79ca46"
+    },
+    "scripts/__pycache__/check_pcb_a5.cpython-312.pyc": {
+      "to": "archive/历史资料与工具_20261006/scripts/__pycache__/check_pcb_a5.cpython-312.pyc",
+      "bytes": 19807,
+      "sha256": "9ffa276a25974ec48956613b7ec1d5e5a27076c4b3bdef89fb2708deb2331405"
+    },
+    "scripts/accept_clone_charge_trial_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_charge_trial_20260929.py",
+      "bytes": 2378,
+      "sha256": "53bf155f0fb89c3bd08d6516e7fb181e6b692230296476f5c186b1494fdebfb0"
+    },
+    "scripts/accept_clone_edge_native_g_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_edge_native_g_20260929.py",
+      "bytes": 2376,
+      "sha256": "9f631748132f1ffe61097a28801db8b854db938b440cabfc10f5f4e4a6e6c781"
+    },
+    "scripts/accept_clone_ldo_q_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_ldo_q_20260929.py",
+      "bytes": 4283,
+      "sha256": "145c0f2fe3a0075c11d449437dfc622e45a52b36a33f1f64910ff4caed4f3cfa"
+    },
+    "scripts/accept_clone_mlx_r_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_mlx_r_20260929.py",
+      "bytes": 5671,
+      "sha256": "e2686af4d49ff0a81aa810c6cdd34dcbf167526a01ef697bf54dc39a27b86976"
+    },
+    "scripts/accept_clone_outline_o_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_outline_o_20260929.py",
+      "bytes": 5129,
+      "sha256": "58bed682084925ff287776f912ae27edd652485a96feab4be913692cc75822cd"
+    },
+    "scripts/accept_clone_usb_native_i_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_usb_native_i_20260929.py",
+      "bytes": 2968,
+      "sha256": "003db7b3737e6e22c1abef94578cbd47b305990df124382d8fbb71fbd0452b5b"
+    },
+    "scripts/accept_clone_usb_native_l_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_usb_native_l_20260929.py",
+      "bytes": 2843,
+      "sha256": "61790e133c872b4bf72cbc817e29bc035744131e83d0ba63f1c2698664720700"
+    },
+    "scripts/accept_clone_usb_native_m_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_usb_native_m_20260929.py",
+      "bytes": 3795,
+      "sha256": "8a4195dc93a752d5d239d8b0ae5c059b5c215612e9f5953e4d08d7b802a43ac4"
+    },
+    "scripts/accept_clone_usb_native_n_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_usb_native_n_20260929.py",
+      "bytes": 4289,
+      "sha256": "1f0ed72269f0f4540e565e3d669e48ce1f77415c74be66cd7e9a927fbf7b72a1"
+    },
+    "scripts/accept_clone_usb_width_p_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/accept_clone_usb_width_p_20260929.py",
+      "bytes": 4629,
+      "sha256": "0ba2bbaa8c48f9e31dfcc414239c35ed681e8125e70a2db481db9700810c34db"
+    },
+    "scripts/add_clone_bottom_ground_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/add_clone_bottom_ground_20260928.py",
+      "bytes": 1515,
+      "sha256": "e12e6e0050d3e89707b89033a342dcdf6f66530b92d7a3a92109d276663c2c5c"
+    },
+    "scripts/audit_buttons_outputs_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_buttons_outputs_20261004.py",
+      "bytes": 5266,
+      "sha256": "d86bfd32b27ef9097bd323a9d770c98efcb5fe44d60581ac68c4c09c82e0b1cc"
+    },
+    "scripts/audit_capacitor_candidates_r.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_capacitor_candidates_r.py",
+      "bytes": 17606,
+      "sha256": "eae57f4ec69400d62e2aa3ea0b2e3ba21a359b0663002559b96861c953d941a0"
+    },
+    "scripts/audit_clone_connector_t_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_connector_t_20260929.py",
+      "bytes": 9910,
+      "sha256": "0251a8b85b759f1a3dc04f519b2bb8f2642c7299ec5e409cfc2cd15ac63c67bc"
+    },
+    "scripts/audit_clone_gerber_r_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_gerber_r_20260929.py",
+      "bytes": 16020,
+      "sha256": "4197c072ad5f4d1e6431973d78a44bf92d220c43083d03506631be544f8d70fc"
+    },
+    "scripts/audit_clone_ground_spacing_s_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_ground_spacing_s_20260929.py",
+      "bytes": 5294,
+      "sha256": "a916f21de6f9f64ec883f8583d2b2eaf376a5106d16b26093562fc4a5501c9cd"
+    },
+    "scripts/audit_clone_native_ground_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_native_ground_20260929.py",
+      "bytes": 2243,
+      "sha256": "c7ee3f9afd6883892e99e1fc1b7792ec07e79089ec43aed941bc9bbf2fa5f02e"
+    },
+    "scripts/audit_clone_native_reference_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_native_reference_20260929.py",
+      "bytes": 1821,
+      "sha256": "12d59b8d34e8146a2910c5db29ed54e76690f1d8cefaa55d631f507c37bbf6d1"
+    },
+    "scripts/audit_clone_power_budget_r_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_power_budget_r_20260929.py",
+      "bytes": 5273,
+      "sha256": "528af0c9ef41789dcd26b7c41b19d71d7adfea1fd573cfebc322cc28098672ca"
+    },
+    "scripts/audit_clone_power_paths_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_power_paths_20260929.py",
+      "bytes": 6245,
+      "sha256": "950528515ee691567f0d3fc2c080176aea7ef28f2522305e024942a56a7deafd"
+    },
+    "scripts/audit_clone_usb_escape_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_usb_escape_20260928.py",
+      "bytes": 6323,
+      "sha256": "5d4cfbc7036c1055f98c8aa61c9182fc2aec654b427c930abb348f62cc412e9a"
+    },
+    "scripts/audit_clone_usb_ground_via_space_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_usb_ground_via_space_20260929.py",
+      "bytes": 3937,
+      "sha256": "2a63ce3fe9a3c61f2a8613f2deae858b321d4694c7a841fcba3c4e4a61ac777d"
+    },
+    "scripts/audit_clone_usb_lengths_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_usb_lengths_20260929.py",
+      "bytes": 4681,
+      "sha256": "1cf299870aea0a84f5126048d9ffca70e31b310e375b6950b697c74997a7e1f4"
+    },
+    "scripts/audit_clone_usb_residual_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_usb_residual_20260929.py",
+      "bytes": 2782,
+      "sha256": "0019b27450ccf74283ecfa082299cb54dadab4fca66506f922298987e0fb3332"
+    },
+    "scripts/audit_clone_usb_return_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_clone_usb_return_20260929.py",
+      "bytes": 4039,
+      "sha256": "4c2d821679616e0ce005fe7e01294b941deddfa95ba64982bd161973b8831b7c"
+    },
+    "scripts/audit_external_charge_20261005.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_external_charge_20261005.py",
+      "bytes": 14872,
+      "sha256": "121934ab3a8f2b479aa7688b88d0ad7c7580fefdef91a1ece4b9e686b751fc06"
+    },
+    "scripts/audit_finish_delta_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_finish_delta_20261004.py",
+      "bytes": 5277,
+      "sha256": "8ad7366aee62aae86b29a2bd37d6aad3628c971aa017ebc391b4880c2c4231b9"
+    },
+    "scripts/audit_review_mechanics.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_review_mechanics.py",
+      "bytes": 6427,
+      "sha256": "f465df75bc4e4cc1ff3cf67c1dd5302151e106444e2309f20455178c19632fc7"
+    },
+    "scripts/audit_silk_finish_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/audit_silk_finish_20261004.py",
+      "bytes": 5248,
+      "sha256": "bc5e1350f8ffb20fbe032bee4dfe710c47d4c95adff173dbc38c2284b70a30fc"
+    },
+    "scripts/build_a5_preroute_layout_candidate_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_preroute_layout_candidate_20260918.py",
+      "bytes": 4072,
+      "sha256": "571780a2737cdd4cb099437d2dd75b83d8b46a739987684367b91b57b5a16fea"
+    },
+    "scripts/build_a5_rf_clearance_layout.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_rf_clearance_layout.py",
+      "bytes": 11300,
+      "sha256": "cc18441d22688ae990deeecf80515206be5b4aa3248b68cf7e6db20c03f9aeb6"
+    },
+    "scripts/build_a5_rf_route_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_rf_route_20260918.py",
+      "bytes": 10379,
+      "sha256": "447cce50307b47749416b457c5d568fa90e9ed077653b9febfc2e1bee0d62323"
+    },
+    "scripts/build_a5_uart_candidate.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_uart_candidate.py",
+      "bytes": 10125,
+      "sha256": "21048666e5fdbb917ffa1df5a2b895a7e4fc5608200f11e1f7ff5370a776edee"
+    },
+    "scripts/build_a5_usb_front_candidate.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_usb_front_candidate.py",
+      "bytes": 12557,
+      "sha256": "49b523dfb42d4089c99937c0c45e9f799c38c5b2fb5a6430d204dd8e1f594997"
+    },
+    "scripts/build_a5_usb_keep_candidate.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_usb_keep_candidate.py",
+      "bytes": 9881,
+      "sha256": "adf763b0c40978daff5ac000e72d0cf53fd0df87b6abf339cec9687130a5714f"
+    },
+    "scripts/build_a5_usb_keep_footprints.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_usb_keep_footprints.py",
+      "bytes": 5114,
+      "sha256": "67dbdafc3dd7efa441b9a2f5ada36dcfc8bacdf003b511b1303798809fca580f"
+    },
+    "scripts/build_a5_usb_soc_fanout.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_usb_soc_fanout.py",
+      "bytes": 7962,
+      "sha256": "be8fac95b171c99d98f57d83a943c36208926a3ec4aee5661862d6235e0c6184"
+    },
+    "scripts/build_a5_usb_zone_placement.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_a5_usb_zone_placement.py",
+      "bytes": 11692,
+      "sha256": "ec8aac2b1dc6277d386f8998f3177feb5f42926d9a02da588c809f04108b7e2e"
+    },
+    "scripts/build_clone_usb_local_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_clone_usb_local_20260928.py",
+      "bytes": 12041,
+      "sha256": "18b13b81ccfc2ee55670db891f6b9c57b39e2fff3cdbd49223f31359428a3344"
+    },
+    "scripts/build_final_review_bom.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_final_review_bom.py",
+      "bytes": 8930,
+      "sha256": "5c072c702f9b4c7bd4362d9b0d553543086b09308ea63b91079722ce331eb02e"
+    },
+    "scripts/build_pcb_a5_pico_stencil.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_pcb_a5_pico_stencil.py",
+      "bytes": 9570,
+      "sha256": "7cea226ddb1285e2cb61b1df7f6e2cf5ed53cd4b5b1677d4cfd38552a7972de7"
+    },
+    "scripts/build_review_assembly_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_review_assembly_20261004.py",
+      "bytes": 6254,
+      "sha256": "ecd07a5e3a695c1e8a2158bd8376f6c6e2a0a8c69c958fc110f7c7859815f42e"
+    },
+    "scripts/build_sch_a5.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_sch_a5.py",
+      "bytes": 23871,
+      "sha256": "41f4ceb85fae0b0008ac90eb5efc31a032266fe3031f9be397aecd21e5c2a16c"
+    },
+    "scripts/build_sch_a5_footprints.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/build_sch_a5_footprints.py",
+      "bytes": 4211,
+      "sha256": "427fabc7985e22ee406b0c41d09d076cb048418553adc86fb0d43bcaf3253bbd"
+    },
+    "scripts/check_a5_uart_candidate.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/check_a5_uart_candidate.py",
+      "bytes": 9371,
+      "sha256": "068f7c3cfd1f760a3db4e0ce36f38173f61cc1e95064f8b5c9afd6ad884e3774"
+    },
+    "scripts/check_pcb_a5_mechanical.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/check_pcb_a5_mechanical.py",
+      "bytes": 16103,
+      "sha256": "339f5a94a50844cd2ef252554e43dd68b326895406cdcc53e8da33cf4b8cb390"
+    },
+    "scripts/check_sch_a5_footprints.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/check_sch_a5_footprints.py",
+      "bytes": 3670,
+      "sha256": "0e0fd004a75e03269ae1b29501d7be4e8e8e44da9c5c150618b42fcf20323741"
+    },
+    "scripts/check_ufl_footprint.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/check_ufl_footprint.py",
+      "bytes": 695,
+      "sha256": "2764bed1c79ed33ea9f4fc2b94c36918baeb5574b7bd115d81b8d247ef427ed2"
+    },
+    "scripts/cleanup_downloads_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/cleanup_downloads_20260929.py",
+      "bytes": 5283,
+      "sha256": "de0fdabc99a70387b8ceab66d7d5cb8fac874886db6ab21d4d3568b302f4a393"
+    },
+    "scripts/cleanup_hardware_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/cleanup_hardware_20260918.py",
+      "bytes": 6151,
+      "sha256": "fbdbe660cc73981e7ac273dcd1f7b0ca1ca943e2a554a329faf368f52bc27fe3"
+    },
+    "scripts/complete_clone_remaining_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/complete_clone_remaining_20260929.py",
+      "bytes": 2358,
+      "sha256": "36d112e61e91eb577dab168a880941fdc9302d21b7e37bce4f994800e7310377"
+    },
+    "scripts/correct_clone_charger_land_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/correct_clone_charger_land_20260929.py",
+      "bytes": 1692,
+      "sha256": "bdf81602ad0db28213e65f2472abf76ecc0e0ff08d761ea369a29477db891eaf"
+    },
+    "scripts/escape_clone_boot_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/escape_clone_boot_20260928.py",
+      "bytes": 1213,
+      "sha256": "36a9a01a0d5bcbb3bda3eb52595b987631a9058ef3590e3e415b54cc7cebfd7c"
+    },
+    "scripts/escape_clone_cc_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/escape_clone_cc_20260928.py",
+      "bytes": 2351,
+      "sha256": "9e189e05a5050513807f05b806dffcd93998f824ea60c639b46828a36ca6a998"
+    },
+    "scripts/escape_clone_power_pins_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/escape_clone_power_pins_20260929.py",
+      "bytes": 2764,
+      "sha256": "39927d61f4ac32e1b81a5cb908b72e8c8952e65039344cf15ee563d60db667c6"
+    },
+    "scripts/escape_clone_usb_power_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/escape_clone_usb_power_20260928.py",
+      "bytes": 1439,
+      "sha256": "84611823b21e29b03960b706c01f519be4080f5cafc99540c5677f45fe972a0d"
+    },
+    "scripts/finish_clone_ground_local_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/finish_clone_ground_local_20260929.py",
+      "bytes": 4068,
+      "sha256": "ba7ca2a05864ceb295c5162c9b655eb32946b63922a84efa2f6c34828f3cd03c"
+    },
+    "scripts/finish_clone_power_local_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/finish_clone_power_local_20260929.py",
+      "bytes": 2482,
+      "sha256": "b27bcdb8eb4c806ad7df991531e38a1ee7bbb21c42a4a877398270077122da99"
+    },
+    "scripts/finish_clone_usb_power_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/finish_clone_usb_power_20260929.py",
+      "bytes": 766,
+      "sha256": "77fab1078a1b5d6769e506a3a73c3c5fd5dce9650f779b212d5e44f010f23f2a"
+    },
+    "scripts/inset_clone_antenna_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/inset_clone_antenna_20260929.py",
+      "bytes": 2946,
+      "sha256": "883b30644d437e13aff2e135c3cf41f2fc184be5b77e41f6033a1f935e8edc6e"
+    },
+    "scripts/inset_clone_edge_parts_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/inset_clone_edge_parts_20260929.py",
+      "bytes": 5891,
+      "sha256": "7b9f4eabd483a46f670d5f473bfb89e502ced9252afccda1ebfdc8af2451047f"
+    },
+    "scripts/inspect_clone_batch_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/inspect_clone_batch_20260928.py",
+      "bytes": 2156,
+      "sha256": "88a4e4dd5e317f84d31aabcbab6eeee0071891689ed4cfaf3f235364f9f01ceb"
+    },
+    "scripts/inspect_clone_rf_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/inspect_clone_rf_20260928.py",
+      "bytes": 1768,
+      "sha256": "32f3e065ad2bc7721e77996a13e6684471358ad45bfaa575433df3fe434727be"
+    },
+    "scripts/inspect_clone_usb_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/inspect_clone_usb_20260928.py",
+      "bytes": 2630,
+      "sha256": "b9b840f92e11c13d06f8f8e41f8715bfde423c52d1f4ddeaa17ddc98ae9c9a4c"
+    },
+    "scripts/merge_clone_charge_cc_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/merge_clone_charge_cc_20260928.py",
+      "bytes": 3945,
+      "sha256": "c15cbb97dab2ba73dfee16bd010de34fbf299d239350bc3cd729f81ee7353883"
+    },
+    "scripts/move_clone_charge_resistor_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/move_clone_charge_resistor_20260928.py",
+      "bytes": 1293,
+      "sha256": "1eda5e3fe9b0a0cf840fc38c3e24b285682973c278995becb3de0c88527763d1"
+    },
+    "scripts/normalize_clone_outline_stroke_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/normalize_clone_outline_stroke_20260929.py",
+      "bytes": 767,
+      "sha256": "d14854d1dc73c88ebb0f215d6ce2b91f1db2dba3d27d4b0b297ec68a4ca9ba43"
+    },
+    "scripts/optimize_pcb_a5_layout.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/optimize_pcb_a5_layout.py",
+      "bytes": 9878,
+      "sha256": "a1c6d3e5a6c49ff90b97bf51661afa6b4212b96879601dfc24f2a16326dc766b"
+    },
+    "scripts/prepare_external_charge_20261005.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/prepare_external_charge_20261005.py",
+      "bytes": 6560,
+      "sha256": "27da9c4efcd3645ccb30f3412edbeca5c5c3aafc80dd08a10a354071eaa8d770"
+    },
+    "scripts/prepare_manufacturing_finish_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/prepare_manufacturing_finish_20261004.py",
+      "bytes": 3862,
+      "sha256": "08c9fd4836740063daa28c2a179444bd6c652e1484c3df2850d16d04c363413b"
+    },
+    "scripts/prepare_q1_direct_fix_20261006.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/prepare_q1_direct_fix_20261006.py",
+      "bytes": 10529,
+      "sha256": "3bbb34f60c2a760d2766bfae9688018947aa9afb8b2ed9e41f2243cf1043c8cd"
+    },
+    "scripts/prepare_silk_finish_20261004.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/prepare_silk_finish_20261004.py",
+      "bytes": 5552,
+      "sha256": "013b1a5950958d3d3487f34dab16332913c22caec4c047b3998771e8ad9bb18c"
+    },
+    "scripts/probe_clone_mlx_decoupling_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/probe_clone_mlx_decoupling_20260929.py",
+      "bytes": 4743,
+      "sha256": "def06c4e1cec71df36831ab8df45414144e85e2df71ab1e0520d6214d3d4086f"
+    },
+    "scripts/refine_clone_charge_escape_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/refine_clone_charge_escape_20260928.py",
+      "bytes": 2002,
+      "sha256": "e724baafe90d0e689f0428e7e7e2b38ba60053c0cb99f8fad34b52e60815f361"
+    },
+    "scripts/refine_clone_mlx_r_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/refine_clone_mlx_r_20260929.py",
+      "bytes": 3268,
+      "sha256": "2ca635d49f8e470c0661d326f871679efdb2b7ab74c0d71cc457f5b727e16221"
+    },
+    "scripts/refine_clone_usb_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/refine_clone_usb_20260928.py",
+      "bytes": 7209,
+      "sha256": "3cb5e9156140687b54653a75dce12e114681bae3ec973fd8bea014f9bf6ea758"
+    },
+    "scripts/refine_clone_usb_vias_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/refine_clone_usb_vias_20260929.py",
+      "bytes": 1347,
+      "sha256": "8caadd60d99829e66c7f343ff19703c0fa586a47b1302b3811d6c984eee865d5"
+    },
+    "scripts/refine_clone_usb_width_p_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/refine_clone_usb_width_p_20260929.py",
+      "bytes": 1524,
+      "sha256": "177b9cc49575a34e270013f9b9b6ff33e2de5b1c5fdb8a3f19819a11074ad648"
+    },
+    "scripts/relieve_clone_usb_left_return_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/relieve_clone_usb_left_return_20260929.py",
+      "bytes": 4043,
+      "sha256": "768f7f85629f4ad9567e1ae548da3b5ea38830e2f1bd2e11f0e177a0eeaef17e"
+    },
+    "scripts/relieve_clone_usb_right_return_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/relieve_clone_usb_right_return_20260929.py",
+      "bytes": 3409,
+      "sha256": "1bd081a077b8d36d9d420a93ec056d274749c4fbe85eba7486490d0f21ac3bdc"
+    },
+    "scripts/relocate_clone_blocking_vias_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/relocate_clone_blocking_vias_20260929.py",
+      "bytes": 4859,
+      "sha256": "eecf5dfc2b6ca09e32b74816b03d13439006ff1aacd39e2688f987eabbf05b9f"
+    },
+    "scripts/repack_a5_local_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repack_a5_local_20260918.py",
+      "bytes": 5513,
+      "sha256": "17733dbc80caa2d3816c59bbe2f3f5af9286281330a1c639361238bacd098f32"
+    },
+    "scripts/repair_clone_batch_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_batch_20260928.py",
+      "bytes": 16088,
+      "sha256": "dc662ab30d4f844c1ab221b044a2448408d9b9c6f103c0dfde5e03438b0e23dd"
+    },
+    "scripts/repair_clone_cc_drill_gap_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_cc_drill_gap_20260929.py",
+      "bytes": 1931,
+      "sha256": "6a680806e00a40e750ee00949f4792ba00fcc781be5c048686c81b8c5f064e8a"
+    },
+    "scripts/repair_clone_connector_t_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_connector_t_20260929.py",
+      "bytes": 6109,
+      "sha256": "07ce68729b0e63d2275075b3e4f03ea04493439b67732db6757455f19278f719"
+    },
+    "scripts/repair_clone_ground_spacing_s_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_ground_spacing_s_20260929.py",
+      "bytes": 3137,
+      "sha256": "5d5d89f6761d5c4ae337dc69862b12c487c26a63b43ef37d40f1243a96ca1922"
+    },
+    "scripts/repair_clone_inner_layer_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_inner_layer_20260928.py",
+      "bytes": 13074,
+      "sha256": "855d315782adfe06a537c668ad26437f69a9331a4dc92c62200548481582da20"
+    },
+    "scripts/repair_clone_native_ground_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_native_ground_20260929.py",
+      "bytes": 3458,
+      "sha256": "fe46d5aa84ef77ea72cad11ac416382f414a557b7007ee7afbe4aa9bd4521202"
+    },
+    "scripts/repair_clone_rf_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_rf_20260928.py",
+      "bytes": 14700,
+      "sha256": "84817a4e86a23f848a0ed14f4813e5b34b475a541aa069a40d63fa3bf5776f9f"
+    },
+    "scripts/repair_clone_usb_stitch_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/repair_clone_usb_stitch_20260929.py",
+      "bytes": 3329,
+      "sha256": "0744b69388b755ae55c19546cd2584327f70ad8660778f78ec78305508e35d90"
+    },
+    "scripts/reroute_clone_charge_ground_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/reroute_clone_charge_ground_20260929.py",
+      "bytes": 1834,
+      "sha256": "7c242129b72effcbe1122cdb175dbbdad44d201369185cc682f5f7219516fb34"
+    },
+    "scripts/reroute_clone_ground_exits_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/reroute_clone_ground_exits_20260929.py",
+      "bytes": 2165,
+      "sha256": "df1edaa28cd6296fb61a1afc0d7b83bde337d8f97f2c0c8e318bbd95b52f36f3"
+    },
+    "scripts/reroute_clone_signals_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/reroute_clone_signals_20260928.py",
+      "bytes": 4141,
+      "sha256": "bda1001e31ee64384eecb58066e0840a9d95367e033bbd4725e2723d0ce7c4b7"
+    },
+    "scripts/restore_clone_r11_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/restore_clone_r11_20260929.py",
+      "bytes": 1280,
+      "sha256": "2238d3c1f39477e09c5a084e10b352fffb1a40eb85b438dd7951d585c45157e3"
+    },
+    "scripts/rotate_clone_charger_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/rotate_clone_charger_20260929.py",
+      "bytes": 7958,
+      "sha256": "a721830df81b3cc722e37dabcfdd0f960d7289765ba7d1b652fc8ffc7011d731"
+    },
+    "scripts/rotate_clone_mlx_cap_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/rotate_clone_mlx_cap_20260929.py",
+      "bytes": 3769,
+      "sha256": "afc6cbcb7da1f6bc64e34b060d6493cf96300ff5887276e400c222814dc97acd"
+    },
+    "scripts/rotate_clone_reset_cap_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/rotate_clone_reset_cap_20260929.py",
+      "bytes": 2782,
+      "sha256": "6bdc8c75d05bae1b5ac530a8aa71e029634a5e8766c13b248242be4e7f4fd618"
+    },
+    "scripts/search_clone_cc_escape_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/search_clone_cc_escape_20260928.py",
+      "bytes": 4821,
+      "sha256": "1d8955c109e6c53318e9bf3d0b87a918638bb4f6922b477b4b7218155f663bea"
+    },
+    "scripts/search_clone_r10_pose_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/search_clone_r10_pose_20260928.py",
+      "bytes": 5572,
+      "sha256": "a3ee9034ace91bbb4841d2b9b12290caca7c617c53e28a04d3808015a17575fb"
+    },
+    "scripts/shift_clone_charger_escape_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/shift_clone_charger_escape_20260929.py",
+      "bytes": 3085,
+      "sha256": "5d580ec76462a1ba1e8a941580b02aa0ecde3b41c8ef3b342985565b9b1ab78f"
+    },
+    "scripts/shift_clone_mlx_ground_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/shift_clone_mlx_ground_20260929.py",
+      "bytes": 4045,
+      "sha256": "635a57c6c326fbf61b208401ae1c980028ce491ef8e68e21492390f0689846f3"
+    },
+    "scripts/shorten_clone_usb_dm_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/shorten_clone_usb_dm_20260929.py",
+      "bytes": 4686,
+      "sha256": "9c7e9d7dc849d9036b6b039b5f8712ea9786f627ac4056e89f2d523ea2376ef7"
+    },
+    "scripts/swap_clone_reset_decoupling_caps_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/swap_clone_reset_decoupling_caps_20260929.py",
+      "bytes": 3457,
+      "sha256": "503e700eb2efc141c7db73511351e752b4e8230e85f1caddf3169c7825cebc38"
+    },
+    "scripts/test_a5_rf_route_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_a5_rf_route_20260918.py",
+      "bytes": 1633,
+      "sha256": "5d1a34f3610a329f3737ce32ed9be80a19b9f415e27cb4831cd63f2ec81f9274"
+    },
+    "scripts/test_a5_usb_keep_candidate.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_a5_usb_keep_candidate.py",
+      "bytes": 5800,
+      "sha256": "2801f92d913f59af810a3bd96550c777436960ce1ac4a54e7568538fd2ab02e6"
+    },
+    "scripts/test_a5_usb_keep_footprints.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_a5_usb_keep_footprints.py",
+      "bytes": 3156,
+      "sha256": "3f6814269371557ac08a42979e042a9eee654c136a69e47ce744b4be75147afb"
+    },
+    "scripts/test_a5_usb_soc_fanout.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_a5_usb_soc_fanout.py",
+      "bytes": 3722,
+      "sha256": "3eb4718ac871563120c07211210d0ca3a22496458c8f5f9d51cdb46ca27942be"
+    },
+    "scripts/test_clone_arc_outline_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_clone_arc_outline_20260929.py",
+      "bytes": 1320,
+      "sha256": "b074700d43ce4ac5215de692376d811e9c31bda012cad8877c9b764858f2b4d8"
+    },
+    "scripts/test_pcb_a5_pico_stencil.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/test_pcb_a5_pico_stencil.py",
+      "bytes": 2579,
+      "sha256": "36ca9c93f6cc4640775d7b37742939a26c2fd502ca8b78717b9c67ffba83ec6b"
+    },
+    "scripts/tidy_clone_edge_silk_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/tidy_clone_edge_silk_20260929.py",
+      "bytes": 3455,
+      "sha256": "d6085999cda6b31f5f7c3e30599d9b08ddac365bc34cf695bd7009ccf5afc1e6"
+    },
+    "scripts/tidy_pcb_a5_labels.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/tidy_pcb_a5_labels.py",
+      "bytes": 4543,
+      "sha256": "0414bc8990cc3ce20c00b602794dd03fd4a6d8dbb8738fa90b971cd9ae0b1812"
+    },
+    "scripts/tidy_pcb_a5_silkscreen.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/tidy_pcb_a5_silkscreen.py",
+      "bytes": 13395,
+      "sha256": "322097f5de9df4ab450f067794d6552480682a03be5a5de336826c898eb252af"
+    },
+    "scripts/uncross_clone_charge_power_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/uncross_clone_charge_power_20260929.py",
+      "bytes": 1326,
+      "sha256": "b450534bcd5603b21b7005fce5f1dd126da2ed845cab73ee93427569924cb8c0"
+    },
+    "scripts/verify_a5_preroute_layout_cloud_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_a5_preroute_layout_cloud_20260918.py",
+      "bytes": 5589,
+      "sha256": "db7dfb6887aabd76590ace1d4799cec23e63e90407cb315e3703b274bef0c14d"
+    },
+    "scripts/verify_a5_rf_native_20260918.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_a5_rf_native_20260918.py",
+      "bytes": 4402,
+      "sha256": "0363314d7f6ee4cd36e6524cf000418484b9fe8024a8f4e183c4b4b9a49458cc"
+    },
+    "scripts/verify_clone_batch_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_clone_batch_20260928.py",
+      "bytes": 4860,
+      "sha256": "05e63b7e4c99ee5ced118f8453acb22e0001a7160be4bfc114be2d4e46309aa0"
+    },
+    "scripts/verify_clone_rf_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_clone_rf_20260928.py",
+      "bytes": 5853,
+      "sha256": "7dcc1acf310a6ccb5aeb5ad2f86d91987ae6455ab345cc150a405a3eccf666cb"
+    },
+    "scripts/verify_clone_usb_cloud_n_20260929.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_clone_usb_cloud_n_20260929.py",
+      "bytes": 2573,
+      "sha256": "d033bb98b6c9d91ef0aae3ef09f13cc2d2037c6dceb5ca400a40cb04d4c8af11"
+    },
+    "scripts/verify_clone_usb_local_20260928.py": {
+      "to": "archive/历史资料与工具_20261006/scripts/verify_clone_usb_local_20260928.py",
+      "bytes": 4423,
+      "sha256": "4ea663244ea1fc47506c8df94f7ad1cd2749542d58a1b4b70df5fb72247df3d9"
+    },
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/历史中间版_孔距未收尾_禁止制造/Gerber_Q1直接修复_仅审核_20261006.zip": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Q1直接修复_20261006/历史中间版_孔距未收尾_禁止制造/Gerber_Q1直接修复_仅审核_20261006.zip",
+      "bytes": 65519,
+      "sha256": "301d84d57f953f1de8c4003e839d98428a3be7f93f43bcfc38a88d6a591aaa88"
+    },
+    "manufacturing/仅审核禁止生产/Q1直接修复_20261006/历史中间版_孔距未收尾_禁止制造/说明_禁止制造.md": {
+      "to": "archive/历史资料与工具_20261006/manufacturing/仅审核禁止生产/Q1直接修复_20261006/历史中间版_孔距未收尾_禁止制造/说明_禁止制造.md",
+      "bytes": 413,
+      "sha256": "dc12ac72efaed8a36e81ac7f9bb60bec95e41740806763a23e7630d9300b1d96"
+    },
+    "tmp/pdfs/最终审核_20261001/lmbr4010bst5g_p1.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/lmbr4010bst5g_p1.png",
+      "bytes": 208190,
+      "sha256": "d5a9a7a76fb525f121bd66da366fe922d8a4de03fbed28c1101135fedd7f4682"
+    },
+    "tmp/pdfs/最终审核_20261001/lp0404n3t5g_p1.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/lp0404n3t5g_p1.png",
+      "bytes": 205947,
+      "sha256": "da94e82de75c086205be04f120517e1483cfc361ef1eef16456839459f214e01"
+    },
+    "tmp/pdfs/最终审核_20261001/lp0404n3t5g_p5.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/lp0404n3t5g_p5.png",
+      "bytes": 132187,
+      "sha256": "8743b1cfe5f857911738c4adce26d23f937c6ee00bbc058fe2f346cf747700b0"
+    },
+    "tmp/pdfs/最终审核_20261001/panasonic_evpbb_p1.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/panasonic_evpbb_p1.png",
+      "bytes": 169623,
+      "sha256": "cea9f523a27575ad16500dd8c9e0d501e2de94ea9823248018051fcd945c48b6"
+    },
+    "tmp/pdfs/最终审核_20261001/panasonic_evpbb_p2.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/panasonic_evpbb_p2.png",
+      "bytes": 165859,
+      "sha256": "5a1bb022a4a3768d5ca4c52b91c7de8f3c2607543f6849fe7eb0a6e6ba35d3f0"
+    },
+    "tmp/pdfs/最终审核_20261001/sgm40567_p14.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/sgm40567_p14.png",
+      "bytes": 66307,
+      "sha256": "b4fb961d058ba946e9b0ff3d5a66ec6374ccba197fa0d84cc0cbd9857cfe84a1"
+    },
+    "tmp/pdfs/最终审核_20261001/sgm40567_p2.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/sgm40567_p2.png",
+      "bytes": 305703,
+      "sha256": "3194c510932d0d9f5e1bcd588d500a0e43fdd1d7acf7d1ff1d9081f2b6e0b283"
+    },
+    "tmp/pdfs/最终审核_20261001/sgm40567_p3.png": {
+      "to": "archive/历史资料与工具_20261006/tmp/pdfs/最终审核_20261001/sgm40567_p3.png",
+      "bytes": 214215,
+      "sha256": "d69938c3bf5f64ec42c00862ccecd167ab18a4cd1e4a4714710931a2943ce766"
+    },
+    "README_USB供电审阅包_仅审核.md": {
+      "to": "manufacturing/仅审核禁止生产/Q1直接修复_20261006/制造审阅说明_仅审核.md",
+      "bytes": 3842,
+      "sha256": "51d44697eb7c12e9c249078b60912cc5373692b4bfd031f3b880e992e6c17ec2"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "目标PCB": "PCB_圆形传感板_SCH_A5 copy",
+  "文档ID": "cca094630ebf453c98ae64b900f0d7f0",
+  "当前检查点": "O",
+  "原生云端重开文件": "/Users/liuchunyu/Downloads/PCBUSBcloudReopenO20260929.json",
+  "原生SHA256": "50cc5d7c2417931c8f61c0baab8dde430b13e5a49fc2826c03c5c9560b2952b4",
+  "候选SHA256": "c736f670bb61cde7112daceaf40a6f7cc6047f0854b17bc2056adac1787a88a8",
+  "恢复点": "/Users/liuchunyu/Downloads/PCBUSBcloudReopenN20260929.json",
+  "恢复SHA256": "f998ec51c0e39f8677129d6a72361ed6ccfdadbf1a4a4367d3309032408a1c45",
+  "修复": "同圆心同半径同线宽的CIRCLE换为四段闭合ARC，不改铜、元件或规则",
+  "圆心_mm": [
+    22.9999540000001,
+    -78.99984200000003
+  ],
+  "半径_mm": 8.999982,
+  "线宽_mm": 0.0500126,
+  "图元差异仅板框": true,
+  "独立铜距板边最小_mm": [
+    0.3294281089171225,
+    "C21.1"
+  ],
+  "临时标签DRC": 1,
+  "云端保存关闭重开DRC": 1,
+  "未连接": 0,
+  "实际地网组数": 1,
+  "板框DRC提示_前后": [
+    20,
+    0
+  ],
+  "剩余DRC": "Q1原厂焊盘0.14mm/规则0.15mm，按已选沉金待制造审核",
+  "结论边界": "对照支持圆形对象的重开DRC处理存在表达相关差异；未审计EDA内部代码，不推断具体软件缺陷实现",
+  "Gerber审核包": "/Users/liuchunyu/Downloads/Gerber_圆形传感板_O_仅审核禁止生产_20260929.zip",
+  "GerberSHA256": "86bad54fdb8d7fc69fbf56643220c21ecba339a6dd64fb56bd643284a5e71959",
+  "Gerber板框闭合": true,
+  "Gerber板框圆弧数": 4,
+  "Gerber板框尺寸_mm": [
+    17.999969999999998,
+    17.99996
+  ],
+  "Gerber全面制造验收": false,
+  "USB性能验收": false,
+  "允许生产": false,
+  "云端已保存重开": true,
+  "原版未修改": true,
+  "新增云端PCB": false,
+  "下一步": [
+    "USB侧向参考地与90欧姆阻抗",
+    "电源载流压降及去耦",
+    "Q1沉金与PICO钢网制造审核"
+  ]
+}
