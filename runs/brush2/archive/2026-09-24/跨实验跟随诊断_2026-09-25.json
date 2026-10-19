@@ -1,0 +1,1540 @@
+{
+  "method": {
+    "error": "measured - target; all 1011 measure_00 ticks; no time shift or extra smoothing",
+    "position": "command X relative to measure start",
+    "tcp_pairing": "request midpoint against most recent preceding control log; approximate asynchronous association, not synchronized servo error",
+    "plateau_spread": "sample SD includes noise and spatial drift, not pure sensor noise",
+    "cap": "abs(applied feedback) equals full configured amplitude cap within 1e-7 mm; raw limit flags are not binding-constraint counts"
+  },
+  "table": {
+    "S_mm_per_uT": 0.0411895724894949,
+    "P2_error_at_0_4mm_cap_uT": 4.855597859167112,
+    "local_gain_uT_per_mm": [
+      25.21525076880662,
+      29.232313010842173,
+      12.662182468011677,
+      8.34819382283473,
+      27.76636526159357,
+      21.518792528697915,
+      45.20282721006223
+    ]
+  },
+  "runs": [
+    {
+      "id": "75d61b",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-25-21_宽过渡_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": false
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "42b49a30d8d21b08e9576b976a64669b6a82758d200d99021b7f917d935cab8e",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "f68642b4b95deeff1fdb210568efb44aaa2c2acd0fa38a804f6d96939e7ba85d",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 57.31777795893242,
+      "p90_abs_error_uT": 146.34994238522313,
+      "within_20_percent": 27.299703264094955,
+      "amplitude_cap_percent": null,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 55.584952341978386,
+          "measured_std_uT": 1.956356160987881,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 4.950092958263192,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 106.15560258710822,
+          "measured_std_uT": 6.5625767104556,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 7.464874928832559,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 350.81599522637237,
+          "measured_std_uT": 3.671322184159489,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 12.09573622381416,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 133.95538892515634,
+          "measured_std_uT": 5.586372514791412,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 6.2485974000425415,
+          "amplitude_cap_percent": null
+        }
+      ],
+      "sample_age_ms_p99": 0.23658569999999998,
+      "host_interval_ms_p99": 20.09041819
+    },
+    {
+      "id": "81e6a4",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-27-58_宽过渡_第2次",
+      "status": "completed",
+      "profile": {
+        "enabled": false
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "42b49a30d8d21b08e9576b976a64669b6a82758d200d99021b7f917d935cab8e",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "95c02cc04e86da0ebacc5837120c3453c76607003d3229e930a9f13248b13765",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 29.814936719628083,
+      "p90_abs_error_uT": 48.341150011475804,
+      "within_20_percent": 29.673590504451035,
+      "amplitude_cap_percent": null,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 62.27118175628076,
+          "measured_std_uT": 2.33376754857046,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 4.950092958263192,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 100.50937233516386,
+          "measured_std_uT": 3.483372505951492,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 7.464874928832559,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 243.43985108045632,
+          "measured_std_uT": 3.1263847848368633,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 12.09573622381416,
+          "amplitude_cap_percent": null
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 137.8281842176538,
+          "measured_std_uT": 3.940511357295638,
+          "feedback_mean_mm": 0.0,
+          "depth_cmd_mean_mm": 6.2485974000425415,
+          "amplitude_cap_percent": null
+        }
+      ],
+      "sample_age_ms_p99": 0.2381171,
+      "host_interval_ms_p99": 20.09288539
+    },
+    {
+      "id": "36c368",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-57-44_宽过渡_P0p05_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.05,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "a039210ffdb6fc6a1675c971c016135f068e55589803e4e6ada7338f9f5a8fb6",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "e82c3bdb4536c97349cb681f6f48678d88b3cdf7da16dc18aabb9f56c0d079c8",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 29.324194313739223,
+      "p90_abs_error_uT": 54.574567525569336,
+      "within_20_percent": 38.67457962413452,
+      "amplitude_cap_percent": 0.0,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 76.14429746029816,
+          "measured_std_uT": 2.445597250483209,
+          "feedback_mean_mm": -0.03283651070706022,
+          "depth_cmd_mean_mm": 4.917256447556133,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 108.53068107189466,
+          "measured_std_uT": 4.706174106683716,
+          "feedback_mean_mm": 0.044065959428158656,
+          "depth_cmd_mean_mm": 7.508940888260718,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 239.13400998981052,
+          "measured_std_uT": 3.975613625189445,
+          "feedback_mean_mm": -0.08060906176041142,
+          "depth_cmd_mean_mm": 12.01512716205375,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 149.91288630831752,
+          "measured_std_uT": 4.3019718595554,
+          "feedback_mean_mm": -0.11345372773815472,
+          "depth_cmd_mean_mm": 6.1351436723043875,
+          "amplitude_cap_percent": 0.0
+        }
+      ],
+      "sample_age_ms_p99": 0.23527589999999998,
+      "host_interval_ms_p99": 20.09873641
+    },
+    {
+      "id": "d0a5c2",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-59-08_宽过渡_P0p05_第2次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.05,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "a039210ffdb6fc6a1675c971c016135f068e55589803e4e6ada7338f9f5a8fb6",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "6d08c549d1ae769d141d5ebd1717eef0fbbb82c7b819e7973a502bcb4d1290b9",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 28.83499728469373,
+      "p90_abs_error_uT": 47.2911326803073,
+      "within_20_percent": 30.66271018793274,
+      "amplitude_cap_percent": 0.0,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 71.34133410180954,
+          "measured_std_uT": 4.1013049786340865,
+          "feedback_mean_mm": -0.023056416882630146,
+          "depth_cmd_mean_mm": 4.927036541380563,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 89.53944275517831,
+          "measured_std_uT": 3.5620167717185174,
+          "feedback_mean_mm": 0.08287242159446938,
+          "depth_cmd_mean_mm": 7.547747350427031,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 222.43491752038088,
+          "measured_std_uT": 3.4171877133876905,
+          "feedback_mean_mm": -0.04638793818415383,
+          "depth_cmd_mean_mm": 12.049348285630005,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 136.05401456465708,
+          "measured_std_uT": 3.5320217212553855,
+          "feedback_mean_mm": -0.08451310772496223,
+          "depth_cmd_mean_mm": 6.16408429231758,
+          "amplitude_cap_percent": 0.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2571651999999999,
+      "host_interval_ms_p99": 20.09931267
+    },
+    {
+      "id": "0f2f88",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-42-14_宽过渡_P0p1_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.1,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "7d0598efd599dffcc6e87db95753e8ef55fedd3d1d74a0c02a590c9b51817c2c",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "52d18250f24491db85bcf6466c2651c05cc3737c7aca4a590b7f2ad0cc2abc54",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 27.580785819470208,
+      "p90_abs_error_uT": 50.67960119448932,
+      "within_20_percent": 43.224530168150345,
+      "amplitude_cap_percent": 11.374876360039565,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 55.524295427124216,
+          "measured_std_uT": 2.005285343281537,
+          "feedback_mean_mm": 0.01881499784690139,
+          "depth_cmd_mean_mm": 4.968907956110094,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 82.31861298553638,
+          "measured_std_uT": 2.9118424959921727,
+          "feedback_mean_mm": 0.1929784282990881,
+          "depth_cmd_mean_mm": 7.657853357131647,
+          "amplitude_cap_percent": 32.323232323232325
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 206.66029714621146,
+          "measured_std_uT": 3.8458635260899,
+          "feedback_mean_mm": -0.02676234509791722,
+          "depth_cmd_mean_mm": 12.06897387871624,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 125.13484609773005,
+          "measured_std_uT": 3.462022788885922,
+          "feedback_mean_mm": -0.12414909556324348,
+          "depth_cmd_mean_mm": 6.124448304479299,
+          "amplitude_cap_percent": 0.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2514780999999999,
+      "host_interval_ms_p99": 20.122515030000002
+    },
+    {
+      "id": "63dee4",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-45-41_宽过渡_P0p2_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.2,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "8844fe2d84e4a1d1ec1b57012a0dc14857053e2c70d4c862e89fed9f6fac1bcb",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "e2e090fe76b7cd3207078d963794d332b007b264ced501aef7f0c096d2d9ff6d",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 23.312651925529817,
+      "p90_abs_error_uT": 40.32956357897271,
+      "within_20_percent": 37.98219584569733,
+      "amplitude_cap_percent": 49.653808110781405,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 67.61956765679984,
+          "measured_std_uT": 2.638228501636249,
+          "feedback_mean_mm": -0.06012839335874833,
+          "depth_cmd_mean_mm": 4.889964564904444,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 98.92523961584195,
+          "measured_std_uT": 3.7088480098092442,
+          "feedback_mean_mm": 0.19928177863645252,
+          "depth_cmd_mean_mm": 7.6641567074690125,
+          "amplitude_cap_percent": 92.92929292929293
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 225.1064398204914,
+          "measured_std_uT": 3.401061164303281,
+          "feedback_mean_mm": -0.1906966775216788,
+          "depth_cmd_mean_mm": 11.90503954629248,
+          "amplitude_cap_percent": 54.666666666666664
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 134.35534720579423,
+          "measured_std_uT": 3.3696809621019623,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 6.048597400042543,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.27745289999999995,
+      "host_interval_ms_p99": 20.11323544
+    },
+    {
+      "id": "c61f9e",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-51-14_宽过渡_P0p4_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.4,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "5b3ac3cdcfad99799cc86c7508acaf98eebb5a63fb705e84c244bc05590e514a",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "091e19a19e348022a76c018d00f23d70fda8f31804ce8bfd713e4fec62dd52b9",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 36.12734914302766,
+      "p90_abs_error_uT": 53.487567526013066,
+      "within_20_percent": 27.497527200791293,
+      "amplitude_cap_percent": 73.88724035608308,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 76.58708893490625,
+          "measured_std_uT": 9.26392215632586,
+          "feedback_mean_mm": -0.18153200452875526,
+          "depth_cmd_mean_mm": 4.768560953734438,
+          "amplitude_cap_percent": 50.98039215686274
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 83.77553228634184,
+          "measured_std_uT": 3.7181393689331754,
+          "feedback_mean_mm": 0.19999999999999998,
+          "depth_cmd_mean_mm": 7.6648749288325595,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 242.43287434085215,
+          "measured_std_uT": 4.6778578635797645,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 11.89573622381416,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 142.56288139531424,
+          "measured_std_uT": 3.758396491749773,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 6.048597400042543,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2873746,
+      "host_interval_ms_p99": 20.12570092
+    },
+    {
+      "id": "f4a10d",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-54-09_宽过渡_P0p3_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 0.3,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "4dc9e42acfc406233c1f5ed5157c1aae43e802b6237ea82dc2e8d9232d6b7b47",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "e1e02781d70c22068c23a9cf3d7f707011f4c5079d4e4cf1fde5607ab973eafe",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 21.819251806934997,
+      "p90_abs_error_uT": 37.35777342676526,
+      "within_20_percent": 38.67457962413452,
+      "amplitude_cap_percent": 60.73194856577646,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 62.387103560424585,
+          "measured_std_uT": 2.38918922318836,
+          "feedback_mean_mm": -0.03014975336469524,
+          "depth_cmd_mean_mm": 4.919943204898498,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 99.51174639594949,
+          "measured_std_uT": 3.7862892086652846,
+          "feedback_mean_mm": 0.19999999999999998,
+          "depth_cmd_mean_mm": 7.6648749288325595,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 226.1665155201728,
+          "measured_std_uT": 3.114102606469112,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 11.89573622381416,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 129.50821578373015,
+          "measured_std_uT": 3.69788094738989,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 6.048597400042543,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2679717,
+      "host_interval_ms_p99": 20.1305656
+    },
+    {
+      "id": "9527cc",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-07-03_宽过渡_P1_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "d53dca0343d01c35ee260c84ca46d6616e92ed195a03b6326eb262d2959c6951",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "7900d0e537b7247260eed7ca29fd1ddc9f08dd5a4ba569d7287f0ac81d212e72",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 35.256612809258975,
+      "p90_abs_error_uT": 60.220003978271265,
+      "within_20_percent": 24.134520276953513,
+      "amplitude_cap_percent": 80.61325420375866,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 59.82958575746337,
+          "measured_std_uT": 1.8846720544324398,
+          "feedback_mean_mm": 0.026568895115278643,
+          "depth_cmd_mean_mm": 4.976661853378472,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 73.86004698464555,
+          "measured_std_uT": 4.019683393407867,
+          "feedback_mean_mm": 0.19999999999999998,
+          "depth_cmd_mean_mm": 7.6648749288325595,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 225.90271520940146,
+          "measured_std_uT": 3.5505290386633583,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 11.89573622381416,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 138.9210514834438,
+          "measured_std_uT": 3.5060175965691243,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 6.048597400042543,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.23250579999999998,
+      "host_interval_ms_p99": 20.092519539999998
+    },
+    {
+      "id": "bb27fb",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-09-02_宽过渡_P2_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 40.0,
+        "max_correction_mm": 0.2,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "6a688926b40664d6675c3bb60d8e9543412c0e600c23798e5b164d4f3111ef35",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "96b8fc1a14a08cdc4944737c014411a84b95fbb16e38f8ecd32c39de75200366",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 20.902924168345507,
+      "p90_abs_error_uT": 36.98803199847383,
+      "within_20_percent": 44.609297725024724,
+      "amplitude_cap_percent": 77.34915924826905,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 63.14356156424898,
+          "measured_std_uT": 2.278359946110446,
+          "feedback_mean_mm": -0.13634503776585227,
+          "depth_cmd_mean_mm": 4.813747920497341,
+          "amplitude_cap_percent": 21.568627450980394
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 98.2873369693504,
+          "measured_std_uT": 4.203273696274725,
+          "feedback_mean_mm": 0.19999999999999998,
+          "depth_cmd_mean_mm": 7.6648749288325595,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 215.7055688994395,
+          "measured_std_uT": 3.619860533734301,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 11.89573622381416,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 125.70776175190382,
+          "measured_std_uT": 4.167180461432169,
+          "feedback_mean_mm": -0.19999999999999996,
+          "depth_cmd_mean_mm": 6.048597400042543,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.24244149999999995,
+      "host_interval_ms_p99": 20.090904039999998
+    },
+    {
+      "id": "a8a59a",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-31-50_宽过渡_P2_修正0p25mm_速度2_加速度50_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 50.0,
+        "max_correction_mm": 0.25,
+        "max_correction_speed_mm_s": 2.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "9f9df5369b70a96c8c8bd56681b2cf9da4cc23adf93cfa92fccc6da16824bae0",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "a12fa92598b0a7767597e6f0437ddd6f0b406af5357984c3177c1d6b584f646f",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 19.37088739290434,
+      "p90_abs_error_uT": 42.65197324018558,
+      "within_20_percent": 55.2917903066271,
+      "amplitude_cap_percent": 68.34817012858556,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 58.41422781058842,
+          "measured_std_uT": 2.5809332146605284,
+          "feedback_mean_mm": 0.09490321149605732,
+          "depth_cmd_mean_mm": 5.0449961697592505,
+          "amplitude_cap_percent": 1.9607843137254901
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 100.20351479429085,
+          "measured_std_uT": 2.555599241193759,
+          "feedback_mean_mm": 0.25,
+          "depth_cmd_mean_mm": 7.714874928832558,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 203.80153048060188,
+          "measured_std_uT": 5.2127964263432975,
+          "feedback_mean_mm": -0.10775301807593848,
+          "depth_cmd_mean_mm": 11.987983205738221,
+          "amplitude_cap_percent": 18.666666666666668
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 116.60947997352564,
+          "measured_std_uT": 3.110030907114633,
+          "feedback_mean_mm": -0.25,
+          "depth_cmd_mean_mm": 5.998597400042542,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2528010999999999,
+      "host_interval_ms_p99": 20.1132441
+    },
+    {
+      "id": "142be8",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-50-56_宽过渡_P2_修正0p3mm_速度4_加速度60_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 60.0,
+        "max_correction_mm": 0.3,
+        "max_correction_speed_mm_s": 4.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "1420dca0f3d8e1b1b1f7388b66cf94fad3b1cc4bc69e0734daff7d64a590590a",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "9dcad74deefb73cd52afd4237ec7a46b118541a34a8ea0ca64848f05d5ef5891",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 50.9481740897963,
+      "p90_abs_error_uT": 141.3486377119043,
+      "within_20_percent": 50.74183976261127,
+      "amplitude_cap_percent": 83.58061325420377,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 54.40813313940305,
+          "measured_std_uT": 3.109274608284976,
+          "feedback_mean_mm": 0.24566370656330122,
+          "depth_cmd_mean_mm": 5.195756664826495,
+          "amplitude_cap_percent": 47.05882352941176
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 121.60161565383784,
+          "measured_std_uT": 5.69581966089893,
+          "feedback_mean_mm": 0.263719179014168,
+          "depth_cmd_mean_mm": 7.728594107846727,
+          "amplitude_cap_percent": 59.59595959595959
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 341.6270465828804,
+          "measured_std_uT": 2.975195840665682,
+          "feedback_mean_mm": -0.3,
+          "depth_cmd_mean_mm": 11.795736223814162,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 116.31349264321997,
+          "measured_std_uT": 3.1921558646068027,
+          "feedback_mean_mm": -0.3,
+          "depth_cmd_mean_mm": 5.948597400042542,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.2798269,
+      "host_interval_ms_p99": 20.103203259999997
+    },
+    {
+      "id": "69395a",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-53-22_宽过渡_P2_修正0p4mm_速度5_加速度70_第1次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "258a3671bdc888ca36d0c26be0c68a86a50de2295ac229016b2954ba5a1844d3",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "2da749f4d79b0427992fe0ebbd910fae8e23ca3f36a9dd44031f1b64e5676cb5",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 46.72456399532821,
+      "p90_abs_error_uT": 143.3166326479535,
+      "within_20_percent": 55.39070227497527,
+      "amplitude_cap_percent": 56.28090999010881,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 59.9919778819693,
+          "measured_std_uT": 2.951964757534749,
+          "feedback_mean_mm": -0.027992054805916555,
+          "depth_cmd_mean_mm": 4.9221009034572765,
+          "amplitude_cap_percent": 0.0
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 129.95825066576162,
+          "measured_std_uT": 5.71479893365107,
+          "feedback_mean_mm": -0.03826528074687367,
+          "depth_cmd_mean_mm": 7.426609648085686,
+          "amplitude_cap_percent": 11.11111111111111
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 348.2680799057188,
+          "measured_std_uT": 3.2252472963285856,
+          "feedback_mean_mm": -0.3999999999999999,
+          "depth_cmd_mean_mm": 11.69573622381416,
+          "amplitude_cap_percent": 100.0
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 122.05677541464756,
+          "measured_std_uT": 5.728116101242742,
+          "feedback_mean_mm": -0.3999999999999999,
+          "depth_cmd_mean_mm": 5.848597400042544,
+          "amplitude_cap_percent": 100.0
+        }
+      ],
+      "sample_age_ms_p99": 0.25546559999999996,
+      "host_interval_ms_p99": 20.09653001
+    },
+    {
+      "id": "68defd",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-22-36_宽过渡_P2_修正0p4mm_速度5_加速度70_第2次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "258a3671bdc888ca36d0c26be0c68a86a50de2295ac229016b2954ba5a1844d3",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "f216f983591504f359bc4bfc7c2964c566a4a1f50c36a048f99f118e79dfb6ff",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 19.902285864316905,
+      "p90_abs_error_uT": 35.47141771955488,
+      "within_20_percent": 52.52225519287834,
+      "amplitude_cap_percent": 71.61226508407518,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 61.618865000938364,
+          "measured_std_uT": 3.5221108050049073,
+          "feedback_mean_mm": -0.0524941870774208,
+          "depth_cmd_mean_mm": 4.897598771185772,
+          "amplitude_cap_percent": 5.88235294117647,
+          "actual_tcp_samples": 10,
+          "actual_z_mean_mm": 35.096199999999996,
+          "tcp_abs_difference_mm_p90": 0.3562765747329111
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 100.5882058747446,
+          "measured_std_uT": 2.725299510916756,
+          "feedback_mean_mm": 0.39999999999999997,
+          "depth_cmd_mean_mm": 7.864874928832561,
+          "amplitude_cap_percent": 100.0,
+          "actual_tcp_samples": 19,
+          "actual_z_mean_mm": 32.148736842105265,
+          "tcp_abs_difference_mm_p90": 0.023182686872204313
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 209.6726395319292,
+          "measured_std_uT": 2.9384425721189036,
+          "feedback_mean_mm": -0.3972470579632658,
+          "depth_cmd_mean_mm": 11.698489165850894,
+          "amplitude_cap_percent": 88.0,
+          "actual_tcp_samples": 15,
+          "actual_z_mean_mm": 28.331999999999994,
+          "tcp_abs_difference_mm_p90": 0.06358423945812333
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 123.6752114439211,
+          "measured_std_uT": 3.6436579531528404,
+          "feedback_mean_mm": -0.3999999999999999,
+          "depth_cmd_mean_mm": 5.848597400042544,
+          "amplitude_cap_percent": 100.0,
+          "actual_tcp_samples": 15,
+          "actual_z_mean_mm": 34.14053333333334,
+          "tcp_abs_difference_mm_p90": 0.026402599957456308
+        }
+      ],
+      "sample_age_ms_p99": 0.2454488,
+      "host_interval_ms_p99": 20.10303904,
+      "tcp": {
+        "measure_samples": 198,
+        "abs_z_difference_mm_p90": 0.29868445580565484,
+        "cmd_age_ms_max": 20.0482385,
+        "request_ms_max": 16.948786
+      }
+    },
+    {
+      "id": "58bce8",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-30-35_宽过渡_P2_修正0p4mm_速度5_加速度70_第3次",
+      "status": "completed",
+      "profile": {
+        "enabled": true,
+        "ki": 0.0,
+        "kp": 2.0,
+        "max_correction_accel_mm_s2": 70.0,
+        "max_correction_mm": 0.4,
+        "max_correction_speed_mm_s": 5.0,
+        "mode": "p",
+        "phase": "measure_00",
+        "taper_ticks": 25
+      },
+      "hashes": {
+        "strokeplan.npz": {
+          "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+          "matches_manifest": true
+        },
+        "feedforward.json": {
+          "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+          "matches_manifest": true
+        },
+        "settings.json": {
+          "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+          "matches_manifest": true
+        },
+        "resolved.json": {
+          "sha256": "258a3671bdc888ca36d0c26be0c68a86a50de2295ac229016b2954ba5a1844d3",
+          "matches_manifest": true
+        },
+        "control.jsonl": {
+          "sha256": "d53170c875ec8bd0602e5a6ad766c5be9728a121fce0d5960fdbc8c440862ed5",
+          "matches_manifest": null
+        }
+      },
+      "ticks": 1011,
+      "mae_uT": 33.81825347863458,
+      "p90_abs_error_uT": 73.50384689901354,
+      "within_20_percent": 32.24530168150346,
+      "amplitude_cap_percent": 74.77744807121661,
+      "plateaus": [
+        {
+          "x_mm": [
+            10,
+            20
+          ],
+          "ticks": 51,
+          "target_mean_uT": 60.111521577792324,
+          "measured_mean_uT": 62.029604892860725,
+          "measured_std_uT": 3.4347518081500854,
+          "feedback_mean_mm": -0.07035311960537781,
+          "depth_cmd_mean_mm": 4.879739838657815,
+          "amplitude_cap_percent": 3.9215686274509802,
+          "actual_tcp_samples": 10,
+          "actual_z_mean_mm": 35.1537,
+          "tcp_abs_difference_mm_p90": 0.2956140226752078
+        },
+        {
+          "x_mm": [
+            55,
+            75
+          ],
+          "ticks": 99,
+          "target_mean_uT": 129.95070399160022,
+          "measured_mean_uT": 89.10295140854284,
+          "measured_std_uT": 2.1879805315895937,
+          "feedback_mean_mm": 0.39999999999999997,
+          "depth_cmd_mean_mm": 7.864874928832561,
+          "amplitude_cap_percent": 100.0,
+          "actual_tcp_samples": 19,
+          "actual_z_mean_mm": 32.14773684210527,
+          "tcp_abs_difference_mm_p90": 0.021582686872204104
+        },
+        {
+          "x_mm": [
+            125,
+            140
+          ],
+          "ticks": 75,
+          "target_mean_uT": 199.9023939033684,
+          "measured_mean_uT": 165.50121636801148,
+          "measured_std_uT": 3.224069347528162,
+          "feedback_mean_mm": 0.3999999999999999,
+          "depth_cmd_mean_mm": 12.495736223814163,
+          "amplitude_cap_percent": 100.0,
+          "actual_tcp_samples": 15,
+          "actual_z_mean_mm": 27.535000000000004,
+          "tcp_abs_difference_mm_p90": 0.08674789992571263
+        },
+        {
+          "x_mm": [
+            180,
+            195
+          ],
+          "ticks": 75,
+          "target_mean_uT": 95.0,
+          "measured_mean_uT": 117.21644037583795,
+          "measured_std_uT": 3.387290417195454,
+          "feedback_mean_mm": -0.3999999999999999,
+          "depth_cmd_mean_mm": 5.848597400042544,
+          "amplitude_cap_percent": 100.0,
+          "actual_tcp_samples": 15,
+          "actual_z_mean_mm": 34.14086666666667,
+          "tcp_abs_difference_mm_p90": 0.026402599957456308
+        }
+      ],
+      "sample_age_ms_p99": 0.25090149999999994,
+      "host_interval_ms_p99": 20.101313389999998,
+      "tcp": {
+        "measure_samples": 198,
+        "abs_z_difference_mm_p90": 0.2737214942123343,
+        "cmd_age_ms_max": 19.9595345,
+        "request_ms_max": 15.886319
+      }
+    }
+  ],
+  "retired_run": {
+    "id": "10f17a",
+    "raw_available": false,
+    "source": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/已清理实验摘要.json",
+    "treatment": "not recomputed; historical summary only"
+  },
+  "interpretation_limits": [
+    "Historical closed-loop input/output are not an unbiased open-loop plant identification.",
+    "142be8 and 69395a are included; large error alone does not invalidate them.",
+    "Offline command replay cannot predict magnetic response after a controller change."
+  ]
+}

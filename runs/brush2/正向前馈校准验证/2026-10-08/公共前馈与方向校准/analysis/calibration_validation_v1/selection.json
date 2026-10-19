@@ -1,0 +1,50 @@
+[
+  {
+    "plan_number": 1,
+    "trial_id": "Z32_right_R1",
+    "run_id": "20261008T082216.751663Z-9d9f4f",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-22-16_Z32_right_R1_第1次"
+  },
+  {
+    "plan_number": 2,
+    "trial_id": "Z32_up_R1",
+    "run_id": "20261008T082304.966364Z-f4ccf6",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-23-04_Z32_up_R1_第1次"
+  },
+  {
+    "plan_number": 3,
+    "trial_id": "Z28_right_R1",
+    "run_id": "20261008T082853.391897Z-3b6f6a",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-28-53_Z28_right_R1_第2次"
+  },
+  {
+    "plan_number": 4,
+    "trial_id": "Z28_up_R1",
+    "run_id": "20261008T083024.813233Z-c96770",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-30-24_Z28_up_R1_第1次"
+  },
+  {
+    "plan_number": 5,
+    "trial_id": "Z28_up_R2",
+    "run_id": "20261008T083123.351072Z-3cce61",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-31-23_Z28_up_R2_第1次"
+  },
+  {
+    "plan_number": 6,
+    "trial_id": "Z28_right_R2",
+    "run_id": "20261008T083402.529450Z-f2b25c",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-34-02_Z28_right_R2_第3次"
+  },
+  {
+    "plan_number": 7,
+    "trial_id": "Z32_up_R2",
+    "run_id": "20261008T083449.409793Z-903a05",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-34-49_Z32_up_R2_第1次"
+  },
+  {
+    "plan_number": 8,
+    "trial_id": "Z32_right_R2",
+    "run_id": "20261008T083540.153226Z-cebf76",
+    "folder": "runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-35-40_Z32_right_R2_第1次"
+  }
+]

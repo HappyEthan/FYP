@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-08T16:31:20.876614+08:00",
+  "initial_pose_m_rad": [
+    -0.149998,
+    0.499996,
+    0.069993,
+    -1.7453292519943296e-05,
+    0.26181684109166936,
+    -1.7453292519943296e-05
+  ],
+  "route_m_rad": [
+    [
+      -0.149998,
+      0.499996,
+      0.07,
+      -1.7453292519943296e-05,
+      0.26181684109166936,
+      -1.7453292519943296e-05
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07,
+      -1.7453292519943296e-05,
+      0.26181684109166936,
+      -1.7453292519943296e-05
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "batch_id": "faa4b294d8d941c18d6cf4985fc14785",
+    "trial_id": "Z28_up_R2"
+  },
+  "motion_metrics": {
+    "XY speed": 55.137559180689806,
+    "Z speed": 0.17500000000017502,
+    "step": 1.1027511836137962,
+    "acceleration": 99.83784195846917,
+    "angular speed": 0.08660254037846044,
+    "angular acceleration": 4.330127018923022
+  },
+  "planned_duration_s": 2.3600000000000003,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.14999700000000002,
+    0.45,
+    0.06997199999999999,
+    -6.981317007977319e-05,
+    0.26181684109166936,
+    -5.235987755982989e-05
+  ],
+  "finished_at": "2026-10-08T16:31:23.346930+08:00"
+}

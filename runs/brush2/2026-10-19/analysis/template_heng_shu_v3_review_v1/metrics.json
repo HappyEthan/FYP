@@ -1,0 +1,519 @@
+{
+  "evidence": "two completed hardware runs; original recordings preserved",
+  "measured_force_available": false,
+  "ink_image_available": false,
+  "ink_observation_source": "user: conspicuous horizontal-tail bend, poor entry/exit control, excessive size",
+  "requested_next_size_mm": {
+    "heng_width": 80,
+    "shu_height": 120
+  },
+  "next_plan_status": "discussion only; no target or execution configuration changed",
+  "limitations": [
+    "one run per stroke",
+    "magnetic response is not calibrated force or ink width",
+    "actual TCP is sampled at about 10 Hz and is not the moving brush-fiber contact point",
+    "no paper image to quantify visible outline, width or taper"
+  ],
+  "runs": [
+    {
+      "kind": "heng",
+      "run_path": "runs/brush2/2026-10-19/18-50-27__template_heng_100_240_v3__8ebd17",
+      "run_id": "20261019T105027.588733Z-8ebd17",
+      "status": "completed",
+      "control_mode": "feedforward",
+      "writing_duration_s": 18.38,
+      "target_xy_bbox_mm": [
+        109.97810837953327,
+        17.760909780620437
+      ],
+      "measured_g_rmse_uT": 45.50147265732862,
+      "measured_g_mae_uT": 37.413420422783176,
+      "measured_g_mean_bias_uT": 2.2745416334713475,
+      "fraction_within_20_uT": 0.24565217391304348,
+      "xy_distance_to_command_path_p95_mm": 0.09240129622248441,
+      "actual_tcp_writing_samples": 180,
+      "unshifted_tcp_xyz_rmse_mm": 0.7016321569616116,
+      "diagnostic_estimated_tcp_lag_s": 0.09,
+      "diagnostic_lag_adjusted_tcp_xyz_rmse_mm": 0.1138956849004227,
+      "lag_note": "Diagnostic constant shift estimated on this run, not an independent tracking performance claim.",
+      "endpoint_target_g_uT": 100.0,
+      "endpoint_measured_g_uT": 83.12720395109675,
+      "endpoint_command_z_mm": 33.245521672601456,
+      "endpoint_nominal_depth_mm": 6.7544783273985445,
+      "tail_last_20_percent": {
+        "path_length_mm": 25.287451019120155,
+        "duration_s": 5.459999999999999,
+        "bbox_mm": [
+          12.68869290573906,
+          7.098294060051728
+        ],
+        "x_reverse_from_rightmost_to_end_mm": 8.361480204013645
+      },
+      "phases": {
+        "wait": {
+          "duration_between_first_last_command_s": 0.0,
+          "measured_g_min_median_max_uT": [
+            6.042370623754611,
+            6.042370623754611,
+            6.042370623754611
+          ],
+          "final_measured_g_uT": 6.042370623754611,
+          "final_command_z_mm": 130.0
+        },
+        "high_transfer_00": {
+          "duration_between_first_last_command_s": 2.260113393,
+          "measured_g_min_median_max_uT": [
+            0.19339100795407405,
+            17.376346863197135,
+            37.40048618531439
+          ],
+          "final_measured_g_uT": 31.32584818164665,
+          "final_command_z_mm": 130.0
+        },
+        "rotate_air_00": {
+          "duration_between_first_last_command_s": 1.7999896569999998,
+          "measured_g_min_median_max_uT": [
+            21.748612955814636,
+            28.83116530545088,
+            35.955810952621974
+          ],
+          "final_measured_g_uT": 30.157875054723483,
+          "final_command_z_mm": 130.0
+        },
+        "lower_fast_00": {
+          "duration_between_first_last_command_s": 2.4799339810000003,
+          "measured_g_min_median_max_uT": [
+            12.320027804638626,
+            21.435418509931313,
+            33.62952923786207
+          ],
+          "final_measured_g_uT": 24.540718867122727,
+          "final_command_z_mm": 50.0
+        },
+        "lower_slow_00": {
+          "duration_between_first_last_command_s": 1.7400336110000003,
+          "measured_g_min_median_max_uT": [
+            18.45203970683942,
+            24.49435615272737,
+            31.472134909074377
+          ],
+          "final_measured_g_uT": 22.965043126293747,
+          "final_command_z_mm": 36.0
+        },
+        "rotate_contact_00": {
+          "duration_between_first_last_command_s": 2.9800291760000004,
+          "measured_g_min_median_max_uT": [
+            3.038729354735334,
+            19.53578659265576,
+            29.634148121816022
+          ],
+          "final_measured_g_uT": 10.664824200718153,
+          "final_command_z_mm": 36.0
+        },
+        "load_workpoint_00": {
+          "duration_between_first_last_command_s": 2.9797593079999984,
+          "measured_g_min_median_max_uT": [
+            0.1888607452188326,
+            5.036693309838309,
+            11.76811355618644
+          ],
+          "final_measured_g_uT": 3.0475904347176748,
+          "final_command_z_mm": 33.245521672601456
+        },
+        "measure_00": {
+          "duration_between_first_last_command_s": 18.380023544,
+          "measured_g_min_median_max_uT": [
+            1.2768740458647727,
+            158.19612322814885,
+            238.09973657616652
+          ],
+          "final_measured_g_uT": 83.12720395109675,
+          "final_command_z_mm": 33.245521672601456
+        },
+        "lift_00": {
+          "duration_between_first_last_command_s": 3.020010820000003,
+          "measured_g_min_median_max_uT": [
+            21.57868325053568,
+            32.383626495048915,
+            91.28808623896616
+          ],
+          "final_measured_g_uT": 24.3042792568341,
+          "final_command_z_mm": 130.0
+        },
+        "return_high": {
+          "duration_between_first_last_command_s": 4.359950198,
+          "measured_g_min_median_max_uT": [
+            21.768682210731914,
+            32.820054724079625,
+            57.14965621674204
+          ],
+          "final_measured_g_uT": 53.229767371648364,
+          "final_command_z_mm": 130.0
+        },
+        "hold": {
+          "duration_between_first_last_command_s": 0.1798925880000013,
+          "measured_g_min_median_max_uT": [
+            49.55746547843432,
+            52.80050461039133,
+            58.65508517723565
+          ],
+          "final_measured_g_uT": 56.68894618984934,
+          "final_command_z_mm": 130.0
+        }
+      },
+      "landmarks": [
+        {
+          "action": "尖起",
+          "s": 0.0,
+          "writing_time_s": 0.0,
+          "target_g_uT": 100.0,
+          "measured_g_uT": 4.499473933328542,
+          "command_z_mm": 33.245521672601456,
+          "plan_xy_mm": [
+            85.0,
+            -5.33487297921478
+          ]
+        },
+        {
+          "action": "斜切轻按",
+          "s": 0.04561162792982097,
+          "writing_time_s": 1.1745548882993222,
+          "target_g_uT": 192.8228205467164,
+          "measured_g_uT": 81.9681982114915,
+          "command_z_mm": 28.46363623880116,
+          "plan_xy_mm": [
+            89.56805687249428,
+            -8.877624814886088
+          ]
+        },
+        {
+          "action": "转入行笔",
+          "s": 0.07252596500985965,
+          "writing_time_s": 1.9480867039396048,
+          "target_g_uT": 192.8228205467164,
+          "measured_g_uT": 102.90534938460301,
+          "command_z_mm": 28.46363623880116,
+          "plan_xy_mm": [
+            91.66826038184675,
+            -6.602462876357739
+          ]
+        },
+        {
+          "action": "前半段渐提",
+          "s": 0.42529203392701037,
+          "writing_time_s": 7.326043792546873,
+          "target_g_uT": 124.46659591341898,
+          "measured_g_uT": 151.16173625303455,
+          "command_z_mm": 32.14255703049963,
+          "plan_xy_mm": [
+            135.58180922441588,
+            -0.7460048822479278
+          ]
+        },
+        {
+          "action": "中段较细",
+          "s": 0.5696013489309696,
+          "writing_time_s": 9.34453545291969,
+          "target_g_uT": 124.46659545769568,
+          "measured_g_uT": 156.68173614025332,
+          "command_z_mm": 32.1425570554314,
+          "plan_xy_mm": [
+            153.5912944772077,
+            1.7730727956765613
+          ]
+        },
+        {
+          "action": "后半段渐按",
+          "s": 0.8065020064963865,
+          "writing_time_s": 13.032584675912421,
+          "target_g_uT": 192.8226840354323,
+          "measured_g_uT": 191.76368264331597,
+          "command_z_mm": 28.46364005856515,
+          "plan_xy_mm": [
+            183.0376870906283,
+            5.845151795660371
+          ]
+        },
+        {
+          "action": "提锋至右上角",
+          "s": 0.8584506603878274,
+          "writing_time_s": 14.272517157756015,
+          "target_g_uT": 124.46659867634534,
+          "measured_g_uT": 179.68918326420894,
+          "command_z_mm": 32.14255687934506,
+          "plan_xy_mm": [
+            188.63350883805717,
+            8.875684917730668
+          ]
+        },
+        {
+          "action": "斜向收束",
+          "s": 0.9366049444260507,
+          "writing_time_s": 16.666134608600007,
+          "target_g_uT": 154.9193303719151,
+          "measured_g_uT": 175.37130460228212,
+          "command_z_mm": 30.38603331359443,
+          "plan_xy_mm": [
+            194.48397770818858,
+            1.7952870301113926
+          ]
+        },
+        {
+          "action": "结束接触目标",
+          "s": 1.0,
+          "writing_time_s": 18.38,
+          "target_g_uT": 100.0,
+          "measured_g_uT": 83.12720395109675,
+          "command_z_mm": 33.245521672601456,
+          "plan_xy_mm": [
+            186.61662817551962,
+            2.0323325635103924
+          ]
+        }
+      ],
+      "source_sha256": {
+        "manifest.json": "4e81e4e28db4507718a8a3d7d24e2cd086b6847cde5a76d1e4ee8c4500cde66e",
+        "resolved.json": "9cc9050aab211908839bf8dc58626636948eb68abe395629d9885ca95e1e5816",
+        "strokeplan.npz": "34072e7a29f18796b103f9917d083f1308024e11a5691749bbb9a8fe26efd26a",
+        "control.jsonl": "1217330d65c7980c100c4c6d05042b50e2564167445d453181422a8c43315660",
+        "actual_tcp.csv": "64664e91df38ecf957cd9a80b2fe7ea43e0cab13f28ca30eca723dfd76b35281",
+        "actual_tcp_meta.json": "60fdffe16666bf29d1c2b49d4e723faa061c899f0330f10bfaf6786598989573",
+        "entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+        "settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+        "feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68"
+      }
+    },
+    {
+      "kind": "shu",
+      "run_path": "runs/brush2/2026-10-19/18-53-19__template_shu_100_240_v3__845db2",
+      "run_id": "20261019T105319.238032Z-845db2",
+      "status": "completed",
+      "control_mode": "feedforward",
+      "writing_duration_s": 19.44,
+      "target_xy_bbox_mm": [
+        7.6323450807711595,
+        170.0
+      ],
+      "measured_g_rmse_uT": 50.357785472907004,
+      "measured_g_mae_uT": 46.116167667088256,
+      "measured_g_mean_bias_uT": -35.23910938192606,
+      "fraction_within_20_uT": 0.1171634121274409,
+      "xy_distance_to_command_path_p95_mm": 0.08684112242209381,
+      "actual_tcp_writing_samples": 191,
+      "unshifted_tcp_xyz_rmse_mm": 0.8376227865300425,
+      "diagnostic_estimated_tcp_lag_s": 0.09,
+      "diagnostic_lag_adjusted_tcp_xyz_rmse_mm": 0.08040388198272826,
+      "lag_note": "Diagnostic constant shift estimated on this run, not an independent tracking performance claim.",
+      "endpoint_target_g_uT": 100.0,
+      "endpoint_measured_g_uT": 142.59608732541207,
+      "endpoint_command_z_mm": 33.245521672601456,
+      "endpoint_nominal_depth_mm": 6.7544783273985445,
+      "tail_last_20_percent": {
+        "path_length_mm": 34.97198817332055,
+        "duration_s": 3.8000000000000007,
+        "bbox_mm": [
+          0.0,
+          34.97198817332055
+        ],
+        "x_reverse_from_rightmost_to_end_mm": 0.0
+      },
+      "phases": {
+        "wait": {
+          "duration_between_first_last_command_s": 0.0,
+          "measured_g_min_median_max_uT": [
+            1.5877741603968174,
+            1.5877741603968174,
+            1.5877741603968174
+          ],
+          "final_measured_g_uT": 1.5877741603968174,
+          "final_command_z_mm": 130.0
+        },
+        "high_transfer_00": {
+          "duration_between_first_last_command_s": 3.799989445,
+          "measured_g_min_median_max_uT": [
+            0.23176277134644166,
+            23.73819358511052,
+            42.504173576488576
+          ],
+          "final_measured_g_uT": 36.54752967551316,
+          "final_command_z_mm": 130.0
+        },
+        "rotate_air_00": {
+          "duration_between_first_last_command_s": 1.8799640530000001,
+          "measured_g_min_median_max_uT": [
+            26.39924645958618,
+            34.60538329169404,
+            41.783101081680215
+          ],
+          "final_measured_g_uT": 32.187234140334276,
+          "final_command_z_mm": 130.0
+        },
+        "lower_fast_00": {
+          "duration_between_first_last_command_s": 2.4799966730000005,
+          "measured_g_min_median_max_uT": [
+            20.809347938189468,
+            29.93749130221488,
+            38.40408425495135
+          ],
+          "final_measured_g_uT": 25.696494190954258,
+          "final_command_z_mm": 50.0
+        },
+        "lower_slow_00": {
+          "duration_between_first_last_command_s": 1.739874168,
+          "measured_g_min_median_max_uT": [
+            13.242142084968014,
+            22.86196011117503,
+            28.437456906337847
+          ],
+          "final_measured_g_uT": 19.092301043865863,
+          "final_command_z_mm": 36.0
+        },
+        "rotate_contact_00": {
+          "duration_between_first_last_command_s": 2.980112265999999,
+          "measured_g_min_median_max_uT": [
+            10.606316165453855,
+            18.278479494006078,
+            26.10438561792692
+          ],
+          "final_measured_g_uT": 17.022060993354305,
+          "final_command_z_mm": 36.0
+        },
+        "load_workpoint_00": {
+          "duration_between_first_last_command_s": 2.9800695400000006,
+          "measured_g_min_median_max_uT": [
+            7.538442367830618,
+            15.62073779630554,
+            26.47925262670817
+          ],
+          "final_measured_g_uT": 25.31529564449898,
+          "final_command_z_mm": 33.245521672601456
+        },
+        "measure_00": {
+          "duration_between_first_last_command_s": 19.439986645,
+          "measured_g_min_median_max_uT": [
+            21.133619616230884,
+            107.41918502710323,
+            239.18914937212358
+          ],
+          "final_measured_g_uT": 142.59608732541207,
+          "final_command_z_mm": 33.245521672601456
+        },
+        "lift_00": {
+          "duration_between_first_last_command_s": 3.0198287870000016,
+          "measured_g_min_median_max_uT": [
+            53.03356877437308,
+            68.18840659371016,
+            141.69478597002086
+          ],
+          "final_measured_g_uT": 53.03356877437308,
+          "final_command_z_mm": 130.0
+        },
+        "return_high": {
+          "duration_between_first_last_command_s": 3.8199768419999955,
+          "measured_g_min_median_max_uT": [
+            44.13927620561065,
+            54.569742830757875,
+            67.64641921690306
+          ],
+          "final_measured_g_uT": 63.69959769608503,
+          "final_command_z_mm": 130.0
+        },
+        "hold": {
+          "duration_between_first_last_command_s": 0.17996231099999704,
+          "measured_g_min_median_max_uT": [
+            62.51010848579475,
+            64.41719386669345,
+            66.939364124861
+          ],
+          "final_measured_g_uT": 66.939364124861,
+          "final_command_z_mm": 130.0
+        }
+      },
+      "landmarks": [
+        {
+          "action": "尖起",
+          "s": 0.0,
+          "writing_time_s": 0.0,
+          "target_g_uT": 100.0,
+          "measured_g_uT": 23.861113612762104,
+          "command_z_mm": 33.245521672601456,
+          "plan_xy_mm": [
+            136.1758691206544,
+            85.0
+          ]
+        },
+        {
+          "action": "右下轻按",
+          "s": 0.04531801394420141,
+          "writing_time_s": 1.5361937959263432,
+          "target_g_uT": 192.8228205467164,
+          "measured_g_uT": 117.32627954275847,
+          "command_z_mm": 28.46363623880116,
+          "plan_xy_mm": [
+            143.1381197472967,
+            81.49642674883555
+          ]
+        },
+        {
+          "action": "驻笔与移正",
+          "s": 0.06085060043322903,
+          "writing_time_s": 2.2137940389185213,
+          "target_g_uT": 192.8228172133992,
+          "measured_g_uT": 140.08853315363393,
+          "command_z_mm": 28.46363633207173,
+          "plan_xy_mm": [
+            142.76758507824357,
+            79.394575912292
+          ]
+        },
+        {
+          "action": "较细处转入直下",
+          "s": 0.16876570342651312,
+          "writing_time_s": 4.484619014146635,
+          "target_g_uT": 124.46659625408338,
+          "measured_g_uT": 98.55582771648062,
+          "command_z_mm": 32.142557011862515,
+          "plan_xy_mm": [
+            139.6565851242089,
+            60.95715908013328
+          ]
+        },
+        {
+          "action": "下段行至较粗处",
+          "s": 0.920834828897763,
+          "writing_time_s": 17.747129349636165,
+          "target_g_uT": 192.8228204392443,
+          "measured_g_uT": 215.51597615190084,
+          "command_z_mm": 28.463636241808373,
+          "plan_xy_mm": [
+            139.65235173824132,
+            -71.09930532303909
+          ]
+        },
+        {
+          "action": "渐提收尖",
+          "s": 1.0,
+          "writing_time_s": 19.44,
+          "target_g_uT": 100.0,
+          "measured_g_uT": 142.59608732541207,
+          "command_z_mm": 33.245521672601456,
+          "plan_xy_mm": [
+            139.65235173824132,
+            -85.0
+          ]
+        }
+      ],
+      "source_sha256": {
+        "manifest.json": "76f27a038dbb1d7a78138e2b1c84af58f73d2deb410345982a2dd8412b0ca80d",
+        "resolved.json": "0e9dd0e2b739deb42a1ffeb21912c92b8eb0db25e3a16aeb71ded432a21f741b",
+        "strokeplan.npz": "73dc8d64a3e4593deea6d74d89ead1758daa75e0274c6f10e2d0a7da8ae6c843",
+        "control.jsonl": "fb354a0864df8f1bead21ccf09d4a545322c941961181abd1c1ecf2c948d429c",
+        "actual_tcp.csv": "ab9d12dd7b7d7907d6c1b23c435151ba8fd75e14b5a2bd5e64ce2ad1acc4334f",
+        "actual_tcp_meta.json": "aa512c7079e19c781ed85ca93e907f2595ace317a37a844316605d5a4c6bfee3",
+        "entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+        "settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+        "feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68"
+      }
+    }
+  ]
+}

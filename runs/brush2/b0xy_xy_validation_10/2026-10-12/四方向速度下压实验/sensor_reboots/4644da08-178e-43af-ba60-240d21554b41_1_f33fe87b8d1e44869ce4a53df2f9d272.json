@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "method": "esp32_software_restart",
+  "batch_id": "4644da08-178e-43af-ba60-240d21554b41",
+  "trial_index": 1,
+  "trial_count": 1,
+  "started_at": "2026-10-12T18:46:30.101607+08:00",
+  "record_path": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/sensor_reboots/4644da08-178e-43af-ba60-240d21554b41_1_f33fe87b8d1e44869ce4a53df2f9d272.json",
+  "command": "REBOOT",
+  "port": "/dev/ttyACM0",
+  "requested_host_ns": 3924628514370,
+  "ack_host_ns": 3924638647763,
+  "ready_host_ns": 3925344862926,
+  "reconnect_count": 0,
+  "first_frame_sensor_t_us": 423123,
+  "completed_host_ns": 3925354967715,
+  "finished_at": "2026-10-12T18:46:30.828356+08:00"
+}

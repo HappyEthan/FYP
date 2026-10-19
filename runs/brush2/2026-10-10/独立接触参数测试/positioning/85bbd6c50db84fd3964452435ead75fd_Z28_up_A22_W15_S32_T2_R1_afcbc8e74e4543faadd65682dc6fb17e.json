@@ -1,0 +1,167 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-10T14:47:31.581620+08:00",
+  "initial_pose_m_rad": [
+    -0.150002,
+    0.49999400000000005,
+    0.06998900000000001,
+    -1.7453292519943296e-05,
+    0.2617993877991494,
+    1.7453292519943296e-05
+  ],
+  "route_m_rad": [
+    [
+      -0.150002,
+      0.49999400000000005,
+      0.07,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      1.7453292519943296e-05
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      1.7453292519943296e-05
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "batch_id": "85bbd6c50db84fd3964452435ead75fd",
+    "trial": {
+      "trial_id": "Z28_up_A22_W15_S32_T2_R1",
+      "direction": "up",
+      "command_z_mm": 28.0,
+      "rotate_start_z_mm": 32.0,
+      "rotate_s": 2.0,
+      "entry_tilt_deg": 22.0,
+      "writing_tilt_deg": 15.0,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 5.0,
+      "air_rotate_s": 1.5,
+      "airborne_settle_s": 1.0,
+      "post_lift_hold_s": 2.0,
+      "return_to_origin": true,
+      "preload_speed_mm_s": 2.0,
+      "travel_mm": 50.0,
+      "speed_mm_s": 10.0,
+      "repeat": 1,
+      "entry_policy": "preload_then_rotate_and_press_v2",
+      "condition_sha256": "e08b9b0425562f2f9ec6c7d4b94f2274f85e577b76b801791067e552a7516b4c",
+      "prep_note": "",
+      "deadline_policy": {
+        "mode": "continue_above_z",
+        "min_z_mm": 20.0
+      },
+      "timing": {
+        "trajectory_s": 26.3,
+        "phase_durations_s": {
+          "wait": 0.0,
+          "orient_for_baseline": 2.0,
+          "baseline_settle": 1.0,
+          "entry_offset_high": 0.54,
+          "rotate_air": 1.5,
+          "lower_fast": 1.08,
+          "lower_slow": 1.76,
+          "entry_preload": 3.76,
+          "rotate_load": 2.0,
+          "straight_hold": 5.2,
+          "lift": 1.56,
+          "post_lift_hold": 2.0,
+          "return_high": 1.7,
+          "restore_wait_orientation": 2.0,
+          "hold": 0.2
+        },
+        "contact_loading_s": 5.76,
+        "baseline_windows_s": 4.0,
+        "reference_run_s": 30.3,
+        "exclusions": "Operator preparation, connection, automatic positioning, extra baseline waiting, Servo startup and communication stalls are not included; not a wall-clock guarantee."
+      },
+      "config_source": {
+        "path": "/home/ethan/FYP/configs/experiments/contact_entry/02_22deg_2s.json",
+        "sha256": "82d860421a7adc1004e3170ef8dcd3db3137e1365d19844fadff75c151eebfe2",
+        "content": {
+          "version": 1,
+          "name": "建议先试：22°、2秒",
+          "note": "先检查22°到15°的较小转角能否形成需要的接触形态；保留2毫米每秒预压。候选，未做真机验证。",
+          "parameters": {
+            "suite": "single",
+            "direction": "up",
+            "entry_tilt_deg": 22.0,
+            "writing_tilt_deg": 15.0,
+            "entry_contact_z_mm": 36.0,
+            "rotate_start_z_mm": 32.0,
+            "target_z_mm": 28.0,
+            "rotate_s": 2.0,
+            "preload_speed_mm_s": 2.0,
+            "entry_reverse_mm": 5.0,
+            "air_rotate_s": 1.5,
+            "airborne_settle_s": 1.0,
+            "post_lift_hold_s": 2.0,
+            "return_to_origin": true,
+            "travel_mm": 50.0,
+            "speed_mm_s": 10.0,
+            "repeats": 1,
+            "prep_note": ""
+          }
+        }
+      }
+    }
+  },
+  "timing": {
+    "commands_sent": 118,
+    "max_lateness_s": 0.005834661,
+    "max_command_duration_s": 0.015419398
+  },
+  "deadline_policy": {
+    "mode": "continue_above_z",
+    "min_z_mm": 20.0
+  },
+  "motion_metrics": {
+    "XY speed": 55.13535350187142,
+    "Z speed": 0.275000000000275,
+    "step": 1.1027070700374284,
+    "acceleration": 99.83384812543032,
+    "angular speed": 0.07071067811865477,
+    "angular acceleration": 3.5355339059327378
+  },
+  "planned_duration_s": 2.3600000000000003,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.149988,
+    0.449995,
+    0.069963,
+    -8.726646259971648e-05,
+    0.2617993877991494,
+    -5.235987755982989e-05
+  ],
+  "finished_at": "2026-10-10T14:47:34.097273+08:00"
+}

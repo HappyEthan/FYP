@@ -1,0 +1,20 @@
+{
+  "angular_accel_deg_s2": 20.0,
+  "angular_speed_deg_s": 10.0,
+  "delta_mm": 1.0,
+  "depth_max_mm": 16.0,
+  "depth_min_mm": 4.0,
+  "depth_mm": 5.0,
+  "entry_contact_z_mm": 36.0,
+  "entry_ry_deg": 30.0,
+  "hold_s": 4.0,
+  "load_s": 3.0,
+  "order": "press-first",
+  "post_lift_hold_s": 2.0,
+  "rotate_s": 3.0,
+  "slide_settle_s": 1.0,
+  "speed_mm_s": 10.0,
+  "transition_s": 0.4,
+  "travel_mm": 450.0,
+  "xy_accel_mm_s2": 50.0
+}

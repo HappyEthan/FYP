@@ -1,0 +1,25 @@
+{
+  "id": "pie",
+  "name": "撇",
+  "recipe_file": "/home/ethan/FYP/configs/strokes/pie.json",
+  "recipe_sha256": "97475c02fcc42266c2ede9d09c29731aa7add00c487ea97cc63836ed7a951229",
+  "plan": "pie/strokeplan.npz",
+  "samples": 790,
+  "length_mm": 135.15157479844413,
+  "duration_s": 15.780000000000001,
+  "max_xy_speed_mm_s": 9.999999552894952,
+  "start_end_paper_mm": [
+    [
+      105.0,
+      -54.99999999999999
+    ],
+    [
+      175.0,
+      54.99999999999999
+    ]
+  ],
+  "target_range_uT": [
+    100.0,
+    209.99999318394123
+  ]
+}

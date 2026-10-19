@@ -1,0 +1,69 @@
+{
+  "artifact_role": "experiment_design_not_a_program_settings_file",
+  "objective": "Test whether the B0xy versus middle magnetic response association repeats within +X and +Y directions.",
+  "seed": 20261012,
+  "rounds": 20,
+  "trials_per_direction": 20,
+  "planned_total_trials": 40,
+  "round_orders": [
+    "XY",
+    "YX",
+    "XY",
+    "XY",
+    "XY",
+    "XY",
+    "YX",
+    "XY",
+    "XY",
+    "YX",
+    "YX",
+    "YX",
+    "YX",
+    "YX",
+    "XY",
+    "YX",
+    "YX",
+    "XY",
+    "XY",
+    "YX"
+  ],
+  "directions": {
+    "X": "right",
+    "Y": "up"
+  },
+  "parameters": {
+    "kind": "hold",
+    "hold_z_mm": 28,
+    "entry_contact_z_mm": 28,
+    "entry_tilt_deg": 30,
+    "writing_tilt_deg": 15,
+    "rotate_s": 2,
+    "entry_reverse_mm": 5,
+    "travel_mm": 50,
+    "speed_mm_s": 10,
+    "origin_x_mm": -150,
+    "origin_y_mm": 450,
+    "wait_z_mm": 70,
+    "reboot_sensor_each_trial": true
+  },
+  "endpoints_mm": {
+    "X": [
+      -100,
+      450,
+      28
+    ],
+    "Y": [
+      -150,
+      500,
+      28
+    ]
+  },
+  "baseline": "Actual applied directional baseline 1, B0xy=hypot(mean Bx,mean By).",
+  "response": "Per-trial mean a_control_uT during straight_hold projected path distance 10–40 mm. Use distance along the direction, including X; do not filter X records using y displacement.",
+  "preparation": "Each stroke on unused paper; same paper/support/brush and the same water preparation per stroke; no hand adjustment of magnetic bristles.",
+  "analysis": "Analyze X and Y separately; each trial is one observation. Report Pearson r, Spearman rho, 95% confidence intervals with assumptions, response/time and baseline/time plots, influence and temporal trend sensitivity. Inspect loaded raw XY field and signed delta components to assess subtraction coupling. Include every completed planned trial regardless of its B0xy/response.",
+  "exclusions": "Exclude only documented aborted/incomplete trials, invalid acquisition/baseline, confirmed incorrect Z/speed, or accidental preparation changes. Retain excluded source runs and reason. Record any replacement attempt separately; never repeat because a response looks unwanted.",
+  "range_limit": "If baseline magnitudes barely vary compared with baseline measurement noise, the data characterize repeatability but cannot establish the response dependence over a wide B0xy range.",
+  "run_root": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_20261012",
+  "reference": "https://www.itl.nist.gov/div898/handbook/pri/section3/pri332.htm"
+}

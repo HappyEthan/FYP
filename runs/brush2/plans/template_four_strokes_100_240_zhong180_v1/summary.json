@@ -1,0 +1,161 @@
+{
+  "reference": "runs/brush2/plans/11_中字底横延长30mm_实测第9次/character.npz",
+  "reference_sha256": "be7fe5fca2998c82df0b03524ed4a7e19d3fff6e43a44fd47a3d0d2321ec2265",
+  "reference_bbox_mm": [
+    138.88164433290171,
+    180.0
+  ],
+  "source": "synthetic",
+  "coordinate_frame": "paper; drawing right +X, drawing up +Y",
+  "magnetic_levels_uT": {
+    "L1": 100.0,
+    "L2": 124.46659545769568,
+    "L3": 154.91933384829667,
+    "L4": 192.8228205467164,
+    "L5": 240.0
+  },
+  "cruise_speed_mm_s": 10,
+  "tilt_deg": 15,
+  "generator_sha256": "9a2b23c64ef762566e81d9b22a56f26aba9210bd8e620290d486ba0816ada73f",
+  "source_api_sha256": {
+    "src/brushbot/target_strokeplan.py": "8c4c8c07c127916104f80311d5df088e39c3bac1bc985656878d83002c3a7e9a",
+    "scripts/generate_strokeplan_from_json.py": "c86e47e4f87afc428b547a926289e270d931a34f802cdc5ecc9fb7c301f08206",
+    "scripts/generate_directional_character_trial.py": "0dfa430403f3a25286e18d30975993487f76ddd97506c8d1c0b75f8fd3a19d55",
+    "scripts/generate_calligraphy_trial.py": "a41cc872a32fc32b2ed59cac9d8033c083a8fea0ad27c52bfb9913470ffa08ce"
+  },
+  "validation": "offline target plans only; no compilation or robot execution",
+  "strokes": [
+    {
+      "id": "heng",
+      "name": "长横",
+      "template": "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long/template.json",
+      "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+      "bbox_mm": [
+        119.98333175521284,
+        19.364988462225938
+      ],
+      "uniform_mm_per_source_px": 0.27713625866050806,
+      "length_mm": 138.29868790728446,
+      "duration_s": 42.46,
+      "samples": 2124,
+      "max_xy_speed_mm_s": 10.00000000000245,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "start_end_paper_mm": [
+        [
+          80.0,
+          -5.819861431870669
+        ],
+        [
+          190.85450346420322,
+          2.2170900692840645
+        ]
+      ],
+      "plan": "heng/strokeplan.npz",
+      "preview": "heng/preview.png",
+      "writing_hint": "前半段渐提、中段较细，后半段渐按；末端转向收笔。",
+      "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+    },
+    {
+      "id": "shu",
+      "name": "悬针竖",
+      "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/shu_xuanzhen/template.json",
+      "template_id": "c73eea3a3083436cd582a11b7ca56827b9291bd6d826ba6f17b85e1bec81d8c2",
+      "bbox_mm": [
+        8.067329895091262,
+        180.0
+      ],
+      "uniform_mm_per_source_px": 0.36809815950920244,
+      "length_mm": 185.93300149332813,
+      "duration_s": 37.2,
+      "samples": 1861,
+      "max_xy_speed_mm_s": 7.926826782959044,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "start_end_paper_mm": [
+        [
+          135.95092024539878,
+          90.0
+        ],
+        [
+          139.6319018404908,
+          -90.0
+        ]
+      ],
+      "plan": "shu/strokeplan.npz",
+      "preview": "shu/preview.png",
+      "writing_hint": "尖起斜切右下轻按，左下移正后中锋直下，下段渐提收尖；白线止于墨迹尖端前约8像素，保持可见端点不外推。",
+      "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+    },
+    {
+      "id": "pie",
+      "name": "斜撇",
+      "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/pie_slant/template.json",
+      "template_id": "2835b97b6b7766e0fb236ba98a2ecd11f7c8b363782bf74d285916cdc3730ad3",
+      "bbox_mm": [
+        139.96988467619295,
+        131.8048780487805
+      ],
+      "uniform_mm_per_source_px": 0.6829268292682927,
+      "length_mm": 217.26403676997955,
+      "duration_s": 50.28,
+      "samples": 2515,
+      "max_xy_speed_mm_s": 10.000000000002279,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "start_end_paper_mm": [
+        [
+          186.78048780487805,
+          65.90243902439025
+        ],
+        [
+          70.0,
+          -65.90243902439025
+        ]
+      ],
+      "plan": "pie/strokeplan.npz",
+      "preview": "pie/preview.png",
+      "writing_hint": "尖起右下轻按，沿右上斜边转成左下推行，弧形撇身末段渐提向左出尖；白线未标明提锋起点，按渐细末段划分出笔。",
+      "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+    },
+    {
+      "id": "na",
+      "name": "斜捺",
+      "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/na_slant/template.json",
+      "template_id": "0c5cda3ff065c92f7a3b02a35fd08797f5fd928168ac6df1f9d941c06a2bd252",
+      "bbox_mm": [
+        140.0,
+        64.58852867830424
+      ],
+      "uniform_mm_per_source_px": 0.3491271820448878,
+      "length_mm": 161.7002170487023,
+      "duration_s": 36.4,
+      "samples": 1821,
+      "max_xy_speed_mm_s": 9.835551522343435,
+      "target_range_uT": [
+        100.0,
+        240.0
+      ],
+      "start_end_paper_mm": [
+        [
+          70.0,
+          32.29426433915212
+        ],
+        [
+          210.0,
+          -31.945137157107236
+        ]
+      ],
+      "plan": "na/strokeplan.npz",
+      "preview": "na/preview.png",
+      "writing_hint": "尖锋斜切后向右写短横，最细处折向右下行成长捺身；至粗处稍停后向右渐提平出，白线清晰终点距墨尖约11像素，不外推。",
+      "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+    }
+  ]
+}

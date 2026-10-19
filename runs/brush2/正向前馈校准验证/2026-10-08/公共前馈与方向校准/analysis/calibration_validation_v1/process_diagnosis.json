@@ -1,0 +1,235 @@
+{
+  "source_summary_sha256": "ea67de3c93c554b897fed8be07f9f44b40017ec48a2990548a652f2c2b860317",
+  "analysis_script_sha256": "d0876725528797292201f57bffc12d7f064751db5f31a55d9f4a8376ac0e5950",
+  "original_source_files_hash_verified": 141,
+  "load_end_window_s": 0.3,
+  "primary_window_mm": [
+    30,
+    120
+  ],
+  "runs": [
+    {
+      "trial_id": "Z32_right_R1",
+      "direction": "right",
+      "command_z_mm": 32,
+      "repeat": 1,
+      "dominant_component": "By",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 2.4997037195064387,
+      "load_end_last_0_3s": {
+        "a_control_uT": 73.90234536787457,
+        "bx_filtered_uT": -6.4458568212261245,
+        "by_filtered_uT": 73.67238078247631
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 32.028,
+      "load_end_actual_z_max_abs_error_mm": 0.06099999999999994,
+      "primary_raw_median_uT": 146.61820033542202,
+      "primary_dominant_median_uT": 144.06543504769806,
+      "baseline_dominant_uT": 2849.286227544908
+    },
+    {
+      "trial_id": "Z32_up_R1",
+      "direction": "up",
+      "command_z_mm": 32,
+      "repeat": 1,
+      "dominant_component": "Bx",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 2.4997037195064387,
+      "load_end_last_0_3s": {
+        "a_control_uT": 75.75877807646407,
+        "bx_filtered_uT": -22.229557768273693,
+        "by_filtered_uT": 72.2071184614199
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 32.063,
+      "load_end_actual_z_max_abs_error_mm": 0.10999999999999943,
+      "primary_raw_median_uT": 138.10466385935933,
+      "primary_dominant_median_uT": 135.21892058022564,
+      "baseline_dominant_uT": 2112.744011976049
+    },
+    {
+      "trial_id": "Z28_right_R1",
+      "direction": "right",
+      "command_z_mm": 28,
+      "repeat": 1,
+      "dominant_component": "By",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 4.999407439012522,
+      "load_end_last_0_3s": {
+        "a_control_uT": 177.9320512673999,
+        "bx_filtered_uT": -95.61725262584831,
+        "by_filtered_uT": -150.0800842926788
+      },
+      "load_end_actual_tcp_samples": 2,
+      "load_end_actual_z_median_mm": 28.083,
+      "load_end_actual_z_max_abs_error_mm": 0.11299999999999955,
+      "primary_raw_median_uT": 192.92018139686277,
+      "primary_dominant_median_uT": 177.0573608624897,
+      "baseline_dominant_uT": 2963.7452095808394
+    },
+    {
+      "trial_id": "Z28_up_R1",
+      "direction": "up",
+      "command_z_mm": 28,
+      "repeat": 1,
+      "dominant_component": "Bx",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 4.999407439012522,
+      "load_end_last_0_3s": {
+        "a_control_uT": 167.89874160049172,
+        "bx_filtered_uT": -167.61891040697685,
+        "by_filtered_uT": -8.612846989010345
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 28.088,
+      "load_end_actual_z_max_abs_error_mm": 0.1960000000000015,
+      "primary_raw_median_uT": 189.9478715878008,
+      "primary_dominant_median_uT": 185.5742937276457,
+      "baseline_dominant_uT": 2158.0392644135186
+    },
+    {
+      "trial_id": "Z28_up_R2",
+      "direction": "up",
+      "command_z_mm": 28,
+      "repeat": 2,
+      "dominant_component": "Bx",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 4.999407439012522,
+      "load_end_last_0_3s": {
+        "a_control_uT": 63.37056368479313,
+        "bx_filtered_uT": -53.26622928211188,
+        "by_filtered_uT": 36.061923865530375
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 28.101,
+      "load_end_actual_z_max_abs_error_mm": 0.19900000000000162,
+      "primary_raw_median_uT": 283.4725428801405,
+      "primary_dominant_median_uT": 276.63878931937296,
+      "baseline_dominant_uT": 2158.659504950494
+    },
+    {
+      "trial_id": "Z28_right_R2",
+      "direction": "right",
+      "command_z_mm": 28,
+      "repeat": 2,
+      "dominant_component": "By",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 4.999407439012522,
+      "load_end_last_0_3s": {
+        "a_control_uT": 54.30594410151651,
+        "bx_filtered_uT": -42.45548116529973,
+        "by_filtered_uT": -33.312708733599095
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 28.063,
+      "load_end_actual_z_max_abs_error_mm": 0.13100000000000023,
+      "primary_raw_median_uT": 270.723189965486,
+      "primary_dominant_median_uT": 256.69781785421173,
+      "baseline_dominant_uT": 2945.123904382472
+    },
+    {
+      "trial_id": "Z32_up_R2",
+      "direction": "up",
+      "command_z_mm": 32,
+      "repeat": 2,
+      "dominant_component": "Bx",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 2.4997037195064387,
+      "load_end_last_0_3s": {
+        "a_control_uT": 48.97877103676727,
+        "bx_filtered_uT": 26.577623389380065,
+        "by_filtered_uT": 40.36286098249559
+      },
+      "load_end_actual_tcp_samples": 3,
+      "load_end_actual_z_median_mm": 32.06,
+      "load_end_actual_z_max_abs_error_mm": 0.10600000000000165,
+      "primary_raw_median_uT": 145.996074724355,
+      "primary_dominant_median_uT": 145.00895796179086,
+      "baseline_dominant_uT": 2156.637029702973
+    },
+    {
+      "trial_id": "Z32_right_R2",
+      "direction": "right",
+      "command_z_mm": 32,
+      "repeat": 2,
+      "dominant_component": "By",
+      "load_duration_s": 3.0000000000000004,
+      "load_peak_command_z_speed_mm_s": 2.4997037195064387,
+      "load_end_last_0_3s": {
+        "a_control_uT": 63.368329719940604,
+        "bx_filtered_uT": 9.657983860235431,
+        "by_filtered_uT": 62.523793093335044
+      },
+      "load_end_actual_tcp_samples": 2,
+      "load_end_actual_z_median_mm": 32.046,
+      "load_end_actual_z_max_abs_error_mm": 0.06099999999999994,
+      "primary_raw_median_uT": 159.26599949573946,
+      "primary_dominant_median_uT": 157.18641256833817,
+      "baseline_dominant_uT": 2925.987450592887
+    }
+  ],
+  "comparisons": [
+    {
+      "direction": "right",
+      "command_z_mm": 32,
+      "repeat_raw_median_difference_uT": 12.647799160317447,
+      "repeat_raw_median_difference_relative_R1": 0.08626350024337204,
+      "repeat_dominant_median_difference_uT": 13.12097752064011,
+      "baseline_dominant_difference_uT": 76.70122304797906
+    },
+    {
+      "direction": "right",
+      "command_z_mm": 28,
+      "repeat_raw_median_difference_uT": 77.8030085686232,
+      "repeat_raw_median_difference_relative_R1": 0.40329118501382677,
+      "repeat_dominant_median_difference_uT": 79.64045699172203,
+      "baseline_dominant_difference_uT": -18.62130519836728
+    },
+    {
+      "direction": "up",
+      "command_z_mm": 32,
+      "repeat_raw_median_difference_uT": 7.891410864995663,
+      "repeat_raw_median_difference_relative_R1": 0.05714079919148851,
+      "repeat_dominant_median_difference_uT": 9.790037381565213,
+      "baseline_dominant_difference_uT": 43.89301772692397
+    },
+    {
+      "direction": "up",
+      "command_z_mm": 28,
+      "repeat_raw_median_difference_uT": 93.52467129233972,
+      "repeat_raw_median_difference_relative_R1": 0.49237019878429766,
+      "repeat_dominant_median_difference_uT": 91.06449559172725,
+      "baseline_dominant_difference_uT": 0.620240536975416
+    }
+  ],
+  "up_Z28_pair": {
+    "identical_compiled_arrays": {
+      "t_s": true,
+      "phase": true,
+      "pose_m_rad": true,
+      "depth_ff_m": true
+    },
+    "command_path": {
+      "start_xyz_mm": [
+        -150.0,
+        450.01000000000005,
+        28.0
+      ],
+      "end_xyz_mm": [
+        -150.0,
+        600.0,
+        28.0
+      ]
+    },
+    "operator_report": "Assembly normal; paper and brush not adjusted between trial 4 and trial 5.",
+    "interpretation": "Given the operator report, R2 retraced the R1 path on the same paper. Contact history changed; its contribution is not isolated from brush state."
+  },
+  "limitations": [
+    "Signed magnetic components are not direct force measurements.",
+    "Preparation signals are diagnostic only; the frozen inverse applies to straight_hold.",
+    "Two repeats do not isolate wetting, paper, contact history, or background changes.",
+    "Loading depth and loading rate differ together; their causal effects are not separable here.",
+    "10 Hz TCP sampling does not observe every preparation transient."
+  ]
+}

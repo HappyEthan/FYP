@@ -1,0 +1,33 @@
+{
+  "id": "na",
+  "name": "斜捺",
+  "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/na_slant/template.json",
+  "template_id": "0c5cda3ff065c92f7a3b02a35fd08797f5fd928168ac6df1f9d941c06a2bd252",
+  "bbox_mm": [
+    140.0,
+    64.58852867830424
+  ],
+  "uniform_mm_per_source_px": 0.3491271820448878,
+  "length_mm": 161.7002170487023,
+  "duration_s": 36.4,
+  "samples": 1821,
+  "max_xy_speed_mm_s": 9.835551522343435,
+  "target_range_uT": [
+    100.0,
+    240.0
+  ],
+  "start_end_paper_mm": [
+    [
+      70.0,
+      32.29426433915212
+    ],
+    [
+      210.0,
+      -31.945137157107236
+    ]
+  ],
+  "plan": "na/strokeplan.npz",
+  "preview": "na/preview.png",
+  "writing_hint": "尖锋斜切后向右写短横，最细处折向右下行成长捺身；至粗处稍停后向右渐提平出，白线清晰终点距墨尖约11像素，不外推。",
+  "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+}

@@ -1,0 +1,23 @@
+在 /home/ethan/FYP 根目录执行。每条命令仅执行一笔，开始前仍需按 Enter。
+先完成各方向1笔路径检查，记录为pilot，不混入正式40笔。
+本文件给出正式实验命令；离线核对时在末尾加 --dry-run。
+
++X：
+PYTHONPATH=src python3 scripts/run_four_direction_sweep.py --direction right \
+  --kind hold --hold-z-mm 28 --entry-contact-z-mm 28 \
+  --rotate-s 2 --entry-reverse-mm 5 --travel-mm 50 --speed-mm-s 10 \
+  --origin-x-mm -150 --origin-y-mm 450 --reboot-sensor-each-trial \
+  --run-root /home/ethan/FYP/runs/brush2/b0xy_xy_validation_20261012
+
++Y：
+PYTHONPATH=src python3 scripts/run_four_direction_sweep.py --direction up \
+  --kind hold --hold-z-mm 28 --entry-contact-z-mm 28 \
+  --rotate-s 2 --entry-reverse-mm 5 --travel-mm 50 --speed-mm-s 10 \
+  --origin-x-mm -150 --origin-y-mm 450 --reboot-sensor-each-trial \
+  --run-root /home/ethan/FYP/runs/brush2/b0xy_xy_validation_20261012
+
+按sequence.csv逐笔选择上述命令。每笔移动纸张到未写区域，保持机器人起点不变。
+建议执行40笔；20轮先后顺序如下（X=right，Y=up）：
+XY YX XY XY XY XY YX XY XY YX YX YX YX YX XY YX YX XY XY YX
+中止或准备意外时保留失败记录；记录实际run目录和原因，再安排补做，不按结果高低重做。
+参数JSON只是方案记录；执行使用本文件命令，不传给--settings。

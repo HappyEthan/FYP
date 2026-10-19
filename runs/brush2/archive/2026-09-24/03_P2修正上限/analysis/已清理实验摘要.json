@@ -1,0 +1,111 @@
+{
+  "purpose": "Compact traceability record if the raw 10f17a run is removed after approval. Aggregates cannot reconstruct the original sensor or control traces.",
+  "raw_run_directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/16-33-52__strokeplan_p_04_smooth_levels_wide_transitions__10f17a",
+  "full_run_id": "20260924T083352.019413Z-10f17a",
+  "manifest_sha256": "38db1ded24636b5bed966e0739ab47d0a519aa4cc2270230e0ca16a44a7baa7e",
+  "status": "completed",
+  "execution_environment": "hardware",
+  "control_profile": {
+    "enabled": true,
+    "ki": 0.0,
+    "kp": 2.0,
+    "max_correction_accel_mm_s2": 60.0,
+    "max_correction_mm": 0.3,
+    "max_correction_speed_mm_s": 4.0,
+    "mode": "p",
+    "phase": "measure_00",
+    "taper_ticks": 25
+  },
+  "input_sha256": {
+    "feedforward.json": {
+      "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499"
+    },
+    "settings.json": {
+      "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c"
+    },
+    "strokeplan.npz": {
+      "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d"
+    }
+  },
+  "snapshot_sha256": {
+    "calibration.json": "ee11e52a1abb84fb4590f9f826022e5d1910cc2ab4fd754856a1e1b6f723787b",
+    "compiled_plan.npz": "af0b70689d1c1b6f0f8b6d3bb205b245cd845da4c208e12b3c0bafbfc019d702",
+    "feedforward.json": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+    "resolved.json": "1420dca0f3d8e1b1b1f7388b66cf94fad3b1cc4bc69e0734daff7d64a590590a",
+    "settings.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+    "setup.json": "4cb017724685bef0609fe0f3abdc667cc651927fddb0ef09a44428f2fcef1188",
+    "strokeplan.npz": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+    "timeline.npz": "06e043c6c1cbd3fb349cdfc92829378c1f8fa86608a5b0312829904e425aaf6f"
+  },
+  "baseline": {
+    "B0_uT": [
+      2095.6491141732267,
+      2948.3911417322865,
+      -7095.468106299216
+    ],
+    "applies_after_seq": 508,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.07535370733544783,
+      -1.6254357201171148,
+      -1.4053952231301394
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 508,
+    "std_uT": [
+      5.591157969835707,
+      5.933303865422667,
+      14.014489622053793
+    ]
+  },
+  "first_measured_uT": 143.3697920972691,
+  "first_target_uT": 60.0,
+  "full_path_mae_uT": 58.00439205438681,
+  "segments": [
+    {
+      "command_path_mm": [
+        0,
+        50
+      ],
+      "ticks": 255,
+      "mae_uT": 22.57525513832343,
+      "signed_mean_uT": -7.648346464709481,
+      "mean_measured_uT": 69.66596683640734
+    },
+    {
+      "command_path_mm": [
+        50,
+        100
+      ],
+      "ticks": 250,
+      "mae_uT": 15.632258475187534,
+      "signed_mean_uT": 10.62471275232627,
+      "mean_measured_uT": 147.09439568277386
+    },
+    {
+      "command_path_mm": [
+        100,
+        150
+      ],
+      "ticks": 250,
+      "mae_uT": 153.02077781047748,
+      "signed_mean_uT": 153.02077781047748,
+      "mean_measured_uT": 347.77332633255236
+    },
+    {
+      "command_path_mm": [
+        150,
+        200
+      ],
+      "ticks": 255,
+      "mae_uT": 41.89814301850867,
+      "signed_mean_uT": 41.89814301850867,
+      "mean_measured_uT": 154.34634790119335
+    }
+  ],
+  "measure_ticks": 1011,
+  "actual_tcp_rows": 0,
+  "same_profile_surviving_repeat": "142be8",
+  "raw_removed_on": "2026-09-25"
+}

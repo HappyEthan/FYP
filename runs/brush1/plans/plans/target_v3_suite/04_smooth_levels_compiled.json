@@ -1,0 +1,24 @@
+{
+  "inputs": {
+    "plan": {
+      "path": "/home/ethan/FYP/runs/plans/target_v3_suite/04_smooth_levels.npz",
+      "sha256": "e3d84e4eaa71b2834e834ae6f36a598c890352626d80ddac5d9225f3bba66973"
+    },
+    "feedforward": {
+      "path": "/home/ethan/FYP/runs/plans/ry15_feedforward_v1/feedforward.json",
+      "sha256": "7b8507b24400e94c15799cae3f3a6a987f1d1c8c64f18a4fbd7d90f006879527"
+    },
+    "settings": {
+      "path": "/home/ethan/FYP/runs/plans/ry15_feedforward_v1/settings.json",
+      "sha256": "5b517b4331404b6e18c334d8061c81ecb3f92699811577661555941c4365ad6d"
+    }
+  },
+  "calibration_id": "ladder-2ca144d7e48f0cb0",
+  "execution_approved": false,
+  "trajectory_points": 3072,
+  "hold_points": 10,
+  "dt_s": 0.02,
+  "duration_s": 61.620000000000005,
+  "limitations": "Open loop; no sensor recording or feedback. Calibration covers +X 10 mm/s only. Acceleration, deceleration, pauses and changing depth remain unvalidated transients. Workspace bounds are not collision checking; site clearance must be verified.",
+  "validation": "offline kinematic limits only; not collision clearance or dynamic response validation"
+}

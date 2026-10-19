@@ -1,0 +1,238 @@
+{
+  "baseline_pose": "initial wait, then airborne directional writing pose",
+  "baseline_window_policy": "latest complete baseline_window_s, including boundary sample",
+  "baseline_writing_rpy_rad": [
+    -3.281431208448926e-17,
+    -0.2617993877991494,
+    4.320086142535274e-18
+  ],
+  "batch_id": "d0525ee7-7da8-416d-b693-9ce00a2ee58b",
+  "control": {
+    "enabled": false,
+    "mode": "identification"
+  },
+  "depth_semantics": "nominal positive-down command depth; not bristle indentation",
+  "identification": {
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "angular_accel_deg_s2": 40.0,
+    "angular_speed_deg_s": 20.0,
+    "direction": "left",
+    "end_z_mm": 25.0,
+    "entry_contact_z_mm": 36.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "four-direction-half-sweep",
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": false,
+    "rotate_s": 3.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "speed_mm_s": 15.0,
+    "start_z_mm": 36.0,
+    "transfer_speed_mm_s": 80.0,
+    "transit_accel_mm_s2": 100.0,
+    "travel_mm": 150.0,
+    "writing_tilt_deg": 15.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "magnetic_target": null,
+  "name": "four_direction_sweep",
+  "path": {
+    "axis": "left",
+    "kind": "four_direction_sweep"
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "batch_id": "d0525ee7-7da8-416d-b693-9ce00a2ee58b",
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "left",
+        "end_z_mm": 25.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-half-sweep",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 3.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 15.0,
+        "start_z_mm": 36.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 150.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup": {
+        "approach_speed_mm_s": 13.0,
+        "baseline_max_drift_uT_s": 5.0,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_min_samples": 400,
+        "baseline_timeout_s": 5.0,
+        "baseline_window_s": 2.0,
+        "contact_z_mm": 40.0,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        },
+        "gripper_force": 30,
+        "gripper_speed": 30,
+        "gripper_width_mm": 14.0,
+        "installation_id": "brush2-z-ladder",
+        "max_accel_mm_s2": 200.0,
+        "max_depth_mm": 20.0,
+        "max_step_mm": 2.0,
+        "max_tick_lateness_s": 0.1,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 500.0,
+        "pose_tolerance_mm": 0.5,
+        "return_speed_mm_s": 80.0,
+        "sensor_max_age_s": 0.1,
+        "sensor_mount_id": "brush2-mount",
+        "stop_timeout_s": 10.0,
+        "tcp_name": "TCP_brush",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "ucs_name": "Base",
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "verified": true,
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "wait_z_mm": 70.0,
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ]
+      },
+      "trial_count": 12,
+      "trial_index": 7
+    },
+    "finished_at": "2026-09-27T17:12:30.679972+08:00",
+    "initial_pose_m_rad": [
+      -0.14999700000000002,
+      0.5999990000000001,
+      0.06999599999999999,
+      -0.26181684109166936,
+      0.0,
+      -1.7453292519943296e-05
+    ],
+    "last_pose_m_rad": [
+      -0.15003,
+      0.500005,
+      0.07000100000000001,
+      3.490658503988659e-05,
+      0.26176448121410956,
+      0.00012217304763960306
+    ],
+    "motion_metrics": {
+      "XY speed": 77.4750362299549,
+      "Z speed": 0.2000000000008939,
+      "acceleration": 98.54127698293517,
+      "angular acceleration": 30.60944550307393,
+      "angular speed": 19.88273832539657,
+      "step": 1.5495007245990982
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 5.040000000000001,
+    "route_m_rad": [
+      [
+        -0.14999700000000002,
+        0.5999990000000001,
+        0.07,
+        -0.26181684109166936,
+        0.0,
+        -1.7453292519943296e-05
+      ],
+      [
+        -0.15,
+        0.5,
+        0.07,
+        -0.26181684109166936,
+        0.0,
+        -1.7453292519943296e-05
+      ],
+      [
+        -0.15,
+        0.5,
+        0.07,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 3987,
+      "host_ns": 14819184675278,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-09-27T17:12:25.496863+08:00",
+    "status": "completed"
+  },
+  "run_label": "left",
+  "settings_source_sha256": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+  "signal": "filtered_dBxy_norm_uT",
+  "split_semantics": "half of XY arc length",
+  "timeline_policy": "sequential_20ms",
+  "trial_count": 12,
+  "trial_index": 7,
+  "version": 1,
+  "wetting": "manual_before_run"
+}

@@ -1,0 +1,92 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-19T18:53:18.460198+08:00",
+  "initial_pose_m_rad": [
+    -0.37000099999999997,
+    0.500007,
+    0.129999,
+    0.0,
+    0.26181684109166936,
+    -0.0
+  ],
+  "route_m_rad": [
+    [
+      -0.37000099999999997,
+      0.500007,
+      0.13,
+      0.0,
+      0.26181684109166936,
+      -0.0
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.0,
+      0.26181684109166936,
+      -0.0
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "run_label": "template_shu_100_240_v3",
+    "installation_id": "brush2-z-ladder"
+  },
+  "timing": {
+    "commands_sent": 34,
+    "max_lateness_s": 0.000742453,
+    "max_command_duration_s": 0.01471815
+  },
+  "deadline_policy": null,
+  "motion_metrics": {
+    "XY speed": 0.17677669529858,
+    "Z speed": 0.050000000000050004,
+    "step": 0.0035355339059716007,
+    "acceleration": 8.838834764929,
+    "angular speed": 0.050000000000028695,
+    "angular acceleration": 2.500000000001435
+  },
+  "planned_duration_s": 0.6799999999999999,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.37,
+    0.500006,
+    0.129997,
+    -0.0,
+    0.26181684109166936,
+    -0.0
+  ],
+  "finished_at": "2026-10-19T18:53:19.234196+08:00",
+  "record_path": "/home/ethan/FYP/runs/brush2/2026-10-19/positioning/strokeplan_c2825364d4c94bf3a6b8100d5e24d09b.json",
+  "sensor_buffer_reset": {
+    "discarded_bytes": 4016,
+    "host_ns": 8704648218070,
+    "resynchronization": "skip through next newline"
+  }
+}

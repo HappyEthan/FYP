@@ -1,0 +1,11 @@
+{
+  "command_z_mm": 28.0,
+  "common_reference_id": "brush2_M2_equal_direction_reference_v1",
+  "common_target_uT": 265.3490497342677,
+  "direction": "up",
+  "model_sha256": "83cfe36da66489f2d0f76d37ece2ff1ca9fc310ddb2796bab122209d24daf2bb",
+  "nominal_depth_mm": 12,
+  "reference_sha256": "2c7309090da5dcef9b033d985a536907e50ea4c1f65a758d877e1df4ebb39252",
+  "repeat": 1,
+  "trial_id": "Z28_up_R1"
+}

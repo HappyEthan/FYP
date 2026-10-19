@@ -1,0 +1,27 @@
+{
+  "analysis": "P size at fixed correction limits",
+  "run_ids": [
+    "36c368",
+    "d0a5c2",
+    "0f2f88",
+    "63dee4",
+    "f4a10d",
+    "c61f9e",
+    "9527cc",
+    "bb27fb"
+  ],
+  "input_sha256": {
+    "strokeplan.npz": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+    "feedforward.json": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+    "settings.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c"
+  },
+  "signal": "measure_00 a_control_uT (EMA 0.3); error=measured-target; no shifting or trimming",
+  "x_axis": "logged command path, not actual TCP X",
+  "limits_mm_mm_s_mm_s2": [
+    0.2,
+    2,
+    40
+  ],
+  "interpretation": "Descriptive run-level comparison; one repeat except P=0.05. Do not infer an optimal gain from these observations alone.",
+  "excluded": "Other P runs changed correction limits and are not part of the gain sweep."
+}

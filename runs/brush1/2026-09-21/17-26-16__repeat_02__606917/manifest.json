@@ -1,0 +1,89 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      -645.3394736842106,
+      -967.5552631578947,
+      2058.6812631578946
+    ],
+    "applies_after_seq": 19,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -28.50588739453972,
+      -21.3343915757388,
+      -178.40839723085318
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 19,
+    "std_uT": [
+      5.937870851518025,
+      5.32451862753418,
+      8.989377666194972
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        -645.3394736842106,
+        -967.5552631578947,
+        2058.6812631578946
+      ],
+      "applies_after_seq": 19,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -28.50588739453972,
+        -21.3343915757388,
+        -178.40839723085318
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 19,
+      "std_uT": [
+        5.937870851518025,
+        5.32451862753418,
+        8.989377666194972
+      ]
+    },
+    {
+      "B0_uT": [
+        -651.02,
+        -965.2599999999999,
+        2082.781066666667
+      ],
+      "applies_after_seq": 7404,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        41.279520766739395,
+        -33.750372386560116,
+        -77.44044914557138
+      ],
+      "effective_visit": 0,
+      "first_seq": 7390,
+      "last_seq": 7404,
+      "std_uT": [
+        6.62039273759495,
+        5.554853733447885,
+        8.143035301955178
+      ]
+    }
+  ],
+  "brush_id": "brush1",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-21T09:27:32.278027+00:00",
+  "reason": "recovered_after_unclean_shutdown",
+  "run_id": "20260921T092616.512050Z-606917",
+  "sha256": {
+    "compiled_plan.npz": "fe51b1904fc279b546487841e7b2869df5a90f8d6d8d2e655e0016dc259b94da",
+    "resolved.json": "76b33debea56ead0c94a497d0d3b2e9abe2b1d97514d06e62b452ef0360c9676",
+    "setup.json": "2d6c65efd9bce3f47d005e12476d281dc8981eab6dd44438de997f1fe3e51c91",
+    "timeline.npz": "f25b240831315dd21328a3ff2382336eb23218eee6e93a891e0b23fce6bcaa48"
+  },
+  "started_at": "2026-09-21T09:26:16.512154+00:00",
+  "status": "interrupted",
+  "writer_pid": 20863
+}

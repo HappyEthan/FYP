@@ -1,0 +1,20 @@
+{
+  "source_runs": [
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-08-36_渐进压笔_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-13-00_渐进压笔_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-19-24_单拱_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-20-56_单拱_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-22-27_双波_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-32-01_双波_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-25-21_宽过渡_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-27-58_宽过渡_第2次"
+  ],
+  "control_mode": "feedforward",
+  "feedback_profile": null,
+  "measure_phase": "measure_00",
+  "target_field": "a_ref_uT",
+  "measured_field": "a_control_uT",
+  "error_definition": "a_control_uT - a_ref_uT at the same logged control tick",
+  "metrics": "All writing samples; no further smoothing or time shifting; no pass/fail threshold",
+  "notes": "V3 input, feedforward/settings and resolved snapshots checked against manifest hashes. Commanded X is the distance axis; actual TCP pose is unavailable."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "hengzhe",
+  "name": "横折",
+  "recipe_file": "/home/ethan/FYP/configs/strokes/hengzhe.json",
+  "recipe_sha256": "00f98dac9e80c545055eeb6042da7aba72568dfd27396a656b644a2dfbe084fb",
+  "plan": "hengzhe/strokeplan.npz",
+  "samples": 1233,
+  "length_mm": 179.24549578261485,
+  "duration_s": 24.64,
+  "max_xy_speed_mm_s": 10.000000000002832,
+  "start_end_paper_mm": [
+    [
+      190.0,
+      -40.00000000000001
+    ],
+    [
+      90.0,
+      40.00000000000001
+    ]
+  ],
+  "target_range_uT": [
+    100.0,
+    229.99999985915738
+  ]
+}

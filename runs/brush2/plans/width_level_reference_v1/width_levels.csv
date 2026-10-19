@@ -1,0 +1,6 @@
+level_id,width_label,width_intent_score,g_target_uT,nominal_depth_mm,z_cmd_mm,measured_width_mm,width_basis
+L1,较细,0.0,100.0,6.754478327398547,33.245521672601456,,user_assumed_monotone_order_not_measured_width
+L2,偏细,0.25,124.46659545769568,7.857442944568594,32.1425570554314,,user_assumed_monotone_order_not_measured_width
+L3,基准,0.5,154.91933384829667,9.613966898708613,30.38603310129139,,user_assumed_monotone_order_not_measured_width
+L4,偏粗,0.75,192.8228205467164,11.53636376119884,28.463636238801158,,user_assumed_monotone_order_not_measured_width
+L5,较粗,1.0,240.0,13.105694025402371,26.89430597459763,,user_assumed_monotone_order_not_measured_width

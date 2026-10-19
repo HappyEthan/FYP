@@ -1,0 +1,53 @@
+{
+  "period_local": "2026-09-24 15:42:14–17:30:35 Asia/Shanghai",
+  "original_runs_in_scope": 12,
+  "raw_runs_keep": [
+    "0f2f88",
+    "142be8",
+    "58bce8",
+    "63dee4",
+    "68defd",
+    "69395a",
+    "9527cc",
+    "a8a59a",
+    "bb27fb",
+    "c61f9e",
+    "f4a10d"
+  ],
+  "raw_deletion_candidates": [
+    {
+      "run_id": "10f17a",
+      "directory": "/home/ethan/FYP/runs/brush2/archive/2026-09-24/16-33-52__strokeplan_p_04_smooth_levels_wide_transitions__10f17a",
+      "bytes": 4207697,
+      "manifest_sha256": "38db1ded24636b5bed966e0739ab47d0a519aa4cc2270230e0ca16a44a7baa7e",
+      "reason": "Same 0.30/4/60 profile as retained 142be8; both have high mid-path response and neither has actual TCP.",
+      "unique_control_and_sensor_data": true
+    }
+  ],
+  "combined_deletion_candidates": [
+    {
+      "directory": "/home/ethan/FYP/runs/brush2/combined/2026-09-24/strokeplan_p_gain_04",
+      "bytes": 885388,
+      "reason": "superseded incremental P-gain plots; updated selected analysis covers all their P settings"
+    },
+    {
+      "directory": "/home/ethan/FYP/runs/brush2/combined/2026-09-24/strokeplan_p_gain_04_four_gains",
+      "bytes": 1014497,
+      "reason": "superseded incremental P-gain plots; updated selected analysis covers all their P settings"
+    },
+    {
+      "directory": "/home/ethan/FYP/runs/brush2/combined/2026-09-24/strokeplan_p_gain_04_p1_p2",
+      "bytes": 881148,
+      "reason": "superseded incremental P-gain plots; updated selected analysis covers all their P settings"
+    }
+  ],
+  "required_followup_if_approved": [
+    "Retain compact metrics and source checksums for 10f17a in the inventory/proposal.",
+    "Update the plotting script so it does not require deleted raw 10f17a.",
+    "Update the handoff document link to a retained compact summary, and recheck document layout.",
+    "Rebuild selected analysis and verify surviving references."
+  ],
+  "status": "executed 2026-09-25; exact four directories removed",
+  "why_69395a_kept": "Its 0.40/5/70 run has a distinct large positive mid-path error; deleting it would hide observed variability of that profile.",
+  "raw_runs_remaining": 11
+}

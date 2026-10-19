@@ -1,0 +1,31 @@
+{
+  "id": "shu",
+  "name": "悬针竖",
+  "time_scale": 2,
+  "source_plan": "runs/brush2/plans/template_four_strokes_100_240_zhong180_v1/shu/strokeplan.npz",
+  "source_sha256": "e4007467d1e71ae42953f6af4f2f49668375200b775727de9ab3b5e6f6a1e104",
+  "source_peak_angular_acceleration_deg_s2": 40.48563887937337,
+  "writing_duration_s": 74.4,
+  "full_motion_duration_s": 97.54,
+  "target_max_xy_speed_mm_s": 3.963413391479522,
+  "compiled_limits": {
+    "XY speed": 79.92614675053562,
+    "Z speed": 59.997440049151805,
+    "step": 1.5985229350107126,
+    "acceleration": 73.87172044806545,
+    "angular speed": 19.79693658533309,
+    "angular acceleration": 33.11441825255111
+  },
+  "compiled_xyz_min_mm": [
+    -370.0,
+    410.00000000000006,
+    28.46363623880116
+  ],
+  "compiled_xyz_max_mm": [
+    -225.98174985950993,
+    590.0,
+    130.0
+  ],
+  "preserved_arrays_exactly": true,
+  "plan": "shu/strokeplan.npz"
+}

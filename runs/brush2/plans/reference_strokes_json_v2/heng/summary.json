@@ -1,0 +1,25 @@
+{
+  "id": "heng",
+  "name": "横",
+  "recipe_file": "/home/ethan/FYP/configs/strokes/heng.json",
+  "recipe_sha256": "ecb382e6fb7fdc239ddf04256c2777b067dacc193f55f67e617a8c18119d3167",
+  "plan": "heng/strokeplan.npz",
+  "samples": 685,
+  "length_mm": 120.00000000000001,
+  "duration_s": 13.68,
+  "max_xy_speed_mm_s": 10.000000000002832,
+  "start_end_paper_mm": [
+    [
+      200.0,
+      -7.34788079488412e-15
+    ],
+    [
+      80.0,
+      7.34788079488412e-15
+    ]
+  ],
+  "target_range_uT": [
+    100.0,
+    214.99998696816314
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "validation": "V3 reload and target previews; no hardware execution or ink validation",
+  "strokes": [
+    {
+      "id": "heng",
+      "name": "横",
+      "recipe_file": "/home/ethan/FYP/configs/strokes/heng.json",
+      "recipe_sha256": "ecb382e6fb7fdc239ddf04256c2777b067dacc193f55f67e617a8c18119d3167",
+      "plan": "heng/strokeplan.npz",
+      "samples": 685,
+      "length_mm": 120.00000000000001,
+      "duration_s": 13.68,
+      "max_xy_speed_mm_s": 10.000000000002832,
+      "start_end_paper_mm": [
+        [
+          200.0,
+          -7.34788079488412e-15
+        ],
+        [
+          80.0,
+          7.34788079488412e-15
+        ]
+      ],
+      "target_range_uT": [
+        100.0,
+        214.99998696816314
+      ]
+    },
+    {
+      "id": "shu",
+      "name": "竖",
+      "recipe_file": "/home/ethan/FYP/configs/strokes/shu.json",
+      "recipe_sha256": "3fbb5a48816e1a49ba94bd0a5ede15877d3ff830af82e79fc322d5b81f277cee",
+      "plan": "shu/strokeplan.npz",
+      "samples": 685,
+      "length_mm": 120.0,
+      "duration_s": 13.68,
+      "max_xy_speed_mm_s": 10.000000000000663,
+      "start_end_paper_mm": [
+        [
+          140.0,
+          -60.0
+        ],
+        [
+          140.0,
+          60.0
+        ]
+      ],
+      "target_range_uT": [
+        100.0,
+        209.99997543453688
+      ]
+    },
+    {
+      "id": "pie",
+      "name": "撇",
+      "recipe_file": "/home/ethan/FYP/configs/strokes/pie.json",
+      "recipe_sha256": "97475c02fcc42266c2ede9d09c29731aa7add00c487ea97cc63836ed7a951229",
+      "plan": "pie/strokeplan.npz",
+      "samples": 790,
+      "length_mm": 135.15157479844413,
+      "duration_s": 15.780000000000001,
+      "max_xy_speed_mm_s": 9.999999552894952,
+      "start_end_paper_mm": [
+        [
+          105.0,
+          -54.99999999999999
+        ],
+        [
+          175.0,
+          54.99999999999999
+        ]
+      ],
+      "target_range_uT": [
+        100.0,
+        209.99999318394123
+      ]
+    },
+    {
+      "id": "na",
+      "name": "捺",
+      "recipe_file": "/home/ethan/FYP/configs/strokes/na.json",
+      "recipe_sha256": "40523d049e2da17ea8266767d4fe69852e3f273b755e9a1ef73f20a785c1c97e",
+      "plan": "na/strokeplan.npz",
+      "samples": 1039,
+      "length_mm": 150.9629773314875,
+      "duration_s": 20.76,
+      "max_xy_speed_mm_s": 9.999999248296133,
+      "start_end_paper_mm": [
+        [
+          180.0,
+          -55.00000000000001
+        ],
+        [
+          85.0,
+          55.00000000000001
+        ]
+      ],
+      "target_range_uT": [
+        100.0,
+        224.9999999984381
+      ]
+    },
+    {
+      "id": "hengzhe",
+      "name": "横折",
+      "recipe_file": "/home/ethan/FYP/configs/strokes/hengzhe.json",
+      "recipe_sha256": "00f98dac9e80c545055eeb6042da7aba72568dfd27396a656b644a2dfbe084fb",
+      "plan": "hengzhe/strokeplan.npz",
+      "samples": 1233,
+      "length_mm": 179.24549578261485,
+      "duration_s": 24.64,
+      "max_xy_speed_mm_s": 10.000000000002832,
+      "start_end_paper_mm": [
+        [
+          190.0,
+          -40.00000000000001
+        ],
+        [
+          90.0,
+          40.00000000000001
+        ]
+      ],
+      "target_range_uT": [
+        100.0,
+        229.99999985915738
+      ]
+    }
+  ]
+}

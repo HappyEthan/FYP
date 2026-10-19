@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/heng_80mm_smooth_tail_v4/heng/strokeplan.npz",
+  "sha256": "e2ab9d56f87bce9cb0da6481af5ec27f65b8b7029860afd8b27b7a43a8017150",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 642,
+      "length_mm": 83.04589572848353,
+      "duration_s": 12.82,
+      "peak_xy_speed_mm_s": 10.000000000002009,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

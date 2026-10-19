@@ -1,0 +1,36 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "ladder-863a81844b03dcae",
+  "control": {
+    "enabled": true,
+    "ki": 0.0,
+    "kp": 0.1,
+    "max_correction_accel_mm_s2": 40.0,
+    "max_correction_mm": 0.2,
+    "max_correction_speed_mm_s": 2.0,
+    "mode": "p",
+    "phase": "measure_00",
+    "taper_ticks": 25
+  },
+  "inputs": {
+    "feedforward.json": {
+      "sha256": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499"
+    },
+    "settings.json": {
+      "sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c"
+    },
+    "strokeplan.npz": {
+      "sha256": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "axis": "+x",
+    "kind": "strokeplan",
+    "stroke_count": 1
+  },
+  "run_label": "strokeplan_p_04_smooth_levels_wide_transitions",
+  "target_format_version": 3,
+  "version": 1,
+  "wetting": "manual_before_run"
+}

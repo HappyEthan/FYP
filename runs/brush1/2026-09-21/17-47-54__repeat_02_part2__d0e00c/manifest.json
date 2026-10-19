@@ -1,0 +1,22 @@
+{
+  "adapter": null,
+  "baselines": [],
+  "brush_id": "brush1",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-21T09:47:56.332166+00:00",
+  "reason": "baseline_failed",
+  "run_id": "20260921T094754.314928Z-d0e00c",
+  "sha256": {
+    "compiled_plan.npz": "cb73cf3bbd02187e3eb5c602ad40a668f02525ef43634450e12063e684e4502f",
+    "resolved.json": "a69d40db05573c0bc567b59245fdfde23dbb8309cdeb84b8c8215121543cd4b1",
+    "setup.json": "d2bbb9966e579676c16e9b3ec4cdcac2ae7b5d3d21dd2bf564c7973635e7c5d6",
+    "timeline.npz": "bcf76b4dde30dddf266385653dc9dd543f05b30de102ab087788f90c0f78b639"
+  },
+  "started_at": "2026-09-21T09:47:54.315029+00:00",
+  "status": "aborted",
+  "writer_pid": 24541
+}

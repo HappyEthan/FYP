@@ -30,7 +30,7 @@ docs/*
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
 
-# 实测数据默认保留本地；下方仅放行已选的 brush2 25号实验与计划
+# 实测数据：下方放行 brush1、brush2 的实验记录、计划与分析
 recordings/
 runs/
 poster/
@@ -63,23 +63,11 @@ writing/
 # 其他本地 PDF 资料
 physical_agent/**/*.pdf
 
-# 本次选定同步：25号每组一个参考记录、分析与保留计划
+# 同步保留的 brush1、brush2 实验数据；Python 缓存仍由上方规则排除
 !runs/
 runs/*
+!runs/brush1/
 !runs/brush2/
-runs/brush2/*
-!runs/brush2/2026-09-25/
-!runs/brush2/plans/
 
 # 展示源码、周报、精选图表与交互页面按用户要求不上传
 outputs/
-
-# 原始记录仅放行下列七个完整示例目录，其余与未来采集记录留本地
-runs/brush2/2026-09-25/*/raw/*
-!runs/brush2/2026-09-25/05_Z动态辨识/raw/14-28-57_连续下压_Z38到24mm_单程30s_第2次/
-!runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-20-00_难曲线160到240_前馈加P2_修正0p4mm_第2次/
-!runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-14-14_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次/
-!runs/brush2/2026-09-25/08_短平台P与PI对比/raw/18-59-14_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_抗饱和_第1次/
-!runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-31-38_平台160到240回160_PI_Kp1_Ki0p1_总修正0p8mm_积分0p2mm_第1次/
-!runs/brush2/2026-09-25/10_中字原地旋转进笔/raw/19-42-23_中_第3笔_pi_第2次/
-!runs/brush2/2026-09-25/11_中字连续方向姿态/raw/21-09-54_中_整字_方向姿态_pi_第9次/

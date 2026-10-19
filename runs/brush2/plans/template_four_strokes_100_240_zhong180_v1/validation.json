@@ -1,0 +1,47 @@
+{
+  "scope": "offline target artifacts; no robot execution or execution-trajectory validation",
+  "zhong_reference_bbox_mm": [
+    138.88164433290171,
+    180.0
+  ],
+  "strokes": [
+    {
+      "id": "heng",
+      "shape_deviation_max_mm": 0.04482496442750436,
+      "peak_xy_speed_mm_s": 10.000000000002018,
+      "v3_reload": true,
+      "source_geometry_and_orientation": true,
+      "magnetic_range": true,
+      "csv_and_preview_agree": true
+    },
+    {
+      "id": "shu",
+      "shape_deviation_max_mm": 0.031004051128278125,
+      "peak_xy_speed_mm_s": 7.9268267829588535,
+      "v3_reload": true,
+      "source_geometry_and_orientation": true,
+      "magnetic_range": true,
+      "csv_and_preview_agree": true
+    },
+    {
+      "id": "pie",
+      "shape_deviation_max_mm": 0.03693078581243536,
+      "peak_xy_speed_mm_s": 10.00000000000197,
+      "v3_reload": true,
+      "source_geometry_and_orientation": true,
+      "magnetic_range": true,
+      "csv_and_preview_agree": true
+    },
+    {
+      "id": "na",
+      "shape_deviation_max_mm": 0.02465128660156897,
+      "peak_xy_speed_mm_s": 9.835551522343037,
+      "v3_reload": true,
+      "source_geometry_and_orientation": true,
+      "magnetic_range": true,
+      "csv_and_preview_agree": true
+    }
+  ],
+  "html_links_valid": true,
+  "png_files_valid": true
+}

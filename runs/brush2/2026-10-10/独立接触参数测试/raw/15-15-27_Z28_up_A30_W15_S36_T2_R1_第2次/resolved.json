@@ -1,0 +1,318 @@
+{
+  "baseline_pose": "initial wait, then airborne directional writing pose",
+  "baseline_window_policy": "latest complete baseline_window_s, including boundary sample",
+  "baseline_writing_rpy_rad": [
+    -0.2617993877991494,
+    1.5848095757158825e-17,
+    -2.086441388434169e-18
+  ],
+  "batch_id": "163af112b9ec4491890c43d615b4954f",
+  "contact_test": {
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "legacy_load_s_unused": true,
+    "preload_speed_mm_s": 4.0,
+    "rotate_s": 2.0,
+    "rotate_start_z_mm": 36.0,
+    "target_z_mm": 28.0,
+    "writing_tilt_deg": 15.0
+  },
+  "contact_trial": {
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "command_z_mm": 28.0,
+    "condition_sha256": "ff37a2a9494f35f4ccf73b6a96df11458874c2cb12a55e24b833fdda79e306e7",
+    "config_source": {
+      "content": {
+        "name": "当前指定：30°、Z36起转、2秒联动",
+        "note": "保持30°接近到Z36后直接起转，在同一2秒内转到15°并从Z36降到Z28，共下降8毫米；没有转笔前的额外预压下降，也没有转完后的额外下压。候选，未做真机验证。",
+        "parameters": {
+          "air_rotate_s": 1.5,
+          "airborne_settle_s": 1.0,
+          "direction": "up",
+          "entry_contact_z_mm": 36.0,
+          "entry_reverse_mm": 5.0,
+          "entry_tilt_deg": 30.0,
+          "post_lift_hold_s": 2.0,
+          "preload_speed_mm_s": 4.0,
+          "prep_note": "",
+          "repeats": 1,
+          "return_to_origin": true,
+          "rotate_s": 2.0,
+          "rotate_start_z_mm": 36.0,
+          "speed_mm_s": 10.0,
+          "suite": "single",
+          "target_z_mm": 28.0,
+          "travel_mm": 50.0,
+          "writing_tilt_deg": 15.0
+        },
+        "version": 1
+      },
+      "path": "/home/ethan/FYP/configs/experiments/contact_entry/10_30deg_start36_2s.json",
+      "sha256": "4bc79a18474938e1e5141e63b119f449e056262608bb8ea887cdeeec4ce99de2"
+    },
+    "deadline_policy": {
+      "min_z_mm": 20.0,
+      "mode": "continue_above_z"
+    },
+    "direction": "up",
+    "entry_contact_z_mm": 36.0,
+    "entry_policy": "preload_then_rotate_and_press_v2",
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "post_lift_hold_s": 2.0,
+    "preload_speed_mm_s": 4.0,
+    "prep_note": "",
+    "repeat": 1,
+    "return_to_origin": true,
+    "rotate_s": 2.0,
+    "rotate_start_z_mm": 36.0,
+    "speed_mm_s": 10.0,
+    "timing": {
+      "baseline_windows_s": 4.0,
+      "contact_loading_s": 2.0,
+      "exclusions": "Operator preparation, connection, automatic positioning, extra baseline waiting, Servo startup and communication stalls are not included; not a wall-clock guarantee.",
+      "phase_durations_s": {
+        "baseline_settle": 1.0,
+        "entry_offset_high": 0.54,
+        "hold": 0.2,
+        "lift": 1.56,
+        "lower_fast": 1.08,
+        "lower_slow": 1.76,
+        "orient_for_baseline": 2.0,
+        "post_lift_hold": 2.0,
+        "restore_wait_orientation": 2.0,
+        "return_high": 1.7,
+        "rotate_air": 1.5,
+        "rotate_load": 2.0,
+        "straight_hold": 5.2,
+        "wait": 0.0
+      },
+      "reference_run_s": 26.54,
+      "trajectory_s": 22.54
+    },
+    "travel_mm": 50.0,
+    "trial_id": "Z28_up_A30_W15_S36_T2_R1",
+    "writing_tilt_deg": 15.0
+  },
+  "control": {
+    "enabled": false,
+    "mode": "identification"
+  },
+  "deadline_policy": {
+    "min_z_mm": 20.0,
+    "mode": "continue_above_z"
+  },
+  "depth_semantics": "nominal positive-down command depth; not bristle indentation",
+  "entry_policy": "preload_then_rotate_and_press_v2",
+  "identification": {
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "angular_accel_deg_s2": 40.0,
+    "angular_speed_deg_s": 20.0,
+    "direction": "up",
+    "end_z_mm": 28.0,
+    "entry_contact_z_mm": 36.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "four-direction-hold",
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "rotate_s": 2.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "speed_mm_s": 10.0,
+    "start_z_mm": 28.0,
+    "transfer_speed_mm_s": 80.0,
+    "transit_accel_mm_s2": 100.0,
+    "travel_mm": 50.0,
+    "writing_tilt_deg": 15.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "magnetic_target": null,
+  "name": "contact_entry_test",
+  "path": {
+    "axis": "up",
+    "kind": "four_direction_sweep"
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "batch_id": "163af112b9ec4491890c43d615b4954f",
+      "trial": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "command_z_mm": 28.0,
+        "condition_sha256": "ff37a2a9494f35f4ccf73b6a96df11458874c2cb12a55e24b833fdda79e306e7",
+        "config_source": {
+          "content": {
+            "name": "当前指定：30°、Z36起转、2秒联动",
+            "note": "保持30°接近到Z36后直接起转，在同一2秒内转到15°并从Z36降到Z28，共下降8毫米；没有转笔前的额外预压下降，也没有转完后的额外下压。候选，未做真机验证。",
+            "parameters": {
+              "air_rotate_s": 1.5,
+              "airborne_settle_s": 1.0,
+              "direction": "up",
+              "entry_contact_z_mm": 36.0,
+              "entry_reverse_mm": 5.0,
+              "entry_tilt_deg": 30.0,
+              "post_lift_hold_s": 2.0,
+              "preload_speed_mm_s": 4.0,
+              "prep_note": "",
+              "repeats": 1,
+              "return_to_origin": true,
+              "rotate_s": 2.0,
+              "rotate_start_z_mm": 36.0,
+              "speed_mm_s": 10.0,
+              "suite": "single",
+              "target_z_mm": 28.0,
+              "travel_mm": 50.0,
+              "writing_tilt_deg": 15.0
+            },
+            "version": 1
+          },
+          "path": "/home/ethan/FYP/configs/experiments/contact_entry/10_30deg_start36_2s.json",
+          "sha256": "4bc79a18474938e1e5141e63b119f449e056262608bb8ea887cdeeec4ce99de2"
+        },
+        "deadline_policy": {
+          "min_z_mm": 20.0,
+          "mode": "continue_above_z"
+        },
+        "direction": "up",
+        "entry_contact_z_mm": 36.0,
+        "entry_policy": "preload_then_rotate_and_press_v2",
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "post_lift_hold_s": 2.0,
+        "preload_speed_mm_s": 4.0,
+        "prep_note": "",
+        "repeat": 1,
+        "return_to_origin": true,
+        "rotate_s": 2.0,
+        "rotate_start_z_mm": 36.0,
+        "speed_mm_s": 10.0,
+        "timing": {
+          "baseline_windows_s": 4.0,
+          "contact_loading_s": 2.0,
+          "exclusions": "Operator preparation, connection, automatic positioning, extra baseline waiting, Servo startup and communication stalls are not included; not a wall-clock guarantee.",
+          "phase_durations_s": {
+            "baseline_settle": 1.0,
+            "entry_offset_high": 0.54,
+            "hold": 0.2,
+            "lift": 1.56,
+            "lower_fast": 1.08,
+            "lower_slow": 1.76,
+            "orient_for_baseline": 2.0,
+            "post_lift_hold": 2.0,
+            "restore_wait_orientation": 2.0,
+            "return_high": 1.7,
+            "rotate_air": 1.5,
+            "rotate_load": 2.0,
+            "straight_hold": 5.2,
+            "wait": 0.0
+          },
+          "reference_run_s": 26.54,
+          "trajectory_s": 22.54
+        },
+        "travel_mm": 50.0,
+        "trial_id": "Z28_up_A30_W15_S36_T2_R1",
+        "writing_tilt_deg": 15.0
+      }
+    },
+    "deadline_policy": {
+      "min_z_mm": 20.0,
+      "mode": "continue_above_z"
+    },
+    "finished_at": "2026-10-10T15:15:27.578587+08:00",
+    "initial_pose_m_rad": [
+      -0.150002,
+      0.449998,
+      0.079473,
+      0.0,
+      0.26181684109166936,
+      0.0
+    ],
+    "last_pose_m_rad": [
+      -0.15,
+      0.45004500000000003,
+      0.070069,
+      0.00015707963267948965,
+      0.26181684109166936,
+      3.490658503988659e-05
+    ],
+    "motion_metrics": {
+      "XY speed": 0.14142135623745095,
+      "Z speed": 23.99084774827656,
+      "acceleration": 99.61860735749339,
+      "angular acceleration": 2.500000000001435,
+      "angular speed": 0.050000000000028695,
+      "step": 0.47981695496553123
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 1.3800000000000001,
+    "route_m_rad": [
+      [
+        -0.15,
+        0.45,
+        0.079473,
+        0.0,
+        0.26181684109166936,
+        0.0
+      ],
+      [
+        -0.15,
+        0.45,
+        0.079473,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ],
+      [
+        -0.15,
+        0.45,
+        0.07,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 3985,
+      "host_ns": 7779799332389,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-10T15:15:26.099900+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 69,
+      "max_command_duration_s": 0.016606521,
+      "max_lateness_s": 0.002852242
+    }
+  },
+  "run_label": "up",
+  "settings_source_sha256": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+  "signal": "filtered_dBxy_norm_uT",
+  "split_semantics": "constant Z over full travel",
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

@@ -1,0 +1,55 @@
+{
+  "source_runs": {
+    "+x": [
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-43-59_姿态Ry正15_第1次",
+        "run_id": "20260923T084359.358660Z-df7649"
+      },
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-55-06_姿态Ry正15_第2次",
+        "run_id": "20260923T085506.989470Z-c575e5"
+      }
+    ],
+    "+y": [
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-13-44_姿态Rx正15_Rz90_第1次",
+        "run_id": "20260923T091344.570451Z-7d1a59"
+      },
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-50-38_姿态Rx正15_Rz90_第2次",
+        "run_id": "20260923T095038.889031Z-486bc3"
+      }
+    ],
+    "-x": [
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-07-46_姿态Ry负15_Rz180_第1次",
+        "run_id": "20260923T100746.878225Z-9666d5"
+      },
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-17-06_姿态Ry负15_Rz180_第2次",
+        "run_id": "20260923T101706.533082Z-2f3488"
+      }
+    ],
+    "-y": [
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-44-18_姿态Rx负15_Rz270_第1次",
+        "run_id": "20260923T104418.483838Z-43a39c"
+      },
+      {
+        "folder": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-57-22_姿态Rx负15_Rz270_第2次",
+        "run_id": "20260923T105722.806705Z-3b670b"
+      }
+    ]
+  },
+  "raw_fields": [
+    "sensor.csv:dBx_uT",
+    "sensor.csv:dBy_uT"
+  ],
+  "join": "control.jsonl sample_seq to valid sensor.csv sample; 700 distinct samples per run/pass in command X=30–170 mm",
+  "angle": "atan2(mean of two run-level median dBy, mean of two run-level median dBx), degrees from sensor +Bx",
+  "reference": "Empirical +x group dominant +By direction (90 degrees) rotated by the commanded Rz category: 0/90/180/270 degrees",
+  "bias": "wrapped angle minus reference, positive counterclockwise in recorded Bx/By plane",
+  "position_limit": "X and Z are commands; no synchronized actual TCP for these runs",
+  "coordinate_limit": "No independent sensor-to-TCP/world orientation calibration; angular bias is not a robot heading error",
+  "interpretation_limit": "Two repeats; changing brush contact, wetting and sensor mounting may affect components; no causal attribution"
+}

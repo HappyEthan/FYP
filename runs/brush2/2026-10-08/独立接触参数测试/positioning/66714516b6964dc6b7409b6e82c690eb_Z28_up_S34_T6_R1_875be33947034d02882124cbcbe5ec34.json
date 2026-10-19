@@ -1,0 +1,93 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-08T18:00:02.142520+08:00",
+  "initial_pose_m_rad": [
+    -0.150003,
+    0.449998,
+    0.07000100000000001,
+    0.0,
+    0.26181684109166936,
+    0.0
+  ],
+  "route_m_rad": [
+    [
+      -0.15,
+      0.45,
+      0.07000100000000001,
+      0.0,
+      0.26181684109166936,
+      0.0
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07000100000000001,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ],
+    [
+      -0.15,
+      0.45,
+      0.07,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "batch_id": "66714516b6964dc6b7409b6e82c690eb",
+    "trial": {
+      "trial_id": "Z28_up_S34_T6_R1",
+      "direction": "up",
+      "command_z_mm": 28.0,
+      "rotate_start_z_mm": 34.0,
+      "rotate_s": 6.0,
+      "preload_speed_mm_s": 2.0,
+      "travel_mm": 150.0,
+      "speed_mm_s": 10.0,
+      "repeat": 1,
+      "entry_policy": "preload30_then_rotate_and_press_v1",
+      "condition_sha256": "a596539a1eb1d8f25587789ce3788b80967ea573a16bacaaa42cd9e0ab7bd2b6",
+      "prep_note": ""
+    }
+  },
+  "motion_metrics": {
+    "XY speed": 0.18027756377337975,
+    "Z speed": 0.050000000000050004,
+    "step": 0.003605551275467595,
+    "acceleration": 9.013878188668988,
+    "angular speed": 0.050000000000028695,
+    "angular acceleration": 2.500000000001435
+  },
+  "planned_duration_s": 0.66,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.150003,
+    0.449998,
+    0.07000100000000001,
+    0.0,
+    0.26181684109166936,
+    0.0
+  ],
+  "finished_at": "2026-10-08T18:00:02.921291+08:00"
+}

@@ -1,0 +1,7 @@
+{"event":"baseline_started","phase":"baseline","host_ns":7826208302366}
+{"event":"baseline_fixed","phase":"baseline","host_ns":7828212607344,"baseline_id":0,"effective_visit":0}
+{"event":"run_started","phase":"run","host_ns":7828344156315}
+{"event":"automatic_rebaseline_started","phase":"rebaseline","host_ns":7831370385989,"effective_visit":1}
+{"event":"baseline_fixed","phase":"rebaseline","host_ns":7833407554022,"baseline_id":1,"effective_visit":1}
+{"event":"run_resumed","phase":"run","host_ns":7833413089911,"baseline_id":1,"effective_visit":1}
+{"event":"lift_completed","phase":"lift","host_ns":7852969008891}

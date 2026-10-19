@@ -1,0 +1,865 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template",
+  "type": "shu",
+  "variant": "xuanzhen",
+  "style_id": "kai_teaching_rules_v1",
+  "units": "reference_width",
+  "prototype": {
+    "reference_id": "c144d7259d92d0f1af2810d3290be130bdf3679deef896600ca1b844e005ca5b",
+    "xy": [
+      [
+        -2.6538461538461537,
+        -0.38461538461538464
+      ],
+      [
+        -2.4615384615384617,
+        -0.038461538461538464
+      ],
+      [
+        -2.4615384615384617,
+        0.038461538461538464
+      ],
+      [
+        -2.269230769230769,
+        0.3076923076923077
+      ],
+      [
+        -2.269230769230769,
+        0.38461538461538464
+      ],
+      [
+        -2.1538461538461537,
+        0.46153846153846156
+      ],
+      [
+        -2.0384615384615383,
+        0.34615384615384615
+      ],
+      [
+        -1.5769230769230769,
+        0.15384615384615385
+      ],
+      [
+        -0.038461538461538464,
+        0.038461538461538464
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        14.615384615384615,
+        0.0
+      ],
+      [
+        16.153846153846153,
+        0.0
+      ]
+    ],
+    "anchors": [
+      0,
+      9,
+      10,
+      11
+    ],
+    "descriptors": [
+      {
+        "phase_id": "entry",
+        "arc_length": 3.279719352817275,
+        "chord_length": 2.681572002085132,
+        "start_heading_rad": 1.0636978224025602,
+        "end_heading_rad": -0.7853981633974483,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      },
+      {
+        "phase_id": "body",
+        "arc_length": 14.615384615384615,
+        "chord_length": 14.615384615384615,
+        "start_heading_rad": 0.0,
+        "end_heading_rad": 0.0,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      },
+      {
+        "phase_id": "exit",
+        "arc_length": 1.5384615384615383,
+        "chord_length": 1.5384615384615383,
+        "start_heading_rad": 0.0,
+        "end_heading_rad": 0.0,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      }
+    ],
+    "width_profiles": {},
+    "landmarks": []
+  },
+  "adaptation": "single_body",
+  "references": [
+    {
+      "type": "shu",
+      "variant": "xuanzhen",
+      "review_status": "unreviewed",
+      "source_sha256": "0b276b4f91fcdc8a66d089c2f3ac9c42639f29852eb43c50dd7bc6a9ca252083",
+      "xy_px": [
+        [
+          281.0,
+          518.0
+        ],
+        [
+          290.0,
+          513.0
+        ],
+        [
+          292.0,
+          513.0
+        ],
+        [
+          299.0,
+          508.0
+        ],
+        [
+          301.0,
+          508.0
+        ],
+        [
+          303.0,
+          505.0
+        ],
+        [
+          300.0,
+          502.0
+        ],
+        [
+          295.0,
+          490.0
+        ],
+        [
+          292.0,
+          450.0
+        ],
+        [
+          291.0,
+          449.0
+        ],
+        [
+          291.0,
+          69.0
+        ],
+        [
+          291.0,
+          29.0
+        ]
+      ],
+      "anchors": [
+        0,
+        9,
+        10,
+        11
+      ],
+      "landmarks": [],
+      "width_px": 26.0,
+      "width_source": "diagram_body_normal_scan_after_guide_gap_closing",
+      "width_measurement": {
+        "width_px": 26.0,
+        "valid_count": 65,
+        "total_count": 65,
+        "samples": [
+          {
+            "u": 0.0,
+            "xy_px": [
+              291.0,
+              449.0
+            ],
+            "width_px": 32.0,
+            "reason": null
+          },
+          {
+            "u": 0.015625,
+            "xy_px": [
+              291.0,
+              443.0625
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.03125,
+            "xy_px": [
+              291.0,
+              437.125
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.046875,
+            "xy_px": [
+              291.0,
+              431.1875
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.0625,
+            "xy_px": [
+              291.0,
+              425.25
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.078125,
+            "xy_px": [
+              291.0,
+              419.3125
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.09375,
+            "xy_px": [
+              291.0,
+              413.375
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.109375,
+            "xy_px": [
+              291.0,
+              407.4375
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.125,
+            "xy_px": [
+              291.0,
+              401.5
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.140625,
+            "xy_px": [
+              291.0,
+              395.5625
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.15625,
+            "xy_px": [
+              291.0,
+              389.625
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.171875,
+            "xy_px": [
+              291.0,
+              383.6875
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.1875,
+            "xy_px": [
+              291.0,
+              377.75
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.203125,
+            "xy_px": [
+              291.0,
+              371.8125
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.21875,
+            "xy_px": [
+              291.0,
+              365.875
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.234375,
+            "xy_px": [
+              291.0,
+              359.9375
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.25,
+            "xy_px": [
+              291.0,
+              354.0
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.265625,
+            "xy_px": [
+              291.0,
+              348.0625
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.28125,
+            "xy_px": [
+              291.0,
+              342.125
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.296875,
+            "xy_px": [
+              291.0,
+              336.1875
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.3125,
+            "xy_px": [
+              291.0,
+              330.25
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.328125,
+            "xy_px": [
+              291.0,
+              324.3125
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.34375,
+            "xy_px": [
+              291.0,
+              318.375
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.359375,
+            "xy_px": [
+              291.0,
+              312.4375
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.375,
+            "xy_px": [
+              291.0,
+              306.5
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.390625,
+            "xy_px": [
+              291.0,
+              300.5625
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.40625,
+            "xy_px": [
+              291.0,
+              294.625
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.421875,
+            "xy_px": [
+              291.0,
+              288.6875
+            ],
+            "width_px": 22.0,
+            "reason": null
+          },
+          {
+            "u": 0.4375,
+            "xy_px": [
+              291.0,
+              282.75
+            ],
+            "width_px": 22.0,
+            "reason": null
+          },
+          {
+            "u": 0.453125,
+            "xy_px": [
+              291.0,
+              276.8125
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.46875,
+            "xy_px": [
+              291.0,
+              270.875
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.484375,
+            "xy_px": [
+              291.0,
+              264.9375
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.5,
+            "xy_px": [
+              291.0,
+              259.0
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.515625,
+            "xy_px": [
+              291.0,
+              253.0625
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.53125,
+            "xy_px": [
+              291.0,
+              247.125
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.546875,
+            "xy_px": [
+              291.0,
+              241.1875
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.5625,
+            "xy_px": [
+              291.0,
+              235.25
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.578125,
+            "xy_px": [
+              291.0,
+              229.3125
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.59375,
+            "xy_px": [
+              291.0,
+              223.375
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.609375,
+            "xy_px": [
+              291.0,
+              217.4375
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.625,
+            "xy_px": [
+              291.0,
+              211.5
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.640625,
+            "xy_px": [
+              291.0,
+              205.5625
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.65625,
+            "xy_px": [
+              291.0,
+              199.625
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.671875,
+            "xy_px": [
+              291.0,
+              193.6875
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.6875,
+            "xy_px": [
+              291.0,
+              187.75
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.703125,
+            "xy_px": [
+              291.0,
+              181.8125
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.71875,
+            "xy_px": [
+              291.0,
+              175.875
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.734375,
+            "xy_px": [
+              291.0,
+              169.9375
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.75,
+            "xy_px": [
+              291.0,
+              164.0
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.765625,
+            "xy_px": [
+              291.0,
+              158.0625
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.78125,
+            "xy_px": [
+              291.0,
+              152.125
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.796875,
+            "xy_px": [
+              291.0,
+              146.1875
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.8125,
+            "xy_px": [
+              291.0,
+              140.25
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.828125,
+            "xy_px": [
+              291.0,
+              134.3125
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.84375,
+            "xy_px": [
+              291.0,
+              128.375
+            ],
+            "width_px": 28.0,
+            "reason": null
+          },
+          {
+            "u": 0.859375,
+            "xy_px": [
+              291.0,
+              122.4375
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.875,
+            "xy_px": [
+              291.0,
+              116.5
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 0.890625,
+            "xy_px": [
+              291.0,
+              110.5625
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 0.90625,
+            "xy_px": [
+              291.0,
+              104.625
+            ],
+            "width_px": 30.0,
+            "reason": null
+          },
+          {
+            "u": 0.921875,
+            "xy_px": [
+              291.0,
+              98.6875
+            ],
+            "width_px": 30.0,
+            "reason": null
+          },
+          {
+            "u": 0.9375,
+            "xy_px": [
+              291.0,
+              92.75
+            ],
+            "width_px": 30.0,
+            "reason": null
+          },
+          {
+            "u": 0.953125,
+            "xy_px": [
+              291.0,
+              86.8125
+            ],
+            "width_px": 30.0,
+            "reason": null
+          },
+          {
+            "u": 0.96875,
+            "xy_px": [
+              291.0,
+              80.875
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 0.984375,
+            "xy_px": [
+              291.0,
+              74.9375
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 1.0,
+            "xy_px": [
+              291.0,
+              69.0
+            ],
+            "width_px": 30.0,
+            "reason": null
+          }
+        ],
+        "method": "normal_scan_candidate_with_annotated_overlap_exclusion",
+        "units": "original_image_px"
+      },
+      "image_kind": "teaching_reconstruction",
+      "source_kind": "teaching_rule_reconstruction",
+      "width_definition": "diagram_ink_width_normalization_candidate_not_contact_width_or_force",
+      "reference_id": "c144d7259d92d0f1af2810d3290be130bdf3679deef896600ca1b844e005ca5b"
+    }
+  ],
+  "limits": {
+    "body_aspect_range": [
+      4.384615384615384,
+      43.84615384615385
+    ],
+    "max_bend_widths": 2.0
+  },
+  "observed": {
+    "body_aspect_range": [
+      14.615384615384615,
+      14.615384615384615
+    ]
+  },
+  "evidence": {
+    "level": "teaching_rule_candidate",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "template_id": "c73eea3a3083436cd582a11b7ca56827b9291bd6d826ba6f17b85e1bec81d8c2",
+  "guide_trace": {
+    "schema_version": 1,
+    "id": "shu_xuanzhen",
+    "name": "悬针竖",
+    "review_status": "unreviewed",
+    "coordinate_source": "ordered_white_guide_trace_simplified_per_phase",
+    "source_sha256": "0b276b4f91fcdc8a66d089c2f3ac9c42639f29852eb43c50dd7bc6a9ca252083",
+    "source_url": "https://5b0988e595225.cdn.sohucs.com/images/20190127/7ee58ae3897f4dbdbc59a228e2042ad4.jpeg",
+    "article_url": "https://www.sohu.com/a/291748478_183308",
+    "raw_trace_sha256": "460b68d9dd5347032b54b87a7dae7139ff43720776f7a208ee5bf23f9e7b26e7",
+    "image_size_px": [
+      600,
+      620
+    ],
+    "source_crop_image_px": [
+      265.0,
+      89.0,
+      317.0,
+      603.0
+    ],
+    "source_points_image_px": [
+      [
+        281.0,
+        101.0
+      ],
+      [
+        290.0,
+        106.0
+      ],
+      [
+        292.0,
+        106.0
+      ],
+      [
+        299.0,
+        111.0
+      ],
+      [
+        301.0,
+        111.0
+      ],
+      [
+        303.0,
+        114.0
+      ],
+      [
+        300.0,
+        117.0
+      ],
+      [
+        295.0,
+        129.0
+      ],
+      [
+        292.0,
+        169.0
+      ],
+      [
+        291.0,
+        170.0
+      ],
+      [
+        291.0,
+        550.0
+      ],
+      [
+        291.0,
+        590.0
+      ]
+    ],
+    "raw_point_count": 500,
+    "simplify_tolerance_px": 0.75,
+    "max_raw_point_deviation_px": 0.7478994824163424,
+    "stage_boundary_basis": "manual_interpretation_not_measured_phase",
+    "width_normalization": {
+      "dark_threshold": 100,
+      "close_filter_size_px": 9,
+      "method": "body_normal_scan_median_on_gap_closed_diagram",
+      "physical_scale_known": false
+    },
+    "writing_hint": "尖起斜切右下轻按，左下移正后中锋直下，下段渐提收尖；白线止于墨迹尖端前约8像素，保持可见端点不外推。"
+  }
+}

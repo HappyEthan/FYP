@@ -1,0 +1,29 @@
+{
+  "id": "pie",
+  "name": "斜撇",
+  "plan": "pie/strokeplan.npz",
+  "writing_duration_s": 19.02,
+  "measurement_phase_duration_s": 19.04,
+  "full_motion_duration_s": 41.160000000000004,
+  "bbox_mm": [
+    99.98005076267731,
+    94.14634146341464
+  ],
+  "scale_relative_to_v1": 0.7142857142857143,
+  "length_mm": 155.17062422441205,
+  "max_writing_xy_speed_mm_s": 10.000000000002775,
+  "target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "orientation_smoothing_mm": 6.0,
+  "compiled_limits": {
+    "XY speed": 79.99417983566859,
+    "Z speed": 59.997440049151805,
+    "step": 1.5998835967133718,
+    "acceleration": 130.9944458692192,
+    "angular speed": 19.938019555688573,
+    "angular acceleration": 39.40676674756658
+  },
+  "source_target_sha256": "c9db2e13fd777ad5d883632ea5d3c4c2bfd76a5c584a2f75365ab0ecc08b24d4"
+}

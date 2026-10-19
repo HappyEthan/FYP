@@ -1,0 +1,39 @@
+{
+  "baseline_pose": "airborne_Ry15",
+  "control": {
+    "enabled": false,
+    "mode": "identification"
+  },
+  "depth_semantics": "nominal positive-down command depth; not bristle indentation",
+  "identification": {
+    "angular_accel_deg_s2": 20.0,
+    "angular_speed_deg_s": 10.0,
+    "delta_mm": 0.5,
+    "depth_max_mm": 16.0,
+    "depth_min_mm": 4.0,
+    "depth_mm": 12.5,
+    "entry_contact_z_mm": 36.0,
+    "entry_ry_deg": 30.0,
+    "hold_s": 4.0,
+    "load_s": 3.0,
+    "order": "press-first",
+    "post_lift_hold_s": 2.0,
+    "rotate_s": 3.0,
+    "slide_settle_s": 1.0,
+    "speed_mm_s": 10.0,
+    "transition_s": 0.4,
+    "travel_mm": 450.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "magnetic_target": null,
+  "name": "z_identification",
+  "path": {
+    "axis": "+x",
+    "kind": "z_identification"
+  },
+  "run_label": "压深12p5mm_扰动0p5mm_先下压",
+  "settings_source_sha256": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+  "signal": "filtered_dBxy_norm_uT",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

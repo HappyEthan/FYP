@@ -1,0 +1,92 @@
+{
+  "signal": "a_control_uT: norm of EMA-filtered baseline-subtracted Bxy, alpha=0.3; not force in N",
+  "parameters": "up (+Y), Z28 mm, 30 to 15 degrees at fixed Z in 2 s, reverse compensation 5 mm, travel 50 mm, speed 10 mm/s",
+  "comparison_window_mm": [
+    10,
+    40
+  ],
+  "method": "Compare the same commanded path positions without per-run normalization. Sample standard deviation uses ddof=1. The independent experimental repeats are n=3, not the number of time samples.",
+  "runs": [
+    {
+      "repeat": 1,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-41-35_定高_up_Z28到28_速度10_第1次",
+      "sources": {
+        "control.jsonl": "10ac9e7cd8c2d5cff3ae1988d14929c5638ea616eb59b4f2dbff51a7cabf6d57",
+        "sensor.csv": "29ed035744cf65dccac0fd3425c40d38563f9f9b4a0996b648aeab02bc0411c5",
+        "actual_tcp.csv": "a690eb16ed972d68a2b3b8193485425da59390d51c39aae1c1b918e545e56b16",
+        "manifest.json": "53329ecb14f0c733515c2929da53770a530213044e4f24d61e414b512124e3fd"
+      },
+      "middle_frames": 151,
+      "middle_mean_uT": 239.9781254035528,
+      "middle_median_uT": 239.6886294197546,
+      "middle_sample_std_uT": 12.046249150373534,
+      "rotate_final_0p3s_mean_uT": 125.65334492422582,
+      "tail_40_to_50_mean_uT": 258.3000371970891,
+      "tail_40_to_50_sample_std_uT": 1.985230852568485,
+      "tail_40_to_50_cv_pct": 0.7685755194273186,
+      "actual_middle_samples": 29,
+      "actual_middle_z_mean_mm": 28.00134482758621,
+      "actual_middle_z_min_mm": 27.93,
+      "actual_middle_z_max_mm": 28.083,
+      "max_lateness_ms": 14.556126,
+      "sensor_samples": 6017,
+      "invalid_sensor_samples": 0
+    },
+    {
+      "repeat": 2,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-42-51_定高_up_Z28到28_速度10_第2次",
+      "sources": {
+        "control.jsonl": "0d04bd6665e56a355da8133837413455416bed71e40f23a73f1c5e905b70c7b4",
+        "sensor.csv": "93dd3630c7606b768aa567b7fc13699bb3b854216e16555880e34f744b932ede",
+        "actual_tcp.csv": "b602809beeecfb219eb5443120ddd4816931e83f763a8cc9b322bd244fdbbc7d",
+        "manifest.json": "efc0e9f1a4e74cf20925ea0cdc57a956407ce059bb36f03394fbfad324b2f40f"
+      },
+      "middle_frames": 151,
+      "middle_mean_uT": 269.0511822739992,
+      "middle_median_uT": 270.6263988192717,
+      "middle_sample_std_uT": 12.445933788195322,
+      "rotate_final_0p3s_mean_uT": 147.72145384933987,
+      "tail_40_to_50_mean_uT": 285.2529596775448,
+      "tail_40_to_50_sample_std_uT": 2.781377091050727,
+      "tail_40_to_50_cv_pct": 0.97505634794985,
+      "actual_middle_samples": 29,
+      "actual_middle_z_mean_mm": 27.999931034482756,
+      "actual_middle_z_min_mm": 27.94,
+      "actual_middle_z_max_mm": 28.077,
+      "max_lateness_ms": 15.460372999999999,
+      "sensor_samples": 6026,
+      "invalid_sensor_samples": 0
+    },
+    {
+      "repeat": 3,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-43-32_定高_up_Z28到28_速度10_第3次",
+      "sources": {
+        "control.jsonl": "8821fe05ba5af58336a21312601676c040c4b45263eb9ee8210fa9147d808e2c",
+        "sensor.csv": "239e3dd8da624b1fe2e82cf11685f84ab28259844dfb5473764e0bbc50384d65",
+        "actual_tcp.csv": "15363d44a10868eb4db42ee94eea55c44852f0c3fbbb8c17d5e16b82ff3204ce",
+        "manifest.json": "eb9fcce19ae60c940a1dbd986292788a1ca28fe9ab380db6ca9f9c30c07b5089"
+      },
+      "middle_frames": 151,
+      "middle_mean_uT": 299.222946511974,
+      "middle_median_uT": 299.3358087236953,
+      "middle_sample_std_uT": 12.881144730817516,
+      "rotate_final_0p3s_mean_uT": 163.8825364817353,
+      "tail_40_to_50_mean_uT": 318.11094131895425,
+      "tail_40_to_50_sample_std_uT": 2.838062253430191,
+      "tail_40_to_50_cv_pct": 0.8921611566276197,
+      "actual_middle_samples": 30,
+      "actual_middle_z_mean_mm": 28.000899999999998,
+      "actual_middle_z_min_mm": 27.933,
+      "actual_middle_z_max_mm": 28.078,
+      "max_lateness_ms": 29.070455,
+      "sensor_samples": 6013,
+      "invalid_sensor_samples": 0
+    }
+  ],
+  "between_run_mean_uT": 269.4174180631753,
+  "between_run_sample_std_uT": 29.624108485018787,
+  "between_run_cv_pct": 10.995617394741817,
+  "third_vs_first_increase_pct": 24.687592258166745,
+  "range_over_grand_mean_pct": 21.98997434328056,
+  "interpretation": "Absolute response rises across repeats despite matching commanded parameters and nearly equal average measured TCP Z. Within-run tail variation is small. These three runs cannot establish the physical cause or force accuracy."
+}

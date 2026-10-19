@@ -1,0 +1,269 @@
+[
+  {
+    "end_t_s": 3.02,
+    "end_tick": 151,
+    "id": "rotate_air",
+    "kind": "preparation",
+    "start_t_s": 0.02,
+    "start_tick": 1
+  },
+  {
+    "end_t_s": 20.66,
+    "end_tick": 1033,
+    "id": "lower_tilted",
+    "kind": "preparation",
+    "start_t_s": 3.02,
+    "start_tick": 151
+  },
+  {
+    "end_t_s": 23.66,
+    "end_tick": 1183,
+    "id": "rotate_contact",
+    "kind": "preparation",
+    "start_t_s": 20.66,
+    "start_tick": 1033
+  },
+  {
+    "end_t_s": 24.66,
+    "end_tick": 1233,
+    "id": "slide_start",
+    "kind": "preparation",
+    "start_t_s": 23.66,
+    "start_tick": 1183
+  },
+  {
+    "end_t_s": 27.66,
+    "end_tick": 1383,
+    "id": "load_workpoint",
+    "kind": "preparation",
+    "start_t_s": 24.66,
+    "start_tick": 1233
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 31.66,
+    "end_tick": 1583,
+    "id": "id_hold_00",
+    "kind": "plateau",
+    "offset_mm": 0.0,
+    "plateau_index": 0,
+    "start_t_s": 27.66,
+    "start_tick": 1383
+  },
+  {
+    "depth_mm": 6.0,
+    "end_t_s": 32.06,
+    "end_tick": 1603,
+    "from_depth_mm": 5.0,
+    "id": "id_ramp_01",
+    "kind": "transition",
+    "plateau_index": 1,
+    "start_t_s": 31.66,
+    "start_tick": 1583
+  },
+  {
+    "depth_mm": 6.0,
+    "end_t_s": 36.06,
+    "end_tick": 1803,
+    "id": "id_hold_01",
+    "kind": "plateau",
+    "offset_mm": 1.0,
+    "plateau_index": 1,
+    "start_t_s": 32.06,
+    "start_tick": 1603
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 36.46,
+    "end_tick": 1823,
+    "from_depth_mm": 6.0,
+    "id": "id_ramp_02",
+    "kind": "transition",
+    "plateau_index": 2,
+    "start_t_s": 36.06,
+    "start_tick": 1803
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 40.46,
+    "end_tick": 2023,
+    "id": "id_hold_02",
+    "kind": "plateau",
+    "offset_mm": 0.0,
+    "plateau_index": 2,
+    "start_t_s": 36.46,
+    "start_tick": 1823
+  },
+  {
+    "depth_mm": 4.0,
+    "end_t_s": 40.86,
+    "end_tick": 2043,
+    "from_depth_mm": 5.0,
+    "id": "id_ramp_03",
+    "kind": "transition",
+    "plateau_index": 3,
+    "start_t_s": 40.46,
+    "start_tick": 2023
+  },
+  {
+    "depth_mm": 4.0,
+    "end_t_s": 44.86,
+    "end_tick": 2243,
+    "id": "id_hold_03",
+    "kind": "plateau",
+    "offset_mm": -1.0,
+    "plateau_index": 3,
+    "start_t_s": 40.86,
+    "start_tick": 2043
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 45.26,
+    "end_tick": 2263,
+    "from_depth_mm": 4.0,
+    "id": "id_ramp_04",
+    "kind": "transition",
+    "plateau_index": 4,
+    "start_t_s": 44.86,
+    "start_tick": 2243
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 49.26,
+    "end_tick": 2463,
+    "id": "id_hold_04",
+    "kind": "plateau",
+    "offset_mm": 0.0,
+    "plateau_index": 4,
+    "start_t_s": 45.26,
+    "start_tick": 2263
+  },
+  {
+    "depth_mm": 5.5,
+    "end_t_s": 49.660000000000004,
+    "end_tick": 2483,
+    "from_depth_mm": 5.0,
+    "id": "id_ramp_05",
+    "kind": "transition",
+    "plateau_index": 5,
+    "start_t_s": 49.26,
+    "start_tick": 2463
+  },
+  {
+    "depth_mm": 5.5,
+    "end_t_s": 53.660000000000004,
+    "end_tick": 2683,
+    "id": "id_hold_05",
+    "kind": "plateau",
+    "offset_mm": 0.5,
+    "plateau_index": 5,
+    "start_t_s": 49.660000000000004,
+    "start_tick": 2483
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 54.06,
+    "end_tick": 2703,
+    "from_depth_mm": 5.5,
+    "id": "id_ramp_06",
+    "kind": "transition",
+    "plateau_index": 6,
+    "start_t_s": 53.660000000000004,
+    "start_tick": 2683
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 58.06,
+    "end_tick": 2903,
+    "id": "id_hold_06",
+    "kind": "plateau",
+    "offset_mm": 0.0,
+    "plateau_index": 6,
+    "start_t_s": 54.06,
+    "start_tick": 2703
+  },
+  {
+    "depth_mm": 4.5,
+    "end_t_s": 58.46,
+    "end_tick": 2923,
+    "from_depth_mm": 5.0,
+    "id": "id_ramp_07",
+    "kind": "transition",
+    "plateau_index": 7,
+    "start_t_s": 58.06,
+    "start_tick": 2903
+  },
+  {
+    "depth_mm": 4.5,
+    "end_t_s": 62.46,
+    "end_tick": 3123,
+    "id": "id_hold_07",
+    "kind": "plateau",
+    "offset_mm": -0.5,
+    "plateau_index": 7,
+    "start_t_s": 58.46,
+    "start_tick": 2923
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 62.86,
+    "end_tick": 3143,
+    "from_depth_mm": 4.5,
+    "id": "id_ramp_08",
+    "kind": "transition",
+    "plateau_index": 8,
+    "start_t_s": 62.46,
+    "start_tick": 3123
+  },
+  {
+    "depth_mm": 5.0,
+    "end_t_s": 66.86,
+    "end_tick": 3343,
+    "id": "id_hold_08",
+    "kind": "plateau",
+    "offset_mm": 0.0,
+    "plateau_index": 8,
+    "start_t_s": 62.86,
+    "start_tick": 3143
+  },
+  {
+    "end_t_s": 68.86,
+    "end_tick": 3443,
+    "id": "slide_finish",
+    "kind": "preparation",
+    "start_t_s": 66.86,
+    "start_tick": 3343
+  },
+  {
+    "end_t_s": 86.68,
+    "end_tick": 4334,
+    "id": "lift",
+    "kind": "preparation",
+    "start_t_s": 68.86,
+    "start_tick": 3443
+  },
+  {
+    "end_t_s": 88.68,
+    "end_tick": 4434,
+    "id": "post_lift_hold",
+    "kind": "airborne",
+    "start_t_s": 86.68,
+    "start_tick": 4334
+  },
+  {
+    "end_t_s": 130.88,
+    "end_tick": 6544,
+    "id": "return_high",
+    "kind": "preparation",
+    "start_t_s": 88.68,
+    "start_tick": 4434
+  },
+  {
+    "end_t_s": 131.08,
+    "end_tick": 6554,
+    "id": "hold",
+    "kind": "airborne",
+    "start_t_s": 130.88,
+    "start_tick": 6544
+  }
+]

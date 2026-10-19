@@ -1,0 +1,55 @@
+{
+  "change": "Automatically position at settings.json wait pose before baseline; preserve wait-pose guard and original StrokePlan targets.",
+  "robot_connected": false,
+  "execution_regressions": {
+    "passed": 149,
+    "failed": 0,
+    "modules": [
+      "tests/test_strokeplan_experiment.py",
+      "tests/test_four_direction_sweep.py",
+      "tests/test_strokeplan_operator_scripts.py",
+      "tests/test_strokeplan_rotational_entry.py",
+      "tests/test_directional_character.py",
+      "tests/test_experiment_engine.py"
+    ]
+  },
+  "full_suite_in_sandbox": {
+    "command": "PYTHONPATH=src:. MPLCONFIGDIR=/tmp/fyp-strokeplan-matplotlib python -m pytest -q --tb=short",
+    "passed": 1246,
+    "failed": 20,
+    "skipped": 8,
+    "failure_causes": ["local socket creation or binding denied", "Chrome exited before initialization"],
+    "failed_nodes": [
+      "tests/test_character_library_browser.py::test_character_library_defaults_to_compositions_in_practice_order_without_removing_history",
+      "tests/test_exhibition_api.py::test_http_server_serves_static_index_and_json_status",
+      "tests/test_exhibition_api.py::test_sensor_websocket_handshake_returns_status_frame",
+      "tests/test_experiment_integration.py::test_ipc_cli_returns_only_after_end_wait",
+      "tests/test_experiment_ipc.py::test_ipc_exposes_status_but_not_arbitrary_motion",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_oversized_message",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_bare_or_invalid_return_before_service_submission[case0]",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_bare_or_invalid_return_before_service_submission[case1]",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_bare_or_invalid_return_before_service_submission[case2]",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_bare_or_invalid_return_before_service_submission[case3]",
+      "tests/test_experiment_ipc.py::test_ipc_rejects_bare_or_invalid_return_before_service_submission[case4]",
+      "tests/test_guide_stroke_browser.py::test_import_replaces_latest_heng_cards_and_preserves_common_preview_scale",
+      "tests/test_guide_stroke_browser.py::test_outline_guide_explains_that_its_width_is_a_manual_normalization_hint",
+      "tests/test_stroke_template_browser.py::test_report_inserts_on_existing_path_and_exports_refittable_edits",
+      "tests/test_stroke_template_catalog_browser.py::test_catalog_search_versions_and_links_work_offline",
+      "tests/test_teaching_stroke_browser.py::test_new_library_filter_and_inspection_export_form_a_reusable_recipe",
+      "tests/test_template_composition_browser.py::test_latest_yong_opens_as_template_composition_with_layout_toggle_and_source_links",
+      "tests/test_yong_quick_browser.py::test_local_drag_undo_and_direct_exports_preserve_the_other_four_strokes",
+      "tests/test_yong_quick_browser.py::test_selected_stroke_wins_at_a_crossing",
+      "tests/test_yong_quick_browser.py::test_advanced_yong_edits_keep_named_features_on_the_same_points"
+    ]
+  },
+  "failed_test_recheck_outside_sandbox": {
+    "command": "PYTHONPATH=src:. MPLCONFIGDIR=/tmp/fyp-strokeplan-matplotlib python -m pytest --lf -q --tb=short",
+    "passed": 20,
+    "failed": 0,
+    "deselected": 10
+  },
+  "heng_cli_dry_run": "passed without connecting hardware or allocating an experiment run",
+  "docs_layout": "passed",
+  "git_diff_check": "passed",
+  "original_targets_and_compiled_plans": "unchanged"
+}

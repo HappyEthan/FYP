@@ -1,0 +1,31 @@
+{
+  "id": "heng",
+  "name": "长横",
+  "time_scale": 3,
+  "source_plan": "runs/brush2/plans/template_four_strokes_100_240_zhong180_v1/heng/strokeplan.npz",
+  "source_sha256": "f2acc4b21ea339ffa9fe5b05c89221658071f3bfe52fb991bde4286dabdf3142",
+  "source_peak_angular_acceleration_deg_s2": 82.88084852939622,
+  "writing_duration_s": 127.38,
+  "full_motion_duration_s": 149.64000000000001,
+  "target_max_xy_speed_mm_s": 3.333333333334742,
+  "compiled_limits": {
+    "XY speed": 79.87886591748327,
+    "Z speed": 59.997440049151805,
+    "step": 1.5975773183496653,
+    "acceleration": 98.8367304458111,
+    "angular speed": 19.821834483860194,
+    "angular acceleration": 29.908299561388585
+  },
+  "compiled_xyz_min_mm": [
+    -370.0,
+    490.3187955145116,
+    28.46363623880116
+  ],
+  "compiled_xyz_max_mm": [
+    -170.01666824478716,
+    509.6837839767375,
+    130.0
+  ],
+  "preserved_arrays_exactly": true,
+  "plan": "heng/strokeplan.npz"
+}

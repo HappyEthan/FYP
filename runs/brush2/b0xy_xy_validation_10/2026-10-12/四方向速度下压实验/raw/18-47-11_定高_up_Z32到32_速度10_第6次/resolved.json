@@ -1,0 +1,262 @@
+{
+  "baseline_pose": "initial wait, then airborne directional writing pose",
+  "baseline_window_policy": "latest complete baseline_window_s, including boundary sample",
+  "baseline_writing_rpy_rad": [
+    -0.2617993877991494,
+    1.5848095757158825e-17,
+    -2.086441388434169e-18
+  ],
+  "batch_id": "33add64d-4a2f-46e7-8863-908681e0cf67",
+  "control": {
+    "enabled": false,
+    "mode": "identification"
+  },
+  "depth_semantics": "nominal positive-down command depth; not bristle indentation",
+  "identification": {
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "angular_accel_deg_s2": 40.0,
+    "angular_speed_deg_s": 20.0,
+    "direction": "up",
+    "end_z_mm": 32.0,
+    "entry_contact_z_mm": 32.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "four-direction-hold",
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": false,
+    "rotate_s": 2.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "speed_mm_s": 10.0,
+    "start_z_mm": 32.0,
+    "transfer_speed_mm_s": 80.0,
+    "transit_accel_mm_s2": 100.0,
+    "travel_mm": 50.0,
+    "writing_tilt_deg": 15.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "magnetic_target": null,
+  "name": "four_direction_sweep",
+  "path": {
+    "axis": "up",
+    "kind": "four_direction_sweep"
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "batch_id": "33add64d-4a2f-46e7-8863-908681e0cf67",
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup": {
+        "approach_speed_mm_s": 13.0,
+        "baseline_max_drift_uT_s": 5.0,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_min_samples": 400,
+        "baseline_timeout_s": 5.0,
+        "baseline_window_s": 2.0,
+        "contact_z_mm": 40.0,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        },
+        "gripper_force": 30,
+        "gripper_speed": 30,
+        "gripper_width_mm": 14.0,
+        "installation_id": "brush2-z-ladder",
+        "max_accel_mm_s2": 200.0,
+        "max_depth_mm": 20.0,
+        "max_step_mm": 2.0,
+        "max_tick_lateness_s": 0.1,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "pose_tolerance_mm": 0.5,
+        "return_speed_mm_s": 80.0,
+        "sensor_max_age_s": 0.1,
+        "sensor_mount_id": "brush2-mount",
+        "stop_timeout_s": 10.0,
+        "tcp_name": "TCP_brush",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "ucs_name": "Base",
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "verified": true,
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "wait_z_mm": 70.0,
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ]
+      },
+      "trial_count": 1,
+      "trial_index": 1
+    },
+    "deadline_policy": null,
+    "finished_at": "2026-10-12T18:47:11.458529+08:00",
+    "initial_pose_m_rad": [
+      -0.15,
+      0.500003,
+      0.07001,
+      -0.2617819345066295,
+      1.7453292519943296e-05,
+      -1.7453292519943296e-05
+    ],
+    "last_pose_m_rad": [
+      -0.150028,
+      0.44999700000000004,
+      0.069998,
+      0.0,
+      0.2617819345066295,
+      8.726646259971648e-05
+    ],
+    "motion_metrics": {
+      "XY speed": 55.14527901243904,
+      "Z speed": 0.25000000000025,
+      "acceleration": 99.85182029464967,
+      "angular acceleration": 30.60638464355421,
+      "angular speed": 19.880750106797908,
+      "step": 1.1029055802487808
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 4.340000000000001,
+    "route_m_rad": [
+      [
+        -0.15,
+        0.45,
+        0.07001,
+        -0.2617819345066295,
+        1.7453292519943296e-05,
+        -1.7453292519943296e-05
+      ],
+      [
+        -0.15,
+        0.45,
+        0.07001,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ],
+      [
+        -0.15,
+        0.45,
+        0.07,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 4101,
+      "host_ns": 3965986452717,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-12T18:47:07.016623+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 217,
+      "max_command_duration_s": 0.008415298,
+      "max_lateness_s": 0.010288653
+    }
+  },
+  "run_label": "up",
+  "sensor_reboot": {
+    "ack_host_ns": 3960826394770,
+    "batch_id": "33add64d-4a2f-46e7-8863-908681e0cf67",
+    "command": "REBOOT",
+    "completed_host_ns": 3961542935523,
+    "finished_at": "2026-10-12T18:47:07.016327+08:00",
+    "first_frame_sensor_t_us": 423123,
+    "method": "esp32_software_restart",
+    "port": "/dev/ttyACM0",
+    "ready_host_ns": 3961532813791,
+    "reconnect_count": 0,
+    "record_path": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/sensor_reboots/33add64d-4a2f-46e7-8863-908681e0cf67_1_bc3608250b474728a0280d61904a138d.json",
+    "requested_host_ns": 3960816257909,
+    "started_at": "2026-10-12T18:47:06.289529+08:00",
+    "status": "completed",
+    "trial_count": 1,
+    "trial_index": 1
+  },
+  "settings_source_sha256": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+  "signal": "filtered_dBxy_norm_uT",
+  "split_semantics": "constant Z over full travel",
+  "timeline_policy": "sequential_20ms",
+  "trial_count": 1,
+  "trial_index": 1,
+  "version": 1,
+  "wetting": "manual_before_run"
+}

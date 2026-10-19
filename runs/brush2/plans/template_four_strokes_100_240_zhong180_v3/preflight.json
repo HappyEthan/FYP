@@ -1,0 +1,142 @@
+{
+  "validation": "V3 reload, hard writing-duration assertion, full directional-executor preflight; no hardware",
+  "max_writing_duration_s": 20.0,
+  "dt_s": 0.02,
+  "duration_definition": "XY writing phase; entry, loading, lift, return and baseline are additional",
+  "execution_context": "runs/brush2/plans/11_中字底横延长30mm_实测第9次",
+  "execution_context_sha256": {
+    "feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+    "settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff"
+  },
+  "reference_character": "runs/brush2/plans/11_中字底横延长30mm_实测第9次/character.npz",
+  "reference_sha256": "be7fe5fca2998c82df0b03524ed4a7e19d3fff6e43a44fd47a3d0d2321ec2265",
+  "reference_writing_durations_s": [
+    8.02,
+    20.32,
+    11.42,
+    18.94
+  ],
+  "table_assumption": "Historical +X, 10 mm/s, fixed Ry15 table reused for other directions, slower local motion and tilt azimuths; unvalidated experimentally.",
+  "coordinate_frame": "paper; drawing right +X, drawing up +Y",
+  "magnetic_intent": "Same 100..240 uT geometric levels and normalized-arclength knots as v1; no physical width calibration",
+  "executor_limits_changed": false,
+  "strokes": [
+    {
+      "id": "heng",
+      "name": "长横",
+      "plan": "heng/strokeplan.npz",
+      "writing_duration_s": 18.38,
+      "measurement_phase_duration_s": 18.400000000000002,
+      "full_motion_duration_s": 40.38,
+      "bbox_mm": [
+        109.97810837953327,
+        17.760909780620437
+      ],
+      "scale_relative_to_v1": 0.9166666666666666,
+      "length_mm": 126.75392623850048,
+      "max_writing_xy_speed_mm_s": 10.000000000001993,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "orientation_smoothing_mm": 5.0,
+      "compiled_limits": {
+        "XY speed": 79.89088192521353,
+        "Z speed": 59.997440049151805,
+        "step": 1.5978176385042708,
+        "acceleration": 184.76335835332532,
+        "angular speed": 19.940625923230808,
+        "angular acceleration": 36.44863506003745
+      },
+      "source_target_sha256": "f2acc4b21ea339ffa9fe5b05c89221658071f3bfe52fb991bde4286dabdf3142"
+    },
+    {
+      "id": "shu",
+      "name": "悬针竖",
+      "plan": "shu/strokeplan.npz",
+      "writing_duration_s": 19.44,
+      "measurement_phase_duration_s": 19.46,
+      "full_motion_duration_s": 42.52,
+      "bbox_mm": [
+        7.6323450807711595,
+        170.0
+      ],
+      "scale_relative_to_v1": 0.9444444444444444,
+      "length_mm": 175.59103938535145,
+      "max_writing_xy_speed_mm_s": 10.000000000001888,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "orientation_smoothing_mm": 5.0,
+      "compiled_limits": {
+        "XY speed": 79.90634092374653,
+        "Z speed": 59.997440049151805,
+        "step": 1.5981268184749307,
+        "acceleration": 125.47352140107267,
+        "angular speed": 19.826388583969646,
+        "angular acceleration": 32.122579739770124
+      },
+      "source_target_sha256": "e4007467d1e71ae42953f6af4f2f49668375200b775727de9ab3b5e6f6a1e104"
+    },
+    {
+      "id": "pie",
+      "name": "斜撇",
+      "plan": "pie/strokeplan.npz",
+      "writing_duration_s": 19.02,
+      "measurement_phase_duration_s": 19.04,
+      "full_motion_duration_s": 41.160000000000004,
+      "bbox_mm": [
+        99.98005076267731,
+        94.14634146341464
+      ],
+      "scale_relative_to_v1": 0.7142857142857143,
+      "length_mm": 155.17062422441205,
+      "max_writing_xy_speed_mm_s": 10.000000000002775,
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "orientation_smoothing_mm": 6.0,
+      "compiled_limits": {
+        "XY speed": 79.99417983566859,
+        "Z speed": 59.997440049151805,
+        "step": 1.5998835967133718,
+        "acceleration": 130.9944458692192,
+        "angular speed": 19.938019555688573,
+        "angular acceleration": 39.40676674756658
+      },
+      "source_target_sha256": "c9db2e13fd777ad5d883632ea5d3c4c2bfd76a5c584a2f75365ab0ecc08b24d4"
+    },
+    {
+      "id": "na",
+      "name": "斜捺",
+      "plan": "na/strokeplan.npz",
+      "writing_duration_s": 19.2,
+      "measurement_phase_duration_s": 19.22,
+      "full_motion_duration_s": 41.92,
+      "bbox_mm": [
+        140.0,
+        64.58852867830424
+      ],
+      "scale_relative_to_v1": 1.0,
+      "length_mm": 161.67326279266467,
+      "max_writing_xy_speed_mm_s": 10.000000000003276,
+      "target_range_uT": [
+        100.0,
+        240.0
+      ],
+      "orientation_smoothing_mm": 6.0,
+      "compiled_limits": {
+        "XY speed": 79.9749858335679,
+        "Z speed": 59.997440049151805,
+        "step": 1.599499716671358,
+        "acceleration": 167.49402378034006,
+        "angular speed": 19.823720406863085,
+        "angular acceleration": 29.622477412679455
+      },
+      "source_target_sha256": "efca57448453295d8a801a33c6faf5e786e01ed812311aacbc85e10c1a939c58"
+    }
+  ]
+}

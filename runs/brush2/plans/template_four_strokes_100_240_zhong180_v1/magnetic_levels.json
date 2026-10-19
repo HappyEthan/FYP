@@ -1,0 +1,13 @@
+{
+  "levels": {
+    "L1": 100.0,
+    "L2": 124.46659545769568,
+    "L3": 154.91933384829667,
+    "L4": 192.8228205467164,
+    "L5": 240.0
+  },
+  "reference_id": "brush2_20260925_raw_xy_width_levels_v1",
+  "source_csv": "runs/brush2/plans/width_level_reference_v1/width_levels.csv",
+  "source_sha256": "f6e0c741fd1c00d02a058d503340b4a8a691e831059962b08afb122b97cec793",
+  "width_basis": "user assumed monotone ordinal levels"
+}

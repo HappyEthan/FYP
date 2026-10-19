@@ -1,0 +1,33 @@
+{
+  "_comment": "单向 Z 批次模板；实际绝对 Z 起止、档数和 run_label 由 run_ladder_experiment.py 顶部参数覆盖。",
+  "control": {
+    "enabled": false
+  },
+  "motion": {
+    "accel_mm_s2": null,
+    "speed_mm_s": 10.0
+  },
+  "name": "z_batch_37_to_27",
+  "path": {
+    "axis": "+x",
+    "depth_from_mm": 0.0,
+    "depth_to_mm": 10.0,
+    "kind": "ladder",
+    "order": "one_way",
+    "steps": 5,
+    "transit_z_mm": 50.0,
+    "travel_mm": 200.0,
+    "wetting": {
+      "cup_rim_z_mm": 100.0,
+      "dip_z_mm": 50.0,
+      "dwell_s": 1.0,
+      "every_paths": 1,
+      "safe_z_mm": 120.0,
+      "settle_s": 0.5,
+      "x_mm": -300.0,
+      "y_mm": 500.0
+    }
+  },
+  "run_label": "repeat_02",
+  "version": 1
+}

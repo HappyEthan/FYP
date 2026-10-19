@@ -1,0 +1,105 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2161.8508982035924,
+      2978.4446107784424,
+      -7086.92749301398
+    ],
+    "applies_after_seq": 507,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.5240544498906563,
+      -0.9525986571419914,
+      1.4796112720494912
+    ],
+    "effective_visit": 0,
+    "first_seq": 7,
+    "last_seq": 507,
+    "quality_axes": [
+      0,
+      1
+    ],
+    "std_uT": [
+      5.609878138263277,
+      5.472823522058465,
+      12.995930035341242
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2161.8508982035924,
+        2978.4446107784424,
+        -7086.92749301398
+      ],
+      "applies_after_seq": 507,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -0.5240544498906563,
+        -0.9525986571419914,
+        1.4796112720494912
+      ],
+      "effective_visit": 0,
+      "first_seq": 7,
+      "last_seq": 507,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.609878138263277,
+        5.472823522058465,
+        12.995930035341242
+      ]
+    },
+    {
+      "B0_uT": [
+        2164.6179841897247,
+        2970.9678853754904,
+        -7080.494347826082
+      ],
+      "applies_after_seq": 1797,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        -0.06260851309849948,
+        -0.5993437846637513,
+        -3.2531538609401554
+      ],
+      "effective_visit": 1,
+      "first_seq": 1292,
+      "last_seq": 1797,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.005185323864864,
+        5.309323337588949,
+        13.207056620408254
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-08T09:58:22.760456+00:00",
+  "reason": "deadline_miss",
+  "run_id": "20261008T095751.863119Z-663909",
+  "sha256": {
+    "compiled_plan.npz": "87b3ab5795b0fb36e7742299ce12fd92b0f31402e1a8e9296839f0815ad03d74",
+    "contact_test.json": "8f325785edd3e235621420d0b9f269254742300af57d75b5f3eea0277e03f715",
+    "motion_metrics.json": "f55e1d0b4c08d0d6dfc94632ace170dafb91ef3729ae315ef5e6f072b8f122e1",
+    "resolved.json": "2a381a9664abed4fbdf40d2449351d6e6e86e17abd6eb1a016fc5dc4dbbf07f7",
+    "segments.json": "21b239838f9d6da338039368a9ab2e9c0521ecac9410cea0a83db565fd8c47f3",
+    "settings_source.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "setup.json": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+    "timeline.npz": "383c1e6fff7c4e2399f037bd8a6c0961ee38dcddac2b83e900ea373c3efce748"
+  },
+  "started_at": "2026-10-08T09:57:51.863119+00:00",
+  "status": "aborted",
+  "writer_pid": 51699
+}

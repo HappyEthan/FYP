@@ -1,0 +1,177 @@
+{
+  "status": "completed",
+  "started_at": "2026-09-27T17:10:54.773429+08:00",
+  "initial_pose_m_rad": [
+    -0.15001,
+    0.4,
+    0.070009,
+    0.26181684109166936,
+    1.7453292519943296e-05,
+    1.7453292519943296e-05
+  ],
+  "route_m_rad": [
+    [
+      -0.15,
+      0.5,
+      0.070009,
+      0.26181684109166936,
+      1.7453292519943296e-05,
+      1.7453292519943296e-05
+    ],
+    [
+      -0.15,
+      0.5,
+      0.070009,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ],
+    [
+      -0.15,
+      0.5,
+      0.07,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "batch_id": "d0525ee7-7da8-416d-b693-9ce00a2ee58b",
+    "trial_index": 5,
+    "trial_count": 12,
+    "profile": {
+      "mode": "four-direction-half-sweep",
+      "direction": "right",
+      "travel_mm": 150.0,
+      "speed_mm_s": 15.0,
+      "xy_accel_mm_s2": 50.0,
+      "start_z_mm": 36.0,
+      "end_z_mm": 25.0,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 5.0,
+      "entry_tilt_deg": 30.0,
+      "writing_tilt_deg": 15.0,
+      "rotate_s": 3.0,
+      "load_s": 3.0,
+      "airborne_settle_s": 1.0,
+      "post_lift_hold_s": 2.0,
+      "return_to_origin": false,
+      "air_rotate_s": 1.5,
+      "transfer_speed_mm_s": 80.0,
+      "fast_z_speed_mm_s": 60.0,
+      "slow_z_speed_mm_s": 15.0,
+      "slow_below_z_mm": 50.0,
+      "transit_accel_mm_s2": 100.0,
+      "angular_speed_deg_s": 20.0,
+      "angular_accel_deg_s2": 40.0
+    },
+    "setup": {
+      "installation_id": "brush2-z-ladder",
+      "verified": true,
+      "tcp_name": "TCP_brush",
+      "ucs_name": "Base",
+      "tool_coord_si": [
+        0.0,
+        0.0,
+        0.262,
+        -3.141592653589793,
+        0.0,
+        -2.6179938779914944
+      ],
+      "user_coord_si": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "vertical_rpy_rad": [
+        0.0,
+        0.2617993877991494,
+        0.0
+      ],
+      "sensor_mount_id": "brush2-mount",
+      "origin_x_mm": -150.0,
+      "origin_y_mm": 500.0,
+      "wait_z_mm": 70.0,
+      "contact_z_mm": 40.0,
+      "workspace_min_mm": [
+        -400.0,
+        300.0,
+        17.0
+      ],
+      "workspace_max_mm": [
+        100.0,
+        700.0,
+        130.0
+      ],
+      "max_depth_mm": 20.0,
+      "max_xy_speed_mm_s": 80.0,
+      "max_z_speed_mm_s": 60.0,
+      "max_accel_mm_s2": 200.0,
+      "max_step_mm": 2.0,
+      "approach_speed_mm_s": 13.0,
+      "return_speed_mm_s": 80.0,
+      "pose_tolerance_mm": 0.5,
+      "orientation_tolerance_rad": 0.017453292519943295,
+      "baseline_window_s": 2.0,
+      "baseline_timeout_s": 5.0,
+      "baseline_min_samples": 400,
+      "baseline_max_std_uT": [
+        10.0,
+        10.0,
+        30.0
+      ],
+      "baseline_max_drift_uT_s": 5.0,
+      "sensor_max_age_s": 0.1,
+      "max_tick_lateness_s": 0.1,
+      "stop_timeout_s": 10.0,
+      "gripper_width_mm": 14.0,
+      "gripper_speed": 30,
+      "gripper_force": 30,
+      "filter": {
+        "alpha": 0.3,
+        "kind": "ema"
+      }
+    }
+  },
+  "motion_metrics": {
+    "XY speed": 77.47581134058272,
+    "Z speed": 0.22500000000022502,
+    "step": 1.5495162268116545,
+    "acceleration": 98.5422628538789,
+    "angular speed": 19.88207562268259,
+    "angular acceleration": 30.608425273252813
+  },
+  "planned_duration_s": 5.0600000000000005,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.150018,
+    0.49999,
+    0.070013,
+    1.7453292519943296e-05,
+    0.2617993877991494,
+    5.235987755982989e-05
+  ],
+  "finished_at": "2026-09-27T17:11:00.056645+08:00"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "na",
+  "name": "斜捺",
+  "plan": "na/strokeplan.npz",
+  "writing_duration_s": 19.2,
+  "measurement_phase_duration_s": 19.22,
+  "full_motion_duration_s": 41.92,
+  "bbox_mm": [
+    140.0,
+    64.58852867830424
+  ],
+  "scale_relative_to_v1": 1.0,
+  "length_mm": 161.67326279266467,
+  "max_writing_xy_speed_mm_s": 10.000000000003276,
+  "target_range_uT": [
+    100.0,
+    240.0
+  ],
+  "orientation_smoothing_mm": 6.0,
+  "compiled_limits": {
+    "XY speed": 79.9749858335679,
+    "Z speed": 59.997440049151805,
+    "step": 1.599499716671358,
+    "acceleration": 167.49402378034006,
+    "angular speed": 19.823720406863085,
+    "angular acceleration": 29.622477412679455
+  },
+  "source_target_sha256": "efca57448453295d8a801a33c6faf5e786e01ed812311aacbc85e10c1a939c58"
+}

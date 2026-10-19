@@ -1,0 +1,29 @@
+{
+  "id": "heng",
+  "name": "长横",
+  "plan": "heng/strokeplan.npz",
+  "writing_duration_s": 18.38,
+  "measurement_phase_duration_s": 18.400000000000002,
+  "full_motion_duration_s": 40.38,
+  "bbox_mm": [
+    109.97810837953327,
+    17.760909780620437
+  ],
+  "scale_relative_to_v1": 0.9166666666666666,
+  "length_mm": 126.75392623850048,
+  "max_writing_xy_speed_mm_s": 10.000000000001993,
+  "target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "orientation_smoothing_mm": 5.0,
+  "compiled_limits": {
+    "XY speed": 79.89088192521353,
+    "Z speed": 59.997440049151805,
+    "step": 1.5978176385042708,
+    "acceleration": 184.76335835332532,
+    "angular speed": 19.940625923230808,
+    "angular acceleration": 36.44863506003745
+  },
+  "source_target_sha256": "f2acc4b21ea339ffa9fe5b05c89221658071f3bfe52fb991bde4286dabdf3142"
+}

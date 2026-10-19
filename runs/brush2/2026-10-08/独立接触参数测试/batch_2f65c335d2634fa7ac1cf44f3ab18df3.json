@@ -1,0 +1,49 @@
+{
+  "batch_id": "2f65c335d2634fa7ac1cf44f3ab18df3",
+  "entry_policy": "preload30_then_rotate_and_press_v1",
+  "status": "failed",
+  "selected_start_trial": 1,
+  "planned": [
+    {
+      "trial_id": "Z28_up_S32_T6_R1",
+      "direction": "up",
+      "command_z_mm": 28.0,
+      "rotate_start_z_mm": 32.0,
+      "rotate_s": 6.0,
+      "preload_speed_mm_s": 2.0,
+      "travel_mm": 150.0,
+      "speed_mm_s": 10.0,
+      "repeat": 1,
+      "entry_policy": "preload30_then_rotate_and_press_v1",
+      "condition_sha256": "43e9edcebb0845c2e11034322cfd11995078ffe0303c99596a84ed25aa3d25d4",
+      "prep_note": ""
+    }
+  ],
+  "records": [
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T6_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "43e9edcebb0845c2e11034322cfd11995078ffe0303c99596a84ed25aa3d25d4",
+        "prep_note": ""
+      },
+      "run_dir": null,
+      "run_id": null,
+      "state": "READY",
+      "reason": "RuntimeError: automatic positioning tick lateness",
+      "metrics": null,
+      "execution_ok": false
+    }
+  ],
+  "reason": "RuntimeError: automatic positioning tick lateness",
+  "failed_trial": 1,
+  "comparison": []
+}

@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "feature": "filtered_dBxy_norm_uT",
+  "approved": false,
+  "transient_approved": false,
+  "context": {
+    "vertical_rpy_rad": [
+      0.26181684109166936,
+      0.0,
+      1.5707963267948966
+    ],
+    "filter": {
+      "alpha": 0.3,
+      "kind": "ema"
+    },
+    "installation_id": "current-brush-z-ladder",
+    "sensor_mount_id": "current-brush-mount",
+    "tcp_name": "TCP_brush",
+    "ucs_name": "Base",
+    "tool_coord_si": [
+      0.0,
+      0.0,
+      0.262,
+      -3.141592653589793,
+      0.0,
+      -2.6179938779914944
+    ],
+    "user_coord_si": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "contact_z_mm": 37.0
+  },
+  "directions": [
+    "+x"
+  ],
+  "speed_mm_s": 10.0,
+  "amplitude_uT": [
+    17.704234214102936,
+    26.366307361380102,
+    43.77106670924948,
+    68.0875358896901,
+    99.82694744645767
+  ],
+  "depth_mm": [
+    7.5,
+    9.875,
+    12.25,
+    14.625,
+    17.0
+  ],
+  "passes": [
+    {
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "phase": "measure_00",
+      "z_mm": 29.5,
+      "amplitude_uT": 20.759199356320494
+    },
+    {
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "phase": "measure_01",
+      "z_mm": 27.125,
+      "amplitude_uT": 29.219669195504903
+    },
+    {
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "phase": "measure_02",
+      "z_mm": 24.75,
+      "amplitude_uT": 42.47555218470228
+    },
+    {
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "phase": "measure_03",
+      "z_mm": 22.375,
+      "amplitude_uT": 64.83853343455576
+    },
+    {
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "phase": "measure_04",
+      "z_mm": 20.0,
+      "amplitude_uT": 103.22491222500169
+    },
+    {
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "phase": "measure_00",
+      "z_mm": 29.5,
+      "amplitude_uT": 14.64926907188538
+    },
+    {
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "phase": "measure_01",
+      "z_mm": 27.125,
+      "amplitude_uT": 23.512945527255305
+    },
+    {
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "phase": "measure_02",
+      "z_mm": 24.75,
+      "amplitude_uT": 45.06658123379668
+    },
+    {
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "phase": "measure_03",
+      "z_mm": 22.375,
+      "amplitude_uT": 71.33653834482445
+    },
+    {
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "phase": "measure_04",
+      "z_mm": 20.0,
+      "amplitude_uT": 96.42898266791366
+    }
+  ],
+  "stable_window_mm": [
+    30,
+    170
+  ],
+  "source_runs": [
+    "/home/ethan/FYP/runs/20260923T043650.916002Z-b80e58",
+    "/home/ethan/FYP/runs/20260923T044321.978924Z-5d5b86"
+  ],
+  "calibration_id": "ladder-89947236abe5416f"
+}

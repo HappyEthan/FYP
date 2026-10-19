@@ -1,0 +1,33 @@
+{
+  "id": "pie",
+  "name": "斜撇",
+  "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/pie_slant/template.json",
+  "template_id": "2835b97b6b7766e0fb236ba98a2ecd11f7c8b363782bf74d285916cdc3730ad3",
+  "bbox_mm": [
+    139.96988467619295,
+    131.8048780487805
+  ],
+  "uniform_mm_per_source_px": 0.6829268292682927,
+  "length_mm": 217.26403676997955,
+  "duration_s": 50.28,
+  "samples": 2515,
+  "max_xy_speed_mm_s": 10.000000000002279,
+  "target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "start_end_paper_mm": [
+    [
+      186.78048780487805,
+      65.90243902439025
+    ],
+    [
+      70.0,
+      -65.90243902439025
+    ]
+  ],
+  "plan": "pie/strokeplan.npz",
+  "preview": "pie/preview.png",
+  "writing_hint": "尖起右下轻按，沿右上斜边转成左下推行，弧形撇身末段渐提向左出尖；白线未标明提锋起点，按渐细末段划分出笔。",
+  "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+}

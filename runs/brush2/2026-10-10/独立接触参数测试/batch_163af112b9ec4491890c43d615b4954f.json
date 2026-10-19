@@ -1,0 +1,537 @@
+{
+  "batch_id": "163af112b9ec4491890c43d615b4954f",
+  "entry_policy": "preload_then_rotate_and_press_v2",
+  "status": "completed",
+  "selected_start_trial": 1,
+  "planned": [
+    {
+      "trial_id": "Z28_up_A30_W15_S36_T2_R1",
+      "direction": "up",
+      "command_z_mm": 28.0,
+      "rotate_start_z_mm": 36.0,
+      "rotate_s": 2.0,
+      "entry_tilt_deg": 30.0,
+      "writing_tilt_deg": 15.0,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 5.0,
+      "air_rotate_s": 1.5,
+      "airborne_settle_s": 1.0,
+      "post_lift_hold_s": 2.0,
+      "return_to_origin": true,
+      "preload_speed_mm_s": 4.0,
+      "travel_mm": 50.0,
+      "speed_mm_s": 10.0,
+      "repeat": 1,
+      "entry_policy": "preload_then_rotate_and_press_v2",
+      "condition_sha256": "ff37a2a9494f35f4ccf73b6a96df11458874c2cb12a55e24b833fdda79e306e7",
+      "prep_note": "",
+      "deadline_policy": {
+        "mode": "continue_above_z",
+        "min_z_mm": 20.0
+      },
+      "timing": {
+        "trajectory_s": 22.54,
+        "phase_durations_s": {
+          "wait": 0.0,
+          "orient_for_baseline": 2.0,
+          "baseline_settle": 1.0,
+          "entry_offset_high": 0.54,
+          "rotate_air": 1.5,
+          "lower_fast": 1.08,
+          "lower_slow": 1.76,
+          "rotate_load": 2.0,
+          "straight_hold": 5.2,
+          "lift": 1.56,
+          "post_lift_hold": 2.0,
+          "return_high": 1.7,
+          "restore_wait_orientation": 2.0,
+          "hold": 0.2
+        },
+        "contact_loading_s": 2.0,
+        "baseline_windows_s": 4.0,
+        "reference_run_s": 26.54,
+        "exclusions": "Operator preparation, connection, automatic positioning, extra baseline waiting, Servo startup and communication stalls are not included; not a wall-clock guarantee."
+      },
+      "config_source": {
+        "path": "/home/ethan/FYP/configs/experiments/contact_entry/10_30deg_start36_2s.json",
+        "sha256": "4bc79a18474938e1e5141e63b119f449e056262608bb8ea887cdeeec4ce99de2",
+        "content": {
+          "version": 1,
+          "name": "当前指定：30°、Z36起转、2秒联动",
+          "note": "保持30°接近到Z36后直接起转，在同一2秒内转到15°并从Z36降到Z28，共下降8毫米；没有转笔前的额外预压下降，也没有转完后的额外下压。候选，未做真机验证。",
+          "parameters": {
+            "suite": "single",
+            "direction": "up",
+            "entry_tilt_deg": 30.0,
+            "writing_tilt_deg": 15.0,
+            "entry_contact_z_mm": 36.0,
+            "rotate_start_z_mm": 36.0,
+            "target_z_mm": 28.0,
+            "rotate_s": 2.0,
+            "preload_speed_mm_s": 4.0,
+            "entry_reverse_mm": 5.0,
+            "air_rotate_s": 1.5,
+            "airborne_settle_s": 1.0,
+            "post_lift_hold_s": 2.0,
+            "return_to_origin": true,
+            "travel_mm": 50.0,
+            "speed_mm_s": 10.0,
+            "repeats": 1,
+            "prep_note": ""
+          }
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "trial": {
+        "trial_id": "Z28_up_A30_W15_S36_T2_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 2.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "preload_speed_mm_s": 4.0,
+        "travel_mm": 50.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload_then_rotate_and_press_v2",
+        "condition_sha256": "ff37a2a9494f35f4ccf73b6a96df11458874c2cb12a55e24b833fdda79e306e7",
+        "prep_note": "",
+        "deadline_policy": {
+          "mode": "continue_above_z",
+          "min_z_mm": 20.0
+        },
+        "timing": {
+          "trajectory_s": 22.54,
+          "phase_durations_s": {
+            "wait": 0.0,
+            "orient_for_baseline": 2.0,
+            "baseline_settle": 1.0,
+            "entry_offset_high": 0.54,
+            "rotate_air": 1.5,
+            "lower_fast": 1.08,
+            "lower_slow": 1.76,
+            "rotate_load": 2.0,
+            "straight_hold": 5.2,
+            "lift": 1.56,
+            "post_lift_hold": 2.0,
+            "return_high": 1.7,
+            "restore_wait_orientation": 2.0,
+            "hold": 0.2
+          },
+          "contact_loading_s": 2.0,
+          "baseline_windows_s": 4.0,
+          "reference_run_s": 26.54,
+          "exclusions": "Operator preparation, connection, automatic positioning, extra baseline waiting, Servo startup and communication stalls are not included; not a wall-clock guarantee."
+        },
+        "config_source": {
+          "path": "/home/ethan/FYP/configs/experiments/contact_entry/10_30deg_start36_2s.json",
+          "sha256": "4bc79a18474938e1e5141e63b119f449e056262608bb8ea887cdeeec4ce99de2",
+          "content": {
+            "version": 1,
+            "name": "当前指定：30°、Z36起转、2秒联动",
+            "note": "保持30°接近到Z36后直接起转，在同一2秒内转到15°并从Z36降到Z28，共下降8毫米；没有转笔前的额外预压下降，也没有转完后的额外下压。候选，未做真机验证。",
+            "parameters": {
+              "suite": "single",
+              "direction": "up",
+              "entry_tilt_deg": 30.0,
+              "writing_tilt_deg": 15.0,
+              "entry_contact_z_mm": 36.0,
+              "rotate_start_z_mm": 36.0,
+              "target_z_mm": 28.0,
+              "rotate_s": 2.0,
+              "preload_speed_mm_s": 4.0,
+              "entry_reverse_mm": 5.0,
+              "air_rotate_s": 1.5,
+              "airborne_settle_s": 1.0,
+              "post_lift_hold_s": 2.0,
+              "return_to_origin": true,
+              "travel_mm": 50.0,
+              "speed_mm_s": 10.0,
+              "repeats": 1,
+              "prep_note": ""
+            }
+          }
+        }
+      },
+      "run_dir": "/home/ethan/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/15-15-27_Z28_up_A30_W15_S36_T2_R1_第2次",
+      "run_id": "20261010T071527.583455Z-58a689",
+      "state": "END_WAIT",
+      "reason": "",
+      "metrics": {
+        "run_status": "completed",
+        "trial_id": "Z28_up_A30_W15_S36_T2_R1",
+        "phases": {
+          "wait": {
+            "frames": 1,
+            "raw_median_uT": 5.6952028547882865,
+            "raw_min_uT": 5.6952028547882865,
+            "raw_max_uT": 5.6952028547882865,
+            "raw_rmse_about_own_median_uT": 0.0,
+            "bx_median_uT": 4.106605775409315,
+            "by_median_uT": 3.9460264269976078,
+            "last_0_3s": {
+              "frames": 1,
+              "raw_median_uT": 5.6952028547882865,
+              "raw_min_uT": 5.6952028547882865,
+              "raw_max_uT": 5.6952028547882865,
+              "raw_rmse_about_own_median_uT": 0.0,
+              "bx_median_uT": 4.106605775409315,
+              "by_median_uT": 3.9460264269976078
+            }
+          },
+          "orient_for_baseline": {
+            "frames": 100,
+            "raw_median_uT": 4.675241628866685,
+            "raw_min_uT": 0.521083755631532,
+            "raw_max_uT": 12.842770746451087,
+            "raw_rmse_about_own_median_uT": 3.1498847650816266,
+            "bx_median_uT": 1.4195146452944818,
+            "by_median_uT": -4.016303667276673,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 8.907173011623824,
+              "raw_min_uT": 2.8719959010283165,
+              "raw_max_uT": 12.842770746451087,
+              "raw_rmse_about_own_median_uT": 2.7257004324312692,
+              "bx_median_uT": 4.414614093096533,
+              "by_median_uT": -6.419788757454656
+            }
+          },
+          "baseline_settle": {
+            "frames": 50,
+            "raw_median_uT": 8.516032976597879,
+            "raw_min_uT": 4.150959368048642,
+            "raw_max_uT": 13.300332210171925,
+            "raw_rmse_about_own_median_uT": 1.872367143592942,
+            "bx_median_uT": 4.458330089304644,
+            "by_median_uT": -6.529119500171751,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 9.087424117796761,
+              "raw_min_uT": 4.627295283378109,
+              "raw_max_uT": 13.300332210171925,
+              "raw_rmse_about_own_median_uT": 2.4711071454399347,
+              "bx_median_uT": 3.8398833882197962,
+              "by_median_uT": -7.885518019102634
+            }
+          },
+          "entry_offset_high": {
+            "frames": 27,
+            "raw_median_uT": 2.648500563376082,
+            "raw_min_uT": 1.5332284141785104,
+            "raw_max_uT": 7.208986915146103,
+            "raw_rmse_about_own_median_uT": 1.7125095686302911,
+            "bx_median_uT": -0.5548133108492912,
+            "by_median_uT": 0.5648979937185417,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 2.204776695064462,
+              "raw_min_uT": 1.6591313219242103,
+              "raw_max_uT": 6.075662872876662,
+              "raw_rmse_about_own_median_uT": 1.6149730036466676,
+              "bx_median_uT": 1.4845230062678203,
+              "by_median_uT": 0.6273779279982683
+            }
+          },
+          "rotate_air": {
+            "frames": 75,
+            "raw_median_uT": 3.7356718645303446,
+            "raw_min_uT": 0.5151916093477902,
+            "raw_max_uT": 7.444384526172943,
+            "raw_rmse_about_own_median_uT": 1.6347635467737116,
+            "bx_median_uT": 2.011864121691569,
+            "by_median_uT": -0.2306344281651409,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 5.1352499096410655,
+              "raw_min_uT": 1.8204374315080691,
+              "raw_max_uT": 6.601057024244443,
+              "raw_rmse_about_own_median_uT": 1.460570096144819,
+              "bx_median_uT": 4.618093828505559,
+              "by_median_uT": 1.7119110434499702
+            }
+          },
+          "lower_fast": {
+            "frames": 54,
+            "raw_median_uT": 5.546021764288968,
+            "raw_min_uT": 1.5842263194720134,
+            "raw_max_uT": 9.06405857236497,
+            "raw_rmse_about_own_median_uT": 1.8847042611436202,
+            "bx_median_uT": 4.40551258120472,
+            "by_median_uT": 1.194681455359453,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 4.604743716269768,
+              "raw_min_uT": 1.5842263194720134,
+              "raw_max_uT": 6.961439153891746,
+              "raw_rmse_about_own_median_uT": 1.5150101556489244,
+              "bx_median_uT": 4.190282444007809,
+              "by_median_uT": 1.1106523314931982
+            }
+          },
+          "lower_slow": {
+            "frames": 88,
+            "raw_median_uT": 4.227051020851194,
+            "raw_min_uT": 1.1101447751086344,
+            "raw_max_uT": 8.330552524154946,
+            "raw_rmse_about_own_median_uT": 1.6282802479241079,
+            "bx_median_uT": 2.2742260757259984,
+            "by_median_uT": 1.9139565092626967,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 4.199359144790467,
+              "raw_min_uT": 1.1101447751086344,
+              "raw_max_uT": 6.230803903652744,
+              "raw_rmse_about_own_median_uT": 1.5871918013077495,
+              "bx_median_uT": -1.6764690025971767,
+              "by_median_uT": 3.1504421887833596
+            }
+          },
+          "rotate_load": {
+            "frames": 100,
+            "raw_median_uT": 41.60062307317363,
+            "raw_min_uT": 3.169969587692136,
+            "raw_max_uT": 68.05387308793044,
+            "raw_rmse_about_own_median_uT": 22.741749966177533,
+            "bx_median_uT": 8.652309418742908,
+            "by_median_uT": 15.960763421079397,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 52.013735483185044,
+              "raw_min_uT": 41.861570195276556,
+              "raw_max_uT": 64.02992934539105,
+              "raw_rmse_about_own_median_uT": 6.816276329625306,
+              "bx_median_uT": 41.7476319487475,
+              "by_median_uT": 33.348819184022204
+            }
+          },
+          "straight_hold": {
+            "frames": 260,
+            "raw_median_uT": 312.8707956031406,
+            "raw_min_uT": 63.90046073162103,
+            "raw_max_uT": 329.2674323965665,
+            "raw_rmse_about_own_median_uT": 55.16565896173011,
+            "bx_median_uT": 308.16745464340784,
+            "by_median_uT": 54.01597594598943,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 322.8524495193651,
+              "raw_min_uT": 318.06215486116446,
+              "raw_max_uT": 328.1089964027462,
+              "raw_rmse_about_own_median_uT": 2.79216647558522,
+              "bx_median_uT": 315.48419375347083,
+              "by_median_uT": 68.67917043575268
+            }
+          },
+          "lift": {
+            "frames": 78,
+            "raw_median_uT": 58.851188683583075,
+            "raw_min_uT": 37.69154233855875,
+            "raw_max_uT": 321.7135298748381,
+            "raw_rmse_about_own_median_uT": 136.789938781096,
+            "bx_median_uT": 46.05387256514612,
+            "by_median_uT": 37.13282506772002,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 42.491005921602564,
+              "raw_min_uT": 37.69154233855875,
+              "raw_max_uT": 46.57673891779918,
+              "raw_rmse_about_own_median_uT": 2.6548071921917407,
+              "bx_median_uT": 28.737374000590535,
+              "by_median_uT": 31.064159023302704
+            }
+          },
+          "post_lift_hold": {
+            "frames": 100,
+            "raw_median_uT": 36.29040263802595,
+            "raw_min_uT": 30.973678215852413,
+            "raw_max_uT": 44.05371863264236,
+            "raw_rmse_about_own_median_uT": 2.9091314952663034,
+            "bx_median_uT": 20.842230983327855,
+            "by_median_uT": 29.817561254591723,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 34.28986156756049,
+              "raw_min_uT": 30.973678215852413,
+              "raw_max_uT": 37.5472196263394,
+              "raw_rmse_about_own_median_uT": 2.0408902158534845,
+              "bx_median_uT": 17.78979269104835,
+              "by_median_uT": 29.292050136277602
+            }
+          },
+          "return_high": {
+            "frames": 85,
+            "raw_median_uT": 29.84993525081347,
+            "raw_min_uT": 19.206921884808175,
+            "raw_max_uT": 38.62715401112985,
+            "raw_rmse_about_own_median_uT": 4.1441578758110325,
+            "bx_median_uT": 13.024342371137266,
+            "by_median_uT": 26.569977238912493,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 24.931419239797258,
+              "raw_min_uT": 19.206921884808175,
+              "raw_max_uT": 28.85337584756957,
+              "raw_rmse_about_own_median_uT": 2.450153916896978,
+              "bx_median_uT": 8.769067157965223,
+              "by_median_uT": 23.170362031626475
+            }
+          },
+          "restore_wait_orientation": {
+            "frames": 100,
+            "raw_median_uT": 25.930884116308782,
+            "raw_min_uT": 19.636343780351226,
+            "raw_max_uT": 32.601701715303584,
+            "raw_rmse_about_own_median_uT": 2.5355362064677625,
+            "bx_median_uT": 3.697083877766792,
+            "by_median_uT": 25.408932919225876,
+            "last_0_3s": {
+              "frames": 16,
+              "raw_median_uT": 27.90569799200312,
+              "raw_min_uT": 25.286463708288263,
+              "raw_max_uT": 31.11011708674544,
+              "raw_rmse_about_own_median_uT": 1.5954868703159975,
+              "bx_median_uT": 1.117803903657843,
+              "by_median_uT": 27.86571991011663
+            }
+          },
+          "hold": {
+            "frames": 10,
+            "raw_median_uT": 28.148044096936072,
+            "raw_min_uT": 26.336907885597217,
+            "raw_max_uT": 30.533179892014935,
+            "raw_rmse_about_own_median_uT": 1.1938149863990257,
+            "bx_median_uT": -1.499201576633598,
+            "by_median_uT": 28.075147646667297,
+            "last_0_3s": {
+              "frames": 10,
+              "raw_median_uT": 28.148044096936072,
+              "raw_min_uT": 26.336907885597217,
+              "raw_max_uT": 30.533179892014935,
+              "raw_rmse_about_own_median_uT": 1.1938149863990257,
+              "bx_median_uT": -1.499201576633598,
+              "by_median_uT": 28.075147646667297
+            }
+          }
+        },
+        "primary": {
+          "frames": 151,
+          "raw_median_uT": 312.42985694612986,
+          "raw_min_uT": 281.96505745794553,
+          "raw_max_uT": 328.2320092656095,
+          "raw_rmse_about_own_median_uT": 13.43453873377454,
+          "bx_median_uT": 308.1036829417131,
+          "by_median_uT": 54.01230296158167,
+          "window_mm": [
+            10.0,
+            40.0
+          ],
+          "bins": [
+            {
+              "start_mm": 10.0,
+              "end_mm": 15.0,
+              "frames": 25,
+              "raw_median_uT": 291.00023350045166,
+              "raw_min_uT": 281.96505745794553,
+              "raw_max_uT": 299.54222269131407,
+              "raw_rmse_about_own_median_uT": 4.644601548456202,
+              "bx_median_uT": 287.8532625314442,
+              "by_median_uT": 42.336838325883654
+            },
+            {
+              "start_mm": 15.0,
+              "end_mm": 20.0,
+              "frames": 25,
+              "raw_median_uT": 294.2698257342326,
+              "raw_min_uT": 289.78167128043947,
+              "raw_max_uT": 301.44234960790294,
+              "raw_rmse_about_own_median_uT": 3.445771404000334,
+              "bx_median_uT": 290.67413812043617,
+              "by_median_uT": 47.04830484190974
+            },
+            {
+              "start_mm": 20.0,
+              "end_mm": 25.0,
+              "frames": 25,
+              "raw_median_uT": 308.12463572417096,
+              "raw_min_uT": 301.5810751350509,
+              "raw_max_uT": 316.4954272767275,
+              "raw_rmse_about_own_median_uT": 3.735990451007414,
+              "bx_median_uT": 303.7361114011189,
+              "by_median_uT": 52.77409995513531
+            },
+            {
+              "start_mm": 25.0,
+              "end_mm": 30.0,
+              "frames": 26,
+              "raw_median_uT": 314.24769717175235,
+              "raw_min_uT": 309.8664878908245,
+              "raw_max_uT": 320.82806756950015,
+              "raw_rmse_about_own_median_uT": 2.6812561787818234,
+              "bx_median_uT": 309.41288721678455,
+              "by_median_uT": 55.863079910545395
+            },
+            {
+              "start_mm": 30.0,
+              "end_mm": 35.0,
+              "frames": 25,
+              "raw_median_uT": 320.49682159013366,
+              "raw_min_uT": 316.4887924151322,
+              "raw_max_uT": 325.1547440231119,
+              "raw_rmse_about_own_median_uT": 2.7751632456362776,
+              "bx_median_uT": 315.22632203900525,
+              "by_median_uT": 58.25459733446125
+            },
+            {
+              "start_mm": 35.0,
+              "end_mm": 40.0,
+              "frames": 25,
+              "raw_median_uT": 324.9746237764599,
+              "raw_min_uT": 317.2223795720521,
+              "raw_max_uT": 328.2320092656095,
+              "raw_rmse_about_own_median_uT": 2.397433018220725,
+              "bx_median_uT": 319.5493662319178,
+              "by_median_uT": 59.34245513509964
+            }
+          ]
+        },
+        "signal": "a_control_uT = norm of EMA(B-B0)xy, alpha=0.3; raw_* means unnormalized, not unfiltered",
+        "interpretation": "Raw response consistency only; no force or magnetic-height accuracy claim.",
+        "run_id": "20261010T071527.583455Z-58a689",
+        "source_control_sha256": "7b4ada6a9f9b825270d88d0ae0c0b96c38b0877e90643cdbd038a0dfc076e265"
+      },
+      "execution_ok": true,
+      "deadline_diagnostic": null,
+      "deadline_recovery_count": 0,
+      "last_deadline_recovery": null
+    }
+  ],
+  "comparison": [
+    {
+      "condition_sha256": "ff37a2a9494f35f4ccf73b6a96df11458874c2cb12a55e24b833fdda79e306e7",
+      "direction": "up",
+      "command_z_mm": 28.0,
+      "entry_tilt_deg": 30.0,
+      "writing_tilt_deg": 15.0,
+      "rotate_start_z_mm": 36.0,
+      "rotate_s": 2.0,
+      "completed_repeats": 1,
+      "per_run_medians_uT": [
+        312.42985694612986
+      ],
+      "between_run_range_uT": null,
+      "between_run_range_over_median": null,
+      "sufficient_for_repeat_comparison": false
+    }
+  ]
+}

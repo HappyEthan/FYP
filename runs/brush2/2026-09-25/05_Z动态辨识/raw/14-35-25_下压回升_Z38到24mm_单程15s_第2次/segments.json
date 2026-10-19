@@ -1,0 +1,104 @@
+[
+  {
+    "end_t_s": 3.02,
+    "end_tick": 151,
+    "id": "rotate_air",
+    "kind": "preparation",
+    "start_t_s": 0.02,
+    "start_tick": 1
+  },
+  {
+    "end_t_s": 20.28,
+    "end_tick": 1014,
+    "id": "lower_tilted",
+    "kind": "preparation",
+    "start_t_s": 3.02,
+    "start_tick": 151
+  },
+  {
+    "end_t_s": 23.28,
+    "end_tick": 1164,
+    "id": "rotate_contact",
+    "kind": "preparation",
+    "start_t_s": 20.28,
+    "start_tick": 1014
+  },
+  {
+    "end_t_s": 26.28,
+    "end_tick": 1314,
+    "id": "slide_start",
+    "kind": "preparation",
+    "start_t_s": 23.28,
+    "start_tick": 1164
+  },
+  {
+    "depth_mm": 16.0,
+    "end_t_s": 41.28,
+    "end_tick": 2064,
+    "from_depth_mm": 2.0,
+    "id": "sweep_down",
+    "kind": "sweep",
+    "start_t_s": 26.28,
+    "start_tick": 1314
+  },
+  {
+    "depth_mm": 16.0,
+    "end_t_s": 44.28,
+    "end_tick": 2214,
+    "from_depth_mm": 16.0,
+    "id": "sweep_bottom_hold",
+    "kind": "sweep_hold",
+    "start_t_s": 41.28,
+    "start_tick": 2064
+  },
+  {
+    "depth_mm": 2.0,
+    "end_t_s": 59.28,
+    "end_tick": 2964,
+    "from_depth_mm": 16.0,
+    "id": "sweep_up",
+    "kind": "sweep",
+    "start_t_s": 44.28,
+    "start_tick": 2214
+  },
+  {
+    "end_t_s": 68.48,
+    "end_tick": 3424,
+    "id": "slide_finish",
+    "kind": "preparation",
+    "start_t_s": 59.28,
+    "start_tick": 2964
+  },
+  {
+    "end_t_s": 85.74,
+    "end_tick": 4287,
+    "id": "lift",
+    "kind": "preparation",
+    "start_t_s": 68.48,
+    "start_tick": 3424
+  },
+  {
+    "end_t_s": 87.74,
+    "end_tick": 4387,
+    "id": "post_lift_hold",
+    "kind": "airborne",
+    "start_t_s": 85.74,
+    "start_tick": 4287
+  },
+  {
+    "end_t_s": 129.94,
+    "end_tick": 6497,
+    "id": "return_high",
+    "kind": "preparation",
+    "start_t_s": 87.74,
+    "start_tick": 4387
+  },
+  {
+    "end_t_s": 130.14000000000001,
+    "end_tick": 6507,
+    "id": "hold",
+    "kind": "airborne",
+    "start_t_s": 129.94,
+    "start_tick": 6497
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "source_runs": [
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-46-35_渐进压笔_P0p05_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-47-59_渐进压笔_P0p05_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-50-20_单拱_P0p05_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-52-09_单拱_P0p05_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-53-36_双波_P0p05_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-55-03_双波_P0p05_第2次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-57-44_宽过渡_P0p05_第1次",
+    "/home/ethan/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-59-08_宽过渡_P0p05_第2次"
+  ],
+  "control_mode": "p",
+  "feedback_profile": {
+    "enabled": true,
+    "ki": 0.0,
+    "kp": 0.05,
+    "max_correction_accel_mm_s2": 40.0,
+    "max_correction_mm": 0.2,
+    "max_correction_speed_mm_s": 2.0,
+    "mode": "p",
+    "phase": "measure_00",
+    "taper_ticks": 25
+  },
+  "measure_phase": "measure_00",
+  "target_field": "a_ref_uT",
+  "measured_field": "a_control_uT",
+  "error_definition": "a_control_uT - a_ref_uT at the same logged control tick",
+  "metrics": "All writing samples; no further smoothing or time shifting; no pass/fail threshold",
+  "notes": "V3 input, feedforward/settings and resolved snapshots checked against manifest hashes. Commanded X is the distance axis; actual TCP pose is unavailable."
+}

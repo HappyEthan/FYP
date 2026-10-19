@@ -1,0 +1,129 @@
+{
+  "artifact_role": "offline target candidate and independent nominal preflight",
+  "writing_duration_s": 12.82,
+  "measurement_phase_duration_s": 12.84,
+  "full_nominal_motion_duration_s": 34.76,
+  "bbox_mm": [
+    80.0,
+    11.5042096989701
+  ],
+  "length_mm": 83.04589572848353,
+  "max_xy_speed_mm_s": 10.00000000000244,
+  "g_target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "tail": {
+    "start_s": 0.8951178421306387,
+    "length_mm": 8.728810031107201,
+    "forward_span_mm": 8.683602771362587,
+    "rise_mm": 0.8,
+    "return_mm": 0.0,
+    "control_points_local_mm": [
+      [
+        31.316397228637413,
+        4.249422632794457
+      ],
+      [
+        34.31639722863741,
+        4.771161763229239
+      ],
+      [
+        38.0,
+        5.049422632794457
+      ],
+      [
+        40.0,
+        5.049422632794457
+      ]
+    ]
+  },
+  "old_v3": {
+    "width_mm": 110.0,
+    "duration_s": 18.38,
+    "kinematics": {
+      "writing_tilt_deg_range": [
+        14.999999999999996,
+        15.000000000000018
+      ],
+      "heading_span_deg": 167.05825887047678,
+      "tail_heading_span_deg": 166.09267500149764,
+      "tail_orientation_induced_flange_travel_mm": 197.66441875103132,
+      "horizontal_flange_offset_radius_mm": 67.81058981686044,
+      "yaw_deg_range": [
+        -0.9931202426153237,
+        0.993052964123061
+      ]
+    }
+  },
+  "size_only_80mm": {
+    "duration_s": 14.38,
+    "tail_return_mm": 6.096997690531175,
+    "kinematics": {
+      "writing_tilt_deg_range": [
+        14.999999999999996,
+        14.99999999999997
+      ],
+      "heading_span_deg": 154.46808941964304,
+      "tail_heading_span_deg": 148.94047407845036,
+      "tail_orientation_induced_flange_travel_mm": 176.27230286657584,
+      "horizontal_flange_offset_radius_mm": 67.81058981686043,
+      "yaw_deg_range": [
+        -0.9931140314536502,
+        0.9930362597986913
+      ]
+    }
+  },
+  "revised_80mm": {
+    "kinematics": {
+      "writing_tilt_deg_range": [
+        14.99999999999997,
+        15.000000000000018
+      ],
+      "heading_span_deg": 33.707919571469205,
+      "tail_heading_span_deg": 5.281968307037532,
+      "tail_orientation_induced_flange_travel_mm": 6.251304571409152,
+      "horizontal_flange_offset_radius_mm": 67.81058981686044,
+      "yaw_deg_range": [
+        -0.3228496101464869,
+        0.7554127022210638
+      ]
+    }
+  },
+  "kinematics_scope": "Rigid tool geometry from planned TCP; no joint IK, joint limits, collision verification, contact-tip or actual flange measurement.",
+  "compiled_limits": {
+    "XY speed": 79.81572347826675,
+    "Z speed": 59.997440049151805,
+    "step": 1.596314469565335,
+    "acceleration": 192.4274761452116,
+    "angular speed": 19.988171447617404,
+    "angular acceleration": 38.46206637603213
+  },
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  },
+  "execution_context": "runs/brush2/plans/11_中字底横延长30mm_实测第9次",
+  "source_sha256": {
+    "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/recipe.json": "c2a30da90d6e7c0bfe3e2625ed029c92aa402e1dfebcc32feb94d703ecb016ab",
+    "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/strokeplan.npz": "34072e7a29f18796b103f9917d083f1308024e11a5691749bbb9a8fe26efd26a",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee"
+  },
+  "calibration_assumption": "Historical +X fixed-Ry15 table reused at varying azimuths and local speeds; no new calibration claimed.",
+  "validation": "V3 reload, geometry/stage assertions, existing directional compilation with Zhong PI profile and separate nominal trajectory limits; no hardware"
+}

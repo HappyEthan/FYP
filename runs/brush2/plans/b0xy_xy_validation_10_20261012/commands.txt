@@ -1,0 +1,11 @@
+cd /home/ethan/FYP
+for b0xy_test_direction in right up up right right up up right right up; do
+  PYTHONPATH=src python3 scripts/run_four_direction_sweep.py \
+    --direction "$b0xy_test_direction" --kind hold \
+    --hold-z-mm 28 --entry-contact-z-mm 28 \
+    --rotate-s 2 --entry-reverse-mm 5 \
+    --travel-mm 50 --speed-mm-s 10 \
+    --origin-x-mm -150 --origin-y-mm 450 \
+    --reboot-sensor-each-trial \
+    --run-root /home/ethan/FYP/runs/brush2/b0xy_xy_validation_10 || break
+done

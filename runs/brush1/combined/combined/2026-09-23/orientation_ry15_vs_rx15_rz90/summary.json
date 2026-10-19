@@ -1,0 +1,78 @@
+{
+  "sources": [
+    {
+      "posture": "Ry15",
+      "repeat": 1,
+      "run_id": "20260921T112432.002796Z-7f07d3",
+      "path": "/home/ethan/FYP/runs/2026-09-21/19-24-32__repeat_02_part5_ry15__7f07d3",
+      "measure_rows": 5014,
+      "rpy_deg": [
+        0.0,
+        15.0,
+        0.0
+      ]
+    },
+    {
+      "posture": "Ry15",
+      "repeat": 2,
+      "run_id": "20260921T113837.509060Z-1cf55a",
+      "path": "/home/ethan/FYP/runs/2026-09-21/19-38-37__repeat_02_part5_ry15__1cf55a",
+      "measure_rows": 5013,
+      "rpy_deg": [
+        0.0,
+        15.0,
+        0.0
+      ]
+    },
+    {
+      "posture": "Rx15/Rz90",
+      "repeat": 1,
+      "run_id": "20260923T043650.916002Z-b80e58",
+      "path": "/home/ethan/FYP/runs/20260923T043650.916002Z-b80e58",
+      "measure_rows": 5014,
+      "rpy_deg": [
+        15.001,
+        0.0,
+        90.0
+      ]
+    },
+    {
+      "posture": "Rx15/Rz90",
+      "repeat": 2,
+      "run_id": "20260923T044321.978924Z-5d5b86",
+      "path": "/home/ethan/FYP/runs/20260923T044321.978924Z-5d5b86",
+      "measure_rows": 5014,
+      "rpy_deg": [
+        15.001,
+        0.0,
+        89.999
+      ]
+    }
+  ],
+  "z_cmd_mm": [
+    29.5,
+    27.125,
+    24.75,
+    22.375,
+    20.0
+  ],
+  "paths": 20,
+  "spatial_feature": "hypot(raw baseline-subtracted dBx, dBy); sensor.csv joined by control sample_seq",
+  "spatial_smoothing": "0.5 mm grid; 21-sample Hann window = 10.5 mm",
+  "steady_feature": "a_control_uT: EMA 0.3 on dB vector before XY norm",
+  "steady_window_mm": [
+    30,
+    170
+  ],
+  "limitations": [
+    "Commanded XYZ only; actual TCP pose unavailable",
+    "Different collection dates and wetting history; posture is not an isolated causal factor",
+    "Baseline quality and calibration approval not established"
+  ],
+  "outputs": [
+    "orientation_spatial_by_z.png",
+    "orientation_steady_by_depth.png",
+    "spatial_smoothed_curves.csv",
+    "steady_pass_summary.csv"
+  ]
+}

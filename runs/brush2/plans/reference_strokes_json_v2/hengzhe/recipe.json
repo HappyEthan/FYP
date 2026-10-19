@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "hengzhe",
+  "name": "横折",
+  "description": "100 mm 横接 80 mm 竖的连续横折：局部圆滑转角，转角附近设磁目标峰值和降速，供参考笔画调试。",
+  "reference": "参考中字符号横折的圆滑转角、230 uT 转角目标和切线倾斜；几何改为独立横折，不含整字搭接延长。",
+  "placement": {"origin_mm": [140, 0], "rotation_deg": 180, "scale": 1},
+  "path": {
+    "kind": "rounded_polyline",
+    "points_mm": [[-50, 40], [50, 40], [50, -40]],
+    "corner_radius_mm": 2
+  },
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [[0, 100], [0.085, 210], [0.25, 180], [0.44, 180], [0.556, 230], [0.66, 185], [0.9, 180], [1, 130]]
+  },
+  "timing": {
+    "speed_mm_s": 10,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40,
+    "speed_knots_s_mm_s": [[0, 5], [0.085, 10], [0.44, 10], [0.53, 3], [0.58, 3], [0.66, 10], [0.9, 10], [1, 5]]
+  },
+  "orientation": {"kind": "tangent_tilt", "tilt_deg": 15, "smoothing_mm": 1},
+  "filter_definition": {"kind": "ema", "alpha": 0.3},
+  "notes": [
+    "本笔连续接触完成横与竖，转折处不拆成两笔；corner_radius_mm 实际是角点两侧的最大裁切长度，沿用中字的二次曲线连接。",
+    "s=0.556 位于当前转角附近；修改横竖长度后，应同步检查峰值与降速控制点的位置。",
+    "实际速度会受到切线姿态角速度和角加速度限制，可能低于设置的局部速度上限。"
+  ]
+}

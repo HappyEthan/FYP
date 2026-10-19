@@ -1,0 +1,71 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2098.339349112425,
+      2939.2591715976346,
+      -7095.4457278106465
+    ],
+    "applies_after_seq": 507,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.49216368182869924,
+      -1.1737519842674446,
+      0.12482424030963726
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 507,
+    "std_uT": [
+      5.5987719640417195,
+      5.562292897028116,
+      14.488676918919271
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2098.339349112425,
+        2939.2591715976346,
+        -7095.4457278106465
+      ],
+      "applies_after_seq": 507,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -0.49216368182869924,
+        -1.1737519842674446,
+        0.12482424030963726
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 507,
+      "std_uT": [
+        5.5987719640417195,
+        5.562292897028116,
+        14.488676918919271
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-24T05:09:39.460084+00:00",
+  "reason": "",
+  "run_id": "20260924T050836.569966Z-b188b8",
+  "sha256": {
+    "calibration.json": "ee11e52a1abb84fb4590f9f826022e5d1910cc2ab4fd754856a1e1b6f723787b",
+    "compiled_plan.npz": "4dbb3f56c5e7bbc03448c8f8d27d5128fc1e8d2ecd606ff9d73517c78857b988",
+    "feedforward.json": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+    "resolved.json": "e113bef3996478884ec4f9168e891602342c26f047da979dcbadf2b37eed2a04",
+    "settings.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+    "setup.json": "4cb017724685bef0609fe0f3abdc667cc651927fddb0ef09a44428f2fcef1188",
+    "strokeplan.npz": "8700cbe19b9ee422e69f217cac8f3297b4f5409ecb57fc451b36e74f7a1f3433",
+    "timeline.npz": "2a38ba19dc5c68ec2a429c9dd45db8e7def912db6172228147974c3fbe6583dd"
+  },
+  "started_at": "2026-09-24T05:08:36.569966+00:00",
+  "status": "completed",
+  "writer_pid": 20535
+}

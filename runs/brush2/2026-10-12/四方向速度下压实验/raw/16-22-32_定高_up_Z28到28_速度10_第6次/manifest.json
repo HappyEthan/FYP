@@ -1,0 +1,106 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2214.8081586826324,
+      2962.6641467065847,
+      -7101.989215568878
+    ],
+    "applies_after_seq": 675,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -1.6484389100023091,
+      -3.2188073903822754,
+      -0.12889459871354844
+    ],
+    "effective_visit": 0,
+    "first_seq": 8,
+    "last_seq": 675,
+    "quality_axes": [
+      0,
+      1
+    ],
+    "std_uT": [
+      5.441242763115353,
+      5.495509709435617,
+      14.405496231788385
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2214.8081586826324,
+        2962.6641467065847,
+        -7101.989215568878
+      ],
+      "applies_after_seq": 675,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -1.6484389100023091,
+        -3.2188073903822754,
+        -0.12889459871354844
+      ],
+      "effective_visit": 0,
+      "first_seq": 8,
+      "last_seq": 675,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.441242763115353,
+        5.495509709435617,
+        14.405496231788385
+      ]
+    },
+    {
+      "B0_uT": [
+        2217.9516467065882,
+        2949.6424401197596,
+        -7099.320332335335
+      ],
+      "applies_after_seq": 2395,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        -0.8191043556185801,
+        -1.6304497160241374,
+        -1.4192852397542786
+      ],
+      "effective_visit": 1,
+      "first_seq": 1728,
+      "last_seq": 2395,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.371866610515556,
+        5.477283561536709,
+        13.834845534425362
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-12T08:22:56.941311+00:00",
+  "reason": "",
+  "run_id": "20261012T082232.905400Z-943c5f",
+  "sha256": {
+    "compiled_plan.npz": "ad24f645f24f976ef0def93014963abd683be4c9af95cca77ea0ed905884fe9c",
+    "identification.json": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+    "motion_metrics.json": "50b108defe705ddc863a5a127a3850cda3bc5cd1f9eac55a18c25768ebe47c1d",
+    "resolved.json": "8926bb9da0efa0992a8315bbc2148f38f37a612b1d888078c241b7d542d50ac6",
+    "segments.json": "d8a6d9ca46a5a3284efdd5944dd153e8a5b6e76705cbe72e04f5037244536d16",
+    "settings.json": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+    "settings_source.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "setup.json": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+    "timeline.npz": "4462381aee70af1ae6c16ae7eb5fe4231d7eee0b33cd962a6a362eb0e5b05d93"
+  },
+  "started_at": "2026-10-12T08:22:32.905400+00:00",
+  "status": "completed",
+  "writer_pid": 6363
+}

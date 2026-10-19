@@ -1,0 +1,5 @@
+run_id,valid_tcp_samples,measure_tcp_samples,mid_tcp_samples,mid_actual_minus_cmd_z_mean_mm,mid_actual_z_mean_mm,mid_paired_cmd_z_mean_mm
+bb27fb,0,0,0,,,
+a8a59a,0,0,0,,,
+68defd,612,198,49,0.017453660650529883,28.272265306122446,28.25481164547192
+58bce8,612,198,49,0.03681914413304578,27.721367346938774,27.68454820280573

@@ -1,0 +1,493 @@
+{
+  "date": "2026-10-05",
+  "timezone": "Asia/Shanghai",
+  "canonical_document": "docs/08-system-evaluation/four-direction-experiment-report-2026-10-05.md",
+  "run_count": 48,
+  "first_start": "2026-10-05 14:06:38",
+  "last_finish": "2026-10-05 15:41:30",
+  "run_ids": [
+    "20261005T060638.373150Z-c96b40",
+    "20261005T061106.208290Z-8f341b",
+    "20261005T061157.869370Z-1d7f08",
+    "20261005T061252.200373Z-b9c2dc",
+    "20261005T061349.621266Z-7b63d6",
+    "20261005T061505.234453Z-0b5e30",
+    "20261005T061605.992526Z-41815a",
+    "20261005T061659.680221Z-6ad4fd",
+    "20261005T061809.535495Z-268129",
+    "20261005T061855.801403Z-d4d21c",
+    "20261005T062004.708457Z-239562",
+    "20261005T062119.885196Z-88b681",
+    "20261005T062216.365198Z-736b7c",
+    "20261005T062318.896480Z-6a3ef9",
+    "20261005T062448.272945Z-1c72ad",
+    "20261005T062608.274246Z-bff12e",
+    "20261005T062829.735208Z-09080f",
+    "20261005T062948.973009Z-85b7dc",
+    "20261005T065033.031523Z-cb61c7",
+    "20261005T065132.406912Z-c94dca",
+    "20261005T065233.369908Z-299030",
+    "20261005T065335.629016Z-e1e3d1",
+    "20261005T065453.388019Z-c2286e",
+    "20261005T065540.946746Z-8b1a9b",
+    "20261005T065626.712377Z-04cf4f",
+    "20261005T065714.890373Z-7bb988",
+    "20261005T065831.129579Z-c38967",
+    "20261005T065922.698852Z-a194fd",
+    "20261005T070011.462918Z-1dd13f",
+    "20261005T070101.617743Z-155869",
+    "20261005T072249.453530Z-6a8c3a",
+    "20261005T072342.711942Z-afe661",
+    "20261005T072436.481590Z-38d796",
+    "20261005T072532.040150Z-823ca5",
+    "20261005T072646.195257Z-44af0f",
+    "20261005T072730.992669Z-df3310",
+    "20261005T072818.477225Z-3c5a76",
+    "20261005T072908.048096Z-3e0946",
+    "20261005T073005.950192Z-c308a4",
+    "20261005T073118.200713Z-cce721",
+    "20261005T073246.073997Z-f75251",
+    "20261005T073347.940449Z-bea296",
+    "20261005T073443.303850Z-f2467c",
+    "20261005T073633.461676Z-54a26e",
+    "20261005T073745.579358Z-6aa234",
+    "20261005T073844.736333Z-8f3622",
+    "20261005T073947.654411Z-ce6f04",
+    "20261005T074054.304822Z-1014ac"
+  ],
+  "positioning": [
+    {
+      "file": "0ada81a8-44b2-41a1-9a95-893da77d6755_1_3952c86a573f46b894f922f08a01289f.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:24:43.044539+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "2090d361-6d3f-492b-b500-f6ed6108a177_1_6405a003b9b940549139a72ae1545c0d.json",
+      "status": "failed",
+      "started_at": "2026-10-05T14:49:49.651826+08:00",
+      "matched_measurement": false,
+      "error": "workspace limit during automatic positioning"
+    },
+    {
+      "file": "2351a8a5-6842-43bc-82a3-171f4d81a2eb_1_c2e73bb4ff47431b99dfcd2393014785.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:29:41.897126+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "3f37e561-d9c7-42fb-8a41-04d50e1301d2_1_ac92ab11802d44eaa28f7a3e7f120097.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:39:40.372560+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_1_2979517eba434f5981e55d92f3860633.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:50:29.837981+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_2_8c9a63f1152c4d2ea7db652391836cf2.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:51:27.898900+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_3_a88fb940e46e46f5b815d15890950053.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:52:28.163296+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_4_aafdde01b838423f848250ed8397da3f.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:53:28.347308+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "52e2f8c3-231c-4f62-8a38-df04f67863f8_1_55c29b74b2b542c19222a1596319e0e6.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:33:40.665902+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "5ed26834-61ba-413c-b262-7eb066214b6a_1_1866e818eca44839912ffd5f36190719.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:26:01.178514+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6264125d-c9ce-4822-8b83-e814666973ef_1_7ebb52387cc94897b80fb90b0c9a4e2d.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:40:49.174256+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "684d6237-0235-48b6-8ce2-197f3b09d8f8_1_5cb8108fcccd427bb0b0abab0ff8698e.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:36:28.335546+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "699714b9-1517-4016-bccc-db2133832dad_1_491d63fe4f1d4e368ac3c8c54eee4611.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:11:05.665657+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_10_fb5d50a800b24b0cbed16947f376a891.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:21:15.384295+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_11_f4f252d74cd74bb1b6be38336169d556.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:22:11.173082+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_12_5f01f884eb1546b29a55544718a2f4fb.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:23:11.613818+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_1_e36d1e94f47f48a6893ead45952ad69b.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:11:57.335498+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_2_3f724ad7fff2466c94eb7cf8c5141e40.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:12:47.708759+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_3_64df64f3769d4a0bab7ef512ee55f8c5.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:13:44.489703+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_4_f7155ee6e58841f18ce19b0b3a779f61.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:14:57.954901+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_5_34cb8a8d5aaf4178bdf3f6f192df9e68.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:16:00.843471+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_6_e01544d9f18d4d5bb5772b34496cca11.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:16:55.204340+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_7_5c0940b68cf9402a8de4056e993be0d8.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:18:03.629433+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_8_5e20843a706f44a39bfc686c3ca0ee30.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:18:48.501687+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "6a84e746-6600-4026-88bb-da1a8917ba92_9_4fbab59467934cd183143088f7e30358.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:19:59.551429+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "753132bf-25b5-4c6e-b77b-453adc914116_1_ed80fb51708e4d75983f1df6c6d8add1.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:54:47.433971+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "753132bf-25b5-4c6e-b77b-453adc914116_2_7d0dc2fda0c04dcdaa37b6fc55caf16e.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:55:36.471938+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "753132bf-25b5-4c6e-b77b-453adc914116_3_457817ff5d7b4543a809c26c94d35cef.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:56:21.556580+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "753132bf-25b5-4c6e-b77b-453adc914116_4_20971844c91b4ceba113c9a03ce7ceed.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:57:07.616607+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "825f124f-87ec-4d16-88c1-b2f652947274_1_b1bf3df881f845c3a02665d69b8bc310.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:58:25.599759+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "825f124f-87ec-4d16-88c1-b2f652947274_2_e3b7b5bfad9f4178a3fe366006b5ab04.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:59:18.109608+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "825f124f-87ec-4d16-88c1-b2f652947274_3_c85ef99aa1324885917be6472bbb2462.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:00:06.326044+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "825f124f-87ec-4d16-88c1-b2f652947274_4_f24d685523014957bbed3c54395acf35.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:00:54.334332+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "9195251e-a87e-4026-8644-8070470981cc_1_ff3e1920da18477881fe60bb100d2c86.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:32:40.277198+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "96355bcc-0f34-4f36-8ee4-674d2c269131_1_cd91c1593ec54750b9c18b050c6c6994.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:28:22.665212+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "acf28208-69e5-4431-8375-1a80387fb8c0_1_c33187c2c452423c8838c9e6dc71bcd6.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:46:12.617080+08:00",
+      "matched_measurement": false,
+      "error": null
+    },
+    {
+      "file": "acf28208-69e5-4431-8375-1a80387fb8c0_2_f1f2fa25f1e54dd493a18614ad4a27d7.json",
+      "status": "failed",
+      "started_at": "2026-10-05T14:47:12.213389+08:00",
+      "matched_measurement": false,
+      "error": "workspace limit during automatic positioning"
+    },
+    {
+      "file": "bd3a8f89-eb02-4926-9028-d5683e5256ea_1_ebaed729165d440fa97216d67f884a9f.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:34:38.170434+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "cde2dbcc-078b-4101-91ef-b9a7cf6b29b5_1_ad71def0c9de45f090d2046f50934161.json",
+      "status": "completed",
+      "started_at": "2026-10-05T14:06:30.620970+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "daab3ba9-e51e-4d98-8428-d9288581c1fa_1_1ac7582d6ace498f9b475da1f082af34.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:38:39.561017+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "de01b067-5fcc-45b3-86fd-3dc392840f95_1_8d3269fd44984871bd341d39b0206588.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:37:41.085418+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e078b8a6-f987-4468-94b2-badc21ede2b0_1_f2bb111b8b054836bc8f5b84615e373b.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:31:11.945327+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e37e63a7-7fa3-4297-8cb4-69f158a02814_1_ecb3e45c0d3546a5bc12fb63c83a5cfa.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:27:26.700827+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e37e63a7-7fa3-4297-8cb4-69f158a02814_2_e144c9c3ef8a44ce8046bc6f7c5aa282.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:28:13.947741+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e37e63a7-7fa3-4297-8cb4-69f158a02814_3_459bfe4da1d847c0b5aabf0574e0dadf.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:29:02.864263+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e37e63a7-7fa3-4297-8cb4-69f158a02814_4_7a073a7c0afe4cc3a0e49d464e3645ae.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:29:58.637169+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "e68c7e2b-5243-4c7b-a154-7e953ece6c0d_1_e142747b6ede49428d84436890198dab.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:26:40.115609+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "ef0435a9-dc37-4d27-aefa-30adc2204eaf_1_d48fbd1a8fd54096a9145676f01fa7bd.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:22:44.257623+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "ef0435a9-dc37-4d27-aefa-30adc2204eaf_2_b8541b63171647a39e1a83471adf5b6f.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:23:38.128900+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "ef0435a9-dc37-4d27-aefa-30adc2204eaf_3_626f956fcd56449baa2c57ca7455852f.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:24:31.329313+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "ef0435a9-dc37-4d27-aefa-30adc2204eaf_4_7529e18e0e7a4f32931bf085409f50bb.json",
+      "status": "completed",
+      "started_at": "2026-10-05T15:25:24.769617+08:00",
+      "matched_measurement": true,
+      "error": null
+    },
+    {
+      "file": "fedb9299-2019-47a7-97df-57150f619f82_1_c05b6c0a441a4f79a56a5e9592a3aba0.json",
+      "status": "failed",
+      "started_at": "2026-10-05T14:50:11.565979+08:00",
+      "matched_measurement": false,
+      "error": "workspace limit during automatic positioning"
+    }
+  ],
+  "raw_hashes_verified": 720,
+  "source_sha256": {
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/0ada81a8-44b2-41a1-9a95-893da77d6755_1_3952c86a573f46b894f922f08a01289f.json": "a52b52a30721d46558e1a4bbb65183abf64718cd8312719858ce271d30e1955f",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/2090d361-6d3f-492b-b500-f6ed6108a177_1_6405a003b9b940549139a72ae1545c0d.json": "60033c35ca8c9a3e697457263130f944bd63689927fe9f230b3f83f69882b808",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/2351a8a5-6842-43bc-82a3-171f4d81a2eb_1_c2e73bb4ff47431b99dfcd2393014785.json": "8c60e0f6a2b904a058f47c01ab8ce54bac546a194d0131621d4af664e6d5b606",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/3f37e561-d9c7-42fb-8a41-04d50e1301d2_1_ac92ab11802d44eaa28f7a3e7f120097.json": "6933c72baafbd30332c62c2ae131c1a4aaf42bda1be3fac5a87a58109460146f",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_1_2979517eba434f5981e55d92f3860633.json": "29b0d8fea6fd96f81ff91e20e849174dbae21d6acd64e6a8919b18f464220638",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_2_8c9a63f1152c4d2ea7db652391836cf2.json": "21abaa4bdb0ee80cd3cefdcb2a67d6706aa5fd70b22df8764e7ccf3f630d2c97",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_3_a88fb940e46e46f5b815d15890950053.json": "fdd8610032becb5129463b5d41450e0e008228abbf14d11873c680605b7974dd",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/468e61a4-4b2b-4eed-bde8-03c8ecd65a9d_4_aafdde01b838423f848250ed8397da3f.json": "89bb04d2f2bf8bf1c510270877543df79ddf2ce6e32aca45ba739af5cf429cda",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/52e2f8c3-231c-4f62-8a38-df04f67863f8_1_55c29b74b2b542c19222a1596319e0e6.json": "637969c7cafe242336c322b6d23fa68262e8dd2b97329c1de39f70b20a4e3098",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/5ed26834-61ba-413c-b262-7eb066214b6a_1_1866e818eca44839912ffd5f36190719.json": "017ffd8e551a43264dfeea0caba25820550948adf55c8d81ac8b59ee9fd6ee8a",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6264125d-c9ce-4822-8b83-e814666973ef_1_7ebb52387cc94897b80fb90b0c9a4e2d.json": "38bd032165327f6bb38c0935e474b7df8b18ac16c1bb42be9b59b0fb2ba58102",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/684d6237-0235-48b6-8ce2-197f3b09d8f8_1_5cb8108fcccd427bb0b0abab0ff8698e.json": "17179c65ecee361b723108421a23d49e88e76164e281f188f81475bf884c1380",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/699714b9-1517-4016-bccc-db2133832dad_1_491d63fe4f1d4e368ac3c8c54eee4611.json": "b32f1325959fbde3f09e3da8e683d11d57298636dfec868c342a162e9adfc842",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_10_fb5d50a800b24b0cbed16947f376a891.json": "51272e71b01c803d1757320923afc0fc8e9cf66ae5e94cd0c953ea46c73665ec",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_11_f4f252d74cd74bb1b6be38336169d556.json": "d118983c81bb3265208cdb36cbcfe2050274abfc2bffcf950972bc228e4d9c8c",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_12_5f01f884eb1546b29a55544718a2f4fb.json": "897fd2e9d0bf247ec350448bdea7e69f36e78dafe7398de7a85c279483fedb27",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_1_e36d1e94f47f48a6893ead45952ad69b.json": "b95c75a206322d23c1c601345e98f7e7070242ddae427e9a335fbd195bea9662",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_2_3f724ad7fff2466c94eb7cf8c5141e40.json": "870fa8d6d958a10277d35b86e33c8ae5b728915f01a56c2347a3848901931289",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_3_64df64f3769d4a0bab7ef512ee55f8c5.json": "3525e4e9d320da4129f0dae40d2c0587a038032d16c3f48c2f020abaa06bcd2c",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_4_f7155ee6e58841f18ce19b0b3a779f61.json": "8c20c7851a85ff30c2137cecaa60b1e4bc7712dfb0f075d7b24c9b0b0599c58f",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_5_34cb8a8d5aaf4178bdf3f6f192df9e68.json": "3aefc0dc435a2b3b7756447b532ee9bee9fa2327a8a0e3d6ebad0867f510a1bb",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_6_e01544d9f18d4d5bb5772b34496cca11.json": "86fc7eafaab010d198ffd5f2d0228820ec121020120f21ba472e107848dd8558",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_7_5c0940b68cf9402a8de4056e993be0d8.json": "cad36b097fdaad605e4c2573544e64ddd0f7373a7185edf49b1eccac33ffe1d6",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_8_5e20843a706f44a39bfc686c3ca0ee30.json": "1eba20d391261dcb61c2f5f2da651ae30c52df7fe2a67085f20cb72a1a452fc0",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/6a84e746-6600-4026-88bb-da1a8917ba92_9_4fbab59467934cd183143088f7e30358.json": "dd5b501ea6d1ae42eda6e0fa2877c17bafff34c618f2a00ed2e1d8d7f77a1c53",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/753132bf-25b5-4c6e-b77b-453adc914116_1_ed80fb51708e4d75983f1df6c6d8add1.json": "79ddaf8eea3a6a5d0da011e2c061e1d997a7036eac223690d8ce13a885982b05",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/753132bf-25b5-4c6e-b77b-453adc914116_2_7d0dc2fda0c04dcdaa37b6fc55caf16e.json": "c9f3f742c6f699e3323bc4d2419be316291c90c0c5bf6f307f62e1f9498ce204",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/753132bf-25b5-4c6e-b77b-453adc914116_3_457817ff5d7b4543a809c26c94d35cef.json": "5b81c205e759a31c00dbffaa6f049cdfed342fca562e3228be6b29ea0b715d7b",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/753132bf-25b5-4c6e-b77b-453adc914116_4_20971844c91b4ceba113c9a03ce7ceed.json": "2cbe3f8e38b44e64bf5e61520e3f139c59245205692842bdf3116f0b8e96fc36",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/825f124f-87ec-4d16-88c1-b2f652947274_1_b1bf3df881f845c3a02665d69b8bc310.json": "92e0aac8825db21f3ceff0e7cd624065fc0079d3ea617546e5580c7357888049",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/825f124f-87ec-4d16-88c1-b2f652947274_2_e3b7b5bfad9f4178a3fe366006b5ab04.json": "a27cdca7a75ea61123c3f355fb4ec37ca7fc389ec83aa3d881afa8f6f4473a4c",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/825f124f-87ec-4d16-88c1-b2f652947274_3_c85ef99aa1324885917be6472bbb2462.json": "fca164ba791ef7858524a77889a4aac3e4e675595870e86ab7bb3268a6c56a97",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/825f124f-87ec-4d16-88c1-b2f652947274_4_f24d685523014957bbed3c54395acf35.json": "10ca1179bcbc3111a6e958684225f9620e8b4c8e54e2804d75e33e083cea8493",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/9195251e-a87e-4026-8644-8070470981cc_1_ff3e1920da18477881fe60bb100d2c86.json": "93b84de1f1dcfcffa4b3fca60661ecf7776fc9f1af2e83a1d67d85e29346eaa0",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/96355bcc-0f34-4f36-8ee4-674d2c269131_1_cd91c1593ec54750b9c18b050c6c6994.json": "73c4abd0dbb0cf282c5d795494ddfe20cfa11b6bf1470b744f648954562693c3",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/acf28208-69e5-4431-8375-1a80387fb8c0_1_c33187c2c452423c8838c9e6dc71bcd6.json": "b84523339d2191935d9448f373df2d7e9c11fcc9b4b9b20bc6c89320e6e2e2b2",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/acf28208-69e5-4431-8375-1a80387fb8c0_2_f1f2fa25f1e54dd493a18614ad4a27d7.json": "5eaa5a1fd84755f7758a0ce49b5ca865aa1621a47aad3b0ea3531673cc3b4d15",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/bd3a8f89-eb02-4926-9028-d5683e5256ea_1_ebaed729165d440fa97216d67f884a9f.json": "aac4e5fcf152097bbad4c3368e5cff3293b232b707face6d14a0389789342d18",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/cde2dbcc-078b-4101-91ef-b9a7cf6b29b5_1_ad71def0c9de45f090d2046f50934161.json": "4543f7be202a5dd36518f71af6e840e16a6d99671e991fbb01d3fe706754f4d0",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/daab3ba9-e51e-4d98-8428-d9288581c1fa_1_1ac7582d6ace498f9b475da1f082af34.json": "8ca5d86a5e384bb608d49a26acf7db26dd77e3d6991bb4bb78e772df7677c5c4",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/de01b067-5fcc-45b3-86fd-3dc392840f95_1_8d3269fd44984871bd341d39b0206588.json": "9a84299c7bc05b18e3724a8c517f8ed8f7068b19f3e75ff86e8ce14388c4a42e",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e078b8a6-f987-4468-94b2-badc21ede2b0_1_f2bb111b8b054836bc8f5b84615e373b.json": "7d3b847bf96fc1ef76b82e8eae776280d2119b55948df11fc6aadd739fe2a9a8",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e37e63a7-7fa3-4297-8cb4-69f158a02814_1_ecb3e45c0d3546a5bc12fb63c83a5cfa.json": "9cd451fefa6086fcc1d4ed21a2bb881343d66a1804a280c9de4a461746d15366",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e37e63a7-7fa3-4297-8cb4-69f158a02814_2_e144c9c3ef8a44ce8046bc6f7c5aa282.json": "b5e0e66aed66b8484a48b9c77fb8e65fd44739c78fb0d999a4ceed2b1c68898c",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e37e63a7-7fa3-4297-8cb4-69f158a02814_3_459bfe4da1d847c0b5aabf0574e0dadf.json": "eac853015a18880d2ad6155aee2c42973de542c0da145dcc6b721167c190b68c",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e37e63a7-7fa3-4297-8cb4-69f158a02814_4_7a073a7c0afe4cc3a0e49d464e3645ae.json": "da67313fcf70d7262d8d5f5d9ecb3ea850b20e54aa97293d2945c6d4362c07b8",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/e68c7e2b-5243-4c7b-a154-7e953ece6c0d_1_e142747b6ede49428d84436890198dab.json": "58449abb939558a364ade4618c8f416904cf90edfc80f12340442e0479ced164",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/ef0435a9-dc37-4d27-aefa-30adc2204eaf_1_d48fbd1a8fd54096a9145676f01fa7bd.json": "a791a7f7bef601095f27bf05464602d5c93a7a529ce7d757fa373acb0e1ba668",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/ef0435a9-dc37-4d27-aefa-30adc2204eaf_2_b8541b63171647a39e1a83471adf5b6f.json": "181757ae4c7675e38070bdf19c84846603836a7852660cc1e9504f6285861d0b",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/ef0435a9-dc37-4d27-aefa-30adc2204eaf_3_626f956fcd56449baa2c57ca7455852f.json": "736bad03892fe48ff974b14777ec4717a8aca6bbe2cef433c3525d7ba39bddc5",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/ef0435a9-dc37-4d27-aefa-30adc2204eaf_4_7529e18e0e7a4f32931bf085409f50bb.json": "cdc881333800ca938709a1510819ada9c54a534a9c325fddb3b9f32321235e49",
+    "runs/brush2/2026-10-05/四方向速度下压实验/positioning/fedb9299-2019-47a7-97df-57150f619f82_1_c05b6c0a441a4f79a56a5e9592a3aba0.json": "e21113431e7f69c6e5252558071daa9f44e9f717f50c555bcda66ff1bd48ea4e",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/day_report/01_speed_comparison.png": "efb85cdd681afe16b32c43c5303e985ac524d8b76b39da98c46d1a4abd8c1e3e",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/day_report/02_height_response.png": "289f6ebf6dd5c51079df4f06bfacf8b8db64a011419440ea2db16629161ec164",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/directional_calibration_benchmark/01_models_and_coverage.png": "d6e9451f18e143362e98d0bf9cc7699f74a36edd69212ccb4dc7e5c283586c03",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/directional_calibration_benchmark/03_m2_bin_replay.png": "978aa014552515e3dad19597fbba45abf2bfc30f6aa79b79f75782bf8b7b7990",
+    "docs/08-system-evaluation/four-direction-experiment-report-2026-10-05.md": "7cd5e3b77d14cddd756e837d1df199ea4f4f42e55becdfa1fd71d88b477b22d5",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/directional_calibration_benchmark/metrics.json": "d4aed9f5a884447ed61a98f18c414ea8c977a2211eedff1d24db198da096bdae",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/directional_calibration_benchmark/directional_calibration.json": "83cfe36da66489f2d0f76d37ece2ff1ca9fc310ddb2796bab122209d24daf2bb",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/stage3_review/run_quality.csv": "756bc93c34d5d7d9693765a73036473bad3d06523aba46c06a4fe0c7bf8972ed",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/stage3_review/height_repeatability.csv": "73db86e12fbba5ebe7cba6bab03e75fec91a0efc4dc8c82dea5442e103e43c11",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/stage2_review/hold_repeatability.csv": "a4b4598075830154c176a19cbf0c49db994655daca22f14529fd915545559520",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/stage2_review/speed_contrasts.csv": "362e1e62d474c4315cdd426c8cfe88450d40cc01dadeaca1e3d5d6502b9157eb",
+    "runs/brush2/2026-10-05/四方向速度下压实验/analysis/day_report/create_daily_report.py": "d5d11f0e7c968d170fa43f2b61c1c495e624965a86cb0bd1dbb08623dcd32091"
+  },
+  "figures_embedded": 4,
+  "scope": "hardware records + retrospective offline calibration; no new hardware execution"
+}

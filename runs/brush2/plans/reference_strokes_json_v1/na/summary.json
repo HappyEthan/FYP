@@ -1,0 +1,25 @@
+{
+  "id": "na",
+  "name": "捺",
+  "recipe_file": "/home/ethan/FYP/configs/strokes/na.json",
+  "recipe_sha256": "40523d049e2da17ea8266767d4fe69852e3f273b755e9a1ef73f20a785c1c97e",
+  "plan": "na/strokeplan.npz",
+  "samples": 1039,
+  "length_mm": 150.9629773314875,
+  "duration_s": 20.76,
+  "max_xy_speed_mm_s": 9.999999248296133,
+  "start_end_paper_mm": [
+    [
+      180.0,
+      -55.00000000000001
+    ],
+    [
+      85.0,
+      55.00000000000001
+    ]
+  ],
+  "target_range_uT": [
+    100.0,
+    224.9999999984381
+  ]
+}

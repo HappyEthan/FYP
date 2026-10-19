@@ -1,0 +1,89 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      -726.8826923076924,
+      -1056.2942307692306,
+      736.2869307692306
+    ],
+    "applies_after_seq": 26,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -103.1980981475914,
+      -100.82236498702179,
+      514.4382607563537
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 26,
+    "std_uT": [
+      7.645397588741926,
+      6.311868047926703,
+      152.14432485130123
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        -726.8826923076924,
+        -1056.2942307692306,
+        736.2869307692306
+      ],
+      "applies_after_seq": 26,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -103.1980981475914,
+        -100.82236498702179,
+        514.4382607563537
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 26,
+      "std_uT": [
+        7.645397588741926,
+        6.311868047926703,
+        152.14432485130123
+      ]
+    },
+    {
+      "B0_uT": [
+        -750.4363636363631,
+        -1053.4933884297523,
+        846.7639999999999
+      ],
+      "applies_after_seq": 47286,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        1.2083998046683413,
+        0.9590157814600059,
+        -330.1984838826866
+      ],
+      "effective_visit": 4,
+      "first_seq": 47166,
+      "last_seq": 47286,
+      "std_uT": [
+        4.947087798488158,
+        5.024974578072941,
+        10.485046876385432
+      ]
+    }
+  ],
+  "brush_id": "brush1",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-21T06:01:10.293855+00:00",
+  "reason": "deadline_miss",
+  "run_id": "20260921T055527.237321Z-ff7bad",
+  "sha256": {
+    "compiled_plan.npz": "9611b4e91336f2d5d0776a6fe4a25322dfdacfb1b515d39c8ff2c626cd33ef02",
+    "resolved.json": "de4e684dce2ca889e46a0b3ac907255cb96cdb0119d5f1bb978c5450d08869e0",
+    "setup.json": "28526ea0281f266292eb715cf1f20e3034ce34de2090498fca60a1dbc78086f2",
+    "timeline.npz": "4395c357fd418c64350f601d1b9ed2cb8de81c16c1fda598f53f6b7eead8e432"
+  },
+  "started_at": "2026-09-21T05:55:27.237440+00:00",
+  "status": "aborted",
+  "writer_pid": 38664
+}

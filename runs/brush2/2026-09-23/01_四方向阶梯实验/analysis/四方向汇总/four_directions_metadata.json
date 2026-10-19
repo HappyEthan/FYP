@@ -1,0 +1,232 @@
+{
+  "source_runs": [
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-43-59_姿态Ry正15_第1次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-55-06_姿态Ry正15_第2次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-13-44_姿态Rx正15_Rz90_第1次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-50-38_姿态Rx正15_Rz90_第2次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-07-46_姿态Ry负15_Rz180_第1次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-17-06_姿态Ry负15_Rz180_第2次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-44-18_姿态Rx负15_Rz270_第1次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-57-22_姿态Rx负15_Rz270_第2次"
+  ],
+  "excluded_fault_runs": [
+    "901492",
+    "4c8ffa"
+  ],
+  "direction_labels": {
+    "+x": "Ry+15°, Rz0°",
+    "+y": "Rx+15°, Rz90°",
+    "-x": "Ry-15°, Rz180°",
+    "-y": "Rx-15°, Rz270°"
+  },
+  "direction_meaning": "brush/sensor orientation category; all robot measurement paths command +X travel",
+  "z_mm": [
+    36.0,
+    34.285714285714285,
+    32.57142857142857,
+    30.857142857142858,
+    29.142857142857142,
+    27.42857142857143,
+    25.714285714285715,
+    24.0
+  ],
+  "contact_z_mm": 40.0,
+  "steady_window_travel_mm": [
+    30.0,
+    170.0
+  ],
+  "steady_statistic": "median of control a_control_uT",
+  "spatial_smoothing": "raw sqrt(dBx_uT^2 + dBy_uT^2), 0.5 mm grid, 21-point Hann",
+  "figure_excluded_depth_mm": [
+    16.0
+  ],
+  "figure_exclusion_reason": "operator suspects Z=24 mm data; raw data and CSV retained for audit",
+  "four_direction_mean_depth_mm": [
+    4.0,
+    5.714285714285715,
+    7.428571428571431,
+    9.142857142857142,
+    10.857142857142858,
+    12.57142857142857,
+    14.285714285714285
+  ],
+  "four_direction_mean_uT": [
+    38.1778898092089,
+    69.19116650662511,
+    116.45889729951406,
+    164.48325051374172,
+    187.98462256393816,
+    253.61451900745953,
+    281.6368087670885
+  ],
+  "interpolated_plot_depth_mm": [
+    10.0,
+    13.0
+  ],
+  "interpolation_method": "Within each run and direction, linear interpolation of smoothed |dBxy| curves between neighboring measured command depths; then equal-weight mean of two runs. These curves are not observations at the target depths.",
+  "directions": [
+    {
+      "direction": "+x",
+      "orientation": "Ry+15°, Rz0°",
+      "run_ids": [
+        "df7649",
+        "c575e5"
+      ],
+      "depth_mm": [
+        4.0,
+        5.714285714285715,
+        7.428571428571431,
+        9.142857142857142,
+        10.857142857142858,
+        12.57142857142857,
+        14.285714285714285,
+        16.0
+      ],
+      "mean_steady_median_uT": [
+        36.15468938150856,
+        79.38083355660565,
+        129.49337014662083,
+        151.19996866321225,
+        165.51115807378608,
+        213.11064137937498,
+        194.89208710091125,
+        327.4905609315353
+      ],
+      "repeat_abs_gap_uT": [
+        18.367753793204997,
+        0.4652535390852961,
+        19.799469147570747,
+        56.594735829947695,
+        57.55122086131223,
+        82.04566735590532,
+        5.262746409553245,
+        33.96563701270463
+      ],
+      "mean_across_depths_uT": 162.15416365419438,
+      "mean_across_plotted_depths_uT": 138.53467832885994
+    },
+    {
+      "direction": "+y",
+      "orientation": "Rx+15°, Rz90°",
+      "run_ids": [
+        "7d1a59",
+        "486bc3"
+      ],
+      "depth_mm": [
+        4.0,
+        5.714285714285715,
+        7.428571428571431,
+        9.142857142857142,
+        10.857142857142858,
+        12.57142857142857,
+        14.285714285714285,
+        16.0
+      ],
+      "mean_steady_median_uT": [
+        47.58969777061414,
+        79.83825107046177,
+        117.62527897727705,
+        171.50283381071543,
+        221.20057932678338,
+        294.0878973883428,
+        304.2544612891569,
+        516.5448439922577
+      ],
+      "repeat_abs_gap_uT": [
+        10.465627519971385,
+        5.907159367347248,
+        4.494776818348612,
+        4.830421262999607,
+        22.744933871637073,
+        28.688032536074047,
+        188.98813473471415,
+        14.124261818981722
+      ],
+      "mean_across_depths_uT": 219.08048045320115,
+      "mean_across_plotted_depths_uT": 176.58557137619306
+    },
+    {
+      "direction": "-x",
+      "orientation": "Ry-15°, Rz180°",
+      "run_ids": [
+        "9666d5",
+        "2f3488"
+      ],
+      "depth_mm": [
+        4.0,
+        5.714285714285715,
+        7.428571428571431,
+        9.142857142857142,
+        10.857142857142858,
+        12.57142857142857,
+        14.285714285714285,
+        16.0
+      ],
+      "mean_steady_median_uT": [
+        48.769137926394485,
+        66.13982237978666,
+        105.20413689630826,
+        178.18356252780444,
+        154.90687323270294,
+        251.33391916967008,
+        299.31431015301115,
+        849.3136953345829
+      ],
+      "repeat_abs_gap_uT": [
+        18.58408840550142,
+        19.954024375123467,
+        35.64206230069959,
+        6.799001059885313,
+        18.011425104350593,
+        8.818083614535084,
+        49.231918764916486,
+        103.83483811317501
+      ],
+      "mean_across_depths_uT": 244.1456822025326,
+      "mean_across_plotted_depths_uT": 157.693108897954
+    },
+    {
+      "direction": "-y",
+      "orientation": "Rx-15°, Rz270°",
+      "run_ids": [
+        "43a39c",
+        "3b670b"
+      ],
+      "depth_mm": [
+        4.0,
+        5.714285714285715,
+        7.428571428571431,
+        9.142857142857142,
+        10.857142857142858,
+        12.57142857142857,
+        14.285714285714285,
+        16.0
+      ],
+      "mean_steady_median_uT": [
+        20.19803415831842,
+        51.40575901964633,
+        113.51280317785009,
+        157.0466370532348,
+        210.3198796224803,
+        255.9256180924504,
+        328.0863765252749,
+        372.5928028059841
+      ],
+      "repeat_abs_gap_uT": [
+        1.8972094669284303,
+        6.8355106613147,
+        3.750442300248764,
+        13.022497368785281,
+        73.03936412480206,
+        4.16745971045188,
+        34.70320664270366,
+        2.939134836866799
+      ],
+      "mean_across_depths_uT": 188.6359888069049,
+      "mean_across_plotted_depths_uT": 162.35644394989362
+    }
+  ],
+  "plot": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/四方向汇总/four_directions_comparison.png",
+  "pass_summary_csv": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/四方向汇总/four_directions_pass_summary.csv",
+  "spatial_curves_csv": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/四方向汇总/four_directions_spatial_curves.csv"
+}

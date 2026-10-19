@@ -1,0 +1,41 @@
+每笔自动软复位：使用说明
+
+代码已修改；当前板子里的旧固件尚未在本次任务中更新。
+新版固件：firmware/mlx_s3_monitor_fixed90/mlx_s3_monitor_fixed90.ino
+适用板子：Seeed XIAO ESP32-S3。串口：/dev/ttyACM0，115200。
+
+一、先更新固件（只需一次）
+在 /home/ethan/FYP 下运行以下命令。烧录前关闭其他占用此串口的监视器和实验程序。
+以下命令提供给操作者执行；本次只进行了编译，没有连接板子、烧录或移动机械臂。
+
+arduino-cli compile --fqbn esp32:esp32:XIAO_ESP32S3:USBMode=hwcdc,CDCOnBoot=default --build-path /tmp/fyp-fixed90-reboot-build firmware/mlx_s3_monitor_fixed90
+arduino-cli upload --fqbn esp32:esp32:XIAO_ESP32S3:USBMode=hwcdc,CDCOnBoot=default --port /dev/ttyACM0 --input-dir /tmp/fyp-fixed90-reboot-build firmware/mlx_s3_monitor_fixed90
+
+二、执行一笔当前 Z28 实验
+保留原参数：向上 +Y、Z28定高、30°→15°接触转笔2秒、补偿5mm、行程50mm、速度10mm/s。
+下面命令进入实验准备；确认现场和路径后，按 Enter 才开始。
+
+PYTHONPATH=src python3 scripts/run_four_direction_sweep.py --kind hold --direction up --hold-z-mm 28 --entry-contact-z-mm 28 --rotate-s 2 --entry-reverse-mm 5 --travel-mm 50 --speed-mm-s 10
+
+若只预检参数：在命令末尾加 --dry-run，不连接硬件。
+每笔软复位默认开启；无需加额外选项。显式选项为 --reboot-sensor-each-trial。
+有意关闭时使用 --no-reboot-sensor-each-trial。
+
+三、程序每笔做什么
+1. 发送 REBOOT；等待固件确认回应。
+2. ESP32 重启；MLX90393 重新初始化并完成固件启动采样。
+3. 等待 READY 和一帧有限磁场数据，检查设备计时已进入启动时间范围。
+   USB 若暂时断开，程序在15秒等待窗口内重连同一串口，不重复发送重启命令。
+4. 移到本笔等待位置；清除转场期间的串口缓存；重新采空载基线。
+   后续仍按原轨迹在空中调整到工作姿态，并重新取方向基线，然后接触纸面。
+5. 重启未确认、无 READY、无有效新帧或基线不合格，停止本笔；不自动重放运动。
+
+日志位置：runs/brush2/YYYY-MM-DD/四方向速度下压实验/sensor_reboots/*.json。
+成功或失败的重启尝试都保存。完成的原始 run 中 resolved.json 的 sensor_reboot 字段也保存重启结果。
+
+四、这一组用于检验什么
+板子在通电、固件启动完成后持续读取并发送数据。关闭电脑端实验或清串口缓存不会使板子断电。
+新流程每笔重新软件初始化；板子随后仍连续发送，电脑从新数据中取基线和记录实验。
+软件复位不等同于物理断电，不能保证板子或霍尔降温，也不能保证消除热漂移。
+下一组三次保持相同的磁毛、纸面与含水准备，不在某一笔之间单独手调磁毛。
+本次第二笔手调磁毛、第三笔重新上电，无法单独证明板子是变化原因。

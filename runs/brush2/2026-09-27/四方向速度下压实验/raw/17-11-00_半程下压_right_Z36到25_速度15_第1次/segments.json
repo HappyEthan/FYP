@@ -1,0 +1,100 @@
+[
+  {
+    "end_t_s": 1.52,
+    "end_tick": 76,
+    "id": "orient_for_baseline",
+    "kind": "preparation",
+    "start_t_s": 0.02,
+    "start_tick": 1
+  },
+  {
+    "end_t_s": 2.52,
+    "end_tick": 126,
+    "id": "baseline_settle",
+    "kind": "airborne",
+    "start_t_s": 1.52,
+    "start_tick": 76
+  },
+  {
+    "end_t_s": 3.06,
+    "end_tick": 153,
+    "id": "entry_offset_high",
+    "kind": "preparation",
+    "start_t_s": 2.52,
+    "start_tick": 126
+  },
+  {
+    "end_t_s": 4.5600000000000005,
+    "end_tick": 228,
+    "id": "rotate_air",
+    "kind": "preparation",
+    "start_t_s": 3.06,
+    "start_tick": 153
+  },
+  {
+    "end_t_s": 5.64,
+    "end_tick": 282,
+    "id": "lower_fast",
+    "kind": "preparation",
+    "start_t_s": 4.5600000000000005,
+    "start_tick": 228
+  },
+  {
+    "end_t_s": 7.4,
+    "end_tick": 370,
+    "id": "lower_slow",
+    "kind": "preparation",
+    "start_t_s": 5.64,
+    "start_tick": 282
+  },
+  {
+    "end_t_s": 10.4,
+    "end_tick": 520,
+    "id": "rotate_contact",
+    "kind": "preparation",
+    "start_t_s": 7.4,
+    "start_tick": 370
+  },
+  {
+    "end_t_s": 15.540000000000001,
+    "end_tick": 777,
+    "id": "straight_hold",
+    "kind": "straight",
+    "start_t_s": 10.4,
+    "start_tick": 520
+  },
+  {
+    "depth_mm": 15.0,
+    "end_t_s": 20.7,
+    "end_tick": 1035,
+    "from_depth_mm": 4.0,
+    "id": "sweep_down",
+    "kind": "sweep",
+    "start_t_s": 15.540000000000001,
+    "start_tick": 777
+  },
+  {
+    "end_t_s": 22.32,
+    "end_tick": 1116,
+    "id": "lift",
+    "kind": "preparation",
+    "start_t_s": 20.7,
+    "start_tick": 1035
+  },
+  {
+    "end_t_s": 24.32,
+    "end_tick": 1216,
+    "id": "post_lift_hold",
+    "kind": "airborne",
+    "start_t_s": 22.32,
+    "start_tick": 1116
+  },
+  {
+    "end_t_s": 24.52,
+    "end_tick": 1226,
+    "id": "hold",
+    "kind": "airborne",
+    "start_t_s": 24.32,
+    "start_tick": 1216
+  }
+]

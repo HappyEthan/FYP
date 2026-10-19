@@ -1,0 +1,107 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2152.5745508982036,
+      2921.012574850299,
+      -7092.860598802401
+    ],
+    "applies_after_seq": 507,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -1.9616468397062814,
+      -1.5586328034361279,
+      -0.282883371565479
+    ],
+    "effective_visit": 0,
+    "first_seq": 7,
+    "last_seq": 507,
+    "quality_axes": [
+      0,
+      1
+    ],
+    "std_uT": [
+      5.744927125086874,
+      5.471515019048995,
+      13.759210034271007
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2152.5745508982036,
+        2921.012574850299,
+        -7092.860598802401
+      ],
+      "applies_after_seq": 507,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -1.9616468397062814,
+        -1.5586328034361279,
+        -0.282883371565479
+      ],
+      "effective_visit": 0,
+      "first_seq": 7,
+      "last_seq": 507,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.744927125086874,
+        5.471515019048995,
+        13.759210034271007
+      ]
+    },
+    {
+      "B0_uT": [
+        2158.659504950494,
+        2912.3732673267327,
+        -7085.310502970295
+      ],
+      "applies_after_seq": 1792,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        -0.9055874291952186,
+        -1.0341408981609648,
+        0.366440307253293
+      ],
+      "effective_visit": 1,
+      "first_seq": 1288,
+      "last_seq": 1792,
+      "quality_axes": [
+        0,
+        1
+      ],
+      "std_uT": [
+        5.099790206563952,
+        5.363216138137441,
+        14.13124468225617
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-08T08:32:05.181723+00:00",
+  "reason": "",
+  "run_id": "20261008T083123.351072Z-3cce61",
+  "sha256": {
+    "common_reference.json": "2c7309090da5dcef9b033d985a536907e50ea4c1f65a758d877e1df4ebb39252",
+    "compiled_plan.npz": "3fc63de5074bec3d140ce474308a40060aab5260924c0d94360ac253306f472e",
+    "directional_calibration.json": "83cfe36da66489f2d0f76d37ece2ff1ca9fc310ddb2796bab122209d24daf2bb",
+    "motion_metrics.json": "14cae59a898f4f171e7aa77ec92e9559df334deff98deec8505b910e37150c59",
+    "resolved.json": "fa18244d1c8c6539a03d02088a73533580b16868c821c1eb181b05eed9a288ca",
+    "segments.json": "fe6298020f2b37d6b9bfccb3878d18ea9746803899c4c3ddc7a2e511ee21df04",
+    "settings_source.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "setup.json": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+    "timeline.npz": "2610e61c46b6d2a9ac23e68f1a410e92461ea5ef64ec2c2507d3ec0b7c8fc05a",
+    "validation.json": "3a4d5b7b3d89bffa88b4226718f526dbd0cc124cfcf5580815d55675b855756b"
+  },
+  "started_at": "2026-10-08T08:31:23.351072+00:00",
+  "status": "completed",
+  "writer_pid": 39865
+}

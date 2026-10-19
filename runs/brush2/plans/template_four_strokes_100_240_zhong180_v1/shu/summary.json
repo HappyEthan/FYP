@@ -1,0 +1,33 @@
+{
+  "id": "shu",
+  "name": "悬针竖",
+  "template": "outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/shu_xuanzhen/template.json",
+  "template_id": "c73eea3a3083436cd582a11b7ca56827b9291bd6d826ba6f17b85e1bec81d8c2",
+  "bbox_mm": [
+    8.067329895091262,
+    180.0
+  ],
+  "uniform_mm_per_source_px": 0.36809815950920244,
+  "length_mm": 185.93300149332813,
+  "duration_s": 37.2,
+  "samples": 1861,
+  "max_xy_speed_mm_s": 7.926826782959044,
+  "target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "start_end_paper_mm": [
+    [
+      135.95092024539878,
+      90.0
+    ],
+    [
+      139.6319018404908,
+      -90.0
+    ]
+  ],
+  "plan": "shu/strokeplan.npz",
+  "preview": "shu/preview.png",
+  "writing_hint": "尖起斜切右下轻按，左下移正后中锋直下，下段渐提收尖；白线止于墨迹尖端前约8像素，保持可见端点不外推。",
+  "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+}

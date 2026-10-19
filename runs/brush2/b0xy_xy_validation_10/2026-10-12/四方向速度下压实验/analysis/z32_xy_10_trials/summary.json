@@ -1,0 +1,1512 @@
+{
+  "run_count": 10,
+  "new_run_names": [
+    "18-45-32_定高_up_Z32到32_速度10_第4次",
+    "18-46-35_定高_up_Z32到32_速度10_第5次",
+    "18-47-11_定高_up_Z32到32_速度10_第6次",
+    "18-47-47_定高_up_Z32到32_速度10_第7次"
+  ],
+  "runs": [
+    {
+      "run_name": "17-55-58_定高_right_Z32到32_速度10_第1次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-55-58_定高_right_Z32到32_速度10_第1次",
+      "date": "2026-10-12",
+      "time": "17:55:58",
+      "direction": "right",
+      "axis": "X",
+      "repeat": 1,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3687.591385983506,
+      "baseline_Bxyz_uT": [
+        2175.9193333333315,
+        2977.1975555555573,
+        -7100.738903703705
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.487160123617882,
+        5.542937911555389,
+        13.737501725797248
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000043667,
+          "mean_uT": [
+            2176.9907046476756,
+            2979.264242878563,
+            -7098.366857571212
+          ],
+          "std_uT": [
+            5.523561006282837,
+            5.47198119969867,
+            13.328596467232064
+          ],
+          "drift_uT_s": [
+            -0.15233716717655515,
+            -1.6195037906010623,
+            2.3955792166847103
+          ],
+          "raw_xy_norm_std_uT": 5.584627627937913
+        },
+        {
+          "baseline_id": 1,
+          "samples": 675,
+          "duration_s": 2.019963147,
+          "mean_uT": [
+            2175.9193333333315,
+            2977.1975555555573,
+            -7100.738903703705
+          ],
+          "std_uT": [
+            5.487160123617882,
+            5.542937911555389,
+            13.737501725797248
+          ],
+          "drift_uT_s": [
+            0.05204806124935798,
+            -0.21170246248592775,
+            -1.0810888411410964
+          ],
+          "raw_xy_norm_std_uT": 5.591634750058031
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 154.10006291014795,
+      "middle_sample_std_uT": 3.3928768705414996,
+      "middle_median_uT": 154.42962068878492,
+      "middle_signal_slope_uT_per_mm": 0.27701299717928884,
+      "rotation_end_mean_uT": 67.5372737317943,
+      "tail_mean_uT": 164.2685554571108,
+      "full_straight_mean_uT": 150.95098638264068,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        -56.05809915575133,
+        143.46487125522899,
+        5.434207902229604
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2119.86123417758,
+        3120.662426810786,
+        -7095.304695801475
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2119.4682119205304,
+        3120.7430463576165,
+        -7094.4768079470205
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3772.578823208064,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 32.004533333333335,
+      "actual_middle_z_min_mm": 31.997999999999998,
+      "actual_middle_z_max_mm": 32.019,
+      "actual_middle_z_range_mm": 0.021000000000000796,
+      "actual_middle_z_slope_mm_per_mm": -0.0003225746799431333,
+      "sensor_samples": 7662,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 228,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.725624866,
+      "reboot_ack_latency_s": 0.010141528,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765098,
+      "max_lateness_ms": 14.301022999999999,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "right",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "03649232491fcdc76cc11b480bb5783646a5a0c2e79e79b0d4509c99f21014d1",
+        "sensor.csv": "f611b76683043890799e2e4f00e586b92991154ff3511c42cd1374abbe753cea",
+        "control.jsonl": "34aa1ea8d0cdd6d89c9632bd4fcab3df74fa992ecd839f4e34adddce662de763",
+        "actual_tcp.csv": "db9f54f1dcd1919f69755372f32cb6f55b9d11d97e3b4c56d638c2f85ece6ebd"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "17-56-27_定高_right_Z32到32_速度10_第2次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-56-27_定高_right_Z32到32_速度10_第2次",
+      "date": "2026-10-12",
+      "time": "17:56:27",
+      "direction": "right",
+      "axis": "X",
+      "repeat": 2,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3712.1059533215307,
+      "baseline_Bxyz_uT": [
+        2166.233234421365,
+        3014.4923590504427,
+        -7104.132970326412
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.492580718658702,
+        5.243011902688708,
+        14.590272156220772
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 668,
+          "duration_s": 2.00007041,
+          "mean_uT": [
+            2167.3973802395208,
+            3016.023278443115,
+            -7097.2919520958085
+          ],
+          "std_uT": [
+            5.630749611796576,
+            5.434116904084763,
+            15.612926754903878
+          ],
+          "drift_uT_s": [
+            -0.40934204300753896,
+            -0.8044615906372478,
+            -2.8530216387070237
+          ],
+          "raw_xy_norm_std_uT": 5.461957858517252
+        },
+        {
+          "baseline_id": 1,
+          "samples": 674,
+          "duration_s": 2.01996416,
+          "mean_uT": [
+            2166.233234421365,
+            3014.4923590504427,
+            -7104.132970326412
+          ],
+          "std_uT": [
+            5.492580718658702,
+            5.243011902688708,
+            14.590272156220772
+          ],
+          "drift_uT_s": [
+            -0.509320925029517,
+            -0.21033645508051763,
+            -0.9488522694381427
+          ],
+          "raw_xy_norm_std_uT": 5.351481140874026
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 117.1136284339762,
+      "middle_sample_std_uT": 3.3946215060901563,
+      "middle_median_uT": 117.28073853086497,
+      "middle_signal_slope_uT_per_mm": 0.2844778385131673,
+      "rotation_end_mean_uT": 75.8226149076959,
+      "tail_mean_uT": 124.05162385234993,
+      "full_straight_mean_uT": 116.35132072535066,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        -38.66214902614847,
+        110.50601951277345,
+        4.8472691800363314
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2127.5710853952164,
+        3124.998378563216,
+        -7099.285701146376
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2127.0844370860927,
+        3125.0513245033103,
+        -7097.8119205298035
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3780.4998399356937,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 32.004266666666666,
+      "actual_middle_z_min_mm": 31.999,
+      "actual_middle_z_max_mm": 32.018,
+      "actual_middle_z_range_mm": 0.019000000000001904,
+      "actual_middle_z_slope_mm_per_mm": -0.00032611302116566265,
+      "sensor_samples": 7661,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 228,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.725549854,
+      "reboot_ack_latency_s": 0.010128213,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765099,
+      "max_lateness_ms": 14.580904,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "right",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "d416ebe463f023742b8073450e4bbb5d76b1a97105053aa39a555bf6416f9d08",
+        "sensor.csv": "2ea6fc8b8ee1891ce2c27ec8d50b59c8df63b9414a857171ac6bb36bc7012b11",
+        "control.jsonl": "df57f02e44de796a3fc7aabb54872b49558c1416f508fced6c28c7e7b0fa1ced",
+        "actual_tcp.csv": "e33d7129173ab693c57478abca6d373289e8d9e809501b2632c52cd52fc5aa6c"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "17-57-08_定高_right_Z32到32_速度10_第3次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-57-08_定高_right_Z32到32_速度10_第3次",
+      "date": "2026-10-12",
+      "time": "17:57:08",
+      "direction": "right",
+      "axis": "X",
+      "repeat": 3,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3644.1129741980403,
+      "baseline_Bxyz_uT": [
+        2134.120994065281,
+        2953.8258160237383,
+        -7091.861344213646
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.224899788054975,
+        5.663613860444414,
+        14.084649544750144
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 668,
+          "duration_s": 2.000028945,
+          "mean_uT": [
+            2136.006511976052,
+            2957.7954341317354,
+            -7095.859514970063
+          ],
+          "std_uT": [
+            5.313154387016778,
+            5.70816249969348,
+            13.214711679893366
+          ],
+          "drift_uT_s": [
+            -2.4766850990598055,
+            -2.2040131494347173,
+            -0.2380219334266332
+          ],
+          "raw_xy_norm_std_uT": 5.727857114186003
+        },
+        {
+          "baseline_id": 1,
+          "samples": 674,
+          "duration_s": 2.019963284,
+          "mean_uT": [
+            2134.120994065281,
+            2953.8258160237383,
+            -7091.861344213646
+          ],
+          "std_uT": [
+            5.224899788054975,
+            5.663613860444414,
+            14.084649544750144
+          ],
+          "drift_uT_s": [
+            -1.2473106910343335,
+            -0.6534872274129476,
+            1.0185254656749663
+          ],
+          "raw_xy_norm_std_uT": 5.548086703961037
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 88.62149634773166,
+      "middle_sample_std_uT": 2.7399146028274086,
+      "middle_median_uT": 88.83381864346919,
+      "middle_signal_slope_uT_per_mm": 0.1772890895731305,
+      "rotation_end_mean_uT": 39.68491203405699,
+      "tail_mean_uT": 97.00016808568591,
+      "full_straight_mean_uT": 87.51652050249842,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        -12.766194154942657,
+        87.66643524978417,
+        -8.153820219020583
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2121.3547999103384,
+        3041.4922512735225,
+        -7100.015164432666
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2121.474834437087,
+        3041.417880794701,
+        -7100.438662251657
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3708.2106674821794,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 32.0048,
+      "actual_middle_z_min_mm": 31.997999999999998,
+      "actual_middle_z_max_mm": 32.018,
+      "actual_middle_z_range_mm": 0.020000000000003126,
+      "actual_middle_z_slope_mm_per_mm": -0.0003258297297437298,
+      "sensor_samples": 7662,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 228,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.725754308,
+      "reboot_ack_latency_s": 0.010143426,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.7651,
+      "max_lateness_ms": 14.2833,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "right",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "5723125feb522ff9a23319355ca56f54646e8942f5aa4186f15e4c2754e321c8",
+        "sensor.csv": "cf32a58621a2a56bc8328e8e4b45b63b6b5bb1046472a4c755f03bdbace4050a",
+        "control.jsonl": "d01792cf37b26e868cc8763a7973c485485cc16573fe29037b35840485b6b98b",
+        "actual_tcp.csv": "1f4c9cd323de26183c8e40b249f0afb3a83821bc949372a024f4108023a03e83"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "17-58-28_定高_up_Z32到32_速度10_第1次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-58-28_定高_up_Z32到32_速度10_第1次",
+      "date": "2026-10-12",
+      "time": "17:58:28",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 1,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3661.328427799943,
+      "baseline_Bxyz_uT": [
+        2168.0671664167917,
+        2950.3916041979014,
+        -7097.678953523245
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.359524854262736,
+        5.531920859978192,
+        13.67639316944623
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 668,
+          "duration_s": 2.000023444,
+          "mean_uT": [
+            2161.4029940119763,
+            2959.710404191619,
+            -7101.225176646706
+          ],
+          "std_uT": [
+            5.38370990612027,
+            5.595839610318858,
+            13.78234206559634
+          ],
+          "drift_uT_s": [
+            -0.18727285872607177,
+            -1.3153189476790574,
+            -1.0596380611055352
+          ],
+          "raw_xy_norm_std_uT": 5.485209074617582
+        },
+        {
+          "baseline_id": 1,
+          "samples": 667,
+          "duration_s": 2.000000706,
+          "mean_uT": [
+            2168.0671664167917,
+            2950.3916041979014,
+            -7097.678953523245
+          ],
+          "std_uT": [
+            5.359524854262736,
+            5.531920859978192,
+            13.67639316944623
+          ],
+          "drift_uT_s": [
+            -1.0353049774748773,
+            -1.2564618721332164,
+            1.010955866627295
+          ],
+          "raw_xy_norm_std_uT": 5.645114637579743
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 125.54587612951443,
+      "middle_sample_std_uT": 8.073311943086113,
+      "middle_median_uT": 126.37565568015286,
+      "middle_signal_slope_uT_per_mm": 0.868811873552817,
+      "rotation_end_mean_uT": 73.53110137987125,
+      "tail_mean_uT": 136.27745254872534,
+      "full_straight_mean_uT": 121.95151935946323,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        120.67097791150358,
+        34.57000717101407,
+        1.7529565246350851
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2288.738144328295,
+        2984.9616113689153,
+        -7095.92599699861
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2288.8559602649007,
+        2984.031456953643,
+        -7095.992913907287
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3761.4276722382856,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.994733333333336,
+      "actual_middle_z_min_mm": 31.936,
+      "actual_middle_z_max_mm": 32.103,
+      "actual_middle_z_range_mm": 0.1670000000000016,
+      "actual_middle_z_slope_mm_per_mm": -0.0038510548388697523,
+      "sensor_samples": 7829,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.725406416,
+      "reboot_ack_latency_s": 0.010132213,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765099,
+      "max_lateness_ms": 14.638494999999999,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "9fb30eebb7746642c0441287c6854093419a47ff9cfbe761d0e3aff0f4958f89",
+        "sensor.csv": "0a59bee75573a3315ee626ff51f9c82f9bb962178f974f6c886385ce90b5a704",
+        "control.jsonl": "e06da2e4099ee4d0938ab2e8e801f7b74c3ed6c3f1b85201d2c3af15895f21f9",
+        "actual_tcp.csv": "a441a3773d144ffff1638c78692855c51137aa7ef31c67d3bb6e652a19c8da5d"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "17-59-05_定高_up_Z32到32_速度10_第2次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-59-05_定高_up_Z32到32_速度10_第2次",
+      "date": "2026-10-12",
+      "time": "17:59:05",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 2,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3722.451893400754,
+      "baseline_Bxyz_uT": [
+        2221.9057121661735,
+        2986.6005934718137,
+        -7096.432415430267
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.566847008892538,
+        5.264918011289001,
+        14.91217021163886
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 668,
+          "duration_s": 2.000041666,
+          "mean_uT": [
+            2215.790793413175,
+            2995.460479041914,
+            -7101.610275449098
+          ],
+          "std_uT": [
+            5.587134478056244,
+            5.323388773515593,
+            14.139271443962182
+          ],
+          "drift_uT_s": [
+            -0.540020932808712,
+            -1.9411923288038035,
+            2.5980505312155904
+          ],
+          "raw_xy_norm_std_uT": 5.486044178967579
+        },
+        {
+          "baseline_id": 1,
+          "samples": 674,
+          "duration_s": 2.019969226,
+          "mean_uT": [
+            2221.9057121661735,
+            2986.6005934718137,
+            -7096.432415430267
+          ],
+          "std_uT": [
+            5.566847008892538,
+            5.264918011289001,
+            14.91217021163886
+          ],
+          "drift_uT_s": [
+            -0.6487966938337077,
+            0.7371204430340672,
+            -4.150358642431638
+          ],
+          "raw_xy_norm_std_uT": 5.459320029550261
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 74.03001133666092,
+      "middle_sample_std_uT": 7.235070741807642,
+      "middle_median_uT": 76.13198638109002,
+      "middle_signal_slope_uT_per_mm": 0.7682862508597754,
+      "rotation_end_mean_uT": 35.03588730161767,
+      "tail_mean_uT": 83.4785943848921,
+      "full_straight_mean_uT": 71.2492562290505,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        73.25543797492342,
+        10.275174806286108,
+        6.234468506920005
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2295.161150141097,
+        2996.8757682780997,
+        -7090.1979469233465
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2294.643377483443,
+        2996.395033112584,
+        -7090.854821192052
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3774.79085778124,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.995400000000007,
+      "actual_middle_z_min_mm": 31.935,
+      "actual_middle_z_max_mm": 32.104,
+      "actual_middle_z_range_mm": 0.16900000000000048,
+      "actual_middle_z_slope_mm_per_mm": -0.003765175183756692,
+      "sensor_samples": 7829,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.72555274,
+      "reboot_ack_latency_s": 0.010115829,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.7651,
+      "max_lateness_ms": 13.950883000000001,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "d543a62198a029dde0a7d24022fe066c72258384ee43c07f444f7bbf24794895",
+        "sensor.csv": "79098b83c93dea49ab8e8ac425108e6fb6bb048b6591029506eab46555c97a2a",
+        "control.jsonl": "37d0731156611b5ebc31c72a2813b27744aa45480283591a3b636eeb2774c4bd",
+        "actual_tcp.csv": "0be49c582fe6a6db8a4df9fd9057891762ef13999d59e2a7cd7292d93c46c26e"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "17-59-44_定高_up_Z32到32_速度10_第3次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-59-44_定高_up_Z32到32_速度10_第3次",
+      "date": "2026-10-12",
+      "time": "17:59:44",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 3,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3699.714625221326,
+      "baseline_Bxyz_uT": [
+        2204.0952844311373,
+        2971.5067365269424,
+        -7104.921473053889
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.186953585096858,
+        5.280478210180085,
+        14.172261353292933
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000033453,
+          "mean_uT": [
+            2199.659145427285,
+            2981.9377061469268,
+            -7104.443706146923
+          ],
+          "std_uT": [
+            5.232333624852253,
+            5.446371251182233,
+            14.615508875156133
+          ],
+          "drift_uT_s": [
+            -1.229353732075786,
+            -1.366830094444866,
+            -3.724359240582062
+          ],
+          "raw_xy_norm_std_uT": 5.539128525859961
+        },
+        {
+          "baseline_id": 1,
+          "samples": 668,
+          "duration_s": 2.000010126,
+          "mean_uT": [
+            2204.0952844311373,
+            2971.5067365269424,
+            -7104.921473053889
+          ],
+          "std_uT": [
+            5.186953585096858,
+            5.280478210180085,
+            14.172261353292933
+          ],
+          "drift_uT_s": [
+            -0.5087846806769263,
+            0.40923390376041857,
+            -3.2193454783305335
+          ],
+          "raw_xy_norm_std_uT": 5.282544285990813
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 135.96526111966605,
+      "middle_sample_std_uT": 7.422958335666152,
+      "middle_median_uT": 137.8777579344489,
+      "middle_signal_slope_uT_per_mm": 0.767929306373622,
+      "rotation_end_mean_uT": 87.17523247095272,
+      "tail_mean_uT": 145.16219464440948,
+      "full_straight_mean_uT": 132.71174746140443,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        135.88228499710394,
+        2.50412958819444,
+        3.820482050805852
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2339.977569428241,
+        2974.0108661151367,
+        -7101.1009910030825
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2339.430794701985,
+        2974.0350993377483,
+        -7100.874582781455
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3784.2110665741543,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.99573333333333,
+      "actual_middle_z_min_mm": 31.933000000000003,
+      "actual_middle_z_max_mm": 32.099,
+      "actual_middle_z_range_mm": 0.16599999999999326,
+      "actual_middle_z_slope_mm_per_mm": -0.003954031394353708,
+      "sensor_samples": 7829,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.725569069,
+      "reboot_ack_latency_s": 0.010135027,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765099,
+      "max_lateness_ms": 13.237411,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "d744801e5c925ade7783c183d1f75dbfa145c9cbf52f27baaa9ab7dd122dbe84",
+        "sensor.csv": "e6e21c963788c97a29ccee66800c42990b71f90a90644742402daef15fa9765c",
+        "control.jsonl": "362640aa4ccfd586143fadaca861e85b4814a5412b87ef5eee27681a9c2ade15",
+        "actual_tcp.csv": "38e09058c83de923523daf27268ce44d8b0189ede22cbbfa64c7536e1f944f6d"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "18-45-32_定高_up_Z32到32_速度10_第4次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-45-32_定高_up_Z32到32_速度10_第4次",
+      "date": "2026-10-12",
+      "time": "18:45:32",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 4,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3712.679974371769,
+      "baseline_Bxyz_uT": [
+        2193.812649700597,
+        2995.1925898203617,
+        -7093.308733532926
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.424422291879905,
+        5.4042254231820435,
+        14.49737060676291
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000046522,
+          "mean_uT": [
+            2188.475937031485,
+            3003.754722638685,
+            -7090.685262368816
+          ],
+          "std_uT": [
+            5.484262107941111,
+            5.434057824803726,
+            15.149684766270514
+          ],
+          "drift_uT_s": [
+            -0.6688687214835428,
+            -2.2881282509476892,
+            2.9479964340220763
+          ],
+          "raw_xy_norm_std_uT": 5.471653284518084
+        },
+        {
+          "baseline_id": 1,
+          "samples": 668,
+          "duration_s": 2.000015326,
+          "mean_uT": [
+            2193.812649700597,
+            2995.1925898203617,
+            -7093.308733532926
+          ],
+          "std_uT": [
+            5.424422291879905,
+            5.4042254231820435,
+            14.49737060676291
+          ],
+          "drift_uT_s": [
+            -0.673720493237384,
+            0.36496048841320455,
+            -1.1529644334955151
+          ],
+          "raw_xy_norm_std_uT": 5.488424666559468
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 149.480469858517,
+      "middle_sample_std_uT": 7.5656598502986565,
+      "middle_median_uT": 150.58870706398537,
+      "middle_signal_slope_uT_per_mm": 0.7928929749385027,
+      "rotation_end_mean_uT": 102.29924204628514,
+      "tail_mean_uT": 159.59313997485887,
+      "full_straight_mean_uT": 146.43389613872813,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        147.66261081976734,
+        23.075068612763125,
+        8.389848156558887
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2341.4752605203644,
+        3018.267658433125,
+        -7084.918885376367
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2341.4682119205304,
+        3017.8847682119194,
+        -7084.150940397352
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3820.008706173633,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.995600000000007,
+      "actual_middle_z_min_mm": 31.927999999999997,
+      "actual_middle_z_max_mm": 32.104,
+      "actual_middle_z_range_mm": 0.17600000000000193,
+      "actual_middle_z_slope_mm_per_mm": -0.003689412617577644,
+      "sensor_samples": 7822,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.726014625,
+      "reboot_ack_latency_s": 0.010135726,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.768099,
+      "max_lateness_ms": 15.124855,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "d0ff9aff733ff300c1e1f6fa26c6e568a4f53702821046cec406a02e5f8a7504",
+        "sensor.csv": "803ddd8e25baeb2dd76815dc14c6cd6a0efb1b67952fcdb14d943efc2fa179c5",
+        "control.jsonl": "df5faa0fdeb9acb2ad1b197b4aa12dbbc45b0843f96735b01857f47987ff65c8",
+        "actual_tcp.csv": "6df10f1d90bee6f3434d8573daa405c29db45be60dd7ca5527ce451db8a42233"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "18-46-35_定高_up_Z32到32_速度10_第5次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-46-35_定高_up_Z32到32_速度10_第5次",
+      "date": "2026-10-12",
+      "time": "18:46:35",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 5,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3701.7533312887913,
+      "baseline_Bxyz_uT": [
+        2174.011567164181,
+        2996.1060447761197,
+        -7098.595029850743
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.23718519225989,
+        5.353600130398607,
+        13.436077126355656
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000043438,
+          "mean_uT": [
+            2168.7991754122913,
+            3005.5729385307345,
+            -7096.648185907044
+          ],
+          "std_uT": [
+            5.188152812409507,
+            5.4444026578284435,
+            14.919114778984932
+          ],
+          "drift_uT_s": [
+            -0.7085887214009083,
+            -1.7205177027221208,
+            -0.5754909769895385
+          ],
+          "raw_xy_norm_std_uT": 5.221085439117275
+        },
+        {
+          "baseline_id": 1,
+          "samples": 670,
+          "duration_s": 2.000000968,
+          "mean_uT": [
+            2174.011567164181,
+            2996.1060447761197,
+            -7098.595029850743
+          ],
+          "std_uT": [
+            5.23718519225989,
+            5.353600130398607,
+            13.436077126355656
+          ],
+          "drift_uT_s": [
+            0.9419980450713213,
+            -0.30631019549553823,
+            -2.203793946159492
+          ],
+          "raw_xy_norm_std_uT": 5.168571945208157
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 168.37532537021158,
+      "middle_sample_std_uT": 7.410521119647287,
+      "middle_median_uT": 170.40884334853453,
+      "middle_signal_slope_uT_per_mm": 0.7585128796115036,
+      "rotation_end_mean_uT": 115.09603671729366,
+      "tail_mean_uT": 175.56501352484102,
+      "full_straight_mean_uT": 164.11553607312956,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        166.93597556364747,
+        21.74410191907314,
+        5.683986667971814
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2340.9475427278285,
+        3017.850146695193,
+        -7092.911043182771
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2341.6231788079463,
+        3017.979139072847,
+        -7092.877364238414
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3819.355304454003,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.99576666666667,
+      "actual_middle_z_min_mm": 31.935,
+      "actual_middle_z_max_mm": 32.109,
+      "actual_middle_z_range_mm": 0.17400000000000304,
+      "actual_middle_z_slope_mm_per_mm": -0.0037842415949445388,
+      "sensor_samples": 7829,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.726453345,
+      "reboot_ack_latency_s": 0.010133393,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765099,
+      "max_lateness_ms": 14.738628,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "bb197629bedbdb2d26e5fccf5c6781922aaa5e57dcb7147a89ff5d126f2de494",
+        "sensor.csv": "901a0889b41c0e9e80bdbe2dd35e3c5531c561d73eaa1c33601b236e81d04fbc",
+        "control.jsonl": "ffe5068eca5648709591175a4949d193599b8ded94ac6210980d3905b32dacee",
+        "actual_tcp.csv": "f47721b7e5b618dfce618231d8e094e706f920007b7a055e555355325714859c"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "18-47-11_定高_up_Z32到32_速度10_第6次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-47-11_定高_up_Z32到32_速度10_第6次",
+      "date": "2026-10-12",
+      "time": "18:47:11",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 6,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3726.789267394623,
+      "baseline_Bxyz_uT": [
+        2201.04324925816,
+        3007.3853857566764,
+        -7094.939483679517
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.262563994708701,
+        5.187232321176906,
+        14.10807342555641
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000056793,
+          "mean_uT": [
+            2198.0336581709157,
+            3017.1110194902567,
+            -7095.076818590703
+          ],
+          "std_uT": [
+            5.256837037922403,
+            5.439080846971309,
+            14.433642563287751
+          ],
+          "drift_uT_s": [
+            -1.2259680110096995,
+            -1.905749822660411,
+            1.9876331516687373
+          ],
+          "raw_xy_norm_std_uT": 5.366220574257821
+        },
+        {
+          "baseline_id": 1,
+          "samples": 674,
+          "duration_s": 2.019996099,
+          "mean_uT": [
+            2201.04324925816,
+            3007.3853857566764,
+            -7094.939483679517
+          ],
+          "std_uT": [
+            5.262563994708701,
+            5.187232321176906,
+            14.10807342555641
+          ],
+          "drift_uT_s": [
+            -0.9142974587576863,
+            -0.7086658241434766,
+            0.7964154800581366
+          ],
+          "raw_xy_norm_std_uT": 5.215130972328472
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 136.9468939828587,
+      "middle_sample_std_uT": 7.019752422979043,
+      "middle_median_uT": 138.3072197029336,
+      "middle_signal_slope_uT_per_mm": 0.7335769240142349,
+      "rotation_end_mean_uT": 94.57172069165425,
+      "tail_mean_uT": 144.73032097489929,
+      "full_straight_mean_uT": 133.6026335247546,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        135.75482030126432,
+        17.786940961364106,
+        1.016014433316207
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2336.798069559424,
+        3025.1723267180405,
+        -7093.923469246201
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2336.960264900662,
+        3025.3241721854297,
+        -7093.191483443709
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3822.6049577207227,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.9963,
+      "actual_middle_z_min_mm": 31.938000000000002,
+      "actual_middle_z_max_mm": 32.102,
+      "actual_middle_z_range_mm": 0.16399999999999437,
+      "actual_middle_z_slope_mm_per_mm": -0.003677487680493869,
+      "sensor_samples": 7829,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.726677614,
+      "reboot_ack_latency_s": 0.010136861,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.765099,
+      "max_lateness_ms": 14.715878,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "c78d204a787a7e0dea79eff9a3b1c3884f41f84e028feb505d2cf7e5f9591147",
+        "sensor.csv": "c5fe822a94faa1e6a32e8387a8b414c44bf6393be66b2ffb392e1828d6be62fa",
+        "control.jsonl": "c442736b8f360ea6ecfe424a59baa48bc571dea8bc899bef8476a3239c3b6c45",
+        "actual_tcp.csv": "977ffc1ef22607ae546319d1d9602917dc057fe2bb44424aafe720d86517753b"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    },
+    {
+      "run_name": "18-47-47_定高_up_Z32到32_速度10_第7次",
+      "raw_folder": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-47-47_定高_up_Z32到32_速度10_第7次",
+      "date": "2026-10-12",
+      "time": "18:47:47",
+      "direction": "up",
+      "axis": "Y",
+      "repeat": 7,
+      "command_z_mm": 32.0,
+      "speed_mm_s": 10.0,
+      "travel_mm": 50.0,
+      "active_baseline_id": 1,
+      "baseline_count": 2,
+      "B0xy_uT": 3732.7292596216425,
+      "baseline_Bxyz_uT": [
+        2202.8256676557853,
+        3013.4410237388715,
+        -7097.839893175072
+      ],
+      "baseline_std_Bxyz_uT": [
+        5.0760669237875335,
+        5.210590134085635,
+        13.731064638090292
+      ],
+      "baselines": [
+        {
+          "baseline_id": 0,
+          "samples": 667,
+          "duration_s": 2.000049754,
+          "mean_uT": [
+            2199.0033733133423,
+            3022.815067466265,
+            -7100.051424287852
+          ],
+          "std_uT": [
+            5.1928101473531845,
+            5.23304588393169,
+            14.4484298257691
+          ],
+          "drift_uT_s": [
+            -1.055473660014658,
+            -2.177902908575704,
+            -1.4981596835361195
+          ],
+          "raw_xy_norm_std_uT": 5.4326371684376324
+        },
+        {
+          "baseline_id": 1,
+          "samples": 674,
+          "duration_s": 2.000002362,
+          "mean_uT": [
+            2202.8256676557853,
+            3013.4410237388715,
+            -7097.839893175072
+          ],
+          "std_uT": [
+            5.0760669237875335,
+            5.210590134085635,
+            13.731064638090292
+          ],
+          "drift_uT_s": [
+            0.0921362710611354,
+            -0.6524075047117951,
+            -0.3521420314114882
+          ],
+          "raw_xy_norm_std_uT": 5.066359052837835
+        }
+      ],
+      "middle_points": 151,
+      "middle_mean_uT": 133.86264042877372,
+      "middle_sample_std_uT": 7.415719302551728,
+      "middle_median_uT": 135.90306519587497,
+      "middle_signal_slope_uT_per_mm": 0.7530404958533299,
+      "rotation_end_mean_uT": 90.76454005335489,
+      "tail_mean_uT": 141.05801246086904,
+      "full_straight_mean_uT": 130.428356888017,
+      "middle_filtered_delta_Bxyz_mean_uT": [
+        132.72570414910888,
+        17.157607158488673,
+        2.900381945806632
+      ],
+      "middle_filtered_loaded_Bxyz_mean_uT": [
+        2335.551371804894,
+        3030.59863089736,
+        -7094.939511229265
+      ],
+      "middle_unfiltered_loaded_Bxyz_mean_uT": [
+        2335.2288079470186,
+        3030.673509933775,
+        -7096.843920529798
+      ],
+      "middle_filtered_loaded_Bxy_norm_mean_uT": 3826.140249831212,
+      "actual_middle_points": 30,
+      "actual_middle_z_mean_mm": 31.995333333333328,
+      "actual_middle_z_min_mm": 31.940000000000005,
+      "actual_middle_z_max_mm": 32.104,
+      "actual_middle_z_range_mm": 0.16399999999999437,
+      "actual_middle_z_slope_mm_per_mm": -0.004045857286190649,
+      "sensor_samples": 7823,
+      "invalid_sensor_samples": 0,
+      "actual_samples": 233,
+      "invalid_actual_samples": 0,
+      "median_sensor_interval_us": 3000.0,
+      "reboot_duration_s": 0.72588083,
+      "reboot_ack_latency_s": 0.010121352,
+      "reboot_reconnect_count": 0,
+      "sensor_first_uptime_s": 0.7681,
+      "max_lateness_ms": 16.094279,
+      "ema_replay_max_error_uT": 0.0,
+      "profile": {
+        "air_rotate_s": 1.5,
+        "airborne_settle_s": 1.0,
+        "angular_accel_deg_s2": 40.0,
+        "angular_speed_deg_s": 20.0,
+        "direction": "up",
+        "end_z_mm": 32.0,
+        "entry_contact_z_mm": 32.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "fast_z_speed_mm_s": 60.0,
+        "load_s": 3.0,
+        "mode": "four-direction-hold",
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": false,
+        "rotate_s": 2.0,
+        "slow_below_z_mm": 50.0,
+        "slow_z_speed_mm_s": 15.0,
+        "speed_mm_s": 10.0,
+        "start_z_mm": 32.0,
+        "transfer_speed_mm_s": 80.0,
+        "transit_accel_mm_s2": 100.0,
+        "travel_mm": 50.0,
+        "writing_tilt_deg": 15.0,
+        "xy_accel_mm_s2": 50.0
+      },
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "701247d129b5ec37ae2c4146aff032d85f534f5b7e0a105b83056b03897a5772",
+        "sensor.csv": "e863cefe765375eda6552d8eee7a5f05367868fea6204ee58b785e69a5dd0516",
+        "control.jsonl": "9a6d022c4dad573c64ea1f47b0b8ea99df2dcd1eaac613c94c39504c370eedb7",
+        "actual_tcp.csv": "25c458b8a09167140dab97dd4e9aa2ec3efb087c705b881dbc5df397f9827e9d"
+      },
+      "sensor_hash_recorded_in_manifest": false
+    }
+  ],
+  "group_middle_statistics": {
+    "X": {
+      "n": 3,
+      "mean": 119.94506256395194,
+      "sample_std": 32.83098283925549,
+      "cv_pct": 27.371683450288558,
+      "minimum": 88.62149634773166,
+      "maximum": 154.10006291014795,
+      "range": 65.47856656241629,
+      "range_relative_to_mean_pct": 54.59046430319267
+    },
+    "Y": {
+      "n": 7,
+      "mean": 132.02949688945748,
+      "sample_std": 29.081966971397645,
+      "cv_pct": 22.026871007277034,
+      "minimum": 74.03001133666092,
+      "maximum": 168.37532537021158,
+      "range": 94.34531403355066,
+      "range_relative_to_mean_pct": 71.45775471108693
+    }
+  },
+  "B0xy_response_correlations": {
+    "X": {
+      "n": 3,
+      "pearson_r": 0.5716359465576152,
+      "spearman_rho": 0.5
+    },
+    "Y": {
+      "n": 7,
+      "pearson_r": -0.1370141173900326,
+      "spearman_rho": -0.03571428571428572
+    }
+  },
+  "new_four_Y_statistics": {
+    "n": 4,
+    "mean": 147.16633241009026,
+    "sample_std": 15.669521973291653,
+    "cv_pct": 10.647490982942573,
+    "minimum": 133.86264042877372,
+    "maximum": 168.37532537021158,
+    "range": 34.51268494143787,
+    "range_relative_to_mean_pct": 23.451481311136863
+  },
+  "new_four_Y_pearson_r": -0.9785883502516527,
+  "method": "Same validated loader as previous six-trial analysis: active direction baseline id=1, B0xy=norm(mean baseline XY vector), response=mean(norm_xy(EMA(B-B0))) with alpha 0.3 over direction-projected command path 10–40mm, 151 controls per trial. Baselines and EMA replay verified against original sensor.csv; all recorded source snapshot hashes checked.",
+  "helper_path": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/analysis/z32_xy/analyze.py",
+  "helper_sha256": "2afbbe5d5ae1333a5fd96ce4c064635be43ee588c9e7cd7a688e7ea981a49c0e",
+  "operator_context_previous_six": {
+    "confirmation_status": "confirmed_by_operator",
+    "paper_history": "Each trial used previously unwritten paper.",
+    "water_preparation": "Consistent preparation, as reported by operator; not quantitatively measured.",
+    "manual_magnetic_bristle_adjustment": "No manual adjustment between these six trials.",
+    "recorded_direction_order": "X X X Y Y Y"
+  },
+  "operator_context_new_four": "Not separately confirmed; no assumption about paper, water or hand adjustment.",
+  "limitations": [
+    "Unbalanced directions: X n=3, Y n=7.",
+    "Four new Y trials form a later batch after an approximately 46-minute gap; pooled correlation can reflect batch differences.",
+    "Correlations are descriptive and cannot establish cause or diagnose board faults."
+  ]
+}

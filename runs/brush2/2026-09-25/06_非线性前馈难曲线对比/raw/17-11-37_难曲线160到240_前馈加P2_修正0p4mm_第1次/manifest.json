@@ -1,0 +1,72 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2083.718546511627,
+      2921.4624418604644,
+      -7090.037209302333
+    ],
+    "applies_after_seq": 860,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -2.199641523728297,
+      -4.976441653562443,
+      2.87003115994653
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 860,
+    "std_uT": [
+      6.9557882608107136,
+      9.54790503455839,
+      15.21167766928854
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2083.718546511627,
+        2921.4624418604644,
+        -7090.037209302333
+      ],
+      "applies_after_seq": 860,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -2.199641523728297,
+        -4.976441653562443,
+        2.87003115994653
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 860,
+      "std_uT": [
+        6.9557882608107136,
+        9.54790503455839,
+        15.21167766928854
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-25T09:12:55.000034+00:00",
+  "reason": "acceleration_limit",
+  "run_id": "20260925T091137.904028Z-d2f1c2",
+  "sha256": {
+    "calibration.json": "1c69d05387588a3ca43b9b114380cdf32e74a99b3dc2f982618aa6cfdea02589",
+    "compiled_plan.npz": "7327693f28857c0a7e2fafddda926963877319b7fa7b69868024290e1d0ebadd",
+    "entry_profile.json": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19",
+    "feedforward.json": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb",
+    "resolved.json": "0fc46e2f032f0f1f38ce8f3b194d8d66e0005d713410234ba8394d78140ce8d5",
+    "settings.json": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97",
+    "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+    "strokeplan.npz": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47",
+    "timeline.npz": "e08978811f9a9b3b9368b4f7aecc9c3c09ee59e81588261496974be02e787210"
+  },
+  "started_at": "2026-09-25T09:11:37.904028+00:00",
+  "status": "aborted",
+  "writer_pid": 48980
+}

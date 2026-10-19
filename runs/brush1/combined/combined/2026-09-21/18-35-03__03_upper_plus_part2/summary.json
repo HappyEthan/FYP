@@ -1,0 +1,22 @@
+{
+  "mode": "stitched_complete_paths",
+  "source_runs": [
+    "runs/2026-09-21/18-28-15__repeat_03_upper__9a4ed4",
+    "runs/2026-09-21/18-03-24__repeat_02_part3__b08e04"
+  ],
+  "rows": 9024,
+  "included_paths": 9,
+  "excluded_incomplete_paths": [],
+  "z_mm": [
+    20.0,
+    22.375,
+    24.75,
+    27.125,
+    29.5,
+    32.0,
+    34.5,
+    37.0
+  ],
+  "csv": "/home/ethan/FYP/runs/combined/2026-09-21/18-35-03__03_upper_plus_part2/combined_measurements.csv",
+  "plot": "/home/ethan/FYP/runs/combined/2026-09-21/18-35-03__03_upper_plus_part2/combined_bxy_by_z.png"
+}

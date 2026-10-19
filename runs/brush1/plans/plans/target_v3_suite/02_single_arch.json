@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "source": "synthetic",
+    "coordinate_frame": "paper",
+    "feature": "filtered_dBxy_norm_uT",
+    "filter_definition": {
+      "kind": "ema",
+      "alpha": 0.3
+    },
+    "description": "One target arch",
+    "cruise_speed_mm_s": 10.0,
+    "stability_profile": "02_single_arch",
+    "validation": "target schema only; no machine/calibration validation"
+  },
+  "target_check": {
+    "name": "02_single_arch",
+    "title": "One target arch",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  }
+}

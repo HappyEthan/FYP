@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "method": "esp32_software_restart",
+  "batch_id": "be79d6f2-b13e-4dcd-8069-cd4d21eeb994",
+  "trial_index": 1,
+  "trial_count": 1,
+  "started_at": "2026-10-12T18:45:04.009298+08:00",
+  "record_path": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/sensor_reboots/be79d6f2-b13e-4dcd-8069-cd4d21eeb994_1_2d54df824cda467db15b9cff2ab03ece.json",
+  "error_type": "RuntimeError",
+  "error": "sensor reboot timed out waiting for acknowledgment (update the fixed90 firmware first)",
+  "finished_at": "2026-10-12T18:45:19.016032+08:00"
+}

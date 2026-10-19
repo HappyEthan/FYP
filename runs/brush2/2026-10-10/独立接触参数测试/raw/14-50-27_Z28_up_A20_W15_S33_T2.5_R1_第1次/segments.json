@@ -1,0 +1,122 @@
+[
+  {
+    "end_t_s": 0.02,
+    "end_tick": 1,
+    "id": "wait",
+    "kind": "airborne",
+    "start_t_s": 0.0,
+    "start_tick": 0
+  },
+  {
+    "end_t_s": 2.02,
+    "end_tick": 101,
+    "id": "orient_for_baseline",
+    "kind": "preparation",
+    "start_t_s": 0.02,
+    "start_tick": 1
+  },
+  {
+    "end_t_s": 3.02,
+    "end_tick": 151,
+    "id": "baseline_settle",
+    "kind": "airborne",
+    "start_t_s": 2.02,
+    "start_tick": 101
+  },
+  {
+    "end_t_s": 3.56,
+    "end_tick": 178,
+    "id": "entry_offset_high",
+    "kind": "preparation",
+    "start_t_s": 3.02,
+    "start_tick": 151
+  },
+  {
+    "end_t_s": 5.0600000000000005,
+    "end_tick": 253,
+    "id": "rotate_air",
+    "kind": "preparation",
+    "start_t_s": 3.56,
+    "start_tick": 178
+  },
+  {
+    "end_t_s": 6.140000000000001,
+    "end_tick": 307,
+    "id": "lower_fast",
+    "kind": "preparation",
+    "start_t_s": 5.0600000000000005,
+    "start_tick": 253
+  },
+  {
+    "end_t_s": 7.9,
+    "end_tick": 395,
+    "id": "lower_slow",
+    "kind": "preparation",
+    "start_t_s": 6.140000000000001,
+    "start_tick": 307
+  },
+  {
+    "end_t_s": 10.72,
+    "end_tick": 536,
+    "id": "entry_preload",
+    "kind": "preparation",
+    "start_t_s": 7.9,
+    "start_tick": 395
+  },
+  {
+    "end_t_s": 13.22,
+    "end_tick": 661,
+    "id": "rotate_load",
+    "kind": "preparation",
+    "start_t_s": 10.72,
+    "start_tick": 536
+  },
+  {
+    "end_t_s": 18.42,
+    "end_tick": 921,
+    "id": "straight_hold",
+    "kind": "straight",
+    "start_t_s": 13.22,
+    "start_tick": 661
+  },
+  {
+    "end_t_s": 19.98,
+    "end_tick": 999,
+    "id": "lift",
+    "kind": "preparation",
+    "start_t_s": 18.42,
+    "start_tick": 921
+  },
+  {
+    "end_t_s": 21.98,
+    "end_tick": 1099,
+    "id": "post_lift_hold",
+    "kind": "airborne",
+    "start_t_s": 19.98,
+    "start_tick": 999
+  },
+  {
+    "end_t_s": 23.68,
+    "end_tick": 1184,
+    "id": "return_high",
+    "kind": "airborne",
+    "start_t_s": 21.98,
+    "start_tick": 1099
+  },
+  {
+    "end_t_s": 25.68,
+    "end_tick": 1284,
+    "id": "restore_wait_orientation",
+    "kind": "airborne",
+    "start_t_s": 23.68,
+    "start_tick": 1184
+  },
+  {
+    "end_t_s": 25.88,
+    "end_tick": 1294,
+    "id": "hold",
+    "kind": "airborne",
+    "start_t_s": 25.68,
+    "start_tick": 1284
+  }
+]

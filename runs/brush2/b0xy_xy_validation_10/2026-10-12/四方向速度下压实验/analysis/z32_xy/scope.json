@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-12",
+  "runs": [
+    "17-55-58_定高_right_Z32到32_速度10_第1次",
+    "17-56-27_定高_right_Z32到32_速度10_第2次",
+    "17-57-08_定高_right_Z32到32_速度10_第3次",
+    "17-58-28_定高_up_Z32到32_速度10_第1次",
+    "17-59-05_定高_up_Z32到32_速度10_第2次",
+    "17-59-44_定高_up_Z32到32_速度10_第3次"
+  ],
+  "auxiliary_z28_x_runs": [
+    "17-53-50_定高_right_Z28到28_速度10_第1次",
+    "17-55-01_定高_right_Z28到28_速度10_第2次"
+  ],
+  "operator_context": {
+    "confirmation_status": "confirmed_by_operator",
+    "paper_history": "Each trial used previously unwritten paper.",
+    "water_preparation": "Consistent preparation, as reported by operator; not quantitatively measured.",
+    "manual_magnetic_bristle_adjustment": "No manual adjustment between these six trials.",
+    "recorded_direction_order": "X X X Y Y Y"
+  }
+}

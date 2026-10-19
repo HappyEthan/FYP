@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/reference_strokes_json_v2/pie/strokeplan.npz",
+  "sha256": "570de63d9994298acb89091c722da7da2e52aafb4688a98e8196ce1e4a235403",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 790,
+      "length_mm": 135.15157479844427,
+      "duration_s": 15.780000000000001,
+      "peak_xy_speed_mm_s": 9.999999552895279,
+      "target_range_uT": [
+        100.0,
+        209.99999318394123
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "source_runs": [
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-43-59_姿态Ry正15_第1次",
+    "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-55-06_姿态Ry正15_第2次"
+  ],
+  "included_visits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "excluded_visits": [],
+  "z_mm": [
+    36.0,
+    34.285714285714285,
+    32.57142857142857,
+    30.857142857142858,
+    29.142857142857142,
+    27.42857142857143,
+    25.714285714285715,
+    24.0
+  ],
+  "smoothing": "0.5 mm grid, 21-point Hann (10.5 mm)",
+  "steady_window_travel_mm": [
+    30.0,
+    170.0
+  ],
+  "steady_statistic": "median and 10th–90th percentile of control a_control_uT",
+  "title": "+x | Ry+15°, Rz0°",
+  "display_run_labels": [
+    "Repeat 1",
+    "Repeat 2"
+  ],
+  "plot": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/正X方向/+x_comparison.png",
+  "summary_csv": "/home/ethan/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/正X方向/+x_steady_summary.csv"
+}

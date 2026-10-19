@@ -1,0 +1,111 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      -662.7,
+      -1013.0750000000002,
+      1730.058
+    ],
+    "applies_after_seq": 18,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -120.08408238867605,
+      -342.37878200080576,
+      -4527.593672057515
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 18,
+    "std_uT": [
+      10.721007415350488,
+      14.628503853778081,
+      206.314142808162
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        -662.7,
+        -1013.0750000000002,
+        1730.058
+      ],
+      "applies_after_seq": 18,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -120.08408238867605,
+        -342.37878200080576,
+        -4527.593672057515
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 18,
+      "std_uT": [
+        10.721007415350488,
+        14.628503853778081,
+        206.314142808162
+      ]
+    },
+    {
+      "B0_uT": [
+        -665.1,
+        -1016.9300000000001,
+        1668.9610666666667
+      ],
+      "applies_after_seq": 6068,
+      "baseline_id": 1,
+      "drift_uT_s": [
+        -39.00041614230583,
+        50.27970428273109,
+        42.360256563139416
+      ],
+      "effective_visit": 0,
+      "first_seq": 6054,
+      "last_seq": 6068,
+      "std_uT": [
+        5.877754673342528,
+        4.246127647633758,
+        7.3915672624657605
+      ]
+    },
+    {
+      "B0_uT": [
+        -664.49,
+        -1018.3700000000001,
+        1697.8397333333335
+      ],
+      "applies_after_seq": 22818,
+      "baseline_id": 2,
+      "drift_uT_s": [
+        69.67091193116461,
+        46.49974760017275,
+        70.14988114677594
+      ],
+      "effective_visit": 1,
+      "first_seq": 22804,
+      "last_seq": 22818,
+      "std_uT": [
+        8.441054436502588,
+        5.390788439551293,
+        7.3401525094661455
+      ]
+    }
+  ],
+  "brush_id": "brush1",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-21T12:19:47.142766+00:00",
+  "reason": "communication_fault: ArmError: PushServoP failed: ['20018']",
+  "run_id": "20260921T121727.485489Z-9f6fd2",
+  "sha256": {
+    "compiled_plan.npz": "cb73cf3bbd02187e3eb5c602ad40a668f02525ef43634450e12063e684e4502f",
+    "resolved.json": "70634488101cbd72596ab910d75efacc6d37d1f8cee589312d023ecfcd7f3ef1",
+    "setup.json": "6ede801299a0f42b1d7091da72c652c796e4459fc35174f5f3df50bc138f323f",
+    "timeline.npz": "2964fcc0eab4361b156dace2c660c8f7ec76963672b63ad4dc703b60cd373e98"
+  },
+  "started_at": "2026-09-21T12:17:27.485584+00:00",
+  "status": "fault",
+  "writer_pid": 46334
+}

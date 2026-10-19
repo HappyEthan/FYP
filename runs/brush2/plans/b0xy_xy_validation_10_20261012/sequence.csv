@@ -1,0 +1,11 @@
+﻿trial,pair,axis,direction,status,run_dir,note
+1,1,X,right,planned,,
+2,1,Y,up,planned,,
+3,2,Y,up,planned,,
+4,2,X,right,planned,,
+5,3,X,right,planned,,
+6,3,Y,up,planned,,
+7,4,Y,up,planned,,
+8,4,X,right,planned,,
+9,5,X,right,planned,,
+10,5,Y,up,planned,,

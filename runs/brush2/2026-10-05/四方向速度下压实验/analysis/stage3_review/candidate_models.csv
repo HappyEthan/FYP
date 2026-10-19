@@ -1,0 +1,7 @@
+﻿direction,model,speed_mm_s,gain,offset_uT,fit_levels_mm,fit_grain,z30_mean_check_x_equivalent_error_uT,z30_direction_data_are_historical,status
+up,gain_only,10,1.5725851229465957,0.0,"35,27",mean of two independent stroke medians per height,-6.325645691897108,True,candidate_not_installed
+up,gain_offset,10,2.0232299648010312,-69.59435786347153,"35,27",mean of two independent stroke medians per height,-5.238506133219573,True,candidate_not_installed
+left,gain_only,10,1.193102508206527,0.0,"35,27",mean of two independent stroke medians per height,0.5502686817983715,True,candidate_not_installed
+left,gain_offset,10,1.4387761664700973,-37.94007809002254,"35,27",mean of two independent stroke medians per height,0.20960910511814745,True,candidate_not_installed
+down,gain_only,10,2.0816033219696504,0.0,"35,27",mean of two independent stroke medians per height,1.8946401931893604,True,candidate_not_installed
+down,gain_offset,10,2.920424940110847,-129.5415956306261,"35,27",mean of two independent stroke medians per height,0.9354699902936829,True,candidate_not_installed

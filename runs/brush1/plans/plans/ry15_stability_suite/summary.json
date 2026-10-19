@@ -1,0 +1,66 @@
+[
+  {
+    "name": "01_gradual_press",
+    "title": "Gradual press",
+    "trajectory_points": 3094,
+    "total_duration_s": 62.06,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ],
+    "stroke_z_range_mm": [
+      21.558281520293697,
+      28.179716090897568
+    ],
+    "peak_z_speed_mm_s": 10.000000000001673,
+    "peak_acceleration_mm_s2": 50.00000034468136
+  },
+  {
+    "name": "02_single_arch",
+    "title": "Shallow - deep - shallow",
+    "trajectory_points": 3061,
+    "total_duration_s": 61.400000000000006,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ],
+    "stroke_z_range_mm": [
+      21.558281520293697,
+      28.179716090897568
+    ],
+    "peak_z_speed_mm_s": 10.000000000001673,
+    "peak_acceleration_mm_s2": 50.00664796502556
+  },
+  {
+    "name": "03_double_wave",
+    "title": "Two depth cycles",
+    "trajectory_points": 3061,
+    "total_duration_s": 61.400000000000006,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ],
+    "stroke_z_range_mm": [
+      21.558281520293697,
+      28.179716090897568
+    ],
+    "peak_z_speed_mm_s": 10.000000000001673,
+    "peak_acceleration_mm_s2": 50.10617518612292
+  },
+  {
+    "name": "04_smooth_levels",
+    "title": "Four target holds",
+    "trajectory_points": 3071,
+    "total_duration_s": 61.6,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ],
+    "stroke_z_range_mm": [
+      21.558281520293697,
+      28.179716090897568
+    ],
+    "peak_z_speed_mm_s": 10.000000000001673,
+    "peak_acceleration_mm_s2": 50.000000000119414
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "analysis": "Selected measured limit profiles at P=2, plus one-factor command replay",
+  "run_ids": [
+    "bb27fb",
+    "a8a59a",
+    "68defd",
+    "58bce8"
+  ],
+  "input_sha256": {
+    "strokeplan.npz": "b5112e65d52daccec7a3b4402a29bda4e906575356cd50b8b354bb1bc95e575d",
+    "feedforward.json": "40b0cb33e696ab490753d95b615d5a95d4aab7e46b74f470a6891b5e49416499",
+    "settings.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c"
+  },
+  "signal": "measure_00 a_control_uT (EMA 0.3); error=measured-target; no shifting or trimming",
+  "x_axis": "logged command path, not actual TCP X",
+  "excluded_from_main_figures": {
+    "10f17a": "operator-flagged high-response episode; raw run retired on 2026-09-25, compact summary retained",
+    "142be8": "repeat of the high-response episode; no actual TCP stream",
+    "69395a": "large mid-path excess response; no actual TCP stream"
+  },
+  "exclusion_caveat": "Excluded as previously suspect comparisons, not proven invalid runs. High error alone does not establish procedural failure.",
+  "measured_interpretation": "Profiles change multiple limits together; repeat variation is visible. Do not attribute magnetic differences to one limit.",
+  "replay_source_run_id": "68defd",
+  "replay_validation": "Baseline command replay matches all 1011 logged measure corrections.",
+  "replay_interpretation": "Recorded magnetic signal is held fixed. One limit changes at a time; this compares software commands only, not counterfactual magnetic tracking or actual TCP movement."
+}

@@ -1,0 +1,72 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2065.9786282306163,
+      2932.180019880718,
+      -7085.522811133195
+    ],
+    "applies_after_seq": 503,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.8648218059816278,
+      -0.6956158455389814,
+      1.780393728740182
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 503,
+    "std_uT": [
+      5.108814499803052,
+      5.496593324103476,
+      13.81808023172442
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2065.9786282306163,
+        2932.180019880718,
+        -7085.522811133195
+      ],
+      "applies_after_seq": 503,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -0.8648218059816278,
+        -0.6956158455389814,
+        1.780393728740182
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 503,
+      "std_uT": [
+        5.108814499803052,
+        5.496593324103476,
+        13.81808023172442
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-09-25T07:31:47.983480+00:00",
+  "reason": "",
+  "run_id": "20260925T072934.768469Z-9fd1f7",
+  "sha256": {
+    "compiled_plan.npz": "308c3db41ada6bb34260fc261f1a85e2d4c0b133d2c4e26b8a8032689bac6da5",
+    "identification.json": "ead52f584511954c476294b561cf10f8d458848f2139fc0a9372fa16bd19b8ce",
+    "motion_metrics.json": "d741eb2aed840c67dbe9110cdc826db86d41ebb254ffb041dae22b8a50c52501",
+    "resolved.json": "272e217c02c41a8fb62809cb2b41ebec3dcc31388a313f9596a9aaaf6ccbe626",
+    "segments.json": "7cbde9ff721639e923b49c85f86e2a2a3aed8c6a7739631297ff3e9f62256cdb",
+    "settings.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+    "settings_source.json": "a2f4fcad26c31be0571e2a29ae047f198eb697f589fb4fa1cd72e5a5f1efd56c",
+    "setup.json": "65129f60ed403c8dbd2655d1b0127c67a4feb3c77d0f2e403392ae2f9f7daddd",
+    "timeline.npz": "49efc167471038f2e06ca20d65f8d979194354294fc9143aeea854c0fce087ed"
+  },
+  "started_at": "2026-09-25T07:29:34.768469+00:00",
+  "status": "completed",
+  "writer_pid": 36500
+}

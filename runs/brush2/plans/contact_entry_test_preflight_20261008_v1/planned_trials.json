@@ -1,0 +1,4387 @@
+{
+  "role": "planned_not_execution_log",
+  "hardware_connected": false,
+  "entry_policy": "preload30_then_rotate_and_press_v1",
+  "trials": [
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T4_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "5996270422ab5f66239d09b5b1196a0f9966aced20c04314f9509bf1adffff6e",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 783,
+          "start_t_s": 11.66,
+          "end_t_s": 15.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 783,
+          "end_tick": 1543,
+          "start_t_s": 15.66,
+          "end_t_s": 30.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1543,
+          "end_tick": 1621,
+          "start_t_s": 30.86,
+          "end_t_s": 32.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1621,
+          "end_tick": 1721,
+          "start_t_s": 32.42,
+          "end_t_s": 34.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1721,
+          "end_tick": 1897,
+          "start_t_s": 34.42,
+          "end_t_s": 37.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1897,
+          "end_tick": 1997,
+          "start_t_s": 37.94,
+          "end_t_s": 39.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1997,
+          "end_tick": 2007,
+          "start_t_s": 39.94,
+          "end_t_s": 40.14
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T6_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "43e9edcebb0845c2e11034322cfd11995078ffe0303c99596a84ed25aa3d25d4",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 883,
+          "start_t_s": 11.66,
+          "end_t_s": 17.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 883,
+          "end_tick": 1643,
+          "start_t_s": 17.66,
+          "end_t_s": 32.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1643,
+          "end_tick": 1721,
+          "start_t_s": 32.86,
+          "end_t_s": 34.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1721,
+          "end_tick": 1821,
+          "start_t_s": 34.42,
+          "end_t_s": 36.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1821,
+          "end_tick": 1997,
+          "start_t_s": 36.42,
+          "end_t_s": 39.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1997,
+          "end_tick": 2097,
+          "start_t_s": 39.94,
+          "end_t_s": 41.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2097,
+          "end_tick": 2107,
+          "start_t_s": 41.94,
+          "end_t_s": 42.14
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T8_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "81166ed2b6586047949ebb536103a4a911ee5aa0ac3b0f833e7a9f47e5897e03",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 983,
+          "start_t_s": 11.66,
+          "end_t_s": 19.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 983,
+          "end_tick": 1743,
+          "start_t_s": 19.66,
+          "end_t_s": 34.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1743,
+          "end_tick": 1821,
+          "start_t_s": 34.86,
+          "end_t_s": 36.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1821,
+          "end_tick": 1921,
+          "start_t_s": 36.42,
+          "end_t_s": 38.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1921,
+          "end_tick": 2097,
+          "start_t_s": 38.42,
+          "end_t_s": 41.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 2097,
+          "end_tick": 2197,
+          "start_t_s": 41.94,
+          "end_t_s": 43.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2197,
+          "end_tick": 2207,
+          "start_t_s": 43.94,
+          "end_t_s": 44.14
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T4_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "712067f06ef4871671bd890b7fd9dd42eebcfaf6dd36aea53659a7d0b8bb25f5",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 689,
+          "start_t_s": 9.78,
+          "end_t_s": 13.780000000000001
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 689,
+          "end_tick": 1449,
+          "start_t_s": 13.780000000000001,
+          "end_t_s": 28.98
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1449,
+          "end_tick": 1527,
+          "start_t_s": 28.98,
+          "end_t_s": 30.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1527,
+          "end_tick": 1627,
+          "start_t_s": 30.54,
+          "end_t_s": 32.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1627,
+          "end_tick": 1803,
+          "start_t_s": 32.54,
+          "end_t_s": 36.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1803,
+          "end_tick": 1903,
+          "start_t_s": 36.06,
+          "end_t_s": 38.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1903,
+          "end_tick": 1913,
+          "start_t_s": 38.06,
+          "end_t_s": 38.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T6_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "a596539a1eb1d8f25587789ce3788b80967ea573a16bacaaa42cd9e0ab7bd2b6",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 789,
+          "start_t_s": 9.78,
+          "end_t_s": 15.780000000000001
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 789,
+          "end_tick": 1549,
+          "start_t_s": 15.780000000000001,
+          "end_t_s": 30.98
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1549,
+          "end_tick": 1627,
+          "start_t_s": 30.98,
+          "end_t_s": 32.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1627,
+          "end_tick": 1727,
+          "start_t_s": 32.54,
+          "end_t_s": 34.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1727,
+          "end_tick": 1903,
+          "start_t_s": 34.54,
+          "end_t_s": 38.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1903,
+          "end_tick": 2003,
+          "start_t_s": 38.06,
+          "end_t_s": 40.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2003,
+          "end_tick": 2013,
+          "start_t_s": 40.06,
+          "end_t_s": 40.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T8_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "3db40232d89ee9a1b2bc144881a0344a9ff90b4dc56589fb13b399ea347e404b",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 889,
+          "start_t_s": 9.78,
+          "end_t_s": 17.78
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 889,
+          "end_tick": 1649,
+          "start_t_s": 17.78,
+          "end_t_s": 32.980000000000004
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1649,
+          "end_tick": 1727,
+          "start_t_s": 32.980000000000004,
+          "end_t_s": 34.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1727,
+          "end_tick": 1827,
+          "start_t_s": 34.54,
+          "end_t_s": 36.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1827,
+          "end_tick": 2003,
+          "start_t_s": 36.54,
+          "end_t_s": 40.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 2003,
+          "end_tick": 2103,
+          "start_t_s": 40.06,
+          "end_t_s": 42.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2103,
+          "end_tick": 2113,
+          "start_t_s": 42.06,
+          "end_t_s": 42.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T4_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "14407774361eba48b168ae3cff04367c21d3424f509de9468e362a02267dadec",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 595,
+          "start_t_s": 7.9,
+          "end_t_s": 11.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 595,
+          "end_tick": 1355,
+          "start_t_s": 11.9,
+          "end_t_s": 27.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1355,
+          "end_tick": 1433,
+          "start_t_s": 27.1,
+          "end_t_s": 28.66
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1433,
+          "end_tick": 1533,
+          "start_t_s": 28.66,
+          "end_t_s": 30.66
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1533,
+          "end_tick": 1709,
+          "start_t_s": 30.66,
+          "end_t_s": 34.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1709,
+          "end_tick": 1809,
+          "start_t_s": 34.18,
+          "end_t_s": 36.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1809,
+          "end_tick": 1819,
+          "start_t_s": 36.18,
+          "end_t_s": 36.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T6_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "0b3bc04a3b8a235e5a2c23e9663814194350bad15067c87365faa50251c45c92",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 695,
+          "start_t_s": 7.9,
+          "end_t_s": 13.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 695,
+          "end_tick": 1455,
+          "start_t_s": 13.9,
+          "end_t_s": 29.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1455,
+          "end_tick": 1533,
+          "start_t_s": 29.1,
+          "end_t_s": 30.66
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1533,
+          "end_tick": 1633,
+          "start_t_s": 30.66,
+          "end_t_s": 32.660000000000004
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1633,
+          "end_tick": 1809,
+          "start_t_s": 32.660000000000004,
+          "end_t_s": 36.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1809,
+          "end_tick": 1909,
+          "start_t_s": 36.18,
+          "end_t_s": 38.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1909,
+          "end_tick": 1919,
+          "start_t_s": 38.18,
+          "end_t_s": 38.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T8_R1",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 1,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "15175905e811ed86046b88bebfd45965d053ca69a170df3d7f8f2cf298232573",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 795,
+          "start_t_s": 7.9,
+          "end_t_s": 15.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 795,
+          "end_tick": 1555,
+          "start_t_s": 15.9,
+          "end_t_s": 31.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1555,
+          "end_tick": 1633,
+          "start_t_s": 31.1,
+          "end_t_s": 32.660000000000004
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1633,
+          "end_tick": 1733,
+          "start_t_s": 32.660000000000004,
+          "end_t_s": 34.660000000000004
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1733,
+          "end_tick": 1909,
+          "start_t_s": 34.660000000000004,
+          "end_t_s": 38.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1909,
+          "end_tick": 2009,
+          "start_t_s": 38.18,
+          "end_t_s": 40.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2009,
+          "end_tick": 2019,
+          "start_t_s": 40.18,
+          "end_t_s": 40.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T8_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "15175905e811ed86046b88bebfd45965d053ca69a170df3d7f8f2cf298232573",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 795,
+          "start_t_s": 7.9,
+          "end_t_s": 15.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 795,
+          "end_tick": 1555,
+          "start_t_s": 15.9,
+          "end_t_s": 31.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1555,
+          "end_tick": 1633,
+          "start_t_s": 31.1,
+          "end_t_s": 32.660000000000004
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1633,
+          "end_tick": 1733,
+          "start_t_s": 32.660000000000004,
+          "end_t_s": 34.660000000000004
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1733,
+          "end_tick": 1909,
+          "start_t_s": 34.660000000000004,
+          "end_t_s": 38.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1909,
+          "end_tick": 2009,
+          "start_t_s": 38.18,
+          "end_t_s": 40.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2009,
+          "end_tick": 2019,
+          "start_t_s": 40.18,
+          "end_t_s": 40.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T6_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "0b3bc04a3b8a235e5a2c23e9663814194350bad15067c87365faa50251c45c92",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 695,
+          "start_t_s": 7.9,
+          "end_t_s": 13.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 695,
+          "end_tick": 1455,
+          "start_t_s": 13.9,
+          "end_t_s": 29.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1455,
+          "end_tick": 1533,
+          "start_t_s": 29.1,
+          "end_t_s": 30.66
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1533,
+          "end_tick": 1633,
+          "start_t_s": 30.66,
+          "end_t_s": 32.660000000000004
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1633,
+          "end_tick": 1809,
+          "start_t_s": 32.660000000000004,
+          "end_t_s": 36.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1809,
+          "end_tick": 1909,
+          "start_t_s": 36.18,
+          "end_t_s": 38.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1909,
+          "end_tick": 1919,
+          "start_t_s": 38.18,
+          "end_t_s": 38.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S36_T4_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 36.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "14407774361eba48b168ae3cff04367c21d3424f509de9468e362a02267dadec",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 36.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 595,
+          "start_t_s": 7.9,
+          "end_t_s": 11.9
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 595,
+          "end_tick": 1355,
+          "start_t_s": 11.9,
+          "end_t_s": 27.1
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1355,
+          "end_tick": 1433,
+          "start_t_s": 27.1,
+          "end_t_s": 28.66
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1433,
+          "end_tick": 1533,
+          "start_t_s": 28.66,
+          "end_t_s": 30.66
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1533,
+          "end_tick": 1709,
+          "start_t_s": 30.66,
+          "end_t_s": 34.18
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1709,
+          "end_tick": 1809,
+          "start_t_s": 34.18,
+          "end_t_s": 36.18
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1809,
+          "end_tick": 1819,
+          "start_t_s": 36.18,
+          "end_t_s": 36.38
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T8_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "3db40232d89ee9a1b2bc144881a0344a9ff90b4dc56589fb13b399ea347e404b",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 889,
+          "start_t_s": 9.78,
+          "end_t_s": 17.78
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 889,
+          "end_tick": 1649,
+          "start_t_s": 17.78,
+          "end_t_s": 32.980000000000004
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1649,
+          "end_tick": 1727,
+          "start_t_s": 32.980000000000004,
+          "end_t_s": 34.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1727,
+          "end_tick": 1827,
+          "start_t_s": 34.54,
+          "end_t_s": 36.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1827,
+          "end_tick": 2003,
+          "start_t_s": 36.54,
+          "end_t_s": 40.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 2003,
+          "end_tick": 2103,
+          "start_t_s": 40.06,
+          "end_t_s": 42.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2103,
+          "end_tick": 2113,
+          "start_t_s": 42.06,
+          "end_t_s": 42.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T6_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "a596539a1eb1d8f25587789ce3788b80967ea573a16bacaaa42cd9e0ab7bd2b6",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 789,
+          "start_t_s": 9.78,
+          "end_t_s": 15.780000000000001
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 789,
+          "end_tick": 1549,
+          "start_t_s": 15.780000000000001,
+          "end_t_s": 30.98
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1549,
+          "end_tick": 1627,
+          "start_t_s": 30.98,
+          "end_t_s": 32.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1627,
+          "end_tick": 1727,
+          "start_t_s": 32.54,
+          "end_t_s": 34.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1727,
+          "end_tick": 1903,
+          "start_t_s": 34.54,
+          "end_t_s": 38.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1903,
+          "end_tick": 2003,
+          "start_t_s": 38.06,
+          "end_t_s": 40.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2003,
+          "end_tick": 2013,
+          "start_t_s": 40.06,
+          "end_t_s": 40.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S34_T4_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 34.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "712067f06ef4871671bd890b7fd9dd42eebcfaf6dd36aea53659a7d0b8bb25f5",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 34.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 489,
+          "start_t_s": 7.9,
+          "end_t_s": 9.78
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 489,
+          "end_tick": 689,
+          "start_t_s": 9.78,
+          "end_t_s": 13.780000000000001
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 689,
+          "end_tick": 1449,
+          "start_t_s": 13.780000000000001,
+          "end_t_s": 28.98
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1449,
+          "end_tick": 1527,
+          "start_t_s": 28.98,
+          "end_t_s": 30.54
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1527,
+          "end_tick": 1627,
+          "start_t_s": 30.54,
+          "end_t_s": 32.54
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1627,
+          "end_tick": 1803,
+          "start_t_s": 32.54,
+          "end_t_s": 36.06
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1803,
+          "end_tick": 1903,
+          "start_t_s": 36.06,
+          "end_t_s": 38.06
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1903,
+          "end_tick": 1913,
+          "start_t_s": 38.06,
+          "end_t_s": 38.26
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T8_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 8.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "81166ed2b6586047949ebb536103a4a911ee5aa0ac3b0f833e7a9f47e5897e03",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 8.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 983,
+          "start_t_s": 11.66,
+          "end_t_s": 19.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 983,
+          "end_tick": 1743,
+          "start_t_s": 19.66,
+          "end_t_s": 34.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1743,
+          "end_tick": 1821,
+          "start_t_s": 34.86,
+          "end_t_s": 36.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1821,
+          "end_tick": 1921,
+          "start_t_s": 36.42,
+          "end_t_s": 38.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1921,
+          "end_tick": 2097,
+          "start_t_s": 38.42,
+          "end_t_s": 41.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 2097,
+          "end_tick": 2197,
+          "start_t_s": 41.94,
+          "end_t_s": 43.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2197,
+          "end_tick": 2207,
+          "start_t_s": 43.94,
+          "end_t_s": 44.14
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T6_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 6.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "43e9edcebb0845c2e11034322cfd11995078ffe0303c99596a84ed25aa3d25d4",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 6.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 883,
+          "start_t_s": 11.66,
+          "end_t_s": 17.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 883,
+          "end_tick": 1643,
+          "start_t_s": 17.66,
+          "end_t_s": 32.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1643,
+          "end_tick": 1721,
+          "start_t_s": 32.86,
+          "end_t_s": 34.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1721,
+          "end_tick": 1821,
+          "start_t_s": 34.42,
+          "end_t_s": 36.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1821,
+          "end_tick": 1997,
+          "start_t_s": 36.42,
+          "end_t_s": 39.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1997,
+          "end_tick": 2097,
+          "start_t_s": 39.94,
+          "end_t_s": 41.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 2097,
+          "end_tick": 2107,
+          "start_t_s": 41.94,
+          "end_t_s": 42.14
+        }
+      ]
+    },
+    {
+      "trial": {
+        "trial_id": "Z28_up_S32_T4_R2",
+        "direction": "up",
+        "command_z_mm": 28.0,
+        "rotate_start_z_mm": 32.0,
+        "rotate_s": 4.0,
+        "preload_speed_mm_s": 2.0,
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "repeat": 2,
+        "entry_policy": "preload30_then_rotate_and_press_v1",
+        "condition_sha256": "5996270422ab5f66239d09b5b1196a0f9966aced20c04314f9509bf1adffff6e",
+        "prep_note": ""
+      },
+      "profile": {
+        "mode": "four-direction-hold",
+        "direction": "up",
+        "travel_mm": 150.0,
+        "speed_mm_s": 10.0,
+        "xy_accel_mm_s2": 50.0,
+        "start_z_mm": 28.0,
+        "end_z_mm": 28.0,
+        "entry_contact_z_mm": 36.0,
+        "entry_reverse_mm": 5.0,
+        "entry_tilt_deg": 30.0,
+        "writing_tilt_deg": 15.0,
+        "rotate_s": 4.0,
+        "load_s": 3.0,
+        "airborne_settle_s": 1.0,
+        "post_lift_hold_s": 2.0,
+        "return_to_origin": true,
+        "air_rotate_s": 1.5,
+        "transfer_speed_mm_s": 80.0,
+        "fast_z_speed_mm_s": 60.0,
+        "slow_z_speed_mm_s": 15.0,
+        "slow_below_z_mm": 50.0,
+        "transit_accel_mm_s2": 100.0,
+        "angular_speed_deg_s": 20.0,
+        "angular_accel_deg_s2": 40.0
+      },
+      "entry": {
+        "rotate_start_z_mm": 32.0,
+        "preload_speed_mm_s": 2.0
+      },
+      "setup": {
+        "installation_id": "brush2-z-ladder",
+        "verified": true,
+        "tcp_name": "TCP_brush",
+        "ucs_name": "Base",
+        "tool_coord_si": [
+          0.0,
+          0.0,
+          0.262,
+          -3.141592653589793,
+          0.0,
+          -2.6179938779914944
+        ],
+        "user_coord_si": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "vertical_rpy_rad": [
+          0.0,
+          0.2617993877991494,
+          0.0
+        ],
+        "sensor_mount_id": "brush2-mount",
+        "origin_x_mm": -150.0,
+        "origin_y_mm": 450.0,
+        "wait_z_mm": 70.0,
+        "contact_z_mm": 40.0,
+        "workspace_min_mm": [
+          -400.0,
+          300.0,
+          17.0
+        ],
+        "workspace_max_mm": [
+          100.0,
+          700.0,
+          130.0
+        ],
+        "max_depth_mm": 20.0,
+        "max_xy_speed_mm_s": 80.0,
+        "max_z_speed_mm_s": 60.0,
+        "max_accel_mm_s2": 200.0,
+        "max_step_mm": 2.0,
+        "approach_speed_mm_s": 13.0,
+        "return_speed_mm_s": 80.0,
+        "pose_tolerance_mm": 0.5,
+        "orientation_tolerance_rad": 0.017453292519943295,
+        "baseline_window_s": 2.0,
+        "baseline_timeout_s": 5.0,
+        "baseline_min_samples": 400,
+        "baseline_max_std_uT": [
+          10.0,
+          10.0,
+          30.0
+        ],
+        "baseline_max_drift_uT_s": 5.0,
+        "sensor_max_age_s": 0.1,
+        "max_tick_lateness_s": 0.1,
+        "stop_timeout_s": 10.0,
+        "gripper_width_mm": 14.0,
+        "gripper_speed": 30,
+        "gripper_force": 30,
+        "filter": {
+          "alpha": 0.3,
+          "kind": "ema"
+        }
+      },
+      "motion_metrics": {
+        "XY speed": 79.89368995585112,
+        "Z speed": 50.45864746330425,
+        "step": 1.5978737991170222,
+        "acceleration": 99.52176882170073,
+        "angular speed": 19.882075556409,
+        "angular acceleration": 38.46684444444701
+      },
+      "segments": [
+        {
+          "id": "wait",
+          "kind": "airborne",
+          "start_tick": 0,
+          "end_tick": 1,
+          "start_t_s": 0.0,
+          "end_t_s": 0.02
+        },
+        {
+          "id": "orient_for_baseline",
+          "kind": "preparation",
+          "start_tick": 1,
+          "end_tick": 101,
+          "start_t_s": 0.02,
+          "end_t_s": 2.02
+        },
+        {
+          "id": "baseline_settle",
+          "kind": "airborne",
+          "start_tick": 101,
+          "end_tick": 151,
+          "start_t_s": 2.02,
+          "end_t_s": 3.02
+        },
+        {
+          "id": "entry_offset_high",
+          "kind": "preparation",
+          "start_tick": 151,
+          "end_tick": 178,
+          "start_t_s": 3.02,
+          "end_t_s": 3.56
+        },
+        {
+          "id": "rotate_air",
+          "kind": "preparation",
+          "start_tick": 178,
+          "end_tick": 253,
+          "start_t_s": 3.56,
+          "end_t_s": 5.0600000000000005
+        },
+        {
+          "id": "lower_fast",
+          "kind": "preparation",
+          "start_tick": 253,
+          "end_tick": 307,
+          "start_t_s": 5.0600000000000005,
+          "end_t_s": 6.140000000000001
+        },
+        {
+          "id": "lower_slow",
+          "kind": "preparation",
+          "start_tick": 307,
+          "end_tick": 395,
+          "start_t_s": 6.140000000000001,
+          "end_t_s": 7.9
+        },
+        {
+          "id": "entry_preload",
+          "kind": "preparation",
+          "start_tick": 395,
+          "end_tick": 583,
+          "start_t_s": 7.9,
+          "end_t_s": 11.66
+        },
+        {
+          "id": "rotate_load",
+          "kind": "preparation",
+          "start_tick": 583,
+          "end_tick": 783,
+          "start_t_s": 11.66,
+          "end_t_s": 15.66
+        },
+        {
+          "id": "straight_hold",
+          "kind": "straight",
+          "start_tick": 783,
+          "end_tick": 1543,
+          "start_t_s": 15.66,
+          "end_t_s": 30.86
+        },
+        {
+          "id": "lift",
+          "kind": "preparation",
+          "start_tick": 1543,
+          "end_tick": 1621,
+          "start_t_s": 30.86,
+          "end_t_s": 32.42
+        },
+        {
+          "id": "post_lift_hold",
+          "kind": "airborne",
+          "start_tick": 1621,
+          "end_tick": 1721,
+          "start_t_s": 32.42,
+          "end_t_s": 34.42
+        },
+        {
+          "id": "return_high",
+          "kind": "airborne",
+          "start_tick": 1721,
+          "end_tick": 1897,
+          "start_t_s": 34.42,
+          "end_t_s": 37.94
+        },
+        {
+          "id": "restore_wait_orientation",
+          "kind": "airborne",
+          "start_tick": 1897,
+          "end_tick": 1997,
+          "start_t_s": 37.94,
+          "end_t_s": 39.94
+        },
+        {
+          "id": "hold",
+          "kind": "airborne",
+          "start_tick": 1997,
+          "end_tick": 2007,
+          "start_t_s": 39.94,
+          "end_t_s": 40.14
+        }
+      ]
+    }
+  ]
+}

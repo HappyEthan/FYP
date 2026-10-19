@@ -1,0 +1,89 @@
+{
+  "reference_id": "brush2_20260925_raw_xy_width_levels_v1",
+  "status": "offline_initialization_candidate",
+  "brush_id": "brush2",
+  "source_table": "runs/brush2/plans/05_慢扫非线性前馈表/feedforward.json",
+  "source_table_sha256": "7de5a320dbe9dacceec225cb8ee427b13274c089f7bde958e8d6df8068718478",
+  "source_condition": {
+    "z_entry_mm": 38.0,
+    "ry_entry_deg": 30.0,
+    "ry_write_deg": 15.0,
+    "sweep_z_mm": [
+      38.0,
+      24.0
+    ],
+    "sweep_duration_s": 30.0,
+    "x_speed_mm_s": 10.0,
+    "branch": "increasing_depth_only"
+  },
+  "source_context": {
+    "vertical_rpy_rad": [
+      0.0,
+      0.2617993877991494,
+      0.0
+    ],
+    "filter": {
+      "alpha": 0.3,
+      "kind": "ema"
+    },
+    "installation_id": "brush2-z-ladder",
+    "sensor_mount_id": "brush2-mount",
+    "tcp_name": "TCP_brush",
+    "ucs_name": "Base",
+    "tool_coord_si": [
+      0.0,
+      0.0,
+      0.262,
+      -3.141592653589793,
+      0.0,
+      -2.6179938779914944
+    ],
+    "user_coord_si": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "contact_z_mm": 40.0
+  },
+  "feature": "filtered_dBxy_norm_uT",
+  "magnetic_scale": "2026-09-25 brush2 raw baseline-subtracted EMA XY norm; not later calibrated common G",
+  "selected_range_uT": [
+    100.0,
+    240.0
+  ],
+  "range_basis": "User requested five geometrically spaced levels from 100 to 240 uT; all levels are inside the source table inverse range.",
+  "working_assumption": "Increasing nominal depression, magnetic amplitude and stroke width are positively associated within selected conditions; width ordering is user-proposed and not a measured fit.",
+  "height_definition": "nominal_depth_mm = contact_z_mm - z_cmd_mm; deeper depression means smaller Base Z",
+  "width_intent_definition": "ordinal score from 0 to 1; zero denotes the narrowest selected contact level, not zero width or pen lift; score is not a measured width ratio",
+  "measured_width_status": "not populated from source table",
+  "proposed_score_mapping": "g_target_uT = 100 * (240 / 100) ** width_intent_score; geometric initialization rule, not a physical width law.",
+  "generation_note": "Assign levels from reviewed image geometry and writing descriptions, smooth target transitions, then invert the matching feedforward table for Z.",
+  "score_to_magnetic_knots": [
+    [
+      0.0,
+      100.0
+    ],
+    [
+      0.25,
+      124.46659545769568
+    ],
+    [
+      0.5,
+      154.91933384829667
+    ],
+    [
+      0.75,
+      192.8228205467164
+    ],
+    [
+      1.0,
+      240.0
+    ]
+  ],
+  "level_revision_note": "Five magnetic levels repartitioned as a geometric sequence from 100 to 240 uT at user request; ordinal intent scores retained.",
+  "level_spacing": "geometric",
+  "adjacent_level_ratio": 1.2446659545769567
+}

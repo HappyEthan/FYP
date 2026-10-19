@@ -1,0 +1,21 @@
+{
+  "role": "software_verification_only_not_hardware_performance",
+  "new_feature_tests": {
+    "passed": 17
+  },
+  "full_suite": {
+    "passed": 928,
+    "skipped": 7,
+    "failed": 0,
+    "command": "PYTHONPATH=src:. python3 -m pytest -q",
+    "environment": "outside sandbox to permit localhost/IPC socket tests"
+  },
+  "docs_layout": "passed",
+  "local_links_checked": 51,
+  "hardware_connected": false,
+  "source_sha256": {
+    "scripts/run_feedforward_calibration_validation.py": "f27a07ed77780534b5e65feb221a50f17ca106f11bf264991edef36ae6854cb3",
+    "src/brushbot/experiments/feedforward_calibration_validation.py": "a1ed1711a8cab5292421df8d7c01ac1283ed817ad0567b5a3c1e2d8284e893e0",
+    "tests/test_feedforward_calibration_validation.py": "82265502f122f4bbc773c99c85780de69ad99077dbf16bb11bc45c626a582db6"
+  }
+}

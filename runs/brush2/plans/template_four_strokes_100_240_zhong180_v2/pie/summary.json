@@ -1,0 +1,31 @@
+{
+  "id": "pie",
+  "name": "斜撇",
+  "time_scale": 2,
+  "source_plan": "runs/brush2/plans/template_four_strokes_100_240_zhong180_v1/pie/strokeplan.npz",
+  "source_sha256": "c9db2e13fd777ad5d883632ea5d3c4c2bfd76a5c584a2f75365ab0ecc08b24d4",
+  "source_peak_angular_acceleration_deg_s2": 54.321678692436784,
+  "writing_duration_s": 100.56,
+  "full_motion_duration_s": 123.16,
+  "target_max_xy_speed_mm_s": 5.0000000000011395,
+  "compiled_limits": {
+    "XY speed": 79.87530011315978,
+    "Z speed": 59.997440049151805,
+    "step": 1.5975060022631957,
+    "acceleration": 73.87172044806545,
+    "angular speed": 19.935056324834193,
+    "angular acceleration": 38.46689228085768
+  },
+  "compiled_xyz_min_mm": [
+    -370.0,
+    434.0975609756098,
+    28.46363623880116
+  ],
+  "compiled_xyz_max_mm": [
+    -160.03011532380702,
+    565.9024390243903,
+    130.0
+  ],
+  "preserved_arrays_exactly": true,
+  "plan": "pie/strokeplan.npz"
+}

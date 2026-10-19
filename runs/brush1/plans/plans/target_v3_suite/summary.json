@@ -1,0 +1,46 @@
+[
+  {
+    "name": "01_gradual_press",
+    "title": "Gradual target rise",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  },
+  {
+    "name": "02_single_arch",
+    "title": "One target arch",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  },
+  {
+    "name": "03_double_wave",
+    "title": "Two target cycles",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  },
+  {
+    "name": "04_smooth_levels",
+    "title": "Four target holds",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  }
+]

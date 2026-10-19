@@ -1,0 +1,15 @@
+{
+  "README.md": "50d3941045b561939950b67cfbc03e3d67882dff2ca344304ad66d54c776adf9",
+  "comparison.png": "ed23b860c6a6d2c47b163fad14cd81fa5415835d8cb555ecb7ca2830de835db2",
+  "generate.py": "08624db70775221bb142c159c642510da408ba3d02489679dca988fa76031158",
+  "heng/phase_table.csv": "ecdeff23d1da5cd9af19c34e69122952d53272af633763886f5fd368eb47b6b0",
+  "heng/preview/stroke_00.csv": "549c52f62dd808c1a255d946ba86ce3a576bccb046bed97f801a6e18e1a69e29",
+  "heng/preview/stroke_00.png": "da76a5ce33589a9a4bacfa8c196177bf5e550df6a50803ffba1d61494b5d5e13",
+  "heng/preview/summary.json": "7fdff3ad51c9d692a1675cca7c83aa3faf307818d19bd276ae8e45b37c56034d",
+  "heng/recipe.json": "b91aa020dd510256abb71ca350a423ab73fbe18ee6b80c4d5f6af993c60dc191",
+  "heng/strokeplan.npz": "e2ab9d56f87bce9cb0da6481af5ec27f65b8b7029860afd8b27b7a43a8017150",
+  "preflight/compiled_heng_pi.npz": "de6deb721244dc7aefda8264922a95be233a4cc0798ae7478b7dd6baf5937ce4",
+  "preflight/resolved_control.json": "412b9d7eb802dbe0a629939be67a5a8784ddd5c2ff7771bf3696f23dfa038560",
+  "summary.json": "90ab7cc2d67edc876b910b088ff662bc57160a220377cdb67abc3e9ad2e5fc8f",
+  "tilt_geometry.png": "d3ab639f6f6af0ac200abf88464dba14115b957a9a977fa45cc51ae5aa2a20f1"
+}

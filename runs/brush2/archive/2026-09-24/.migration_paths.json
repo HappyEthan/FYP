@@ -1,0 +1,378 @@
+[
+  {
+    "old": "runs/brush2/2026-09-23/16-43-59__brush2_full_ry15__df7649",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-43-59_姿态Ry正15_第1次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/16-55-06__brush2_full_ry15__c575e5",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-55-06_姿态Ry正15_第2次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/17-13-44__brush2_full_rx15_rz90__7d1a59",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-13-44_姿态Rx正15_Rz90_第1次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/17-50-38__brush2_full_rx15_rz90__486bc3",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-50-38_姿态Rx正15_Rz90_第2次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/18-07-46__brush2_full_ry-15_rz180__9666d5",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-07-46_姿态Ry负15_Rz180_第1次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/18-17-06__brush2_full_ry-15_rz180__2f3488",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-17-06_姿态Ry负15_Rz180_第2次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/18-44-18__brush2_full_rx-15_rz270__43a39c",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-44-18_姿态Rx负15_Rz270_第1次"
+  },
+  {
+    "old": "runs/brush2/2026-09-23/18-57-22__brush2_full_rx-15_rz270__3b670b",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-57-22_姿态Rx负15_Rz270_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-08-36__strokeplan_01_gradual_press__b188b8",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-08-36_渐进压笔_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-13-00__strokeplan_01_gradual_press__9f5ed4",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-13-00_渐进压笔_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-19-24__strokeplan_02_single_arch__de1973",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-19-24_单拱_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-20-56__strokeplan_02_single_arch__582601",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-20-56_单拱_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-22-27__strokeplan_03_double_wave__3222ea",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-22-27_双波_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-25-21__strokeplan_04_smooth_levels_wide_transitions__75d61b",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-25-21_宽过渡_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-27-58__strokeplan_04_smooth_levels_wide_transitions__81e6a4",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-27-58_宽过渡_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/13-32-01__strokeplan_03_double_wave__d9883a",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-32-01_双波_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-46-35__strokeplan_p_01_gradual_press__2688a7",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-46-35_渐进压笔_P0p05_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-47-59__strokeplan_p_01_gradual_press__e60602",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-47-59_渐进压笔_P0p05_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-50-20__strokeplan_p_02_single_arch__e66a2b",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-50-20_单拱_P0p05_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-52-09__strokeplan_p_02_single_arch__879a09",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-52-09_单拱_P0p05_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-53-36__strokeplan_p_03_double_wave__4d3874",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-53-36_双波_P0p05_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-55-03__strokeplan_p_03_double_wave__6c209e",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-55-03_双波_P0p05_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-57-44__strokeplan_p_04_smooth_levels_wide_transitions__36c368",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-57-44_宽过渡_P0p05_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/14-59-08__strokeplan_p_04_smooth_levels_wide_transitions__d0a5c2",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-59-08_宽过渡_P0p05_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/15-42-14__strokeplan_p_04_smooth_levels_wide_transitions__0f2f88",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-42-14_宽过渡_P0p1_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/15-45-41__strokeplan_p_04_smooth_levels_wide_transitions__63dee4",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-45-41_宽过渡_P0p2_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/15-51-14__strokeplan_p_04_smooth_levels_wide_transitions__c61f9e",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-51-14_宽过渡_P0p4_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/15-54-09__strokeplan_p_04_smooth_levels_wide_transitions__f4a10d",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-54-09_宽过渡_P0p3_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/16-07-03__strokeplan_p_04_smooth_levels_wide_transitions__9527cc",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-07-03_宽过渡_P1_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/16-09-02__strokeplan_p_04_smooth_levels_wide_transitions__bb27fb",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-09-02_宽过渡_P2_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/16-31-50__strokeplan_p_04_smooth_levels_wide_transitions__a8a59a",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-31-50_宽过渡_P2_修正0p25mm_速度2_加速度50_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/16-50-56__strokeplan_p_04_smooth_levels_wide_transitions__142be8",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-50-56_宽过渡_P2_修正0p3mm_速度4_加速度60_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/16-53-22__strokeplan_p_limits_04_smooth_levels_wide_transitions__69395a",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-53-22_宽过渡_P2_修正0p4mm_速度5_加速度70_第1次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/17-22-36__strokeplan_p_limits_04_smooth_levels_wide_transitions__68defd",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-22-36_宽过渡_P2_修正0p4mm_速度5_加速度70_第2次"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/17-30-35__strokeplan_p_limits_04_smooth_levels_wide_transitions__58bce8",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-30-35_宽过渡_P2_修正0p4mm_速度5_加速度70_第3次"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_tracking_8",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_feedback_shadow_8_v1",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_feedback_shadow_8_v2",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_feedback_shadow_8_v3",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_p_tracking_8",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_p_gain_selected_04",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/P增益扫描"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_p_limits_04",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/历史限幅对比"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/strokeplan_p_limits_selected_04",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/修正上限精选"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/cleanup_proposal_1542_1730.json",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/清理记录.json"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/data_inventory_1542_1730.csv",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/清理前逐笔索引.csv"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-24/retired_run_10f17a_summary.json",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/已清理实验摘要.json"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-23/+x",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/正X方向"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-23/+y",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/正Y方向"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-23/-x",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/负X方向"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-23/-y",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/负Y方向"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-23/four_directions",
+    "new": "runs/brush2/2026-09-23/01_四方向阶梯实验/analysis/四方向汇总"
+  },
+  {
+    "old": "runs/brush2/combined/2026-09-25/tracking_diagnosis_v1/diagnosis.json",
+    "new": "runs/brush2/archive/2026-09-24/跨实验跟随诊断_2026-09-25.json"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/02_single_arch__repeat_1__de1973.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/单拱_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/01_gradual_press__repeat_2__9f5ed4.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/渐进压笔_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/03_double_wave__repeat_1__3222ea.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/双波_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/02_single_arch__repeat_2__582601.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/单拱_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/01_gradual_press__repeat_1__b188b8.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/渐进压笔_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/03_double_wave__repeat_2__d9883a.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/双波_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/04_smooth_levels_wide_transitions__repeat_2__81e6a4.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/宽过渡_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/04_smooth_levels_wide_transitions__repeat_1__75d61b.png",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/四目标跟随/宽过渡_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-13-00__strokeplan_01_gradual_press__9f5ed4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-13-00_渐进压笔_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-08-36__strokeplan_01_gradual_press__b188b8.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-08-36_渐进压笔_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-22-27__strokeplan_03_double_wave__3222ea.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-22-27_双波_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-32-01__strokeplan_03_double_wave__d9883a.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-32-01_双波_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-25-21__strokeplan_04_smooth_levels_wide_transitions__75d61b.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-25-21_宽过渡_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-20-56__strokeplan_02_single_arch__582601.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-20-56_单拱_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-27-58__strokeplan_04_smooth_levels_wide_transitions__81e6a4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-27-58_宽过渡_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-19-24__strokeplan_02_single_arch__de1973.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本1/13-19-24_单拱_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-13-00__strokeplan_01_gradual_press__9f5ed4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-13-00_渐进压笔_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-08-36__strokeplan_01_gradual_press__b188b8.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-08-36_渐进压笔_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-22-27__strokeplan_03_double_wave__3222ea.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-22-27_双波_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-32-01__strokeplan_03_double_wave__d9883a.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-32-01_双波_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-25-21__strokeplan_04_smooth_levels_wide_transitions__75d61b.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-25-21_宽过渡_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-20-56__strokeplan_02_single_arch__582601.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-20-56_单拱_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-27-58__strokeplan_04_smooth_levels_wide_transitions__81e6a4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-27-58_宽过渡_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-19-24__strokeplan_02_single_arch__de1973.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本2/13-19-24_单拱_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-13-00__strokeplan_01_gradual_press__9f5ed4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-13-00_渐进压笔_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-08-36__strokeplan_01_gradual_press__b188b8.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-08-36_渐进压笔_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-22-27__strokeplan_03_double_wave__3222ea.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-22-27_双波_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-32-01__strokeplan_03_double_wave__d9883a.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-32-01_双波_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-25-21__strokeplan_04_smooth_levels_wide_transitions__75d61b.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-25-21_宽过渡_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-20-56__strokeplan_02_single_arch__582601.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-20-56_单拱_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-27-58__strokeplan_04_smooth_levels_wide_transitions__81e6a4.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-27-58_宽过渡_第2次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-19-24__strokeplan_02_single_arch__de1973.csv",
+    "new": "runs/brush2/archive/2026-09-24/01_四目标纯前馈/analysis/反馈影子回放_版本3/13-19-24_单拱_第1次.csv"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/03_double_wave__repeat_2__6c209e.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/双波_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/02_single_arch__repeat_2__879a09.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/单拱_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/01_gradual_press__repeat_1__2688a7.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/渐进压笔_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/02_single_arch__repeat_1__e66a2b.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/单拱_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/03_double_wave__repeat_1__4d3874.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/双波_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/04_smooth_levels_wide_transitions__repeat_2__d0a5c2.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/宽过渡_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/01_gradual_press__repeat_2__e60602.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/渐进压笔_第2次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/04_smooth_levels_wide_transitions__repeat_1__36c368.png",
+    "new": "runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/analysis/四目标P跟随/宽过渡_第1次.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/历史限幅对比/10f17a-repeat-142be8.png",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/历史限幅对比/修正0p30_两次高响应对比.png"
+  },
+  {
+    "old": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/历史限幅对比/68defd_vs_69395a_actual_tcp.png",
+    "new": "runs/brush2/archive/2026-09-24/03_P2修正上限/analysis/历史限幅对比/修正0p40_首次与实际TCP复验.png"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482",
+  "control": {
+    "anti_windup": "conditional",
+    "enabled": true,
+    "integral_limit_mm": 0.2,
+    "ki": 0.1,
+    "kp": 1.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "measurement_phases": [
+      "measure_00",
+      "measure_01",
+      "measure_02",
+      "measure_03"
+    ],
+    "mode": "pi",
+    "phase": "per_stroke",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "air_rotate_s": 1.5,
+    "angular_accel_deg_s2": 40.0,
+    "angular_speed_deg_s": 20.0,
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "directional_character",
+    "rotate_s": 3.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transfer_speed_mm_s": 80.0,
+    "transfer_z_mm": 130.0,
+    "transit_accel_mm_s2": 100.0,
+    "writing_tilt_deg": 15.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff"
+    },
+    "feedforward.json": {
+      "sha256": "01cc3a10f2710cb1c22836afb74ab410f0b651159a6976fc20a079cb3a52ebc7"
+    },
+    "settings.json": {
+      "sha256": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65"
+    },
+    "strokeplan.npz": {
+      "sha256": "31539a05ae1f8057d4c3a868cc517cf9ea10b4612fdea8f72aa7cbde4beae3dd"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "assume_pose_invariant": true,
+    "axis": "xy",
+    "dynamic_orientation": true,
+    "kind": "strokeplan",
+    "stroke_count": 4
+  },
+  "run_label": "zhong_整字_pi",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

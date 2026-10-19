@@ -1,0 +1,53 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482",
+  "control": {
+    "enabled": true,
+    "ki": 0.0,
+    "kp": 0.5,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "mode": "p",
+    "phase": "measure_00",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "angular_accel_deg_s2": 20.0,
+    "angular_speed_deg_s": 10.0,
+    "entry_contact_z_mm": 36.0,
+    "entry_ry_deg": 30.0,
+    "load_s": 3.0,
+    "post_lift_hold_s": 2.0,
+    "rotate_s": 3.0,
+    "slide_settle_s": 1.0,
+    "speed_mm_s": 10.0,
+    "travel_mm": 450.0,
+    "xy_accel_mm_s2": 50.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "afd0e5ae1407535fabe21585aad7f84ec7223d4e55e1f49a153c1003c454cb19"
+    },
+    "feedforward.json": {
+      "sha256": "03976359f7dec4633af90102c95bf4ff7049444aeff8db402fa49e2c1ce117cb"
+    },
+    "settings.json": {
+      "sha256": "7e0bd416c74e41c3c97e29d3849809a8e2b4360f437190ea717998bfb6ad5f97"
+    },
+    "strokeplan.npz": {
+      "sha256": "6dcf3b4492278d43ab1890e078405e2648422fc83d06f6d9d8fbaa544fec2d47"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "axis": "+x",
+    "kind": "strokeplan",
+    "stroke_count": 1
+  },
+  "run_label": "nonlinear_hard_p_scan",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

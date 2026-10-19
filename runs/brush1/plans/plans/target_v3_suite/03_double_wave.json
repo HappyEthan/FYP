@@ -1,0 +1,26 @@
+{
+  "metadata": {
+    "source": "synthetic",
+    "coordinate_frame": "paper",
+    "feature": "filtered_dBxy_norm_uT",
+    "filter_definition": {
+      "kind": "ema",
+      "alpha": 0.3
+    },
+    "description": "Two target cycles",
+    "cruise_speed_mm_s": 10.0,
+    "stability_profile": "03_double_wave",
+    "validation": "target schema only; no machine/calibration validation"
+  },
+  "target_check": {
+    "name": "03_double_wave",
+    "title": "Two target cycles",
+    "source": "synthetic",
+    "support_points": 1011,
+    "stroke_duration_s": 20.2,
+    "target_range_uT": [
+      30.0,
+      110.0
+    ]
+  }
+}

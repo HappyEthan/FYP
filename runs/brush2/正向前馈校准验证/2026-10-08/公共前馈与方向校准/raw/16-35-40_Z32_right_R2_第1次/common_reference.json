@@ -1,0 +1,49 @@
+{
+  "role": "shared_calibrated_signal_reference_design_not_runtime_feedforward_config",
+  "status": "design_candidate_not_installed_or_hardware_validated",
+  "reference_id": "brush2_M2_equal_direction_reference_v1",
+  "source_model_snapshot": "directional_calibration.json",
+  "source_model_sha256": "83cfe36da66489f2d0f76d37ece2ff1ca9fc310ddb2796bab122209d24daf2bb",
+  "definition": "G(d) = equal-weight mean of frozen F_right(d), F_up(d), F_left(d), F_down(d)",
+  "depth_nodes_mm": [
+    5.0,
+    10.0,
+    13.0
+  ],
+  "calibrated_response_nodes_uT": [
+    86.36837869339894,
+    226.5286451464068,
+    284.7592520281981
+  ],
+  "interpolation": "strict monotone piecewise linear; no clipping or extrapolation",
+  "measurement": "b=EMA([Bx-B0x,By-B0y],alpha=0.3); r=hypot(bx,by); d_est=F_theta_inverse(r); q=G(d_est)",
+  "vector_construction": "if r>0 and inverse valid: b_cal=(q/r)*b; hypot(b_cal)=q; radial amplitude normalization, not a fitted 2x2 component calibration",
+  "command": "d_cmd=G_inverse(g_target_cal); Zcmd_mm=40-d_cmd; independent of direction",
+  "required_context": [
+    "commanded direction theta",
+    "baseline and filter definition",
+    "matching assembly, pose and speed"
+  ],
+  "scope": {
+    "directions": [
+      "right",
+      "up",
+      "left",
+      "down"
+    ],
+    "speed_mm_s": 10,
+    "writing_tilt_deg": 15,
+    "command_z_mm": [
+      27,
+      35
+    ],
+    "travel_mm": 150,
+    "window_mm": [
+      30,
+      120
+    ]
+  },
+  "historical_benchmark": "Existing offline scores use X-equivalent reference, not this G; no new empirical performance score produced",
+  "noise": "20 uT assumed raw magnitude scale; locally transforms by G_slope/F_theta_slope, not a universal calibrated pass threshold",
+  "not_compatible_with_current_feedforward_loader": true
+}

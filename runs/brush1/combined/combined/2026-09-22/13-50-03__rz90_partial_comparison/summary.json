@@ -1,0 +1,17 @@
+{
+  "mode": "stitched_complete_paths",
+  "source_runs": [
+    "runs/2026-09-21/20-17-27__repeat_02_part5_rx15_rz90__9f6fd2",
+    "runs/2026-09-21/20-21-18__repeat_02_part5_rx15_rz90__99ad4b"
+  ],
+  "rows": 5014,
+  "included_paths": 5,
+  "excluded_incomplete_paths": [],
+  "z_mm": [
+    24.75,
+    27.125,
+    29.5
+  ],
+  "csv": "/home/ethan/FYP/runs/combined/2026-09-22/13-50-03__rz90_partial_comparison/combined_measurements.csv",
+  "plot": "/home/ethan/FYP/runs/combined/2026-09-22/13-50-03__rz90_partial_comparison/combined_bxy_by_z.png"
+}

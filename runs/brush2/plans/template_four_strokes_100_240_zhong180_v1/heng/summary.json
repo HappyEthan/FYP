@@ -1,0 +1,33 @@
+{
+  "id": "heng",
+  "name": "长横",
+  "template": "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long/template.json",
+  "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+  "bbox_mm": [
+    119.98333175521284,
+    19.364988462225938
+  ],
+  "uniform_mm_per_source_px": 0.27713625866050806,
+  "length_mm": 138.29868790728446,
+  "duration_s": 42.46,
+  "samples": 2124,
+  "max_xy_speed_mm_s": 10.00000000000245,
+  "target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "start_end_paper_mm": [
+    [
+      80.0,
+      -5.819861431870669
+    ],
+    [
+      190.85450346420322,
+      2.2170900692840645
+    ]
+  ],
+  "plan": "heng/strokeplan.npz",
+  "preview": "heng/preview.png",
+  "writing_hint": "前半段渐提、中段较细，后半段渐按；末端转向收笔。",
+  "validation": "V3 reload, magnetic-knot evaluation, target range, size and speed checks"
+}

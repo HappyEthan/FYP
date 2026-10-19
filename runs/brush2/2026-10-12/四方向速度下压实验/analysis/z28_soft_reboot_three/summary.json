@@ -1,0 +1,488 @@
+{
+  "cohort": "2026-10-12 16:21:05, 16:21:45, 16:22:32; day repeats 4-6",
+  "units": "magnetic response uT, not force N",
+  "method": "EMA alpha=0.3, xy magnitude of B-B0; middle commanded distance 10-40 mm inclusive, tail 40-50 mm inclusive, rotation final 0.3 s; sample SD ddof=1. No amplitude normalization, per-run shift or exclusion. Independent units are runs, not the 151 correlated path samples.",
+  "operator_context": {
+    "latest_preparation": "操作者确认：最新三次仍重画同一条线，期间未手动调整磁毛，沾水和吸水准备一致。",
+    "earlier_preparation": "当天前三次：第2次前手动调整磁毛，第3次前给板子重新上电。",
+    "unmeasured_conditions": "笔毫或磁毛的具体形态、磁体相对霍尔的位置、纸面含水量和温度均无独立测量。"
+  },
+  "latest": [
+    {
+      "date": "2026-10-12",
+      "repeat": 4,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-21-05_定高_up_Z28到28_速度10_第4次",
+      "middle_mean_uT": 246.58449115211675,
+      "middle_median_uT": 249.6344107425271,
+      "middle_sample_std_uT": 15.962767295256565,
+      "rotation_end_mean_uT": 101.43558774052472,
+      "tail_mean_uT": 270.23302389055107,
+      "tail_cv_pct": 1.2084327658880325,
+      "actual_middle_z_mean_mm": 28.000800000000005,
+      "actual_middle_z_min_mm": 27.935,
+      "actual_middle_z_max_mm": 28.081,
+      "sensor_first_uptime_s": 0.765098,
+      "baseline_Bxy_uT": [
+        2178.242,
+        2955.888222222223
+      ],
+      "baseline_std_Bxy_uT": [
+        5.292176867792688,
+        5.210575267404161
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        242.64657232238795,
+        43.83837594952378
+      ],
+      "sensor_samples": 8017,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 10.562242,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "2c4048a70f77f23359871ec544c92189a83672b761750f34c1b7e1b506eeeff8",
+        "control.jsonl": "52475e555532ee21d80e7b0644330986b4ac000eae2e2035e65f7b387c0bd204",
+        "sensor.csv": "0762d482eb391d204bbf310ed839b5ae660483177472f673ff2887442f6c8f5b",
+        "actual_tcp.csv": "85215f4803f546f8c0ad5e2fb8669ffaa5c05ec47fda024a6530ddd321110c4a"
+      },
+      "operator_note": "操作者确认：最新三次仍重画同一条线，期间未手动调整磁毛，沾水和吸水准备一致。",
+      "sensor_median_interval_us": 3000.0,
+      "sensor_nominal_observed_hz": 333.3333333333333,
+      "baseline_drift_Bxy_uT_s": [
+        0.058830310353784485,
+        -0.657868347406605
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2420.888572322388,
+        2999.7265981717464
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2420.8837748344376,
+        2999.702980132451,
+        -7091.258688741723
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0,
+      "reboot": {
+        "ack_host_ns": 724147018691,
+        "batch_id": "afd420d4-d835-40a7-b39d-43879992ace6",
+        "command": "REBOOT",
+        "completed_host_ns": 724862399585,
+        "finished_at": "2026-10-12T16:21:00.694907+08:00",
+        "first_frame_sensor_t_us": 423123,
+        "method": "esp32_software_restart",
+        "port": "/dev/ttyACM0",
+        "ready_host_ns": 724852267084,
+        "reconnect_count": 0,
+        "record_path": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/sensor_reboots/afd420d4-d835-40a7-b39d-43879992ace6_1_879ee4ba1bdf48589b157f3f4684ae7b.json",
+        "requested_host_ns": 724136906776,
+        "started_at": "2026-10-12T16:20:59.969301+08:00",
+        "status": "completed",
+        "trial_count": 1,
+        "trial_index": 1
+      },
+      "reboot_duration_s": 0.725492809,
+      "reboot_ack_latency_ms": 10.111915,
+      "reboot_record_sha256": "0fedebe46e5abbb18c5d4e9bb9d130b3e58eee44e863d013b56f371be4aad929"
+    },
+    {
+      "date": "2026-10-12",
+      "repeat": 5,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-21-45_定高_up_Z28到28_速度10_第5次",
+      "middle_mean_uT": 342.1310186134391,
+      "middle_median_uT": 345.656143336254,
+      "middle_sample_std_uT": 18.466099722703078,
+      "rotation_end_mean_uT": 146.19923232385116,
+      "tail_mean_uT": 367.18948734116356,
+      "tail_cv_pct": 0.5565232585409156,
+      "actual_middle_z_mean_mm": 28.001533333333334,
+      "actual_middle_z_min_mm": 27.932,
+      "actual_middle_z_max_mm": 28.079,
+      "sensor_first_uptime_s": 0.768098,
+      "baseline_Bxy_uT": [
+        2103.4398952095794,
+        2935.43892215569
+      ],
+      "baseline_std_Bxy_uT": [
+        5.298452532628373,
+        5.313304961762961
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        334.03135775597036,
+        73.96191612425041
+      ],
+      "sensor_samples": 8015,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 14.269516,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "03adf86550188ef08153a4ce8b4309773f08a7c7cd73219f18e5f333963d439b",
+        "control.jsonl": "31b3809949fe2aa726179febf678b058d558caddfa38c5de3894c3c786f612a1",
+        "sensor.csv": "f725c04efe14b5dbd3ba6fad6d621c2a9cdd3481c329999f62a79deb1b86cb66",
+        "actual_tcp.csv": "8044ff7b39acba8c8883c1d9422d2151a6cf26209a59ed57d2120a31fceb889d"
+      },
+      "operator_note": "操作者确认：最新三次仍重画同一条线，期间未手动调整磁毛，沾水和吸水准备一致。",
+      "sensor_median_interval_us": 3000.0,
+      "sensor_nominal_observed_hz": 333.3333333333333,
+      "baseline_drift_Bxy_uT_s": [
+        0.18345087656740783,
+        -0.603054136564595
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2437.47125296555,
+        3009.40083827994
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2437.6043046357613,
+        3009.5096026490064,
+        -7096.196450331124
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0,
+      "reboot": {
+        "ack_host_ns": 764381835327,
+        "batch_id": "80cd8d10-1ba5-46b9-a587-dd8bf5fe67ac",
+        "command": "REBOOT",
+        "completed_host_ns": 765097340463,
+        "finished_at": "2026-10-12T16:21:40.929838+08:00",
+        "first_frame_sensor_t_us": 423123,
+        "method": "esp32_software_restart",
+        "port": "/dev/ttyACM0",
+        "ready_host_ns": 765087237874,
+        "reconnect_count": 0,
+        "record_path": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/sensor_reboots/80cd8d10-1ba5-46b9-a587-dd8bf5fe67ac_1_8ab5448d68ff4bddaa357e161d1e535d.json",
+        "requested_host_ns": 764371694449,
+        "started_at": "2026-10-12T16:21:40.204091+08:00",
+        "status": "completed",
+        "trial_count": 1,
+        "trial_index": 1
+      },
+      "reboot_duration_s": 0.725646014,
+      "reboot_ack_latency_ms": 10.140878,
+      "reboot_record_sha256": "b27a76f2aa11e74bd8ef7c208b869f99649a93581d0c64acec01c004f9bc7530"
+    },
+    {
+      "date": "2026-10-12",
+      "repeat": 6,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-22-32_定高_up_Z28到28_速度10_第6次",
+      "middle_mean_uT": 202.1296375136625,
+      "middle_median_uT": 204.22844548646083,
+      "middle_sample_std_uT": 15.397699001939769,
+      "rotation_end_mean_uT": 67.40373357916887,
+      "tail_mean_uT": 223.58435141090285,
+      "tail_cv_pct": 0.9754850422507363,
+      "actual_middle_z_mean_mm": 28.00073333333334,
+      "actual_middle_z_min_mm": 27.938,
+      "actual_middle_z_max_mm": 28.083,
+      "sensor_first_uptime_s": 0.765098,
+      "baseline_Bxy_uT": [
+        2217.9516467065882,
+        2949.6424401197596
+      ],
+      "baseline_std_Bxy_uT": [
+        5.371866610515556,
+        5.477283561536709
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        200.13995720585743,
+        28.114015875435193
+      ],
+      "sensor_samples": 8016,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 13.932889000000001,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "5126f198e2b5ac21be9719bf5ff370a35913309ef09a6a65735b88f38f9777c4",
+        "control.jsonl": "18551982839a70f931688e7e85547fcfbf0db353e5ce0230a6cd1352de49fe80",
+        "sensor.csv": "94af139644491052ca6f069db46815cd6e58965a17368f779530758711fb4f1c",
+        "actual_tcp.csv": "3a1b79e95339cf9d34580d95eb435dd642e0d74ded40a6dc2660cff7b342048d"
+      },
+      "operator_note": "操作者确认：最新三次仍重画同一条线，期间未手动调整磁毛，沾水和吸水准备一致。",
+      "sensor_median_interval_us": 3000.0,
+      "sensor_nominal_observed_hz": 333.3333333333333,
+      "baseline_drift_Bxy_uT_s": [
+        -0.8191043556185801,
+        -1.6304497160241374
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2418.091603912446,
+        2977.7564559951948
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2418.239403973511,
+        2978.355298013246,
+        -7093.013589403973
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0,
+      "reboot": {
+        "ack_host_ns": 811894135539,
+        "batch_id": "f43910f6-56a0-4e43-94da-553268c29780",
+        "command": "REBOOT",
+        "completed_host_ns": 812609719994,
+        "finished_at": "2026-10-12T16:22:28.442218+08:00",
+        "first_frame_sensor_t_us": 423122,
+        "method": "esp32_software_restart",
+        "port": "/dev/ttyACM0",
+        "ready_host_ns": 812599635306,
+        "reconnect_count": 0,
+        "record_path": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/sensor_reboots/f43910f6-56a0-4e43-94da-553268c29780_1_a36a8794e1b048f78069e3aaaa60ea29.json",
+        "requested_host_ns": 811884003576,
+        "started_at": "2026-10-12T16:22:27.716400+08:00",
+        "status": "completed",
+        "trial_count": 1,
+        "trial_index": 1
+      },
+      "reboot_duration_s": 0.725716418,
+      "reboot_ack_latency_ms": 10.131963,
+      "reboot_record_sha256": "c35804aa9f0f3095f7ef265f30b78c5694ba292f79356987f9e15b6ec4601ac6"
+    }
+  ],
+  "previous_same_day": [
+    {
+      "date": "2026-10-12",
+      "repeat": 1,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-16-28_定高_up_Z28到28_速度10_第1次",
+      "middle_mean_uT": 195.7086845122562,
+      "middle_median_uT": 198.82493321644964,
+      "middle_sample_std_uT": 15.507251080299454,
+      "rotation_end_mean_uT": 66.80835696781199,
+      "tail_mean_uT": 218.97060052919275,
+      "tail_cv_pct": 1.1664019814203614,
+      "actual_middle_z_mean_mm": 28.00283333333333,
+      "actual_middle_z_min_mm": 27.933,
+      "actual_middle_z_max_mm": 28.095,
+      "sensor_first_uptime_s": 43.275738,
+      "baseline_Bxy_uT": [
+        2115.8312252964424,
+        2868.916897233202
+      ],
+      "baseline_std_Bxy_uT": [
+        5.48787049859238,
+        5.829336335464658
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        193.11066942755428,
+        31.692776008145884
+      ],
+      "sensor_samples": 6013,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 14.061274000000001,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "2fe4f7d286c4497a9362d6edb64f3fa8b67771b67e5fdc734f5955a80f01408a",
+        "control.jsonl": "1501a3a04c8fc6762ed260ed5cbbf2b29a3fcf14fe5be5180ed367fab046f1e9",
+        "sensor.csv": "5447687d33238c37733044dc037d323f1216f7891590772f2e294936b3cf63da",
+        "actual_tcp.csv": "ac921fce27a3f8566a2240e8757e53d440b91b007bbd4a68d2c4b5b20e58605f"
+      },
+      "operator_note": "第1次：基准记录",
+      "sensor_median_interval_us": 4000.0,
+      "sensor_nominal_observed_hz": 250.0,
+      "baseline_drift_Bxy_uT_s": [
+        0.840386810245687,
+        0.7391203950060802
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2308.9418947239965,
+        2900.6096732413475
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2309.3364238410586,
+        2900.8509933774817,
+        -7082.179682119208
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0
+    },
+    {
+      "date": "2026-10-12",
+      "repeat": 2,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-17-15_定高_up_Z28到28_速度10_第2次",
+      "middle_mean_uT": 274.00767207782303,
+      "middle_median_uT": 278.26917772094123,
+      "middle_sample_std_uT": 16.597483867183506,
+      "rotation_end_mean_uT": 115.030089932269,
+      "tail_mean_uT": 296.32837807901524,
+      "tail_cv_pct": 0.7815499209820785,
+      "actual_middle_z_mean_mm": 28.002033333333333,
+      "actual_middle_z_min_mm": 27.94,
+      "actual_middle_z_max_mm": 28.088,
+      "sensor_first_uptime_s": 88.209738,
+      "baseline_Bxy_uT": [
+        2072.8580039525696,
+        2860.909683794467
+      ],
+      "baseline_std_Bxy_uT": [
+        5.140770363363657,
+        5.413929032412444
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        268.60876437149284,
+        54.06959834045151
+      ],
+      "sensor_samples": 6013,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 14.604634,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "c8976ec4d1a7e528c94f083647ab0e841d6d1afd0f5aa67bb44032683c826f71",
+        "control.jsonl": "36875e063169dda1086e8632ea6870bc4da8565f78394ad846c42409e21b199c",
+        "sensor.csv": "e9dca43d913cd5aa905b4b18c2a742b6eff6742eb16596fc4879fa6ed493f375",
+        "actual_tcp.csv": "912a021d0663dc28f5befc7cce78e5c931986297a9be234c71b1d5f200379e80"
+      },
+      "operator_note": "第2次：手动调整磁毛",
+      "sensor_median_interval_us": 4000.0,
+      "sensor_nominal_observed_hz": 250.0,
+      "baseline_drift_Bxy_uT_s": [
+        -0.31097088900541836,
+        0.07819012290561586
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2341.4667683240623,
+        2914.979282134919
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2341.8864238410592,
+        2914.992715231787,
+        -7083.519496688743
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0
+    },
+    {
+      "date": "2026-10-12",
+      "repeat": 3,
+      "raw_folder": "/home/ethan/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-17-56_定高_up_Z28到28_速度10_第3次",
+      "middle_mean_uT": 195.66612632768104,
+      "middle_median_uT": 199.32845680068186,
+      "middle_sample_std_uT": 16.815043341540367,
+      "rotation_end_mean_uT": 60.13497584490076,
+      "tail_mean_uT": 217.5824337330651,
+      "tail_cv_pct": 1.1463679985236905,
+      "actual_middle_z_mean_mm": 28.001200000000004,
+      "actual_middle_z_min_mm": 27.936,
+      "actual_middle_z_max_mm": 28.087,
+      "sensor_first_uptime_s": 3.920739,
+      "baseline_Bxy_uT": [
+        2171.5586481113323,
+        2916.6524850894675
+      ],
+      "baseline_std_Bxy_uT": [
+        5.255536677336629,
+        5.626370280392494
+      ],
+      "middle_filtered_Bxy_mean_uT": [
+        194.26962460090817,
+        23.15078398901042
+      ],
+      "sensor_samples": 6009,
+      "invalid_sensor_samples": 0,
+      "baseline_count": 2,
+      "active_baseline_id": 1,
+      "replay_max_error_uT": 0.0,
+      "max_lateness_ms": 13.870407,
+      "profile_sha256": "1a3563182b3dca6be705bbf25f9178707e61b264b692d87222706a854c870a32",
+      "setup_sha256": "b751681447eb76381ebb1064e919f8c9276b02a4e518dcb1ded3c9863000a117",
+      "sources": {
+        "manifest.json": "2771b9d82e9923f713f105e75a1728de18b45adfb24ba87779bce8be553f9be6",
+        "control.jsonl": "b4c38a7502f6e55f955f78d0ded1f5a967497f286115fac1d8d8de760da76a4f",
+        "sensor.csv": "e2de048b4404daa45c2b83430823beef414443f3c67f797c32a031f4b9a52ea1",
+        "actual_tcp.csv": "e171278d7a91e16411a766f3c94d15c696b49f87bec11c3deff2488427b00e46"
+      },
+      "operator_note": "第3次：板子重新上电",
+      "sensor_median_interval_us": 4000.0,
+      "sensor_nominal_observed_hz": 250.0,
+      "baseline_drift_Bxy_uT_s": [
+        0.17988833969103488,
+        0.08784313545279736
+      ],
+      "middle_filtered_raw_Bxy_mean_uT": [
+        2365.8282727122405,
+        2939.803269078478
+      ],
+      "middle_raw_Bxyz_mean_uT": [
+        2366.400000000002,
+        2940.16490066225,
+        -7086.965192052979
+      ],
+      "middle_control_sample_count": 151,
+      "actual_tcp_samples": 239,
+      "invalid_actual_tcp_samples": 0
+    }
+  ],
+  "latest_middle_mean_statistics": {
+    "n": 3,
+    "mean": 263.6150490930728,
+    "median": 246.58449115211675,
+    "sample_std": 71.53758875791395,
+    "cv_pct": 27.137141450773793
+  },
+  "previous_middle_mean_statistics": {
+    "n": 3,
+    "mean": 221.79416097258675,
+    "median": 195.7086845122562,
+    "sample_std": 45.21823204474321,
+    "cv_pct": 20.38747631878915
+  },
+  "pairwise": [
+    {
+      "repeats": [
+        4,
+        5
+      ],
+      "mean_difference_uT": 95.55602123168384,
+      "rmse_uT": 95.63565325700044,
+      "centered_rmse_uT": 3.901920073913331
+    },
+    {
+      "repeats": [
+        4,
+        6
+      ],
+      "mean_difference_uT": -44.44568624583996,
+      "rmse_uT": 44.54424255141291,
+      "centered_rmse_uT": 2.961506139696011
+    },
+    {
+      "repeats": [
+        5,
+        6
+      ],
+      "mean_difference_uT": -140.00170747752378,
+      "rmse_uT": 140.06400655929437,
+      "centered_rmse_uT": 4.177060787194312
+    }
+  ],
+  "latest_middle_range_uT": 140.0013810997766,
+  "latest_middle_range_relative_to_mean_pct": 53.10826585258691,
+  "second_vs_first_pct": 38.74798735918075,
+  "third_vs_second_pct": -40.920399929583375,
+  "third_vs_first_pct": -18.028243962443803,
+  "baseline_Bx_range_uT": 114.51175149700885,
+  "middle_filtered_raw_Bx_range_uT": 19.379649053104004,
+  "conclusion": "All three board software reboots succeeded in about 0.726 s. Between-run middle-response CV remains about 27.1%; reboot alone has not made this cohort closely repeatable. Baseline Bx differs far more than loaded raw Bx. The magnetic initial/loaded state difference remains important. Constant additive electronic offset would be removed if shared by baseline and contact, but time/state-dependent drift, sensitivity drift, bristle geometry and contact preparation are not separated. Older cohort had mixed interventions and 250 Hz acquisition versus current 333 Hz, so the CV change is descriptive, not a controlled causal estimate."
+}

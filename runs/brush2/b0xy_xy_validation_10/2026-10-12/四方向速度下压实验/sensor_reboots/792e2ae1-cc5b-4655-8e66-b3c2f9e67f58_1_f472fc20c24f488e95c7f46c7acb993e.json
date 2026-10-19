@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "method": "esp32_software_restart",
+  "batch_id": "792e2ae1-cc5b-4655-8e66-b3c2f9e67f58",
+  "trial_index": 1,
+  "trial_count": 1,
+  "started_at": "2026-10-12T17:38:45.257267+08:00",
+  "record_path": "/home/ethan/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/sensor_reboots/792e2ae1-cc5b-4655-8e66-b3c2f9e67f58_1_f472fc20c24f488e95c7f46c7acb993e.json",
+  "error_type": "KeyboardInterrupt",
+  "error": "",
+  "finished_at": "2026-10-12T17:38:54.786847+08:00"
+}
