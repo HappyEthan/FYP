@@ -1,0 +1,186 @@
+{
+  "id": "henggou",
+  "name": "横钩",
+  "type": "henggou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_28.jpg",
+    "sha256": "38d47fcc96681971c8aee68b4a8f75617f9dc88d197aac58b20a5cc0f4bbb9a2",
+    "url": "https://pic4.zhimg.com/v2-8aa0f27a8976e818dd1b81c05fe8c1c3_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          2.8000000000000003,
+          0.13999999999999999
+        ],
+        [
+          7.199999999999999,
+          0.63
+        ],
+        [
+          10,
+          0.7
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.45,
+          0.03
+        ],
+        [
+          0.55,
+          -0.12
+        ],
+        [
+          0.3,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          -0.25
+        ],
+        [
+          -0.6,
+          -0.5
+        ],
+        [
+          -1,
+          -0.8
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "向左下转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "hook",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "hook"
+  ],
+  "rule_notes": [
+    "横行后局部转钩。",
+    "钩朝左下，宽度意图逐步收到尖端。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 14,
+    "type": "henggou",
+    "name": "横钩"
+  }
+}

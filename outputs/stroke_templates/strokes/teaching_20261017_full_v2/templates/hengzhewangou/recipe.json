@@ -1,0 +1,304 @@
+{
+  "id": "hengzhewangou",
+  "name": "横折弯钩",
+  "type": "hengzhewangou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_34.jpg",
+    "sha256": "215a5d4a0c2a097eefbb307be2cd586c39339ec28e375ac92ab3a89536cd6d03",
+    "url": "https://pic3.zhimg.com/v2-b7757f0fc4a10839c6e2ad6196fc90bc_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4000000000000001,
+          0.08000000000000002
+        ],
+        [
+          3.5999999999999996,
+          0.36000000000000004
+        ],
+        [
+          5.0,
+          0.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.36,
+          -0.2
+        ],
+        [
+          0.3,
+          -0.65
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          -0.25,
+          -3
+        ],
+        [
+          -0.45,
+          -4.7
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "bend",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.8
+        ],
+        [
+          0.35,
+          -1.2
+        ],
+        [
+          1.2,
+          -1.2
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4000000000000001,
+          0.08000000000000002
+        ],
+        [
+          3.5999999999999996,
+          0.36000000000000004
+        ],
+        [
+          5,
+          0.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.45,
+          0.15
+        ],
+        [
+          0.45,
+          0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.02,
+          0.25
+        ],
+        [
+          0.02,
+          0.65
+        ],
+        [
+          -0.02,
+          1.0
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn",
+      "part": "fold",
+      "t": 0.5,
+      "label": "横折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "curve",
+      "part": "bend",
+      "t": 0.5,
+      "label": "下部圆弯",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "向上转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn",
+      "ratio": 1.05
+    },
+    {
+      "event": "curve",
+      "ratio": 0.75
+    },
+    {
+      "event": "hook",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn",
+    "curve",
+    "hook"
+  ],
+  "rule_notes": [
+    "横折向下后，以圆弯接下部右行。",
+    "折、圆弯和向上出钩分别保存。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 20,
+    "type": "hengzhewangou",
+    "name": "横折弯钩"
+  }
+}

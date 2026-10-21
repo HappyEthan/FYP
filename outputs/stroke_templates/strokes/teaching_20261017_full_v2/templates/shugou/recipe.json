@@ -1,0 +1,186 @@
+{
+  "id": "shugou",
+  "name": "竖钩",
+  "type": "shugou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_21.jpg",
+    "sha256": "a21d079b25045c94375215e8ab143ac346e2525a7b1507ec61b8cecabaf09fd2",
+    "url": "https://pic1.zhimg.com/v2-728f9292befd647910b34e8ae46ea9ea_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -2.8000000000000003
+        ],
+        [
+          0.02,
+          -7.199999999999999
+        ],
+        [
+          0,
+          -10
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.08,
+          -0.6
+        ],
+        [
+          -0.3,
+          -0.85
+        ],
+        [
+          -0.6,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          0.25
+        ],
+        [
+          -0.6,
+          0.5
+        ],
+        [
+          -0.95,
+          0.8
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "hook",
+      "ratio": 1.15
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "hook"
+  ],
+  "rule_notes": [
+    "先行竖势，钩前保留局部调整段。",
+    "钩朝左上，出锋段短于主体。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 7,
+    "type": "shugou",
+    "name": "竖钩"
+  }
+}

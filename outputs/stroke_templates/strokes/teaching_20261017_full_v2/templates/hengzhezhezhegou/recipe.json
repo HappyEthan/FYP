@@ -1,0 +1,364 @@
+{
+  "id": "hengzhezhezhegou",
+  "name": "横折折折钩",
+  "type": "hengzhezhezhegou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_40.jpg",
+    "sha256": "87209aab6ae6376c3b5b081b2ffb035f4e66f79df964b06344bde56c57657a74",
+    "url": "https://pic2.zhimg.com/v2-7c67ba731f20d5660117d9547fe8c155_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2600000000000002,
+          0.12
+        ],
+        [
+          3.2399999999999998,
+          0.54
+        ],
+        [
+          4.5,
+          0.6
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.02
+        ],
+        [
+          0.2,
+          -0.2
+        ],
+        [
+          -0.15,
+          -0.5
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.5,
+          -0.6
+        ],
+        [
+          -1.2,
+          -1.5
+        ],
+        [
+          -2.1,
+          -2.3
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.1,
+          -0.15
+        ],
+        [
+          0.05,
+          -0.25
+        ],
+        [
+          0.4,
+          -0.15
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8960000000000001,
+          0.1
+        ],
+        [
+          2.304,
+          0.45
+        ],
+        [
+          3.2,
+          0.5
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold_3",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.36,
+          -0.2
+        ],
+        [
+          0.3,
+          -0.65
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.1,
+          -2
+        ],
+        [
+          -0.7,
+          -4
+        ],
+        [
+          -1.8,
+          -5.4
+        ]
+      ],
+      "adjustable_span": true,
+      "label": "末钩主体"
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.08,
+          -0.6
+        ],
+        [
+          -0.3,
+          -0.85
+        ],
+        [
+          -0.6,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          0.25
+        ],
+        [
+          -0.6,
+          0.5
+        ],
+        [
+          -0.95,
+          0.8
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn_1",
+      "part": "fold",
+      "t": 0.5,
+      "label": "第一折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "turn_2",
+      "part": "fold_2",
+      "t": 0.5,
+      "label": "第二折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "turn_3",
+      "part": "fold_3",
+      "t": 0.5,
+      "label": "第三折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn_1",
+      "ratio": 1.0
+    },
+    {
+      "event": "turn_2",
+      "ratio": 0.95
+    },
+    {
+      "event": "turn_3",
+      "ratio": 1.05
+    },
+    {
+      "event": "hook",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn_1",
+    "turn_2",
+    "turn_3",
+    "hook"
+  ],
+  "rule_notes": [
+    "短横、短撇、第二横、下行弯钩分段连接。",
+    "三处折转和末钩独立，第二横可单独改变长度。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 26,
+    "type": "hengzhezhezhegou",
+    "name": "横折折折钩"
+  }
+}

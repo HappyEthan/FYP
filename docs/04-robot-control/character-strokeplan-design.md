@@ -287,6 +287,6 @@ PI 只在各 `measure_XX` 阶段启用。非书写阶段清零积分，修正量
 | 多笔目标、反馈阶段与引擎适配 | [`strokeplan_execution.py`](../../src/brushbot/experiments/strokeplan_execution.py) |
 | 前馈查表与上下文检查 | [`feedforward.py`](../../src/brushbot/feedforward.py) |
 | 受限 PI 与运动包络 | [`strokeplan_pi_feedback.py`](../../src/brushbot/experiments/strokeplan_pi_feedback.py)、[`strokeplan_feedback.py`](../../src/brushbot/experiments/strokeplan_feedback.py) |
-| 当前字符试验执行入口 | [`run_calligraphy_trial.py`](../../scripts/run_calligraphy_trial.py) |
+| 当前字符试验执行入口 | [`run_strokeplan_trial.py`](../../scripts/run_strokeplan_trial.py)，`EXPERIMENT="calligraphy"`，`STROKE=None` 为整字 |
 
 目前字符配方脚本绑定具体模板和输入文件。迁移到其他字符时，需要提供新的笔顺、几何及目标配方，再复用姿态、时间规划和整字编译组件；仅修改执行脚本的文件名不会自动生成其他字。

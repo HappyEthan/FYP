@@ -5,7 +5,7 @@ status: archived
 
 # Z 控制设计：前馈表与 PI 修正
 
-> 历史设计快照：下文“当前仅 P、PI 待启用”描述的是早期阶段。2026-09-25 已实现条件积分 PI 并完成短平台实验，现行设计及结果见[非线性前馈＋PI 完整总结](../nonlinear-feedforward-pi-summary-2026-09-25.md)。
+> 历史设计快照：下文“当前仅 P、PI 待启用”描述的是早期阶段。2026-09-25 已实现条件积分 PI 并完成短平台实验，现行机制见[前馈＋PI 控制实现](../nonlinear-feedforward-pi-summary-2026-09-25.md)，历史实测结果见[实验总览 G06–G13](../../08-system-evaluation/实验清单.md#z-identification)。
 
 本文件只解释本项目的 Z 控制思路。**前馈表负责主要压深，PI 只修正磁目标跟踪的残差。**当前单笔 StrokePlan 真机入口已使用独立前馈表和受限 P 修正，`ki=0`；积分项是下一步需要按实测验证的设计，不能把历史仿真默认增益当作现行真机参数。具体操作入口见[StrokePlan 执行说明](../strokeplan-execution.md)。
 

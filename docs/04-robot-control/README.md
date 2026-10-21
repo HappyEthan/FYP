@@ -5,7 +5,7 @@ status: active
 
 # 04 · Robot Control
 
-本部分包括机械臂与夹爪、开环写字、StrokePlan 执行、Z 辨识及非线性前馈＋PI 控制。现行实验已完成非线性建表、P 参数扫描与短平台 PI 比较；当前设计、参数候选及证据边界见[完整设计与实验总结](nonlinear-feedforward-pi-summary-2026-09-25.md)。命令 Z 不等于实测 TCP Z，实验运行结束也不等于跟踪达标。
+本部分包括机械臂与夹爪、开环写字、StrokePlan 执行、Z 辨识及非线性前馈＋PI 控制。前馈与 PI 的机制见[控制实现说明](nonlinear-feedforward-pi-summary-2026-09-25.md)；已做的建表、辨识、P／PI 和方向校准统一见[实验总览](../08-system-evaluation/实验清单.md)。10 月 8 日独立验证尚未支持冻结模型稳定可靠使用。命令 Z 不等于实测 TCP Z，实验运行结束也不等于跟踪达标。
 
 完整阶段关系见[根计划](../../plan.md)。先读下面的主题文件；历史材料集中在 `archive/`，按记录日期解释。
 
@@ -40,28 +40,21 @@ MuJoCo 场景、模型和仿真平台归 [06 MuJoCo Simulation Platform](../06-m
 |---|---|
 | [arm-gripper.md](arm-gripper.md) | 机械臂连接、坐标、回位和夹爪操作。 |
 | [openloop.md](openloop.md) | 中线数据到开环伺服写字的流程与参数。 |
-| [strokeplan-execution.md](strokeplan-execution.md) | 现行 StrokePlan 的预检、前馈/P 单笔执行及运行记录。 |
+| [strokeplan-execution.md](strokeplan-execution.md) | 现行 StrokePlan 的预检、统一六类实验入口、前馈/P/PI 与运行记录。 |
 | [character-strokeplan-design.md](character-strokeplan-design.md) | 字形中线到磁目标、方向姿态和时间规划，以及旋转补偿、整字连续执行与前馈＋PI 的设计。 |
-| [z-identification.md](z-identification.md) | 固定 TCP 旋转接触、直接 Z 扰动、局部增益与延迟辨识及运行记录。 |
-| [four-direction-sweep-handoff.md](four-direction-sweep-handoff.md) | 四个实际行笔方向的半程下压标定交付：旋转下笔与 5 mm 反向补偿、可调参数、操作命令、记录及后续 k/b 验证。 |
-| [nonlinear-feedforward-pi-summary-2026-09-25.md](nonlinear-feedforward-pi-summary-2026-09-25.md) | 非线性前馈＋PI 完整设计，9 月 25 日辨识、建表、FF/P、P 扫描、P/PI、Ki 扫描与书写记录汇总。 |
+| [前馈＋PI 控制实现](nonlinear-feedforward-pi-summary-2026-09-25.md) | 前馈反查、P／PI、抗饱和、综合限幅、候选参数与日志接口。 |
 
 ## 早期设计与仿真
 
 | 文档 | 内容 |
 |---|---|
 | [experiment-platform.md](archive/experiment-platform.md) | 首轮实验平台的设计、配置和操作历史。 |
-| [ladder-2026-09-17.md](archive/ladder-2026-09-17.md) | 旧双向梯子设计；不代替后续实测。 |
 | [z-control-design.md](archive/z-control-design.md) | Z 控制的前馈表＋PI 方案、原因及当前 P 实验边界。 |
 | [wetting.md](archive/wetting.md) | 梯子实验自动沾水设计与当时实施记录。 |
 
-## 已完成批次的实验记录
+## 实验记录
 
-| 文档 | 证据范围 |
-|---|---|
-| [ladder-2026-09-23.md](archive/ladder-2026-09-23.md) | brush2 四姿态、八次完整 run 的梯子实验。 |
-
-StrokePlan 实验仍在进行；9 月 25 日已分析批次统一见上方设计与实验总结，各批次原始记录和详细图表保留在 `runs/`。
+[实验总览与脚本索引](../08-system-evaluation/实验清单.md)集中记录阶梯扫描、Z 辨识、前馈／P／PI、整字执行、四方向与方向校准、接触测试的脚本、条件及结果。原始输入、逐笔数据和详细图表继续保存在 `runs/`，已合并的交付与阶段报告不另存正文。
 
 ## 维护方式
 

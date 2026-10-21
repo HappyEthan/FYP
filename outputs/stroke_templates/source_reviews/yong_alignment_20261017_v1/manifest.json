@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "role": "reference_outline_alignment_review",
+  "character": "永",
+  "before_geometry_id": "793d4ff13115a3f9a601888195e0c5897672ef2e46a94526df5847b743374b1c",
+  "after_geometry_id": "e495aeb28b155773bb155867cffb6b8609ac2f995127f53d465a5963570ec63e",
+  "physical_validation": false,
+  "files": {
+    "after.svg": "56f260861433fdc2c1853b6b020335a8cec74ce99f162f9c4793a1c27db50071",
+    "before.svg": "1c4f84031b895ed837905502523e03f5d963dd775c93d1596f816fcdace36a0c",
+    "comparison.json": "448664da57ddb5f0cf8c40b332c6e3ac95e65a57dcea7442a57974113b9b5dba",
+    "report.html": "bb57da4b6418d4aec205f8ede05256c23b8db5be475228c3f0320dcb4d4ae069"
+  }
+}

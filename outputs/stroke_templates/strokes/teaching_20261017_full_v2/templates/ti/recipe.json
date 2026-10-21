@@ -1,0 +1,149 @@
+{
+  "id": "ti",
+  "name": "提",
+  "type": "ti",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_20.jpg",
+    "sha256": "bc387a87f97472fa8252db45390852205ae621ac3864f212b6aac9659886079d",
+    "url": "https://picx.zhimg.com/v2-9460185fac6f8306870f89faf4c3c7af_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.05
+        ],
+        [
+          0.26,
+          0.02
+        ],
+        [
+          0.42,
+          0.14
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2,
+          0.45
+        ],
+        [
+          3,
+          1.6
+        ],
+        [
+          4.6,
+          2.8
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.16
+        ],
+        [
+          0.6,
+          0.4
+        ],
+        [
+          1.0,
+          0.65
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.7
+    },
+    {
+      "event": "body_start",
+      "ratio": 1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.35
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "从左下向右上提行。",
+    "前段相对饱满，向尖端逐步减小宽度意图。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 6,
+    "type": "ti",
+    "name": "提"
+  }
+}

@@ -51,6 +51,93 @@ def stack(tmp_path, source_type=FakeMagneticSource, control_mode='feedforward',
     return engine, hub, arm, source, clock, artifacts
 
 
+def auto_position_stack(tmp_path, monkeypatch, *, pose=(-.18, .52, .05, 0., -.26, 0.),
+                        fsm=33):
+    from functools import partial
+    from scripts import run_strokeplan_experiment as runner
+    from scripts import run_four_direction_sweep as positioning
+
+    plan, calibration, setup, artifacts = inputs(tmp_path)
+    clock = FakeClock()
+    arm = FakeArm(pose, fsm=fsm, clock=clock)
+    arm.realtime_state_reads = False
+
+    class BufferedSource(FakeMagneticSource):
+        discarded = False
+
+        def discard_pending(self):
+            assert self.arm.pose == pytest.approx((-.2, .5, .13, 0., .2617993877991494, 0.))
+            self.discarded = True
+            return {'discarded_bytes': 4096}
+
+        def read_frames(self):
+            assert self.discarded, 'baseline must not use data buffered during positioning'
+            return super().read_frames()
+
+    source = BufferedSource(arm, clock, contact_z_mm=37.)
+    monkeypatch.setattr(positioning, 'position_at_wait', partial(positioning.position_at_wait,
+        sleep=clock.advance, monotonic=lambda: clock.now_ns()/1e9))
+    engine, hub = runner.build_stack(
+        plan=plan, table=calibration, setup=setup, artifacts=artifacts,
+        label='automatic_wait_test', root=tmp_path/'runs'/'brush2',
+        arm=arm, source=source, clock=clock, auto_position=True)
+    return engine, hub, arm, source, clock
+
+
+def test_auto_position_lifts_before_transfer_then_starts_fresh_recorded_baseline(tmp_path, monkeypatch):
+    from scripts.run_strokeplan_experiment import run_recorded
+    engine, hub, arm, source, clock = auto_position_stack(tmp_path, monkeypatch)
+    assert engine.state == 'READY'
+    assert engine.run_id is None
+    assert source.discarded
+    assert not hub.baseline_ready
+    moves = np.array([call['pose'] for call in arm.calls if call['action'] == 'push_pose'])
+    below_wait = moves[:, 2] < .13 - 1e-9
+    assert moves[below_wait, :2] == pytest.approx(np.tile([-.18, .52], (below_wait.sum(), 1)))
+    turning = abs(moves[:, 4] + .26) > 1e-9
+    assert moves[turning, :3] == pytest.approx(np.tile([-.2, .5, .13], (turning.sum(), 1)))
+    assert arm.pose == pytest.approx((-.2, .5, .13, 0., .2617993877991494, 0.))
+
+    result = run_recorded(engine, hub, clock=clock, sleep=lambda _: None)
+    assert result['state'] == 'END_WAIT', result['last_error']
+    folder = Path(result['run_dir'])
+    resolved = json.loads((folder/'resolved.json').read_text())
+    positioning = resolved['positioning']
+    assert positioning['status'] == 'completed'
+    assert positioning['initial_pose_m_rad'] == pytest.approx([-.18, .52, .05, 0., -.26, 0.])
+    assert positioning['sensor_buffer_reset'] == {'discarded_bytes': 4096}
+    independent_record = json.loads(Path(positioning['record_path']).read_text())
+    assert independent_record['status'] == 'completed'
+    assert independent_record['sensor_buffer_reset'] == {'discarded_bytes': 4096}
+    manifest = json.loads((folder/'manifest.json').read_text())
+    assert manifest['status'] == 'completed'
+    assert len(manifest['baselines']) == 1
+
+
+@pytest.mark.parametrize('pose,fsm', [
+    ((-.5, .52, .05, 0., -.26, 0.), 33),
+    ((-.18, .52, .05, 0., -.26, 0.), 0),
+])
+def test_auto_position_failure_is_retained_without_starting_experiment(tmp_path, monkeypatch, pose, fsm):
+    with pytest.raises(RuntimeError):
+        auto_position_stack(tmp_path, monkeypatch, pose=pose, fsm=fsm)
+    records = list((tmp_path/'runs'/'brush2').rglob('positioning/*.json'))
+    assert len(records) == 1
+    attempt = json.loads(records[0].read_text())
+    assert attempt['status'] == 'failed'
+    assert attempt['completed_waypoints'] == 0
+    assert attempt['timing']['commands_sent'] == 0
+    assert not list((tmp_path/'runs'/'brush2').rglob('manifest.json'))
+
+
+def test_auto_position_at_wait_does_not_send_motion_commands(tmp_path, monkeypatch):
+    engine, _, arm, source, _ = auto_position_stack(
+        tmp_path, monkeypatch, pose=(-.2, .5, .13, 0., .2617993877991494, 0.))
+    assert engine.state == 'READY'
+    assert source.discarded
+    assert not arm.calls
+
+
 def test_grouped_run_names_use_experiment_and_repeat_without_visible_id(tmp_path):
     from scripts.run_strokeplan_experiment import run_recorded
     folders = []
@@ -242,8 +329,9 @@ def test_p_limits_wrapper_preview_identifies_separate_experiment(tmp_path):
             /'04_smooth_levels_wide_transitions.npz')
     env = dict(os.environ, PYTHONPATH=str(root/'src'))
     result = subprocess.run(
-        [sys.executable, str(root/'scripts/run_strokeplan_p.py'),
-         str(plan), '--dry-run'], env=env, capture_output=True, text=True)
+        [sys.executable, str(root/'scripts/run_strokeplan_trial.py'),
+         '--experiment', 'strokeplan_p', str(plan), '--dry-run'],
+        env=env, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     assert ('实验标签: strokeplan_p_limits_04_smooth_levels_wide_transitions'
             in result.stdout)

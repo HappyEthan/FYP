@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template_bundle",
+  "template_id": "c01cf866ee3420192ecb7284529993b1b3d1c186109bfa42db41ae5842047ef2",
+  "evidence": {
+    "level": "font_geometry_fixture",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "files": {
+    "reference_000_annotation.json": "3b4c3c4666389a6c2433b1c42ceaa400620f3f5ded37a5229238501305ee6901",
+    "reference_000_source.bin": "1146fcbb5b5a624d3bcebb578a53a43c217701fc116a226192fd06d4d5296be8",
+    "reference_001_annotation.json": "83f43a17415f533c852b403263c96bf6f697d2ace9cf91de1c34fffef61008cf",
+    "reference_001_source.bin": "9570907f096564a9c725d742cc1ec95e36504d373d792112a3235f53f18f28a7",
+    "reference_002_annotation.json": "83f43a17415f533c852b403263c96bf6f697d2ace9cf91de1c34fffef61008cf",
+    "reference_002_source.bin": "9570907f096564a9c725d742cc1ec95e36504d373d792112a3235f53f18f28a7",
+    "reference_003_annotation.json": "22484343e1c5f1a6739ee5af02ba21615b7a4e69eea6eab9c82e93608e66095a",
+    "reference_003_source.bin": "2be624b3284b3aefd7946dc7e95f70528ec718b14105dfef229aecf0decbb3e7",
+    "reference_004_annotation.json": "22484343e1c5f1a6739ee5af02ba21615b7a4e69eea6eab9c82e93608e66095a",
+    "reference_004_source.bin": "2be624b3284b3aefd7946dc7e95f70528ec718b14105dfef229aecf0decbb3e7",
+    "reference_005_annotation.json": "22484343e1c5f1a6739ee5af02ba21615b7a4e69eea6eab9c82e93608e66095a",
+    "reference_005_source.bin": "2be624b3284b3aefd7946dc7e95f70528ec718b14105dfef229aecf0decbb3e7",
+    "reference_006_annotation.json": "01d8d9ab0ecdf9f60f2ab59769ae7764b06b04ac7cf977aa5df3d7001c5f55ea",
+    "reference_006_source.bin": "f7f5f32311663b0fcd1dc59fe684a2633fa8eadd27d1ff79d9f7bf4ab8677b30",
+    "reference_007_annotation.json": "359638074e7400b91d0ff9630ea8eff33a9acab00186792d5ddecf611f3ae372",
+    "reference_007_source.bin": "1218e5249958cd79f51c233689d7ca28b1933b0e255eddfe708ac0f6249fe203",
+    "reference_008_annotation.json": "359638074e7400b91d0ff9630ea8eff33a9acab00186792d5ddecf611f3ae372",
+    "reference_008_source.bin": "1218e5249958cd79f51c233689d7ca28b1933b0e255eddfe708ac0f6249fe203",
+    "report.html": "a3291ccca3ab36548092e4d0195095948db24bb5dfa971d29da5e84ed9652014",
+    "template.json": "7e1572ca9b6bfa3f9ff04c6153fc88090afbb2f54b09daa7700604da5ae57c15"
+  }
+}

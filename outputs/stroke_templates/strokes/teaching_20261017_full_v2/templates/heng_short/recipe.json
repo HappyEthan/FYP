@@ -1,0 +1,149 @@
+{
+  "id": "heng_short",
+  "name": "短横",
+  "type": "heng",
+  "variant": "short",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_07.jpg",
+    "sha256": "552db7a05383e609b034e4401304e01dfe29b496e4cece77db0468c77f6ace8f",
+    "url": "https://pic2.zhimg.com/v2-4ad6660ea6f8758529e1b738ee5c419b_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4000000000000001,
+          0.1
+        ],
+        [
+          3.5999999999999996,
+          0.45
+        ],
+        [
+          5,
+          0.5
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.16,
+          0.02
+        ],
+        [
+          0.4,
+          -0.04
+        ],
+        [
+          0.5,
+          -0.15
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "horizontal",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "press_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收住结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.18
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.45
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.85
+    },
+    {
+      "event": "end",
+      "ratio": 0.95
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "短横较紧凑，右端略高。",
+    "轻起后逐渐展开，末端收住。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 1,
+    "type": "heng",
+    "name": "横"
+  }
+}

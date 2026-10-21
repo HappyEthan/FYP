@@ -1,0 +1,209 @@
+{
+  "id": "hengzhe",
+  "name": "横折",
+  "type": "hengzhe",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_29.jpg",
+    "sha256": "8ac0b89f77579b7b9995d3393a2b57766e493d6273a820fa9f49945f144df63a",
+    "url": "https://pic1.zhimg.com/v2-91d773e2ce5a34f656baa7a5e84bd714_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.9600000000000002,
+          0.12
+        ],
+        [
+          5.04,
+          0.54
+        ],
+        [
+          7,
+          0.6
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.36,
+          -0.2
+        ],
+        [
+          0.3,
+          -0.65
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -2
+        ],
+        [
+          -0.2,
+          -4
+        ],
+        [
+          -0.3,
+          -6
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.02,
+          -0.18
+        ],
+        [
+          0.04,
+          -0.42
+        ],
+        [
+          0.02,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn",
+      "part": "fold",
+      "t": 0.5,
+      "label": "横转竖",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "vertical",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "press_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收住结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.75
+    },
+    {
+      "event": "turn",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.75
+    },
+    {
+      "event": "end",
+      "ratio": 0.95
+    }
+  ],
+  "landmarks": [
+    "turn"
+  ],
+  "rule_notes": [
+    "横行转向下行，整笔保持连续。",
+    "折处为小范围转向，避免夸大的双角。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 15,
+    "type": "hengzhe",
+    "name": "横折"
+  }
+}

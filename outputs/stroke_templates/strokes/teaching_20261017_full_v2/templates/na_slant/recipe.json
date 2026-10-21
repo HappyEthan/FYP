@@ -1,0 +1,184 @@
+{
+  "id": "na_slant",
+  "name": "斜捺",
+  "type": "na",
+  "variant": "slant",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_14.jpg",
+    "sha256": "d1b1f7036930d123b98f8eb102ee6ba131346633883c4eb7a6e0fb1ad31f5000",
+    "url": "https://pic4.zhimg.com/v2-30c04f06299ca730e084de8b0763b6c1_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.03
+        ],
+        [
+          0.28,
+          -0.12
+        ],
+        [
+          0.45,
+          -0.24
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4,
+          -1.1
+        ],
+        [
+          4.2,
+          -5.3
+        ],
+        [
+          7.3,
+          -6.2
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "foot",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8,
+          -0.45
+        ],
+        [
+          1.6,
+          -0.5
+        ],
+        [
+          2.3,
+          -0.2
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8,
+          0.1
+        ],
+        [
+          1.4,
+          0.16
+        ],
+        [
+          2,
+          0.2
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "轻落起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "向右下展开",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "foot",
+      "part": "foot",
+      "t": 0.5,
+      "label": "捺脚转向",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "foot",
+      "t": 1,
+      "label": "向右提锋",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "平出收尖",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.12
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.35
+    },
+    {
+      "event": "foot",
+      "ratio": 1.35
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.8
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "向右下展开后，在捺脚附近转向右方。",
+    "捺脚相对饱满，出锋渐细；宽度不代表力或磁目标。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 4,
+    "type": "na",
+    "name": "捺"
+  }
+}

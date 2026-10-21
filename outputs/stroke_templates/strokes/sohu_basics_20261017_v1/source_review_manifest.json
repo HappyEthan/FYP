@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "role": "teaching_guide_review",
+  "path_count": 25,
+  "strokes": [
+    {
+      "id": "shu_chuilu",
+      "type": "shu",
+      "variant": "chuilu",
+      "name": "垂露竖",
+      "source_file": "shu_chuilu_source.jpg",
+      "trace_file": "shu_chuilu_trace.json"
+    },
+    {
+      "id": "shu_xuanzhen",
+      "type": "shu",
+      "variant": "xuanzhen",
+      "name": "悬针竖",
+      "source_file": "shu_xuanzhen_source.jpg",
+      "trace_file": "shu_xuanzhen_trace.json"
+    },
+    {
+      "id": "pie_slant",
+      "type": "pie",
+      "variant": "slant",
+      "name": "斜撇",
+      "source_file": "pie_slant_source.jpg",
+      "trace_file": "pie_slant_trace.json"
+    },
+    {
+      "id": "pie_short_flat",
+      "type": "pie",
+      "variant": "short_flat",
+      "name": "短平撇",
+      "source_file": "pie_short_flat_source.jpg",
+      "trace_file": "pie_short_flat_trace.json"
+    },
+    {
+      "id": "na_slant",
+      "type": "na",
+      "variant": "slant",
+      "name": "斜捺",
+      "source_file": "na_slant_source.jpg",
+      "trace_file": "na_slant_trace.json"
+    },
+    {
+      "id": "na_flat",
+      "type": "na",
+      "variant": "flat",
+      "name": "平捺",
+      "source_file": "na_flat_source.jpg",
+      "trace_file": "na_flat_trace.json"
+    },
+    {
+      "id": "hengzhe",
+      "type": "hengzhe",
+      "variant": "standard",
+      "name": "横折",
+      "source_file": "hengzhe_source.jpg",
+      "trace_file": "hengzhe_trace.json"
+    },
+    {
+      "id": "shuzhe",
+      "type": "shuzhe",
+      "variant": "standard",
+      "name": "竖折",
+      "source_file": "shuzhe_source.jpg",
+      "trace_file": "shuzhe_trace.json"
+    },
+    {
+      "id": "henggou",
+      "type": "henggou",
+      "variant": "standard",
+      "name": "横钩",
+      "source_file": "henggou_source.jpg",
+      "trace_file": "henggou_trace.json"
+    },
+    {
+      "id": "shugou",
+      "type": "shugou",
+      "variant": "standard",
+      "name": "竖钩",
+      "source_file": "shugou_source.jpg",
+      "trace_file": "shugou_trace.json"
+    },
+    {
+      "id": "wangou",
+      "type": "wangou",
+      "variant": "standard",
+      "name": "弧弯钩",
+      "source_file": "wangou_source.jpg",
+      "trace_file": "wangou_trace.json"
+    },
+    {
+      "id": "shuwangou",
+      "type": "shuwangou",
+      "variant": "standard",
+      "name": "竖弯钩",
+      "source_file": "shuwangou_source.jpg",
+      "trace_file": "shuwangou_trace.json"
+    },
+    {
+      "id": "wogou",
+      "type": "wogou",
+      "variant": "standard",
+      "name": "卧钩",
+      "source_file": "wogou_source.jpg",
+      "trace_file": "wogou_trace.json"
+    },
+    {
+      "id": "xiegou",
+      "type": "xiegou",
+      "variant": "standard",
+      "name": "戈钩（斜钩）",
+      "source_file": "xiegou_source.jpg",
+      "trace_file": "xiegou_trace.json"
+    },
+    {
+      "id": "dian_vertical",
+      "type": "dian",
+      "variant": "vertical_dot",
+      "name": "竖点",
+      "source_file": "dian_vertical_source.jpg",
+      "trace_file": "dian_vertical_trace.json"
+    },
+    {
+      "id": "dian_left",
+      "type": "dian",
+      "variant": "left_dot",
+      "name": "左点",
+      "source_file": "dian_left_source.jpg",
+      "trace_file": "dian_left_trace.json"
+    },
+    {
+      "id": "dian_right",
+      "type": "dian",
+      "variant": "right_dot",
+      "name": "右点",
+      "source_file": "dian_right_source.jpg",
+      "trace_file": "dian_right_trace.json"
+    },
+    {
+      "id": "ti",
+      "type": "ti",
+      "variant": "standard",
+      "name": "提",
+      "source_file": "ti_source.jpg",
+      "trace_file": "ti_trace.json"
+    },
+    {
+      "id": "hengzhegou",
+      "type": "hengzhegou",
+      "variant": "short_heng_long_shu",
+      "name": "横折钩",
+      "source_file": "hengzhegou_source.jpg",
+      "trace_file": "hengzhegou_trace.json"
+    },
+    {
+      "id": "hengpie",
+      "type": "hengpie",
+      "variant": "short_heng_curved_pie",
+      "name": "横撇",
+      "source_file": "hengpie_source.jpg",
+      "trace_file": "hengpie_trace.json"
+    },
+    {
+      "id": "piezhe",
+      "type": "piezhe",
+      "variant": "standard",
+      "name": "撇折",
+      "source_file": "piezhe_source.jpg",
+      "trace_file": "piezhe_trace.json"
+    },
+    {
+      "id": "piedian",
+      "type": "piedian",
+      "variant": "standard",
+      "name": "撇点",
+      "source_file": "piedian_source.jpg",
+      "trace_file": "piedian_trace.json"
+    },
+    {
+      "id": "pie_vertical",
+      "type": "pie",
+      "variant": "vertical",
+      "name": "竖撇",
+      "source_file": "pie_vertical_source.jpg",
+      "trace_file": "pie_vertical_trace.json"
+    },
+    {
+      "id": "pie_short_slant",
+      "type": "pie",
+      "variant": "short_slant",
+      "name": "短撇 · 斜势",
+      "source_file": "pie_short_slant_source.jpg",
+      "trace_file": "pie_short_slant_trace.json"
+    },
+    {
+      "id": "shuti",
+      "type": "shuti",
+      "variant": "standard",
+      "name": "竖提",
+      "source_file": "shuti_source.jpg",
+      "trace_file": "shuti_trace.json"
+    }
+  ],
+  "review_status": "unreviewed",
+  "physical_validation": false,
+  "files": {
+    "dian_left_source.jpg": "b8bffa48ae3a413d387a1d9a5b385d3ae9296940fa057e131bfd9f82731ac2ee",
+    "dian_left_trace.json": "e8cc73a52c79325f5a0bcbae0afac6473741bbc601a522517ad6c530dee6e489",
+    "dian_right_source.jpg": "01d55d4dfefcb652b67f6c7d309ad4ba85ee72578d17e283ad50099156c446d9",
+    "dian_right_trace.json": "2a81c84251e012ecc395857dfd92a0db11f192982463685ba639c35af4cf7998",
+    "dian_vertical_source.jpg": "aea75676ddded524b681bcce5e0989bc8da8e8705e8096c6d7807029f4362224",
+    "dian_vertical_trace.json": "e3a92635a71e236e07d7a7db4af5c94faaf6134ecef737c49e2cc3b548ce9c67",
+    "henggou_source.jpg": "43085a36b8c06647acc6fa99e359122fb5147ee376501c6782a006fcff45b47d",
+    "henggou_trace.json": "1de2fe999d5777810b58e2f8c80faa1aa1cb0b64b8b699720c7f016205f9df0e",
+    "hengpie_source.jpg": "acddd4bc9aacb5338b74230a6543709b1c8e04be7e27af29856c4950de0bc47e",
+    "hengpie_trace.json": "4cdfcba385401e2017033ff251d9ffa3dffacb00e4f4d189fab1f87cb3b876e5",
+    "hengzhe_source.jpg": "5e76e38055112348ae35afba37b84918dd6a78298c6a30e53b0259ad8cb7e795",
+    "hengzhe_trace.json": "5d6fcaf7aebeb41ff003322d3053fd8840e7d0724d02fd1937aae0be06006aba",
+    "hengzhegou_source.jpg": "6cdcb4c42a7b0745547b10da565994e7f3e5340c26ce02a788d8aae548d05039",
+    "hengzhegou_trace.json": "eeab0b097a9a29a84d8d117bd91345c1d122dedf605a3ce6bfe92bad9292c7cb",
+    "na_flat_source.jpg": "0579d9b6ede2548a4ccb44d93f759f7d12b4b00555ceae57039e7e1f7d9952c9",
+    "na_flat_trace.json": "570429e9293cf3be5e2aaf51eeceae5be240aa43a55aafa1feac05766788ac96",
+    "na_slant_source.jpg": "dbaa804ad8ef8e2011c6dbd13eb00cc9466aaaf61166dc235d0a0efebfd1f82e",
+    "na_slant_trace.json": "4a587062f655d1d2952f1afc8b7f3835febc6cf9b563b8debe99660870b937e0",
+    "pie_short_flat_source.jpg": "af6e456b489691b5ddbae9acdddd4bb79da52b0862efacef2280fad449f9abcd",
+    "pie_short_flat_trace.json": "99c4f8c62cc749e58c6aae4a8bb39bfc7edc7293549787fe0f860c98bebf0de6",
+    "pie_short_slant_source.jpg": "b9506bda6fa2123e13be5becec50c40f3a7b7772d4c536d457a0bbfa8d7ce080",
+    "pie_short_slant_trace.json": "0d2f63846a84dccf5e39d6466c9abba91bebf4471bba8ca6f9677f6142fdafeb",
+    "pie_slant_source.jpg": "81797740227cdab1023e583ea1cc6df0b4757e4a14ce40666a07d07a17020525",
+    "pie_slant_trace.json": "cc0e9e203be6d49a113974923cfc89ef2ee46dd3f8a552241985d40e6fd6a299",
+    "pie_vertical_source.jpg": "bdd93a77ec6641f397674ea3d95be8df207f02f96c3cbd58835e2eff12a7678a",
+    "pie_vertical_trace.json": "0c83f70b1be6c1eace43a8b05656ca5aef89d38101b8121482691ff11914d278",
+    "piedian_source.jpg": "d43a706106d92b4a234a6e42e93eafc8d2e76cb7a495f151f6d4a2c902a617f7",
+    "piedian_trace.json": "681e16208346a92ddde8223281849e3ceac93f14e99f379662c2c7b4c4d4e76c",
+    "piezhe_source.jpg": "c1998f23d1f8c426013bd062bb8c93598d6d04bfc440e5d1915f30d1232d503a",
+    "piezhe_trace.json": "94fc66e2df5a98e62b5136cd21ab506d57161ea37f43576fbf9e2c8a80eaf10f",
+    "report.html": "4680b1c4e95b1602fc96dd1f445c9dcf9c6a3d112fb9422ba82cc11887c116eb",
+    "shu_chuilu_source.jpg": "4fcb4639635ecabc839d53811d522b13feabeb78c97ca32b6333b33d23c7ce5a",
+    "shu_chuilu_trace.json": "2c79f78c32a65f225d72f472716081e160048dcfc75fd0d42e5cf57b857965b8",
+    "shu_xuanzhen_source.jpg": "0b276b4f91fcdc8a66d089c2f3ac9c42639f29852eb43c50dd7bc6a9ca252083",
+    "shu_xuanzhen_trace.json": "460b68d9dd5347032b54b87a7dae7139ff43720776f7a208ee5bf23f9e7b26e7",
+    "shugou_source.jpg": "6192474e57f999ac2fbfa38232419f6467a9f0b6ca092709bee07bba1f067432",
+    "shugou_trace.json": "28c7d866f43d7272cdc9cef7bd49f8e8c0d23bd8387038a9790b8c90a5679802",
+    "shuti_source.jpg": "57a7d32eb738c1a5b85ecb58dd0a4d41ac347d9d92dad2cfaf3188a96dd29cbb",
+    "shuti_trace.json": "58467e44e56561a2f4bada9b0f81a35db8935f17eb89c6a378d06edfebb5707b",
+    "shuwangou_source.jpg": "2118b06ed8eca4a3fc4c4b63d5c825e03216a62875d936b35e0234823684ec73",
+    "shuwangou_trace.json": "71928655055e7edec9fc5626573fe92ad37d36f8e9e4904a667be15517857176",
+    "shuzhe_source.jpg": "776a20bae10c5984f175366d5d9ab3fef86d13311382218520845c8d93b23cf1",
+    "shuzhe_trace.json": "198b34070b06a18bfc8f00bf0806f1f3e73a8342654635f0b9c82d0ddd54ef7b",
+    "ti_source.jpg": "7fb612c9862da1ed350b34efc12279efdd81b7513474fadff61d7650388ba063",
+    "ti_trace.json": "4135c2afaf097d5d41ad43bbd992918965f0aa6e55b8c3eb3189ea868aaad472",
+    "trace_specs.json": "c9a89c54b4151e16100aff100e1114c0d870e3d56e8311ad6a0963a270ded4db",
+    "wangou_source.jpg": "28ca0b70ebc665d48927caefb34e94e26a7de693cc64160033bfcfcac8fa9705",
+    "wangou_trace.json": "e1208b8b3d8618598c7632087048e97d14da5c16597fdf10fccdd7e71fa2dad3",
+    "wogou_source.jpg": "4f771c28c7f6802672c12fead33a010ece0e6a48e5aac615536a15a3c6639775",
+    "wogou_trace.json": "007c8d507a3f19fb48a053350029a55baee338878c7e401793e978f08ffcdaee",
+    "xiegou_source.jpg": "62f4869dd527ad5b29c6a17c37d7b26c389a87d138267e9b657b63bfabf0e183",
+    "xiegou_trace.json": "a80b8e79b57dffaef0ec1de3afe60c2ff61630fe92452a81380ec230de231c10"
+  }
+}

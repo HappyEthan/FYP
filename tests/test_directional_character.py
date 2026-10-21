@@ -72,10 +72,13 @@ def test_character_goes_directly_between_strokes_and_slows_below_50(tmp_path):
     assert phases[np.flatnonzero(phases == 'return_high')[0]-1].startswith('lift_')
 
 
-def test_directional_character_pi_records_all_strokes_in_one_run(tmp_path):
+@pytest.mark.parametrize('entry_order', [None, 'load_then_rotate'])
+def test_directional_character_pi_records_all_strokes_in_one_run(tmp_path, entry_order):
     from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
     from scripts.run_strokeplan_experiment import build_stack, run_recorded
     plan, table, setup, entry = inputs(tmp_path)
+    if entry_order is not None:
+        entry['entry_order'] = entry_order
     pi = dict(kp=1., ki=.05, max_correction_mm=.8, max_correction_speed_mm_s=2.,
               max_correction_accel_mm_s2=30., taper_ticks=50,
               integral_limit_mm=.2, anti_windup='conditional')
@@ -101,6 +104,54 @@ def test_directional_character_pi_records_all_strokes_in_one_run(tmp_path):
     assert engine.feedback_calls==222
     events=[json.loads(s)['event'] for s in (Path(result['run_dir'])/'events.jsonl').read_text().splitlines()]
     assert events.count('baseline_fixed')==1
+
+
+def test_character_loads_at_entry_tilt_before_rotation_and_reverse(tmp_path):
+    from brushbot.experiments.strokeplan_execution import compile_recorded_plan
+    plan, table, setup, entry = inputs(tmp_path)
+    entry.update(entry_order='load_then_rotate', entry_reverse_mm=5.)
+    c = compile_recorded_plan(plan, table, setup, label='load_first', entry_profile=entry)
+    poses, phases = c['pose_m_rad'], c['phase']
+    for i, direction in enumerate(([1., 0.], [0., -1.])):
+        load = np.flatnonzero(phases == f'load_workpoint_{i:02}')
+        rotate = np.flatnonzero(phases == f'rotate_contact_{i:02}')
+        measure = np.flatnonzero(phases == f'measure_{i:02}')
+        assert load[-1] < rotate[0] < rotate[-1] < measure[0]
+        # Fixture: 180 uT -> depth 10.75 mm -> Base Z 29.25 mm.
+        assert poses[load[-1], 2] == pytest.approx(.02925)
+        tilt = np.arccos(np.cos(poses[load, 3])*np.cos(poses[load, 4]))
+        assert np.rad2deg(tilt) == pytest.approx(30.)
+        start_xy = plan.strokes[i].xy[0] + [-.370, .5]
+        assert poses[load[-1], :2] == pytest.approx(start_xy + .005*np.array(direction))
+        assert poses[rotate, 2] == pytest.approx(.02925)
+        assert poses[rotate[-1], :2] == pytest.approx(start_xy)
+        reverse = np.linalg.norm(np.diff(poses[load[-1]:rotate[-1]+1, :2], axis=0), axis=1).sum()
+        assert reverse == pytest.approx(.005)
+        assert poses[rotate[-1], 3:] == pytest.approx(plan.strokes[i].orientation[0])
+        assert poses[measure[0]] == pytest.approx(poses[rotate[-1]])
+    assert np.isnan(c['g_ref_uT'][~np.char.startswith(phases, 'measure_')]).all()
+
+
+def test_character_legacy_profile_rotates_at_contact_height_before_loading(tmp_path):
+    from brushbot.experiments.strokeplan_execution import compile_recorded_plan
+    plan, table, setup, entry = inputs(tmp_path)
+    c = compile_recorded_plan(plan, table, setup, label='legacy', entry_profile=entry)
+    poses, phases = c['pose_m_rad'], c['phase']
+    rotate = np.flatnonzero(phases == 'rotate_contact_00')
+    load = np.flatnonzero(phases == 'load_workpoint_00')
+    assert rotate[-1] < load[0]
+    assert poses[rotate, 2] == pytest.approx(.036)
+    assert poses[load[-1], 2] == pytest.approx(.02925)
+    assert np.rad2deg(poses[load, 4]) == pytest.approx(15.)
+
+
+@pytest.mark.parametrize('entry_order', ['unknown', True, None])
+def test_character_rejects_invalid_entry_order(tmp_path, entry_order):
+    from brushbot.experiments.strokeplan_execution import compile_recorded_plan
+    plan, table, setup, entry = inputs(tmp_path)
+    entry['entry_order'] = entry_order
+    with pytest.raises(ValueError, match='entry_order'):
+        compile_recorded_plan(plan, table, setup, label='invalid', entry_profile=entry)
 
 
 @pytest.mark.parametrize('change', ['assumption', 'workspace', 'orientation_rate'])

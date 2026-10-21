@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "当前指定：30°、Z36起转、2秒联动",
+  "note": "保持30°接近到Z36后直接起转，在同一2秒内转到15°并从Z36降到Z28，共下降8毫米；没有转笔前的额外预压下降，也没有转完后的额外下压。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 36.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 2.0,
+    "preload_speed_mm_s": 4.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

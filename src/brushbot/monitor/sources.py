@@ -106,25 +106,50 @@ class ArraySource:
 
 
 class SerialSource:
-    """pyserial 串口源. 固件格式 't_us,Bx,By,Bz' @115200."""
+    """串口源：默认读取主传感器，指定 address 时只读取对应地址的数据。"""
 
     # Firmware emits the raw uint32 micros() counter, including its rollover.
     sensor_time_modulus_us = 2**32
 
-    def __init__(self, port: str = "/dev/ttyUSB0", baud: int = 115200):
+    def __init__(self, port: str = "/dev/ttyUSB0", baud: int = 115200, *, address=None):
+        if isinstance(address, str):
+            try:
+                address = int(address.strip(), 16)
+            except ValueError:
+                raise ValueError("传感器地址须为 0x08 至 0x77 的十六进制地址") from None
+        if address is not None and (
+            type(address) is not int or not 0x08 <= address <= 0x77
+        ):
+            raise ValueError("传感器地址须为 0x08 至 0x77 的十六进制地址")
+        self.address = address
         self.port = port
         self.baud = baud
         self._ser = None
         self._buf = b""
+        self._discard_until_newline = False
         self._t0_us = None
         self.bad_lines = 0
         self.bytes_received = 0
         self.lines_seen = 0
 
+    def _parse_selected_line(self, line: str):
+        if self.address is None:
+            return parse_serial_line(line)
+        parts = line.strip().split(",")
+        if len(parts) != 6 or parts[0] != "# sensor":
+            return None
+        try:
+            if int(parts[1], 16) != self.address:
+                return None
+        except ValueError:
+            return None
+        return parse_serial_line(",".join(parts[2:]))
+
     def start(self) -> None:
         import serial                       # 延迟导入: 没插硬件也能 import 本模块
         self._ser = serial.Serial(self.port, self.baud, timeout=0)
         self._buf = b""
+        self._discard_until_newline = False
         self._t0_us = None
         self.bad_lines = 0
         self.bytes_received = 0
@@ -135,10 +160,98 @@ class SerialSource:
             self._ser.close()
             self._ser = None
 
+    def discard_pending(self) -> dict:
+        """Drop pre-baseline backlog while no acquisition consumer is running.
+
+        A reset may occur mid-frame. Skip through the next newline before
+        accepting fresh complete frames, even if a trailing fragment parses.
+        """
+        if self._ser is None:
+            raise RuntimeError('serial source is not open')
+        discarded = len(self._buf) + int(self._ser.in_waiting)
+        self._ser.reset_input_buffer()
+        self._buf = b''
+        self._discard_until_newline = True
+        return dict(discarded_bytes=discarded, host_ns=time.monotonic_ns(),
+                    resynchronization='skip through next newline')
+
+    def reboot(self, timeout_s=5., *, monotonic=time.monotonic, sleep=time.sleep) -> dict:
+        """Restart command-capable firmware with no acquisition consumer running.
+
+        Require an ACK, a subsequent READY and a finite frame with a fresh boot
+        clock within one shared timeout (default 5 s); return as soon as ready.
+        USB may disappear after ACK; reconnect without resending REBOOT.
+        This is a software restart, not a power cycle or a cooling interval.
+        """
+        if self._ser is None:
+            raise RuntimeError('serial source is not open')
+        if not np.isfinite(timeout_s) or timeout_s <= 0:
+            raise ValueError('reboot timeout must be positive and finite')
+        deadline = monotonic() + timeout_s
+        result = dict(method='esp32_software_restart', command='REBOOT', timeout_s=float(timeout_s),
+                      port=self.port, requested_host_ns=time.monotonic_ns(),
+                      ack_host_ns=None, ready_host_ns=None, reconnect_count=0)
+        pending = b''
+        try:
+            self._ser.reset_input_buffer()
+            self._buf = b''
+            self._discard_until_newline = False
+            self._t0_us = None
+            if self._ser.write(b'REBOOT\n') != 7:
+                raise RuntimeError('sensor reboot command was not fully written')
+            self._ser.flush()
+            while monotonic() < deadline:
+                if self._ser is None:
+                    try:
+                        self.start()
+                    except OSError:
+                        sleep(.05)
+                        continue
+                    result['reconnect_count'] += 1
+                try:
+                    chunk = self._ser.read(4096)
+                except OSError as exc:
+                    if result['ack_host_ns'] is None:
+                        raise RuntimeError('sensor reboot disconnected before acknowledgment') from exc
+                    self.stop()
+                    pending = b''
+                    sleep(.05)
+                    continue
+                pending += chunk
+                while b'\n' in pending:
+                    raw, pending = pending.split(b'\n', 1)
+                    line = raw.decode('utf-8', errors='replace').strip()
+                    if result['ack_host_ns'] is None:
+                        if line == '# fw=fixed90 reboot requested':
+                            result['ack_host_ns'] = time.monotonic_ns()
+                        continue
+                    if result['ready_host_ns'] is None:
+                        if line == 'READY':
+                            result['ready_host_ns'] = time.monotonic_ns()
+                        continue
+                    frame = self._parse_selected_line(line)
+                    if (frame is not None and 0 <= frame[0] <= timeout_s*1e6
+                            and np.isfinite(frame[1:]).all()):
+                        self._buf = raw + b'\n' + pending
+                        self.bad_lines = self.bytes_received = self.lines_seen = 0
+                        result.update(status='completed', first_frame_sensor_t_us=frame[0],
+                                      completed_host_ns=time.monotonic_ns())
+                        return result
+                sleep(.01)
+            stage = ('acknowledgment (update the fixed90 firmware first)'
+                     if result['ack_host_ns'] is None else
+                     'READY' if result['ready_host_ns'] is None else 'fresh valid sensor frame')
+            raise RuntimeError(f'sensor reboot timed out waiting for {stage}')
+        except BaseException:
+            self.stop()
+            self._buf = b''
+            raise
+
     @property
     def info(self) -> dict:
         return {"name": "serial", "nominal_rate_hz": 100.0, "units": "uT",
-                "port": self.port, "baud": self.baud}
+                "port": self.port, "baud": self.baud,
+                "sensor_address": None if self.address is None else f"0x{self.address:02X}"}
 
     @property
     def diagnostics(self) -> dict:
@@ -153,12 +266,19 @@ class SerialSource:
         self.bytes_received += len(chunk)
         self._buf += chunk
         out = []
+        if self._discard_until_newline:
+            if b'\n' not in self._buf:
+                return out
+            _, self._buf = self._buf.split(b'\n', 1)
+            self._discard_until_newline = False
         while b"\n" in self._buf:
             raw, self._buf = self._buf.split(b"\n", 1)
             self.lines_seen += 1
-            rec = parse_serial_line(raw.decode("utf-8", errors="replace"))
+            line = raw.decode("utf-8", errors="replace")
+            rec = self._parse_selected_line(line)
             if rec is None:
-                if raw.strip() and not raw.strip().startswith(b"#"):
+                if (raw.strip() and not raw.strip().startswith(b"#")
+                        and parse_serial_line(line) is None):
                     self.bad_lines += 1
                 continue
             t_us, bx, by, bz = rec

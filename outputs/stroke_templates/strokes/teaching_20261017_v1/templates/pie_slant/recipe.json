@@ -1,0 +1,144 @@
+{
+  "id": "pie_slant",
+  "name": "斜撇",
+  "type": "pie",
+  "variant": "slant",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_11.jpg",
+    "sha256": "066b9ab88ba2b1c947758d5ac80c4653c0167b005c0c25f9d0c53a0560569177",
+    "url": "https://pic1.zhimg.com/v2-53b9435715abb8bc174f9b5c09360120_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.1
+        ],
+        [
+          0.25,
+          -0.25
+        ],
+        [
+          0.35,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -1.2
+        ],
+        [
+          -3.4,
+          -5
+        ],
+        [
+          -6,
+          -6.8
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.4,
+          -0.3
+        ],
+        [
+          -0.8,
+          -0.55
+        ],
+        [
+          -1.3,
+          -0.85
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "轻落起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收笔结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.32
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "保持向左下的连续曲势。",
+    "前段较饱满，收尾渐细；弧度与长度为工程初值。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves"
+}

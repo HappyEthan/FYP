@@ -7,7 +7,7 @@ from tests.test_strokeplan_rotational_entry import fixture
 
 
 def trial(tmp_path, monkeypatch):
-    from scripts import run_nonlinear_ff_comparison as runner
+    from scripts import run_strokeplan_trial as runner
     plan, table, setup, entry = fixture(tmp_path)
     plan.save(tmp_path/'hard_160_240.npz')
     profile = dict(kp=2., ki=0., max_correction_mm=.4,
@@ -17,6 +17,7 @@ def trial(tmp_path, monkeypatch):
                         ('entry_profile.json',entry), ('p_profile.json',profile)]:
         (tmp_path/name).write_text(json.dumps(value))
     monkeypatch.setattr(runner, 'TRIAL', tmp_path)
+    monkeypatch.setattr(runner, 'EXPERIMENT', 'nonlinear')
     monkeypatch.setattr(runner, 'RUN_ROOT', tmp_path/'runs')
     return runner
 
@@ -42,11 +43,20 @@ def test_scan_preview_resolves_parameters_and_identifies_saved_condition(
 
 def test_legacy_invocation_keeps_original_profile_and_folder(tmp_path, monkeypatch, capsys):
     runner = trial(tmp_path, monkeypatch)
-    assert runner.main(['--mode','p']) == 0
+    monkeypatch.setattr(runner,'MODE','p')
+    assert runner.main([]) == 0
     out = capsys.readouterr().out
     assert 'kp=2, ki=0' in out and '±0.4 mm' in out
     assert '修正速度 5 mm/s、加速度 70 mm/s²' in out
     assert '06_非线性前馈难曲线对比' in out
+
+
+def test_unknown_dynamics_in_edited_settings_are_rejected(tmp_path, monkeypatch):
+    runner = trial(tmp_path, monkeypatch)
+    monkeypatch.setattr(runner,'P_DYNAMICS','gentle')
+    with pytest.raises(SystemExit,match='2'):
+        runner.main([])
+    assert not (tmp_path/'runs').exists()
 
 
 @pytest.mark.parametrize('args', [

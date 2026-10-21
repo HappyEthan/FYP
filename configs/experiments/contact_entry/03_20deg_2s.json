@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "进一步减小起始角：20°、2秒",
+  "note": "相对02只把起始倾角从22°减到20°，观察是否仍能形成一致形态。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 20.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 32.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 2.0,
+    "preload_speed_mm_s": 2.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

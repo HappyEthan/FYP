@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "na",
+  "name": "捺",
+  "description": "弯捺：从左上向右下展开，后段设磁目标峰值再回落，供参考笔画调试。",
+  "reference": "复用中字符号的切线倾斜、时间规划和磁目标范围；捺的曲线、阶段位置和目标数值为新设人工初值，无捺的实测依据。",
+  "placement": {"origin_mm": [140, 0], "rotation_deg": 180, "scale": 1},
+  "path": {
+    "kind": "cubic_bezier",
+    "points_mm": [[-40, 55], [-30, 10], [5, -35], [55, -55]]
+  },
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [[0, 100], [0.2, 155], [0.5, 195], [0.7, 225], [0.83, 210], [0.95, 140], [1, 100]]
+  },
+  "timing": {
+    "speed_mm_s": 10,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40,
+    "speed_knots_s_mm_s": [[0, 5], [0.2, 10], [0.6, 10], [0.7, 5], [0.83, 5], [1, 7]]
+  },
+  "orientation": {"kind": "tangent_tilt", "tilt_deg": 15, "smoothing_mm": 1},
+  "filter_definition": {"kind": "ema", "alpha": 0.3},
+  "notes": [
+    "后段峰值与局部降速是待试写的参数安排，不声称该处已有笔宽或真实压力依据。",
+    "磁目标与速度分别按行程插值；调整速度不会把目标峰值移到另一个行程位置。",
+    "本笔含连续变化方向，现有四方向标定不自动覆盖整条曲线。"
+  ]
+}

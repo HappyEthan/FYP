@@ -1,0 +1,775 @@
+{
+  "schema_version": 1,
+  "role": "teaching_stroke_library",
+  "template_count": 38,
+  "basic_type_count": 28,
+  "style_id": "kai_teaching_rules_v1",
+  "evidence": "teaching_rule_candidate",
+  "physical_validation": false,
+  "templates": [
+    {
+      "id": "heng_long",
+      "name": "长横",
+      "type": "heng",
+      "variant": "long",
+      "category": {
+        "order": 1,
+        "type": "heng",
+        "name": "横"
+      },
+      "template_id": "a727300ce0be6a61b0543e5708e046f65bf47fc4bd3b50af8504092a236340b4",
+      "href": "templates/heng_long/report.html"
+    },
+    {
+      "id": "heng_short",
+      "name": "短横",
+      "type": "heng",
+      "variant": "short",
+      "category": {
+        "order": 1,
+        "type": "heng",
+        "name": "横"
+      },
+      "template_id": "a0384bb5c56d0667bbbd88f0a3af83836706b01b8330d57ffb1b003e7775cc9e",
+      "href": "templates/heng_short/report.html"
+    },
+    {
+      "id": "shu_chuilu",
+      "name": "垂露竖",
+      "type": "shu",
+      "variant": "chuilu",
+      "category": {
+        "order": 2,
+        "type": "shu",
+        "name": "竖"
+      },
+      "template_id": "7b7745ac6123a3dd53a518aacc6614490a3f3082fa46fa8cafe1a9ccf88a605d",
+      "href": "templates/shu_chuilu/report.html"
+    },
+    {
+      "id": "shu_xuanzhen",
+      "name": "悬针竖",
+      "type": "shu",
+      "variant": "xuanzhen",
+      "category": {
+        "order": 2,
+        "type": "shu",
+        "name": "竖"
+      },
+      "template_id": "18c2f7a61a2d686591f9aa30149839a7f3f9608665a9d62602e4a1545738954d",
+      "href": "templates/shu_xuanzhen/report.html"
+    },
+    {
+      "id": "shu_short",
+      "name": "短竖",
+      "type": "shu",
+      "variant": "short",
+      "category": {
+        "order": 2,
+        "type": "shu",
+        "name": "竖"
+      },
+      "template_id": "41d04d42e0fe5c1e42e7d8e40ae668baf39a202480b6272429110f0e3fec3567",
+      "href": "templates/shu_short/report.html"
+    },
+    {
+      "id": "pie_slant",
+      "name": "斜撇",
+      "type": "pie",
+      "variant": "slant",
+      "category": {
+        "order": 3,
+        "type": "pie",
+        "name": "撇"
+      },
+      "template_id": "59a5a56c3a21047fe8e2f9650f4c76cda639f6f7cca0f40928f03b736fdeadd1",
+      "href": "templates/pie_slant/report.html"
+    },
+    {
+      "id": "pie_vertical",
+      "name": "竖撇",
+      "type": "pie",
+      "variant": "vertical",
+      "category": {
+        "order": 3,
+        "type": "pie",
+        "name": "撇"
+      },
+      "template_id": "0e6b8f40b6e9e637d0964f83cd8035b0d40a811708d7e2a653f598471b0cd434",
+      "href": "templates/pie_vertical/report.html"
+    },
+    {
+      "id": "pie_short_flat",
+      "name": "短撇 · 平势",
+      "type": "pie",
+      "variant": "short_flat",
+      "category": {
+        "order": 3,
+        "type": "pie",
+        "name": "撇"
+      },
+      "template_id": "c894edb22f5797420b26e95b099d35a58eac1ed43717d5121db37c62e89f80c5",
+      "href": "templates/pie_short_flat/report.html"
+    },
+    {
+      "id": "pie_short_slant",
+      "name": "短撇 · 斜势",
+      "type": "pie",
+      "variant": "short_slant",
+      "category": {
+        "order": 3,
+        "type": "pie",
+        "name": "撇"
+      },
+      "template_id": "9f0ddce1e91d8cd2e39dc73e5dd40607c4e7337896a0b413470aa7e6ad6fccfc",
+      "href": "templates/pie_short_slant/report.html"
+    },
+    {
+      "id": "na_slant",
+      "name": "斜捺",
+      "type": "na",
+      "variant": "slant",
+      "category": {
+        "order": 4,
+        "type": "na",
+        "name": "捺"
+      },
+      "template_id": "734b6b383e8fffd13b42ea438e0d7c57e39e8ed5ce9124560e975228de55d3a0",
+      "href": "templates/na_slant/report.html"
+    },
+    {
+      "id": "na_flat",
+      "name": "平捺",
+      "type": "na",
+      "variant": "flat",
+      "category": {
+        "order": 4,
+        "type": "na",
+        "name": "捺"
+      },
+      "template_id": "c7f86569946c93776f34b49de697856b6e8358fbe2a7b7326512ded775fbc840",
+      "href": "templates/na_flat/report.html"
+    },
+    {
+      "id": "dian_right",
+      "name": "右点",
+      "type": "dian",
+      "variant": "right_dot",
+      "category": {
+        "order": 5,
+        "type": "dian",
+        "name": "点"
+      },
+      "template_id": "9c3abecdd477efbd5c7fdbb2a016b56d224c701725b19a173b0730b777652ff6",
+      "href": "templates/dian_right/report.html"
+    },
+    {
+      "id": "dian_left",
+      "name": "左点",
+      "type": "dian",
+      "variant": "left_dot",
+      "category": {
+        "order": 5,
+        "type": "dian",
+        "name": "点"
+      },
+      "template_id": "54895ad445ab7a531c95d1ee9fa2c3d254b800ec86df8aee1eda20ab375caf48",
+      "href": "templates/dian_left/report.html"
+    },
+    {
+      "id": "dian_vertical",
+      "name": "竖点",
+      "type": "dian",
+      "variant": "vertical_dot",
+      "category": {
+        "order": 5,
+        "type": "dian",
+        "name": "点"
+      },
+      "template_id": "9f6ac51f4b3a31ab378fc9ee8d1bd421c2987c52ed8b4194358523992a4e1c4a",
+      "href": "templates/dian_vertical/report.html"
+    },
+    {
+      "id": "dian_long",
+      "name": "长点",
+      "type": "dian",
+      "variant": "long_dot",
+      "category": {
+        "order": 5,
+        "type": "dian",
+        "name": "点"
+      },
+      "template_id": "ef3bdc5690aff0c0446cd4eed8c762dfea35a0427084c1b1141a9bcdee048179",
+      "href": "templates/dian_long/report.html"
+    },
+    {
+      "id": "ti",
+      "name": "提",
+      "type": "ti",
+      "variant": "standard",
+      "category": {
+        "order": 6,
+        "type": "ti",
+        "name": "提"
+      },
+      "template_id": "53d804c1afe01de8d7173dc499f2c394ccca05b2b9f7b5ff021664cac48c6d96",
+      "href": "templates/ti/report.html"
+    },
+    {
+      "id": "shugou",
+      "name": "竖钩",
+      "type": "shugou",
+      "variant": "standard",
+      "category": {
+        "order": 7,
+        "type": "shugou",
+        "name": "竖钩"
+      },
+      "template_id": "bebdf23b4cfb9efad06be3ee12e69fd19eeba2e66d4f23a50ba01a045425e2fd",
+      "href": "templates/shugou/report.html"
+    },
+    {
+      "id": "wangou",
+      "name": "弧弯钩",
+      "type": "wangou",
+      "variant": "standard",
+      "category": {
+        "order": 8,
+        "type": "wangou",
+        "name": "弧弯钩"
+      },
+      "template_id": "5f07a5d43ff797f1e923b6f4bc2e6f849454c49ed81d5cc96d83c1aec99426b6",
+      "href": "templates/wangou/report.html"
+    },
+    {
+      "id": "xiegou",
+      "name": "戈钩（斜钩）",
+      "type": "xiegou",
+      "variant": "standard",
+      "category": {
+        "order": 9,
+        "type": "xiegou",
+        "name": "戈钩（斜钩）"
+      },
+      "template_id": "aab1ca0b322d29562130eb8b5db503bc41fbdc3f4c7ac1fb9d807bf4f5356f87",
+      "href": "templates/xiegou/report.html"
+    },
+    {
+      "id": "wogou",
+      "name": "卧钩",
+      "type": "wogou",
+      "variant": "standard",
+      "category": {
+        "order": 10,
+        "type": "wogou",
+        "name": "卧钩"
+      },
+      "template_id": "6028304ac9deaaf7d89ab62b2fb884732c586347e8752135c4e5ba65b25fda80",
+      "href": "templates/wogou/report.html"
+    },
+    {
+      "id": "shuwan",
+      "name": "竖弯",
+      "type": "shuwan",
+      "variant": "standard",
+      "category": {
+        "order": 11,
+        "type": "shuwan",
+        "name": "竖弯"
+      },
+      "template_id": "af7fc4873ca9908cf6c9920c7bce973e27113f1a845073f3da44ef52bd216b3e",
+      "href": "templates/shuwan/report.html"
+    },
+    {
+      "id": "shuwangou",
+      "name": "竖弯钩",
+      "type": "shuwangou",
+      "variant": "standard",
+      "category": {
+        "order": 12,
+        "type": "shuwangou",
+        "name": "竖弯钩"
+      },
+      "template_id": "7cff89f4e1eac81ef36094304588fe403f94acd5db08cb230a6653d37fed3f7e",
+      "href": "templates/shuwangou/report.html"
+    },
+    {
+      "id": "shuti",
+      "name": "竖提",
+      "type": "shuti",
+      "variant": "standard",
+      "category": {
+        "order": 13,
+        "type": "shuti",
+        "name": "竖提"
+      },
+      "template_id": "b3cf473cc019935be6c24d98174a76aa98d50d82de8334e38d42dc51acb2080c",
+      "href": "templates/shuti/report.html"
+    },
+    {
+      "id": "henggou",
+      "name": "横钩",
+      "type": "henggou",
+      "variant": "standard",
+      "category": {
+        "order": 14,
+        "type": "henggou",
+        "name": "横钩"
+      },
+      "template_id": "88edd9d432ddf1e82cbca71c50f21f77795af37a5096613d36ec0b855abf5e7f",
+      "href": "templates/henggou/report.html"
+    },
+    {
+      "id": "hengzhe",
+      "name": "横折",
+      "type": "hengzhe",
+      "variant": "standard",
+      "category": {
+        "order": 15,
+        "type": "hengzhe",
+        "name": "横折"
+      },
+      "template_id": "82886cd076eb14c93a9e5586f0f4fa3d18349a9b343d6bacb18e9fe549487b30",
+      "href": "templates/hengzhe/report.html"
+    },
+    {
+      "id": "hengzhegou",
+      "name": "横折钩 · 短横长竖",
+      "type": "hengzhegou",
+      "variant": "short_heng_long_shu",
+      "category": {
+        "order": 16,
+        "type": "hengzhegou",
+        "name": "横折钩"
+      },
+      "template_id": "ced46c21899524884bf711b7cfcde53ad90d1074f9f5479c526271e485e04f92",
+      "href": "templates/hengzhegou/report.html"
+    },
+    {
+      "id": "hengpie",
+      "name": "横撇 · 短横弯撇",
+      "type": "hengpie",
+      "variant": "short_heng_curved_pie",
+      "category": {
+        "order": 17,
+        "type": "hengpie",
+        "name": "横撇"
+      },
+      "template_id": "2c7b09485de1c417444b8f989a293ca2cf71ca9808429f3bb3983b86f1f42a87",
+      "href": "templates/hengpie/report.html"
+    },
+    {
+      "id": "piezhe",
+      "name": "撇折",
+      "type": "piezhe",
+      "variant": "standard",
+      "category": {
+        "order": 18,
+        "type": "piezhe",
+        "name": "撇折"
+      },
+      "template_id": "a14cab9b2442d26aee511eca784208735660da432e57781d81ab2fb496841ef9",
+      "href": "templates/piezhe/report.html"
+    },
+    {
+      "id": "piedian",
+      "name": "撇点",
+      "type": "piedian",
+      "variant": "standard",
+      "category": {
+        "order": 19,
+        "type": "piedian",
+        "name": "撇点"
+      },
+      "template_id": "a1b78ba5bb61f6549602e8b752544de802361b132e534160793b43345c18d63d",
+      "href": "templates/piedian/report.html"
+    },
+    {
+      "id": "hengzhewangou",
+      "name": "横折弯钩",
+      "type": "hengzhewangou",
+      "variant": "standard",
+      "category": {
+        "order": 20,
+        "type": "hengzhewangou",
+        "name": "横折弯钩"
+      },
+      "template_id": "889931dce285a439e95b6a9f96c62d1287ea58a1b84746e62192c516fd697ac1",
+      "href": "templates/hengzhewangou/report.html"
+    },
+    {
+      "id": "shuzhe",
+      "name": "竖折",
+      "type": "shuzhe",
+      "variant": "standard",
+      "category": {
+        "order": 21,
+        "type": "shuzhe",
+        "name": "竖折"
+      },
+      "template_id": "9e42e07546a18182a0a0c47913785681e9e781e8b109a26f9cf487129dc11466",
+      "href": "templates/shuzhe/report.html"
+    },
+    {
+      "id": "shuzhezhegou",
+      "name": "竖折折钩",
+      "type": "shuzhezhegou",
+      "variant": "standard",
+      "category": {
+        "order": 22,
+        "type": "shuzhezhegou",
+        "name": "竖折折钩"
+      },
+      "template_id": "0be4464304ec70d458554cefe171084cbdb0d846c59d6766d3e823343cddff4f",
+      "href": "templates/shuzhezhegou/report.html"
+    },
+    {
+      "id": "hengzheti",
+      "name": "横折提",
+      "type": "hengzheti",
+      "variant": "standard",
+      "category": {
+        "order": 23,
+        "type": "hengzheti",
+        "name": "横折提"
+      },
+      "template_id": "09744e7f438a81cc238e41646745f4e68f4d897b88a63d01468504a17f84949d",
+      "href": "templates/hengzheti/report.html"
+    },
+    {
+      "id": "hengzhezhepie",
+      "name": "横折折撇",
+      "type": "hengzhezhepie",
+      "variant": "standard",
+      "category": {
+        "order": 24,
+        "type": "hengzhezhepie",
+        "name": "横折折撇"
+      },
+      "template_id": "c4ad9d72f1d3516b66bd29a804989db17cb779e407a6e20d37597a18432c8e2f",
+      "href": "templates/hengzhezhepie/report.html"
+    },
+    {
+      "id": "hengpiewangou",
+      "name": "横撇弯钩",
+      "type": "hengpiewangou",
+      "variant": "standard",
+      "category": {
+        "order": 25,
+        "type": "hengpiewangou",
+        "name": "横撇弯钩"
+      },
+      "template_id": "4f177839b598faed975683639e75ec19bbc5a1f61f6e3b0b2161dd4bc3eede99",
+      "href": "templates/hengpiewangou/report.html"
+    },
+    {
+      "id": "hengzhezhezhegou",
+      "name": "横折折折钩",
+      "type": "hengzhezhezhegou",
+      "variant": "standard",
+      "category": {
+        "order": 26,
+        "type": "hengzhezhezhegou",
+        "name": "横折折折钩"
+      },
+      "template_id": "61cc7da42a67afd9e4781433be7f8b79e656a47eea226d4c62bc3fba80fd47b4",
+      "href": "templates/hengzhezhezhegou/report.html"
+    },
+    {
+      "id": "hengzhewan",
+      "name": "横折弯",
+      "type": "hengzhewan",
+      "variant": "standard",
+      "category": {
+        "order": 27,
+        "type": "hengzhewan",
+        "name": "横折弯"
+      },
+      "template_id": "5a67842beb69d7222a946ebf3967300071cc6c21ccf910cd474966d55a0f68d2",
+      "href": "templates/hengzhewan/report.html"
+    },
+    {
+      "id": "shuzhepie",
+      "name": "竖折撇",
+      "type": "shuzhepie",
+      "variant": "standard",
+      "category": {
+        "order": 28,
+        "type": "shuzhepie",
+        "name": "竖折撇"
+      },
+      "template_id": "eeacb02bb9e10bb2e6c8b9567b9d5892410f4810cbdc24931ceda8deab404b68",
+      "href": "templates/shuzhepie/report.html"
+    }
+  ],
+  "files": {
+    "index.html": "52e24e82b63e0a19b0cfcc12d1338e80f201c0db0a195ae8d57baad4a5574351",
+    "recipes.json": "103f937f684436b02e8c08872455949dea62b556b3ac95fb49c3a8806822e570",
+    "templates/dian_left/manifest.json": "76b32665e4c5ce72ee74943afc4775155b4cd8d9a032c253aae1135e3dfcc135",
+    "templates/dian_left/recipe.json": "e5dbafb5672e0e964a168caba821e12ba76f5bc55908ee40473e0c74e1c0f1f0",
+    "templates/dian_left/reference_000_annotation.json": "cdec2f55ba0eec75ac26376f7a04d45b3aaea5592b7dc05015c8a8b8bac3ea8c",
+    "templates/dian_left/reference_000_source.bin": "03e85d4053cba924367956a0b4ac66081dc2ae0d7b7d8b105d385d01e742a7e3",
+    "templates/dian_left/report.html": "830b24d3e2143449f33332f7bc8c0719a7d812e8500a914970f57cce065deafd",
+    "templates/dian_left/source_illustration.bin": "6b755ef261ada52e9f54896615f9923e8573a67b1fc2d3edcb4f4d7d5b81141b",
+    "templates/dian_left/template.json": "230547055c105e4680f073083748bd82a93c2b8e7bd6d54ba9fe60fc94c0cdc5",
+    "templates/dian_long/manifest.json": "ffcb21a38db987985f6df2fb878c36825504bc03859f4d59de39ae99044cb53c",
+    "templates/dian_long/recipe.json": "6afd57f8233e49513092529547cb87649edcee37969be2c9d897590c71f24ed2",
+    "templates/dian_long/reference_000_annotation.json": "b3ab7b67b1d0bdad72075b9e4470243536ea5ddefcad7035d2dd7963843d72d6",
+    "templates/dian_long/reference_000_source.bin": "f2384744fa16ef6ac36e635445a15744e179ac47416478698eb0cb086d7b87f1",
+    "templates/dian_long/report.html": "ce926262a642378a21a5ed6e02cd21da66f9f48bb1656fefbcf4445dd411e5a7",
+    "templates/dian_long/source_illustration.bin": "83723beadb95efbc098afda95de4878710cb25397e6bf1c144302e6120101136",
+    "templates/dian_long/template.json": "4e2a75a96f41b05b4829bf814d958d3758beab64f66ddacd9c8e41cbc4429ac1",
+    "templates/dian_right/manifest.json": "23f3d7a8fd81242785678f4927c51acfc17202a6b313a1fb9ccba695d9f0fae1",
+    "templates/dian_right/recipe.json": "e15351b019abc51e2db7a034740b97d6094dcd4badc5d32d9871583f1d2b1853",
+    "templates/dian_right/reference_000_annotation.json": "0ef514c09c0e2e0d45374dbbab3d1df4b3e9d0a1c0859ad3934259dfa4126597",
+    "templates/dian_right/reference_000_source.bin": "f4042dacb68f7a290bdfa40d82492922ce2f2326bcfef1626035c9cec7b99e9b",
+    "templates/dian_right/report.html": "38a73efe9605c964fdac3bb734c30a8c7cf087045154a735275e915b4aed12e8",
+    "templates/dian_right/source_illustration.bin": "465639f0cf0efe3c59c041e1e5333080d48fc27b46affd841404bd73b794b033",
+    "templates/dian_right/template.json": "a88fc87730a9fcfea71c111be3eecdee727f5d47a8f11253860c4d0e8272ba01",
+    "templates/dian_vertical/manifest.json": "582ff562090226cc0e2fa408ca56e356d246d9a3260be73bc42571bc2fe927a3",
+    "templates/dian_vertical/recipe.json": "017bb41eb3302de184ede66ea5ca718871434feeb5fdc03b25b20172356a9edb",
+    "templates/dian_vertical/reference_000_annotation.json": "87474432f1d1486317ac991bb25b42a2e6eab67fe9a6fcf1df2d0939f8240dd3",
+    "templates/dian_vertical/reference_000_source.bin": "bb360ac7f6b32b598dc6c3dd6ba270bb1b04a695df153fe5e60df0bf5533698f",
+    "templates/dian_vertical/report.html": "8156c360b928bf26b47f6c2872522d59c0b1aee321ce2e48e7ced6638a602552",
+    "templates/dian_vertical/source_illustration.bin": "ac6362015e6b5a4b5d23a24a7205961fb6dbeffd844cca4c44eb946a8bddcb14",
+    "templates/dian_vertical/template.json": "31cb3a4b4f99c2676154182057aa8000272cbb79faa5b83f91c743a62891eeb3",
+    "templates/heng_long/manifest.json": "a45f12747d5a82d9f65cf456ee2884a850edf10a0c9386834b974f5147c27477",
+    "templates/heng_long/recipe.json": "63afc010ed492c68f5e658989a7ba00707132570f3101b526089bfbf1e25c138",
+    "templates/heng_long/reference_000_annotation.json": "ddc61f3ae84841a07917e0907f333d7311b44d0bea22a96eb13c1063cf2e38c5",
+    "templates/heng_long/reference_000_source.bin": "61952782a3ce7e51fd94487c9da8bb5a935a702e87ae7b7fc5ec9c2385464387",
+    "templates/heng_long/report.html": "5fe3fb6b278d7c6e47db8baad17f808383d6a90a910bd6dd2c81b659a4dcf078",
+    "templates/heng_long/source_illustration.bin": "2270c039ee632b94cea1ec4b741213d80c611006fcb6d77b44be723ea09d4ab5",
+    "templates/heng_long/template.json": "bdc038a750b74c32098dfc394e631fabf4fc6d0a66d167fce8273d620546233d",
+    "templates/heng_short/manifest.json": "57dbdf9c865b58011cbc362da244b4d23582fbb996ecf2c3afb5a11c310b927a",
+    "templates/heng_short/recipe.json": "9637861ee885fb703aec6fbe0981f2b399d31a23dd297c0bf6f5e97280ae9eb4",
+    "templates/heng_short/reference_000_annotation.json": "a9694a9567d2aae6a808e3d0b44e8da9e779126977414a885cbbc4a1654ef5a0",
+    "templates/heng_short/reference_000_source.bin": "cc03b68587084bd9f4ea7024548cac960e14c6cd83518145db9e6749e10942d8",
+    "templates/heng_short/report.html": "d2422bfb37d4d5dfb306730d38bdea156ce2776bdf3e657e7a58cd6f0dfb7257",
+    "templates/heng_short/source_illustration.bin": "552db7a05383e609b034e4401304e01dfe29b496e4cece77db0468c77f6ace8f",
+    "templates/heng_short/template.json": "4e5bf3630f1e7d76f352dd80508250e45cab6384edd47c22162c2be2b891445b",
+    "templates/henggou/manifest.json": "3f9ab4c183ef4d1991622339b14bc60976094592c6ce1f40d2430a6ba17ffd5e",
+    "templates/henggou/recipe.json": "45b8ec21e84618e84567d05ddf988a70639ce6cc1644bf91890cf3a401d14b61",
+    "templates/henggou/reference_000_annotation.json": "5cc7a962f317e9cfb44c46ca41939b66e941962bc04637c8946c0f655fed525d",
+    "templates/henggou/reference_000_source.bin": "4e4fbbdcc092af2aaa00db6e87685f4220fc5d28286bf4c8cf4c042f995c1599",
+    "templates/henggou/report.html": "51a5e212947f33f8b4d712bc4126218cb20347a25594cddf12e7b88897dd810a",
+    "templates/henggou/source_illustration.bin": "38d47fcc96681971c8aee68b4a8f75617f9dc88d197aac58b20a5cc0f4bbb9a2",
+    "templates/henggou/template.json": "153cb0dad42b1a27610050bfd6961922d905b3a3a2532863fe2d77da24b25030",
+    "templates/hengpie/manifest.json": "800cae3c8865c8378fd48b7326be83b01cab16f6339d4c6315ba77ccda261c65",
+    "templates/hengpie/recipe.json": "44f275a5e5a0afaa2b5016b6b5f06ee639ff17f695b291ee45dffed7630d7400",
+    "templates/hengpie/reference_000_annotation.json": "98a46249ac79821179b530523114f129d91ff489545db065182bef291498e7f8",
+    "templates/hengpie/reference_000_source.bin": "cb71678f8f893098452b33be65b39906e0bbf6d649ff3ffa3e6f28a86f258921",
+    "templates/hengpie/report.html": "e61729e56ccf5fc7623baafd3ddc9cc7b84b291d5c96a6f22ff43d7f820cd7b2",
+    "templates/hengpie/source_illustration.bin": "ea0328f9f48ef1991164f79a36618e99972da9c6c964c01d8e3e17db33a2a380",
+    "templates/hengpie/template.json": "92e6ea1b6e29ad86372522bfc0ac3490aef212c7dc4e9a53a4e78dbce364d14e",
+    "templates/hengpiewangou/manifest.json": "43a8ebe464bc8686a29e6602789bda490ef940e624242e77750eeff26d7a4473",
+    "templates/hengpiewangou/recipe.json": "cdbbdbf5715d082eee4a93fbaca95047a59ee2b381ee4c701c611ca4d32ac4dc",
+    "templates/hengpiewangou/reference_000_annotation.json": "f26199b76db0c645595b1a62959273ad56b0bb100ac41538ccd02c43b901fb5a",
+    "templates/hengpiewangou/reference_000_source.bin": "a84496300658633326568b53da608bb683c6e3d485ea1324727b7f3e743e29e5",
+    "templates/hengpiewangou/report.html": "810e127495b3770139c8d828429ae793618bb6955dfea96868a43727edbf5a2b",
+    "templates/hengpiewangou/source_illustration.bin": "a3a26678ae84d2ace196b5a63a13461b73c19249e878c59d79fa5e84c5dc8838",
+    "templates/hengpiewangou/template.json": "6068624fbd19ae9c632384db39a9ee51ca3b9fc3e4d0aa148cbbef5841086a1f",
+    "templates/hengzhe/manifest.json": "8c2766c0783f8edd9d32f007a9257e9fc4efd24f622f9929b1117f75f2a8a5d8",
+    "templates/hengzhe/recipe.json": "610c76cc9539927c2fb0e00898641ae667a5ba148eccb5f8a53d8f318895722a",
+    "templates/hengzhe/reference_000_annotation.json": "a2b40ebb133770eb3221e11af004c25b3595118bb45977bc0fff5159877c2fa3",
+    "templates/hengzhe/reference_000_source.bin": "d8dc2f940147c97faf4ac4edb833483ef7e7b0ac109b7b0096d9f01c5c9174e8",
+    "templates/hengzhe/report.html": "8c069b74d6874009e444c9bcabb22a5c5b8a68d619d466fd2640e754b445f21c",
+    "templates/hengzhe/source_illustration.bin": "8ac0b89f77579b7b9995d3393a2b57766e493d6273a820fa9f49945f144df63a",
+    "templates/hengzhe/template.json": "edb402d8434a3337fda6690d71d4123790daa3a58c0661c9de99972699108d1a",
+    "templates/hengzhegou/manifest.json": "a599bd9e33ad8b20c50f16344daacf33ca4149b5bc57f7d6b435981b8ae351b6",
+    "templates/hengzhegou/recipe.json": "021bdbb97078ea65835b32c7033b7b864c3eecb35c5200c89aca865c56595cd2",
+    "templates/hengzhegou/reference_000_annotation.json": "83155b492a070c438feec196fdc49162792e1f9c27e5d71e36a8156849a0957d",
+    "templates/hengzhegou/reference_000_source.bin": "1893c1347106596341b377955f1a217de6bb9ba78199f9a750444fd75a5e53dd",
+    "templates/hengzhegou/report.html": "674aaae60c20479893d17ed97b0d7454ac9472ef2ff84d966c03ed44be623c42",
+    "templates/hengzhegou/source_illustration.bin": "e88eba0d59a729d735c6256e4c10efaf754a22aee5cca83630e4de5b8be1d4bc",
+    "templates/hengzhegou/template.json": "c02b4758465dc4d7201d9fa111f5e82289f2ea2faa1a7c55a46c1cef46e531f2",
+    "templates/hengzheti/manifest.json": "5e0f0237787cd3555220d35e8e1d9bf3d47977bfc52bf65ab43d8e280febb894",
+    "templates/hengzheti/recipe.json": "35b6d17a6ce1e1dfdc2c6d41efad6d73e4a6b68a1422222b8f9efe24c74d6e6f",
+    "templates/hengzheti/reference_000_annotation.json": "6591da34a5d9bae198e6a292893957f46762db12eee5a5dae926494d98a9f714",
+    "templates/hengzheti/reference_000_source.bin": "4c93c1012a1bcde88f8d7a99c08731a6523312303043db8f42f98dd339ad5bea",
+    "templates/hengzheti/report.html": "5d4da54123dbcf18386fbee1ceaa7a05ea6e9280e1e075f64d79494a255ed968",
+    "templates/hengzheti/source_illustration.bin": "2b8e6204a59f9bab9b057785a15751e8d5b7f8d943a574b9c13419c403235174",
+    "templates/hengzheti/template.json": "687f4bfb5b26460b8d923a35b1379e10c6b2c487d47498d65bebf8b9f8f5ad6c",
+    "templates/hengzhewan/manifest.json": "28da6d4a06c9102d9690955013cb31e6885157b8336d0633cb2f00782ea1c9b3",
+    "templates/hengzhewan/recipe.json": "0cddb5b716152d0d49c2d9762368dc1f8a41b6b09d14035a4155898f1d6b3783",
+    "templates/hengzhewan/reference_000_annotation.json": "519c7ec6e127c86848c162bfe5ab95f16c8a289ed2816c36a3aa07dbfd09948e",
+    "templates/hengzhewan/reference_000_source.bin": "279c21b0f61521c56e60e83f4c68baa4ff3f6692a50f29fd5481789305b30b15",
+    "templates/hengzhewan/report.html": "5493d2ec0a190fc0a638c404e7b7bed0ee2cdbeebfb7c9149f2957ad615191f9",
+    "templates/hengzhewan/source_illustration.bin": "8e2a37bee1d6231a019ec5eaa99b287b7840ae295d67b525cf31b4407b42492b",
+    "templates/hengzhewan/template.json": "e83f06cbcbae5678f8b0cd98f6298119d9a738fe62b360be3867abc719bc1cd8",
+    "templates/hengzhewangou/manifest.json": "6ec7f81622210901fdd211ab66ca0610df4d3c24f2de98e1e4d50b9cf9858a6f",
+    "templates/hengzhewangou/recipe.json": "81596149d3c6cd3a35a22b87444681c52bbf57589259cc81139fe407cdfde854",
+    "templates/hengzhewangou/reference_000_annotation.json": "8ad2cf917bd6f44d8e23b65b6229530faac5fcbb86af974110b0f74c0f7c40f5",
+    "templates/hengzhewangou/reference_000_source.bin": "ad439fc91a4e02f6a83ae46931484ebde66b33eec9c20ac037ce34776d9b9a73",
+    "templates/hengzhewangou/report.html": "019363faa329aeec0ea89bcebd591b372d4c6c5af28f5c5715c801bb27121b36",
+    "templates/hengzhewangou/source_illustration.bin": "215a5d4a0c2a097eefbb307be2cd586c39339ec28e375ac92ab3a89536cd6d03",
+    "templates/hengzhewangou/template.json": "5a5ef521689fbdc60cf9514cdd5359ae8f8cc504d574b83836fe3a66edd87680",
+    "templates/hengzhezhepie/manifest.json": "7b9168f5c9344b0d25f13ebadeb4a63f62f09d7fb4735b90ffa874b95cadc355",
+    "templates/hengzhezhepie/recipe.json": "23d013dbed3e5a14f22d20d78ea6b1f879343fa2eec6fa39e0d8c9ef59baac82",
+    "templates/hengzhezhepie/reference_000_annotation.json": "7445458885dcd14accaf38239410b5a63f2a130506722006e17c4baf379aa4c8",
+    "templates/hengzhezhepie/reference_000_source.bin": "72c63e52c036f4b08f55d354f37a29ad07d5ea8d68969505d6e2d9722f26f0c7",
+    "templates/hengzhezhepie/report.html": "c20186d9f3288c1e04241ffaafa7d4858a4c29d65a6034ae6f0e04ce7b0176a2",
+    "templates/hengzhezhepie/source_illustration.bin": "c20a11306e1c5f4750c4d71becdd31d8a992b1e320a17e1b4ced030f8c76664c",
+    "templates/hengzhezhepie/template.json": "6d51e915c7fad40464d3a8106d4fd26625e1eac3763a56ee949f619a731d9eeb",
+    "templates/hengzhezhezhegou/manifest.json": "d7cfb074f2e8aa7b86940c22bbefbb26bb293a011c65c68a956f922b5a295271",
+    "templates/hengzhezhezhegou/recipe.json": "009da8e732545a1c41cb16680e808ba392960eaf94de0658c557834c59e62a95",
+    "templates/hengzhezhezhegou/reference_000_annotation.json": "8330398999e16441bc2b7ef156152cc345c2487252507b92ed18ba98311f01c0",
+    "templates/hengzhezhezhegou/reference_000_source.bin": "b6b5b62c56dd3ee396f681f1c40e5e6203d322d9924bb618ee0ff7f622950471",
+    "templates/hengzhezhezhegou/report.html": "36ac853d39baa67ccb298653be49263677b503f5804658fedf45b6d716abcfcd",
+    "templates/hengzhezhezhegou/source_illustration.bin": "87209aab6ae6376c3b5b081b2ffb035f4e66f79df964b06344bde56c57657a74",
+    "templates/hengzhezhezhegou/template.json": "08cb36a6b4d213b0a61a16ba7444ccb4862c06336179d4ce9b2430833ee4c072",
+    "templates/na_flat/manifest.json": "2cb8d79e8273cfd2cf336f66e4e9a1ef95e53146e1d22a84e9df88fdd5bf779b",
+    "templates/na_flat/recipe.json": "3ab055937f287591a3924fadcc85dbea534acff67813af2c570c268432a1fbc2",
+    "templates/na_flat/reference_000_annotation.json": "d474a96b3c71468e09505dc69c20ebd5a43f1224168e4517ec05f1d71f3a49cc",
+    "templates/na_flat/reference_000_source.bin": "274868e85448d1ad37a45f4dd542c9d2770ffe9d37dd4b24864be3d966ec3713",
+    "templates/na_flat/report.html": "b7ebc69cea9a9c9e14747522fe148e3cd0a0a0a799202184e9c9588726fc4d70",
+    "templates/na_flat/source_illustration.bin": "2e46409f6d805490cb7490d6206eea65d5fef41070a6d86848214411f59c4bc9",
+    "templates/na_flat/template.json": "fa27ce4c0503d7cf94fdadd81816377e8aa2b71131e03724948eab95d8589ba5",
+    "templates/na_slant/manifest.json": "448afa1b3ac6514decee3c3bfe4a97a7e21455a0434e4ea225b00d4611136aec",
+    "templates/na_slant/recipe.json": "716368eb70063f11f0e46f0f774f9dc444ea4858a2624f9c5c0cd90eb6774671",
+    "templates/na_slant/reference_000_annotation.json": "ce847b01a40747a9a140893b93df673e5b8ed0cde28e9649b978ace8c6050729",
+    "templates/na_slant/reference_000_source.bin": "80d5a535eaa0e0d7a1405d22cca75be7a9f5421589826e4a301a61bde2829734",
+    "templates/na_slant/report.html": "45be72452d8a8e1474d8bb57a30feba98a23b5d97dc65dcd191e89fddb175891",
+    "templates/na_slant/source_illustration.bin": "d1b1f7036930d123b98f8eb102ee6ba131346633883c4eb7a6e0fb1ad31f5000",
+    "templates/na_slant/template.json": "46a9f22ed2cd6d6ff0b96f6907d0fdd802cc6665714989f1a6e8302f568419eb",
+    "templates/pie_short_flat/manifest.json": "059f1c59abf80cff0a536365ed32ff03fc63d1e30e665c4ce43aed8b84740f50",
+    "templates/pie_short_flat/recipe.json": "4ac9d58df00bc89ce8259493f92438d94c27ce2bceea7463437ee2ae2898a6b8",
+    "templates/pie_short_flat/reference_000_annotation.json": "1f924882f630d0f4db04ff8fedb9a37a9fdeb66cc6b8c76ede676dd7e6b9aea8",
+    "templates/pie_short_flat/reference_000_source.bin": "01e3a5bdc354e324f2d8d17261c14df11e3d84b7578e4f63d18c221575b26a2c",
+    "templates/pie_short_flat/report.html": "5877466d8f55eddcaf97b597db4228739c50829c1bc0c3131c5ed2c35b10783a",
+    "templates/pie_short_flat/source_illustration.bin": "4f5bedba0cc3be2eaf5bbcb90475f3180c35ada58ec7b549d00d9f045e976ad4",
+    "templates/pie_short_flat/template.json": "a067d17576cade19cb90c2ca7591bbc1bc97f388ba114dc02eef52c9587b0f90",
+    "templates/pie_short_slant/manifest.json": "7f8e6de62e5b77cbbc1d4460e5385b0e1cdbe6f039efd8623d978cede3cd00b2",
+    "templates/pie_short_slant/recipe.json": "a2795289af391d7fa8385fcd136a928946d5510ac8e5e40e72aa15b9d146a358",
+    "templates/pie_short_slant/reference_000_annotation.json": "56c3f22e7245cd9e62ad7a83fe348e2f435bd35a59dd140310cbd3c413682ea4",
+    "templates/pie_short_slant/reference_000_source.bin": "e2761b81a6503cfb7b88085ace65b2a011a846005f5d56fabafb9616646a90f0",
+    "templates/pie_short_slant/report.html": "7e1cffc3ebf6abfe3f03e7d5e835abbcdff39cb38f779d588a866cc57a55aed9",
+    "templates/pie_short_slant/source_illustration.bin": "4f5bedba0cc3be2eaf5bbcb90475f3180c35ada58ec7b549d00d9f045e976ad4",
+    "templates/pie_short_slant/template.json": "272002e9f615f1887a19d0220a309607db0d5ace1e97c49adc068385ffe6df43",
+    "templates/pie_slant/manifest.json": "843e193365a361a9a4e257b77ac9571f198c499ef1fc0ad0474f62143f2ed914",
+    "templates/pie_slant/recipe.json": "74b576a22dab38cdffa9feb99e55e0fb5763e298af18a38841029c7ae2822f76",
+    "templates/pie_slant/reference_000_annotation.json": "a10d8785b8539af93b0765cad1526787f7e2a95b4b25045e6e9877e4b5b1bb5d",
+    "templates/pie_slant/reference_000_source.bin": "54bd652911db8f8d231a0ab2244114d46fbdaacaadf80e530bf1c451dfc5f6af",
+    "templates/pie_slant/report.html": "1036ba949126c98858273d9529b6c76ca163fce6f6cd50ca632d23873b4c80ff",
+    "templates/pie_slant/source_illustration.bin": "066b9ab88ba2b1c947758d5ac80c4653c0167b005c0c25f9d0c53a0560569177",
+    "templates/pie_slant/template.json": "3f0448bbbbcbe2ad743c8ce6fc7155bcd7728b708c4514107c2653d3e175d15c",
+    "templates/pie_vertical/manifest.json": "95b49c1e0cb7a8857beedd9d8d7691f490068a21698260d2862d54e139eccf41",
+    "templates/pie_vertical/recipe.json": "d1d41576abed724f3d8d03ddb0d902960f0f26b114a4427c511eab1ca6c70c50",
+    "templates/pie_vertical/reference_000_annotation.json": "61e42fca464974d2b14f8e99c3451554d006539557c8dade379fd67cca9b4718",
+    "templates/pie_vertical/reference_000_source.bin": "4978d34e54979ecb51550860d257a129162a38b45a1dcc6e782eeb54b48088bb",
+    "templates/pie_vertical/report.html": "1c9095e587914a0e1104b9a68238292ab09a48daeb97043a3ed7142d15802548",
+    "templates/pie_vertical/source_illustration.bin": "775f3ed53f2a1ad3b26e10d213c067c70ebc5f95d45f480b4ce47d943daa63ae",
+    "templates/pie_vertical/template.json": "2853b9ec4d57182f352a6305a2d9ee3f4a79fe4d0ddab26cb419c48d0273df02",
+    "templates/piedian/manifest.json": "e6fc54187627e4030b94d6f1f7f9134d314a7cfd05974ef393e235ba050e53ea",
+    "templates/piedian/recipe.json": "b13d42e391bfa05ce1353844d6a01461f2c0b9575780a2e9b5662eee15697ccd",
+    "templates/piedian/reference_000_annotation.json": "299b59c5d5de4b0f8daa027d5f57a5d84d0b5442b6340068123be9f2f74168a0",
+    "templates/piedian/reference_000_source.bin": "f58d37532da24874b4b7be9d41e62f7071e7aed7e7da9233af3474ebe4818735",
+    "templates/piedian/report.html": "a221fdfdd6b0a077c7a3ae0d3f3044b8d40c144d3f88510b5b2eeb9c3c05e72f",
+    "templates/piedian/source_illustration.bin": "be6d8c8442f3bddde702679e6b96e7f615ed75124259a2a365fbc9bd593f66db",
+    "templates/piedian/template.json": "16d1722f846230d7b9217e107454bf97f76b87f6de0498fe7782c79dd80f9218",
+    "templates/piezhe/manifest.json": "6220b87358786ba595316667b3ec99b73a641337327b608ec414fe3df0b27ae1",
+    "templates/piezhe/recipe.json": "eadbe6c1f37e5db0249b49230c79b31d587f67035079aae5809d991c8015f8e7",
+    "templates/piezhe/reference_000_annotation.json": "487ab44ce950125daeb798d64ba6cd4414c18ed0f46f9868d2e9a25e7bcfd63d",
+    "templates/piezhe/reference_000_source.bin": "a24e1582e185a04a4b1fbb09f2f919fe5d8243373c17f90916c6afa2144a9791",
+    "templates/piezhe/report.html": "9fc2d455ccf7b0903306852ba3a21f0f0f2d07fdf2b92194095a0b2510050dc3",
+    "templates/piezhe/source_illustration.bin": "6d480ff14f9a892de9616da90ef52d8f8c22d69e2b4f8ccd6a39a7586fa438e7",
+    "templates/piezhe/template.json": "7eb51b6c8ac67a22dbcd1fb50bc8912aa2771692315d7c1df1745c9e62f882cc",
+    "templates/shu_chuilu/manifest.json": "b516def3b89dabe1f2251153058ec2c82235bf7ff1d4e6bd75dd23f9daf5e6d3",
+    "templates/shu_chuilu/recipe.json": "616281d221b9a74ad035309e232d542142237c5eb5831e6eb5df72e9f0c3df40",
+    "templates/shu_chuilu/reference_000_annotation.json": "08add73eed32f658ba6bd22cc060e3236470544b83d36779b2f15be970626405",
+    "templates/shu_chuilu/reference_000_source.bin": "4102ae2b8f65116172f4a4d6a3047b2e34afbc8a4c014c6df70086f88271443c",
+    "templates/shu_chuilu/report.html": "6a08b979236689ae1926f55cdfe7e28a8cf97b3b272e0f9a607b27a8c4f04c2e",
+    "templates/shu_chuilu/source_illustration.bin": "b33688c617447fb3d099ea48deb3604a086a9af335ea6a046ff8fe68e16892a2",
+    "templates/shu_chuilu/template.json": "7aa93e094828667f4dcb6f6053a96e7fbca344997ae91b49f9e07d6038906308",
+    "templates/shu_short/manifest.json": "6586736bb2769a8a63fbbe885152c95ff4d5836df4be48434f029e62737b3e92",
+    "templates/shu_short/recipe.json": "13cc9e80104e509f308a2571f0e129d40bafba4c08c60b5ad5afd34de4ddcb52",
+    "templates/shu_short/reference_000_annotation.json": "2c0eea88876fddc9df09177e98b1e53af3af246321c757d6f02a1cd182e68bb8",
+    "templates/shu_short/reference_000_source.bin": "ef93134b5b1f10c2979b9ea795a8dea2e722efa5a4e6dd1184ec339c11473912",
+    "templates/shu_short/report.html": "8d8007079789d92c1d7a9307b9b4abbff0795fadf8c4a8115c8f7dd24c4d2b46",
+    "templates/shu_short/source_illustration.bin": "b14ffd818b819f7fef63611f2f63b0ffb6dee6d867c77c15f82a7307fce76368",
+    "templates/shu_short/template.json": "4b53b2274dbfe12124204068ae9ab464406bce964ede85802990967dcfc736a7",
+    "templates/shu_xuanzhen/manifest.json": "aad0fe080ba3f44dcde97b8b1cf85df6b41af4dafed8b247d37f4553e171b5cf",
+    "templates/shu_xuanzhen/recipe.json": "d61370a6e383e505b7730ddb6dc8e18c57bf03abf663ffeabd496afe372e269f",
+    "templates/shu_xuanzhen/reference_000_annotation.json": "761f34033e9d3a726ea8f46423f42b27a1c262c045cb8d83d511032e00af77a4",
+    "templates/shu_xuanzhen/reference_000_source.bin": "289ba3ebafc008181728d1713b9d66cff5c6bdeec0eb85611069eff55fe55cb7",
+    "templates/shu_xuanzhen/report.html": "366239f50310d828920f1ee7df066f19b12e986a9ddeae053ac6ff013c91c2ab",
+    "templates/shu_xuanzhen/source_illustration.bin": "8c009b3168f14656d4c9184441c0c7965e3c4beaaaf705dbec7ef00028520c0b",
+    "templates/shu_xuanzhen/template.json": "3f39abf654b1966405a1e9a5095bd388f51cc959de82ddc49e267a4a300874f5",
+    "templates/shugou/manifest.json": "d375687dec44c18b15e7239d8d9ca4a0de40e62708183e341c888d94eb89daa7",
+    "templates/shugou/recipe.json": "3c370788a7b1ded38a9aa3c6e845b7be2c6c19f6bf2f48bd7065df6c0ad2536b",
+    "templates/shugou/reference_000_annotation.json": "d84d4ab9692ff10f2fc34dfc1b2b354d4e60c02ea7f81266736da5d23d105a37",
+    "templates/shugou/reference_000_source.bin": "29468b469b531c88864d008a07a51c8504f728b070046b72b0c26d3015a4ead4",
+    "templates/shugou/report.html": "177886a586efab5573d191a0e781ae07c959da178a9980005db385dced92b9e7",
+    "templates/shugou/source_illustration.bin": "a21d079b25045c94375215e8ab143ac346e2525a7b1507ec61b8cecabaf09fd2",
+    "templates/shugou/template.json": "1d8b50959cb5f52db018747c02b598163e91f4fc8d82528115d4135fc98bf6a6",
+    "templates/shuti/manifest.json": "7c775ac5d1206587b0fe0f18a797b12261bea46ce7a159642e5811146de5c947",
+    "templates/shuti/recipe.json": "a032108b6871fce784b7c9329c7aaf115f52e061c1bbe95ec788494a2de6957b",
+    "templates/shuti/reference_000_annotation.json": "071a39879f7044276e8b349158ca797f61aa9443e4f11a5d5ca5bd532004cfc4",
+    "templates/shuti/reference_000_source.bin": "5d368313f5acec7e28e53fa0fe3646fa95524b35a77af5b1892ea87381b5f05d",
+    "templates/shuti/report.html": "4f1f42a693d402b56733ecf8dc17ff1c5c620ee00f6ae5687b067ea9b92b23f3",
+    "templates/shuti/source_illustration.bin": "bcc6a12f368c6b5bb70c159193b5398f095c8d8a6445769de61075b25b3dc1b1",
+    "templates/shuti/template.json": "fd424ae4f3d959323bbfdef4d1c1604b2d11849986cdc55b5e194e542dc63f4a",
+    "templates/shuwan/manifest.json": "c3f6e5f8c68179944ae8f58c1b3024dda2c6fa0181e11475aa2764740c7377ae",
+    "templates/shuwan/recipe.json": "c7290a15442618d075f36da3ac031a5129dd53466e08dbcfee90e92f2ab01182",
+    "templates/shuwan/reference_000_annotation.json": "5bcfbbba6484dfe9fb1afed34269784b8ae1b40f3e3a6d59cd5f5c28c92b1187",
+    "templates/shuwan/reference_000_source.bin": "8eeb2ce5a8fd9024e1fa34e2f18209e485b1cae70b1ffae84ca6746338d56ffe",
+    "templates/shuwan/report.html": "94e82c92a16614e794187ce6992160b7ce4b125df65b43734ae4ed7a8ec9f4dd",
+    "templates/shuwan/source_illustration.bin": "8075d45d03b585a899c93a059bccffda59d15d0c74aa17b8bb2591f46984b0f1",
+    "templates/shuwan/template.json": "e2c962cf858d603fe3158fb2037dfdf48c3e501be663cdd15e1daac3dc39fee1",
+    "templates/shuwangou/manifest.json": "b53d5066a39288c4998dc4bede8ec85a091ac30c517f63a3556db64349e02587",
+    "templates/shuwangou/recipe.json": "6e6adc49fd0f0f7add88ec53e6ecf48039b6b3286c1594b068c7290dde811421",
+    "templates/shuwangou/reference_000_annotation.json": "1ac382f8399eaaee61aeb686f2c54d2d6f8fff1af517de357761f583590204dc",
+    "templates/shuwangou/reference_000_source.bin": "f281384d7c3af74fa2962fe476d9058f3f999ebda9e92ff841415f7a5899576e",
+    "templates/shuwangou/report.html": "86a754bd5dbfd89bc359286532b60881ebcdb5aa328323ac53421e5543347583",
+    "templates/shuwangou/source_illustration.bin": "e57453d915404b24e0ca1e856a9415145f33edaee2cadaae4c345bcd4d77e7f0",
+    "templates/shuwangou/template.json": "c11d643cbad1eacdc27950466ce7cd9efd68b214f2a94f74c7d1860d916ca8ab",
+    "templates/shuzhe/manifest.json": "3faf2925b416a4f890da7957234785d342058de9a99487a0ec0240a10287422e",
+    "templates/shuzhe/recipe.json": "fea61f94340b949daf534c76bb72ea45a47ce574e9775fdebcefaa33e41a838f",
+    "templates/shuzhe/reference_000_annotation.json": "263699672d8367fe611a1a4f7589c49b895aff454b1b54d53f3c4c60c21762a2",
+    "templates/shuzhe/reference_000_source.bin": "bd04d9eb9816122373e5742abc4c548afaa51681dc90dc914f7e3e413c67ae0c",
+    "templates/shuzhe/report.html": "1ab54eb6a5dce05971b3dd163f17b41a0051da267cdcd1214ac96a4ae146d060",
+    "templates/shuzhe/source_illustration.bin": "51ac8826deb1167af880c806f3804afb35bb2934cb48ec57a99b96834276203b",
+    "templates/shuzhe/template.json": "0d4c0fa114889112ac768d4dfee6e0f7ecbe954bb6cded054d3107a014ad1021",
+    "templates/shuzhepie/manifest.json": "81810a41492103f50487f9c16a822d9e2d883974ee6a075ce588cee61f277b3c",
+    "templates/shuzhepie/recipe.json": "2307b5ee076f828b5393edf67da7a517b8d8653ee9eec7d5107b63f287ebf9e8",
+    "templates/shuzhepie/reference_000_annotation.json": "dc7d46f5a888184ab191e2e200057c7f2de0162532634b4f555d0551ff34e48f",
+    "templates/shuzhepie/reference_000_source.bin": "a35ffe425b64f7f4e2614cb38e92005c45ad9ea6e35e899b708689fd3e9cb9b0",
+    "templates/shuzhepie/report.html": "5048b540a199c665496754fb7224e6b45de42b8c4a339f667d1663b594ada336",
+    "templates/shuzhepie/source_illustration.bin": "44a906bb020de0b9cbcfbc90b2f5d7d659d58e3b277a4c87b15c27cda7bd18f5",
+    "templates/shuzhepie/template.json": "f6d653947a3ac32ee60522315d43d41fb7763cc14b0f9ada7536edfefa6d039b",
+    "templates/shuzhezhegou/manifest.json": "d2364999489879232d4c86b118e955174c780ad71d0f2d03454e115756732ddc",
+    "templates/shuzhezhegou/recipe.json": "374a070e9f442172f3c9c84221580b8adf9f76f48ba97d1dc44dac643234ed36",
+    "templates/shuzhezhegou/reference_000_annotation.json": "40616cf906f111a6bff08a19491a194c0b7791a38a18af2d5e848f685aea722c",
+    "templates/shuzhezhegou/reference_000_source.bin": "1bd7554112354c2b57c5a8309e9e442cb4f11f1294d3619e82a3bab39cad84f8",
+    "templates/shuzhezhegou/report.html": "3c4d5325f78300467b10c0e72871ac91d196e7f34d63c17124278ab0839fb177",
+    "templates/shuzhezhegou/source_illustration.bin": "9c4c5c4a6516e2cd4eac9930a721488ea905d1181598dc732f259a4a8c825aaf",
+    "templates/shuzhezhegou/template.json": "bcf6d2210eb54189c48d8ecf0e00b17e4004eddc97c7eb82f8102bcba70e7419",
+    "templates/ti/manifest.json": "1ed48e7d161bf1cabbdc345b29b59122afe63afec86bbee6f7fa029334110e11",
+    "templates/ti/recipe.json": "bc74731ea464ab0a2ce4ec943ee25d5648816f25774304f338dbc13e0d204903",
+    "templates/ti/reference_000_annotation.json": "485a3799965ac540272f0820718756c57b8adeb683435b256ff9f9398f5c7844",
+    "templates/ti/reference_000_source.bin": "9f76c009a74f2fdace530c01a486bafe67a718c017a272c775a9dc42971b1464",
+    "templates/ti/report.html": "b75ecaf052ed1aefc2739ff91f410f7ae1d3817d114cbe05ff1661ee452b4b8e",
+    "templates/ti/source_illustration.bin": "bc387a87f97472fa8252db45390852205ae621ac3864f212b6aac9659886079d",
+    "templates/ti/template.json": "4690e2dc0b185a3930300a564a775858ae11ddae7d8ff266a7145a149a246bb0",
+    "templates/wangou/manifest.json": "358f5213653fb48b68fa5bd9e2e08da5a545504743d3339d1a6bca02fc57f3f5",
+    "templates/wangou/recipe.json": "a6f870434e6783c9e0ded4a8d05aac9895c4e13b5e1c6794435c53880e8d2bfb",
+    "templates/wangou/reference_000_annotation.json": "44a098bd902d19a38d62d94c0e145afa1c89164bf0c0f37e99fbcb2f5854950f",
+    "templates/wangou/reference_000_source.bin": "79c90f4fed92386a0fbad0427332d1ec3149973296b10de92134566b0eb00e20",
+    "templates/wangou/report.html": "4169bc77c31989d4d338419822d1407f9e9eaedd8f5c53fb02deeabd6dd06ab7",
+    "templates/wangou/source_illustration.bin": "be21ca5b7dc68e36f8cfbbfd1807b3a5088f5159be949f9b501c8d9f419bc095",
+    "templates/wangou/template.json": "5b48954e2d54462d4c3f340588812855eabde2b266156af2824e461afa9f0f1f",
+    "templates/wogou/manifest.json": "17d92b66fb59f092c99958cf37ddaf0d62eb5985d3fa288a3a8036a31bc41426",
+    "templates/wogou/recipe.json": "6b897c65e26ac04ddea2263d6ba9e1facd8a1c9cc8705c8f51ad1eb8984e5d66",
+    "templates/wogou/reference_000_annotation.json": "d6cae394b824d20e4d3880644444388ea8b29bf0d9cd660ce2ddfb2ceeb1bafa",
+    "templates/wogou/reference_000_source.bin": "e62da495fc2881acf5e395b02fd80e616699659616ef682685ed3504666b9c20",
+    "templates/wogou/report.html": "4ba1be42cee0a29148129fe4cf8ac7072d14fd8a1d6ba7d0c51b1e831c6497fd",
+    "templates/wogou/source_illustration.bin": "4b7c5b31c218bc151c25765e42321e7c9018da02fd62edc62a4e9fc42252b45c",
+    "templates/wogou/template.json": "7f22b949a91f48610680ede51b55ac5bff3c994f1cee6edbf77050c10cae806c",
+    "templates/xiegou/manifest.json": "fa2a411244d2f2823f885fa2bf9d743987095b4f56884530aa4508b0ec94c34f",
+    "templates/xiegou/recipe.json": "54a633c6f03d836fd048b66cb3846103d5ec1f4bf5c41084f2054b2b3cfa511c",
+    "templates/xiegou/reference_000_annotation.json": "022927b0ba19e1246b0a234099df6ee4654fa3ec87e920f417ea9c8fe1b56a69",
+    "templates/xiegou/reference_000_source.bin": "6326386d233cb8e9e399cb6d4fbe7becdff4b74ffb3665a46480498871c7b47e",
+    "templates/xiegou/report.html": "0b0ecd4b80fce91a422f0a478e88b58b9ea0fd5e8a7cf4a7c450a5e97de402f3",
+    "templates/xiegou/source_illustration.bin": "6aa16266d9fdda294864eb0a6e231145a26fa55cc104fca4a0d66f4b158f7f8b",
+    "templates/xiegou/template.json": "1397ac12361d9f6c7495886c76d7345f240fb168223fff3b60f93e99e1ee407e"
+  }
+}

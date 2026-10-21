@@ -1,0 +1,3720 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template",
+  "type": "hengpie",
+  "variant": "standard",
+  "style_id": "yong_font_prototype",
+  "units": "reference_width",
+  "prototype": {
+    "reference_id": "917059f38adcc3ccfa07f28f68d000f23b637c78a0cf2be84af3c4790512bfc8",
+    "xy": [
+      [
+        -0.12605182566869175,
+        -1.347203044479659
+      ],
+      [
+        0.004560899272013441,
+        -0.6785811469322544
+      ],
+      [
+        0.0260700192137473,
+        -0.5684734327218258
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -0.018965225742174015,
+        0.41354886974201316
+      ],
+      [
+        -0.07980923203000942,
+        0.6738076365716483
+      ],
+      [
+        -0.23489435006798381,
+        1.3371804819304818
+      ],
+      [
+        -0.3899794681059602,
+        2.0005533272893157
+      ],
+      [
+        -0.5450645861439365,
+        2.6639261726481513
+      ],
+      [
+        -0.6016216602065323,
+        2.905847690461921
+      ],
+      [
+        -0.5763839104418139,
+        3.2459232238812485
+      ],
+      [
+        -0.5317972072791463,
+        3.3261733828520788
+      ],
+      [
+        -0.2674567338188367,
+        3.801951215992623
+      ],
+      [
+        -0.1376025510686908,
+        3.7583458154593385
+      ],
+      [
+        0.5082172037406191,
+        3.541477721691783
+      ],
+      [
+        1.1073458481048084,
+        3.340288634400443
+      ],
+      [
+        1.149643793480477,
+        3.315054236137829
+      ],
+      [
+        1.7346983884779918,
+        2.9660183545029697
+      ],
+      [
+        2.319752983475506,
+        2.6169824728681097
+      ],
+      [
+        2.90480757847302,
+        2.2679465912332515
+      ],
+      [
+        3.489862173470534,
+        1.9189107095983915
+      ],
+      [
+        3.5880688133835568,
+        1.8603219190179432
+      ],
+      [
+        4.001164295625397,
+        1.4720789968373813
+      ],
+      [
+        4.497589118887434,
+        1.005519975227483
+      ],
+      [
+        4.99401394214947,
+        0.5389609536175864
+      ],
+      [
+        5.147757283410268,
+        0.3944670856310296
+      ],
+      [
+        5.403789077605352,
+        1.1037573934949973e-17
+      ],
+      [
+        5.774689009053346,
+        -0.5714439313250256
+      ],
+      [
+        6.145588940501339,
+        -1.1428878626500512
+      ]
+    ],
+    "anchors": [
+      0,
+      3,
+      26,
+      28
+    ],
+    "descriptors": [
+      {
+        "phase_id": "entry",
+        "arc_length": 1.3625196157066197,
+        "chord_length": 1.3530872498880744,
+        "start_heading_rad": 1.3778795847258292,
+        "end_heading_rad": 1.6166239146586192,
+        "mean_width_reference_width": 0.7464190981432361,
+        "visible_width_samples": 65
+      },
+      {
+        "phase_id": "body",
+        "arc_length": 10.90015692565296,
+        "chord_length": 5.403789077605352,
+        "start_heading_rad": 1.61662391465862,
+        "end_heading_rad": -0.995084004278045,
+        "mean_width_reference_width": 1.1078270388615217,
+        "visible_width_samples": 63
+      },
+      {
+        "phase_id": "exit",
+        "arc_length": 1.362519615706617,
+        "chord_length": 1.362519615706617,
+        "start_heading_rad": -0.9950840042780446,
+        "end_heading_rad": -0.9950840042780457,
+        "mean_width_reference_width": 0.47877984084880637,
+        "visible_width_samples": 65
+      }
+    ],
+    "width_profiles": {
+      "entry": {
+        "parameterization": "within_phase_xy_arclength",
+        "samples": [
+          {
+            "u": 0.0,
+            "width_reference_width": 0.3620689655172414,
+            "reason": null
+          },
+          {
+            "u": 0.015625,
+            "width_reference_width": 0.39655172413793105,
+            "reason": null
+          },
+          {
+            "u": 0.03125,
+            "width_reference_width": 0.3793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.046875,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.0625,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.078125,
+            "width_reference_width": 0.43103448275862066,
+            "reason": null
+          },
+          {
+            "u": 0.09375,
+            "width_reference_width": 0.4482758620689655,
+            "reason": null
+          },
+          {
+            "u": 0.109375,
+            "width_reference_width": 0.4482758620689655,
+            "reason": null
+          },
+          {
+            "u": 0.125,
+            "width_reference_width": 0.5172413793103449,
+            "reason": null
+          },
+          {
+            "u": 0.140625,
+            "width_reference_width": 0.5344827586206896,
+            "reason": null
+          },
+          {
+            "u": 0.15625,
+            "width_reference_width": 0.5344827586206896,
+            "reason": null
+          },
+          {
+            "u": 0.171875,
+            "width_reference_width": 0.5172413793103449,
+            "reason": null
+          },
+          {
+            "u": 0.1875,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.203125,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.21875,
+            "width_reference_width": 0.5689655172413793,
+            "reason": null
+          },
+          {
+            "u": 0.234375,
+            "width_reference_width": 0.603448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.25,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.265625,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.28125,
+            "width_reference_width": 0.603448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.296875,
+            "width_reference_width": 0.6379310344827587,
+            "reason": null
+          },
+          {
+            "u": 0.3125,
+            "width_reference_width": 0.6724137931034483,
+            "reason": null
+          },
+          {
+            "u": 0.328125,
+            "width_reference_width": 0.6551724137931034,
+            "reason": null
+          },
+          {
+            "u": 0.34375,
+            "width_reference_width": 0.6724137931034483,
+            "reason": null
+          },
+          {
+            "u": 0.359375,
+            "width_reference_width": 0.6724137931034483,
+            "reason": null
+          },
+          {
+            "u": 0.375,
+            "width_reference_width": 0.7068965517241379,
+            "reason": null
+          },
+          {
+            "u": 0.390625,
+            "width_reference_width": 0.6896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.40625,
+            "width_reference_width": 0.6896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.421875,
+            "width_reference_width": 0.7413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.4375,
+            "width_reference_width": 0.7413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.453125,
+            "width_reference_width": 0.7413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.46875,
+            "width_reference_width": 0.7241379310344828,
+            "reason": null
+          },
+          {
+            "u": 0.484375,
+            "width_reference_width": 0.7241379310344828,
+            "reason": null
+          },
+          {
+            "u": 0.5,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.515625,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.53125,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.546875,
+            "width_reference_width": 0.7931034482758621,
+            "reason": null
+          },
+          {
+            "u": 0.5625,
+            "width_reference_width": 0.8448275862068966,
+            "reason": null
+          },
+          {
+            "u": 0.578125,
+            "width_reference_width": 0.8448275862068966,
+            "reason": null
+          },
+          {
+            "u": 0.59375,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.609375,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.625,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.640625,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.65625,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.671875,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.6875,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.703125,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.71875,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.734375,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.75,
+            "width_reference_width": 0.9137931034482759,
+            "reason": null
+          },
+          {
+            "u": 0.765625,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.78125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.796875,
+            "width_reference_width": 0.9482758620689655,
+            "reason": null
+          },
+          {
+            "u": 0.8125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.828125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.84375,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.859375,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.875,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.890625,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.90625,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.921875,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.9375,
+            "width_reference_width": 1.0,
+            "reason": null
+          },
+          {
+            "u": 0.953125,
+            "width_reference_width": 1.0,
+            "reason": null
+          },
+          {
+            "u": 0.96875,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 0.984375,
+            "width_reference_width": 0.9655172413793104,
+            "reason": null
+          },
+          {
+            "u": 1.0,
+            "width_reference_width": 0.9827586206896551,
+            "reason": null
+          }
+        ]
+      },
+      "body": {
+        "parameterization": "within_phase_xy_arclength",
+        "samples": [
+          {
+            "u": 0.0,
+            "width_reference_width": 0.9827586206896551,
+            "reason": null
+          },
+          {
+            "u": 0.015625,
+            "width_reference_width": 1.0,
+            "reason": null
+          },
+          {
+            "u": 0.03125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.046875,
+            "width_reference_width": 0.9137931034482759,
+            "reason": null
+          },
+          {
+            "u": 0.0625,
+            "width_reference_width": 0.9137931034482759,
+            "reason": null
+          },
+          {
+            "u": 0.078125,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.09375,
+            "width_reference_width": 0.8448275862068966,
+            "reason": null
+          },
+          {
+            "u": 0.109375,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.125,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.140625,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.15625,
+            "width_reference_width": 0.8275862068965517,
+            "reason": null
+          },
+          {
+            "u": 0.171875,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.1875,
+            "width_reference_width": 0.7931034482758621,
+            "reason": null
+          },
+          {
+            "u": 0.203125,
+            "width_reference_width": 0.7758620689655172,
+            "reason": null
+          },
+          {
+            "u": 0.21875,
+            "width_reference_width": 0.7758620689655172,
+            "reason": null
+          },
+          {
+            "u": 0.234375,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.25,
+            "width_reference_width": 0.7758620689655172,
+            "reason": null
+          },
+          {
+            "u": 0.265625,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.28125,
+            "width_reference_width": 1.0689655172413792,
+            "reason": null
+          },
+          {
+            "u": 0.296875,
+            "width_reference_width": null,
+            "reason": "overlap"
+          },
+          {
+            "u": 0.3125,
+            "width_reference_width": 1.6206896551724137,
+            "reason": null
+          },
+          {
+            "u": 0.328125,
+            "width_reference_width": 2.293103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.34375,
+            "width_reference_width": null,
+            "reason": "overlap"
+          },
+          {
+            "u": 0.359375,
+            "width_reference_width": 1.9655172413793103,
+            "reason": null
+          },
+          {
+            "u": 0.375,
+            "width_reference_width": 3.396551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.390625,
+            "width_reference_width": 3.1379310344827585,
+            "reason": null
+          },
+          {
+            "u": 0.40625,
+            "width_reference_width": 1.5,
+            "reason": null
+          },
+          {
+            "u": 0.421875,
+            "width_reference_width": 1.3620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.4375,
+            "width_reference_width": 1.3103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.453125,
+            "width_reference_width": 1.293103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.46875,
+            "width_reference_width": 1.293103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.484375,
+            "width_reference_width": 1.2758620689655173,
+            "reason": null
+          },
+          {
+            "u": 0.5,
+            "width_reference_width": 1.2758620689655173,
+            "reason": null
+          },
+          {
+            "u": 0.515625,
+            "width_reference_width": 1.2413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.53125,
+            "width_reference_width": 1.2413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.546875,
+            "width_reference_width": 1.2413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.5625,
+            "width_reference_width": 1.2413793103448276,
+            "reason": null
+          },
+          {
+            "u": 0.578125,
+            "width_reference_width": 1.206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.59375,
+            "width_reference_width": 1.1551724137931034,
+            "reason": null
+          },
+          {
+            "u": 0.609375,
+            "width_reference_width": 1.1551724137931034,
+            "reason": null
+          },
+          {
+            "u": 0.625,
+            "width_reference_width": 1.1379310344827587,
+            "reason": null
+          },
+          {
+            "u": 0.640625,
+            "width_reference_width": 1.1551724137931034,
+            "reason": null
+          },
+          {
+            "u": 0.65625,
+            "width_reference_width": 1.1206896551724137,
+            "reason": null
+          },
+          {
+            "u": 0.671875,
+            "width_reference_width": 1.1206896551724137,
+            "reason": null
+          },
+          {
+            "u": 0.6875,
+            "width_reference_width": 1.0862068965517242,
+            "reason": null
+          },
+          {
+            "u": 0.703125,
+            "width_reference_width": 1.0862068965517242,
+            "reason": null
+          },
+          {
+            "u": 0.71875,
+            "width_reference_width": 1.0689655172413792,
+            "reason": null
+          },
+          {
+            "u": 0.734375,
+            "width_reference_width": 1.0344827586206897,
+            "reason": null
+          },
+          {
+            "u": 0.75,
+            "width_reference_width": 1.0172413793103448,
+            "reason": null
+          },
+          {
+            "u": 0.765625,
+            "width_reference_width": 1.0,
+            "reason": null
+          },
+          {
+            "u": 0.78125,
+            "width_reference_width": 1.0172413793103448,
+            "reason": null
+          },
+          {
+            "u": 0.796875,
+            "width_reference_width": 0.9827586206896551,
+            "reason": null
+          },
+          {
+            "u": 0.8125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.828125,
+            "width_reference_width": 0.9310344827586207,
+            "reason": null
+          },
+          {
+            "u": 0.84375,
+            "width_reference_width": 0.896551724137931,
+            "reason": null
+          },
+          {
+            "u": 0.859375,
+            "width_reference_width": 0.8793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.875,
+            "width_reference_width": 0.8620689655172413,
+            "reason": null
+          },
+          {
+            "u": 0.890625,
+            "width_reference_width": 0.8275862068965517,
+            "reason": null
+          },
+          {
+            "u": 0.90625,
+            "width_reference_width": 0.8103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.921875,
+            "width_reference_width": 0.7758620689655172,
+            "reason": null
+          },
+          {
+            "u": 0.9375,
+            "width_reference_width": 0.7068965517241379,
+            "reason": null
+          },
+          {
+            "u": 0.953125,
+            "width_reference_width": 0.7068965517241379,
+            "reason": null
+          },
+          {
+            "u": 0.96875,
+            "width_reference_width": 0.7068965517241379,
+            "reason": null
+          },
+          {
+            "u": 0.984375,
+            "width_reference_width": 0.6724137931034483,
+            "reason": null
+          },
+          {
+            "u": 1.0,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          }
+        ]
+      },
+      "exit": {
+        "parameterization": "within_phase_xy_arclength",
+        "samples": [
+          {
+            "u": 0.0,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.015625,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.03125,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.046875,
+            "width_reference_width": 0.603448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.0625,
+            "width_reference_width": 0.5689655172413793,
+            "reason": null
+          },
+          {
+            "u": 0.078125,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.09375,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.109375,
+            "width_reference_width": 0.603448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.125,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.140625,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.15625,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.171875,
+            "width_reference_width": 0.603448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.1875,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.203125,
+            "width_reference_width": 0.6206896551724138,
+            "reason": null
+          },
+          {
+            "u": 0.21875,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.234375,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.25,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.265625,
+            "width_reference_width": 0.5862068965517241,
+            "reason": null
+          },
+          {
+            "u": 0.28125,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.296875,
+            "width_reference_width": 0.5344827586206896,
+            "reason": null
+          },
+          {
+            "u": 0.3125,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.328125,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.34375,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.359375,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.375,
+            "width_reference_width": 0.5517241379310345,
+            "reason": null
+          },
+          {
+            "u": 0.390625,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.40625,
+            "width_reference_width": 0.5344827586206896,
+            "reason": null
+          },
+          {
+            "u": 0.421875,
+            "width_reference_width": 0.5172413793103449,
+            "reason": null
+          },
+          {
+            "u": 0.4375,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.453125,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.46875,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.484375,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.5,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.515625,
+            "width_reference_width": 0.4827586206896552,
+            "reason": null
+          },
+          {
+            "u": 0.53125,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.546875,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.5625,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.578125,
+            "width_reference_width": 0.5,
+            "reason": null
+          },
+          {
+            "u": 0.59375,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.609375,
+            "width_reference_width": 0.4827586206896552,
+            "reason": null
+          },
+          {
+            "u": 0.625,
+            "width_reference_width": 0.4482758620689655,
+            "reason": null
+          },
+          {
+            "u": 0.640625,
+            "width_reference_width": 0.46551724137931033,
+            "reason": null
+          },
+          {
+            "u": 0.65625,
+            "width_reference_width": 0.43103448275862066,
+            "reason": null
+          },
+          {
+            "u": 0.671875,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.6875,
+            "width_reference_width": 0.43103448275862066,
+            "reason": null
+          },
+          {
+            "u": 0.703125,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.71875,
+            "width_reference_width": 0.39655172413793105,
+            "reason": null
+          },
+          {
+            "u": 0.734375,
+            "width_reference_width": 0.39655172413793105,
+            "reason": null
+          },
+          {
+            "u": 0.75,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.765625,
+            "width_reference_width": 0.3793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.78125,
+            "width_reference_width": 0.3793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.796875,
+            "width_reference_width": 0.41379310344827586,
+            "reason": null
+          },
+          {
+            "u": 0.8125,
+            "width_reference_width": 0.39655172413793105,
+            "reason": null
+          },
+          {
+            "u": 0.828125,
+            "width_reference_width": 0.3793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.84375,
+            "width_reference_width": 0.3620689655172414,
+            "reason": null
+          },
+          {
+            "u": 0.859375,
+            "width_reference_width": 0.3275862068965517,
+            "reason": null
+          },
+          {
+            "u": 0.875,
+            "width_reference_width": 0.3793103448275862,
+            "reason": null
+          },
+          {
+            "u": 0.890625,
+            "width_reference_width": 0.3275862068965517,
+            "reason": null
+          },
+          {
+            "u": 0.90625,
+            "width_reference_width": 0.3275862068965517,
+            "reason": null
+          },
+          {
+            "u": 0.921875,
+            "width_reference_width": 0.29310344827586204,
+            "reason": null
+          },
+          {
+            "u": 0.9375,
+            "width_reference_width": 0.29310344827586204,
+            "reason": null
+          },
+          {
+            "u": 0.953125,
+            "width_reference_width": 0.3103448275862069,
+            "reason": null
+          },
+          {
+            "u": 0.96875,
+            "width_reference_width": 0.29310344827586204,
+            "reason": null
+          },
+          {
+            "u": 0.984375,
+            "width_reference_width": 0.27586206896551724,
+            "reason": null
+          },
+          {
+            "u": 1.0,
+            "width_reference_width": 0.25862068965517243,
+            "reason": null
+          }
+        ]
+      }
+    },
+    "landmarks": [
+      {
+        "name": "turn",
+        "index": 12
+      }
+    ]
+  },
+  "adaptation": "piecewise_landmarks",
+  "references": [
+    {
+      "annotation_id": "f60b4d9eca9d82c81510de7c5baed7ae1c250c4307c8fa318308eb36f1c39985",
+      "source_sha256": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd",
+      "stroke_id": "s03",
+      "type": "hengpie",
+      "variant": "standard",
+      "xy_px": [
+        [
+          55.02474572562377,
+          295.0554154452528
+        ],
+        [
+          74.47053371283752,
+          291.5651458065221
+        ],
+        [
+          77.67283874374763,
+          290.9903731086664
+        ],
+        [
+          94.14505119563047,
+          291.9988759118429
+        ],
+        [
+          106.12813509985199,
+          292.73253411006056
+        ],
+        [
+          113.64772184829661,
+          294.6124307971717
+        ],
+        [
+          132.8143755522374,
+          299.4040942231569
+        ],
+        [
+          151.9810292561782,
+          304.19575764914214
+        ],
+        [
+          171.14768296011906,
+          308.9874210751274
+        ],
+        [
+          178.13745649080994,
+          310.7348644578001
+        ],
+        [
+          188.00970216537675,
+          310.154144124002
+        ],
+        [
+          190.3564926029982,
+          308.8969349609905
+        ],
+        [
+          204.2698715117221,
+          301.4433391170313
+        ],
+        [
+          203.06315482559475,
+          297.65863678326826
+        ],
+        [
+          197.0616425303877,
+          278.8357118573915
+        ],
+        [
+          191.49402416816505,
+          261.373636084966
+        ],
+        [
+          190.78110460169364,
+          260.1359285042865
+        ],
+        [
+          180.92017957275232,
+          243.01626699570778
+        ],
+        [
+          171.05925454381097,
+          225.89660548712908
+        ],
+        [
+          161.19832951486967,
+          208.7769439785504
+        ],
+        [
+          151.33740448592832,
+          191.6572824699717
+        ],
+        [
+          149.68216013470558,
+          188.78359436020997
+        ],
+        [
+          138.60796649394834,
+          176.6327430043791
+        ],
+        [
+          125.2998940089918,
+          162.0308301389407
+        ],
+        [
+          111.9918215240353,
+          147.4289172735023
+        ],
+        [
+          107.87029610124613,
+          142.9066879901642
+        ],
+        [
+          96.54584276006723,
+          135.30738377437308
+        ],
+        [
+          80.14069674633086,
+          124.29866737041841
+        ],
+        [
+          63.73555073259449,
+          113.28995096646375
+        ]
+      ],
+      "anchors": [
+        0,
+        3,
+        26,
+        28
+      ],
+      "review_status": "unreviewed",
+      "landmarks": [
+        {
+          "name": "turn",
+          "index": 12
+        }
+      ],
+      "source_kind": "font_prior",
+      "character": "永",
+      "image_kind": "font_fixture",
+      "annotation_provenance": {
+        "source_kind": "font_prior",
+        "image_kind": "font_fixture",
+        "prior": {
+          "record_sha256": "05e90c608a8e68c94dc64ed88ed5879ea380bf5b476881dfcf57a7038ed9fa19",
+          "source_url": "https://github.com/skishore/makemeahanzi",
+          "registration": "explicit_font_fixture_transform_not_image_registration",
+          "scale": 0.580720333798048,
+          "offset_xy_px": [
+            -8.854490992161516,
+            67.993764930216
+          ]
+        }
+      },
+      "width_px": 29.0,
+      "width_source": "normal_scan_candidate",
+      "width_measurement": {
+        "width_px": 29.0,
+        "valid_count": 63,
+        "total_count": 65,
+        "samples": [
+          {
+            "u": 0.0,
+            "xy_px": [
+              94.14505119563047,
+              291.9988759118429
+            ],
+            "width_px": 28.5,
+            "reason": null
+          },
+          {
+            "u": 0.015625,
+            "xy_px": [
+              99.07495372763871,
+              292.3007066791087
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.03125,
+            "xy_px": [
+              104.00485625964696,
+              292.6025374463745
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.046875,
+            "xy_px": [
+              108.85605842231139,
+              293.4145149406754
+            ],
+            "width_px": 26.5,
+            "reason": null
+          },
+          {
+            "u": 0.0625,
+            "xy_px": [
+              113.6477218482966,
+              294.6124307971717
+            ],
+            "width_px": 26.5,
+            "reason": null
+          },
+          {
+            "u": 0.078125,
+            "xy_px": [
+              118.4393852742818,
+              295.81034665366803
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.09375,
+            "xy_px": [
+              123.23104870026701,
+              297.0082625101643
+            ],
+            "width_px": 24.5,
+            "reason": null
+          },
+          {
+            "u": 0.109375,
+            "xy_px": [
+              128.0227121262522,
+              298.2061783666606
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.125,
+            "xy_px": [
+              132.8143755522374,
+              299.4040942231569
+            ],
+            "width_px": 23.5,
+            "reason": null
+          },
+          {
+            "u": 0.140625,
+            "xy_px": [
+              137.6060389782226,
+              300.6020100796532
+            ],
+            "width_px": 23.5,
+            "reason": null
+          },
+          {
+            "u": 0.15625,
+            "xy_px": [
+              142.39770240420782,
+              301.7999259361495
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.171875,
+            "xy_px": [
+              147.18936583019303,
+              302.99784179264583
+            ],
+            "width_px": 23.5,
+            "reason": null
+          },
+          {
+            "u": 0.1875,
+            "xy_px": [
+              151.9810292561782,
+              304.19575764914214
+            ],
+            "width_px": 23.0,
+            "reason": null
+          },
+          {
+            "u": 0.203125,
+            "xy_px": [
+              156.7726926821634,
+              305.39367350563845
+            ],
+            "width_px": 22.5,
+            "reason": null
+          },
+          {
+            "u": 0.21875,
+            "xy_px": [
+              161.56435610814862,
+              306.59158936213475
+            ],
+            "width_px": 22.5,
+            "reason": null
+          },
+          {
+            "u": 0.234375,
+            "xy_px": [
+              166.35601953413382,
+              307.78950521863106
+            ],
+            "width_px": 23.5,
+            "reason": null
+          },
+          {
+            "u": 0.25,
+            "xy_px": [
+              171.14768296011903,
+              308.9874210751274
+            ],
+            "width_px": 22.5,
+            "reason": null
+          },
+          {
+            "u": 0.265625,
+            "xy_px": [
+              175.93934638610423,
+              310.1853369316237
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.28125,
+            "xy_px": [
+              180.80621681798698,
+              310.5778785562014
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 0.296875,
+            "xy_px": [
+              185.73682732347908,
+              310.28784264411365
+            ],
+            "width_px": null,
+            "reason": "overlap"
+          },
+          {
+            "u": 0.3125,
+            "xy_px": [
+              190.3564926029982,
+              308.8969349609905
+            ],
+            "width_px": 47.0,
+            "reason": null
+          },
+          {
+            "u": 0.328125,
+            "xy_px": [
+              194.7102399468087,
+              306.5645703125206
+            ],
+            "width_px": 66.5,
+            "reason": null
+          },
+          {
+            "u": 0.34375,
+            "xy_px": [
+              199.06398729061925,
+              304.2322056640507
+            ],
+            "width_px": null,
+            "reason": "overlap"
+          },
+          {
+            "u": 0.359375,
+            "xy_px": [
+              203.4177346344298,
+              301.89984101558076
+            ],
+            "width_px": 57.0,
+            "reason": null
+          },
+          {
+            "u": 0.375,
+            "xy_px": [
+              203.06315482559478,
+              297.6586367832683
+            ],
+            "width_px": 98.5,
+            "reason": null
+          },
+          {
+            "u": 0.390625,
+            "xy_px": [
+              201.562776751793,
+              292.9529055517991
+            ],
+            "width_px": 91.0,
+            "reason": null
+          },
+          {
+            "u": 0.40625,
+            "xy_px": [
+              200.06239867799124,
+              288.24717432033
+            ],
+            "width_px": 43.5,
+            "reason": null
+          },
+          {
+            "u": 0.421875,
+            "xy_px": [
+              198.56202060418948,
+              283.5414430888608
+            ],
+            "width_px": 39.5,
+            "reason": null
+          },
+          {
+            "u": 0.4375,
+            "xy_px": [
+              197.06164253038773,
+              278.8357118573916
+            ],
+            "width_px": 38.0,
+            "reason": null
+          },
+          {
+            "u": 0.453125,
+            "xy_px": [
+              195.56126445658595,
+              274.1299806259224
+            ],
+            "width_px": 37.5,
+            "reason": null
+          },
+          {
+            "u": 0.46875,
+            "xy_px": [
+              194.0608863827842,
+              269.4242493944532
+            ],
+            "width_px": 37.5,
+            "reason": null
+          },
+          {
+            "u": 0.484375,
+            "xy_px": [
+              192.5605083089824,
+              264.7185181629841
+            ],
+            "width_px": 37.0,
+            "reason": null
+          },
+          {
+            "u": 0.5,
+            "xy_px": [
+              190.78110460169364,
+              260.1359285042865
+            ],
+            "width_px": 37.0,
+            "reason": null
+          },
+          {
+            "u": 0.515625,
+            "xy_px": [
+              188.3158733444583,
+              255.8560131271418
+            ],
+            "width_px": 36.0,
+            "reason": null
+          },
+          {
+            "u": 0.53125,
+            "xy_px": [
+              185.85064208722298,
+              251.57609774999713
+            ],
+            "width_px": 36.0,
+            "reason": null
+          },
+          {
+            "u": 0.546875,
+            "xy_px": [
+              183.38541082998765,
+              247.29618237285246
+            ],
+            "width_px": 36.0,
+            "reason": null
+          },
+          {
+            "u": 0.5625,
+            "xy_px": [
+              180.92017957275232,
+              243.0162669957078
+            ],
+            "width_px": 36.0,
+            "reason": null
+          },
+          {
+            "u": 0.578125,
+            "xy_px": [
+              178.454948315517,
+              238.73635161856313
+            ],
+            "width_px": 35.0,
+            "reason": null
+          },
+          {
+            "u": 0.59375,
+            "xy_px": [
+              175.98971705828166,
+              234.45643624141843
+            ],
+            "width_px": 33.5,
+            "reason": null
+          },
+          {
+            "u": 0.609375,
+            "xy_px": [
+              173.52448580104632,
+              230.17652086427378
+            ],
+            "width_px": 33.5,
+            "reason": null
+          },
+          {
+            "u": 0.625,
+            "xy_px": [
+              171.059254543811,
+              225.8966054871291
+            ],
+            "width_px": 33.0,
+            "reason": null
+          },
+          {
+            "u": 0.640625,
+            "xy_px": [
+              168.59402328657566,
+              221.61669010998443
+            ],
+            "width_px": 33.5,
+            "reason": null
+          },
+          {
+            "u": 0.65625,
+            "xy_px": [
+              166.12879202934033,
+              217.33677473283976
+            ],
+            "width_px": 32.5,
+            "reason": null
+          },
+          {
+            "u": 0.671875,
+            "xy_px": [
+              163.663560772105,
+              213.05685935569505
+            ],
+            "width_px": 32.5,
+            "reason": null
+          },
+          {
+            "u": 0.6875,
+            "xy_px": [
+              161.19832951486967,
+              208.7769439785504
+            ],
+            "width_px": 31.5,
+            "reason": null
+          },
+          {
+            "u": 0.703125,
+            "xy_px": [
+              158.73309825763434,
+              204.49702860140573
+            ],
+            "width_px": 31.5,
+            "reason": null
+          },
+          {
+            "u": 0.71875,
+            "xy_px": [
+              156.267867000399,
+              200.21711322426106
+            ],
+            "width_px": 31.0,
+            "reason": null
+          },
+          {
+            "u": 0.734375,
+            "xy_px": [
+              153.80263574316365,
+              195.93719784711638
+            ],
+            "width_px": 30.0,
+            "reason": null
+          },
+          {
+            "u": 0.75,
+            "xy_px": [
+              151.33740448592835,
+              191.65728246997173
+            ],
+            "width_px": 29.5,
+            "reason": null
+          },
+          {
+            "u": 0.765625,
+            "xy_px": [
+              148.58902085766573,
+              187.5841776534579
+            ],
+            "width_px": 29.0,
+            "reason": null
+          },
+          {
+            "u": 0.78125,
+            "xy_px": [
+              145.2620027364266,
+              183.9336994370983
+            ],
+            "width_px": 29.5,
+            "reason": null
+          },
+          {
+            "u": 0.796875,
+            "xy_px": [
+              141.9349846151875,
+              180.28322122073874
+            ],
+            "width_px": 28.5,
+            "reason": null
+          },
+          {
+            "u": 0.8125,
+            "xy_px": [
+              138.60796649394837,
+              176.63274300437917
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.828125,
+            "xy_px": [
+              135.28094837270922,
+              172.9822647880195
+            ],
+            "width_px": 27.0,
+            "reason": null
+          },
+          {
+            "u": 0.84375,
+            "xy_px": [
+              131.9539302514701,
+              169.33178657165993
+            ],
+            "width_px": 26.0,
+            "reason": null
+          },
+          {
+            "u": 0.859375,
+            "xy_px": [
+              128.62691213023095,
+              165.68130835530033
+            ],
+            "width_px": 25.5,
+            "reason": null
+          },
+          {
+            "u": 0.875,
+            "xy_px": [
+              125.2998940089918,
+              162.0308301389407
+            ],
+            "width_px": 25.0,
+            "reason": null
+          },
+          {
+            "u": 0.890625,
+            "xy_px": [
+              121.97287588775268,
+              158.3803519225811
+            ],
+            "width_px": 24.0,
+            "reason": null
+          },
+          {
+            "u": 0.90625,
+            "xy_px": [
+              118.64585776651357,
+              154.72987370622153
+            ],
+            "width_px": 23.5,
+            "reason": null
+          },
+          {
+            "u": 0.921875,
+            "xy_px": [
+              115.31883964527442,
+              151.0793954898619
+            ],
+            "width_px": 22.5,
+            "reason": null
+          },
+          {
+            "u": 0.9375,
+            "xy_px": [
+              111.9918215240353,
+              147.4289172735023
+            ],
+            "width_px": 20.5,
+            "reason": null
+          },
+          {
+            "u": 0.953125,
+            "xy_px": [
+              108.66480340279617,
+              143.7784390571427
+            ],
+            "width_px": 20.5,
+            "reason": null
+          },
+          {
+            "u": 0.96875,
+            "xy_px": [
+              104.74841576693545,
+              140.81174197635045
+            ],
+            "width_px": 20.5,
+            "reason": null
+          },
+          {
+            "u": 0.984375,
+            "xy_px": [
+              100.64712926350131,
+              138.05956287536173
+            ],
+            "width_px": 19.5,
+            "reason": null
+          },
+          {
+            "u": 1.0,
+            "xy_px": [
+              96.54584276006723,
+              135.30738377437308
+            ],
+            "width_px": 18.0,
+            "reason": null
+          }
+        ],
+        "method": "normal_scan_candidate_with_annotated_overlap_exclusion",
+        "units": "original_image_px"
+      },
+      "phase_width_measurements": {
+        "entry": {
+          "width_px": 23.0,
+          "valid_count": 65,
+          "total_count": 65,
+          "samples": [
+            {
+              "u": 0.0,
+              "xy_px": [
+                55.02474572562377,
+                295.0554154452528
+              ],
+              "width_px": 10.5,
+              "reason": null
+            },
+            {
+              "u": 0.015625,
+              "xy_px": [
+                55.6324266002242,
+                294.94634451904244
+              ],
+              "width_px": 11.5,
+              "reason": null
+            },
+            {
+              "u": 0.03125,
+              "xy_px": [
+                56.240107474824626,
+                294.8372735928321
+              ],
+              "width_px": 11.0,
+              "reason": null
+            },
+            {
+              "u": 0.046875,
+              "xy_px": [
+                56.84778834942506,
+                294.72820266662177
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.0625,
+              "xy_px": [
+                57.455469224025485,
+                294.61913174041143
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.078125,
+              "xy_px": [
+                58.06315009862592,
+                294.5100608142011
+              ],
+              "width_px": 12.5,
+              "reason": null
+            },
+            {
+              "u": 0.09375,
+              "xy_px": [
+                58.670830973226344,
+                294.40098988799076
+              ],
+              "width_px": 13.0,
+              "reason": null
+            },
+            {
+              "u": 0.109375,
+              "xy_px": [
+                59.27851184782678,
+                294.2919189617804
+              ],
+              "width_px": 13.0,
+              "reason": null
+            },
+            {
+              "u": 0.125,
+              "xy_px": [
+                59.886192722427204,
+                294.1828480355701
+              ],
+              "width_px": 15.0,
+              "reason": null
+            },
+            {
+              "u": 0.140625,
+              "xy_px": [
+                60.49387359702764,
+                294.07377710935975
+              ],
+              "width_px": 15.5,
+              "reason": null
+            },
+            {
+              "u": 0.15625,
+              "xy_px": [
+                61.10155447162806,
+                293.9647061831494
+              ],
+              "width_px": 15.5,
+              "reason": null
+            },
+            {
+              "u": 0.171875,
+              "xy_px": [
+                61.709235346228496,
+                293.8556352569391
+              ],
+              "width_px": 15.0,
+              "reason": null
+            },
+            {
+              "u": 0.1875,
+              "xy_px": [
+                62.31691622082893,
+                293.74656433072875
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.203125,
+              "xy_px": [
+                62.924597095429355,
+                293.6374934045184
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.21875,
+              "xy_px": [
+                63.53227797002979,
+                293.5284224783081
+              ],
+              "width_px": 16.5,
+              "reason": null
+            },
+            {
+              "u": 0.234375,
+              "xy_px": [
+                64.13995884463021,
+                293.41935155209774
+              ],
+              "width_px": 17.5,
+              "reason": null
+            },
+            {
+              "u": 0.25,
+              "xy_px": [
+                64.74763971923065,
+                293.3102806258874
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.265625,
+              "xy_px": [
+                65.35532059383108,
+                293.2012096996771
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.28125,
+              "xy_px": [
+                65.9630014684315,
+                293.0921387734668
+              ],
+              "width_px": 17.5,
+              "reason": null
+            },
+            {
+              "u": 0.296875,
+              "xy_px": [
+                66.57068234303193,
+                292.98306784725645
+              ],
+              "width_px": 18.5,
+              "reason": null
+            },
+            {
+              "u": 0.3125,
+              "xy_px": [
+                67.17836321763237,
+                292.8739969210461
+              ],
+              "width_px": 19.5,
+              "reason": null
+            },
+            {
+              "u": 0.328125,
+              "xy_px": [
+                67.7860440922328,
+                292.7649259948358
+              ],
+              "width_px": 19.0,
+              "reason": null
+            },
+            {
+              "u": 0.34375,
+              "xy_px": [
+                68.39372496683322,
+                292.65585506862544
+              ],
+              "width_px": 19.5,
+              "reason": null
+            },
+            {
+              "u": 0.359375,
+              "xy_px": [
+                69.00140584143365,
+                292.5467841424151
+              ],
+              "width_px": 19.5,
+              "reason": null
+            },
+            {
+              "u": 0.375,
+              "xy_px": [
+                69.60908671603408,
+                292.43771321620477
+              ],
+              "width_px": 20.5,
+              "reason": null
+            },
+            {
+              "u": 0.390625,
+              "xy_px": [
+                70.21676759063452,
+                292.32864228999443
+              ],
+              "width_px": 20.0,
+              "reason": null
+            },
+            {
+              "u": 0.40625,
+              "xy_px": [
+                70.82444846523495,
+                292.2195713637841
+              ],
+              "width_px": 20.0,
+              "reason": null
+            },
+            {
+              "u": 0.421875,
+              "xy_px": [
+                71.43212933983537,
+                292.11050043757376
+              ],
+              "width_px": 21.5,
+              "reason": null
+            },
+            {
+              "u": 0.4375,
+              "xy_px": [
+                72.0398102144358,
+                292.0014295113634
+              ],
+              "width_px": 21.5,
+              "reason": null
+            },
+            {
+              "u": 0.453125,
+              "xy_px": [
+                72.64749108903624,
+                291.8923585851531
+              ],
+              "width_px": 21.5,
+              "reason": null
+            },
+            {
+              "u": 0.46875,
+              "xy_px": [
+                73.25517196363667,
+                291.78328765894275
+              ],
+              "width_px": 21.0,
+              "reason": null
+            },
+            {
+              "u": 0.484375,
+              "xy_px": [
+                73.86285283823709,
+                291.6742167327324
+              ],
+              "width_px": 21.0,
+              "reason": null
+            },
+            {
+              "u": 0.5,
+              "xy_px": [
+                74.47053371283752,
+                291.5651458065221
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.515625,
+              "xy_px": [
+                75.07821458743796,
+                291.45607488031175
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.53125,
+              "xy_px": [
+                75.68589546203839,
+                291.3470039541014
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.546875,
+              "xy_px": [
+                76.29357633663882,
+                291.2379330278911
+              ],
+              "width_px": 23.0,
+              "reason": null
+            },
+            {
+              "u": 0.5625,
+              "xy_px": [
+                76.90125721123924,
+                291.12886210168074
+              ],
+              "width_px": 24.5,
+              "reason": null
+            },
+            {
+              "u": 0.578125,
+              "xy_px": [
+                77.50893808583967,
+                291.0197911754704
+              ],
+              "width_px": 24.5,
+              "reason": null
+            },
+            {
+              "u": 0.59375,
+              "xy_px": [
+                78.12286796660369,
+                291.017925918229
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.609375,
+              "xy_px": [
+                78.73910578310472,
+                291.0556547641373
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.625,
+              "xy_px": [
+                79.35534359960575,
+                291.09338361004546
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.640625,
+              "xy_px": [
+                79.97158141610679,
+                291.1311124559537
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.65625,
+              "xy_px": [
+                80.58781923260781,
+                291.1688413018619
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.671875,
+              "xy_px": [
+                81.20405704910884,
+                291.20657014777015
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.6875,
+              "xy_px": [
+                81.82029486560987,
+                291.2442989936784
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.703125,
+              "xy_px": [
+                82.43653268211091,
+                291.2820278395866
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.71875,
+              "xy_px": [
+                83.05277049861193,
+                291.31975668549484
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.734375,
+              "xy_px": [
+                83.66900831511296,
+                291.35748553140303
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.75,
+              "xy_px": [
+                84.28524613161399,
+                291.3952143773113
+              ],
+              "width_px": 26.5,
+              "reason": null
+            },
+            {
+              "u": 0.765625,
+              "xy_px": [
+                84.90148394811503,
+                291.4329432232195
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.78125,
+              "xy_px": [
+                85.51772176461606,
+                291.4706720691277
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.796875,
+              "xy_px": [
+                86.13395958111708,
+                291.50840091503596
+              ],
+              "width_px": 27.5,
+              "reason": null
+            },
+            {
+              "u": 0.8125,
+              "xy_px": [
+                86.75019739761811,
+                291.5461297609442
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.828125,
+              "xy_px": [
+                87.36643521411915,
+                291.5838586068524
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.84375,
+              "xy_px": [
+                87.98267303062018,
+                291.62158745276065
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.859375,
+              "xy_px": [
+                88.5989108471212,
+                291.65931629866884
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.875,
+              "xy_px": [
+                89.21514866362223,
+                291.6970451445771
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.890625,
+              "xy_px": [
+                89.83138648012326,
+                291.73477399048534
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.90625,
+              "xy_px": [
+                90.4476242966243,
+                291.7725028363935
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.921875,
+              "xy_px": [
+                91.06386211312532,
+                291.8102316823018
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.9375,
+              "xy_px": [
+                91.68009992962635,
+                291.84796052821
+              ],
+              "width_px": 29.0,
+              "reason": null
+            },
+            {
+              "u": 0.953125,
+              "xy_px": [
+                92.29633774612738,
+                291.8856893741182
+              ],
+              "width_px": 29.0,
+              "reason": null
+            },
+            {
+              "u": 0.96875,
+              "xy_px": [
+                92.9125755626284,
+                291.92341822002646
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 0.984375,
+              "xy_px": [
+                93.52881337912945,
+                291.96114706593465
+              ],
+              "width_px": 28.0,
+              "reason": null
+            },
+            {
+              "u": 1.0,
+              "xy_px": [
+                94.14505119563047,
+                291.9988759118429
+              ],
+              "width_px": 28.5,
+              "reason": null
+            }
+          ],
+          "method": "normal_scan_candidate_with_annotated_overlap_exclusion",
+          "units": "original_image_px"
+        },
+        "body": {
+          "width_px": 29.0,
+          "valid_count": 63,
+          "total_count": 65,
+          "samples": [
+            {
+              "u": 0.0,
+              "xy_px": [
+                94.14505119563047,
+                291.9988759118429
+              ],
+              "width_px": 28.5,
+              "reason": null
+            },
+            {
+              "u": 0.015625,
+              "xy_px": [
+                99.07495372763871,
+                292.3007066791087
+              ],
+              "width_px": 29.0,
+              "reason": null
+            },
+            {
+              "u": 0.03125,
+              "xy_px": [
+                104.00485625964696,
+                292.6025374463745
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.046875,
+              "xy_px": [
+                108.85605842231139,
+                293.4145149406754
+              ],
+              "width_px": 26.5,
+              "reason": null
+            },
+            {
+              "u": 0.0625,
+              "xy_px": [
+                113.6477218482966,
+                294.6124307971717
+              ],
+              "width_px": 26.5,
+              "reason": null
+            },
+            {
+              "u": 0.078125,
+              "xy_px": [
+                118.4393852742818,
+                295.81034665366803
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.09375,
+              "xy_px": [
+                123.23104870026701,
+                297.0082625101643
+              ],
+              "width_px": 24.5,
+              "reason": null
+            },
+            {
+              "u": 0.109375,
+              "xy_px": [
+                128.0227121262522,
+                298.2061783666606
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.125,
+              "xy_px": [
+                132.8143755522374,
+                299.4040942231569
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.140625,
+              "xy_px": [
+                137.6060389782226,
+                300.6020100796532
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.15625,
+              "xy_px": [
+                142.39770240420782,
+                301.7999259361495
+              ],
+              "width_px": 24.0,
+              "reason": null
+            },
+            {
+              "u": 0.171875,
+              "xy_px": [
+                147.18936583019303,
+                302.99784179264583
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.1875,
+              "xy_px": [
+                151.9810292561782,
+                304.19575764914214
+              ],
+              "width_px": 23.0,
+              "reason": null
+            },
+            {
+              "u": 0.203125,
+              "xy_px": [
+                156.7726926821634,
+                305.39367350563845
+              ],
+              "width_px": 22.5,
+              "reason": null
+            },
+            {
+              "u": 0.21875,
+              "xy_px": [
+                161.56435610814862,
+                306.59158936213475
+              ],
+              "width_px": 22.5,
+              "reason": null
+            },
+            {
+              "u": 0.234375,
+              "xy_px": [
+                166.35601953413382,
+                307.78950521863106
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.25,
+              "xy_px": [
+                171.14768296011903,
+                308.9874210751274
+              ],
+              "width_px": 22.5,
+              "reason": null
+            },
+            {
+              "u": 0.265625,
+              "xy_px": [
+                175.93934638610423,
+                310.1853369316237
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.28125,
+              "xy_px": [
+                180.80621681798698,
+                310.5778785562014
+              ],
+              "width_px": 31.0,
+              "reason": null
+            },
+            {
+              "u": 0.296875,
+              "xy_px": [
+                185.73682732347908,
+                310.28784264411365
+              ],
+              "width_px": null,
+              "reason": "overlap"
+            },
+            {
+              "u": 0.3125,
+              "xy_px": [
+                190.3564926029982,
+                308.8969349609905
+              ],
+              "width_px": 47.0,
+              "reason": null
+            },
+            {
+              "u": 0.328125,
+              "xy_px": [
+                194.7102399468087,
+                306.5645703125206
+              ],
+              "width_px": 66.5,
+              "reason": null
+            },
+            {
+              "u": 0.34375,
+              "xy_px": [
+                199.06398729061925,
+                304.2322056640507
+              ],
+              "width_px": null,
+              "reason": "overlap"
+            },
+            {
+              "u": 0.359375,
+              "xy_px": [
+                203.4177346344298,
+                301.89984101558076
+              ],
+              "width_px": 57.0,
+              "reason": null
+            },
+            {
+              "u": 0.375,
+              "xy_px": [
+                203.06315482559478,
+                297.6586367832683
+              ],
+              "width_px": 98.5,
+              "reason": null
+            },
+            {
+              "u": 0.390625,
+              "xy_px": [
+                201.562776751793,
+                292.9529055517991
+              ],
+              "width_px": 91.0,
+              "reason": null
+            },
+            {
+              "u": 0.40625,
+              "xy_px": [
+                200.06239867799124,
+                288.24717432033
+              ],
+              "width_px": 43.5,
+              "reason": null
+            },
+            {
+              "u": 0.421875,
+              "xy_px": [
+                198.56202060418948,
+                283.5414430888608
+              ],
+              "width_px": 39.5,
+              "reason": null
+            },
+            {
+              "u": 0.4375,
+              "xy_px": [
+                197.06164253038773,
+                278.8357118573916
+              ],
+              "width_px": 38.0,
+              "reason": null
+            },
+            {
+              "u": 0.453125,
+              "xy_px": [
+                195.56126445658595,
+                274.1299806259224
+              ],
+              "width_px": 37.5,
+              "reason": null
+            },
+            {
+              "u": 0.46875,
+              "xy_px": [
+                194.0608863827842,
+                269.4242493944532
+              ],
+              "width_px": 37.5,
+              "reason": null
+            },
+            {
+              "u": 0.484375,
+              "xy_px": [
+                192.5605083089824,
+                264.7185181629841
+              ],
+              "width_px": 37.0,
+              "reason": null
+            },
+            {
+              "u": 0.5,
+              "xy_px": [
+                190.78110460169364,
+                260.1359285042865
+              ],
+              "width_px": 37.0,
+              "reason": null
+            },
+            {
+              "u": 0.515625,
+              "xy_px": [
+                188.3158733444583,
+                255.8560131271418
+              ],
+              "width_px": 36.0,
+              "reason": null
+            },
+            {
+              "u": 0.53125,
+              "xy_px": [
+                185.85064208722298,
+                251.57609774999713
+              ],
+              "width_px": 36.0,
+              "reason": null
+            },
+            {
+              "u": 0.546875,
+              "xy_px": [
+                183.38541082998765,
+                247.29618237285246
+              ],
+              "width_px": 36.0,
+              "reason": null
+            },
+            {
+              "u": 0.5625,
+              "xy_px": [
+                180.92017957275232,
+                243.0162669957078
+              ],
+              "width_px": 36.0,
+              "reason": null
+            },
+            {
+              "u": 0.578125,
+              "xy_px": [
+                178.454948315517,
+                238.73635161856313
+              ],
+              "width_px": 35.0,
+              "reason": null
+            },
+            {
+              "u": 0.59375,
+              "xy_px": [
+                175.98971705828166,
+                234.45643624141843
+              ],
+              "width_px": 33.5,
+              "reason": null
+            },
+            {
+              "u": 0.609375,
+              "xy_px": [
+                173.52448580104632,
+                230.17652086427378
+              ],
+              "width_px": 33.5,
+              "reason": null
+            },
+            {
+              "u": 0.625,
+              "xy_px": [
+                171.059254543811,
+                225.8966054871291
+              ],
+              "width_px": 33.0,
+              "reason": null
+            },
+            {
+              "u": 0.640625,
+              "xy_px": [
+                168.59402328657566,
+                221.61669010998443
+              ],
+              "width_px": 33.5,
+              "reason": null
+            },
+            {
+              "u": 0.65625,
+              "xy_px": [
+                166.12879202934033,
+                217.33677473283976
+              ],
+              "width_px": 32.5,
+              "reason": null
+            },
+            {
+              "u": 0.671875,
+              "xy_px": [
+                163.663560772105,
+                213.05685935569505
+              ],
+              "width_px": 32.5,
+              "reason": null
+            },
+            {
+              "u": 0.6875,
+              "xy_px": [
+                161.19832951486967,
+                208.7769439785504
+              ],
+              "width_px": 31.5,
+              "reason": null
+            },
+            {
+              "u": 0.703125,
+              "xy_px": [
+                158.73309825763434,
+                204.49702860140573
+              ],
+              "width_px": 31.5,
+              "reason": null
+            },
+            {
+              "u": 0.71875,
+              "xy_px": [
+                156.267867000399,
+                200.21711322426106
+              ],
+              "width_px": 31.0,
+              "reason": null
+            },
+            {
+              "u": 0.734375,
+              "xy_px": [
+                153.80263574316365,
+                195.93719784711638
+              ],
+              "width_px": 30.0,
+              "reason": null
+            },
+            {
+              "u": 0.75,
+              "xy_px": [
+                151.33740448592835,
+                191.65728246997173
+              ],
+              "width_px": 29.5,
+              "reason": null
+            },
+            {
+              "u": 0.765625,
+              "xy_px": [
+                148.58902085766573,
+                187.5841776534579
+              ],
+              "width_px": 29.0,
+              "reason": null
+            },
+            {
+              "u": 0.78125,
+              "xy_px": [
+                145.2620027364266,
+                183.9336994370983
+              ],
+              "width_px": 29.5,
+              "reason": null
+            },
+            {
+              "u": 0.796875,
+              "xy_px": [
+                141.9349846151875,
+                180.28322122073874
+              ],
+              "width_px": 28.5,
+              "reason": null
+            },
+            {
+              "u": 0.8125,
+              "xy_px": [
+                138.60796649394837,
+                176.63274300437917
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.828125,
+              "xy_px": [
+                135.28094837270922,
+                172.9822647880195
+              ],
+              "width_px": 27.0,
+              "reason": null
+            },
+            {
+              "u": 0.84375,
+              "xy_px": [
+                131.9539302514701,
+                169.33178657165993
+              ],
+              "width_px": 26.0,
+              "reason": null
+            },
+            {
+              "u": 0.859375,
+              "xy_px": [
+                128.62691213023095,
+                165.68130835530033
+              ],
+              "width_px": 25.5,
+              "reason": null
+            },
+            {
+              "u": 0.875,
+              "xy_px": [
+                125.2998940089918,
+                162.0308301389407
+              ],
+              "width_px": 25.0,
+              "reason": null
+            },
+            {
+              "u": 0.890625,
+              "xy_px": [
+                121.97287588775268,
+                158.3803519225811
+              ],
+              "width_px": 24.0,
+              "reason": null
+            },
+            {
+              "u": 0.90625,
+              "xy_px": [
+                118.64585776651357,
+                154.72987370622153
+              ],
+              "width_px": 23.5,
+              "reason": null
+            },
+            {
+              "u": 0.921875,
+              "xy_px": [
+                115.31883964527442,
+                151.0793954898619
+              ],
+              "width_px": 22.5,
+              "reason": null
+            },
+            {
+              "u": 0.9375,
+              "xy_px": [
+                111.9918215240353,
+                147.4289172735023
+              ],
+              "width_px": 20.5,
+              "reason": null
+            },
+            {
+              "u": 0.953125,
+              "xy_px": [
+                108.66480340279617,
+                143.7784390571427
+              ],
+              "width_px": 20.5,
+              "reason": null
+            },
+            {
+              "u": 0.96875,
+              "xy_px": [
+                104.74841576693545,
+                140.81174197635045
+              ],
+              "width_px": 20.5,
+              "reason": null
+            },
+            {
+              "u": 0.984375,
+              "xy_px": [
+                100.64712926350131,
+                138.05956287536173
+              ],
+              "width_px": 19.5,
+              "reason": null
+            },
+            {
+              "u": 1.0,
+              "xy_px": [
+                96.54584276006723,
+                135.30738377437308
+              ],
+              "width_px": 18.0,
+              "reason": null
+            }
+          ],
+          "method": "normal_scan_candidate_with_annotated_overlap_exclusion",
+          "units": "original_image_px"
+        },
+        "exit": {
+          "width_px": 14.5,
+          "valid_count": 65,
+          "total_count": 65,
+          "samples": [
+            {
+              "u": 0.0,
+              "xy_px": [
+                96.54584276006723,
+                135.30738377437308
+              ],
+              "width_px": 18.0,
+              "reason": null
+            },
+            {
+              "u": 0.015625,
+              "xy_px": [
+                96.03318194713798,
+                134.96336138674948
+              ],
+              "width_px": 18.0,
+              "reason": null
+            },
+            {
+              "u": 0.03125,
+              "xy_px": [
+                95.5205211342087,
+                134.61933899912592
+              ],
+              "width_px": 18.0,
+              "reason": null
+            },
+            {
+              "u": 0.046875,
+              "xy_px": [
+                95.00786032127945,
+                134.27531661150232
+              ],
+              "width_px": 17.5,
+              "reason": null
+            },
+            {
+              "u": 0.0625,
+              "xy_px": [
+                94.49519950835018,
+                133.93129422387875
+              ],
+              "width_px": 16.5,
+              "reason": null
+            },
+            {
+              "u": 0.078125,
+              "xy_px": [
+                93.98253869542093,
+                133.58727183625516
+              ],
+              "width_px": 18.0,
+              "reason": null
+            },
+            {
+              "u": 0.09375,
+              "xy_px": [
+                93.46987788249166,
+                133.2432494486316
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.109375,
+              "xy_px": [
+                92.9572170695624,
+                132.899227061008
+              ],
+              "width_px": 17.5,
+              "reason": null
+            },
+            {
+              "u": 0.125,
+              "xy_px": [
+                92.44455625663313,
+                132.55520467338442
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.140625,
+              "xy_px": [
+                91.93189544370388,
+                132.21118228576083
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.15625,
+              "xy_px": [
+                91.41923463077461,
+                131.86715989813726
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.171875,
+              "xy_px": [
+                90.90657381784536,
+                131.52313751051366
+              ],
+              "width_px": 17.5,
+              "reason": null
+            },
+            {
+              "u": 0.1875,
+              "xy_px": [
+                90.39391300491609,
+                131.17911512289007
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.203125,
+              "xy_px": [
+                89.88125219198683,
+                130.8350927352665
+              ],
+              "width_px": 18.0,
+              "reason": null
+            },
+            {
+              "u": 0.21875,
+              "xy_px": [
+                89.36859137905756,
+                130.4910703476429
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.234375,
+              "xy_px": [
+                88.85593056612831,
+                130.14704796001934
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.25,
+              "xy_px": [
+                88.34326975319905,
+                129.80302557239574
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.265625,
+              "xy_px": [
+                87.83060894026978,
+                129.45900318477217
+              ],
+              "width_px": 17.0,
+              "reason": null
+            },
+            {
+              "u": 0.28125,
+              "xy_px": [
+                87.31794812734051,
+                129.11498079714858
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.296875,
+              "xy_px": [
+                86.80528731441126,
+                128.770958409525
+              ],
+              "width_px": 15.5,
+              "reason": null
+            },
+            {
+              "u": 0.3125,
+              "xy_px": [
+                86.292626501482,
+                128.4269360219014
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.328125,
+              "xy_px": [
+                85.77996568855274,
+                128.08291363427784
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.34375,
+              "xy_px": [
+                85.26730487562348,
+                127.73889124665425
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.359375,
+              "xy_px": [
+                84.75464406269421,
+                127.39486885903067
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.375,
+              "xy_px": [
+                84.24198324976496,
+                127.05084647140708
+              ],
+              "width_px": 16.0,
+              "reason": null
+            },
+            {
+              "u": 0.390625,
+              "xy_px": [
+                83.72932243683569,
+                126.7068240837835
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.40625,
+              "xy_px": [
+                83.21666162390643,
+                126.36280169615992
+              ],
+              "width_px": 15.5,
+              "reason": null
+            },
+            {
+              "u": 0.421875,
+              "xy_px": [
+                82.70400081097716,
+                126.01877930853632
+              ],
+              "width_px": 15.0,
+              "reason": null
+            },
+            {
+              "u": 0.4375,
+              "xy_px": [
+                82.19133999804791,
+                125.67475692091274
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.453125,
+              "xy_px": [
+                81.67867918511864,
+                125.33073453328916
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.46875,
+              "xy_px": [
+                81.16601837218938,
+                124.98671214566558
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.484375,
+              "xy_px": [
+                80.65335755926012,
+                124.642689758042
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.5,
+              "xy_px": [
+                80.14069674633086,
+                124.29866737041841
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.515625,
+              "xy_px": [
+                79.6280359334016,
+                123.95464498279483
+              ],
+              "width_px": 14.0,
+              "reason": null
+            },
+            {
+              "u": 0.53125,
+              "xy_px": [
+                79.11537512047234,
+                123.61062259517125
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.546875,
+              "xy_px": [
+                78.60271430754308,
+                123.26660020754767
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.5625,
+              "xy_px": [
+                78.09005349461381,
+                122.92257781992409
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.578125,
+              "xy_px": [
+                77.57739268168456,
+                122.5785554323005
+              ],
+              "width_px": 14.5,
+              "reason": null
+            },
+            {
+              "u": 0.59375,
+              "xy_px": [
+                77.06473186875529,
+                122.23453304467691
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.609375,
+              "xy_px": [
+                76.55207105582603,
+                121.89051065705333
+              ],
+              "width_px": 14.0,
+              "reason": null
+            },
+            {
+              "u": 0.625,
+              "xy_px": [
+                76.03941024289676,
+                121.54648826942974
+              ],
+              "width_px": 13.0,
+              "reason": null
+            },
+            {
+              "u": 0.640625,
+              "xy_px": [
+                75.52674942996751,
+                121.20246588180616
+              ],
+              "width_px": 13.5,
+              "reason": null
+            },
+            {
+              "u": 0.65625,
+              "xy_px": [
+                75.01408861703824,
+                120.85844349418258
+              ],
+              "width_px": 12.5,
+              "reason": null
+            },
+            {
+              "u": 0.671875,
+              "xy_px": [
+                74.50142780410899,
+                120.514421106559
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.6875,
+              "xy_px": [
+                73.98876699117972,
+                120.17039871893542
+              ],
+              "width_px": 12.5,
+              "reason": null
+            },
+            {
+              "u": 0.703125,
+              "xy_px": [
+                73.47610617825046,
+                119.82637633131183
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.71875,
+              "xy_px": [
+                72.96344536532119,
+                119.48235394368825
+              ],
+              "width_px": 11.5,
+              "reason": null
+            },
+            {
+              "u": 0.734375,
+              "xy_px": [
+                72.45078455239194,
+                119.13833155606467
+              ],
+              "width_px": 11.5,
+              "reason": null
+            },
+            {
+              "u": 0.75,
+              "xy_px": [
+                71.93812373946267,
+                118.79430916844109
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.765625,
+              "xy_px": [
+                71.42546292653341,
+                118.45028678081749
+              ],
+              "width_px": 11.0,
+              "reason": null
+            },
+            {
+              "u": 0.78125,
+              "xy_px": [
+                70.91280211360416,
+                118.10626439319391
+              ],
+              "width_px": 11.0,
+              "reason": null
+            },
+            {
+              "u": 0.796875,
+              "xy_px": [
+                70.40014130067489,
+                117.76224200557033
+              ],
+              "width_px": 12.0,
+              "reason": null
+            },
+            {
+              "u": 0.8125,
+              "xy_px": [
+                69.88748048774563,
+                117.41821961794675
+              ],
+              "width_px": 11.5,
+              "reason": null
+            },
+            {
+              "u": 0.828125,
+              "xy_px": [
+                69.37481967481637,
+                117.07419723032316
+              ],
+              "width_px": 11.0,
+              "reason": null
+            },
+            {
+              "u": 0.84375,
+              "xy_px": [
+                68.86215886188711,
+                116.73017484269958
+              ],
+              "width_px": 10.5,
+              "reason": null
+            },
+            {
+              "u": 0.859375,
+              "xy_px": [
+                68.34949804895784,
+                116.386152455076
+              ],
+              "width_px": 9.5,
+              "reason": null
+            },
+            {
+              "u": 0.875,
+              "xy_px": [
+                67.83683723602859,
+                116.04213006745242
+              ],
+              "width_px": 11.0,
+              "reason": null
+            },
+            {
+              "u": 0.890625,
+              "xy_px": [
+                67.32417642309932,
+                115.69810767982884
+              ],
+              "width_px": 9.5,
+              "reason": null
+            },
+            {
+              "u": 0.90625,
+              "xy_px": [
+                66.81151561017006,
+                115.35408529220526
+              ],
+              "width_px": 9.5,
+              "reason": null
+            },
+            {
+              "u": 0.921875,
+              "xy_px": [
+                66.2988547972408,
+                115.01006290458167
+              ],
+              "width_px": 8.5,
+              "reason": null
+            },
+            {
+              "u": 0.9375,
+              "xy_px": [
+                65.78619398431154,
+                114.66604051695808
+              ],
+              "width_px": 8.5,
+              "reason": null
+            },
+            {
+              "u": 0.953125,
+              "xy_px": [
+                65.27353317138227,
+                114.3220181293345
+              ],
+              "width_px": 9.0,
+              "reason": null
+            },
+            {
+              "u": 0.96875,
+              "xy_px": [
+                64.76087235845301,
+                113.97799574171091
+              ],
+              "width_px": 8.5,
+              "reason": null
+            },
+            {
+              "u": 0.984375,
+              "xy_px": [
+                64.24821154552374,
+                113.63397335408733
+              ],
+              "width_px": 8.0,
+              "reason": null
+            },
+            {
+              "u": 1.0,
+              "xy_px": [
+                63.73555073259449,
+                113.28995096646375
+              ],
+              "width_px": 7.5,
+              "reason": null
+            }
+          ],
+          "method": "normal_scan_candidate_with_annotated_overlap_exclusion",
+          "units": "original_image_px"
+        }
+      },
+      "reference_id": "917059f38adcc3ccfa07f28f68d000f23b637c78a0cf2be84af3c4790512bfc8"
+    }
+  ],
+  "limits": {
+    "body_aspect_range": [
+      1.6211367232816054,
+      16.211367232816052
+    ],
+    "max_bend_widths": 2.0
+  },
+  "observed": {
+    "body_aspect_range": [
+      5.403789077605351,
+      5.403789077605351
+    ]
+  },
+  "evidence": {
+    "level": "font_geometry_fixture",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "template_id": "8ccc38e8b0c683dcaccbac64cdc58eb96e6551df528b55bfd11a43f92533afdc"
+}

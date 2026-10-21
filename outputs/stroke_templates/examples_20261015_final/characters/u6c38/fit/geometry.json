@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "role": "templated_character_xy",
+  "character": "永",
+  "annotation_id": "e0c8f3060e881d5221bedb60635c74c18736cd717fa148d6bef3fcc9838b5f41",
+  "source_sha256": "4a72c42252d764131f7e973254ca9772b9d03296fbc3020716745a91bcf5e59c",
+  "template_ids": [
+    "c01cf866ee3420192ecb7284529993b1b3d1c186109bfa42db41ae5842047ef2",
+    "58cfe0a42c84ac1d2647aed11ba308572022d02d9600810407a39a802edd613c"
+  ],
+  "units": "px",
+  "image_size_px": [
+    480,
+    480
+  ],
+  "transform": {
+    "origin_original_cartesian_px": [
+      239.5,
+      239.5
+    ],
+    "units_per_pixel": 1.0
+  },
+  "complete": false,
+  "review_status": "needs_review",
+  "physical_validation": false,
+  "strokes": [
+    {
+      "id": "s01",
+      "type": "unknown",
+      "variant": "standard",
+      "review_status": "unreviewed",
+      "status": "unsupported",
+      "reason_code": "missing_template",
+      "reason": "No template for this type/variant; review the annotation or supply a matching model."
+    },
+    {
+      "id": "s02",
+      "type": "unknown",
+      "variant": "standard",
+      "review_status": "unreviewed",
+      "status": "unsupported",
+      "reason_code": "missing_template",
+      "reason": "No template for this type/variant; review the annotation or supply a matching model."
+    },
+    {
+      "id": "s03",
+      "type": "unknown",
+      "variant": "standard",
+      "review_status": "unreviewed",
+      "status": "unsupported",
+      "reason_code": "missing_template",
+      "reason": "No template for this type/variant; review the annotation or supply a matching model."
+    },
+    {
+      "id": "s04",
+      "type": "unknown",
+      "variant": "standard",
+      "review_status": "unreviewed",
+      "status": "unsupported",
+      "reason_code": "missing_template",
+      "reason": "No template for this type/variant; review the annotation or supply a matching model."
+    },
+    {
+      "id": "s05",
+      "type": "unknown",
+      "variant": "standard",
+      "review_status": "unreviewed",
+      "status": "unsupported",
+      "reason_code": "missing_template",
+      "reason": "No template for this type/variant; review the annotation or supply a matching model."
+    }
+  ],
+  "reference_role": "editable_image_geometry_candidate_not_independent_motion_ground_truth",
+  "provenance": {
+    "source_kind": "font_prior",
+    "image_kind": "font_fixture",
+    "prior": {
+      "record_sha256": "05e90c608a8e68c94dc64ed88ed5879ea380bf5b476881dfcf57a7038ed9fa19",
+      "source_url": "https://github.com/skishore/makemeahanzi",
+      "registration": "explicit_font_fixture_transform_not_image_registration",
+      "scale": 0.46457626703843835,
+      "offset_xy_px": [
+        -7.18359279372919,
+        54.29501194417281
+      ]
+    }
+  },
+  "dynamic_attachment_contract": {
+    "required": [
+      "geometry_id",
+      "stroke_id",
+      "run_id",
+      "time",
+      "coordinate_role",
+      "feature_definition",
+      "calibration_reference"
+    ],
+    "phase_u": "within_phase_xy_arclength_not_time",
+    "no_motion_or_magnetic_data_inferred": true
+  },
+  "geometry_id": "61fe31149bd9e118c81ad3a60094da1951070c9466d0728367261d368ac0c4ef"
+}

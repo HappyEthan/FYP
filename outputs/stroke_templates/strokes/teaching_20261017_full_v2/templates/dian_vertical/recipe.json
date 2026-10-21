@@ -1,0 +1,149 @@
+{
+  "id": "dian_vertical",
+  "name": "竖点",
+  "type": "dian",
+  "variant": "vertical_dot",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_18.jpg",
+    "sha256": "ac6362015e6b5a4b5d23a24a7205961fb6dbeffd844cca4c44eb946a8bddcb14",
+    "url": "https://picx.zhimg.com/v2-622a46f9ecb3565810ff4a6dde53df43_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.1
+        ],
+        [
+          0.15,
+          -0.2
+        ],
+        [
+          0.16,
+          -0.35
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "dot_body",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.01,
+          -0.45
+        ],
+        [
+          0.04,
+          -1
+        ],
+        [
+          0.02,
+          -1.5
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.12
+        ],
+        [
+          -0.02,
+          -0.3
+        ],
+        [
+          -0.04,
+          -0.38
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "dot_body",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "press_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收住结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.12
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.5
+    },
+    {
+      "event": "body_end",
+      "ratio": 1.05
+    },
+    {
+      "event": "end",
+      "ratio": 0.8
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "以较直的向下行势展开。",
+    "独立保留点的长度与收笔，不混作完整竖画。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 5,
+    "type": "dian",
+    "name": "点"
+  }
+}

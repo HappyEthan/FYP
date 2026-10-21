@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "小幅联动参考：20°到15°，同时下降1毫米",
+  "note": "先保持20°从Z36预压到Z29，再在同一2秒内转到15°并从Z29降到Z28；转完直接行笔，没有转完后的额外下压。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 20.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 29.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 2.0,
+    "preload_speed_mm_s": 4.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

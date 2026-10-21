@@ -1,0 +1,199 @@
+{
+  "id": "wangou",
+  "name": "弧弯钩",
+  "type": "wangou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_22.jpg",
+    "sha256": "be21ca5b7dc68e36f8cfbbfd1807b3a5088f5159be949f9b501c8d9f419bc095",
+    "url": "https://pic1.zhimg.com/v2-6d4d5795a00ec6924bd944cac8db46de_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          -2.7
+        ],
+        [
+          2,
+          -7
+        ],
+        [
+          0.25,
+          -9.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.08,
+          -0.6
+        ],
+        [
+          -0.3,
+          -0.85
+        ],
+        [
+          -0.6,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          0.25
+        ],
+        [
+          -0.6,
+          0.5
+        ],
+        [
+          -0.95,
+          0.8
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "bow",
+      "part": "sweep",
+      "t": 0.5,
+      "label": "弧势中段",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.18
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.6
+    },
+    {
+      "event": "bow",
+      "ratio": 0.9
+    },
+    {
+      "event": "hook",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.6
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "bow",
+    "hook"
+  ],
+  "rule_notes": [
+    "主体向右鼓出弧势，起钩处回到起笔附近的竖向范围。",
+    "钩前调整后向左上出锋。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 8,
+    "type": "wangou",
+    "name": "弧弯钩"
+  }
+}

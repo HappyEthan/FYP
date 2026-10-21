@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "shu",
+  "name": "竖",
+  "description": "120 mm 独立竖：柔和起笔、稳定行笔、尾段逐步减小磁目标，供参考笔画调试。",
+  "reference": "参考中字符号的中竖磁目标与柔和起笔；不复制字体中线及历史逐点补偿。",
+  "placement": {"origin_mm": [140, 0], "rotation_deg": 180, "scale": 1},
+  "path": {
+    "kind": "rounded_polyline",
+    "points_mm": [[0, 60], [0, -60]],
+    "corner_radius_mm": 2
+  },
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [[0, 100], [0.125, 210], [0.25, 197], [0.75, 192], [0.87, 170], [1, 100]]
+  },
+  "timing": {
+    "speed_mm_s": 10,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40,
+    "speed_knots_s_mm_s": [[0, 5], [0.125, 10], [0.8, 10], [1, 5]]
+  },
+  "orientation": {"kind": "tangent_tilt", "tilt_deg": 15, "smoothing_mm": 1},
+  "filter_definition": {"kind": "ema", "alpha": 0.3},
+  "notes": [
+    "局部坐标从上向下书写；当前放置后机械臂沿 +Y 行笔。",
+    "尾段目标下降只表示计划要求，是否形成理想收笔需通过墨迹调试确认。"
+  ]
+}

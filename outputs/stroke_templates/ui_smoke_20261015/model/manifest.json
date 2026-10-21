@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template_bundle",
+  "template_id": "f95adb7fc2e7cc81c1ff667afd7c918f546485a87d0cfdde5519769bb9a80276",
+  "evidence": {
+    "level": "synthetic_geometry_fixture",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "files": {
+    "reference_000_annotation.json": "f0456d8386c55f3883da8a7c832d19a4d0dc93c77630b70bc239e2c4466f2e99",
+    "reference_000_source.bin": "b7c66154fea5ad1614a89b676423859fd2fe08045385f385c558aefbe51c7139",
+    "report.html": "52993df85f641c827dfa3615d41831e31eed81573e7fcaf034ed6c4ed38549d5",
+    "template.json": "8d7679e5cd979dc75aecd82817482db2308e4a6eddc58b74edc1a6a73b533a91"
+  }
+}

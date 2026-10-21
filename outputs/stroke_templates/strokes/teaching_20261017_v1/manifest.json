@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "role": "teaching_stroke_library",
+  "template_count": 5,
+  "style_id": "kai_teaching_rules_v1",
+  "evidence": "teaching_rule_candidate",
+  "physical_validation": false,
+  "templates": [
+    {
+      "id": "dian_right",
+      "name": "右点",
+      "type": "dian",
+      "variant": "right_dot",
+      "template_id": "4466966e97a7addfb2f162d8df1deabcb9be5f52567f18f92fd90756f1a412fe",
+      "href": "templates/dian_right/report.html"
+    },
+    {
+      "id": "hengzhegou",
+      "name": "横折钩 · 短横长竖",
+      "type": "hengzhegou",
+      "variant": "short_heng_long_shu",
+      "template_id": "0e4c27e8c8a073246dc275e858ecc84d0ddf427708e4151701afeeeba69d84cd",
+      "href": "templates/hengzhegou/report.html"
+    },
+    {
+      "id": "hengpie",
+      "name": "横撇 · 短横弯撇",
+      "type": "hengpie",
+      "variant": "short_heng_curved_pie",
+      "template_id": "3b254123e8f80463fe0b5624412848da8f530cdb2a2e424583b6d3cea23b463b",
+      "href": "templates/hengpie/report.html"
+    },
+    {
+      "id": "pie_slant",
+      "name": "斜撇",
+      "type": "pie",
+      "variant": "slant",
+      "template_id": "970fda4f0dbb869d23b9a8488977619d5b9a1046da6bda689664f30980b90c59",
+      "href": "templates/pie_slant/report.html"
+    },
+    {
+      "id": "na_slant",
+      "name": "斜捺",
+      "type": "na",
+      "variant": "slant",
+      "template_id": "a8dfdb64564324be30f2622f54daefde030914b08dee0e296775f222ccc77f2f",
+      "href": "templates/na_slant/report.html"
+    }
+  ],
+  "files": {
+    "index.html": "dc7f7afdb140ce084c1baad8828835572db57f37d21a682d77243304583b0338",
+    "recipes.json": "03c33738c60095f94bb7f06b09e1f491e94681027b3289954b1a9dfe1de1e5f4",
+    "templates/dian_right/manifest.json": "41781e91627998e28404556067b6df496012c2ad4725105438a41563210a023e",
+    "templates/dian_right/recipe.json": "5979870ae5ef73a3edb30ea52a14b8d0d3add85cd53a35675b19ec82499e8288",
+    "templates/dian_right/reference_000_annotation.json": "0ef514c09c0e2e0d45374dbbab3d1df4b3e9d0a1c0859ad3934259dfa4126597",
+    "templates/dian_right/reference_000_source.bin": "f4042dacb68f7a290bdfa40d82492922ce2f2326bcfef1626035c9cec7b99e9b",
+    "templates/dian_right/report.html": "8653d9b4314c0dd75c5d63d6dc62bfd8ba52a0e8ab7a83bedf892d1be6092ec1",
+    "templates/dian_right/source_illustration.bin": "465639f0cf0efe3c59c041e1e5333080d48fc27b46affd841404bd73b794b033",
+    "templates/dian_right/template.json": "d932d04b454bcde9f8a23fc0278b53d413a35b222c31a46930ea53fb62e330aa",
+    "templates/hengpie/manifest.json": "e1239ef2e418a2a60fae0c6c29d2ce5df58b51caabc24f850101fc9ec9ec0197",
+    "templates/hengpie/recipe.json": "0a15d8b0932bfe8c14ec1de976560547c34398217b9ad7772b67dac5390c1198",
+    "templates/hengpie/reference_000_annotation.json": "98a46249ac79821179b530523114f129d91ff489545db065182bef291498e7f8",
+    "templates/hengpie/reference_000_source.bin": "cb71678f8f893098452b33be65b39906e0bbf6d649ff3ffa3e6f28a86f258921",
+    "templates/hengpie/report.html": "d2ebae0bcf3578d33a7d870c92845720a985d0dc12030964ba6b832db5b0619c",
+    "templates/hengpie/source_illustration.bin": "ea0328f9f48ef1991164f79a36618e99972da9c6c964c01d8e3e17db33a2a380",
+    "templates/hengpie/template.json": "7247f9a7d787f8303b52d17922e22b22565026a6bd8751be04f1a42c6c84cc9e",
+    "templates/hengzhegou/manifest.json": "86fce0be849eb0438b2fec06848d1c1c2146a30153e011876f0e4c343fe9f76a",
+    "templates/hengzhegou/recipe.json": "f9b68fdf7285571764b0b3f007431058e4a0d97787881d6794aa76a49a3cff46",
+    "templates/hengzhegou/reference_000_annotation.json": "83155b492a070c438feec196fdc49162792e1f9c27e5d71e36a8156849a0957d",
+    "templates/hengzhegou/reference_000_source.bin": "1893c1347106596341b377955f1a217de6bb9ba78199f9a750444fd75a5e53dd",
+    "templates/hengzhegou/report.html": "41ec6f6552668881cdf1e8174ddcbdb6be0f3a989cd788e8568f98fa6546b3c9",
+    "templates/hengzhegou/source_illustration.bin": "e88eba0d59a729d735c6256e4c10efaf754a22aee5cca83630e4de5b8be1d4bc",
+    "templates/hengzhegou/template.json": "09259fa574ad22d43a8a703a3474787bb178d0258b8129543d5893db0fa8b83f",
+    "templates/na_slant/manifest.json": "063b17d42adb2d1333f1761ad1912fc0001ba3c9eabdeccdb67ff96e73403580",
+    "templates/na_slant/recipe.json": "339aed8b3b94c919438b026bf41214c191175f942b077c216c5678cefb608613",
+    "templates/na_slant/reference_000_annotation.json": "ce847b01a40747a9a140893b93df673e5b8ed0cde28e9649b978ace8c6050729",
+    "templates/na_slant/reference_000_source.bin": "80d5a535eaa0e0d7a1405d22cca75be7a9f5421589826e4a301a61bde2829734",
+    "templates/na_slant/report.html": "ac0ec2053d22c1d51b413ad96dcb1e7b841e36d375f4b85694c14ff5151957af",
+    "templates/na_slant/source_illustration.bin": "d1b1f7036930d123b98f8eb102ee6ba131346633883c4eb7a6e0fb1ad31f5000",
+    "templates/na_slant/template.json": "002b541c8f525c953df452b38d2aa12806e68aa71768f60067b0b9d630fdc869",
+    "templates/pie_slant/manifest.json": "35fc7c10a390ce562fa8018401aa66ae4a673d160e1334b03e6b2a22c6002475",
+    "templates/pie_slant/recipe.json": "84c4a32383a3bfd5ec49a423b1f6ce9d0259876ebdf333819dc8fafecdef4dba",
+    "templates/pie_slant/reference_000_annotation.json": "a10d8785b8539af93b0765cad1526787f7e2a95b4b25045e6e9877e4b5b1bb5d",
+    "templates/pie_slant/reference_000_source.bin": "54bd652911db8f8d231a0ab2244114d46fbdaacaadf80e530bf1c451dfc5f6af",
+    "templates/pie_slant/report.html": "b4500c14cc85e1237da074d83a44e4ee824ad0c7564010816fbd2926958bc55b",
+    "templates/pie_slant/source_illustration.bin": "066b9ab88ba2b1c947758d5ac80c4653c0167b005c0c25f9d0c53a0560569177",
+    "templates/pie_slant/template.json": "9b70d511bb3a53b9307b5e4d4d88c807704e7068e24260dbb762ab56be1a55f9"
+  }
+}

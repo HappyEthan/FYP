@@ -43,6 +43,7 @@ status: active
 | 文档 | 内容 |
 |---|---|
 | [strokeplan.md](strokeplan.md) | 现行 StrokePlan 的契约、生成、姿态、执行边界和后续计划。 |
+| [笔画JSON配方.md](笔画JSON配方.md) | 横、竖、撇、捺、横折的可编辑配方、生成指令、预览与参考笔画调试边界。 |
 
 ## 历史资料
 

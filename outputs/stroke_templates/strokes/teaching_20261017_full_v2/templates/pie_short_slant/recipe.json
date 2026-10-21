@@ -1,0 +1,149 @@
+{
+  "id": "pie_short_slant",
+  "name": "短撇 · 斜势",
+  "type": "pie",
+  "variant": "short_slant",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_13.jpg",
+    "sha256": "4f5bedba0cc3be2eaf5bbcb90475f3180c35ada58ec7b549d00d9f045e976ad4",
+    "url": "https://picx.zhimg.com/v2-7058cc6ff945c8a4511c836f2bde6669_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.05,
+          -0.08
+        ],
+        [
+          0.18,
+          -0.28
+        ],
+        [
+          0.2,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.1,
+          -0.6
+        ],
+        [
+          -1.2,
+          -2
+        ],
+        [
+          -2,
+          -2.8
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.25,
+          -0.25
+        ],
+        [
+          -0.55,
+          -0.5
+        ],
+        [
+          -0.9,
+          -0.75
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "左上部位可采用较陡的短撇。",
+    "主体紧凑，收尾向左下出锋。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 3,
+    "type": "pie",
+    "name": "撇"
+  }
+}

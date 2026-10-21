@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "id": "heng",
+  "name": "横",
+  "description": "120 mm 独立横：柔和起笔、行笔平台、尾段目标增加后回落，供参考笔画调试。",
+  "reference": "参考中字符号的下横人工磁目标及后续柔和起笔；几何改为独立直线，不是原试验的逐点复制。",
+  "placement": {"origin_mm": [140, 0], "rotation_deg": 180, "scale": 1},
+  "path": {
+    "kind": "rounded_polyline",
+    "points_mm": [[-60, 0], [60, 0]],
+    "corner_radius_mm": 2
+  },
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [[0, 100], [0.125, 205], [0.35, 175], [0.72, 175], [0.88, 215], [1, 140]]
+  },
+  "timing": {
+    "speed_mm_s": 10,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40,
+    "speed_knots_s_mm_s": [[0, 5], [0.125, 10], [0.8, 10], [1, 5]]
+  },
+  "orientation": {"kind": "tangent_tilt", "tilt_deg": 15, "smoothing_mm": 1},
+  "filter_definition": {"kind": "ema", "alpha": 0.3},
+  "notes": [
+    "局部坐标向右为 +x，向上为 +y；旋转 180 度后字右对应机械臂 -X，字上对应 -Y。",
+    "s 为归一化弧长，0.125 在本笔中对应约 15 mm，不是 12.5% 的书写时间。",
+    "磁目标为人工调试参数，尚无对应笔宽或真实力的标定；不保证墨迹形态。"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "reference_characters": [
+    "一",
+    "二",
+    "三",
+    "十",
+    "工"
+  ],
+  "test_characters": [
+    "土",
+    "王",
+    "干",
+    "士",
+    "永"
+  ],
+  "independent_ground_truth": false,
+  "physical_validation": false,
+  "evidence": "Font medians provide both initial candidates and reference geometry. Engineering fixtures only.",
+  "character_cases": [
+    {
+      "character": "土",
+      "directory": "characters/u571f/fit",
+      "complete": true,
+      "fitted_count": 3,
+      "unsupported_count": 0
+    },
+    {
+      "character": "王",
+      "directory": "characters/u738b/fit",
+      "complete": true,
+      "fitted_count": 4,
+      "unsupported_count": 0
+    },
+    {
+      "character": "干",
+      "directory": "characters/u5e72/fit",
+      "complete": true,
+      "fitted_count": 3,
+      "unsupported_count": 0
+    },
+    {
+      "character": "士",
+      "directory": "characters/u58eb/fit",
+      "complete": true,
+      "fitted_count": 3,
+      "unsupported_count": 0
+    },
+    {
+      "character": "永",
+      "directory": "characters/u6c38/fit",
+      "complete": false,
+      "fitted_count": 0,
+      "unsupported_count": 5
+    }
+  ],
+  "length_cases": [
+    {
+      "name": "short",
+      "directory": "length_transfer/short/fit",
+      "stretch_ratio": 0.5
+    },
+    {
+      "name": "medium",
+      "directory": "length_transfer/medium/fit",
+      "stretch_ratio": 1.0
+    },
+    {
+      "name": "long",
+      "directory": "length_transfer/long/fit",
+      "stretch_ratio": 1.75
+    }
+  ]
+}

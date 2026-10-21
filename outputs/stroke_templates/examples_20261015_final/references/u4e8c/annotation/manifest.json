@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "role": "stroke_annotation_bundle",
+  "annotation_id": "29a2e5f8f30a35d7959fa9d07d2ea8ec6e8875c6b1ef1d7e270e597d47b48b88",
+  "character": "二",
+  "review_status": "needs_review",
+  "source_sha256": "9570907f096564a9c725d742cc1ec95e36504d373d792112a3235f53f18f28a7",
+  "files": {
+    "annotation.json": "83f43a17415f533c852b403263c96bf6f697d2ace9cf91de1c34fffef61008cf",
+    "image.png": "9570907f096564a9c725d742cc1ec95e36504d373d792112a3235f53f18f28a7",
+    "report.html": "fd6e2e01f461f4501e99da4244c40619d3c5dbd6689de51de890df0a9a6eb08e",
+    "source_image.bin": "9570907f096564a9c725d742cc1ec95e36504d373d792112a3235f53f18f28a7"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "role": "teaching_guide_template_library",
+  "template_count": 2,
+  "review_status": "unreviewed",
+  "physical_validation": false,
+  "files": {
+    "report.html": "8aede6889772e16a8e0bcdc6a1c39c14d4182228e1387ca485ebd3a78c1834d9",
+    "source_review_manifest.json": "ca9c5249c5ad2eea9d3487da16b75b3b673841ca88a4b1907aadf4e93a0233bb",
+    "templates/heng_long/heng_long_xy.csv": "f10f221f87e3748b4acfa12794730fbf8f3cee9542acb8ba387f4573b861f206",
+    "templates/heng_long/manifest.json": "a480878f047d711659f0387371050063a7a5797bda74128d993daf9903b4dc59",
+    "templates/heng_long/raw_trace.json": "9d2aea39540929e33a013cd0ade0f9c38d08db526ab606deb02ab1faa35b6b88",
+    "templates/heng_long/report.html": "f17418f251efdf5fbe9ec5205a7f65d3a78bf3df30b53dc6be94f251c34e97ff",
+    "templates/heng_long/source.jpg": "ff3ac64fc3743ff56bf148b5204d4938e5601aa36d233dd0e10f10459576673e",
+    "templates/heng_long/template.json": "823a1a8216836734a47594b7943ede7c4a05439daf2a1641ba0e2f80a265a0c4",
+    "templates/heng_short/heng_short_xy.csv": "59aa1886f2942353f4455fa5412fb92605f923c152a5caf3aa5d6d0bd2ebb604",
+    "templates/heng_short/manifest.json": "910e63c94c3e2aa7076358845e4959c208f688910ef3c24c8897fc55bad5ee3f",
+    "templates/heng_short/raw_trace.json": "3b9c3b87abac81e34063a41692da5336fb834cb2ef525c33a16dccd24bcfcdb0",
+    "templates/heng_short/report.html": "63b4b1375fee83ff8d61e95c6fa9616ff4a63187e5b45ba574742c2428c96117",
+    "templates/heng_short/source.jpg": "89aeb3d7166f60288b27300d7cadefae5f0bdb8fc15d55697091b70c8d7ea739",
+    "templates/heng_short/template.json": "f9f5fcd2fa18afb648f6a19003d1014cf7571e5a08ef81aec0a7311228a8592e"
+  }
+}

@@ -6,12 +6,15 @@ Default is offline. Hardware requires --execute, approved inputs, and RUN.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import hashlib
 import io
 import json
 from pathlib import Path
 import sys
 import time
+import uuid
+from zoneinfo import ZoneInfo
 
 import numpy as np
 
@@ -55,15 +58,19 @@ class StrokePlanRecorder(DatedLadderRecorder):
 
 def build_stack(*, plan, table, setup, artifacts, label, root, arm, source, clock,
                 control_mode='feedforward', feedback_profile=None,
-                experiment_folder=None, run_folder_label=None, entry_profile=None):
+                experiment_folder=None, run_folder_label=None, entry_profile=None,
+                auto_position=False):
     # Bind immutable, already-loaded input bytes to this run (no later file reread).
     captured = dict(artifacts)
+    positioning = None
 
     def record(snapshots):
         snapshots = dict(snapshots, strokeplan_inputs=captured, calibration=table)
         snapshots['experiment'] = dict(snapshots['experiment'], inputs={
             name: {'sha256': hashlib.sha256(payload).hexdigest()}
             for name, payload in captured.items()})
+        if positioning is not None:
+            snapshots['experiment']['positioning'] = positioning
         return StrokePlanRecorder(root, snapshots,
                                   experiment_folder=experiment_folder,
                                   folder_label=run_folder_label)
@@ -74,6 +81,21 @@ def build_stack(*, plan, table, setup, artifacts, label, root, arm, source, cloc
     engine.prepare_target(plan, table, setup, label=label,
                           control_mode=control_mode,
                           feedback_profile=feedback_profile, entry_profile=entry_profile)
+    if auto_position:
+        # Import after the entry module is initialized: the sweep driver also
+        # imports run_recorded through run_z_identification.
+        if __package__:
+            from .run_four_direction_sweep import position_at_wait
+        else:
+            from run_four_direction_sweep import position_at_wait
+        date = datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d')
+        path = Path(root)/date/'positioning'/f'strokeplan_{uuid.uuid4().hex}.json'
+        print('自动回等待位：先竖直抬笔，再高位移动并对齐姿态。定位记录:', path)
+        positioning = position_at_wait(arm, setup, record_path=path,
+            context=dict(run_label=label, installation_id=setup['installation_id']))
+        positioning.update(record_path=str(path), sensor_buffer_reset=source.discard_pending())
+        path.write_text(json.dumps(positioning, ensure_ascii=False, indent=2, allow_nan=False)+'\n')
+        print('自动定位完成；开始核验等待位并重新采集基线。')
     return engine, hub
 
 
@@ -127,7 +149,16 @@ def _drive_recorded(engine, hub, *, clock, sleep, live_output_fn):
                 ))
                 last_live = now
             tick += 1
-            _pace(clock, started, tick, .02, sleep)
+            if not hasattr(clock, 'advance'):
+                period_ns = int(round(engine.dt_s*1e9))
+                now = clock.now_ns()
+                if now >= started+tick*period_ns:
+                    # A blocking call consumed the next driver tick. Resume a
+                    # regular stream instead of racing through overdue samples.
+                    # Only this driver's polling grid moves here; the engine
+                    # applies its own strict or height-gated deadline policy.
+                    started = now+period_ns-tick*period_ns
+            _pace(clock, started, tick, engine.dt_s, sleep)
         except KeyboardInterrupt:
             if interrupted:
                 engine.fail('operator_stop_during_abort')
@@ -208,6 +239,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
     else:
         print('单条 StrokePlan；纯前馈；运行时同步记录磁数据（无反馈修正）。')
     print('Wait XYZ [mm], RPY [deg]:', poses[0, :3]*1000, np.rad2deg(poses[0, 3:]))
+    print('启动定位：确认 RUN 后自动抬笔并回到上述等待位，到位后重新采集基线。')
     print('Z range [mm]:', poses[:, 2].min()*1000, poses[:, 2].max()*1000)
     print('轨迹时长 {:.2f} s；另需启动基线采集。'.format(compiled['t_s'][-1]))
     print('前馈表:', args.feedforward)
@@ -252,7 +284,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
         print('离线预检通过；未连接硬件，未创建实验 run。')
         return 0
     confirm = input if confirm_execution is None else confirm_execution
-    if confirm('确认已手动沾水、处于上述等待位姿、路径净空足够；输入 RUN: ').strip() != 'RUN':
+    if confirm('确认已手动沾水、自动回位与书写路径净空足够；输入 RUN: ').strip() != 'RUN':
         return 0
 
     sys.path.insert(0, str(ADAPTER_ROOT))
@@ -296,7 +328,8 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
                                   feedback_profile=feedback_profile,
                                   experiment_folder=args.experiment_folder,
                                   run_folder_label=args.run_folder_label,
-                                  entry_profile=entry_profile)
+                                  entry_profile=entry_profile,
+                                  auto_position=True)
         result = run_recorded(engine, hub, clock=clock,
                               live_output_fn=panel.update,
                               pose_sampler=pose_sampler)

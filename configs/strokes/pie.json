@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "pie",
+  "name": "撇",
+  "description": "弯撇：先向下，再逐渐转向左下；行程后段磁目标下降，供参考笔画调试。",
+  "reference": "复用中字符号的切线倾斜、时间规划和磁目标范围；撇的曲线、阶段位置和目标数值为新设人工初值，无撇的实测依据。",
+  "placement": {"origin_mm": [140, 0], "rotation_deg": 180, "scale": 1},
+  "path": {
+    "kind": "cubic_bezier",
+    "points_mm": [[35, 55], [35, 15], [10, -20], [-35, -55]]
+  },
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [[0, 100], [0.12, 210], [0.35, 195], [0.6, 175], [0.82, 130], [1, 100]]
+  },
+  "timing": {
+    "speed_mm_s": 10,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40,
+    "speed_knots_s_mm_s": [[0, 5], [0.15, 10], [0.75, 10], [1, 5]]
+  },
+  "orientation": {"kind": "tangent_tilt", "tilt_deg": 15, "smoothing_mm": 1},
+  "filter_definition": {"kind": "ema", "alpha": 0.3},
+  "notes": [
+    "四个点依次为起点、起段切线控制点、末段切线控制点、终点；中间两个点不要求被轨迹经过。",
+    "当前方向校准只有四个离散方向；本笔含连续变化方向，生成通过不表示其前馈效果已验证。"
+  ]
+}

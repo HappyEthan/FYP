@@ -1,0 +1,149 @@
+{
+  "id": "shu_xuanzhen",
+  "name": "悬针竖",
+  "type": "shu",
+  "variant": "xuanzhen",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_09.jpg",
+    "sha256": "8c009b3168f14656d4c9184441c0c7965e3c4beaaaf705dbec7ef00028520c0b",
+    "url": "https://pic3.zhimg.com/v2-a468e9caa966bd6b0424a63b3d088c40_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -2.5200000000000005
+        ],
+        [
+          0.02,
+          -6.4799999999999995
+        ],
+        [
+          0,
+          -9
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.4
+        ],
+        [
+          0,
+          -1.2
+        ],
+        [
+          0,
+          -2.0
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "vertical",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.55
+    },
+    {
+      "event": "body_start",
+      "ratio": 1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.65
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "前段保持竖向，末段延续方向。",
+    "渐提收尖，与垂露的收住形态分别保存。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 2,
+    "type": "shu",
+    "name": "竖"
+  }
+}

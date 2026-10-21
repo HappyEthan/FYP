@@ -1,0 +1,130 @@
+{
+  "character": "我",
+  "layout_annotation_id": "70e2878df2bfca9f29d41ed51abc4d6adff6d14ecc3186a87e88a642635f4144",
+  "layout_source_sha256": "bc28fa69ce8000668ba149e93112f4c2d9e6a5b972c497dc095179421115e85b",
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template_id": "e1872c904d051060e1e87168844ea022515e174cce48509f89ca1b2d95f57b89",
+      "type": "pie",
+      "variant": "short_flat",
+      "name": "短平撇",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+      "type": "heng",
+      "variant": "long",
+      "name": "长横",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template_id": "d7c1eaab1d33c8bc282e4a05a41980c105279b89cd3ad3b4a41d85a3bb9c09d1",
+      "type": "shugou",
+      "variant": "standard",
+      "name": "竖钩",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template_id": "d3c29fa26665e4d5f9afbabce199dc6e5f94086a3f7a4e001a9a9488679ca892",
+      "type": "ti",
+      "variant": "standard",
+      "name": "提",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s05",
+      "template_id": "25d9b8e21c543abb0d62269db7bedd671f3fc8b9569f28c1a6397dce61516197",
+      "type": "xiegou",
+      "variant": "standard",
+      "name": "戈钩（斜钩）",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s06",
+      "template_id": "2835b97b6b7766e0fb236ba98a2ecd11f7c8b363782bf74d285916cdc3730ad3",
+      "type": "pie",
+      "variant": "slant",
+      "name": "斜撇",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s07",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "type": "dian",
+      "variant": "right_dot",
+      "name": "右点",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ],
+  "recipe_id": "d62e0deba9b18b86799fd03d20cebc0ebde835d20394c052033ee0a472730af7",
+  "geometry_id": "3bc93bd861b1baeac2586c1c71e26a64be476cffaf6514f6ddb467fa7196c653",
+  "layout_role": "layout_prior_not_generated_ink_ground_truth",
+  "physical_validation": false
+}

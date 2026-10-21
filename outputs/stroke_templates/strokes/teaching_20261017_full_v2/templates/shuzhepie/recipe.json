@@ -1,0 +1,268 @@
+{
+  "id": "shuzhepie",
+  "name": "竖折撇",
+  "type": "shuzhepie",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_42.jpg",
+    "sha256": "44a906bb020de0b9cbcfbc90b2f5d7d659d58e3b277a4c87b15c27cda7bd18f5",
+    "url": "https://pica.zhimg.com/v2-5977bffb2c6e13dcac00ed349757c9f6_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.1,
+          -0.1
+        ],
+        [
+          -0.2,
+          -0.3
+        ],
+        [
+          -0.25,
+          -0.5
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.25,
+          -1
+        ],
+        [
+          -0.6,
+          -2.9
+        ],
+        [
+          -0.9,
+          -4.2
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.3
+        ],
+        [
+          0.1,
+          -0.5
+        ],
+        [
+          0.6,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.12,
+          0.1
+        ],
+        [
+          2.88,
+          0.45
+        ],
+        [
+          4,
+          0.5
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.02
+        ],
+        [
+          0.2,
+          -0.2
+        ],
+        [
+          -0.15,
+          -0.5
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          -1.2
+        ],
+        [
+          -1.7,
+          -3.7
+        ],
+        [
+          -3.8,
+          -5.1
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.25,
+          -0.25
+        ],
+        [
+          -0.55,
+          -0.5
+        ],
+        [
+          -0.9,
+          -0.75
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn_1",
+      "part": "fold",
+      "t": 0.5,
+      "label": "竖转横",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "turn_2",
+      "part": "fold_2",
+      "t": 0.5,
+      "label": "横转撇",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn_1",
+      "ratio": 1.0
+    },
+    {
+      "event": "turn_2",
+      "ratio": 1.0
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn_1",
+    "turn_2"
+  ],
+  "rule_notes": [
+    "略斜的竖势折右横，再折向左下撇出。",
+    "两折分别保留，最终以撇尾收尖。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 28,
+    "type": "shuzhepie",
+    "name": "竖折撇"
+  }
+}

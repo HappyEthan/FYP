@@ -37,6 +37,10 @@ def compile_character_target(plan, table, setup, profile):
     plan.validate()
     validate_context(plan, table, setup)
     p = dict(profile)
+    entry_order = p.pop('entry_order', 'rotate_then_load')
+    if not isinstance(entry_order, str) or entry_order not in {
+            'rotate_then_load', 'load_then_rotate'}:
+        raise ValueError('invalid entry_order: expected rotate_then_load or load_then_rotate')
     # Existing profiles keep their original stationary rotation.
     p.setdefault('entry_reverse_mm', 0.)
     if set(p) != set(CHARACTER_ENTRY) or p['mode'] != 'directional_character':
@@ -119,13 +123,23 @@ def compile_character_target(plan, table, setup, profile):
         move(above,f'lower_fast_{i:02}',p['fast_z_speed_mm_s'])
         contact = above.copy(); contact[2] = p['entry_contact_z_mm']/1000
         move(contact,f'lower_slow_{i:02}',p['slow_z_speed_mm_s'])
-        contact[:2] = xy[0]
-        contact[3:] = sampled_rpy[0]
-        move(contact,f'rotate_contact_{i:02}',p['slow_z_speed_mm_s'],p['rotate_s'])
-        loaded = contact.copy(); loaded[2] = setup['contact_z_mm']/1000-depth[0]
-        if loaded[2] > contact[2]+1e-9:
+        loaded_z = setup['contact_z_mm']/1000-depth[0]
+        if loaded_z > contact[2]+1e-9:
             raise ValueError('initial target must be deeper than rotational contact')
-        move(loaded,f'load_workpoint_{i:02}',p['slow_z_speed_mm_s'],p['load_s'])
+        if entry_order == 'load_then_rotate':
+            # The workpoint height comes from the writing-pose table. This
+            # ordering does not claim the entry tilt produces that response.
+            loaded = contact.copy(); loaded[2] = loaded_z
+            move(loaded,f'load_workpoint_{i:02}',p['slow_z_speed_mm_s'],p['load_s'])
+            loaded[:2] = xy[0]
+            loaded[3:] = sampled_rpy[0]
+            move(loaded,f'rotate_contact_{i:02}',p['slow_z_speed_mm_s'],p['rotate_s'])
+        else:
+            contact[:2] = xy[0]
+            contact[3:] = sampled_rpy[0]
+            move(contact,f'rotate_contact_{i:02}',p['slow_z_speed_mm_s'],p['rotate_s'])
+            loaded = contact.copy(); loaded[2] = loaded_z
+            move(loaded,f'load_workpoint_{i:02}',p['slow_z_speed_mm_s'],p['load_s'])
         measurement = np.column_stack([xy,setup['contact_z_mm']/1000-depth,sampled_rpy])
         append(measurement,f'measure_{i:02}')
         lifted = measurement[-1].copy(); lifted[2] = p['transfer_z_mm']/1000

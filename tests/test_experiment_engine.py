@@ -164,6 +164,75 @@ def test_configured_deadline_tolerance_allows_an_80_ms_scheduler_stall(tmp_path)
     assert rig.engine.snapshot()["last_error"] == ""
 
 
+def test_exact_100_ms_plan_advance_does_not_trip_float_boundary(tmp_path):
+    rig = make_ladder_rig(recorder_root=tmp_path)
+    rig.engine._setup["max_tick_lateness_s"] = .1
+    rig.engine.start()
+    rig.advance_until("RUN")
+    for _ in range(9):
+        rig.advance()
+    assert rig.engine._compiled['t_s'][rig.engine._last_plan_index] == pytest.approx(.18)
+    rig.clock.advance(.1)
+    rig.hub.poll_once()
+    rig.engine.step()
+    state = rig.engine.state
+    rig.engine.request_stop('test_cleanup')
+    rig.advance_until('ABORTED')
+    assert state == 'RUN'
+
+
+def test_deadline_event_preserves_blocked_command_duration(tmp_path):
+    rig = make_ladder_rig(recorder_root=tmp_path)
+    rig.engine._setup['max_tick_lateness_s'] = .1
+    rig.engine.start()
+    rig.advance_until('RUN')
+    original = rig.arm.push_pose
+
+    def blocked_push(pose):
+        original(pose)
+        rig.clock.advance(.16)
+
+    rig.arm.push_pose = blocked_push
+    rig.advance()
+    rig.arm.push_pose = original
+    pushed = sum(c['action'] == 'push_pose' for c in rig.arm.calls)
+    rig.advance()
+    assert rig.engine.state == 'ABORT_LIFT'
+    assert sum(c['action'] == 'push_pose' for c in rig.arm.calls) == pushed
+    rig.advance_until('ABORTED')
+    events = [json.loads(s) for s in (Path(rig.engine.run_dir)/'events.jsonl').read_text().splitlines()]
+    event = next(e for e in events if e['event'] == 'deadline_miss')
+    assert event['command_duration_s'] == pytest.approx(.16)
+    assert event['allowed_lateness_s'] == .1
+    assert event['planned_advance_s'] > .1
+    assert event['next_plan_index'] > event['last_plan_index']
+    assert event['timeline_policy'] == 'wall_clock'
+    assert _control_rows(rig.engine.run_dir)[-1]['command_duration_s'] == pytest.approx(.16)
+
+
+def test_deadline_is_checked_again_after_command_preparation(tmp_path):
+    rig = make_ladder_rig(recorder_root=tmp_path)
+    rig.engine._setup['max_tick_lateness_s'] = .1
+    rig.engine.start()
+    rig.advance_until('RUN')
+    original = rig.engine._check_pose
+
+    def delayed_check(pose):
+        original(pose)
+        rig.clock.advance(.12)
+
+    rig.engine._check_pose = delayed_check
+    pushed = sum(c['action'] == 'push_pose' for c in rig.arm.calls)
+    rig.advance()
+    rig.engine._check_pose = original
+    state = rig.engine.state
+    after = sum(c['action'] == 'push_pose' for c in rig.arm.calls)
+    rig.engine.request_stop('test_cleanup')
+    rig.advance_until('ABORTED')
+    assert state == 'ABORT_LIFT'
+    assert after == pushed
+
+
 def test_operator_stop_never_releases_grip(tmp_path):
     rig = make_rig(recorder_root=tmp_path)
     rig.engine.start()

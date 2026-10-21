@@ -50,6 +50,10 @@ configs/installations/*
 !configs/installations/template.json
 !configs/installations/README.md
 
+# StrokePlan 生成配方与笔画模板布局
+!configs/strokes/
+!configs/stroke_templates/
+
 # 本地 AI 助手与工作区状态
 .agents/
 .codex/
@@ -69,5 +73,7 @@ runs/*
 !runs/brush1/
 !runs/brush2/
 
-# 展示源码、周报、精选图表与交互页面按用户要求不上传
-outputs/
+# 同步 StrokePlan 资料库；其他生成物保留本地
+outputs/*
+!outputs/stroke_templates/
+outputs/stroke_templates/.guide_sync_trials/

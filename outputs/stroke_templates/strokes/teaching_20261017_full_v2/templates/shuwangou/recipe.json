@@ -1,0 +1,245 @@
+{
+  "id": "shuwangou",
+  "name": "竖弯钩",
+  "type": "shuwangou",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_26.jpg",
+    "sha256": "e57453d915404b24e0ca1e856a9415145f33edaee2cadaae4c345bcd4d77e7f0",
+    "url": "https://pic1.zhimg.com/v2-dbdd973bd661435f9745a2333f8362f4_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -2.24
+        ],
+        [
+          0.02,
+          -5.76
+        ],
+        [
+          0,
+          -8
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "bend",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.8
+        ],
+        [
+          0.35,
+          -1.2
+        ],
+        [
+          1.2,
+          -1.2
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4000000000000001,
+          0.08000000000000002
+        ],
+        [
+          3.5999999999999996,
+          0.36000000000000004
+        ],
+        [
+          5,
+          0.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "hook_turn",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.45,
+          0.15
+        ],
+        [
+          0.45,
+          0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.02,
+          0.25
+        ],
+        [
+          0.02,
+          0.65
+        ],
+        [
+          -0.02,
+          1.0
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "curve",
+      "part": "bend",
+      "t": 0.5,
+      "label": "圆弯",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "hook",
+      "part": "hook_turn",
+      "t": 0.5,
+      "label": "向上转钩",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "hook_turn",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "curve",
+      "ratio": 0.75
+    },
+    {
+      "event": "hook",
+      "ratio": 1.1
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "curve",
+    "hook"
+  ],
+  "rule_notes": [
+    "竖段后圆转右行，末端再向上出钩。",
+    "圆弯与起钩分别标记，横竖长度可分别调整。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 12,
+    "type": "shuwangou",
+    "name": "竖弯钩"
+  }
+}

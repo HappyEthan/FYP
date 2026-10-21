@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template_bundle",
+  "template_id": "a8dfdb64564324be30f2622f54daefde030914b08dee0e296775f222ccc77f2f",
+  "evidence": {
+    "level": "teaching_rule_candidate",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "files": {
+    "recipe.json": "339aed8b3b94c919438b026bf41214c191175f942b077c216c5678cefb608613",
+    "reference_000_annotation.json": "ce847b01a40747a9a140893b93df673e5b8ed0cde28e9649b978ace8c6050729",
+    "reference_000_source.bin": "80d5a535eaa0e0d7a1405d22cca75be7a9f5421589826e4a301a61bde2829734",
+    "report.html": "ac0ec2053d22c1d51b413ad96dcb1e7b841e36d375f4b85694c14ff5151957af",
+    "source_illustration.bin": "d1b1f7036930d123b98f8eb102ee6ba131346633883c4eb7a6e0fb1ad31f5000",
+    "template.json": "002b541c8f525c953df452b38d2aa12806e68aa71768f60067b0b9d630fdc869"
+  }
+}

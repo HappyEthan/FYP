@@ -10,6 +10,15 @@ import numpy as np
 from brushbot.experiments.trajectory import compile_experiment
 
 
+def height_deadline_policy(setup, min_z_mm=20.):
+    """Opt in to ordered timing recovery above a checked command-height floor."""
+    floor = max(float(setup['workspace_min_mm'][2]),
+                float(setup['contact_z_mm'])-float(setup['max_depth_mm']))
+    if not math.isfinite(min_z_mm) or min_z_mm < floor:
+        raise ValueError('timing continuation height is below the installation Z limit')
+    return dict(mode='continue_above_z', min_z_mm=float(min_z_mm))
+
+
 class ExperimentEngine:
     def __init__(self, arm, hub, recorder_factory, clock, *, controller=None,
                  dt_s: float = 0.02):
@@ -43,6 +52,11 @@ class ExperimentEngine:
         self._pause_started_ns = None
         self._pending_next_visit = None
         self._telemetry = None
+        self._last_push_started_ns = None
+        self._last_push_finished_ns = None
+        self._deadline_diagnostic = None
+        self._deadline_recovery_count = 0
+        self._last_deadline_recovery = None
 
     def prepare(self, spec: dict, setup: dict) -> dict:
         if self.state not in {"UNPREPARED", "READY"}:
@@ -58,6 +72,19 @@ class ExperimentEngine:
 
     def _now_ns(self) -> int:
         return int(self.clock.now_ns())
+
+    def _push_pose(self, pose) -> None:
+        self._last_push_started_ns = self._now_ns()
+        self._last_push_finished_ns = None
+        try:
+            self.arm.push_pose(pose)
+        finally:
+            self._last_push_finished_ns = self._now_ns()
+
+    def _command_timing(self):
+        start, end = self._last_push_started_ns, self._last_push_finished_ns
+        return dict(command_started_ns=start, command_finished_ns=end,
+                    command_duration_s=None if start is None or end is None else (end-start)/1e9)
 
     def _start_pose(self):
         return (
@@ -116,6 +143,10 @@ class ExperimentEngine:
         self._pending_next_visit = None
         self.feedback_calls = 0
         self._telemetry = None
+        self._last_push_started_ns = self._last_push_finished_ns = None
+        self._deadline_diagnostic = None
+        self._deadline_recovery_count = 0
+        self._last_deadline_recovery = None
         self.state = "BASELINE"
         self.phase = "baseline"
         self._event("baseline_started")
@@ -219,7 +250,7 @@ class ExperimentEngine:
             wait_z - current[2],
         )
         target = (current[0], current[1], current[2] + dz, *current[3:])
-        self.arm.push_pose(target)
+        self._push_pose(target)
         self._last_command_pose = target
 
     def _check_pose(self, pose) -> None:
@@ -267,6 +298,49 @@ class ExperimentEngine:
         index = min(int(np.searchsorted(timeline, elapsed + 1e-9, side="right") - 1), len(timeline) - 1)
         return max(index, 0)
 
+    def _run_deadline(self, index, now, *, checkpoint):
+        timeline = self._compiled['t_s']
+        # The clock is integral nanoseconds. Quantize each timeline timestamp
+        # before subtraction so an exact 100 ms interval stays at the boundary.
+        target_ns = int(round(float(timeline[index])*1e9))
+        previous_ns = int(round(float(timeline[self._last_plan_index])*1e9))
+        elapsed_ns = now-self._run_started_ns
+        lateness_ns = elapsed_ns-target_ns
+        ahead_ns = target_ns-previous_ns
+        allowed_ns = int(round(float(self._setup['max_tick_lateness_s'])*1e9))
+        allowed_advance_ns = max(int(round(2.5*self.dt_s*1e9)), allowed_ns)
+        if ahead_ns > allowed_advance_ns or lateness_ns > allowed_ns:
+            diagnostic = dict(checkpoint=checkpoint,
+                trajectory_phase=str(self._compiled['phase'][index]),
+                timeline_policy=self._spec.get('timeline_policy', 'wall_clock'),
+                last_plan_index=self._last_plan_index, next_plan_index=index,
+                last_plan_t_s=previous_ns/1e9, next_plan_t_s=target_ns/1e9,
+                elapsed_s=elapsed_ns/1e9, lateness_s=lateness_ns/1e9,
+                planned_advance_s=ahead_ns/1e9, allowed_lateness_s=allowed_ns/1e9,
+                allowed_plan_advance_s=allowed_advance_ns/1e9, **self._command_timing())
+            policy = self._spec.get('deadline_policy', {})
+            if (policy.get('mode') == 'continue_above_z'
+                    and self._spec.get('timeline_policy') == 'sequential_20ms'
+                    and not self._spec['control']['enabled']
+                    and self._last_command_pose is not None):
+                current_z = float(self._last_command_pose[2])*1000
+                next_z = float(self._compiled['pose_m_rad'][index, 2])*1000
+                if min(current_z, next_z) > policy['min_z_mm']:
+                    diagnostic.update(min_z_mm=policy['min_z_mm'], current_z_mm=current_z,
+                                      next_z_mm=next_z, action='continue_in_order')
+                    # Keep the next unsent point, and remove only the observed
+                    # scheduling gap from the nominal execution clock.
+                    self._run_started_ns += max(0, lateness_ns)
+                    self._deadline_recovery_count += 1
+                    self._last_deadline_recovery = diagnostic
+                    self._event('deadline_recovered', **diagnostic)
+                    return 0.
+            self._deadline_diagnostic = diagnostic
+            self._event('deadline_miss', **diagnostic)
+            self._begin_abort('deadline_miss')
+            return None
+        return lateness_ns/1e9
+
     def _run_step(self) -> None:
         now = self._now_ns()
         control = self.hub.latest_control(now)
@@ -290,7 +364,6 @@ class ExperimentEngine:
             if index >= candidate:
                 index = candidate
                 automatic_index = candidate
-        lateness = elapsed - float(timeline[index])
         # 判据看"计划时间推进了多少"，而不是索引差值，并且至少容忍两个样本。
         # 时间轴的采样时刻与引擎的 elapsed 各自带浮点误差：梯子的样本落在精确的 0.02 网格上，
         # 但整体与 elapsed 的 k*0.02 网格有约 1e-15 的偏移。于是一拍之内可能同时跨过两个样本
@@ -298,11 +371,8 @@ class ExperimentEngine:
         # 计划时间）都会把这种噪声当成掉队，实测在 27389 个样本上误判 228 次，整轮扫描被误杀。
         # 2.5*dt 是避免对齐伪影的下限；若 installation 明确允许更大的调度抖动，则计划推进判据
         # 必须使用同一容差，否则 max_tick_lateness_s 放宽后仍会被这里的固定 50 ms 提前中止。
-        planned_ahead = float(timeline[index]) - float(timeline[self._last_plan_index])
-        allowed_lateness = float(self._setup["max_tick_lateness_s"])
-        allowed_plan_advance = max(2.5 * self.dt_s, allowed_lateness)
-        if planned_ahead > allowed_plan_advance or lateness > allowed_lateness:
-            self._begin_abort("deadline_miss")
+        lateness = self._run_deadline(index, now, checkpoint='before_preparation')
+        if lateness is None:
             return
         actual_pose = None
         actual_rx_ns = None
@@ -327,7 +397,11 @@ class ExperimentEngine:
         pose, depth_fb, e_band, limits = self._command_for_tick(
             index, phase, pose, depth_ff, a_control, a_ref)
         self._check_pose(pose)
-        self.arm.push_pose(tuple(pose))
+        # Preparation/state reads may themselves block. Recheck before sending;
+        # an expired deadline must either meet the height policy or abort.
+        if self._run_deadline(index, self._now_ns(), checkpoint='before_push') is None:
+            return
+        self._push_pose(tuple(pose))
         self._last_command_pose = tuple(pose)
         self._telemetry = {
             "host_ns": now,
@@ -359,6 +433,8 @@ class ExperimentEngine:
             "actual_pose_available": actual_pose is not None,
             "actual_pose_m_rad": actual_pose,
             "actual_rx_ns": actual_rx_ns, "lateness_s": lateness,
+            **self._command_timing(),
+            "deadline_recovery_count": self._deadline_recovery_count,
             "limit_active": bool(limits), "limit_reasons": limits,
             **self._control_diagnostics(),
         })
@@ -440,13 +516,14 @@ class ExperimentEngine:
                     "baseline_fixed", baseline_id=baseline["baseline_id"],
                     effective_visit=baseline["effective_visit"])
                 if rebaseline:
-                    paused_ns = self._now_ns() - int(self._pause_started_ns)
-                    self._run_started_ns += paused_ns
                     self.arm.start_servo()
                     if self.controller is not None:
                         self.controller.reset()
                     self._reset_feedback_state(self._last_command_pose)
                     self.hub.set_running(True)
+                    # All stopped preparation, including synchronous StartServo,
+                    # belongs to the pause, not to the next command's deadline.
+                    self._run_started_ns += self._now_ns()-int(self._pause_started_ns)
                     self.state = "RUN"
                     self.phase = "run"
                     self._event(
@@ -520,4 +597,7 @@ class ExperimentEngine:
             "run_dir": self.run_dir, "spec": copy.deepcopy(self._spec),
             "setup": copy.deepcopy(self._setup),
             "telemetry": copy.deepcopy(self._telemetry),
+            "deadline_diagnostic": copy.deepcopy(self._deadline_diagnostic),
+            "deadline_recovery_count": self._deadline_recovery_count,
+            "last_deadline_recovery": copy.deepcopy(self._last_deadline_recovery),
         }

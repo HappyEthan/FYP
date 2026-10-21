@@ -33,7 +33,8 @@ class SampleHub:
 
     def __init__(self, source, clock_ns: Callable[[], int], *, control_filter=None,
                  max_samples: int = 100_000,
-                 abort_on_invalid_running_sample: bool = False):
+                 abort_on_invalid_running_sample: bool = False,
+                 baseline_quality_axes=(0, 1, 2)):
         if max_samples < 1:
             raise ValueError("max_samples must be positive")
         self.source = source
@@ -51,6 +52,12 @@ class SampleHub:
         self._running = False
         self.fault = None
         self.abort_on_invalid_running_sample = bool(abort_on_invalid_running_sample)
+        axes = tuple(baseline_quality_axes)
+        if not axes or len(set(axes)) != len(axes) or any(
+                isinstance(axis, bool) or not isinstance(axis, (int, np.integer))
+                or axis not in (0, 1, 2) for axis in axes):
+            raise ValueError('baseline_quality_axes must be distinct axes from 0, 1, 2')
+        self._baseline_quality_axes = list(axes)
 
     @property
     def baseline_ready(self) -> bool:
@@ -195,7 +202,8 @@ class SampleHub:
         std = values.std(axis=0)
         limits = np.asarray(policy["baseline_max_std_uT"], dtype=float)
         if enforce_quality:
-            if limits.shape != (3,) or not np.isfinite(limits).all() or np.any(std > limits):
+            if (limits.shape != (3,) or not np.isfinite(limits).all()
+                    or np.any(std[self._baseline_quality_axes] > limits[self._baseline_quality_axes])):
                 raise ValueError("baseline standard deviation exceeds limit")
         times = (np.asarray([row["host_rx_ns"] for row in valid], dtype=float) - start_ns) / 1e9
         if duration_s > 0:
@@ -205,7 +213,7 @@ class SampleHub:
         drift_limit = float(policy["baseline_max_drift_uT_s"])
         if enforce_quality:
             if (not math.isfinite(drift_limit) or drift_limit < 0
-                    or np.any(np.abs(slopes) > drift_limit + 1e-9)):
+                    or np.any(np.abs(slopes[self._baseline_quality_axes]) > drift_limit + 1e-9)):
                 raise ValueError("baseline drift exceeds limit")
 
         baseline = values.mean(axis=0)
@@ -225,6 +233,7 @@ class SampleHub:
             "B0_uT": baseline.tolist(),
             "std_uT": std.tolist(),
             "drift_uT_s": slopes.tolist(),
+            "quality_axes": self._baseline_quality_axes.copy(),
             "first_seq": min(int(row["seq"]) for row in valid),
             "last_seq": self._baseline_start_seq,
         }

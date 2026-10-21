@@ -124,6 +124,38 @@ def test_serial_source_reports_empty_and_malformed_input_counts():
     }
 
 
+def test_discard_pending_removes_kernel_and_partial_frames_then_resynchronizes():
+    class FakeSerial:
+        def __init__(self):
+            self.payload = b'1000,2162,0,-7111\n'
+        @property
+        def in_waiting(self):
+            return len(self.payload)
+        def reset_input_buffer(self):
+            self.payload = b''
+        def read(self, _size):
+            result, self.payload = self.payload, b''
+            return result
+    src = SerialSource()
+    src._ser = FakeSerial()
+    src._buf = b'old-partial'
+    result = src.discard_pending()
+    assert result['discarded_bytes'] == len(b'old-partial1000,2162,0,-7111\n')
+    assert src.read_frames() == []
+    # Even a parseable tail must be dropped until the next complete line boundary.
+    src._ser.payload = b'2000,1,2'
+    assert src.read_frames() == []
+    src._ser.payload = b',3\n3000,2160,2957,-7108\n'
+    rows = src.read_frames()
+    assert [(r['sensor_t_us'], r['B_uT']) for r in rows] == [(3000, [2160., 2957., -7108.])]
+
+
+def test_discard_pending_requires_open_serial():
+    import pytest
+    with pytest.raises(RuntimeError, match='not open'):
+        SerialSource().discard_pending()
+
+
 def test_legacy_and_experiment_modes_use_separate_source_instances():
     legacy = ArraySource([0.0], [[1.0, 2.0, 3.0]])
     experiment = ArraySource([0.0], [[1.0, 2.0, 3.0]])

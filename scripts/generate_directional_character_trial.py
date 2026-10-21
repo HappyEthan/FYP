@@ -19,8 +19,16 @@ SOURCE=ROOT/'runs/brush2/plans/10_中字原地进笔_快速转场'
 OUTPUT=ROOT/'runs/brush2/plans/11_中字方向姿态_逆向进笔5mm'
 
 
-def directional_stroke(stroke):
+def directional_stroke(stroke, *, speed_mm_s=10., tilt_deg=15., accel_mm_s2=30.,
+                       angular_speed_deg_s=20., angular_accel_deg_s2=40.,
+                       smoothing_mm=1., speed_knots_s_mm_s=None):
     """Smooth tangent over ~6 mm and retime locally for rotational dynamics."""
+    positive = [speed_mm_s, accel_mm_s2, angular_speed_deg_s,
+                angular_accel_deg_s2, smoothing_mm]
+    if not np.isfinite(positive).all() or min(positive) <= 0:
+        raise ValueError('retiming parameters must be finite and positive')
+    if not np.isfinite(tilt_deg) or not 0. < tilt_deg <= 30.:
+        raise ValueError('writing tilt must be finite and within (0, 30] degrees')
     old_xy=np.asarray(stroke.xy)*1000
     arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(old_xy,axis=0),axis=1))]
     keep=np.r_[True,np.diff(arc)>1e-9]
@@ -30,18 +38,26 @@ def directional_stroke(stroke):
     deriv=np.gradient(xy,d,axis=0)
     theta=np.unwrap(np.arctan2(deriv[:,1],deriv[:,0]))
     # A 1 mm Gaussian smooths digitized tangent changes without adding axial turns.
-    sigma=1./(d[1]-d[0]); radius=int(np.ceil(3*sigma))
+    sigma=smoothing_mm/(d[1]-d[0]); radius=int(np.ceil(3*sigma))
     kernel=np.exp(-.5*(np.arange(-radius,radius+1)/sigma)**2);kernel/=kernel.sum()
     theta=np.convolve(np.pad(theta,(radius,radius),mode='edge'),kernel,mode='valid')
-    rpy=tangent_rpy(theta,15.)
+    rpy=tangent_rpy(theta,tilt_deg)
     dr=np.linalg.norm(np.gradient(rpy,d,axis=0),axis=1)
     ddr=np.linalg.norm(np.gradient(np.gradient(rpy,d,axis=0),d,axis=0),axis=1)
     curvature=np.linalg.norm(np.gradient(deriv,d,axis=0),axis=1)
-    omega,alpha=np.deg2rad(20.),np.deg2rad(40.)
-    speed=np.minimum.reduce([np.full(len(d),10.),
+    omega,alpha=np.deg2rad(angular_speed_deg_s),np.deg2rad(angular_accel_deg_s2)
+    desired_speed=np.full(len(d),speed_mm_s)
+    if speed_knots_s_mm_s is not None:
+        knots=np.asarray(speed_knots_s_mm_s,float)
+        if (knots.ndim != 2 or knots.shape[1] != 2 or len(knots) < 2
+                or not np.isfinite(knots).all() or knots[0,0] != 0. or knots[-1,0] != 1.
+                or np.any(np.diff(knots[:,0]) <= 0) or np.any(knots[:,1] <= 0)):
+            raise ValueError('speed knots must increase from 0 to 1 with finite positive speeds')
+        desired_speed=np.minimum(desired_speed,np.interp(d/d[-1],knots[:,0],knots[:,1]))
+    speed=np.minimum.reduce([desired_speed,
         .6*omega/np.maximum(dr,1e-12),np.sqrt(.3*alpha/np.maximum(ddr,1e-12)),
         np.sqrt(50./np.maximum(curvature,1e-12))])
-    accel=np.minimum(30.,.3*alpha/np.maximum(dr,1e-12))
+    accel=np.minimum(accel_mm_s2,.3*alpha/np.maximum(dr,1e-12))
     speed[0]=speed[-1]=0.
     for i in range(1,len(d)):
         speed[i]=min(speed[i],np.sqrt(speed[i-1]**2+2*min(accel[i-1:i+1])*(d[i]-d[i-1])))
@@ -53,7 +69,7 @@ def directional_stroke(stroke):
     target_xy=np.column_stack([np.interp(distance,d,xy[:,i]) for i in range(2)])/1000
     actual_arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(target_xy,axis=0),axis=1))]
     result=Stroke(actual_arc/actual_arc[-1],target_xy,t,np.interp(distance,arc,old_g),
-                  tangent_rpy(np.interp(distance,d,theta),15.))
+                  tangent_rpy(np.interp(distance,d,theta),tilt_deg))
     result.validate()
     return result
 

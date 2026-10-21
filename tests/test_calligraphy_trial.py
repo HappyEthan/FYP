@@ -41,23 +41,26 @@ def test_trial_exports_same_paper_coordinates_for_each_independent_stroke(tmp_pa
         generate(folder)
 
 
-def test_zhong_runner_defaults_to_offline_pi_for_selected_stroke(tmp_path, capsys):
+def test_zhong_runner_defaults_to_offline_pi_for_selected_stroke(tmp_path, monkeypatch, capsys):
     from scripts.generate_calligraphy_trial import generate
-    from scripts.run_calligraphy_trial import main
+    from scripts import run_strokeplan_trial as runner
     folder = tmp_path/'trial'
     generate(folder)
-    assert main(['--trial-dir', str(folder), '--stroke', '4']) == 0
+    monkeypatch.setattr(runner,'EXPERIMENT','calligraphy')
+    monkeypatch.setattr(runner,'TRIAL',folder)
+    monkeypatch.setattr(runner,'STROKE',4)
+    assert runner.main([]) == 0
     output = capsys.readouterr().out
     assert '原地加载' in output and 'PI' in output and '离线预检通过' in output
 
 
 def test_omitting_stroke_preflights_all_four_without_confirmation(tmp_path, monkeypatch, capsys):
     from scripts.generate_calligraphy_trial import generate
-    from scripts.run_calligraphy_trial import main
+    from scripts.run_strokeplan_trial import main
     folder = tmp_path/'trial'
     generate(folder)
     monkeypatch.setattr('builtins.input', lambda _: pytest.fail('offline must not prompt'))
-    assert main(['--trial-dir', str(folder), '--dry-run']) == 0
+    assert main(['--experiment', 'calligraphy', '--trial-dir', str(folder), '--dry-run']) == 0
     output = capsys.readouterr().out
     assert output.count('离线预检通过') == 4
     for i in range(1, 5):
@@ -71,7 +74,7 @@ def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch,
     import json
     from pathlib import Path
     from scripts.generate_calligraphy_trial import generate
-    from scripts import run_calligraphy_trial as runner
+    from scripts import run_strokeplan_trial as runner
     folder = tmp_path/'trial'
     generate(folder)
     table_path = folder/'feedforward.json'
@@ -95,7 +98,7 @@ def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch,
 
     monkeypatch.setattr(runner, 'run_experiment', run)
     monkeypatch.setattr('builtins.input', confirm)
-    status = runner.main(['--trial-dir', str(folder), '--execute'])
+    status = runner.main(['--experiment', 'calligraphy', '--trial-dir', str(folder), '--execute'])
     assert executed == expected
     assert len(prompts) == 1
     assert status == (2 if failure else 0)
@@ -103,10 +106,24 @@ def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch,
 
 def test_invalid_last_stroke_blocks_whole_character_before_confirmation(tmp_path, monkeypatch):
     from scripts.generate_calligraphy_trial import generate
-    from scripts.run_calligraphy_trial import main
+    from scripts.run_strokeplan_trial import main
     folder = tmp_path/'trial'
     generate(folder)
     (folder/'stroke_04.npz').write_bytes(b'invalid')
     monkeypatch.setattr('builtins.input', lambda _: pytest.fail('all strokes must preflight first'))
     with pytest.raises(SystemExit):
-        main(['--trial-dir', str(folder), '--execute'])
+        main(['--experiment', 'calligraphy', '--trial-dir', str(folder), '--execute'])
+
+
+@pytest.mark.parametrize('stroke',[0,5])
+def test_edited_character_stroke_rejects_invalid_selection(tmp_path,monkeypatch,capsys,stroke):
+    from scripts.generate_calligraphy_trial import generate
+    from scripts import run_strokeplan_trial as runner
+    folder=tmp_path/'trial'
+    generate(folder)
+    monkeypatch.setattr(runner,'EXPERIMENT','calligraphy')
+    monkeypatch.setattr(runner,'TRIAL',folder)
+    monkeypatch.setattr(runner,'STROKE',stroke)
+    with pytest.raises(SystemExit,match='2'):
+        runner.main([])
+    assert 'STROKE' in capsys.readouterr().err

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template_bundle",
+  "template_id": "0f724249e35447d14628c5c5ec2e795f12ba323fae4861293effc2434e73f986",
+  "evidence": {
+    "level": "font_geometry_fixture",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "files": {
+    "reference_000_annotation.json": "c22d2fe82a25555add985c705c697ab2f6392cea1d5a21bc6d696bafc911d4eb",
+    "reference_000_source.bin": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd",
+    "report.html": "63c41e9df33cfa0945985c6ac598a12d7b2cdda67e8c2e599826402b9f554134",
+    "template.json": "11f2c431d57d1c533585553f6b5f4cdaecafe8fdf94253d20a13186bcbe730f1"
+  }
+}

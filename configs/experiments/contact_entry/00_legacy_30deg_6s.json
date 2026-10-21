@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "原参数参考：30°、6秒、150毫米",
+  "note": "复现原接触动作参数，仅作参考；不是已经验证的最优方案。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 32.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 6.0,
+    "preload_speed_mm_s": 2.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 150.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

@@ -1,0 +1,942 @@
+{
+  "schema_version": 1,
+  "role": "teaching_stroke_recipes",
+  "style_id": "kai_teaching_rules_v1",
+  "style_label": "楷书教学规则重建",
+  "sources": [
+    {
+      "id": "zhihu",
+      "title": "硬笔书法28个基本笔画写法字帖教程",
+      "url": "https://zhuanlan.zhihu.com/p/569336204",
+      "reading_url": "https://www.zhihu.com/tardis/zm/art/569336204",
+      "medium": "hard_pen",
+      "access": "text_and_selected_illustrations",
+      "use": "笔画分类、走向与阶段形态参考；不是毛笔运动记录",
+      "verified_at": "2026-10-17"
+    },
+    {
+      "id": "cn5v",
+      "title": "楷书基本笔法十二例",
+      "url": "https://www.cn5v.com/2020/03/14226.html",
+      "medium": "brush",
+      "access": "indexed_text_only_images_unverified",
+      "use": "毛笔笔法的定性约束；原站配图尚未核验",
+      "verified_at": "2026-10-17"
+    }
+  ],
+  "strokes": [
+    {
+      "id": "dian_right",
+      "name": "右点",
+      "type": "dian",
+      "variant": "right_dot",
+      "illustration": {
+        "source_id": "zhihu",
+        "filename": "zhihu_16.jpg",
+        "sha256": "465639f0cf0efe3c59c041e1e5333080d48fc27b46affd841404bd73b794b033",
+        "url": "https://pic4.zhimg.com/v2-7d3ccdff97725a72231f651dcc7ff801_1440w.jpg?consumer=ZHI_MENG",
+        "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+        "cumulative_stage_panels": true
+      },
+      "parts": [
+        {
+          "id": "entry",
+          "phase": "entry",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.08,
+              -0.06
+            ],
+            [
+              0.24,
+              -0.15
+            ],
+            [
+              0.35,
+              -0.28
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "dot_body",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.3,
+              -0.3
+            ],
+            [
+              0.8,
+              -0.85
+            ],
+            [
+              0.92,
+              -1.45
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "exit",
+          "phase": "exit",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.1,
+              -0.1
+            ],
+            [
+              0.15,
+              -0.21
+            ],
+            [
+              0.12,
+              -0.26
+            ]
+          ],
+          "adjustable_span": false
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "part": "entry",
+          "t": 0,
+          "label": "轻落起笔",
+          "action": "touch_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_start",
+          "part": "entry",
+          "t": 1,
+          "label": "转入行笔",
+          "action": "travel",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_end",
+          "part": "dot_body",
+          "t": 1,
+          "label": "转入收笔",
+          "action": "lift_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "end",
+          "part": "exit",
+          "t": 1,
+          "label": "收笔结束",
+          "action": "finish_hint",
+          "speed_hint": "unspecified"
+        }
+      ],
+      "width_knots": [
+        {
+          "event": "start",
+          "ratio": 0.12
+        },
+        {
+          "event": "body_start",
+          "ratio": 0.5
+        },
+        {
+          "event": "body_end",
+          "ratio": 1.1
+        },
+        {
+          "event": "end",
+          "ratio": 0.7
+        }
+      ],
+      "landmarks": [],
+      "rule_notes": [
+        "结构取右下行势，保留可见行笔长度。",
+        "轻起、逐步展开、末端收住；轻重只作定性意图。"
+      ],
+      "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+      "construction": "manually_authored_rule_based_curves"
+    },
+    {
+      "id": "hengzhegou",
+      "name": "横折钩 · 短横长竖",
+      "type": "hengzhegou",
+      "variant": "short_heng_long_shu",
+      "illustration": {
+        "source_id": "zhihu",
+        "filename": "zhihu_30.jpg",
+        "sha256": "e88eba0d59a729d735c6256e4c10efaf754a22aee5cca83630e4de5b8be1d4bc",
+        "url": "https://pic3.zhimg.com/v2-076efaff04a5b46f1539ae32633d93e2_1440w.jpg?consumer=ZHI_MENG",
+        "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+        "cumulative_stage_panels": true
+      },
+      "parts": [
+        {
+          "id": "entry",
+          "phase": "entry",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.12,
+              -0.04
+            ],
+            [
+              0.28,
+              0.02
+            ],
+            [
+              0.5,
+              0.04
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "horizontal",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              1.5,
+              0.08
+            ],
+            [
+              3.5,
+              0.35
+            ],
+            [
+              5,
+              0.4
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "fold",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.3,
+              0.04
+            ],
+            [
+              0.4,
+              -0.3
+            ],
+            [
+              0.35,
+              -0.75
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "vertical",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -3
+            ],
+            [
+              0.05,
+              -7
+            ],
+            [
+              -0.15,
+              -10
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "hook_turn",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.1,
+              -0.8
+            ],
+            [
+              -0.55,
+              -1.1
+            ],
+            [
+              -0.95,
+              -0.8
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "exit",
+          "phase": "exit",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.35,
+              0.28
+            ],
+            [
+              -0.8,
+              0.55
+            ],
+            [
+              -1.15,
+              0.85
+            ]
+          ],
+          "adjustable_span": false
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "part": "entry",
+          "t": 0,
+          "label": "起笔",
+          "action": "touch_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_start",
+          "part": "entry",
+          "t": 1,
+          "label": "横行",
+          "action": "travel",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "turn",
+          "part": "fold",
+          "t": 0.5,
+          "label": "折转",
+          "action": "press_hint",
+          "speed_hint": "slower"
+        },
+        {
+          "name": "hook",
+          "part": "hook_turn",
+          "t": 0.5,
+          "label": "转钩",
+          "action": "press_hint",
+          "speed_hint": "slower"
+        },
+        {
+          "name": "body_end",
+          "part": "hook_turn",
+          "t": 1,
+          "label": "出钩前调整",
+          "action": "lift_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "end",
+          "part": "exit",
+          "t": 1,
+          "label": "向左上出钩",
+          "action": "finish_hint",
+          "speed_hint": "unspecified"
+        }
+      ],
+      "width_knots": [
+        {
+          "event": "start",
+          "ratio": 0.15
+        },
+        {
+          "event": "body_start",
+          "ratio": 0.55
+        },
+        {
+          "event": "turn",
+          "ratio": 1.05
+        },
+        {
+          "event": "hook",
+          "ratio": 1.2
+        },
+        {
+          "event": "body_end",
+          "ratio": 0.7
+        },
+        {
+          "event": "end",
+          "ratio": 0
+        }
+      ],
+      "landmarks": [
+        "turn",
+        "hook"
+      ],
+      "rule_notes": [
+        "横段与竖段分别控制长度，保持一笔连续。",
+        "横段相对细、竖段较饱满；钩前有圆转。",
+        "长短比例与转折数值为人工初值，未宣称适合全部字。"
+      ],
+      "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+      "construction": "manually_authored_rule_based_curves"
+    },
+    {
+      "id": "hengpie",
+      "name": "横撇 · 短横弯撇",
+      "type": "hengpie",
+      "variant": "short_heng_curved_pie",
+      "illustration": {
+        "source_id": "zhihu",
+        "filename": "zhihu_31.jpg",
+        "sha256": "ea0328f9f48ef1991164f79a36618e99972da9c6c964c01d8e3e17db33a2a380",
+        "url": "https://pic3.zhimg.com/v2-5a172ec05c80db2ce8fd003846386e52_1440w.jpg?consumer=ZHI_MENG",
+        "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+        "cumulative_stage_panels": true
+      },
+      "parts": [
+        {
+          "id": "entry",
+          "phase": "entry",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.1,
+              -0.02
+            ],
+            [
+              0.3,
+              0.01
+            ],
+            [
+              0.5,
+              0.04
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "horizontal",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              1.4,
+              0.1
+            ],
+            [
+              2.8,
+              0.45
+            ],
+            [
+              4,
+              0.55
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "fold",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.25,
+              0.06
+            ],
+            [
+              0.28,
+              -0.25
+            ],
+            [
+              0.08,
+              -0.6
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "sweep",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.4,
+              -1.9
+            ],
+            [
+              -2.2,
+              -4.8
+            ],
+            [
+              -5.2,
+              -7.4
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "exit",
+          "phase": "exit",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.3,
+              -0.4
+            ],
+            [
+              -0.7,
+              -0.7
+            ],
+            [
+              -1.2,
+              -1.0
+            ]
+          ],
+          "adjustable_span": false
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "part": "entry",
+          "t": 0,
+          "label": "起笔",
+          "action": "touch_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_start",
+          "part": "entry",
+          "t": 1,
+          "label": "短横行笔",
+          "action": "travel",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "turn",
+          "part": "fold",
+          "t": 0.5,
+          "label": "横撇折转",
+          "action": "press_hint",
+          "speed_hint": "slower"
+        },
+        {
+          "name": "body_end",
+          "part": "sweep",
+          "t": 1,
+          "label": "提锋收撇",
+          "action": "lift_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "end",
+          "part": "exit",
+          "t": 1,
+          "label": "撇出尖",
+          "action": "finish_hint",
+          "speed_hint": "unspecified"
+        }
+      ],
+      "width_knots": [
+        {
+          "event": "start",
+          "ratio": 0.2
+        },
+        {
+          "event": "body_start",
+          "ratio": 0.65
+        },
+        {
+          "event": "turn",
+          "ratio": 1.0
+        },
+        {
+          "event": "body_end",
+          "ratio": 0.35
+        },
+        {
+          "event": "end",
+          "ratio": 0
+        }
+      ],
+      "landmarks": [
+        "turn"
+      ],
+      "rule_notes": [
+        "短横略向右上，折后向左下舒展。",
+        "横段与撇段可独立调整；收撇逐渐减小相对宽度。"
+      ],
+      "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+      "construction": "manually_authored_rule_based_curves"
+    },
+    {
+      "id": "pie_slant",
+      "name": "斜撇",
+      "type": "pie",
+      "variant": "slant",
+      "illustration": {
+        "source_id": "zhihu",
+        "filename": "zhihu_11.jpg",
+        "sha256": "066b9ab88ba2b1c947758d5ac80c4653c0167b005c0c25f9d0c53a0560569177",
+        "url": "https://pic1.zhimg.com/v2-53b9435715abb8bc174f9b5c09360120_1440w.jpg?consumer=ZHI_MENG",
+        "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+        "cumulative_stage_panels": true
+      },
+      "parts": [
+        {
+          "id": "entry",
+          "phase": "entry",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.08,
+              -0.1
+            ],
+            [
+              0.25,
+              -0.25
+            ],
+            [
+              0.35,
+              -0.45
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "sweep",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.1,
+              -1.2
+            ],
+            [
+              -3.4,
+              -5
+            ],
+            [
+              -6,
+              -6.8
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "exit",
+          "phase": "exit",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              -0.4,
+              -0.3
+            ],
+            [
+              -0.8,
+              -0.55
+            ],
+            [
+              -1.3,
+              -0.85
+            ]
+          ],
+          "adjustable_span": false
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "part": "entry",
+          "t": 0,
+          "label": "轻落起笔",
+          "action": "touch_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_start",
+          "part": "entry",
+          "t": 1,
+          "label": "转入行笔",
+          "action": "travel",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_end",
+          "part": "sweep",
+          "t": 1,
+          "label": "转入收笔",
+          "action": "lift_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "end",
+          "part": "exit",
+          "t": 1,
+          "label": "收笔结束",
+          "action": "finish_hint",
+          "speed_hint": "unspecified"
+        }
+      ],
+      "width_knots": [
+        {
+          "event": "start",
+          "ratio": 0.4
+        },
+        {
+          "event": "body_start",
+          "ratio": 1
+        },
+        {
+          "event": "body_end",
+          "ratio": 0.32
+        },
+        {
+          "event": "end",
+          "ratio": 0
+        }
+      ],
+      "landmarks": [],
+      "rule_notes": [
+        "保持向左下的连续曲势。",
+        "前段较饱满，收尾渐细；弧度与长度为工程初值。"
+      ],
+      "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+      "construction": "manually_authored_rule_based_curves"
+    },
+    {
+      "id": "na_slant",
+      "name": "斜捺",
+      "type": "na",
+      "variant": "slant",
+      "illustration": {
+        "source_id": "zhihu",
+        "filename": "zhihu_14.jpg",
+        "sha256": "d1b1f7036930d123b98f8eb102ee6ba131346633883c4eb7a6e0fb1ad31f5000",
+        "url": "https://pic4.zhimg.com/v2-30c04f06299ca730e084de8b0763b6c1_1440w.jpg?consumer=ZHI_MENG",
+        "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+        "cumulative_stage_panels": true
+      },
+      "parts": [
+        {
+          "id": "entry",
+          "phase": "entry",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.08,
+              -0.03
+            ],
+            [
+              0.28,
+              -0.12
+            ],
+            [
+              0.45,
+              -0.24
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "sweep",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              1.4,
+              -1.1
+            ],
+            [
+              4.2,
+              -5.3
+            ],
+            [
+              7.3,
+              -6.2
+            ]
+          ],
+          "adjustable_span": true
+        },
+        {
+          "id": "foot",
+          "phase": "body",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.8,
+              -0.45
+            ],
+            [
+              1.6,
+              -0.5
+            ],
+            [
+              2.3,
+              -0.2
+            ]
+          ],
+          "adjustable_span": false
+        },
+        {
+          "id": "exit",
+          "phase": "exit",
+          "controls": [
+            [
+              0,
+              0
+            ],
+            [
+              0.8,
+              0.1
+            ],
+            [
+              1.4,
+              0.16
+            ],
+            [
+              2,
+              0.2
+            ]
+          ],
+          "adjustable_span": false
+        }
+      ],
+      "events": [
+        {
+          "name": "start",
+          "part": "entry",
+          "t": 0,
+          "label": "轻落起笔",
+          "action": "touch_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "body_start",
+          "part": "entry",
+          "t": 1,
+          "label": "向右下展开",
+          "action": "travel",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "foot",
+          "part": "foot",
+          "t": 0.5,
+          "label": "捺脚转向",
+          "action": "press_hint",
+          "speed_hint": "slower"
+        },
+        {
+          "name": "body_end",
+          "part": "foot",
+          "t": 1,
+          "label": "向右提锋",
+          "action": "lift_hint",
+          "speed_hint": "unspecified"
+        },
+        {
+          "name": "end",
+          "part": "exit",
+          "t": 1,
+          "label": "平出收尖",
+          "action": "finish_hint",
+          "speed_hint": "unspecified"
+        }
+      ],
+      "width_knots": [
+        {
+          "event": "start",
+          "ratio": 0.12
+        },
+        {
+          "event": "body_start",
+          "ratio": 0.35
+        },
+        {
+          "event": "foot",
+          "ratio": 1.35
+        },
+        {
+          "event": "body_end",
+          "ratio": 0.8
+        },
+        {
+          "event": "end",
+          "ratio": 0
+        }
+      ],
+      "landmarks": [],
+      "rule_notes": [
+        "向右下展开后，在捺脚附近转向右方。",
+        "捺脚相对饱满，出锋渐细；宽度不代表力或磁目标。"
+      ],
+      "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+      "construction": "manually_authored_rule_based_curves"
+    }
+  ],
+  "note": "硬笔图只供结构参照；毛笔文字供定性规则。所有曲线与数值均为人工重建候选，待用户复核和实写验证。"
+}

@@ -1,0 +1,328 @@
+{
+  "id": "hengzhezhepie",
+  "name": "横折折撇",
+  "type": "hengzhezhepie",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_38.jpg",
+    "sha256": "c20a11306e1c5f4750c4d71becdd31d8a992b1e320a17e1b4ced030f8c76664c",
+    "url": "https://pic3.zhimg.com/v2-2c84d4ef04b21c9c79fcab501a04ab3a_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.03
+        ],
+        [
+          0.3,
+          0.02
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.2600000000000002,
+          0.12
+        ],
+        [
+          3.2399999999999998,
+          0.54
+        ],
+        [
+          4.5,
+          0.6
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.02
+        ],
+        [
+          0.2,
+          -0.2
+        ],
+        [
+          -0.15,
+          -0.5
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.7,
+          -0.7
+        ],
+        [
+          -1.4,
+          -1.7
+        ],
+        [
+          -2.3,
+          -2.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.2,
+          -0.2
+        ],
+        [
+          -0.15,
+          -0.25
+        ],
+        [
+          0.3,
+          -0.2
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.8400000000000001,
+          0.13999999999999999
+        ],
+        [
+          2.16,
+          0.63
+        ],
+        [
+          3,
+          0.7
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold_3",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.02
+        ],
+        [
+          0.2,
+          -0.2
+        ],
+        [
+          -0.15,
+          -0.5
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.2,
+          -1.8
+        ],
+        [
+          -1.8,
+          -4.2
+        ],
+        [
+          -4,
+          -5.4
+        ]
+      ],
+      "adjustable_span": true,
+      "label": "末撇段"
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.25,
+          -0.25
+        ],
+        [
+          -0.55,
+          -0.5
+        ],
+        [
+          -0.9,
+          -0.75
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn_1",
+      "part": "fold",
+      "t": 0.5,
+      "label": "第一折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "turn_2",
+      "part": "fold_2",
+      "t": 0.5,
+      "label": "第二折",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "turn_3",
+      "part": "fold_3",
+      "t": 0.5,
+      "label": "折入末撇",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep_2",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn_1",
+      "ratio": 1.0
+    },
+    {
+      "event": "turn_2",
+      "ratio": 0.95
+    },
+    {
+      "event": "turn_3",
+      "ratio": 1.0
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn_1",
+    "turn_2",
+    "turn_3"
+  ],
+  "rule_notes": [
+    "横、短撇、小横、末撇顺次连接。",
+    "中间短撇不收尖，最后一撇才完成出锋。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 24,
+    "type": "hengzhezhepie",
+    "name": "横折折撇"
+  }
+}

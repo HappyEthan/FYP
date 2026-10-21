@@ -1,0 +1,79 @@
+{
+  "character": "心",
+  "layout_annotation_id": "ac85298261a086cca41ede784cfb6673bd256843244a44e3807cc2ae25870aa5",
+  "layout_source_sha256": "5eaaa97ddad6bc39db649ce009f127546fa3d979f19073bea81a00ce27012897",
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template_id": "afa61f8a7d25c9729361aafccf79a1da90af973ed4b9e436f21d56a8be88e7ae",
+      "type": "dian",
+      "variant": "left_dot",
+      "name": "左点",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template_id": "09bd474c91c0dfb6a0b50443980a1fa926ad5d459a055671297f7c9f0152e9e4",
+      "type": "wogou",
+      "variant": "standard",
+      "name": "卧钩",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "type": "dian",
+      "variant": "right_dot",
+      "name": "右点",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "type": "dian",
+      "variant": "right_dot",
+      "name": "右点",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ],
+  "recipe_id": "07b60ff6dac92d71ae735164ba2e100c1bc34409d615339d7e038d7169ffbc51",
+  "geometry_id": "4b8f1e118432016e77a88f6ba9dc910a1a22ceb5fffbbc612563b7f34dabd674",
+  "layout_role": "layout_prior_not_generated_ink_ground_truth",
+  "physical_validation": false
+}

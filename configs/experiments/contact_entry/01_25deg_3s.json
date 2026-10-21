@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "较温和的第一档：25°、3秒",
+  "note": "把起始角度和联动时间适度缩小；50毫米用于快速观察进笔和起滑。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 25.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 32.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 3.0,
+    "preload_speed_mm_s": 2.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

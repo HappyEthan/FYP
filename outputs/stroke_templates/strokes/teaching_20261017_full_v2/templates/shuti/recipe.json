@@ -1,0 +1,209 @@
+{
+  "id": "shuti",
+  "name": "竖提",
+  "type": "shuti",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_27.jpg",
+    "sha256": "bcc6a12f368c6b5bb70c159193b5398f095c8d8a6445769de61075b25b3dc1b1",
+    "url": "https://pic4.zhimg.com/v2-1f4aa5489913de09197015e36ce2eee1_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -2.24
+        ],
+        [
+          0.02,
+          -5.76
+        ],
+        [
+          0,
+          -8
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -0.4
+        ],
+        [
+          0.1,
+          -0.6
+        ],
+        [
+          0.35,
+          -0.4
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.7,
+          0.3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2.8,
+          1.7
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.16
+        ],
+        [
+          0.6,
+          0.4
+        ],
+        [
+          1.0,
+          0.65
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn",
+      "part": "fold",
+      "t": 0.5,
+      "label": "竖转提",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "出锋结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn",
+      "ratio": 1.0
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.55
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn"
+  ],
+  "rule_notes": [
+    "先竖后转向右上斜提。",
+    "转折处保留调整位置，提尾收尖。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 13,
+    "type": "shuti",
+    "name": "竖提"
+  }
+}

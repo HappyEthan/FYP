@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "role": "template_character_recipe",
+  "character": "建",
+  "layout": {
+    "annotation": "layout.json",
+    "image": "layout.png",
+    "annotation_id": "540f9cee6f0b662ef4b9a8606ba88a82c7d818284739ff3f1813e1887999439f",
+    "source_sha256": "18f6c47307d65279695f12609a4875cba4a31f8d799729c51f8437277e2b6f33"
+  },
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/hengzhe",
+      "template_id": "02ec931cc834580c6cb48e879f070f85f6390c6d42b1a239b11c5199982290b4",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 0.8,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long",
+      "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short",
+      "template_id": "8c9d1e775b42b9ab1954b97bdb7ce80807d5af5de408918f000ee174b4f8c51a",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short",
+      "template_id": "8c9d1e775b42b9ab1954b97bdb7ce80807d5af5de408918f000ee174b4f8c51a",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s05",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long",
+      "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s06",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/shu_xuanzhen",
+      "template_id": "c73eea3a3083436cd582a11b7ca56827b9291bd6d826ba6f17b85e1bec81d8c2",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s07",
+      "template": "../../../../outputs/stroke_templates/strokes/teaching_20261017_full_v2/templates/hengzhezhepie",
+      "template_id": "c4ad9d72f1d3516b66bd29a804989db17cb779e407a6e20d37597a18432c8e2f",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s08",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/na_flat",
+      "template_id": "a13439699a27bfbdd7b6cd8507e1518126dad906b9cf5897b2272898615cbba4",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ]
+}

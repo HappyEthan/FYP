@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "role": "teaching_guide_review",
+  "review_status": "unreviewed",
+  "source_url": "https://www.sohu.com/a/291748478_183308",
+  "path_count": 2,
+  "physical_validation": false,
+  "files": {
+    "index.html": "2dd3596f7d256f30c51b4e26db1d2906877f9dc925f5607e016356bb16a80b93",
+    "long_source.jpg": "ff3ac64fc3743ff56bf148b5204d4938e5601aa36d233dd0e10f10459576673e",
+    "long_trace.json": "9d2aea39540929e33a013cd0ade0f9c38d08db526ab606deb02ab1faa35b6b88",
+    "long_xy.csv": "58fa9488d4bc34ff4ada3b4857214d32f5162fdc9579b79cb11c7a7446944183",
+    "short_source.jpg": "89aeb3d7166f60288b27300d7cadefae5f0bdb8fc15d55697091b70c8d7ea739",
+    "short_trace.json": "3b9c3b87abac81e34063a41692da5336fb834cb2ef525c33a16dccd24bcfcdb0",
+    "short_xy.csv": "c8bce24e24319cef301a9b5e32f4053b7d379649f656c5effb31526820e921dd"
+  }
+}

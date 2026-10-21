@@ -94,7 +94,7 @@ def test_recorded_rotation_and_p_only_during_measurement(tmp_path, mode):
 
 @pytest.mark.parametrize('mode', ['ff', 'p'])
 def test_comparison_cli_previews_both_modes_without_hardware(tmp_path, monkeypatch, capsys, mode):
-    from scripts import run_nonlinear_ff_comparison as runner
+    from scripts import run_strokeplan_trial as runner
     plan, table, setup, entry = fixture(tmp_path)
     plan.save(tmp_path/'hard_160_240.npz')
     from brushbot.experiments.strokeplan_feedback import DEFAULT_P_PROFILE
@@ -102,6 +102,7 @@ def test_comparison_cli_previews_both_modes_without_hardware(tmp_path, monkeypat
                        ('entry_profile.json',entry),('p_profile.json',DEFAULT_P_PROFILE)]:
         (tmp_path/name).write_text(json.dumps(data))
     monkeypatch.setattr(runner,'TRIAL',tmp_path)
+    monkeypatch.setattr(runner,'EXPERIMENT','nonlinear')
     monkeypatch.setattr(runner,'RUN_ROOT',tmp_path/'runs')
     assert runner.main(['--mode',mode,'--dry-run']) == 0
     output = capsys.readouterr().out

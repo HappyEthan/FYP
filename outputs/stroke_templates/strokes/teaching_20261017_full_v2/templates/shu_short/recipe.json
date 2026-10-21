@@ -1,0 +1,149 @@
+{
+  "id": "shu_short",
+  "name": "短竖",
+  "type": "shu",
+  "variant": "short",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_10.jpg",
+    "sha256": "b14ffd818b819f7fef63611f2f63b0ffb6dee6d867c77c15f82a7307fce76368",
+    "url": "https://pic3.zhimg.com/v2-7f4040dd9b8edcaab621da73d564e122_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          -0.08
+        ],
+        [
+          0.23,
+          -0.24
+        ],
+        [
+          0.25,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "vertical",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -1.12
+        ],
+        [
+          0.02,
+          -2.88
+        ],
+        [
+          0,
+          -4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.02,
+          -0.18
+        ],
+        [
+          0.04,
+          -0.42
+        ],
+        [
+          0.02,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_end",
+      "part": "vertical",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "press_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收住结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.5
+    },
+    {
+      "event": "body_start",
+      "ratio": 1.05
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.8
+    },
+    {
+      "event": "end",
+      "ratio": 1.05
+    }
+  ],
+  "landmarks": [],
+  "rule_notes": [
+    "短竖以紧凑竖势为主。",
+    "用独立宽度意图区分短粗与长竖。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 2,
+    "type": "shu",
+    "name": "竖"
+  }
+}

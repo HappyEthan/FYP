@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "role": "stroke_annotation",
+  "character": "一",
+  "image_size_px": [
+    220,
+    70
+  ],
+  "source_sha256": "1cb8ca216edbb83bb6b71d507f1de23cdfa3bb16c6c11750bbf6919989accbe4",
+  "provenance": {
+    "source_kind": "synthetic_fixture",
+    "note": "Hand-defined analytic geometry, not calligraphy."
+  },
+  "strokes": [
+    {
+      "id": "s01",
+      "type": "heng",
+      "variant": "standard",
+      "xy_px": [
+        [
+          20.0,
+          25.0
+        ],
+        [
+          25.0,
+          30.0
+        ],
+        [
+          30.0,
+          30.0
+        ],
+        [
+          110.0,
+          30.0
+        ],
+        [
+          115.0,
+          25.0
+        ],
+        [
+          110.0,
+          20.0
+        ]
+      ],
+      "anchors": [
+        0,
+        2,
+        3,
+        5
+      ],
+      "width_hint_px": 6.0,
+      "review_status": "unreviewed",
+      "notes": "解析夹具：主体跨度变化，头尾坐标规则独立固定。"
+    }
+  ],
+  "annotation_id": "95522746dbdb0847af661178e293794129aa8cc33c5f3d303e5ab645c6cd5dd7"
+}

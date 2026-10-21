@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "role": "templated_character_xy_bundle",
+  "geometry_id": "653e9afac8e17bb7b0aabe658e7e0c059a9479b41c4ca9e9d126a33c758462fc",
+  "source_sha256": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd",
+  "complete": true,
+  "review_status": "needs_review",
+  "units": "px",
+  "files": {
+    "annotation.json": "c22d2fe82a25555add985c705c697ab2f6392cea1d5a21bc6d696bafc911d4eb",
+    "baseline_paths.csv": "b9bcc2f712315d6e7f1f3e411ac20dfdfb8398b87c0fa42ece9afda958001c9d",
+    "geometry.json": "d18733179a02ea06e24bc23fe182d4d6f27e4cb78ae45ed395ceb8ca70ed0a4a",
+    "image.png": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd",
+    "paths.csv": "4863db88b2a786205456f8c7bd49acc6081250c919039797a3234665a9d1b1aa",
+    "report.html": "53cbfd3d16ea37ade1b291ff5ec986adbf9b56453141d25b429eb58bb789ae52",
+    "review.html": "5a9160db9a516c8c9734a1975ffd4905cc66a153f6e22eededfd7a3f6bf943bb",
+    "source_image.bin": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd",
+    "templates.json": "a1e21c834cdf4c6c45a1d680ed4d755876b721f5f22349d0dd145050e6c1b68f",
+    "xy_paths.npz": "d4eaad7d124ee81d283ea27e42ab5e33ae16b5f5794bb7dbbd9ae19314515c6e"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "role": "template_character_recipe",
+  "character": "心",
+  "layout": {
+    "annotation": "layout/annotation.json",
+    "image": "layout/source_image.bin",
+    "annotation_id": "ac85298261a086cca41ede784cfb6673bd256843244a44e3807cc2ae25870aa5",
+    "source_sha256": "5eaaa97ddad6bc39db649ce009f127546fa3d979f19073bea81a00ce27012897"
+  },
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template": ".template_sources/s01",
+      "template_id": "afa61f8a7d25c9729361aafccf79a1da90af973ed4b9e436f21d56a8be88e7ae",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template": ".template_sources/s02",
+      "template_id": "09bd474c91c0dfb6a0b50443980a1fa926ad5d459a055671297f7c9f0152e9e4",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template": ".template_sources/s03",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template": ".template_sources/s04",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ]
+}

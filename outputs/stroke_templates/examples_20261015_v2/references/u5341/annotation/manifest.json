@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "role": "stroke_annotation_bundle",
+  "annotation_id": "713d0acd0d2321ec63ffd49c7bb0810fd054ca18ef18be71c4326c43aa7e6c05",
+  "character": "十",
+  "review_status": "needs_review",
+  "source_sha256": "f7f5f32311663b0fcd1dc59fe684a2633fa8eadd27d1ff79d9f7bf4ab8677b30",
+  "files": {
+    "annotation.json": "01d8d9ab0ecdf9f60f2ab59769ae7764b06b04ac7cf977aa5df3d7001c5f55ea",
+    "image.png": "f7f5f32311663b0fcd1dc59fe684a2633fa8eadd27d1ff79d9f7bf4ab8677b30",
+    "report.html": "0d9142cfd81ccb749b2f155053a0e30ac21d45673ed8dcbac10af0057f3e613e",
+    "source_image.bin": "f7f5f32311663b0fcd1dc59fe684a2633fa8eadd27d1ff79d9f7bf4ab8677b30"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "role": "template_character_recipe",
+  "character": "永",
+  "layout": {
+    "annotation": "yong_layout_v1.json",
+    "image": "../../outputs/stroke_templates/yong_20261017_final/fit/source_image.bin",
+    "annotation_id": "09c3d65782133ce9b8ec97ac4ab864830a4182d39a63ae5a534ae8a9de3eafd6",
+    "source_sha256": "bca6d6bad3d28879c691cd52027fa0b6b4c98c141aaa21c22ca2c3af5f0bf0cd"
+  },
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template": "../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/dian_right",
+      "template_id": "f60bcdfe10a35c8776735119f04a650594287bd6707b52490e9d921f11fedaa3",
+      "parameters": {
+        "body_scale": 1.1,
+        "width_scale": 0.75,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template": "../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/hengzhegou",
+      "template_id": "7fdc572b0620e9c55392f856de6f53439c91ad228cf9d5129f6fcc0df12cad9d",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.15,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template": "../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/hengpie",
+      "template_id": "9335532bf5f9ee6f8b0bc59b1290bad234cda3146a02a25e852cc8938962a08b",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template": "../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/pie_slant",
+      "template_id": "2835b97b6b7766e0fb236ba98a2ecd11f7c8b363782bf74d285916cdc3730ad3",
+      "parameters": {
+        "body_scale": 0.975,
+        "width_scale": 0.5,
+        "rotation_deg": 2.0,
+        "offset_xy_px": [
+          4.0,
+          2.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s05",
+      "template": "../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/na_slant",
+      "template_id": "0c5cda3ff065c92f7a3b02a35fd08797f5fd928168ac6df1f9d941c06a2bd252",
+      "parameters": {
+        "body_scale": 1.075,
+        "width_scale": 0.5,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          2.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ],
+  "image_constraint": {
+    "max_outside_fraction": 0.0
+  }
+}

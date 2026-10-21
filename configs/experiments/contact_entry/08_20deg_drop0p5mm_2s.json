@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "更小幅联动：20°到15°，同时下降0.5毫米",
+  "note": "先保持20°预压到Z28.5，再在同一2秒内转到15°并降至Z28；相对07只改起转高度，转完不再额外下压。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 20.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 28.5,
+    "target_z_mm": 28.0,
+    "rotate_s": 2.0,
+    "preload_speed_mm_s": 4.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "role": "templated_character_xy_bundle",
+  "geometry_id": "b2c698aaced89f0ef2608a368b4ff23f6252360a6e0c4efaa80faa7906d3539a",
+  "source_sha256": "18f6c47307d65279695f12609a4875cba4a31f8d799729c51f8437277e2b6f33",
+  "complete": true,
+  "review_status": "needs_review",
+  "units": "px",
+  "files": {
+    "annotation.json": "284a553f7b5807fa6b5d6917d1d884356d6339a016b002f41363e833d1b4d456",
+    "baseline_paths.csv": "ef02dd1b741e3083b67d45786fc169cdb29c657482de08d76668249dae7d51f3",
+    "geometry.json": "e2071e8db3cdd3cefc2434a62958a3c9dc3b3059e14e0692a3cc4d94557deb81",
+    "image.png": "18f6c47307d65279695f12609a4875cba4a31f8d799729c51f8437277e2b6f33",
+    "paths.csv": "eba40d3fb8e9025cc138153365fc79a8c4f178187d412e75d843de7517aa9f1f",
+    "report.html": "7f389549f0d4a85ba5294a7ffe1b7d818df4871bf1863850c3a683e18143ff37",
+    "review.html": "963dfc3f088343566e70d52ed9ddb3d013b8a003e1666cd25e8c25be503d1043",
+    "source_image.bin": "18f6c47307d65279695f12609a4875cba4a31f8d799729c51f8437277e2b6f33",
+    "templates.json": "fc59c348e6ce86db040a43f9cbd24ac8ef0c9a3cd79bca141ec556157638623b",
+    "xy_paths.npz": "5e6dd6cd3facc41279777b5f65b4912d06da62ef6ef5c8b660f64b105d963490"
+  }
+}

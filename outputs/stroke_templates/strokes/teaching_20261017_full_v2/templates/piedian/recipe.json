@@ -1,0 +1,210 @@
+{
+  "id": "piedian",
+  "name": "撇点",
+  "type": "piedian",
+  "variant": "standard",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_33.jpg",
+    "sha256": "be6d8c8442f3bddde702679e6b96e7f615ed75124259a2a365fbc9bd593f66db",
+    "url": "https://pica.zhimg.com/v2-03398f9982fdca733b91a2887529f0ac_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.05,
+          -0.08
+        ],
+        [
+          0.18,
+          -0.28
+        ],
+        [
+          0.2,
+          -0.45
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          -1
+        ],
+        [
+          -1.4,
+          -3.8
+        ],
+        [
+          -3,
+          -5
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.2,
+          -0.2
+        ],
+        [
+          -0.1,
+          -0.35
+        ],
+        [
+          0.3,
+          -0.4
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep_2",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.8,
+          -0.35
+        ],
+        [
+          4,
+          -1.6
+        ],
+        [
+          5,
+          -3
+        ]
+      ],
+      "adjustable_span": true,
+      "label": "长点段"
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.12
+        ],
+        [
+          0.23,
+          -0.25
+        ],
+        [
+          0.3,
+          -0.35
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "转入行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn",
+      "part": "fold",
+      "t": 0.5,
+      "label": "撇转长点",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep_2",
+      "t": 1,
+      "label": "转入收笔",
+      "action": "press_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "收住结束",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.4
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.9
+    },
+    {
+      "event": "turn",
+      "ratio": 0.9
+    },
+    {
+      "event": "body_end",
+      "ratio": 1.1
+    },
+    {
+      "event": "end",
+      "ratio": 0.9
+    }
+  ],
+  "landmarks": [
+    "turn"
+  ],
+  "rule_notes": [
+    "撇段与右下长点连续相接。",
+    "中间不作出尖收笔，末端收住。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves",
+  "category": {
+    "order": 19,
+    "type": "piedian",
+    "name": "撇点"
+  }
+}

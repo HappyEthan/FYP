@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "role": "template_character_recipe",
+  "character": "好",
+  "layout": {
+    "annotation": "layout.json",
+    "image": "layout.png",
+    "annotation_id": "c01dd4cea315902eadf1e533b45cc122cec4810f57ba2b8dbb4304af99ae9dcc",
+    "source_sha256": "da2e05a8a81550f564bc2fa65631f233628f6d50d0aa116c6d39297e5a9510d0"
+  },
+  "strokes": [
+    {
+      "stroke_id": "s01",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/piedian",
+      "template_id": "e729c5bee4ed7a0969b5f4a980295c6629c417a39038c5fd0ee729f3df3b71c3",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s02",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/pie_slant",
+      "template_id": "2835b97b6b7766e0fb236ba98a2ecd11f7c8b363782bf74d285916cdc3730ad3",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s03",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/ti",
+      "template_id": "d3c29fa26665e4d5f9afbabce199dc6e5f94086a3f7a4e001a9a9488679ca892",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s04",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/hengpie",
+      "template_id": "9335532bf5f9ee6f8b0bc59b1290bad234cda3146a02a25e852cc8938962a08b",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s05",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_basics_20261017_v1/templates/shugou",
+      "template_id": "d7c1eaab1d33c8bc282e4a05a41980c105279b89cd3ad3b4a41d85a3bb9c09d1",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 0.6,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    },
+    {
+      "stroke_id": "s06",
+      "template": "../../../../outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long",
+      "template_id": "a15ac6cf8b548ebbff250b5a9eedabb509cdb451c943c867b48b74321c3b5cec",
+      "parameters": {
+        "body_scale": 1.0,
+        "width_scale": 1.0,
+        "rotation_deg": 0.0,
+        "offset_xy_px": [
+          0.0,
+          0.0
+        ],
+        "span_scales": {}
+      }
+    }
+  ]
+}

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+from contextlib import contextmanager
 import hashlib
 import json
 from pathlib import Path
@@ -162,8 +163,9 @@ def main(argv=None):
                             record_tcp=not args.no_record_actual_tcp)
 
 
-def execute_hardware(profile, setup, source_bytes, root, *, record_tcp,
-                     stack_factory=None, display_name='Z 辨识'):
+@contextmanager
+def hardware_session(setup, *, record_tcp):
+    """Own one connection set across one or more separately recorded trials."""
     # All device imports and connections occur after the operator's RUN.
     sys.path.insert(0, str(ADAPTER_ROOT))
     from huayan_robot import HuayanRobot
@@ -173,6 +175,7 @@ def execute_hardware(profile, setup, source_bytes, root, *, record_tcp,
     lock = RobotResourceLock(Path('/tmp/brushbot-feedforward.lock'), ARM_IP)
     panel = LiveStatusPanel(sys.stdout)
     robot = pose_client = None
+    installation = copy.deepcopy(setup)
     lock.acquire()
     try:
         robot = HuayanRobot(ARM_IP, tcp_name=setup['tcp_name'], ucs_name=setup['ucs_name'],
@@ -186,29 +189,43 @@ def execute_hardware(profile, setup, source_bytes, root, *, record_tcp,
             if not np.allclose(_vendor_coord_to_si(coord), setup[key], atol=1e-9, rtol=0):
                 raise ValueError('controller coordinates differ from settings: '+key)
             setattr(robot.arm, attr, list(coord))
-        arm = ElfinExperimentArm(robot, setup, transport_timeout_s=.5, clock_ns=clock.now_ns)
-        sampler = None
+        backend = None
         if record_tcp:
             from huayan_robot.vendor import CPSClient
             from brushbot.backends.huayan import HuayanBackend
             pose_client = CPSClient(ARM_IP)
             pose_client.tcp.settimeout(.5)
             backend = HuayanBackend(pose_client, servo_dt=.02)
-            sampler = TCPPoseSampler(lambda: backend.read().tcp_pose, clock_ns=clock.now_ns)
         source.start()
-        factory = build_stack if stack_factory is None else stack_factory
-        engine, hub = factory(profile=profile, setup=setup, root=root, arm=arm,
-                              source=source, clock=clock, settings_source_bytes=source_bytes)
 
-        def show(lines):
-            panel.update((lines[0].replace('StrokePlan', display_name), lines[1]))
+        def execute(profile, current_setup, source_bytes, root, *,
+                    stack_factory=None, display_name='Z 辨识'):
+            # Coordinates are verified once on connection. Origins may differ
+            # between trials, but the named installation must remain identical.
+            for key in ('tcp_name', 'ucs_name', 'tool_coord_si', 'user_coord_si'):
+                if current_setup[key] != installation[key]:
+                    raise ValueError('installation changed within hardware session: '+key)
+            arm = ElfinExperimentArm(robot, current_setup, transport_timeout_s=.5, clock_ns=clock.now_ns)
+            sampler = (TCPPoseSampler(lambda: backend.read().tcp_pose, clock_ns=clock.now_ns)
+                       if backend is not None else None)
+            factory = build_stack if stack_factory is None else stack_factory
+            engine, hub = factory(profile=profile, setup=current_setup, root=root, arm=arm,
+                                  source=source, clock=clock, settings_source_bytes=source_bytes)
 
-        result = run_recorded(engine, hub, clock=clock, live_output_fn=show, pose_sampler=sampler)
-        panel.close()
-        _report(result)
-        if result.get('pose_capture'):
-            print('实际 TCP 采集:', json.dumps(result['pose_capture'], ensure_ascii=False))
-        return 0 if result['state'] == 'END_WAIT' else 2
+            def show(lines):
+                panel.update((lines[0].replace('StrokePlan', display_name), lines[1]))
+
+            result = run_recorded(engine, hub, clock=clock, live_output_fn=show, pose_sampler=sampler)
+            panel.close()
+            _report(result)
+            if result.get('pose_capture'):
+                print('实际 TCP 采集:', json.dumps(result['pose_capture'], ensure_ascii=False))
+                if not result['pose_capture'].get('worker_stopped', False):
+                    print('实际 TCP 采集线程未停止；停止批次，不复用仍在读取的连接。')
+                    return 2
+            return 0 if result['state'] == 'END_WAIT' else 2
+
+        yield execute
     finally:
         try:
             panel.close()
@@ -225,6 +242,17 @@ def execute_hardware(profile, setup, source_bytes, root, *, record_tcp,
                             robot.client.raw_client.tcp.close()
                     finally:
                         lock.release()
+
+
+def execute_hardware(profile, setup, source_bytes, root, *, record_tcp,
+                     stack_factory=None, display_name='Z 辨识', session=None):
+    """Single-trial compatibility entry; a supplied session stays open."""
+    if session is not None:
+        return session(profile, setup, source_bytes, root, stack_factory=stack_factory,
+                       display_name=display_name)
+    with hardware_session(setup, record_tcp=record_tcp) as execute:
+        return execute(profile, setup, source_bytes, root, stack_factory=stack_factory,
+                       display_name=display_name)
 
 
 if __name__ == '__main__':

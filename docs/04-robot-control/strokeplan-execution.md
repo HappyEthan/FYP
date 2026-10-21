@@ -5,7 +5,7 @@ status: active
 
 # StrokePlan 执行说明
 
-非线性前馈表、受限 PI 的现行控制律及 2026-09-25 实验结论见[完整设计与实验总结](nonlinear-feedforward-pi-summary-2026-09-25.md)。短平台 PI 与 Ki 扫描使用其中列出的专用包装脚本；下文旧 P 包装入口仍限定 `ki=0`。
+非线性前馈表、受限 PI 的现行控制律及 2026-09-25 实验结论见[完整设计与实验总结](nonlinear-feedforward-pi-summary-2026-09-25.md)。六个实验启动包装已合并为 [`run_strokeplan_trial.py`](../../scripts/run_strokeplan_trial.py)，在脚本前部选择实验并编辑参数；单笔 P 模式仍限定 `ki=0`。
 
 本说明使用现行格式版本 3 的[StrokePlan 目标契约](../02-strokeplan/strokeplan.md)。目标文件保存 XY、逐点时间和 `g_target`；执行器另读前馈表和现场设置，按时间插值目标后查表生成 Z 命令。`compiled_plan.npz` 与执行日志是派生产物，不是原始 StrokePlan。旧格式脚本[`execute_strokeplan.py`](../../scripts/execute_strokeplan.py)读取内嵌 Z 的历史文件，不应作为现行目标的执行入口。
 
@@ -36,22 +36,39 @@ python scripts/run_strokeplan_experiment.py PATH_TO_PLAN.npz \
 
 ## 单笔真机录制
 
-项目提供两个固定模式包装脚本：[`run_strokeplan_feedforward.py`](../../scripts/run_strokeplan_feedforward.py) 为纯前馈，逐拍记录磁响应但不据此修正 Z；[`run_strokeplan_p.py`](../../scripts/run_strokeplan_p.py) 仅在书写阶段使用受限 P 修正。**两个脚本默认进入真机确认流程**，先只用 `--dry-run`：
+统一入口 [`run_strokeplan_trial.py`](../../scripts/run_strokeplan_trial.py) 在前部集中提供中文参数说明。修改 `EXPERIMENT` 选择下列实验，默认 `EXECUTE=False`，只进行离线预检：
+
+| `EXPERIMENT` | 实验 | 主要参数 |
+|---|---|---|
+| `strokeplan_ff` | 单笔纯前馈 | `STROKEPLAN` |
+| `strokeplan_p` | 单笔受限 P | `STROKEPLAN`、`P_PROFILE` |
+| `nonlinear` | 160–240 µT 难曲线 FF/P 对比及 P 扫描 | `MODE`、`KP`、`MAX_CORRECTION_MM`、`P_DYNAMICS` |
+| `short_plateau` | 160→240→160 短平台 P/PI | `MODE` |
+| `ki_scan` | 冻结顺序的六步 Ki 扫描，每次执行一步 | `KI_STEP` |
+| `calligraphy` | 中字逐笔或整字 | `MODE`、`STROKE` |
+
+选好参数后直接执行：
 
 ```bash
-python scripts/run_strokeplan_feedforward.py PATH_TO_PLAN.npz --dry-run
-python scripts/run_strokeplan_p.py PATH_TO_PLAN.npz --dry-run
+python scripts/run_strokeplan_trial.py
 ```
 
-包装脚本顶部固定前馈表、设置、串口、IP、输出目录和 P 参数；换毛笔或现场条件时须逐项核对，不要只替换 NPZ。正式运行时去掉 `--dry-run`，脚本先编译并检查输入批准状态，打印等待位姿与配置；操作者完成沾水、确认处于等待位和路径净空后输入 `RUN`，才连接设备。每次只运行一笔，不能把多个 NPZ 当成自动连续执行。
+脚本前部还提供各实验的输入目录、前馈表、现场设置、串口、IP、输出目录和 TCP 采样开关。`MODE=None` 自动选择当前实验的默认模式；`TRIAL=None` 自动选择对应输入目录。单笔 FF/P 的 `STROKEPLAN` 相对路径从该输入目录计算，也支持绝对路径。切换实验后重新核对装配和输入，不要只替换 NPZ。
 
-若要诊断命令 Z 与实际 TCP Z 的差异，可在 P 脚本后加 `--record-actual-tcp`，先同样带 `--dry-run` 预检。正式运行仍需人工沾水、确认等待位和输入 `RUN`。该选项在确认后另开一条机械臂连接，先验证实际 TCP 可读，再以约 10 Hz 在独立线程记录；首次读取失败时不开始机械臂运动。采集不参与 P 反馈，也不让每个 20 ms 命令拍等待状态查询。现场须核对控制器是否支持第二连接，并检查采集期间的命令调度延迟。
+也可以临时用命令行覆盖实验选择、目标与执行开关。命令行目标路径相对当前工作目录解析，沿用原入口的用法；脚本前部的 `STROKEPLAN` 相对实验输入目录解析。
 
 ```bash
-python scripts/run_strokeplan_p.py PATH_TO_PLAN.npz --record-actual-tcp --dry-run
+python scripts/run_strokeplan_trial.py --experiment strokeplan_ff PATH_TO_PLAN.npz --dry-run
+python scripts/run_strokeplan_trial.py --experiment strokeplan_p PATH_TO_PLAN.npz --dry-run
 ```
 
-也可使用通用入口，显式传入 `--execute`、文件、连接参数和 `--control-mode feedforward|p|pi`；P 模式要求匹配的 EMA α=0.3 信号处理与 `ki=0`，PI 需由专用包装入口传入完整 PI profile（含积分限幅与条件抗饱和）。上述单笔控制器仅在 `measure_00` 使用 `g_target - g_measured` 做修正；非书写阶段按编译轨迹运行，PI 积分清零。传感器无效、过期或通信异常的处理取决于实验引擎，运行后应核对事件与结束状态。
+正式运行将前部的 `EXECUTE` 改为 `True`，或显式传入 `--execute`。脚本编译并检查输入批准状态，打印等待位姿与配置；操作者完成沾水并确认自动回位与书写路径净空后输入 `RUN`，才连接设备。连接与坐标核验通过后，脚本按当前 `settings.json` 自动定位：先在当前 XY 抬到转场高度，再高位移动到等待点、对齐姿态，必要时下降至等待高度。到位后仍执行原有等待位检查，清空定位期间积累的传感器数据，再采集基线和开始实验。单笔模式每次只运行一笔；整字模式保留全部笔画预检、一次整字确认和任一笔异常后停止的策略。
+
+启动定位复用四方向实验的限速、限加速度和逐点到位检查。当前位置超出当前配置的工作空间、机械臂未处于 Standby（33）或定位失败时停止，不能通过跳过等待位检查开始写字。定位尝试在 `runs/<brush>/<日期>/positioning/strokeplan_*.json` 中独立保存，失败时也保留记录；成功运行的 `resolved.json` 中另存 `positioning`，包含原始位姿、路线、定位记录路径和传感器缓冲清理结果。启动定位耗时单独记录，不计入目标 StrokePlan 的书写时长。
+
+若要诊断命令 Z 与实际 TCP Z 的差异，将 `RECORD_ACTUAL_TCP=True`，或加 `--record-actual-tcp`，先进行离线预检。`None` 保留各实验原设置：单笔 FF/P 默认关闭，其余实验开启。该选项在确认后另开一条机械臂连接，先验证实际 TCP 可读，再以约 10 Hz 在独立线程记录；首次读取失败时不开始机械臂运动。采集不参与反馈，也不让每个 20 ms 命令拍等待状态查询。
+
+也可直接使用底层 `run_strokeplan_experiment.py`，显式传入文件、连接参数和 `--control-mode feedforward|p|pi`；P 模式要求匹配的 EMA α=0.3 信号处理与 `ki=0`，PI 由统一实验入口传入完整 PI profile（含积分限幅与条件抗饱和）。上述单笔控制器仅在 `measure_00` 使用 `g_target - g_measured` 做修正；非书写阶段按编译轨迹运行，PI 积分清零。传感器无效、过期或通信异常的处理取决于实验引擎，运行后应核对事件与结束状态。
 
 ## 运行产物与结论
 
@@ -63,15 +80,15 @@ brush2 套件、运行数值与单笔结果以各次 run 的输入快照、manif
 
 ## 非线性前馈与 P：单条难曲线对比
 
-[`run_nonlinear_ff_comparison.py`](../../scripts/run_nonlinear_ff_comparison.py) 固定读取本次 160–240 µT 难曲线、非线性表和旋转进笔参数。默认只预检；真机需要显式 `--execute` 并逐笔输入 `RUN`。两种模式共用目标与名义前馈轨迹，实际 TCP 采集均开启，P 参数单独保存于实验目录的 `p_profile.json`。
+在 [`run_strokeplan_trial.py`](../../scripts/run_strokeplan_trial.py) 选择 `EXPERIMENT="nonlinear"`，读取本次 160–240 µT 难曲线、非线性表和旋转进笔参数。`MODE="ff"` 或 `"p"` 切换对照；默认只预检，真机逐笔输入 `RUN`。两种模式共用目标与名义前馈轨迹，实际 TCP 采集默认开启，P 参数从实验目录的 `p_profile.json` 读取；顶部的 `KP`、`MAX_CORRECTION_MM`、`P_DYNAMICS` 可选择 P 扫描条件。
 
 ```bash
-PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode ff --dry-run
-PYTHONPATH=src python scripts/run_nonlinear_ff_comparison.py --mode p --dry-run
+python scripts/run_strokeplan_trial.py --experiment nonlinear --mode ff --dry-run
+python scripts/run_strokeplan_trial.py --experiment nonlinear --mode p --dry-run
 ```
 
 本批次采用高位 Ry30 → Z36 → 固定 XYZ 旋转至 Ry15，随后 +X 滑动 1 s、行走中加载 3 s，再进入 40 s 测量。全线 450 mm（X−370→80），其中测量段 400 mm（X−331→69）；测量前后的 X 运动连续。磁目标包含快慢升降、短平台与多次反转，P 仅在 `measure_00` 生效。
 
 通用入口通过可选 `--entry-profile` 启用该流程；未提供时保留原有固定姿态下笔。旋转模式要求单笔纸面坐标目标与准备段后的连续行笔位置、速度吻合，拒绝不匹配而不自动平移原目标。每次 run 快照 `entry_profile.json`，`resolved.json` 同时保存进笔配置与实际 P 参数；新旋转流程下两种模式的传感器断开均触发中止抬笔。
 
-本次试验文件与执行顺序见[批次说明](../../runs/brush2/plans/06_难曲线160到240_FF与P/README.md)。记录到 `runs/brush2/<日期>/06_非线性前馈难曲线对比/raw/`，沿用 sensor/control/events/manifest、输入快照及 actual_tcp 格式。试验表已按用户本次对比请求标记为实验采用，不表示跟踪效果已验证；原候选表与旧实验入口配置保留。
+本次试验文件与执行顺序见[批次说明](../../runs/brush2/plans/06_难曲线160到240_FF与P/README.md)。批次产物中的旧脚本命令保留作历史来源，当前执行使用上面的统一入口。记录到 `runs/brush2/<日期>/06_非线性前馈难曲线对比/raw/`，沿用 sensor/control/events/manifest、输入快照及 actual_tcp 格式。试验表已按用户本次对比请求标记为实验采用，不表示跟踪效果已验证；原候选表与既有实验参数保持原样。

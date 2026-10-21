@@ -7,7 +7,7 @@ from tests.test_short_plateau_pi_experiment import generate_trial
 
 
 def prepare(tmp_path, monkeypatch):
-    from scripts import run_short_plateau_ki_scan as runner
+    from scripts import run_strokeplan_trial as runner
     generate_trial(tmp_path)
     root=tmp_path/'trial'
     base=json.loads((root/'pi_profile.json').read_text())
@@ -15,6 +15,7 @@ def prepare(tmp_path, monkeypatch):
         (root/f'pi_ki_{ki:g}.json').write_text(json.dumps(dict(base,ki=ki)))
     (root/'protocol.json').write_text(json.dumps({'ki_sequence':[.05,.025,.1,.1,.025,.05]}))
     monkeypatch.setattr(runner,'TRIAL',root)
+    monkeypatch.setattr(runner,'EXPERIMENT','ki_scan')
     monkeypatch.setattr(runner,'RUN_ROOT',tmp_path/'runs')
     return runner,root
 
@@ -45,10 +46,29 @@ def test_execute_requires_run_and_declining_creates_no_run(tmp_path,monkeypatch)
     assert not (tmp_path/'runs').exists()
 
 
-@pytest.mark.parametrize('args',[[],['--step','0'],['--step','7']])
+@pytest.mark.parametrize('args',[['--step','0'],['--step','7']])
 def test_invalid_step_rejected(tmp_path,monkeypatch,args):
     runner,_=prepare(tmp_path,monkeypatch)
     with pytest.raises(SystemExit,match='2'):runner.main(args)
+    assert not (tmp_path/'runs').exists()
+
+
+def test_edited_scan_step_runs_without_command_line_arguments(tmp_path, monkeypatch, capsys):
+    runner,_=prepare(tmp_path,monkeypatch)
+    monkeypatch.setattr(runner,'KI_STEP',3)
+    assert runner.main([])==0
+    output=capsys.readouterr().out
+    assert '第 3/6 笔' in output and 'kp=1, ki=0.1' in output
+    assert '未连接硬件' in output
+    assert not (tmp_path/'runs').exists()
+
+
+@pytest.mark.parametrize('step',[0,7])
+def test_edited_scan_step_outside_protocol_is_rejected(tmp_path,monkeypatch,step):
+    runner,_=prepare(tmp_path,monkeypatch)
+    monkeypatch.setattr(runner,'KI_STEP',step)
+    with pytest.raises(SystemExit,match='2'):
+        runner.main([])
     assert not (tmp_path/'runs').exists()
 
 

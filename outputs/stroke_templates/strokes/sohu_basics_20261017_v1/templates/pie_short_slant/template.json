@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "role": "stroke_template",
+  "type": "pie",
+  "variant": "short_slant",
+  "style_id": "kai_teaching_rules_v1",
+  "units": "reference_width",
+  "prototype": {
+    "reference_id": "a4125be8f0efab9f130d45bf8cd0b904b0cf73e6c44d4a339494c15e0c156e19",
+    "xy": [
+      [
+        0.17543172950937355,
+        -0.3330660371844628
+      ],
+      [
+        -0.027967377168161032,
+        -0.4423930570236377
+      ],
+      [
+        -0.09661457567182893,
+        -0.2745887940146717
+      ],
+      [
+        -0.11695448633958239,
+        -0.2567913721803874
+      ],
+      [
+        -0.14746435234121255,
+        -0.08644462033795217
+      ],
+      [
+        -0.18051670717631194,
+        -0.02161115508448804
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.7640178944574891,
+        0.031781110418364754
+      ],
+      [
+        0.7843578051252426,
+        0.013983688584080459
+      ],
+      [
+        0.9559758013844125,
+        0.02542488833469178
+      ],
+      [
+        0.9953843783031847,
+        0.008898710917142118
+      ],
+      [
+        1.1479337083113357,
+        0.019068666251018763
+      ],
+      [
+        1.2064109514811268,
+        0.003813733250203731
+      ],
+      [
+        1.3970976139913156,
+        0.016526177417549637
+      ],
+      [
+        1.4365061909100878,
+        -2.700542492331462e-17
+      ],
+      [
+        1.56998685466722,
+        0.008898710917142089
+      ],
+      [
+        1.619565386919869,
+        -0.01652617741754977
+      ],
+      [
+        1.7339773844259823,
+        -0.00889871091714219
+      ],
+      [
+        1.7733859613447542,
+        -0.025424888334691854
+      ]
+    ],
+    "anchors": [
+      0,
+      6,
+      14,
+      18
+    ],
+    "descriptors": [
+      {
+        "phase_id": "entry",
+        "arc_length": 0.8668844957392936,
+        "chord_length": 0.37644292641038163,
+        "start_heading_rad": -2.6483969966870933,
+        "end_heading_rad": 0.11915122538676548,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      },
+      {
+        "phase_id": "body",
+        "arc_length": 1.4536037143593288,
+        "chord_length": 1.4365061909100878,
+        "start_heading_rad": 0.04157337015690362,
+        "end_heading_rad": -0.397079445224983,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      },
+      {
+        "phase_id": "exit",
+        "arc_length": 0.34689404860319284,
+        "chord_length": 0.33783783783783766,
+        "start_heading_rad": 0.06656816377582359,
+        "end_heading_rad": -0.39707944522498506,
+        "mean_width_reference_width": null,
+        "visible_width_samples": 0
+      }
+    ],
+    "width_profiles": {},
+    "landmarks": []
+  },
+  "adaptation": "single_body",
+  "references": [
+    {
+      "type": "pie",
+      "variant": "short_slant",
+      "review_status": "unreviewed",
+      "source_sha256": "b9506bda6fa2123e13be5becec50c40f3a7b7772d4c536d457a0bbfa8d7ce080",
+      "xy_px": [
+        [
+          234.0,
+          571.0
+        ],
+        [
+          240.0,
+          587.0
+        ],
+        [
+          252.0,
+          581.0
+        ],
+        [
+          254.0,
+          581.0
+        ],
+        [
+          264.0,
+          573.0
+        ],
+        [
+          269.0,
+          571.0
+        ],
+        [
+          260.0,
+          561.0
+        ],
+        [
+          219.0,
+          522.0
+        ],
+        [
+          217.0,
+          522.0
+        ],
+        [
+          208.0,
+          513.0
+        ],
+        [
+          205.0,
+          512.0
+        ],
+        [
+          197.0,
+          504.0
+        ],
+        [
+          193.0,
+          502.0
+        ],
+        [
+          183.0,
+          492.0
+        ],
+        [
+          180.0,
+          491.0
+        ],
+        [
+          173.0,
+          484.0
+        ],
+        [
+          169.0,
+          483.0
+        ],
+        [
+          163.0,
+          477.0
+        ],
+        [
+          160.0,
+          476.0
+        ]
+      ],
+      "anchors": [
+        0,
+        6,
+        14,
+        18
+      ],
+      "landmarks": [],
+      "width_px": 74.0,
+      "width_source": "manual_diagram_width_hint",
+      "width_measurement": {
+        "width_px": 74.0,
+        "method": "manual_diagram_width_hint",
+        "basis": "上方笔形外轮廓中段，跨近法向截线由(202,112)至(251,167)，两条外边缘间距约74像素；不是内箭头或轮廓白线的线宽。"
+      },
+      "image_kind": "teaching_reconstruction",
+      "source_kind": "teaching_rule_reconstruction",
+      "width_definition": "diagram_ink_width_normalization_candidate_not_contact_width_or_force",
+      "reference_id": "a4125be8f0efab9f130d45bf8cd0b904b0cf73e6c44d4a339494c15e0c156e19"
+    }
+  ],
+  "limits": {
+    "body_aspect_range": [
+      0.4309518572730263,
+      4.309518572730264
+    ],
+    "max_bend_widths": 2.0
+  },
+  "observed": {
+    "body_aspect_range": [
+      1.4365061909100878,
+      1.4365061909100878
+    ]
+  },
+  "evidence": {
+    "level": "teaching_rule_candidate",
+    "physical_validation": false,
+    "note": "Image geometry only; width scaling and motion/magnetic transfer require paired trials."
+  },
+  "template_id": "da1f33bdd74d2209fe4f6e96daf374e213f77738bafaae9cefcc29fa89ad8ce3",
+  "guide_trace": {
+    "schema_version": 1,
+    "id": "pie_short_slant",
+    "name": "短撇 · 斜势",
+    "review_status": "unreviewed",
+    "coordinate_source": "ordered_white_guide_trace_simplified_per_phase",
+    "source_sha256": "b9506bda6fa2123e13be5becec50c40f3a7b7772d4c536d457a0bbfa8d7ce080",
+    "source_url": "https://5b0988e595225.cdn.sohucs.com/images/20190127/acf192550d074803b695b14f010fb2fd.jpeg",
+    "article_url": "https://www.sohu.com/a/291748478_183308",
+    "raw_trace_sha256": "0d2f63846a84dccf5e39d6466c9abba91bebf4471bba8ca6f9677f6142fdafeb",
+    "image_size_px": [
+      398,
+      672
+    ],
+    "source_crop_image_px": [
+      61.0,
+      48.0,
+      334.0,
+      254.0
+    ],
+    "source_points_image_px": [
+      [
+        234.0,
+        100.0
+      ],
+      [
+        240.0,
+        84.0
+      ],
+      [
+        252.0,
+        90.0
+      ],
+      [
+        254.0,
+        90.0
+      ],
+      [
+        264.0,
+        98.0
+      ],
+      [
+        269.0,
+        100.0
+      ],
+      [
+        260.0,
+        110.0
+      ],
+      [
+        219.0,
+        149.0
+      ],
+      [
+        217.0,
+        149.0
+      ],
+      [
+        208.0,
+        158.0
+      ],
+      [
+        205.0,
+        159.0
+      ],
+      [
+        197.0,
+        167.0
+      ],
+      [
+        193.0,
+        169.0
+      ],
+      [
+        183.0,
+        179.0
+      ],
+      [
+        180.0,
+        180.0
+      ],
+      [
+        173.0,
+        187.0
+      ],
+      [
+        169.0,
+        188.0
+      ],
+      [
+        163.0,
+        194.0
+      ],
+      [
+        160.0,
+        195.0
+      ]
+    ],
+    "raw_point_count": 156,
+    "simplify_tolerance_px": 0.75,
+    "max_raw_point_deviation_px": 0.7022468831767834,
+    "stage_boundary_basis": "manual_interpretation_not_measured_phase",
+    "width_normalization": {
+      "method": "manual_diagram_width_hint",
+      "basis": "上方笔形外轮廓中段，跨近法向截线由(202,112)至(251,167)，两条外边缘间距约74像素；不是内箭头或轮廓白线的线宽。",
+      "physical_scale_known": false
+    },
+    "writing_hint": "图中内导线为短而斜的左下撇势，短逆入后右下折入，再斜向左下提行；内箭头止于(160,195)附近，外轮廓左尖约(74,247)，不外推到轮廓尖端。"
+  }
+}

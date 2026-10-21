@@ -1,0 +1,204 @@
+{
+  "id": "hengpie",
+  "name": "横撇 · 短横弯撇",
+  "type": "hengpie",
+  "variant": "short_heng_curved_pie",
+  "illustration": {
+    "source_id": "zhihu",
+    "filename": "zhihu_31.jpg",
+    "sha256": "ea0328f9f48ef1991164f79a36618e99972da9c6c964c01d8e3e17db33a2a380",
+    "url": "https://pic3.zhimg.com/v2-5a172ec05c80db2ce8fd003846386e52_1440w.jpg?consumer=ZHI_MENG",
+    "role": "hard_pen_structural_comparison_not_brush_motion_ground_truth",
+    "cumulative_stage_panels": true
+  },
+  "parts": [
+    {
+      "id": "entry",
+      "phase": "entry",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.1,
+          -0.02
+        ],
+        [
+          0.3,
+          0.01
+        ],
+        [
+          0.5,
+          0.04
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "horizontal",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          1.4,
+          0.1
+        ],
+        [
+          2.8,
+          0.45
+        ],
+        [
+          4,
+          0.55
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "fold",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.06
+        ],
+        [
+          0.28,
+          -0.25
+        ],
+        [
+          0.08,
+          -0.6
+        ]
+      ],
+      "adjustable_span": false
+    },
+    {
+      "id": "sweep",
+      "phase": "body",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.4,
+          -1.9
+        ],
+        [
+          -2.2,
+          -4.8
+        ],
+        [
+          -5.2,
+          -7.4
+        ]
+      ],
+      "adjustable_span": true
+    },
+    {
+      "id": "exit",
+      "phase": "exit",
+      "controls": [
+        [
+          0,
+          0
+        ],
+        [
+          -0.3,
+          -0.4
+        ],
+        [
+          -0.7,
+          -0.7
+        ],
+        [
+          -1.2,
+          -1.0
+        ]
+      ],
+      "adjustable_span": false
+    }
+  ],
+  "events": [
+    {
+      "name": "start",
+      "part": "entry",
+      "t": 0,
+      "label": "起笔",
+      "action": "touch_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "body_start",
+      "part": "entry",
+      "t": 1,
+      "label": "短横行笔",
+      "action": "travel",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "turn",
+      "part": "fold",
+      "t": 0.5,
+      "label": "横撇折转",
+      "action": "press_hint",
+      "speed_hint": "slower"
+    },
+    {
+      "name": "body_end",
+      "part": "sweep",
+      "t": 1,
+      "label": "提锋收撇",
+      "action": "lift_hint",
+      "speed_hint": "unspecified"
+    },
+    {
+      "name": "end",
+      "part": "exit",
+      "t": 1,
+      "label": "撇出尖",
+      "action": "finish_hint",
+      "speed_hint": "unspecified"
+    }
+  ],
+  "width_knots": [
+    {
+      "event": "start",
+      "ratio": 0.2
+    },
+    {
+      "event": "body_start",
+      "ratio": 0.65
+    },
+    {
+      "event": "turn",
+      "ratio": 1.0
+    },
+    {
+      "event": "body_end",
+      "ratio": 0.35
+    },
+    {
+      "event": "end",
+      "ratio": 0
+    }
+  ],
+  "landmarks": [
+    "turn"
+  ],
+  "rule_notes": [
+    "短横略向右上，折后向左下舒展。",
+    "横段与撇段可独立调整；收撇逐渐减小相对宽度。"
+  ],
+  "numeric_parameter_basis": "engineering_initial_values_not_measured_from_tutorial",
+  "construction": "manually_authored_rule_based_curves"
+}

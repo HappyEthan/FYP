@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "role": "stroke_annotation_bundle",
+  "annotation_id": "9228f341f82f9158715b70b729939d34c1b88e28845095b31f6d505eedc3ceb1",
+  "character": "工",
+  "review_status": "needs_review",
+  "source_sha256": "1218e5249958cd79f51c233689d7ca28b1933b0e255eddfe708ac0f6249fe203",
+  "files": {
+    "annotation.json": "359638074e7400b91d0ff9630ea8eff33a9acab00186792d5ddecf611f3ae372",
+    "image.png": "1218e5249958cd79f51c233689d7ca28b1933b0e255eddfe708ac0f6249fe203",
+    "report.html": "1c9f2a23998f9e076eed7a250a196a7c276d86b2298082ff36a2f13cae0535ef",
+    "source_image.bin": "1218e5249958cd79f51c233689d7ca28b1933b0e255eddfe708ac0f6249fe203"
+  }
+}

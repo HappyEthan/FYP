@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "提前起转：20°、Z34起转、2秒",
+  "note": "相对04只把起转高度改为Z34，预压缩到0.94秒，联动下降行程增至6毫米。候选，未做真机验证。",
+  "parameters": {
+    "suite": "single",
+    "direction": "up",
+    "entry_tilt_deg": 20.0,
+    "writing_tilt_deg": 15.0,
+    "entry_contact_z_mm": 36.0,
+    "rotate_start_z_mm": 34.0,
+    "target_z_mm": 28.0,
+    "rotate_s": 2.0,
+    "preload_speed_mm_s": 4.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "airborne_settle_s": 1.0,
+    "post_lift_hold_s": 2.0,
+    "return_to_origin": true,
+    "travel_mm": 50.0,
+    "speed_mm_s": 10.0,
+    "repeats": 1,
+    "prep_note": ""
+  }
+}

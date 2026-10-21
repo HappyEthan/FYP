@@ -58,11 +58,13 @@ def test_pi_records_state_only_during_measurement(tmp_path):
 
 @pytest.mark.parametrize('mode', ['p', 'pi'])
 def test_batch_preview_is_offline_and_has_equal_total_limits(tmp_path, monkeypatch, capsys, mode):
-    from scripts import run_short_plateau_pi_comparison as runner
+    from scripts import run_strokeplan_trial as runner
     generate_trial(tmp_path)
     monkeypatch.setattr(runner, 'TRIAL', tmp_path/'trial')
+    monkeypatch.setattr(runner, 'EXPERIMENT', 'short_plateau')
+    monkeypatch.setattr(runner, 'MODE', mode)
     monkeypatch.setattr(runner, 'RUN_ROOT', tmp_path/'runs')
-    assert runner.main(['--mode', mode]) == 0
+    assert runner.main([]) == 0
     out = capsys.readouterr().out
     assert '未连接硬件' in out
     assert '±0.8 mm' in out
