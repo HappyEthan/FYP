@@ -1,0 +1,13 @@
+{
+  "terminal_target_uT": 50.0,
+  "initial_target_uT": 100.0,
+  "body_levels_uT": [
+    100.0,
+    124.46659545769568,
+    154.91933384829667,
+    192.8228205467164,
+    240.0
+  ],
+  "scope": "subsequent generated candidates: use 50uT at the end of contraction; preserve explicitly specified starting/body levels",
+  "status": "user-requested synthetic terminal target; physical contact and calibration applicability unverified"
+}

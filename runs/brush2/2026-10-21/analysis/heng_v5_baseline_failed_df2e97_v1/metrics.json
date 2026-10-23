@@ -1,0 +1,93 @@
+{
+  "run": "/home/ethan/FYP/runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97",
+  "run_status": "aborted",
+  "reason": "baseline_failed",
+  "control_command_file_bytes": 0,
+  "writing_started": false,
+  "input_version": "heng_80mm_hidden_tail_v5",
+  "requested_terminal_uT": 100.0,
+  "control_mode": "pi",
+  "kp": 1.0,
+  "ki": 0.1,
+  "max_correction_mm": 0.8,
+  "raw_all": {
+    "n": 1638,
+    "span_s": 5.000075015,
+    "mean_uT": [
+      2133.2413919413943,
+      2977.556684981687,
+      -7074.812971916962
+    ],
+    "std_uT": [
+      5.2861340738875136,
+      73.78589842269062,
+      247.76245323757865
+    ],
+    "drift_uT_s": [
+      -0.4573512657440363,
+      -2.5328888511527032,
+      4.952647640676383
+    ]
+  },
+  "policy": {
+    "baseline_min_samples": 400,
+    "baseline_window_s": 2.0,
+    "baseline_max_std_uT": [
+      10.0,
+      10.0,
+      30.0
+    ],
+    "baseline_max_drift_uT_s": 5.0,
+    "filter": {
+      "alpha": 0.3,
+      "kind": "ema"
+    },
+    "airborne_confirmed": true,
+    "pose_static": true
+  },
+  "raw_baseline_replay_error": "baseline standard deviation exceeds limit",
+  "suspect_count": 2,
+  "suspect_csv_lines": [
+    650,
+    1545
+  ],
+  "diagnostic_without_two_suspects": {
+    "n": 1636,
+    "span_s": 5.000075015,
+    "mean_uT": [
+      2133.250580684599,
+      2979.3661063569702,
+      -7083.461591687031
+    ],
+    "std_uT": [
+      5.277894919857221,
+      5.271384037270926,
+      14.184658360408122
+    ],
+    "drift_uT_s": [
+      -0.45954328046679005,
+      -0.5932296967226354,
+      1.424695554423184
+    ]
+  },
+  "diagnostic_without_two_suspects_policy_result": "passed using original SampleHub; analysis only, no hardware baseline replaced",
+  "tcp_xyz_range_mm": [
+    0.0010000000000287557,
+    0.001999999999946489,
+    0.001000000000001
+  ],
+  "tcp_rpy_range_deg": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "eligible_prefix_passes": 0,
+  "firmware_family_user_confirmed": "mlx_s3_monitor_fixed90 (XIAO)",
+  "board_build_identity": "not saved in this run; local build is not proof of flashed binary",
+  "driver_signature_inference": "At 1x gain/16bit default HallConf, -0.150 uT (XY) and -0.242 uT (Z) match signed raw count -1 / 0xFFFF. Raw I2C bytes/status are not in the log, so physical origin remains unconfirmed.",
+  "guard_replay": "requires_retry=1 repeated_identical_jump_accepted=1 accepted_z=-0.242",
+  "guard_replay_scope": "Constructed two identical anomalous readings are accepted by current resolveRetry. Actual retry frames are absent from this log.",
+  "hardware_connected_by_assistant": false,
+  "execute_called_by_assistant": false,
+  "thresholds_targets_firmware_and_historical_records_modified": false
+}

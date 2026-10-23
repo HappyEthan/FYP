@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "existing_manifest_files_verified": 28,
+  "source_files_unchanged": true,
+  "common_magnetic_time_orientation_references": true,
+  "control_xy_identical_to_v5": true,
+  "early_body_xy_preserved": true,
+  "earlier_magnetic_targets_preserved": true,
+  "load_before_contact_rotation": true,
+  "independent_reverse_5mm_preserved": true,
+  "targets_within_measured_feedforward_range": true,
+  "g_ref_only_during_writing": true,
+  "robot_executed": false,
+  "variants": {
+    "heng75": {
+      "target_sha256": "65344d591021b4fb59b7c68199f58d17e2a02713a19dc9b51c1682f8406cdc82",
+      "local_path_mm": 3.8669983037373163,
+      "local_bbox_mm": [
+        1.9998993525725837,
+        0.923200435387308
+      ],
+      "writing_time_s": 15.899999999999999,
+      "nominal_full_motion_time_s": 37.74,
+      "terminal_g_ref_uT": 75.0
+    },
+    "control75": {
+      "target_sha256": "b73302d0b151fa7dd8d63a5d5d234cd63b49baf283e65f55191e589210b0ac09",
+      "local_path_mm": 2.9002487514645794,
+      "local_bbox_mm": [
+        1.4999245380911645,
+        0.692400326540481
+      ],
+      "writing_time_s": 15.899999999999999,
+      "nominal_full_motion_time_s": 37.74,
+      "terminal_g_ref_uT": 75.0
+    }
+  }
+}

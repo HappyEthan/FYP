@@ -1,0 +1,126 @@
+{
+  "change": "entry_order=load_then_rotate only",
+  "entry_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 5.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0,
+    "entry_order": "load_then_rotate"
+  },
+  "measured_feedforward_range_uT": [
+    72.5172479409567,
+    323.53917563092085
+  ],
+  "hardware_connected": false,
+  "execute_called": false,
+  "runs": {
+    "heng": {
+      "source": "runs/brush2/plans/heng_80mm_hidden_tail_v5/heng/strokeplan.npz",
+      "target": "runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/targets/heng/strokeplan.npz",
+      "target_sha256": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+      "byte_identical_to_previous": true,
+      "writing_duration_s": 15.9,
+      "nominal_full_motion_duration_s": 37.800000000000004,
+      "workpoint_z_mm": 33.245521672601456,
+      "load_tilt_deg": 30.0,
+      "rotation_z_mm": 33.245521672601456,
+      "rotation_end_tilt_deg": 15.0,
+      "reverse_during_rotation_mm": 5.000000000000008,
+      "load_s": 3.0,
+      "rotate_s": 3.0,
+      "target_start_end_uT": [
+        100.0,
+        100.0
+      ],
+      "control": {
+        "enabled": true,
+        "mode": "pi",
+        "phase": "per_stroke",
+        "kp": 1.0,
+        "ki": 0.1,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "taper_ticks": 50,
+        "integral_limit_mm": 0.2,
+        "anti_windup": "conditional",
+        "measurement_phases": [
+          "measure_00"
+        ]
+      },
+      "compiled_limits": {
+        "XY speed": 79.93112870586383,
+        "Z speed": 59.997440049151805,
+        "step": 1.5986225741172766,
+        "acceleration": 194.06980826473514,
+        "angular speed": 19.988190158313856,
+        "angular acceleration": 38.457949968843565
+      },
+      "offline_preflight_exit_code": 0
+    },
+    "short100": {
+      "source": "runs/brush2/plans/heng_short_40mm_100_193_v1/heng_short/strokeplan.npz",
+      "target": "runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/targets/short100/strokeplan.npz",
+      "target_sha256": "5e86183f9fd892554a1fdb3c21d2e14213ade59c6589a3ac6358f0cc26246858",
+      "byte_identical_to_previous": true,
+      "writing_duration_s": 10.68,
+      "nominal_full_motion_duration_s": 32.38,
+      "workpoint_z_mm": 33.245521672601456,
+      "load_tilt_deg": 30.0,
+      "rotation_z_mm": 33.245521672601456,
+      "rotation_end_tilt_deg": 15.0,
+      "reverse_during_rotation_mm": 4.9999999999999964,
+      "load_s": 3.0,
+      "rotate_s": 3.0,
+      "target_start_end_uT": [
+        100.0,
+        100.0
+      ],
+      "control": {
+        "enabled": true,
+        "mode": "pi",
+        "phase": "per_stroke",
+        "kp": 1.0,
+        "ki": 0.1,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "taper_ticks": 50,
+        "integral_limit_mm": 0.2,
+        "anti_windup": "conditional",
+        "measurement_phases": [
+          "measure_00"
+        ]
+      },
+      "compiled_limits": {
+        "XY speed": 79.84401809266372,
+        "Z speed": 59.997440049151805,
+        "step": 1.5968803618532743,
+        "acceleration": 93.86825512449121,
+        "angular speed": 19.27956797190972,
+        "angular acceleration": 39.557975682967175
+      },
+      "offline_preflight_exit_code": 0
+    }
+  },
+  "limitations": [
+    "Z33.2455 is a writing-pose lookup height, not validated 30-degree G=100.",
+    "Entry uses explicit Z trajectory; no 0..72.52 uT inversion or invented target ramp.",
+    "Reference starts at 100 only when XY writing begins; entry/load still feedforward with no magnetic target or PI.",
+    "First/last 1 s writing feedback taper remains unchanged.",
+    "50 uT remains unsupported; both executable presets explicitly end at 100 uT."
+  ]
+}

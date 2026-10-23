@@ -1,0 +1,3 @@
+csv_line,host_t_s,previous_sensor_gap_ms,next_sensor_gap_ms,seq,sensor_t_us,host_rx_ns,Bx_uT,By_uT,Bz_uT,dBx_uT,dBy_uT,dBz_uT,baseline_id,valid,invalid_reason
+650,1.960068662,5.997,5.999,649,70223094,9991073047284,2119.2,2995.05,-0.242,,,,,true,
+1545,4.720049978,5.999,5.999,1544,72985094,9993833028600,2132.25,-0.15,-0.242,,,,,true,

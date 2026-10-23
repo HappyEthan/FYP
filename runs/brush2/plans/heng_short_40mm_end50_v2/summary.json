@@ -1,0 +1,52 @@
+{
+  "writing_duration_s": 10.68,
+  "bbox_mm": [
+    39.99996081733704,
+    14.25915023113832
+  ],
+  "g_target_range_uT": [
+    50.0,
+    192.82281737834919
+  ],
+  "start_target_uT": 100.0,
+  "terminal_target_uT": 50.0,
+  "changed": "only the final L2-to-terminal magnetic transition; geometry, time, orientation and earlier targets are identical to v1",
+  "terminal_policy": {
+    "terminal_target_uT": 50.0,
+    "initial_target_uT": 100.0,
+    "body_levels_uT": [
+      100.0,
+      124.46659545769568,
+      154.91933384829667,
+      192.8228205467164,
+      240.0
+    ],
+    "scope": "subsequent generated candidates: use 50uT at the end of contraction; preserve explicitly specified starting/body levels",
+    "status": "user-requested synthetic terminal target; physical contact and calibration applicability unverified"
+  },
+  "validation": "V3 reload, exact invariance assertions and independent preview; execution preflight rejected unsupported low-response targets",
+  "source_sha256": {
+    "runs/brush2/plans/heng_short_40mm_100_193_v1/heng_short/strokeplan.npz": "5e86183f9fd892554a1fdb3c21d2e14213ade59c6589a3ac6358f0cc26246858",
+    "runs/brush2/plans/heng_short_40mm_100_193_v1/heng_short/recipe.json": "b1b713868764ae483294296ea10bc4997cbe5c8eb1f7cbdbb4b579843b9f5e58",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee"
+  },
+  "execution_preflight": {
+    "status": "blocked_by_calibration_range",
+    "executable_with_current_table": false,
+    "table": "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json",
+    "measured_range_uT": [
+      72.5172479409567,
+      323.53917563092085
+    ],
+    "requested_terminal_uT": 50.0,
+    "first_unsupported_time_s": 9.34,
+    "unsupported_sample_count": 68,
+    "error": "target outside measured range; extrapolation disabled",
+    "method": "existing directional compiler with the explicit Zhong PI profile rejected unsupported values",
+    "extrapolation_used": false,
+    "hardware_connected": false
+  }
+}

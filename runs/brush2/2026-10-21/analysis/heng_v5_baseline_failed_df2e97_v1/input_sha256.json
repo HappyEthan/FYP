@@ -1,0 +1,22 @@
+{
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/events.jsonl": "cd8a9d1ed1783fa8c8296d2dfc5a3f9671bd5a0d042fcf33fb00cdc4407381dd",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/actual_tcp.csv": "86cecde7fe7deb58d6ae4a212aa244b2d2918ed3901f7e565314106172ce87db",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/manifest.json": "2b50c2092b58fed26099b21ab41562d99ce0582f3c4d16a3bf1386373924b8b7",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/compiled_plan.npz": "a4113e348a83c027c88902ce491d6fe8ad511691472e8c405dd71bcb891101ef",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/timeline.npz": "0b200a62075e19f99da95a597cf6fef66c7a147ae4343f267cf3673ff319b197",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/setup.json": "d2e7f997a82e1fa04096b745a7588a9aea1432ed0f092fc884d39cf575fc8e31",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/resolved.json": "6836a2ede7e6e5f3fbd203aab9283c28da7c9db375cb218b0ed4611555c43894",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/actual_tcp_meta.json": "7c5214f53f6b0341b138ff6515cfa7e91b032c1bfeab48fff377359b326b043d",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/sensor.csv": "17440106d6880d268f7dfcbb72ebbbf602606e8f82c44848e32ba81d7ff72806",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/strokeplan.npz": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/calibration.json": "20d6ecf7292121d1363a22fea74a7ef8187f28eba69c49c0c4030ab7db652815",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+  "runs/brush2/2026-10-21/13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97/control.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "firmware/mlx_s3_monitor_fixed90/frame_guard.h": "056a167fc90a2f71b0c81fb7a1946b104846d2168436f9089d02be5a28e6a213",
+  "firmware/mlx_s3_monitor_fixed90/mlx_s3_monitor_fixed90.ino": "c046c4b788fa94d088ba116cf557b20c35bddb9d9c149d488cac82772cc0a8e7",
+  "src/brushbot/experiments/acquisition.py": "4e9692c0b014838d4e10b641f874a71f2f72393b1c60d62abea996eb2f571047",
+  "src/brushbot/experiments/engine.py": "5a29b9a8bf2441ae4fde92c8733e06879ee7f677bb71650c0e99b70401de65b0",
+  "src/brushbot/monitor/sources.py": "2029c2e00151968c6362c7d2a745326d31900ab2eae1ced312f8baa1b291dc17"
+}

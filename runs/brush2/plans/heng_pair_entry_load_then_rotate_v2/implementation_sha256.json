@@ -1,0 +1,5 @@
+{
+  "src/brushbot/experiments/strokeplan_character.py": "ef5f0db897a2f8a8b96e293faf11de580dbf971b00195d0c4e00772ece79297d",
+  "tests/test_directional_character.py": "a1533ab26d6324a2c70e63472bdcab51c240fc5ca496a528cc229e2767072cce",
+  "runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/run.py": "f0e0144fe9c9f0f3ebdd6f48518bb11fe2fa60e125f9fbe9a62fd1b69cc73eaa"
+}

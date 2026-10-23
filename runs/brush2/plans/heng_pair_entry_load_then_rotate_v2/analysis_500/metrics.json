@@ -1,0 +1,108 @@
+{
+  "selection": "writing a_control_uT <=500; values >500 excluded, not clipped or interpolated; raw records preserved",
+  "online_control_changed": false,
+  "runs": [
+    {
+      "label": "Long A",
+      "run": "runs/brush2/2026-10-21/13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+      "sample_count": 796,
+      "included_count": 789,
+      "excluded_gt500_count": 7,
+      "included_fraction": 0.9912060301507538,
+      "mae_uT": 37.72326956040431,
+      "rmse_uT": 56.37222545706236,
+      "within20_fraction": 0.5247148288973384,
+      "terminal_included": true,
+      "terminal_uT_for_statistics": 87.1387581300415,
+      "last_retained_writing_time_s": 15.899999999999999,
+      "writing_end_s": 15.899999999999999,
+      "writing_start_actual_uT": 6.942616988067435,
+      "entry_phases": {
+        "rotate_contact_00": {
+          "first_s": 8.46,
+          "last_s": 11.44,
+          "last_actual_uT": 7.038593373687032,
+          "last_0p5_median_le500_uT": 8.26695100238901,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        },
+        "load_workpoint_00": {
+          "first_s": 11.46,
+          "last_s": 14.44,
+          "last_actual_uT": 7.330109129183805,
+          "last_0p5_median_le500_uT": 6.943863973278008,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        }
+      }
+    },
+    {
+      "label": "Long B",
+      "run": "runs/brush2/2026-10-21/13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+      "sample_count": 796,
+      "included_count": 767,
+      "excluded_gt500_count": 29,
+      "included_fraction": 0.9635678391959799,
+      "mae_uT": 91.39835961126414,
+      "rmse_uT": 129.11486644401856,
+      "within20_fraction": 0.3324641460234681,
+      "terminal_included": true,
+      "terminal_uT_for_statistics": 356.5551135401409,
+      "last_retained_writing_time_s": 15.899999999999999,
+      "writing_end_s": 15.899999999999999,
+      "writing_start_actual_uT": 44.77182484120909,
+      "entry_phases": {
+        "rotate_contact_00": {
+          "first_s": 8.46,
+          "last_s": 11.44,
+          "last_actual_uT": 41.220073839173686,
+          "last_0p5_median_le500_uT": 40.63617267109962,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        },
+        "load_workpoint_00": {
+          "first_s": 11.46,
+          "last_s": 14.44,
+          "last_actual_uT": 61.48873747095547,
+          "last_0p5_median_le500_uT": 42.65906230063128,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        }
+      }
+    },
+    {
+      "label": "Short100",
+      "run": "runs/brush2/2026-10-21/13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+      "sample_count": 535,
+      "included_count": 499,
+      "excluded_gt500_count": 36,
+      "included_fraction": 0.9327102803738317,
+      "mae_uT": 46.48916846266209,
+      "rmse_uT": 65.73217785328694,
+      "within20_fraction": 0.2985971943887776,
+      "terminal_included": false,
+      "terminal_uT_for_statistics": null,
+      "last_retained_writing_time_s": 10.159999999999998,
+      "writing_end_s": 10.680000000000001,
+      "writing_start_actual_uT": 36.46521791800129,
+      "entry_phases": {
+        "rotate_contact_00": {
+          "first_s": 8.72,
+          "last_s": 11.700000000000001,
+          "last_actual_uT": 33.274144258235395,
+          "last_0p5_median_le500_uT": 33.988482200700275,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        },
+        "load_workpoint_00": {
+          "first_s": 11.72,
+          "last_s": 14.700000000000001,
+          "last_actual_uT": 34.28008384876079,
+          "last_0p5_median_le500_uT": 36.279688182452375,
+          "feedback_nonzero_count": 0,
+          "has_reference": false
+        }
+      }
+    }
+  ]
+}

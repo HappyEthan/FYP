@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/heng_short_40mm_end50_v2/heng_short/strokeplan.npz",
+  "sha256": "0d00e9846aa32d2cb7800355e6c83b98dc683ce767801e2b1b5b64b960eb1fcb",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 535,
+      "length_mm": 44.40821295433216,
+      "duration_s": 10.68,
+      "peak_xy_speed_mm_s": 8.000000000001437,
+      "target_range_uT": [
+        50.0,
+        192.82281737834919
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

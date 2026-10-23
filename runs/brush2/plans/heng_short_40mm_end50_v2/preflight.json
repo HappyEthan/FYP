@@ -1,0 +1,16 @@
+{
+  "status": "blocked_by_calibration_range",
+  "executable_with_current_table": false,
+  "table": "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json",
+  "measured_range_uT": [
+    72.5172479409567,
+    323.53917563092085
+  ],
+  "requested_terminal_uT": 50.0,
+  "first_unsupported_time_s": 9.34,
+  "unsupported_sample_count": 68,
+  "error": "target outside measured range; extrapolation disabled",
+  "method": "existing directional compiler with the explicit Zhong PI profile rejected unsupported values",
+  "extrapolation_used": false,
+  "hardware_connected": false
+}

@@ -1,0 +1,15 @@
+{
+  "README.md": "f1dedf7200cf4c95f23b7f139d3df2bb31e6404a227f2137f94f0d22509c0746",
+  "generate.py": "27a67e5ae7dda58ec2ca38a36d437273034126c348681c9560299b50258d11d8",
+  "heng_short/geometry.json": "17037821704e0628ae6e9d71eaa4d951a2e6bc2a6460b55f35b428fd1c667d06",
+  "heng_short/phase_table.csv": "64c83922d82e5292658deba9dc802c5ede07eb2dac4cbe5489401aedf63619f9",
+  "heng_short/preview/stroke_00.csv": "08590e94a19f6a251179801d1b17576a964b247f2c1dd82003b2ddd7d31799fa",
+  "heng_short/preview/stroke_00.png": "1d1a47e6f15f48f3363bce969bdc30c1c07c9363b009315f4d2fa207bd68c0d7",
+  "heng_short/preview/summary.json": "23ec6f7afd5ebb3cfe3ff6db01bb6efa1ec08be1014e6c8e692f4ed014488d91",
+  "heng_short/recipe.json": "b1b713868764ae483294296ea10bc4997cbe5c8eb1f7cbdbb4b579843b9f5e58",
+  "heng_short/strokeplan.npz": "5e86183f9fd892554a1fdb3c21d2e14213ade59c6589a3ac6358f0cc26246858",
+  "overview.png": "06923d9fb75e06cfb3b91888db717895582795643c832a689a9f90611b3b53d4",
+  "preflight/compiled_heng_short_pi.npz": "f35021c62ef1c3f3d993f07633300f62c505790c9a9376b5eaf4bab07f6c2f1a",
+  "preflight/resolved_control.json": "412b9d7eb802dbe0a629939be67a5a8784ddd5c2ff7771bf3696f23dfa038560",
+  "summary.json": "4dc9dc7132bcdefb3665a4d8b9ed3b02faf701c4038348775f74208e6a84fcb9"
+}

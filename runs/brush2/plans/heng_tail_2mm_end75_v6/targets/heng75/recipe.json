@@ -1,0 +1,17 @@
+{
+  "schema": "heng-local-tail-affine-v1",
+  "source_target": "runs/brush2/plans/heng_80mm_hidden_tail_v5/heng/strokeplan.npz",
+  "source_sha256": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+  "tail_scale_factor": 1.3333333333333333,
+  "affine_anchor_paper_mm": [
+    180.0,
+    5.0
+  ],
+  "terminal_target_uT": 75.0,
+  "start_target_uT": 100.0,
+  "geometry_transition_start_t_s": 10.972923170938722,
+  "tail_start_t_s": 13.171355346893964,
+  "geometry_policy": "quintic blend after body peak; full affine scale only in local finishing region",
+  "time_policy": "copy all source times exactly",
+  "orientation_policy": "copy body-derived source RPY exactly; do not follow enlarged return tangent"
+}

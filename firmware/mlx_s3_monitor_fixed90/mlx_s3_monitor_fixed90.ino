@@ -2,10 +2,14 @@
 // Board: Seeed XIAO ESP32-S3; SDA=D8/GPIO7; SCL=D9/GPIO8.
 // Data protocol remains: t_us,Bx_uT,By_uT,Bz_uT @115200.
 // Lines beginning with '#' are diagnostics and are ignored by monitor.
+// Host command: REBOOT\n; acknowledge, restart ESP32, reinitialize MLX90393.
 
 #include <Wire.h>
 #include "Adafruit_MLX90393.h"
 #include "frame_guard.h"
+#include "serial_commands.h"
+
+SerialCommandParser serialCommands;
 
 static const uint32_t SERIAL_BAUD = 115200;
 static const uint32_t SAMPLE_INTERVAL_US = 3000;
@@ -36,7 +40,15 @@ static const mlx90393_resolution_t CFG_RES = MLX90393_RES_16;
 static const mlx90393_oversampling_t CFG_OSR = MLX90393_OSR_0;
 static const mlx90393_filter_t CFG_FILTER = MLX90393_FILTER_0;
 
-Adafruit_MLX90393 sensor;
+struct SensorTransport {
+  Adafruit_MLX90393 sensor;
+  bool bound = false;
+};
+
+// Keep one transport per candidate address. BusIO holds &Wire, so changing
+// Wire's pin pair does not require rebinding a driver to that same address.
+SensorTransport transports[N_CAND];
+Adafruit_MLX90393* activeSensor = nullptr;
 uint8_t mlxAddr = 0;
 uint8_t activeSda = PRIMARY.sda;
 uint8_t activeScl = PRIMARY.scl;
@@ -47,6 +59,18 @@ uint32_t lastSampleUs = 0;
 uint32_t lastStatusMs = 0;
 uint32_t windowCount = 0;
 float windowMaxMag = 0.0f;
+
+void handleSerialCommands() {
+  while (Serial.available()) {
+    if (serialCommands.feed(static_cast<char>(Serial.read()))) {
+      Serial.println("# fw=fixed90 reboot requested");
+      Serial.flush();
+      // Give the host time to receive the ACK before native USB disconnects.
+      delay(200);
+      ESP.restart();
+    }
+  }
+}
 
 void configureWire(uint8_t sda, uint8_t scl) {
   Wire.end();
@@ -64,7 +88,7 @@ uint8_t scanCandidates() {
   return 0;
 }
 
-bool configureSensor() {
+bool configureSensor(Adafruit_MLX90393& sensor) {
   if (!sensor.setGain(CFG_GAIN)) return false;
   if (!sensor.setResolution(MLX90393_X, CFG_RES)) return false;
   if (!sensor.setResolution(MLX90393_Y, CFG_RES)) return false;
@@ -75,15 +99,49 @@ bool configureSensor() {
 }
 
 bool initSensor(uint8_t address) {
-  if (!sensor.begin_I2C(address, &Wire)) return false;
-  Wire.setTimeOut(I2C_TIMEOUT_MS);
-  return configureSensor();
+  for (size_t i = 0; i < N_CAND; ++i) {
+    if (CAND_ADDRS[i] != address) continue;
+    SensorTransport& transport = transports[i];
+    Adafruit_MLX90393& sensor = transport.sensor;
+    bool ok;
+    if (!transport.bound) {
+      // Even a failed begin_I2C allocates the device. In Adafruit MLX90393
+      // 2.0.5 a second call deletes it and then dereferences the stale pointer.
+      transport.bound = true;
+      ok = sensor.begin_I2C(address, &Wire);
+    } else {
+      ok = sensor.exitMode() && sensor.reset() && sensor.setTrigInt(false);
+    }
+    Wire.setTimeOut(I2C_TIMEOUT_MS);
+    if (!ok) {
+      Serial.println("# fw=fixed90 init stage=driver failed");
+      return false;
+    }
+    if (!configureSensor(sensor)) {
+      Serial.println("# fw=fixed90 init stage=configuration failed");
+      return false;
+    }
+    activeSensor = &sensor;
+    return true;
+  }
+  return false;
 }
 
 bool tryPinPair(const PinPair& pair) {
   configureWire(pair.sda, pair.scl);
   const uint8_t address = scanCandidates();
-  if (!address || !initSensor(address)) return false;
+  Serial.print("# fw=fixed90 probe SDA=");
+  Serial.print(pair.sda);
+  Serial.print(" SCL=");
+  Serial.print(pair.scl);
+  if (!address) {
+    Serial.println(" no candidate ACK");
+    return false;
+  }
+  Serial.print(" addr=0x");
+  if (address < 16) Serial.print('0');
+  Serial.println(address, HEX);
+  if (!initSensor(address)) return false;
   activeSda = pair.sda;
   activeScl = pair.scl;
   mlxAddr = address;
@@ -100,9 +158,9 @@ bool probeAndInit() {
 }
 
 bool readSensor(MagFrame& frame) {
-  if (!sensor.startSingleMeasurement()) return false;
+  if (!activeSensor || !activeSensor->startSingleMeasurement()) return false;
   delay(MEASURE_DELAY_MS);
-  return sensor.readMeasurement(&frame.x, &frame.y, &frame.z);
+  return activeSensor->readMeasurement(&frame.x, &frame.y, &frame.z);
 }
 
 bool recoverSensor() {
@@ -141,7 +199,12 @@ bool warmupAndSeed() {
     ++collected;
     if (collected <= 20) delay(5);
   }
-  if (collected < 100) return false;
+  if (collected < 100) {
+    Serial.print("# fw=fixed90 init stage=warmup failed collected=");
+    Serial.print(collected);
+    Serial.println("/100");
+    return false;
+  }
 
   const MagFrame baseline{
       static_cast<float>(sx / collected),
@@ -198,6 +261,7 @@ void setup() {
   while (!Serial && millis() - serialWaitStart < 4000) delay(10);
   Serial.println();
   Serial.println("# MLX90393 monitor fixed90 @ XIAO ESP32-S3");
+  Serial.println("# fw=fixed90 build=xiao-init-retry-safe-v1");
 
   while (!probeAndInit() || !warmupAndSeed()) {
     Serial.println("# fw=fixed90 init failed; retry in 2s");
@@ -217,6 +281,7 @@ void setup() {
 }
 
 void loop() {
+  handleSerialCommands();
   const uint32_t nowUs = micros();
   if (nowUs - lastSampleUs < SAMPLE_INTERVAL_US) return;
   lastSampleUs += SAMPLE_INTERVAL_US;

@@ -1,0 +1,70 @@
+
+# MLX90393 monitor fixed90 @ XIAO ESP32-S3
+# fw=fixed90 init failed; retry in 2s
+# fw=fixed90 init failed; retry in 2s
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42022660  PS      : 0x00060e30  A0      : 0x8200339c  A1      : 0x3fcebd50  
+A2      : 0x3fceca70  A3      : 0x3fcebd90  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  A8      : 0x00000001  A9      : 0x3fc97cdc  
+A10     : 0x00000000  A11     : 0x00000000  A12     : 0x8037b322  A13     : 0x3fcebc50  
+A14     : 0x00060023  A15     : 0x00000003  SAR     : 0x00000000  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x4202265d:0x3fcebd50 0x42003399:0x3fcebd70 0x42002e5b:0x3fcebd90 0x42002ed5:0x3fcebde0 0x42003235:0x3fcebe10 0x420032e3:0x3fcebe30 0x42001ebc:0x3fcebe50 0x42002628:0x3fcebe70 0x42002655:0x3fcebe90 0x420026c8:0x3fcebeb0 0x42007a1d:0x3fcebed0 0x4037b085:0x3fcebef0
+
+
+
+
+ELF file SHA256: 607058eef
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377f9a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x10cc
+load:0x403c8700,len:0xc2c
+load:0x403cb700,len:0x30c0
+entry 0x403c88b8
+
+# MLX90393 monitor fixed90 @ XIAO ESP32-S3
+# fw=fixed90 init failed; retry in 2s
+# fw=fixed90 init failed; retry in 2s
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  1 register dump:
+PC      : 0x42022660  PS      : 0x00060e30  A0      : 0x8200339c  A1      : 0x3fcebd50  
+A2      : 0x3fceca70  A3      : 0x3fcebd90  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  A8      : 0x00000001  A9      : 0x3fc97cdc  
+A10     : 0x00000000  A11     : 0x00000000  A12     : 0x8037b322  A13     : 0x3fcebc50  
+A14     : 0x00060023  A15     : 0x00000003  SAR     : 0x00000000  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000000  LBEG    : 0x40056f5c  LEND    : 0x40056f72  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x4202265d:0x3fcebd50 0x42003399:0x3fcebd70 0x42002e5b:0x3fcebd90 0x42002ed5:0x3fcebde0 0x42003235:0x3fcebe10 0x420032e3:0x3fcebe30 0x42001ebc:0x3fcebe50 0x42002628:0x3fcebe70 0x42002655:0x3fcebe90 0x420026c8:0x3fcebeb0 0x42007a1d:0x3fcebed0 0x4037b085:0x3fcebef0
+
+
+
+
+ELF file SHA256: 607058eef
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40377f9a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x10cc
+load:0x403c8700,len:0xc2c
+load:0x403cb700,len:0x30c0
+entry 0x403c88b8
+
+# MLX90393 monitor fixed90 @ XIAO ESP32-S3
+# fw=fixed90 init failed; retry in 2s
+# fw=fixed90 init failed; retry in 2s

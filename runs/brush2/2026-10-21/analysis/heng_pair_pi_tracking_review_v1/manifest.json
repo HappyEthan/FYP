@@ -1,0 +1,12 @@
+{
+  "input_sha256.json": "1e3be747efdfd6e8800322792eef999eef95833c1062524c09df70f4ccf34dfc",
+  "long_a_aligned.csv": "88d826dbe002ec681a1a08ec84014cc86d8686f389d12b985265d85db1fd1431",
+  "long_b_aligned.csv": "ef92ed95441cab6a8a7c539065d1d3e818c9b278e805db3d0f5d2d2ea6e40855",
+  "magnetic_full_range.png": "1b90e425bbe58b3f961b0b6213324dbd8861e93560e2c7c70d2a6b4324febab0",
+  "metrics.json": "1c794b434a5ac5da19747cbfadc6eda28aa49511c6c19940eee3d6f48ad094b6",
+  "phase_metrics.csv": "5b982b127c5c16ba406a8e98c982ecf00ef7cdebd38404f8bc1e8926508565b1",
+  "report.txt": "2b516e87f4b6e4f482451f88f312f8c0a24b764a311e6fdd34220393a7c8ee1a",
+  "short_100_aligned.csv": "754540a9ad77d264fa8e9538975ac01d35b5298f0a020673ce796ecaf8d3744d",
+  "tail_tracking.png": "c66bc1cf999c3007c6d7080c72f23c74df86191edb56937e043173db249c3990",
+  "tracking_overview.png": "955bdffb316b01c9bced793d24282766489268358b766a24c0c70b5e60ba29f6"
+}

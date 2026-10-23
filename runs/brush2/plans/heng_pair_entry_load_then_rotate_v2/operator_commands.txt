@@ -1,0 +1,8 @@
+# 本轮先长横v5，新下笔顺序，起笔/终点100 µT，前馈+原受限PI。
+cd /home/ethan/FYP
+python3 runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/run.py heng --dry-run
+python3 runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/run.py heng --execute
+# 仅由操作者执行，现场确认后输入RUN。
+# 若之后明确选择短横旧版100（不是50版），逐笔使用：
+python3 runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/run.py short100 --dry-run
+python3 runs/brush2/plans/heng_pair_entry_load_then_rotate_v2/run.py short100 --execute

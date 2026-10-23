@@ -22,3 +22,14 @@ def test_frame_guard_accepts_sustained_signal_and_rejects_corrupt_frames(tmp_pat
     assert compile_result.returncode == 0, compile_result.stderr
     run_result = subprocess.run([str(binary)], text=True, capture_output=True)
     assert run_result.returncode == 0, run_result.stderr
+
+
+def test_serial_commands_accepts_only_complete_reboot_commands(tmp_path):
+    binary = tmp_path / 'serial_commands_test'
+    compiled = subprocess.run([
+        'g++', '-std=c++11', '-Wall', '-Wextra', '-Werror', '-I', str(FIRMWARE),
+        str(ROOT / 'tests' / 'firmware' / 'serial_commands_test.cpp'), '-o', str(binary),
+    ], text=True, capture_output=True)
+    assert compiled.returncode == 0, compiled.stderr
+    result = subprocess.run([str(binary)], text=True, capture_output=True)
+    assert result.returncode == 0, result.stderr

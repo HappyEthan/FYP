@@ -1,0 +1,10 @@
+{
+  "baseline_channels.png": "defb05844cf1651067b1fed585e1615a72c22f22ff3f26c1784bd539be612f1b",
+  "baseline_prefix_checks.csv": "d30493a64fe2087a44728f6a2b76a4012d38e9c2c725bdb1753beb27263f1e8a",
+  "frame_guard_replay.cpp": "8737d272865959236733027ef079f82f2e9cf9cb91a27b5d1559cace1dfc7b04",
+  "input_sha256.json": "8579680357c4a270500b61c61a9406584b6fa88d1f72bedc65b7375292862f82",
+  "metrics.json": "7ab26e5e620f4eeb891d1b9346d089b1b2f3897910e07b98a4687c315ec10201",
+  "operator_commands.txt": "88dd38b80d574c4fdd2aabc3149d76c1cb336f7422db3991eb2c1e7ba98dbfe9",
+  "report.txt": "26ec8e71199fcf2e3a57ab60dadc1731f9d9538e33e4f92da00d36956bdd74fc",
+  "suspect_rows.csv": "c14f1ad7d7d7825f8fb9af41c2109a9dda57666add3befc5eb09e6f6c2f38e5d"
+}

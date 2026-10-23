@@ -1,0 +1,13 @@
+{
+  "README.md": "3ce3643714eeb786f5a65461475e3d1bb5fbaa0ba0ed6051f8dfc3e0babadd2f",
+  "generate.py": "14d3f84e684c5efe1fd1a56d998068671501d0f1b0ba72bfc7c1da879cf686f5",
+  "heng_short/phase_table.csv": "ef04d230de42d6d3e43ec606f59d7a089bba0536a56f9b016e893b5a52ece6b0",
+  "heng_short/preview/stroke_00.csv": "2c0468a3ba77570e2dc076afbef8ef4bf2cf5bee137b4f9161b9506a0887130f",
+  "heng_short/preview/stroke_00.png": "5a5712918b59b8fd177be22482f299a31fa6fab8a7dc71f9a573a3a1e5e3e11f",
+  "heng_short/preview/summary.json": "d126eba456a41d8b3c0143c8bb5e43c609801825545f7036c9d6c61bf8b58547",
+  "heng_short/recipe.json": "e8be6000455a3b35567148a8b5cb2c297533ecf2daf95de6bfdae8baf7c7fd09",
+  "heng_short/strokeplan.npz": "0d00e9846aa32d2cb7800355e6c83b98dc683ce767801e2b1b5b64b960eb1fcb",
+  "preflight.json": "95e98aefe59d1af2565bf0d837b20fe0da98f40490ba695f8b1515f7da7d088f",
+  "summary.json": "1d0d4b171bcf4039cc17c7fe929c5eaf16c93ed8fb6aa357c791ecb3e39c6c27",
+  "terminal_policy.json": "66f81348d2a314bd70ef6e1994d2e1227c118c916fa09a1f345b2edeb8c0bdb9"
+}

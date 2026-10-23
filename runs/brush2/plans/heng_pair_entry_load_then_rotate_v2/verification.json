@@ -1,0 +1,21 @@
+{
+  "related_tests": {
+    "command": "python3 -m pytest tests/test_directional_character.py tests/test_strokeplan_rotational_entry.py tests/test_strokeplan_stationary_entry.py -q",
+    "passed": 40
+  },
+  "full_suite": {
+    "command": "python3 -m pytest -q --tb=short",
+    "passed": 1234,
+    "skipped": 7,
+    "exit_code": 0,
+    "duration_s": 114.62,
+    "environment": "outside sandbox to permit local test sockets and browser processes"
+  },
+  "sandbox_attempt": {
+    "result": "socket/browser restrictions and later Python GUI segmentation fault; superseded by successful full run outside sandbox"
+  },
+  "legacy_compiled_trajectories": "heng and short100 exactly equal to pre-change arrays",
+  "previews": "visually inspected both target previews, entry order comparison and old entry response plot",
+  "hardware_connected": false,
+  "execute_called": false
+}

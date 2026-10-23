@@ -1,0 +1,27 @@
+{
+  "plan": "/home/ethan/FYP/runs/brush2/plans/heng_tail_2mm_end75_v6/targets/control75/strokeplan.npz",
+  "sha256": "b73302d0b151fa7dd8d63a5d5d234cd63b49baf283e65f55191e589210b0ac09",
+  "source": "synthetic",
+  "coordinate_frame": "paper",
+  "feature": "filtered_dBxy_norm_uT",
+  "filter_definition": {
+    "kind": "ema",
+    "alpha": 0.3
+  },
+  "validation": "target-only; not execution approval",
+  "strokes": [
+    {
+      "index": 0,
+      "samples": 796,
+      "length_mm": 84.45517437302665,
+      "duration_s": 15.9,
+      "peak_xy_speed_mm_s": 9.900000000001478,
+      "target_range_uT": [
+        75.0,
+        192.8228205467164
+      ],
+      "csv": "stroke_00.csv",
+      "png": "stroke_00.png"
+    }
+  ]
+}

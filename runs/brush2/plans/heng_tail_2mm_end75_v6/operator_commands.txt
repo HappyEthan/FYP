@@ -1,0 +1,8 @@
+# 主候选：80mm长横、局部尾端约2mm、终点75 µT、新下笔顺序、原受限PI。
+cd /home/ethan/FYP
+python3 runs/brush2/plans/heng_tail_2mm_end75_v6/run.py heng75 --dry-run
+python3 runs/brush2/plans/heng_tail_2mm_end75_v6/run.py heng75 --execute
+# 现场确认后由操作者输入RUN。
+# 可选几何对照：小尾端1.5mm，仍是75 µT，单独一笔运行。
+python3 runs/brush2/plans/heng_tail_2mm_end75_v6/run.py control75 --dry-run
+python3 runs/brush2/plans/heng_tail_2mm_end75_v6/run.py control75 --execute

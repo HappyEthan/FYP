@@ -1,0 +1,186 @@
+{
+  "schema": "short-heng-end50-candidate-v2",
+  "generator": "generate.py:build_candidate",
+  "width_mm": 40.0,
+  "width_basis": "authored default: half of the current 80mm long-Heng",
+  "source_template_id": "8c9d1e775b42b9ab1954b97bdb7ce80807d5af5de408918f000ee174b4f8c51a",
+  "source_template": "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short/template.json",
+  "source_review_status": "unreviewed",
+  "rule": "向右上行笔，宽度逐渐展开；末端提锋描边收笔。",
+  "entry_length_mm": 1.8,
+  "entry_mm_per_source_px": 0.05818805222780769,
+  "body_mm_per_source_px": 0.23056117562042636,
+  "retained_source_points": [
+    0,
+    18
+  ],
+  "continuation_controls_local_mm": [
+    [
+      16.499999999999996,
+      5.900412514705021
+    ],
+    [
+      17.21554175279993,
+      6.258183391104987
+    ],
+    [
+      17.747080121348475,
+      6.35165861124559
+    ],
+    [
+      18.499347415177958,
+      6.623860592565467
+    ]
+  ],
+  "finishing_controls_body_frame_mm": [
+    [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.7,
+        0.0
+      ],
+      [
+        1.5,
+        0.3
+      ],
+      [
+        1.5,
+        -0.2
+      ]
+    ],
+    [
+      [
+        1.5,
+        -0.2
+      ],
+      [
+        1.5,
+        -0.7
+      ],
+      [
+        0.6,
+        -0.65
+      ],
+      [
+        0.5,
+        -0.5
+      ]
+    ]
+  ],
+  "finishing_body_heading_deg": 19.892257053355436,
+  "bezier_samples_per_piece": 181,
+  "origin_mm": [
+    140.0,
+    0.0
+  ],
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [
+      [
+        0.0,
+        100.0
+      ],
+      [
+        0.025843142583005865,
+        124.46659545769568
+      ],
+      [
+        0.040533042882204176,
+        124.46659545769568
+      ],
+      [
+        0.561981248702327,
+        154.91933384829667
+      ],
+      [
+        0.887928157654054,
+        192.8228205467164
+      ],
+      [
+        0.9346913426060761,
+        124.46659545769568
+      ],
+      [
+        1.0,
+        50.0
+      ]
+    ],
+    "available_levels_uT": [
+      100.0,
+      124.46659545769568,
+      154.91933384829667,
+      192.8228205467164,
+      240.0
+    ],
+    "status": "authored width intention; no physical width calibration",
+    "terminal_target_uT": 50.0
+  },
+  "timing": {
+    "speed_mm_s": 8.0,
+    "accel_mm_s2": 30.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 35.0,
+    "speed_knots_s_mm_s": [
+      [
+        0.0,
+        1.5
+      ],
+      [
+        0.025812853797281085,
+        2.0
+      ],
+      [
+        0.040485537179417094,
+        2.0
+      ],
+      [
+        0.08546946737876943,
+        8.0
+      ],
+      [
+        0.7969196240624586,
+        8.0
+      ],
+      [
+        0.8868874844611634,
+        2.0
+      ],
+      [
+        0.9347628025596985,
+        1.5
+      ],
+      [
+        1.0,
+        0.8
+      ]
+    ]
+  },
+  "orientation": {
+    "tilt_deg": 15.0,
+    "smoothing_mm": 5.0,
+    "policy": "follow body and its straight continuation; do not chase the small finishing return"
+  },
+  "notes": [
+    "沿用v1的XY、时间、姿态和主体磁目标；仅末端收缩目标由100降至50uT。",
+    "50uT为独立收笔目标，不重定义原100..240uT五档，也不更改起笔值。",
+    "当前历史前馈表下限约72.5uT，末段低于标定范围，目标文件暂不能沿用该表执行。",
+    "本地配方由generate.py读取保留的v1目标后重建；未外推或修改标定表。"
+  ],
+  "source_target": "runs/brush2/plans/heng_short_40mm_100_193_v1/heng_short/strokeplan.npz",
+  "terminal_policy": {
+    "terminal_target_uT": 50.0,
+    "initial_target_uT": 100.0,
+    "body_levels_uT": [
+      100.0,
+      124.46659545769568,
+      154.91933384829667,
+      192.8228205467164,
+      240.0
+    ],
+    "scope": "subsequent generated candidates: use 50uT at the end of contraction; preserve explicitly specified starting/body levels",
+    "status": "user-requested synthetic terminal target; physical contact and calibration applicability unverified"
+  }
+}

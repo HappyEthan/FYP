@@ -1,0 +1,66 @@
+{
+  "total_samples": 3875,
+  "valid_samples": 3875,
+  "invalid_samples": 0,
+  "observation_duration_s": 12.018456046,
+  "valid_span_s": 11.972968015,
+  "first_valid_delay_s": 0.025293897,
+  "last_valid_age_s": 0.020194134,
+  "longest_gap_s": 0.025293897,
+  "effective_rate_over_valid_span_hz": 323.56221073559766,
+  "candidate_samples": 657,
+  "candidate_span_s": 2.002028382,
+  "candidate_max_internal_gap_s": 0.02030731,
+  "baseline_candidate_ready": true,
+  "baseline_error": "",
+  "candidate_statistics": {
+    "baseline_id": 0,
+    "B0_uT": [
+      2124.4757990867583,
+      2965.995662100455,
+      -7074.73408219178
+    ],
+    "std_uT": [
+      5.373513061889831,
+      5.269117564079281,
+      14.588398669615003
+    ],
+    "drift_uT_s": [
+      0.2620442525868407,
+      0.21445252298845832,
+      -0.28349840213260613
+    ],
+    "quality_axes": [
+      0,
+      1,
+      2
+    ],
+    "first_seq": 3219,
+    "last_seq": 3875
+  },
+  "required": {
+    "baseline_min_samples": 400,
+    "baseline_window_s": 2.0,
+    "baseline_max_std_uT": [
+      10.0,
+      10.0,
+      30.0
+    ],
+    "baseline_max_drift_uT_s": 5.0,
+    "sensor_max_age_s": 0.1,
+    "filter": {
+      "alpha": 0.3,
+      "kind": "ema"
+    }
+  },
+  "pose_confirmation": "user must keep brush airborne and stationary; no robot pose was measured",
+  "robot_connected": false,
+  "mode": "serial_read_only",
+  "source_diagnostics": {
+    "bytes_received": 148490,
+    "lines_seen": 3892,
+    "bad_lines": 0
+  },
+  "source_run": null,
+  "acquisition_error": ""
+}

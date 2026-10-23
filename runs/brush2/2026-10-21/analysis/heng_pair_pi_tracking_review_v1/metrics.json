@@ -1,0 +1,960 @@
+{
+  "created_at": "2026-10-21T13:28:54.265871+08:00",
+  "evidence": "three completed hardware recordings; all used control measurements retained",
+  "error_definition": "actual filtered |Delta Bxy| used by PI minus simultaneous target; no time shift, no extra smoothing, no clipping",
+  "tolerance_note": "+/-10 and +/-20 uT are descriptive analysis bands, not established acceptance criteria",
+  "force_or_ink_width_calibrated": false,
+  "ink_images_available": false,
+  "runs": [
+    {
+      "label": "Long A",
+      "run_path": "runs/brush2/2026-10-21/13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+      "run_id": "20261021T051840.257421Z-4517cf",
+      "status": "completed",
+      "target_sha256": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+      "target_start_end_uT": [
+        100.0,
+        100.0
+      ],
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "writing_duration_s": 15.899999999999999,
+      "actual_command_elapsed_writing_s": 15.899831323,
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "measurement_phases": [
+          "measure_00"
+        ],
+        "mode": "pi",
+        "phase": "per_stroke",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2141.774552238806,
+          2994.010074626866,
+          -7083.643041791048
+        ],
+        "applies_after_seq": 670,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -1.2545635937369624,
+          -2.65801184943821,
+          -1.7392216312872468
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 670,
+        "quality_axes": [
+          0,
+          1,
+          2
+        ],
+        "std_uT": [
+          5.657562448547197,
+          5.899070821883312,
+          13.235663485888658
+        ]
+      },
+      "primary_same_time_tracking": {
+        "n": 796,
+        "mae_uT": 44.14210516180327,
+        "rmse_uT": 94.46692334505873,
+        "bias_actual_minus_target_uT": 18.33342634455834,
+        "abs_error_p95_uT": 119.89996777775454,
+        "within_10_uT_fraction": 0.3655778894472362,
+        "within_20_uT_fraction": 0.5201005025125628,
+        "max_abs_error_uT": 1376.0949891219725
+      },
+      "terminal_actual_uT": 87.1387581300415,
+      "last_0p5s_actual_median_uT": 88.45433162505758,
+      "last_0p5s_tracking": {
+        "n": 26,
+        "mae_uT": 11.143022196374641,
+        "rmse_uT": 11.656828114320513,
+        "bias_actual_minus_target_uT": -11.143022196374641,
+        "abs_error_p95_uT": 16.098323534749454,
+        "within_10_uT_fraction": 0.38461538461538464,
+        "within_20_uT_fraction": 0.9615384615384616,
+        "max_abs_error_uT": 21.008105792645395
+      },
+      "pi": {
+        "full_amplitude_fraction": 0.23366834170854273,
+        "negative_0p8_fraction": 0.1771356783919598,
+        "positive_0p8_fraction": 0.056532663316582916,
+        "any_constraint_fraction": 0.9786432160804021,
+        "integral_blocked_fraction": 0.7977386934673367,
+        "integral_limit_active_fraction": 0.0,
+        "limit_reason_counts": {
+          "acceleration": 676,
+          "feedback_acceleration": 774,
+          "feedback_amplitude": 403,
+          "feedback_braking": 567,
+          "feedback_speed": 734,
+          "step": 214,
+          "z_speed": 277,
+          "depth_or_workspace": 8
+        }
+      },
+      "sample_max_age_s": 0.040003094,
+      "sensor_quality": {
+        "raw_count": 12129,
+        "minus_one_signature_rows": 33,
+        "xy_minus_one_signature_rows": 19,
+        "xy_signature_rows_during_writing_host_window": 13,
+        "control_points_within_30_samples_after_xy_signature": 47,
+        "diagnostic_unflagged_tracking": {
+          "n": 749,
+          "mae_uT": 37.97910671927095,
+          "rmse_uT": 55.81396639407175,
+          "bias_actual_minus_target_uT": 12.200173905908716,
+          "abs_error_p95_uT": 116.68914242043829,
+          "within_10_uT_fraction": 0.3658210947930574,
+          "within_20_uT_fraction": 0.5220293724966623,
+          "max_abs_error_uT": 197.12835965979488
+        },
+        "EMA_reconstruction_max_difference_uT": 2.2737367544323206e-13,
+        "note": "Minus-one signatures are diagnostic suspects, not a universal invalidity rule. Primary metrics retain every logged control sample. Unflagged subset cannot undo prior PI reaction or prove a glitch-free plant response."
+      },
+      "actual_tcp": {
+        "writing_samples": 156,
+        "same_time_xyz_rmse_mm": 0.5987267862137458,
+        "same_time_z_rmse_mm": 0.18075270989327963,
+        "xy_distance_to_command_path_p95_mm": 0.07502236668074429
+      },
+      "landmarks": [
+        {
+          "action": "尖起",
+          "writing_t_s": 0.0,
+          "target_uT": 100.0,
+          "actual_uT": 6.942616988067435,
+          "error_uT": -93.05738301193256,
+          "depth_fb_mm": 0.0,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "斜切轻按",
+          "writing_t_s": 1.5199999999999996,
+          "target_uT": 192.82277171034758,
+          "actual_uT": 161.26289825489255,
+          "error_uT": -31.559873455455033,
+          "depth_fb_mm": -0.18400000000000033,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "转入行笔",
+          "writing_t_s": 2.379999999999999,
+          "target_uT": 192.8228205467164,
+          "actual_uT": 151.2828629882327,
+          "error_uT": -41.53995755848371,
+          "depth_fb_mm": 0.8,
+          "diagnostic_glitch_neighborhood": true
+        },
+        {
+          "action": "前半段渐提",
+          "writing_t_s": 6.66,
+          "target_uT": 124.46659546308342,
+          "actual_uT": 105.45102208882975,
+          "error_uT": -19.015573374253677,
+          "depth_fb_mm": 0.6500984977274991,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "中段较细",
+          "writing_t_s": 8.16,
+          "target_uT": 124.46659545769568,
+          "actual_uT": 118.35468405846882,
+          "error_uT": -6.111911399226855,
+          "depth_fb_mm": 0.1866085226387145,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "主体后段渐按，随后沿主体卸载",
+          "writing_t_s": 10.98,
+          "target_uT": 192.8226799245587,
+          "actual_uT": 309.2914690822511,
+          "error_uT": 116.46878915769241,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "进入微小收笔区",
+          "writing_t_s": 13.18,
+          "target_uT": 124.46657306586091,
+          "actual_uT": 131.09717996803172,
+          "error_uT": 6.630606902170811,
+          "depth_fb_mm": -0.07273095100501886,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "微小回收结束，随后抬笔",
+          "writing_t_s": 15.899999999999999,
+          "target_uT": 100.0,
+          "actual_uT": 87.1387581300415,
+          "error_uT": -12.861241869958505,
+          "depth_fb_mm": 0.0,
+          "diagnostic_glitch_neighborhood": false
+        }
+      ],
+      "phases": [
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "initial contact / entry",
+          "start_s": 0.0,
+          "end_s": 2.3843612177417532,
+          "n": 120,
+          "mae_uT": 75.11332796067036,
+          "rmse_uT": 98.321330069136,
+          "bias_actual_minus_target_uT": -21.339282339030692,
+          "abs_error_p95_uT": 138.00414490736665,
+          "within_10_uT_fraction": 0.016666666666666666,
+          "within_20_uT_fraction": 0.03333333333333333,
+          "max_abs_error_uT": 665.3275986785852,
+          "negative_0p8_fraction": 0.0,
+          "positive_0p8_fraction": 0.125,
+          "target_median_uT": 184.34203019673404,
+          "actual_median_uT": 137.99843547660473
+        },
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "front unload 193 to 124",
+          "start_s": 2.3843612177417532,
+          "end_s": 6.660953640300409,
+          "n": 214,
+          "mae_uT": 39.23976479437996,
+          "rmse_uT": 55.11578761526588,
+          "bias_actual_minus_target_uT": 13.904271391805498,
+          "abs_error_p95_uT": 92.61041428112063,
+          "within_10_uT_fraction": 0.16355140186915887,
+          "within_20_uT_fraction": 0.42990654205607476,
+          "max_abs_error_uT": 197.12835965979488,
+          "negative_0p8_fraction": 0.19158878504672897,
+          "positive_0p8_fraction": 0.14018691588785046,
+          "target_median_uT": 160.0838446354387,
+          "actual_median_uT": 158.95045896539415
+        },
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "middle 124 plateau",
+          "start_s": 6.660953640300409,
+          "end_s": 8.160607337246098,
+          "n": 75,
+          "mae_uT": 9.13571921772019,
+          "rmse_uT": 11.017708590559579,
+          "bias_actual_minus_target_uT": -8.30066247578118,
+          "abs_error_p95_uT": 19.927528688638052,
+          "within_10_uT_fraction": 0.6266666666666667,
+          "within_20_uT_fraction": 0.9466666666666667,
+          "max_abs_error_uT": 24.999386318357097,
+          "negative_0p8_fraction": 0.0,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 124.46659545769568,
+          "actual_median_uT": 117.21816487948055
+        },
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "back load 124 to 193",
+          "start_s": 8.160607337246098,
+          "end_s": 10.972923170938724,
+          "n": 140,
+          "mae_uT": 53.73921255323856,
+          "rmse_uT": 94.36880657866118,
+          "bias_actual_minus_target_uT": 47.201596268332686,
+          "abs_error_p95_uT": 121.77800191058986,
+          "within_10_uT_fraction": 0.30714285714285716,
+          "within_20_uT_fraction": 0.4357142857142857,
+          "max_abs_error_uT": 663.7720535866354,
+          "negative_0p8_fraction": 0.35714285714285715,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 151.47647494371236,
+          "actual_median_uT": 188.61454317988557
+        },
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "unload 193 to 124",
+          "start_s": 10.972923170938724,
+          "end_s": 13.17135534689397,
+          "n": 110,
+          "mae_uT": 58.14961829005742,
+          "rmse_uT": 117.28640526566966,
+          "bias_actual_minus_target_uT": 56.026473614827665,
+          "abs_error_p95_uT": 111.72024665856529,
+          "within_10_uT_fraction": 0.44545454545454544,
+          "within_20_uT_fraction": 0.5,
+          "max_abs_error_uT": 764.2192385445725,
+          "negative_0p8_fraction": 0.45454545454545453,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 139.11108061698724,
+          "actual_median_uT": 157.73060670515895
+        },
+        {
+          "run": "13-18-40__heng_80mm_hidden_tail_v5_pi__4517cf",
+          "label": "Long A",
+          "phase": "local finish 124 to 100",
+          "start_s": 13.17135534689397,
+          "end_s": 15.899999999999999,
+          "n": 137,
+          "mae_uT": 22.781605670284122,
+          "rmse_uT": 135.74164313992088,
+          "bias_actual_minus_target_uT": 14.817673602859218,
+          "abs_error_p95_uT": 15.396689906715604,
+          "within_10_uT_fraction": 0.8394160583941606,
+          "within_20_uT_fraction": 0.9562043795620438,
+          "max_abs_error_uT": 1376.0949891219725,
+          "negative_0p8_fraction": 0.0,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 107.65051299718388,
+          "actual_median_uT": 109.38970487950222
+        }
+      ]
+    },
+    {
+      "label": "Long B",
+      "run_path": "runs/brush2/2026-10-21/13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+      "run_id": "20261021T051927.834832Z-e0e077",
+      "status": "completed",
+      "target_sha256": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+      "target_start_end_uT": [
+        100.0,
+        100.0
+      ],
+      "target_range_uT": [
+        100.0,
+        192.8228205467164
+      ],
+      "writing_duration_s": 15.899999999999999,
+      "actual_command_elapsed_writing_s": 15.900009194,
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "measurement_phases": [
+          "measure_00"
+        ],
+        "mode": "pi",
+        "phase": "per_stroke",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2149.374923780488,
+          3018.34344512195,
+          -7089.352371951221
+        ],
+        "applies_after_seq": 656,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -0.8850423957969893,
+          -1.4429840762605781,
+          1.277622187566996
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 656,
+        "quality_axes": [
+          0,
+          1,
+          2
+        ],
+        "std_uT": [
+          5.1246319017405515,
+          5.355805462815563,
+          15.654831442197109
+        ]
+      },
+      "primary_same_time_tracking": {
+        "n": 796,
+        "mae_uT": 108.39217409469576,
+        "rmse_uT": 170.7840267857695,
+        "bias_actual_minus_target_uT": 90.69220431981866,
+        "abs_error_p95_uT": 255.59290121406164,
+        "within_10_uT_fraction": 0.1871859296482412,
+        "within_20_uT_fraction": 0.3203517587939699,
+        "max_abs_error_uT": 1526.9753690877803
+      },
+      "terminal_actual_uT": 356.5551135401409,
+      "last_0p5s_actual_median_uT": 353.8267575720382,
+      "last_0p5s_tracking": {
+        "n": 26,
+        "mae_uT": 254.35796913625538,
+        "rmse_uT": 254.3658905175286,
+        "bias_actual_minus_target_uT": 254.35796913625538,
+        "abs_error_p95_uT": 257.13218519256,
+        "within_10_uT_fraction": 0.0,
+        "within_20_uT_fraction": 0.0,
+        "max_abs_error_uT": 259.4700281351575
+      },
+      "pi": {
+        "full_amplitude_fraction": 0.3630653266331658,
+        "negative_0p8_fraction": 0.36180904522613067,
+        "positive_0p8_fraction": 0.001256281407035176,
+        "any_constraint_fraction": 0.9899497487437185,
+        "integral_blocked_fraction": 0.878140703517588,
+        "integral_limit_active_fraction": 0.0,
+        "limit_reason_counts": {
+          "acceleration": 747,
+          "feedback_acceleration": 785,
+          "feedback_amplitude": 538,
+          "feedback_braking": 711,
+          "feedback_speed": 773,
+          "step": 397,
+          "z_speed": 464,
+          "depth_or_workspace": 208
+        }
+      },
+      "sample_max_age_s": 0.079990005,
+      "sensor_quality": {
+        "raw_count": 11999,
+        "minus_one_signature_rows": 37,
+        "xy_minus_one_signature_rows": 14,
+        "xy_signature_rows_during_writing_host_window": 12,
+        "control_points_within_30_samples_after_xy_signature": 50,
+        "diagnostic_unflagged_tracking": {
+          "n": 746,
+          "mae_uT": 106.28619711391389,
+          "rmse_uT": 160.51246095305746,
+          "bias_actual_minus_target_uT": 89.08971487930434,
+          "abs_error_p95_uT": 255.22123011042407,
+          "within_10_uT_fraction": 0.19571045576407506,
+          "within_20_uT_fraction": 0.3257372654155496,
+          "max_abs_error_uT": 671.3076356008713
+        },
+        "EMA_reconstruction_max_difference_uT": 1.1368683772161603e-13,
+        "note": "Minus-one signatures are diagnostic suspects, not a universal invalidity rule. Primary metrics retain every logged control sample. Unflagged subset cannot undo prior PI reaction or prove a glitch-free plant response."
+      },
+      "actual_tcp": {
+        "writing_samples": 156,
+        "same_time_xyz_rmse_mm": 0.5408885069387418,
+        "same_time_z_rmse_mm": 0.16362923917625186,
+        "xy_distance_to_command_path_p95_mm": 0.08444829127020177
+      },
+      "landmarks": [
+        {
+          "action": "尖起",
+          "writing_t_s": 0.0,
+          "target_uT": 100.0,
+          "actual_uT": 44.77182484120909,
+          "error_uT": -55.22817515879091,
+          "depth_fb_mm": 0.0,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "斜切轻按",
+          "writing_t_s": 1.5199999999999996,
+          "target_uT": 192.82277171034758,
+          "actual_uT": 405.02421446063016,
+          "error_uT": 212.20144275028258,
+          "depth_fb_mm": -0.5279999999999994,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "转入行笔",
+          "writing_t_s": 2.379999999999999,
+          "target_uT": 192.8228205467164,
+          "actual_uT": 288.5454137789629,
+          "error_uT": 95.72259323224648,
+          "depth_fb_mm": -0.06000000000000084,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "前半段渐提",
+          "writing_t_s": 6.66,
+          "target_uT": 124.46659546308342,
+          "actual_uT": 106.33824253570708,
+          "error_uT": -18.12835292737634,
+          "depth_fb_mm": 0.3584712333402481,
+          "diagnostic_glitch_neighborhood": true
+        },
+        {
+          "action": "中段较细",
+          "writing_t_s": 8.16,
+          "target_uT": 124.46659545769568,
+          "actual_uT": 122.61352747851019,
+          "error_uT": -1.8530679791854823,
+          "depth_fb_mm": 0.1947899641424909,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "主体后段渐按，随后沿主体卸载",
+          "writing_t_s": 10.98,
+          "target_uT": 192.8226799245587,
+          "actual_uT": 597.1537226680282,
+          "error_uT": 404.3310427434695,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "进入微小收笔区",
+          "writing_t_s": 13.18,
+          "target_uT": 124.46657306586091,
+          "actual_uT": 348.17424885093476,
+          "error_uT": 223.70767578507383,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "微小回收结束，随后抬笔",
+          "writing_t_s": 15.899999999999999,
+          "target_uT": 100.0,
+          "actual_uT": 356.5551135401409,
+          "error_uT": 256.5551135401409,
+          "depth_fb_mm": -0.0,
+          "diagnostic_glitch_neighborhood": false
+        }
+      ],
+      "phases": [
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "initial contact / entry",
+          "start_s": 0.0,
+          "end_s": 2.3843612177417532,
+          "n": 120,
+          "mae_uT": 105.41553520460424,
+          "rmse_uT": 124.70977370370683,
+          "bias_actual_minus_target_uT": 32.38029797707987,
+          "abs_error_p95_uT": 217.94021420891107,
+          "within_10_uT_fraction": 0.008333333333333333,
+          "within_20_uT_fraction": 0.03333333333333333,
+          "max_abs_error_uT": 225.80813511472772,
+          "negative_0p8_fraction": 0.016666666666666666,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 184.34203019673404,
+          "actual_median_uT": 169.2146645146292
+        },
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "front unload 193 to 124",
+          "start_s": 2.3843612177417532,
+          "end_s": 6.660953640300409,
+          "n": 214,
+          "mae_uT": 38.879991788129104,
+          "rmse_uT": 71.31428806987022,
+          "bias_actual_minus_target_uT": 25.596950694396813,
+          "abs_error_p95_uT": 90.78135776173795,
+          "within_10_uT_fraction": 0.24299065420560748,
+          "within_20_uT_fraction": 0.48130841121495327,
+          "max_abs_error_uT": 699.0572428264117,
+          "negative_0p8_fraction": 0.2757009345794392,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 160.0838446354387,
+          "actual_median_uT": 165.62683839936244
+        },
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "middle 124 plateau",
+          "start_s": 6.660953640300409,
+          "end_s": 8.160607337246098,
+          "n": 75,
+          "mae_uT": 11.03812118960593,
+          "rmse_uT": 13.267966723300768,
+          "bias_actual_minus_target_uT": -10.444709214987242,
+          "abs_error_p95_uT": 23.41412519874189,
+          "within_10_uT_fraction": 0.5066666666666667,
+          "within_20_uT_fraction": 0.8266666666666667,
+          "max_abs_error_uT": 26.596048592745575,
+          "negative_0p8_fraction": 0.0,
+          "positive_0p8_fraction": 0.013333333333333334,
+          "target_median_uT": 124.46659545769568,
+          "actual_median_uT": 114.66543322447554
+        },
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "back load 124 to 193",
+          "start_s": 8.160607337246098,
+          "end_s": 10.972923170938724,
+          "n": 140,
+          "mae_uT": 55.727928385887495,
+          "rmse_uT": 108.96425303260641,
+          "bias_actual_minus_target_uT": 50.24769037053915,
+          "abs_error_p95_uT": 299.51454734980865,
+          "within_10_uT_fraction": 0.35,
+          "within_20_uT_fraction": 0.55,
+          "max_abs_error_uT": 496.22134996822314,
+          "negative_0p8_fraction": 0.4,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 151.47647494371236,
+          "actual_median_uT": 160.38174686176654
+        },
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "unload 193 to 124",
+          "start_s": 10.972923170938724,
+          "end_s": 13.17135534689397,
+          "n": 110,
+          "mae_uT": 205.18279062968904,
+          "rmse_uT": 276.70742481987213,
+          "bias_actual_minus_target_uT": 204.23796265744087,
+          "abs_error_p95_uT": 667.9630321231264,
+          "within_10_uT_fraction": 0.08181818181818182,
+          "within_20_uT_fraction": 0.08181818181818182,
+          "max_abs_error_uT": 671.3076356008713,
+          "negative_0p8_fraction": 0.7727272727272727,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 139.11108061698724,
+          "actual_median_uT": 340.62056196632943
+        },
+        {
+          "run": "13-19-27__heng_80mm_hidden_tail_v5_pi__e0e077",
+          "label": "Long B",
+          "phase": "local finish 124 to 100",
+          "start_s": 13.17135534689397,
+          "end_s": 15.899999999999999,
+          "n": 137,
+          "mae_uT": 248.97892028945407,
+          "rmse_uT": 272.38614817513627,
+          "bias_actual_minus_target_uT": 248.97892028945407,
+          "abs_error_p95_uT": 256.1808322654639,
+          "within_10_uT_fraction": 0.0,
+          "within_20_uT_fraction": 0.0,
+          "max_abs_error_uT": 1526.9753690877803,
+          "negative_0p8_fraction": 0.6277372262773723,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 107.65051299718388,
+          "actual_median_uT": 349.092234889951
+        }
+      ]
+    },
+    {
+      "label": "Short 100",
+      "run_path": "runs/brush2/2026-10-21/13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+      "run_id": "20261021T052245.043007Z-b7a85e",
+      "status": "completed",
+      "target_sha256": "5e86183f9fd892554a1fdb3c21d2e14213ade59c6589a3ac6358f0cc26246858",
+      "target_start_end_uT": [
+        100.0,
+        100.0
+      ],
+      "target_range_uT": [
+        100.0,
+        192.82281737834919
+      ],
+      "writing_duration_s": 10.680000000000001,
+      "actual_command_elapsed_writing_s": 10.679800472,
+      "control": {
+        "anti_windup": "conditional",
+        "enabled": true,
+        "integral_limit_mm": 0.2,
+        "ki": 0.1,
+        "kp": 1.0,
+        "max_correction_accel_mm_s2": 30.0,
+        "max_correction_mm": 0.8,
+        "max_correction_speed_mm_s": 2.0,
+        "measurement_phases": [
+          "measure_00"
+        ],
+        "mode": "pi",
+        "phase": "per_stroke",
+        "taper_ticks": 50
+      },
+      "baseline": {
+        "B0_uT": [
+          2143.5353881278556,
+          3009.2061643835664,
+          -7090.999649923894
+        ],
+        "applies_after_seq": 657,
+        "baseline_id": 0,
+        "drift_uT_s": [
+          -1.6403801012158008,
+          -1.8079735770508518,
+          -1.1299577092768414
+        ],
+        "effective_visit": 0,
+        "first_seq": 1,
+        "last_seq": 657,
+        "quality_axes": [
+          0,
+          1,
+          2
+        ],
+        "std_uT": [
+          5.272695342380189,
+          5.6000363575475856,
+          14.367048677473274
+        ]
+      },
+      "primary_same_time_tracking": {
+        "n": 535,
+        "mae_uT": 84.22641049557791,
+        "rmse_uT": 186.73657841234836,
+        "bias_actual_minus_target_uT": 69.1555822997724,
+        "abs_error_p95_uT": 512.5413055983045,
+        "within_10_uT_fraction": 0.205607476635514,
+        "within_20_uT_fraction": 0.27850467289719627,
+        "max_abs_error_uT": 1763.3819434463462
+      },
+      "terminal_actual_uT": 613.098328745832,
+      "last_0p5s_actual_median_uT": 612.8925827487913,
+      "last_0p5s_tracking": {
+        "n": 26,
+        "mae_uT": 534.4524291573257,
+        "rmse_uT": 545.5927268293758,
+        "bias_actual_minus_target_uT": 534.4524291573257,
+        "abs_error_p95_uT": 540.1659725190865,
+        "within_10_uT_fraction": 0.0,
+        "within_20_uT_fraction": 0.0,
+        "max_abs_error_uT": 1080.3020823295103
+      },
+      "pi": {
+        "full_amplitude_fraction": 0.4093457943925234,
+        "negative_0p8_fraction": 0.40186915887850466,
+        "positive_0p8_fraction": 0.007476635514018692,
+        "any_constraint_fraction": 0.9906542056074766,
+        "integral_blocked_fraction": 0.8635514018691589,
+        "integral_limit_active_fraction": 0.0,
+        "limit_reason_counts": {
+          "acceleration": 478,
+          "feedback_acceleration": 528,
+          "feedback_amplitude": 386,
+          "feedback_braking": 437,
+          "feedback_speed": 510,
+          "step": 149,
+          "z_speed": 214,
+          "depth_or_workspace": 53
+        }
+      },
+      "sample_max_age_s": 0.040006911,
+      "sensor_quality": {
+        "raw_count": 10217,
+        "minus_one_signature_rows": 30,
+        "xy_minus_one_signature_rows": 17,
+        "xy_signature_rows_during_writing_host_window": 11,
+        "control_points_within_30_samples_after_xy_signature": 56,
+        "diagnostic_unflagged_tracking": {
+          "n": 479,
+          "mae_uT": 69.44481051080682,
+          "rmse_uT": 135.35665733310893,
+          "bias_actual_minus_target_uT": 53.90091805340435,
+          "abs_error_p95_uT": 475.25936213588216,
+          "within_10_uT_fraction": 0.2254697286012526,
+          "within_20_uT_fraction": 0.302713987473904,
+          "max_abs_error_uT": 577.9282572470852
+        },
+        "EMA_reconstruction_max_difference_uT": 1.1368683772161603e-13,
+        "note": "Minus-one signatures are diagnostic suspects, not a universal invalidity rule. Primary metrics retain every logged control sample. Unflagged subset cannot undo prior PI reaction or prove a glitch-free plant response."
+      },
+      "actual_tcp": {
+        "writing_samples": 105,
+        "same_time_xyz_rmse_mm": 0.4911143160701501,
+        "same_time_z_rmse_mm": 0.17726852749078437,
+        "xy_distance_to_command_path_p95_mm": 0.09930738390117036
+      },
+      "landmarks": [
+        {
+          "action": "尖起",
+          "writing_t_s": 0.0,
+          "target_uT": 100.0,
+          "actual_uT": 36.46521791800129,
+          "error_uT": -63.53478208199871,
+          "depth_fb_mm": 0.0,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "斜切轻按",
+          "writing_t_s": 0.7400000000000002,
+          "target_uT": 124.46641519900021,
+          "actual_uT": 79.52544625911545,
+          "error_uT": -44.940968939884755,
+          "depth_fb_mm": 0.592,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "转入右上行笔",
+          "writing_t_s": 1.08,
+          "target_uT": 124.46659545954655,
+          "actual_uT": 109.63812321268105,
+          "error_uT": -14.828472246865502,
+          "depth_fb_mm": 0.5997910382630558,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "主体逐渐展开",
+          "writing_t_s": 4.339999999999998,
+          "target_uT": 154.91934022194698,
+          "actual_uT": 191.55468909767683,
+          "error_uT": 36.635348875729846,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "右端展开至较粗处",
+          "writing_t_s": 6.76,
+          "target_uT": 192.8227315085351,
+          "actual_uT": 227.73040025654498,
+          "error_uT": 34.90766874800988,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "提锋后进入微小收笔区",
+          "writing_t_s": 7.959999999999999,
+          "target_uT": 124.46658546097319,
+          "actual_uT": 186.7383805218524,
+          "error_uT": 62.271795060879214,
+          "depth_fb_mm": -0.8,
+          "diagnostic_glitch_neighborhood": false
+        },
+        {
+          "action": "回收结束，随后抬笔",
+          "writing_t_s": 10.680000000000001,
+          "target_uT": 100.0,
+          "actual_uT": 613.098328745832,
+          "error_uT": 513.098328745832,
+          "depth_fb_mm": -0.0,
+          "diagnostic_glitch_neighborhood": false
+        }
+      ],
+      "phases": [
+        {
+          "run": "13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+          "label": "Short 100",
+          "phase": "initial contact / entry",
+          "start_s": 0.0,
+          "end_s": 1.077879096378778,
+          "n": 54,
+          "mae_uT": 55.99945926022763,
+          "rmse_uT": 59.678025839746525,
+          "bias_actual_minus_target_uT": -55.99945926022763,
+          "abs_error_p95_uT": 78.14599768060596,
+          "within_10_uT_fraction": 0.0,
+          "within_20_uT_fraction": 0.1111111111111111,
+          "max_abs_error_uT": 80.3543960840692,
+          "negative_0p8_fraction": 0.0,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 118.44419413353307,
+          "actual_median_uT": 40.81475117358117
+        },
+        {
+          "run": "13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+          "label": "Short 100",
+          "phase": "body 124 to 155",
+          "start_s": 1.077879096378778,
+          "end_s": 4.332119681965351,
+          "n": 163,
+          "mae_uT": 33.401371641644396,
+          "rmse_uT": 196.0722907799489,
+          "bias_actual_minus_target_uT": 27.12125649013554,
+          "abs_error_p95_uT": 37.316298663287434,
+          "within_10_uT_fraction": 0.6625766871165644,
+          "within_20_uT_fraction": 0.7300613496932515,
+          "max_abs_error_uT": 1763.3819434463462,
+          "negative_0p8_fraction": 0.11042944785276074,
+          "positive_0p8_fraction": 0.024539877300613498,
+          "target_median_uT": 138.34612587471744,
+          "actual_median_uT": 141.5182877399101
+        },
+        {
+          "run": "13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+          "label": "Short 100",
+          "phase": "body 155 to 193",
+          "start_s": 4.332119681965351,
+          "end_s": 6.754717830267907,
+          "n": 121,
+          "mae_uT": 60.68269932627628,
+          "rmse_uT": 133.3424441422868,
+          "bias_actual_minus_target_uT": 55.82432729579222,
+          "abs_error_p95_uT": 336.3546846432156,
+          "within_10_uT_fraction": 0.01652892561983471,
+          "within_20_uT_fraction": 0.19008264462809918,
+          "max_abs_error_uT": 577.9282572470852,
+          "negative_0p8_fraction": 0.5206611570247934,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 179.05708028507522,
+          "actual_median_uT": 199.7374487539805
+        },
+        {
+          "run": "13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+          "label": "Short 100",
+          "phase": "unload 193 to 124",
+          "start_s": 6.754717830267907,
+          "end_s": 7.953353118998066,
+          "n": 60,
+          "mae_uT": 71.3827804195419,
+          "rmse_uT": 76.7424713950271,
+          "bias_actual_minus_target_uT": 64.65895209842786,
+          "abs_error_p95_uT": 107.63714233579599,
+          "within_10_uT_fraction": 0.0,
+          "within_20_uT_fraction": 0.016666666666666666,
+          "max_abs_error_uT": 170.46741995922218,
+          "negative_0p8_fraction": 0.8,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 154.58432903509697,
+          "actual_median_uT": 229.87530259246313
+        },
+        {
+          "run": "13-22-45__heng_short_40mm_gradual_v1_pi__b7a85e",
+          "label": "Short 100",
+          "phase": "local finish 124 to 100",
+          "start_s": 7.953353118998066,
+          "end_s": 10.680000000000001,
+          "n": 137,
+          "mae_uT": 182.24205688935703,
+          "rmse_uT": 265.9815513901908,
+          "bias_actual_minus_target_uT": 182.24205688935703,
+          "abs_error_p95_uT": 513.3501814704132,
+          "within_10_uT_fraction": 0.0,
+          "within_20_uT_fraction": 0.0,
+          "max_abs_error_uT": 1080.3020823295103,
+          "negative_0p8_fraction": 0.6277372262773723,
+          "positive_0p8_fraction": 0.0,
+          "target_median_uT": 107.68296925801253,
+          "actual_median_uT": 184.6333747868469
+        }
+      ]
+    }
+  ],
+  "excluded_incomplete_attempts": [
+    {
+      "run": "13-16-12__heng_80mm_hidden_tail_v5_pi__df2e97",
+      "status": "aborted",
+      "reason": "baseline_failed",
+      "writing_commands": 0,
+      "last_recorded_phase": null
+    },
+    {
+      "run": "13-23-25__heng_short_40mm_gradual_v1_pi__f3191f",
+      "status": "aborted",
+      "reason": "sensor_stale",
+      "writing_commands": 0,
+      "last_recorded_phase": "rotate_contact_00"
+    },
+    {
+      "run": "13-23-55__heng_short_40mm_gradual_v1_pi__0490cd",
+      "status": "aborted",
+      "reason": "sensor_stale",
+      "writing_commands": 423,
+      "last_recorded_phase": "measure_00"
+    }
+  ],
+  "limitations": [
+    "Source measurement glitches remain; scalar magnetic changes do not prove contact force or ink width.",
+    "EMA reconstructed from raw vectors matches the recorded control feature; this checks consistency, not sensor accuracy.",
+    "No matched feedforward-only trial of the same v5 geometry/time; the contribution of PI cannot be isolated.",
+    "Only two repeats of long and one completed short; large repeat difference prevents a tracking success claim.",
+    "No target, setting, approval, firmware or original record was changed."
+  ]
+}

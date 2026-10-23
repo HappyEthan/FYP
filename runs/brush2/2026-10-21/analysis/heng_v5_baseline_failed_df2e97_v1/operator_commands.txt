@@ -1,0 +1,5 @@
+# 先关闭 Monitor/其他串口程序，机器人保持等待位，毛笔空载静止。
+# 仅记录传感器原始串口；约20秒后按 Ctrl+] 退出。没有机器人动作。
+cd /home/ethan/FYP
+python3 -m serial.tools.miniterm /dev/ttyACM0 115200 --raw --eol LF > runs/brush2/2026-10-21/analysis/heng_v5_baseline_failed_df2e97_v1/static_serial_01.txt
+# 将上述static_serial_01.txt路径发给助手，先不重跑笔画。

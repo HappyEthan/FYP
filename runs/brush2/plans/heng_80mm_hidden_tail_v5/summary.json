@@ -1,0 +1,72 @@
+{
+  "writing_duration_s": 15.9,
+  "full_nominal_motion_duration_s": 37.800000000000004,
+  "bbox_mm": [
+    79.99992449970375,
+    11.54414165559363
+  ],
+  "length_mm": 84.45517437302665,
+  "max_xy_speed_mm_s": 9.90000000000174,
+  "g_target_range_uT": [
+    100.0,
+    192.8228205467164
+  ],
+  "finishing": {
+    "start_distance_mm": 81.55492562156213,
+    "start_s": 0.9656593124933408,
+    "authored_length_mm": 2.900466773409707,
+    "sampled_length_mm": 2.887149203672947,
+    "authored_bbox_mm": [
+      1.5,
+      0.6924627657750344
+    ],
+    "sampled_bbox_mm": [
+      1.4868250623661652,
+      0.692400326540481
+    ],
+    "x_return_from_rightmost_mm": 1.0,
+    "writing_duration_s": 2.728644653106036,
+    "tilt_azimuth_span_deg": 1.5600217140045964
+  },
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  },
+  "compiled_limits": {
+    "XY speed": 79.93112870586383,
+    "Z speed": 59.997440049151805,
+    "step": 1.5986225741172766,
+    "acceleration": 194.06980826473514,
+    "angular speed": 19.988190158313856,
+    "angular acceleration": 38.457949968843565
+  },
+  "source_sha256": {
+    "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/recipe.json": "c2a30da90d6e7c0bfe3e2625ed029c92aa402e1dfebcc32feb94d703ecb016ab",
+    "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/strokeplan.npz": "34072e7a29f18796b103f9917d083f1308024e11a5691749bbb9a8fe26efd26a",
+    "runs/brush2/plans/heng_80mm_smooth_tail_v4/heng/strokeplan.npz": "e2ab9d56f87bce9cb0da6481af5ec27f65b8b7029860afd8b27b7a43a8017150",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee"
+  },
+  "execution_context": "runs/brush2/plans/11_中字底横延长30mm_实测第9次",
+  "validation": "V3 reload, explicit <5mm checks, hard <=20s writing limit, real-XY directional compilation using Zhong PI profile; no hardware",
+  "limitations": [
+    "No ink image or width calibration; small XY region does not prove an invisible bend.",
+    "Entry/exit candidate target amplitudes are not newly calibrated; L1 remains a contact tier.",
+    "Independent entry_profile still includes the old 5mm reverse and original loading/lift sequence.",
+    "Historical fixed-Ry15 table applied to dynamic pose and local speeds under the existing assumption."
+  ]
+}

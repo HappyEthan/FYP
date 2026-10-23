@@ -1,0 +1,156 @@
+{
+  "schema": "local-hidden-tail-candidate-v1",
+  "generator": "generate.py:build_candidate",
+  "description": "80mm长横；末端保留微小回收，总路程和范围均小于5mm。",
+  "source_recipe": "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/recipe.json",
+  "width_mm": 80.0,
+  "retained_source_points": [
+    0,
+    34
+  ],
+  "origin_mm": [
+    140.0,
+    0.0
+  ],
+  "continuation_bezier_controls_mm": [
+    [
+      31.316397228637413,
+      4.249422632794457
+    ],
+    [
+      33.31639722863741,
+      4.597248719750978
+    ],
+    [
+      36.5,
+      5.0
+    ],
+    [
+      38.5,
+      5.0
+    ]
+  ],
+  "finishing_bezier_controls_mm": [
+    [
+      [
+        38.5,
+        5.0
+      ],
+      [
+        39.2,
+        5.0
+      ],
+      [
+        40.0,
+        5.3
+      ],
+      [
+        40.0,
+        4.8
+      ]
+    ],
+    [
+      [
+        40.0,
+        4.8
+      ],
+      [
+        40.0,
+        4.3
+      ],
+      [
+        39.1,
+        4.35
+      ],
+      [
+        39.0,
+        4.5
+      ]
+    ]
+  ],
+  "bezier_samples_per_piece": 181,
+  "magnetic_target": {
+    "interpolation": "quintic",
+    "knots_s_uT": [
+      [
+        0.0,
+        100.0
+      ],
+      [
+        0.04988586412842275,
+        192.8228205467164
+      ],
+      [
+        0.07932232635571265,
+        192.8228205467164
+      ],
+      [
+        0.4651458757847203,
+        124.46659545769568
+      ],
+      [
+        0.6229783235068184,
+        124.46659545769568
+      ],
+      [
+        0.8820787887089332,
+        192.8228205467164
+      ],
+      [
+        0.9656593124933407,
+        124.46659545769568
+      ],
+      [
+        1.0,
+        100.0
+      ]
+    ],
+    "status": "unchanged candidate levels; stages remapped, not entry/exit calibration"
+  },
+  "timing": {
+    "speed_mm_s": 9.9,
+    "accel_mm_s2": 30,
+    "angular_speed_deg_s": 20,
+    "angular_accel_deg_s2": 40.0,
+    "speed_knots_s_mm_s": [
+      [
+        0.0,
+        3.0
+      ],
+      [
+        0.04978507983842952,
+        3.0
+      ],
+      [
+        0.07916207165266108,
+        3.0
+      ],
+      [
+        0.12916207165266108,
+        10.0
+      ],
+      [
+        0.8602967270770197,
+        10.0
+      ],
+      [
+        0.8802967270770197,
+        6.0
+      ],
+      [
+        0.9657261146054207,
+        1.5
+      ],
+      [
+        1.0,
+        0.8
+      ]
+    ]
+  },
+  "orientation": {
+    "tilt_deg": 15.0,
+    "smoothing_mm": 5.0,
+    "policy": "follow body and straight tangent continuation; do not follow the micro-return direction"
+  },
+  "note": "This local recipe uses generate.py, not the generic JSON CLI. The time/pose surrogate is not the saved XY target."
+}

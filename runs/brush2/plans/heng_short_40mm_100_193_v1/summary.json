@@ -1,0 +1,68 @@
+{
+  "writing_duration_s": 10.68,
+  "full_nominal_motion_duration_s": 32.38,
+  "bbox_mm": [
+    39.99996081733704,
+    14.25915023113832
+  ],
+  "path_length_mm": 44.40821295433216,
+  "max_xy_speed_mm_s": 8.000000000002085,
+  "g_target_range_uT": [
+    100.0,
+    192.82281737834919
+  ],
+  "magnetic_rule": "single monotonic expansion to L4, then unloading through L2 to L1",
+  "in_plan_entry_length_mm": 1.8,
+  "finishing": {
+    "authored_length_mm": 2.9004667734097107,
+    "authored_bbox_mm": [
+      1.500652584822042,
+      0.8297250541192991
+    ],
+    "start_distance_mm": 41.50797218902125,
+    "start_s": 0.9346913426060758,
+    "tilt_azimuth_span_deg": 0.18036322162222623
+  },
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  },
+  "compiled_limits": {
+    "XY speed": 79.84401809266372,
+    "Z speed": 59.997440049151805,
+    "step": 1.5968803618532743,
+    "acceleration": 93.86825512449121,
+    "angular speed": 19.27956797190972,
+    "angular acceleration": 39.557975682967175
+  },
+  "source_sha256": {
+    "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short/template.json": "f9f5fcd2fa18afb648f6a19003d1014cf7571e5a08ef81aec0a7311228a8592e",
+    "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short/source.jpg": "89aeb3d7166f60288b27300d7cadefae5f0bdb8fc15d55697091b70c8d7ea739",
+    "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_short/raw_trace.json": "3b9c3b87abac81e34063a41692da5336fb834cb2ef525c33a16dccd24bcfcdb0",
+    "runs/brush2/plans/heng_80mm_hidden_tail_v5/heng/strokeplan.npz": "00c672b55fbce3a1c0943a2cae8853306f715e1ab8b7ac0e22bce9decc608d1c",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/feedforward.json": "c54437b3c75a2514ac520e96374c2d8e34d19d1a5dee443ae47d96544163ed68",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/entry_profile.json": "baf7e2e0f0abe2cfdd2ae8f106362875b264843c8f711c9ec0852c8b34b97eff",
+    "runs/brush2/plans/11_中字底横延长30mm_实测第9次/pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee"
+  },
+  "execution_context": "runs/brush2/plans/11_中字底横延长30mm_实测第9次",
+  "validation": "V3 reload, monotonic short-Heng phase assertions, <=20s, actual-XY full nominal preflight with Zhong PI; no hardware",
+  "limitations": [
+    "Synthetic target levels are not calibrated physical widths or forces.",
+    "Small finishing geometry does not guarantee the bend is invisible in ink.",
+    "Independent old entry_profile still adds 5mm reverse before the target and uses the original load/lift sequence.",
+    "Historical +X fixed-Ry15 table reused at varying azimuths/local speeds under the existing trial assumption."
+  ]
+}
