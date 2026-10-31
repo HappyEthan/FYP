@@ -133,3 +133,18 @@ def test_candidate_execution_gate():
     with pytest.raises(ValueError): require_execution_approval(t,s)
     t['transient_approved']=True; s['verified']=True
     require_execution_approval(t,s)
+
+
+def test_high_speed_trial_requires_explicit_marker_and_preserves_mapping():
+    import copy
+    from brushbot.feedforward import validate_table
+    from brushbot.feedforward import lookup_depth_m
+    original=table();trial=copy.deepcopy(original);trial['speed_mm_s']=20.
+    with pytest.raises(ValueError):validate_table(trial)
+    trial['high_speed_trial']=dict(authorized=True,measured_speed_mm_s=10.,requested_speed_limit_mm_s=20.,status='unmeasured_speed_extension')
+    validate_table(trial)
+    assert np.array_equal(lookup_depth_m(trial,[30.,70.]),lookup_depth_m(original,[30.,70.]))
+    trial['high_speed_trial']['authorized']=False
+    with pytest.raises(ValueError):validate_table(trial)
+    trial['high_speed_trial']['authorized']=True;trial['speed_mm_s']=21.
+    with pytest.raises(ValueError):validate_table(trial)

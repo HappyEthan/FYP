@@ -1,0 +1,1447 @@
+[
+  {
+    "run_id": "20260923T084359.358660Z-df7649",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-43-59_姿态Ry正15_第1次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T085506.989470Z-c575e5",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/16-55-06_姿态Ry正15_第2次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T091344.570451Z-7d1a59",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-13-44_姿态Rx正15_Rz90_第1次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T095038.889031Z-486bc3",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/17-50-38_姿态Rx正15_Rz90_第2次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T100746.878225Z-9666d5",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-07-46_姿态Ry负15_Rz180_第1次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T101706.533082Z-2f3488",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-17-06_姿态Ry负15_Rz180_第2次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T104418.483838Z-43a39c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-44-18_姿态Rx负15_Rz270_第1次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260923T105722.806705Z-3b670b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-23/01_四方向阶梯实验/raw/18-57-22_姿态Rx负15_Rz270_第2次",
+    "group": "2026-09-23"
+  },
+  {
+    "run_id": "20260925T062549.748539Z-1403aa",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/14-25-49_连续下压_Z38到24mm_单程30s_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T062857.326996Z-9a9d65",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/14-28-57_连续下压_Z38到24mm_单程30s_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T063202.212704Z-289303",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/14-32-02_下压回升_Z38到24mm_单程15s_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T063525.790228Z-bd0c90",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/14-35-25_下压回升_Z38到24mm_单程15s_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T070232.692803Z-94c67f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-02-32_连续下压_Z38到24mm_单程30s_第3次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T072502.862069Z-4c058b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-25-02_压深5mm_扰动1mm_先下压_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T072934.768469Z-9fd1f7",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-29-34_压深5mm_扰动1mm_先下压_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T073527.841894Z-995acf",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-35-27_压深10mm_扰动1mm_先下压_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T073757.508299Z-8069d2",
+    "status": "aborted",
+    "reason": "sensor_invalid",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-37-57_压深10mm_扰动1mm_先下压_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T074118.044996Z-04ce45",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-41-18_压深12p5mm_扰动0p5mm_先下压_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T075204.420276Z-9e56d1",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/15-52-04_压深12p5mm_扰动0p5mm_先下压_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T080901.051523Z-068c2f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/16-09-01_压深5mm_扰动1mm_先下压_第3次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T081258.743263Z-f19692",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/05_Z动态辨识/raw/16-12-58_压深5mm_扰动1mm_先下压_第4次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T090609.841122Z-d32bd7",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-06-09_难曲线160到240_纯前馈_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T091137.904028Z-d2f1c2",
+    "status": "aborted",
+    "reason": "acceleration_limit",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-11-37_难曲线160到240_前馈加P2_修正0p4mm_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T092000.043021Z-08a2be",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-20-00_难曲线160到240_前馈加P2_修正0p4mm_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T092610.876043Z-760822",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-26-10_难曲线160到240_前馈加P2_修正0p4mm_第3次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T092938.598616Z-8a0b54",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/06_非线性前馈难曲线对比/raw/17-29-38_难曲线160到240_纯前馈_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T095548.065938Z-4e5c62",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/17-55-48_难曲线160到240_前馈加P0p25_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T095854.410026Z-03a71d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/17-58-54_难曲线160到240_前馈加P0p25_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T100404.180911Z-ea0d2f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-04-04_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T100653.031671Z-2c0c53",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-06-53_难曲线160到240_前馈加P0p5_修正0p4mm_平滑_渐变1s_速度2_加速度30_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T100915.605996Z-64c572",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-09-15_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T101148.640249Z-4e993f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-11-48_难曲线160到240_前馈加P1_修正0p4mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T101414.453284Z-ab6e8d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-14-14_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T102553.469105Z-3eee0e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-25-53_难曲线160到240_前馈加P0p5_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T102826.543495Z-a732d0",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/07_非线性前馈P参数扫描/raw/18-28-26_难曲线160到240_前馈加P1_修正0p8mm_平滑_渐变1s_速度2_加速度30_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T105420.877447Z-98c8c2",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/08_短平台P与PI对比/raw/18-54-20_平台160到240回160_P_Kp1_Ki0_总修正0p8mm_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T105622.210199Z-841376",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/08_短平台P与PI对比/raw/18-56-22_平台160到240回160_P_Kp1_Ki0_总修正0p8mm_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T105914.400090Z-14bebd",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/08_短平台P与PI对比/raw/18-59-14_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_抗饱和_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T110251.910481Z-359150",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/08_短平台P与PI对比/raw/19-02-51_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_抗饱和_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T112205.792612Z-24bcf0",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-22-05_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T112923.586848Z-ef1845",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-29-23_平台160到240回160_PI_Kp1_Ki0p025_总修正0p8mm_积分0p2mm_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T113138.974622Z-03af7f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-31-38_平台160到240回160_PI_Kp1_Ki0p1_总修正0p8mm_积分0p2mm_第1次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T113752.911876Z-c4d5d4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-37-52_平台160到240回160_PI_Kp1_Ki0p1_总修正0p8mm_积分0p2mm_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T114540.752028Z-613b8c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-45-40_平台160到240回160_PI_Kp1_Ki0p025_总修正0p8mm_积分0p2mm_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T114752.342820Z-88f096",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/09_短平台Ki参数扫描/raw/19-47-52_平台160到240回160_PI_Kp1_Ki0p05_总修正0p8mm_积分0p2mm_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T114223.281371Z-0aa5e8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/10_中字原地旋转进笔/raw/19-42-23_中_第3笔_pi_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T114310.283241Z-e81fcb",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/10_中字原地旋转进笔/raw/19-43-10_中_第4笔_pi_第2次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T125843.882914Z-096f83",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/11_中字连续方向姿态/raw/20-58-43_中_整字_方向姿态_pi_第8次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260925T130954.025459Z-e37642",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-25/11_中字连续方向姿态/raw/21-09-54_中_整字_方向姿态_pi_第9次",
+    "group": "2026-09-25"
+  },
+  {
+    "run_id": "20260926T015939.869293Z-cf4dfb",
+    "status": "fault",
+    "reason": "communication_fault: ArmError: PushServoP failed: ['20031']",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-26/11_中字连续方向姿态/raw/09-59-39_中_整字_方向姿态_pi_第1次",
+    "group": "2026-09-26"
+  },
+  {
+    "run_id": "20260927T090705.940335Z-02bbcb",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-07-05_半程下压_right_Z36到25_速度10_第2次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T090748.313319Z-c62f2a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-07-48_半程下压_up_Z36到25_速度10_第2次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T090834.028115Z-3f58ab",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-08-34_半程下压_left_Z36到25_速度10_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091015.100719Z-72f44d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-10-15_半程下压_down_Z36到25_速度10_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091100.060660Z-949d6e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-11-00_半程下压_right_Z36到25_速度15_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091136.940477Z-750a9a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-11-36_半程下压_up_Z36到25_速度15_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091230.775699Z-111268",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-12-30_半程下压_left_Z36到25_速度15_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091317.257497Z-db8966",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-13-17_半程下压_down_Z36到25_速度15_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091401.356826Z-601b15",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-14-01_半程下压_right_Z36到25_速度7_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091451.892459Z-2a106b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-14-51_半程下压_up_Z36到25_速度7_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091604.012273Z-18b3da",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-16-04_半程下压_left_Z36到25_速度7_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20260927T091709.216604Z-ce1b1d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-09-27/四方向速度下压实验/raw/17-17-09_半程下压_down_Z36到25_速度7_第1次",
+    "group": "2026-09-27"
+  },
+  {
+    "run_id": "20261005T060638.373150Z-c96b40",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-06-38_半程下压_right_Z36到25_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061106.208290Z-8f341b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-11-06_半程下压_right_Z36到25_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061157.869370Z-1d7f08",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-11-57_定高_right_Z30到30_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061252.200373Z-b9c2dc",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-12-52_定高_up_Z30到30_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061349.621266Z-7b63d6",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-13-49_定高_left_Z30到30_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061505.234453Z-0b5e30",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-15-05_定高_down_Z30到30_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061605.992526Z-41815a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-16-05_定高_right_Z30到30_速度15_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061659.680221Z-6ad4fd",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-16-59_定高_up_Z30到30_速度15_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061809.535495Z-268129",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-18-09_定高_left_Z30到30_速度15_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T061855.801403Z-d4d21c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-18-55_定高_down_Z30到30_速度15_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062004.708457Z-239562",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-20-04_定高_right_Z30到30_速度7_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062119.885196Z-88b681",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-21-19_定高_up_Z30到30_速度7_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062216.365198Z-736b7c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-22-16_定高_left_Z30到30_速度7_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062318.896480Z-6a3ef9",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-23-18_定高_down_Z30到30_速度7_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062448.272945Z-1c72ad",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-24-48_半程下压_left_Z36到25_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062608.274246Z-bff12e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-26-08_半程下压_left_Z36到25_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062829.735208Z-09080f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-28-29_半程下压_left_Z36到25_速度15_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T062948.973009Z-85b7dc",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-29-48_半程下压_left_Z36到25_速度15_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065033.031523Z-cb61c7",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-50-33_定高_right_Z30到30_速度7_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065132.406912Z-c94dca",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-51-32_定高_up_Z30到30_速度7_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065233.369908Z-299030",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-52-33_定高_left_Z30到30_速度7_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065335.629016Z-e1e3d1",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-53-35_定高_down_Z30到30_速度7_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065453.388019Z-c2286e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-54-53_定高_right_Z30到30_速度15_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065540.946746Z-8b1a9b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-55-40_定高_up_Z30到30_速度15_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065626.712377Z-04cf4f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-56-26_定高_left_Z30到30_速度15_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065714.890373Z-7bb988",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-57-14_定高_down_Z30到30_速度15_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065831.129579Z-c38967",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-58-31_定高_right_Z30到30_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T065922.698852Z-a194fd",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/14-59-22_定高_up_Z30到30_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T070011.462918Z-1dd13f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-00-11_定高_left_Z30到30_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T070101.617743Z-155869",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-01-01_定高_down_Z30到30_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072249.453530Z-6a8c3a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-22-49_定高_right_Z35到35_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072342.711942Z-afe661",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-23-42_定高_up_Z35到35_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072436.481590Z-38d796",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-24-36_定高_left_Z35到35_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072532.040150Z-823ca5",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-25-32_定高_down_Z35到35_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072646.195257Z-44af0f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-26-46_定高_right_Z30到30_速度10_第3次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072730.992669Z-df3310",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-27-30_定高_right_Z27到27_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072818.477225Z-3c5a76",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-28-18_定高_up_Z27到27_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T072908.048096Z-3e0946",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-29-08_定高_left_Z27到27_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073005.950192Z-c308a4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-30-05_定高_down_Z27到27_速度10_第1次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073118.200713Z-cce721",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-31-18_定高_down_Z27到27_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073246.073997Z-f75251",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-32-46_定高_left_Z27到27_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073347.940449Z-bea296",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-33-47_定高_up_Z27到27_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073443.303850Z-f2467c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-34-43_定高_right_Z27到27_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073633.461676Z-54a26e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-36-33_定高_right_Z30到30_速度10_第4次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073745.579358Z-6aa234",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-37-45_定高_down_Z35到35_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073844.736333Z-8f3622",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-38-44_定高_left_Z35到35_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T073947.654411Z-ce6f04",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-39-47_定高_up_Z35到35_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261005T074054.304822Z-1014ac",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-05/四方向速度下压实验/raw/15-40-54_定高_right_Z35到35_速度10_第2次",
+    "group": "2026-10-05"
+  },
+  {
+    "run_id": "20261008T095721.437092Z-04d832",
+    "status": "aborted",
+    "reason": "deadline_miss",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-08/独立接触参数测试/raw/17-57-21_Z28_up_S32_T6_R1_第1次",
+    "group": "2026-10-08"
+  },
+  {
+    "run_id": "20261008T095751.863119Z-663909",
+    "status": "aborted",
+    "reason": "deadline_miss",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-08/独立接触参数测试/raw/17-57-51_Z28_up_S32_T6_R1_第2次",
+    "group": "2026-10-08"
+  },
+  {
+    "run_id": "20261008T095858.095593Z-37481f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-08/独立接触参数测试/raw/17-58-58_Z28_up_S32_T6_R1_第3次",
+    "group": "2026-10-08"
+  },
+  {
+    "run_id": "20261010T074135.952192Z-84449c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-41-35_定高_up_Z28到28_速度10_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T074251.930232Z-56e539",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-42-51_定高_up_Z28到28_速度10_第2次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T074332.362440Z-e9e033",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/15-43-32_定高_up_Z28到28_速度10_第3次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T080320.834080Z-8dd6bf",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/16-03-20_定高_up_Z28到28_速度10_第4次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T080401.509607Z-3d1642",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/16-04-01_定高_up_Z28到28_速度10_第5次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T080557.845727Z-6cb6b0",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/四方向速度下压实验/raw/16-05-57_定高_up_Z28到28_速度10_第6次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T064734.104397Z-b7f932",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/14-47-34_Z28_up_A22_W15_S32_T2_R1_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T065027.406851Z-0d8e5a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/14-50-27_Z28_up_A20_W15_S33_T2.5_R1_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T065158.353053Z-a1b65b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/14-51-58_Z28_up_A20_W15_S36_T2.5_R1_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T065320.959450Z-746a2b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/14-53-20_Z28_up_A20_W15_S29_T2_R1_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T065749.202500Z-512c33",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/14-57-49_Z28_up_A30_W15_S36_T2_R1_第1次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T071527.583455Z-58a689",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/15-15-27_Z28_up_A30_W15_S36_T2_R1_第2次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261010T071613.985634Z-5249b3",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-10/独立接触参数测试/raw/15-16-13_Z28_up_A30_W15_S36_T2_R1_第3次",
+    "group": "2026-10-10"
+  },
+  {
+    "run_id": "20261012T071628.441094Z-446cbc",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-16-28_定高_up_Z28到28_速度10_第1次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261012T071715.353654Z-3c2ad8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-17-15_定高_up_Z28到28_速度10_第2次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261012T071756.231168Z-5f713d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/15-17-56_定高_up_Z28到28_速度10_第3次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261012T082105.267212Z-a20c3f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-21-05_定高_up_Z28到28_速度10_第4次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261012T082145.397388Z-127c57",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-21-45_定高_up_Z28到28_速度10_第5次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261012T082232.905400Z-943c5f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-12/四方向速度下压实验/raw/16-22-32_定高_up_Z28到28_速度10_第6次",
+    "group": "2026-10-12"
+  },
+  {
+    "run_id": "20261019T105027.588733Z-8ebd17",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-19/18-50-27__template_heng_100_240_v3__8ebd17",
+    "group": "2026-10-19"
+  },
+  {
+    "run_id": "20261019T105319.238032Z-845db2",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-19/18-53-19__template_shu_100_240_v3__845db2",
+    "group": "2026-10-19"
+  },
+  {
+    "run_id": "20261022T084246.804270Z-cb3516",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/16-42-46__heng_80mm_smooth_tail_v4_pi__cb3516",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "run_status": "completed",
+      "writing_samples": 642,
+      "magnetic_rmse_uT": 30.64457969948075,
+      "magnetic_mae_uT": 18.6013921345816,
+      "fraction_within_20uT": 0.6947040498442367,
+      "feedback_abs_max_mm": 0.8000000000000002,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T084617.580825Z-212842",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/16-46-17__heng_80mm_smooth_tail_v4_pi_repeat2__212842",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "run_status": "completed",
+      "magnetic_rmse_uT": 34.1244349106441,
+      "magnetic_mae_uT": 20.665498963641337,
+      "fraction_within_20uT": 0.7523364485981309,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T085832.460310Z-992b84",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/16-58-32__heng_80mm_html_return_v5_pi__992b84",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "status": "completed",
+      "command_target_max_distance_mm": 8.038873388460929e-14,
+      "command_leftward_return_mm": 6.085217365130575,
+      "actual_tcp_leftward_return_mm": 5.896999999999991,
+      "actual_xy_geometric_distance_p95_mm": 0.077798894688312,
+      "magnetic_rmse_uT": 33.25398911681344,
+      "magnetic_mae_uT": 22.319774136346204,
+      "fraction_within_20uT": 0.6537001897533207,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T091717.991876Z-d686e6",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/17-17-17__heng_80mm_tail_lead_v6_pi__d686e6",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "status": "completed",
+      "command_target_max_distance_mm": 8.038873388460929e-14,
+      "actual_xy_geometric_distance_p95_mm": 0.07442286812907212,
+      "magnetic_rmse_uT": 35.98287205832595,
+      "magnetic_mae_uT": 25.547303863041,
+      "fraction_within_20uT": 0.5921787709497207,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T093349.397859Z-c7ca75",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/17-33-49__heng_80mm_inverse_contact_v7_pi__c7ca75",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "status": "completed",
+      "command_target_max_distance_mm": 8.038873388460929e-14,
+      "actual_xy_geometric_distance_p95_mm": 0.0839297916304446,
+      "magnetic_rmse_uT": 49.58283852429496,
+      "magnetic_mae_uT": 37.247774467555764,
+      "fraction_within_20uT": 0.43624474544605324,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T094201.943615Z-b90861",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/17-42-01__heng_80mm_tail_unload_v8_pi__b90861",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "status": "completed",
+      "writing_duration_s": 35.32,
+      "tail_last10_duration_s": 5.940791177220813,
+      "magnetic_rmse_uT": 34.7807364689553,
+      "magnetic_mae_uT": 28.3165284070117,
+      "tail_last10_measured_mean_uT": 132.03628819327864,
+      "tail_last10_feedback_limit_fraction": 0.6073825503355704,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261022T095406.405318Z-bcdab1",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-22/17-54-06__heng_80mm_lift_return_v9_pi__bcdab1",
+    "group": "2026-10-22",
+    "quick_metrics": {
+      "status": "completed",
+      "exit_feedback_abs_max_mm": 0.0,
+      "exit_has_no_magnetic_reference": true,
+      "actual_time_to_40mm_after_exit_s": 1.7820003255,
+      "actual_exit_final_z_mm": 42.005,
+      "measurement_only_magnetic_rmse_uT": 30.832396703192746,
+      "rmse_comparable_to_full_stroke": false,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261023T061555.124838Z-a778b8",
+    "status": "aborted",
+    "reason": "operator_stop",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-23/14-15-55__heng_80mm_continuous_contact_v10_pi__a778b8",
+    "group": "2026-10-23"
+  },
+  {
+    "run_id": "20261023T061751.075252Z-c5ed6a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-23/14-17-51__heng_80mm_continuous_contact_v10_pi_wetted_repeat__c5ed6a",
+    "group": "2026-10-23",
+    "quick_metrics": {
+      "status": "completed",
+      "magnetic_rmse_uT": 37.63508715740667,
+      "magnetic_mae_uT": 29.175650868992,
+      "fraction_within_20uT": 0.474009900990099,
+      "feedback_amplitude_limit_fraction": 0.47896039603960394,
+      "early_exit_phase_present": false,
+      "writing_z_range_mm": [
+        27.894020208606,
+        34.04552167260145
+      ],
+      "wetting_confirmed_by_operator": true,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261023T062857.511584Z-31a550",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-23/14-28-57__heng_short_tail_contact_v11_pi__31a550",
+    "group": "2026-10-23",
+    "quick_metrics": {
+      "status": "completed",
+      "magnetic_rmse_uT": 38.57897769826791,
+      "magnetic_mae_uT": 29.465922867131873,
+      "fraction_within_20uT": 0.48502139800285304,
+      "feedback_amplitude_limit_fraction": 0.39657631954350925,
+      "early_exit_phase_present": false,
+      "writing_z_range_mm": [
+        27.894020208606,
+        34.04552167260145
+      ],
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20261023T064403.085982Z-f61c19",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/2026-10-23/14-44-03__heng_dot_retract_contact_v12_pi__f61c19",
+    "group": "2026-10-23",
+    "quick_metrics": {
+      "status": "completed",
+      "magnetic_rmse_uT": 37.2786092924984,
+      "magnetic_mae_uT": 22.183824904391006,
+      "fraction_within_20uT": 0.6999168744804655,
+      "feedback_amplitude_limit_fraction": 0.21280133000831256,
+      "early_exit_phase_present": false,
+      "ink_quality_assessed": false
+    }
+  },
+  {
+    "run_id": "20260924T050836.569966Z-b188b8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-08-36_渐进压笔_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T051300.598619Z-9f5ed4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-13-00_渐进压笔_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T051924.097159Z-de1973",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-19-24_单拱_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T052056.358083Z-582601",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-20-56_单拱_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T052227.903551Z-3222ea",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-22-27_双波_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T052521.456572Z-75d61b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-25-21_宽过渡_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T052758.002122Z-81e6a4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-27-58_宽过渡_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T053201.509610Z-d9883a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/01_四目标纯前馈/raw/13-32-01_双波_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T064635.844467Z-2688a7",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-46-35_渐进压笔_P0p05_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T064759.591482Z-e60602",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-47-59_渐进压笔_P0p05_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065020.076609Z-e66a2b",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-50-20_单拱_P0p05_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065209.144220Z-879a09",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-52-09_单拱_P0p05_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065336.086122Z-4d3874",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-53-36_双波_P0p05_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065503.795829Z-6c209e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-55-03_双波_P0p05_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065744.142554Z-36c368",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-57-44_宽过渡_P0p05_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T065908.617399Z-d0a5c2",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/14-59-08_宽过渡_P0p05_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T074214.993882Z-0f2f88",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-42-14_宽过渡_P0p1_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T074541.667723Z-63dee4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-45-41_宽过渡_P0p2_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T075114.303814Z-c61f9e",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-51-14_宽过渡_P0p4_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T075409.210481Z-f4a10d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/15-54-09_宽过渡_P0p3_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T080703.933978Z-9527cc",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-07-03_宽过渡_P1_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T080902.260072Z-bb27fb",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/02_P反馈与增益扫描/raw/16-09-02_宽过渡_P2_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T083150.240049Z-a8a59a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-31-50_宽过渡_P2_修正0p25mm_速度2_加速度50_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T085056.991864Z-142be8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-50-56_宽过渡_P2_修正0p3mm_速度4_加速度60_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T085322.818070Z-69395a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/16-53-22_宽过渡_P2_修正0p4mm_速度5_加速度70_第1次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T092236.180593Z-68defd",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-22-36_宽过渡_P2_修正0p4mm_速度5_加速度70_第2次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20260924T093035.919957Z-58bce8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/archive/2026-09-24/03_P2修正上限/raw/17-30-35_宽过渡_P2_修正0p4mm_速度5_加速度70_第3次",
+    "group": "archive"
+  },
+  {
+    "run_id": "20261012T095350.827426Z-2e2464",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-53-50_定高_right_Z28到28_速度10_第1次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095501.991647Z-cfe5c8",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-55-01_定高_right_Z28到28_速度10_第2次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095558.662696Z-f18e21",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-55-58_定高_right_Z32到32_速度10_第1次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095627.783596Z-505f82",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-56-27_定高_right_Z32到32_速度10_第2次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095708.298446Z-0c5e2a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-57-08_定高_right_Z32到32_速度10_第3次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095828.179161Z-087022",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-58-28_定高_up_Z32到32_速度10_第1次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095905.271121Z-720dd4",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-59-05_定高_up_Z32到32_速度10_第2次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T095944.745071Z-9a8812",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/17-59-44_定高_up_Z32到32_速度10_第3次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T104532.990986Z-5b5878",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-45-32_定高_up_Z32到32_速度10_第4次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T104635.293307Z-6587ca",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-46-35_定高_up_Z32到32_速度10_第5次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T104711.462503Z-71394d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-47-11_定高_up_Z32到32_速度10_第6次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261012T104747.298841Z-dda10d",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/b0xy_xy_validation_10/2026-10-12/四方向速度下压实验/raw/18-47-47_定高_up_Z32到32_速度10_第7次",
+    "group": "b0xy_xy_validation_10"
+  },
+  {
+    "run_id": "20261008T082216.751663Z-9d9f4f",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-22-16_Z32_right_R1_第1次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T082304.966364Z-f4ccf6",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-23-04_Z32_up_R1_第1次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T082853.391897Z-3b6f6a",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-28-53_Z28_right_R1_第2次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T083024.813233Z-c96770",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-30-24_Z28_up_R1_第1次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T083123.351072Z-3cce61",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-31-23_Z28_up_R2_第1次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T083402.529450Z-f2b25c",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-34-02_Z28_right_R2_第3次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T083449.409793Z-903a05",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-34-49_Z32_up_R2_第1次",
+    "group": "正向前馈校准验证"
+  },
+  {
+    "run_id": "20261008T083540.153226Z-cebf76",
+    "status": "completed",
+    "reason": "",
+    "path": "/home/serein/FYP/runs/brush2/正向前馈校准验证/2026-10-08/公共前馈与方向校准/raw/16-35-40_Z32_right_R2_第1次",
+    "group": "正向前馈校准验证"
+  }
+]

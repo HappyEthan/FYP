@@ -1,0 +1,37 @@
+{
+  "hardware_executed": false,
+  "heading_convention": "base/paper XY: right 0 deg, up +90 deg; TCP +Z inclination azimuth, not axial twist",
+  "tilt_deg": 15,
+  "heading_knots_s_deg": [
+    [
+      0.7031527090736495,
+      null
+    ],
+    [
+      0.7745766465515289,
+      -45.0
+    ],
+    [
+      0.8807346936255368,
+      -90.0
+    ],
+    [
+      1.0,
+      -90.0
+    ]
+  ],
+  "clockwise_turn_from_dot_to_retract_deg": 45.0,
+  "planned_heading_at_dot_deg": -45.00002130825153,
+  "planned_final_heading_deg": -90.0,
+  "writing_duration_s": 16.62,
+  "retiming_factor": 1.0,
+  "limits": {
+    "XY speed": 79.61313745775193,
+    "Z speed": 59.997440049151805,
+    "step": 1.5922627491550387,
+    "acceleration": 160.93873148935978,
+    "angular speed": 19.838483537154154,
+    "angular acceleration": 39.12829755877932
+  },
+  "xy_magnetic_and_speed_requests_unchanged": true
+}

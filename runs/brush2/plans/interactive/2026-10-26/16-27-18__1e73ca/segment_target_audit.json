@@ -1,0 +1,9 @@
+[
+  {
+    "segment": 26,
+    "requested_uT": 69.0,
+    "samples": 85,
+    "actual_reference_min_uT": 69.0,
+    "actual_reference_max_uT": 69.0
+  }
+]

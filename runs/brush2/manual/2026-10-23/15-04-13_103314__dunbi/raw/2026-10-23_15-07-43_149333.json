@@ -1,0 +1,35 @@
+{
+  "created_at": "2026-10-23T15:07:43.159516+08:00",
+  "valid": true,
+  "note": "",
+  "sensor": "MLX90393",
+  "board": "Seeed Studio XIAO ESP32-C3",
+  "port": "/dev/ttyACM0",
+  "baud": 115200,
+  "units": {
+    "t_us": "us",
+    "t_s": "s",
+    "dBx_uT": "uT",
+    "dBy_uT": "uT",
+    "dBz_uT": "uT"
+  },
+  "delta_definition": "dB = B - B0",
+  "baseline_B0_uT": {
+    "Bx_uT": 2113.5884730538914,
+    "By_uT": 2900.7350299401196,
+    "Bz_uT": -7089.019754491017
+  },
+  "display_smoothing_applied": false,
+  "recording_mode": "manual_start_stop",
+  "sample_count": 5853,
+  "invalid_sample_count": 0,
+  "sample_quality": {
+    "column": "sample_valid",
+    "rule": "finite and not isolated >1000uT spike returning within 250uT",
+    "raw_values_preserved": true
+  },
+  "measured_duration_s": 17.55600100000001,
+  "mean_sample_rate_hz": 333.3333143464731,
+  "max_interval_us": 3002,
+  "csv_file": "2026-10-23_15-07-43_149333.csv"
+}

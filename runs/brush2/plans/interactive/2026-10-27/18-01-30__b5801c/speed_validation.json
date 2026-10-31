@@ -1,0 +1,53 @@
+{
+  "purpose": "Local speed reduction for current XY and magnetic targets; no hardware execution",
+  "requested_timing": {
+    "speed_mm_s": 5.0,
+    "accel_mm_s2": 8.748,
+    "angular_speed_deg_s": 10.8,
+    "angular_accel_deg_s2": 11.664,
+    "speed_knots_s_mm_s": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.03,
+        1.0
+      ],
+      [
+        0.08,
+        1.0
+      ],
+      [
+        0.12,
+        5.0
+      ],
+      [
+        0.77,
+        5.0
+      ],
+      [
+        0.8,
+        2.0
+      ],
+      [
+        1.0,
+        2.0
+      ]
+    ]
+  },
+  "retiming_factor": 1.0,
+  "writing_duration_s": 31.96,
+  "planned_max_writing_xy_mm_s": 5.00000000000281,
+  "planned_max_writing_acceleration_mm_s2": 165.10363479318653,
+  "planned_max_full_acceleration_mm_s2": 165.10363479318653,
+  "installation_acceleration_limit_mm_s2": 200.0,
+  "unchanged": [
+    "XY nodes",
+    "magnetic targets",
+    "feedforward table",
+    "installation limits",
+    "PI limits"
+  ],
+  "hardware_executed": false
+}

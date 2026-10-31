@@ -28,6 +28,9 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
                           dt_s=.02, control_mode='feedforward',
                           feedback_profile=None, entry_profile=None):
     character = entry_profile is not None and entry_profile.get('mode') == 'directional_character'
+    tail_exit = entry_profile.get('tail_exit') if entry_profile is not None else None
+    if tail_exit is not None and not character:
+        raise ValueError('tail_exit requires the directional character executor')
     if len(plan.strokes) != 1 and not character:
         raise ValueError('recorded execution requires exactly one stroke per invocation')
     if not isinstance(label, str) or not label.strip():
@@ -60,13 +63,23 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
     derived_strokes = []
     for i, stroke in enumerate(plan.strokes):
         measure = phases == f'measure_{i:02}'
+        drawing = measure | (phases == f'tail_exit_{i:02}')
         ticks, _, target, depth = sample_stroke(stroke, table, dt_s)
-        if measure.sum() != len(ticks):
+        if drawing.sum() != len(ticks):
             raise ValueError('compiled measurement timeline differs from target samples')
-        g_ref[measure] = target
-        progress[measure] = np.interp(ticks, stroke.t, stroke.s)
-        derived_strokes.append(Stroke(s=progress[measure].copy(),xy=poses[measure,:2].copy(),
-                                      g_press=target.copy(),z_ff=depth.copy()))
+        from brushbot.experiments.strokeplan_segment_targets import stroke_entry_profile
+        stroke_entry=stroke_entry_profile(entry_profile,i)
+        segment_targets=stroke_entry.get('segment_magnetic_targets')
+        if segment_targets is not None:
+            from brushbot.experiments.strokeplan_segment_targets import apply_segment_targets
+            target=apply_segment_targets(np.interp(ticks,stroke.t,stroke.s),target,segment_targets,table)
+        g_ref[drawing] = target
+        g_ref[phases == f'tail_exit_{i:02}'] = np.nan
+        progress[drawing] = np.interp(ticks, stroke.t, stroke.s)
+        derived_strokes.append(Stroke(s=progress[drawing].copy(),xy=poses[drawing,:2].copy(),
+                                      g_press=target.copy(),
+                                      z_ff=(depth.copy() if tail_exit is None and not stroke_entry.get('writing_height') else
+                                            np.maximum(setup['contact_z_mm']/1000-poses[drawing,2],0.))))
     depth_ff = np.maximum(setup['contact_z_mm']/1000. - poses[:, 2], 0.)
     spec = {
         'version': 1, 'name': 'strokeplan', 'run_label': label,
@@ -87,6 +100,8 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
             spec['path'].update(axis='xy',assume_pose_invariant=True,dynamic_orientation=True)
             if control_mode != 'feedforward':
                 spec['control'].update(phase='per_stroke',measurement_phases=[f'measure_{i:02}' for i in range(len(plan.strokes))])
+    if tail_exit is not None:
+        spec['tail_exit'] = copy.deepcopy(tail_exit)
     derived = CompiledPlan(derived_strokes, meta={
             'artifact_role': 'derived_execution_plan',
             'control_mode': control_mode,

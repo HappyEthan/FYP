@@ -1,0 +1,16 @@
+{
+  "hardware_executed": false,
+  "ink_quality_verified": false,
+  "low_response_trial": false,
+  "retiming_factor": 0.8,
+  "writing_duration_s": 18.82,
+  "full_duration_s": 40.02,
+  "limits": {
+    "XY speed": 79.98197238297635,
+    "Z speed": 59.997440049151805,
+    "step": 1.5996394476595273,
+    "acceleration": 136.2784003427533,
+    "angular speed": 19.886086106243322,
+    "angular acceleration": 38.73061369907364
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-23T14:17:50.261983+08:00",
+  "initial_pose_m_rad": [
+    -0.369293,
+    0.500015,
+    0.130002,
+    -0.000767944870877505,
+    0.26145032194875056,
+    -8.726646259971648e-05
+  ],
+  "route_m_rad": [
+    [
+      -0.37,
+      0.5,
+      0.13,
+      -0.000767944870877505,
+      0.26145032194875056,
+      -8.726646259971648e-05
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 2,
+  "context": {
+    "run_label": "heng_80mm_continuous_contact_v10_pi_wetted_repeat",
+    "installation_id": "brush2-z-ladder"
+  },
+  "timing": {
+    "commands_sent": 36,
+    "max_lateness_s": 0.003249471,
+    "max_command_duration_s": 0.003991078
+  },
+  "deadline_policy": null,
+  "motion_metrics": {
+    "XY speed": 5.9938003271541325,
+    "Z speed": 0.0,
+    "step": 0.11987600654308264,
+    "acceleration": 80.68281822005301,
+    "angular speed": 0.8870612755023655,
+    "angular acceleration": 24.489421716326454
+  },
+  "planned_duration_s": 0.72,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.369983,
+    0.500066,
+    0.129989,
+    1.7453292519943296e-05,
+    0.2617819345066295,
+    -5.235987755982989e-05
+  ],
+  "finished_at": "2026-10-23T14:17:51.066998+08:00",
+  "record_path": "/home/serein/FYP/runs/brush2/2026-10-23/positioning/strokeplan_5bd9fa99cfc243dfa1221674396800fc.json",
+  "sensor_buffer_reset": {
+    "discarded_bytes": 4014,
+    "host_ns": 1444859752141,
+    "resynchronization": "skip through next newline"
+  }
+}

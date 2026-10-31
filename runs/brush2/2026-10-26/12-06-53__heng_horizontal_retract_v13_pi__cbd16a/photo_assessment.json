@@ -1,0 +1,36 @@
+{
+  "source": "operator supplied photos immediately after this run",
+  "operator_feedback": "回锋没了，参考原路径图作对比",
+  "visual_observation": "No clearly resolved down-right turning shoulder and inward finish comparable to the reference. Tail has a pale/split patch; cause not established.",
+  "tail_command_return_mm": 0.5,
+  "reference_long_return_mm": 6.085217365130575,
+  "tail_magnetic_target_final_uT": 100.0,
+  "tail_magnetic_measured_final_uT": 126.05393209700276,
+  "actual_tail_xy_mm": [
+    [
+      -190.385,
+      504.71500000000003
+    ],
+    [
+      -190.56,
+      504.674
+    ],
+    [
+      -190.683,
+      504.645
+    ],
+    [
+      -190.817,
+      504.684
+    ],
+    [
+      -190.854,
+      504.622
+    ],
+    [
+      -190.796,
+      504.652
+    ]
+  ],
+  "quantitative_image_registration_done": false
+}

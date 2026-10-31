@@ -21,7 +21,7 @@ OUTPUT=ROOT/'runs/brush2/plans/11_中字方向姿态_逆向进笔5mm'
 
 def directional_stroke(stroke, *, speed_mm_s=10., tilt_deg=15., accel_mm_s2=30.,
                        angular_speed_deg_s=20., angular_accel_deg_s2=40.,
-                       smoothing_mm=1., speed_knots_s_mm_s=None):
+                       smoothing_mm=1., speed_knots_s_mm_s=None, heading_knots_s_deg=None, node_angles_s_deg=None):
     """Smooth tangent over ~6 mm and retime locally for rotational dynamics."""
     positive = [speed_mm_s, accel_mm_s2, angular_speed_deg_s,
                 angular_accel_deg_s2, smoothing_mm]
@@ -41,7 +41,47 @@ def directional_stroke(stroke, *, speed_mm_s=10., tilt_deg=15., accel_mm_s2=30.,
     sigma=smoothing_mm/(d[1]-d[0]); radius=int(np.ceil(3*sigma))
     kernel=np.exp(-.5*(np.arange(-radius,radius+1)/sigma)**2);kernel/=kernel.sum()
     theta=np.convolve(np.pad(theta,(radius,radius),mode='edge'),kernel,mode='valid')
-    rpy=tangent_rpy(theta,tilt_deg)
+    if heading_knots_s_deg is not None:
+        # Explicit, unwrapped angles preserve the requested clockwise/counterclockwise turn.
+        # A null first angle means blend from the existing automatic heading.
+        try:
+            positions=np.array([row[0] for row in heading_knots_s_deg],float)
+            values=[row[1] for row in heading_knots_s_deg]
+            if (len(positions)<2 or any(len(row)!=2 for row in heading_knots_s_deg)
+                    or not np.isfinite(positions).all() or not 0<positions[0]<1
+                    or positions[-1]!=1 or np.any(np.diff(positions)<=0)
+                    or values[0] is not None or not np.isfinite(np.array(values[1:],float)).all()):
+                raise ValueError('invalid heading knots')
+        except (TypeError,IndexError) as exc:raise ValueError('invalid heading knots') from exc
+        progress=d/d[-1];baseline=theta.copy()
+        for k in range(len(positions)-1):
+            mask=(progress>=positions[k])&(progress<=positions[k+1])
+            u=np.clip((progress[mask]-positions[k])/(positions[k+1]-positions[k]),0,1)
+            weight=6*u**5-15*u**4+10*u**3
+            start=baseline[mask] if k==0 else np.deg2rad(float(values[k]))
+            theta[mask]=(1-weight)*start+weight*np.deg2rad(float(values[k+1]))
+    tilt=np.full(len(d),float(tilt_deg))
+    if node_angles_s_deg is not None:
+        try:
+            knots=np.array([[row[0],np.nan if row[1] is None else row[1],np.nan if row[2] is None else row[2]] for row in node_angles_s_deg],float)
+            if (len(knots)<2 or any(len(row)!=3 for row in node_angles_s_deg)
+                    or not np.isfinite(knots[:,0]).all() or knots[0,0]!=0 or knots[-1,0]!=1
+                    or np.any(np.diff(knots[:,0])<=0) or np.isinf(knots[:,1:]).any()
+                    or np.any((knots[:,1]<=0)|(knots[:,1]>=30))):raise ValueError('invalid node angles')
+        except (TypeError,IndexError) as exc:raise ValueError('invalid node angles') from exc
+        progress=d/d[-1]
+        for column,curve,scale in [(1,tilt,1.),(2,theta,np.pi/180)]:
+            baseline=curve.copy()
+            for k in range(len(knots)-1):
+                left,right=knots[k:k+2,column]
+                if np.isnan(left) and np.isnan(right):continue
+                mask=(progress>=knots[k,0])&(progress<=knots[k+1,0])
+                u=np.clip((progress[mask]-knots[k,0])/(knots[k+1,0]-knots[k,0]),0,1)
+                weight=6*u**5-15*u**4+10*u**3
+                start=baseline[mask] if np.isnan(left) else left*scale
+                end=baseline[mask] if np.isnan(right) else right*scale
+                curve[mask]=(1-weight)*start+weight*end
+    rpy=tangent_rpy(theta,tilt)
     dr=np.linalg.norm(np.gradient(rpy,d,axis=0),axis=1)
     ddr=np.linalg.norm(np.gradient(np.gradient(rpy,d,axis=0),d,axis=0),axis=1)
     curvature=np.linalg.norm(np.gradient(deriv,d,axis=0),axis=1)
@@ -69,7 +109,7 @@ def directional_stroke(stroke, *, speed_mm_s=10., tilt_deg=15., accel_mm_s2=30.,
     target_xy=np.column_stack([np.interp(distance,d,xy[:,i]) for i in range(2)])/1000
     actual_arc=np.r_[0.,np.cumsum(np.linalg.norm(np.diff(target_xy,axis=0),axis=1))]
     result=Stroke(actual_arc/actual_arc[-1],target_xy,t,np.interp(distance,arc,old_g),
-                  tangent_rpy(np.interp(distance,d,theta),tilt_deg))
+                  tangent_rpy(np.interp(distance,d,theta),np.interp(distance,d,tilt)))
     result.validate()
     return result
 

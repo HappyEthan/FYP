@@ -1,0 +1,82 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2160.677876106195,
+      2940.5641592920338,
+      -7096.283787610623
+    ],
+    "applies_after_seq": 678,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.2125101450226525,
+      -1.5479553808695339,
+      2.4658169656849993
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 678,
+    "quality_axes": [
+      0,
+      1,
+      2
+    ],
+    "std_uT": [
+      5.519213976890499,
+      5.4621767396970915,
+      13.490594051867948
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2160.677876106195,
+        2940.5641592920338,
+        -7096.283787610623
+      ],
+      "applies_after_seq": 678,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -0.2125101450226525,
+        -1.5479553808695339,
+        2.4658169656849993
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 678,
+      "quality_axes": [
+        0,
+        1,
+        2
+      ],
+      "std_uT": [
+        5.519213976890499,
+        5.4621767396970915,
+        13.490594051867948
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-26T09:08:44.344885+00:00",
+  "reason": "",
+  "run_id": "20261026T090727.541225Z-2800bb",
+  "sha256": {
+    "calibration.json": "20ea1bc675d5041c2abfb2a6339f177cfce143a1d5e29a6050a2eb2d2bc72d33",
+    "compiled_plan.npz": "86d9fe9825b30d3bf8261172720a76afebdcd03492cdc4df26a6e0d535739e79",
+    "entry_profile.json": "96ffe06fbf597267e604e0954f58965e2dc465cd09c5e5637c3ce64c7be81c75",
+    "feedforward.json": "51d1fc7757a33035822111beee84933f63139f8621d32e89c1f7eae438472a1a",
+    "resolved.json": "7d4c1fbe78a5ac53447352aecef9fdf7cedf6399774351793d647e1d3062321c",
+    "settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "setup.json": "d2e7f997a82e1fa04096b745a7588a9aea1432ed0f092fc884d39cf575fc8e31",
+    "strokeplan.npz": "379685452f4e1a92d4f6de762bcb4fbbf3b5779dd541c457ff39337042d8181c",
+    "timeline.npz": "8510b840580cd902223a45da6f4ca60885ccf1ec6d63c850238bb6a2e29a345a"
+  },
+  "started_at": "2026-10-26T09:07:27.541225+00:00",
+  "status": "completed",
+  "writer_pid": 300209
+}

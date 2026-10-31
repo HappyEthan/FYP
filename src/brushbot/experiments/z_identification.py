@@ -92,6 +92,14 @@ def validate_profile(profile, setup):
     return p
 
 
+class TrajectoryLimitError(ValueError):
+    """Motion limit failure with the exact sample for offline local retiming."""
+    def __init__(self,name,value,bound,index):
+        super().__init__(name+' limit; revise trajectory explicitly')
+        self.limit_name=name;self.value=float(value);self.bound=float(bound)
+        self.sample_index=int(index);self.phase=None;self.path_progress=None
+
+
 def _check_trajectory(poses, setup, profile):
     mm = poses[:, :3]*1000
     if (not np.isfinite(poses).all() or
@@ -103,17 +111,18 @@ def _check_trajectory(poses, setup, profile):
     v = np.diff(np.vstack([poses[0], poses, poses[-1]]), axis=0)/DT
     a = np.diff(v, axis=0)/DT
     checks = [
-        (np.max(np.linalg.norm(v[:, :2], axis=1))*1000, setup['max_xy_speed_mm_s'], 'XY speed'),
-        (np.max(abs(v[:, 2]))*1000, setup['max_z_speed_mm_s'], 'Z speed'),
-        (np.max(np.linalg.norm(v[:, :3], axis=1))*DT*1000, setup['max_step_mm'], 'step'),
-        (np.max(np.linalg.norm(a[:, :3], axis=1))*1000, setup['max_accel_mm_s2'], 'acceleration'),
-        (np.max(np.linalg.norm(np.rad2deg(v[:, 3:]), axis=1)), profile['angular_speed_deg_s'], 'angular speed'),
-        (np.max(np.linalg.norm(np.rad2deg(a[:, 3:]), axis=1)), profile['angular_accel_deg_s2'], 'angular acceleration'),
+        (np.linalg.norm(v[:, :2],axis=1)*1000,setup['max_xy_speed_mm_s'],'XY speed'),
+        (abs(v[:,2])*1000,setup['max_z_speed_mm_s'],'Z speed'),
+        (np.linalg.norm(v[:,:3],axis=1)*DT*1000,setup['max_step_mm'],'step'),
+        (np.linalg.norm(a[:,:3],axis=1)*1000,setup['max_accel_mm_s2'],'acceleration'),
+        (np.linalg.norm(np.rad2deg(v[:,3:]),axis=1),profile['angular_speed_deg_s'],'angular speed'),
+        (np.linalg.norm(np.rad2deg(a[:,3:]),axis=1),profile['angular_accel_deg_s2'],'angular acceleration'),
     ]
-    for value, bound, name in checks:
-        if value > bound+1e-6:
-            raise ValueError(name + ' limit; revise trajectory explicitly')
-    return {name: float(value) for value, _, name in checks}
+    for values,bound,name in checks:
+        index=int(np.argmax(values));value=values[index]
+        if value>bound+1e-6:raise TrajectoryLimitError(name,value,bound,min(index,len(poses)-1))
+    return {name:float(np.max(values)) for values,_,name in checks}
+
 
 
 def compile_identification(profile, settings):

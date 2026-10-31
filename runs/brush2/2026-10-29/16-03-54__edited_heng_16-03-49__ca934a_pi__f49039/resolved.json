@@ -1,0 +1,238 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482-user-low-75dac4e0_cyg",
+  "control": {
+    "anti_windup": "conditional",
+    "enabled": true,
+    "integral_limit_mm": 0.2,
+    "ki": 0.1,
+    "kp": 1.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "measurement_phases": [
+      "measure_00",
+      "measure_01",
+      "measure_02"
+    ],
+    "mode": "pi",
+    "phase": "per_stroke",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "air_rotate_s": 1.5,
+    "angular_accel_deg_s2": 80.0,
+    "angular_speed_deg_s": 40.0,
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 37.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "directional_character",
+    "rotate_s": 3.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "stroke_profiles": [
+      {
+        "entry_reverse_mm": 5.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.04127606857009454,
+            0.08329386857070487,
+            0.13453359710782473,
+            0.16709116382985645,
+            0.2411421950377438,
+            0.3053170462397914,
+            0.7210123416335112,
+            0.7906207625862747,
+            0.8150891215226982,
+            1.0
+          ],
+          "values_uT": [
+            null,
+            165.0,
+            null,
+            175.0,
+            200.0,
+            200.0,
+            200.0,
+            180.0,
+            190.0,
+            53.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.04614120708404598,
+            0.11032871115487662,
+            0.25258329796445017,
+            0.30264950097872256,
+            0.7376440939019431,
+            0.8970526893239206,
+            1.0
+          ],
+          "values_uT": [
+            120.0,
+            100.0,
+            100.0,
+            100.0,
+            150.0,
+            100.0,
+            53.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.05610881321110588,
+            0.601506810944183,
+            1.0
+          ],
+          "values_uT": [
+            150.0,
+            140.0,
+            100.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      }
+    ],
+    "transfer_speed_mm_s": 80.0,
+    "transfer_z_mm": 130.0,
+    "transit_accel_mm_s2": 100.0,
+    "writing_tilt_deg": 15.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "1ceb925a4224856994f53d95bc6c484ccce8e466ce4f622cb9cb655664ca22e7"
+    },
+    "feedforward.json": {
+      "sha256": "f3d8776d76b4f7112bc69e4552888c712b1cd5e480978470a0e98a011f8a7a79"
+    },
+    "settings.json": {
+      "sha256": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5"
+    },
+    "strokeplan.npz": {
+      "sha256": "6a1679a966d49bfd2f23ffe513c0869b29576690545fd31ca1d5e94b598dd4a9"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "assume_pose_invariant": true,
+    "axis": "xy",
+    "dynamic_orientation": true,
+    "kind": "strokeplan",
+    "stroke_count": 3
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "installation_id": "brush2-z-ladder",
+      "run_label": "edited_heng_16-03-49__ca934a_pi"
+    },
+    "deadline_policy": null,
+    "finished_at": "2026-10-29T16:03:54.225925+08:00",
+    "initial_pose_m_rad": [
+      -0.37001,
+      0.499993,
+      0.129998,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      0.0
+    ],
+    "last_pose_m_rad": [
+      -0.37000900000000003,
+      0.499992,
+      0.129998,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      0.0
+    ],
+    "motion_metrics": {
+      "XY speed": 0.30516389039438674,
+      "Z speed": 0.10000000000010001,
+      "acceleration": 15.258194519719337,
+      "angular acceleration": 2.5,
+      "angular speed": 0.05,
+      "step": 0.006103277807887736
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 0.6799999999999999,
+    "record_path": "/home/serein/FYP/runs/brush2/2026-10-29/positioning/strokeplan_626d81486437431a91b0e3a6aba61a48.json",
+    "route_m_rad": [
+      [
+        -0.37001,
+        0.499993,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        0.0
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        0.0
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 4016,
+      "host_ns": 7738643175044,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-29T16:03:53.421336+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 34,
+      "max_command_duration_s": 0.004781592,
+      "max_lateness_s": 0.002287348
+    }
+  },
+  "run_label": "edited_heng_16-03-49__ca934a_pi",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

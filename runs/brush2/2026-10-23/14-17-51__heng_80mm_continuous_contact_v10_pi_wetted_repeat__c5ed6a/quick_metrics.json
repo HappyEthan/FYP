@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "magnetic_rmse_uT": 37.63508715740667,
+  "magnetic_mae_uT": 29.175650868992,
+  "fraction_within_20uT": 0.474009900990099,
+  "feedback_amplitude_limit_fraction": 0.47896039603960394,
+  "early_exit_phase_present": false,
+  "writing_z_range_mm": [
+    27.894020208606,
+    34.04552167260145
+  ],
+  "wetting_confirmed_by_operator": true,
+  "ink_quality_assessed": false
+}

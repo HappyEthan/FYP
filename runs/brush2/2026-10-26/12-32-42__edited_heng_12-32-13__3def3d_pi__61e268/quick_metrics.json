@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "writing_samples": 1417,
+  "magnetic_rmse_uT": 26.21437223160101,
+  "magnetic_mae_uT": 16.224058617194643,
+  "fraction_within_20uT": 0.7953422724064926,
+  "feedback_amplitude_limit_fraction": 0.18842625264643614,
+  "ink_quality_assessed": false,
+  "photo_assessment": "photo_assessment.json"
+}

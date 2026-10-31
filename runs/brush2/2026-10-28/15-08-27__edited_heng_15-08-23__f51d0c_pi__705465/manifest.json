@@ -1,0 +1,82 @@
+{
+  "adapter": null,
+  "baseline": {
+    "B0_uT": [
+      2185.659513274337,
+      2998.67477876106,
+      -7098.310805309741
+    ],
+    "applies_after_seq": 678,
+    "baseline_id": 0,
+    "drift_uT_s": [
+      -0.7814831104182612,
+      -1.5342436031012798,
+      -2.74528936942796
+    ],
+    "effective_visit": 0,
+    "first_seq": 1,
+    "last_seq": 678,
+    "quality_axes": [
+      0,
+      1,
+      2
+    ],
+    "std_uT": [
+      5.22699851539221,
+      5.604010984138538,
+      14.15810657871486
+    ]
+  },
+  "baselines": [
+    {
+      "B0_uT": [
+        2185.659513274337,
+        2998.67477876106,
+        -7098.310805309741
+      ],
+      "applies_after_seq": 678,
+      "baseline_id": 0,
+      "drift_uT_s": [
+        -0.7814831104182612,
+        -1.5342436031012798,
+        -2.74528936942796
+      ],
+      "effective_visit": 0,
+      "first_seq": 1,
+      "last_seq": 678,
+      "quality_axes": [
+        0,
+        1,
+        2
+      ],
+      "std_uT": [
+        5.22699851539221,
+        5.604010984138538,
+        14.15810657871486
+      ]
+    }
+  ],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-28T07:09:08.136009+00:00",
+  "reason": "",
+  "run_id": "20261028T070827.310766Z-705465",
+  "sha256": {
+    "calibration.json": "9881db761df101b1aebd465f24e9d12c327692e0d68cb86a6370db4c7c322382",
+    "compiled_plan.npz": "8735869b82ff4e4a7a01a2f3bd7cc9b035b0994c6c207f48cecf38ea9f398423",
+    "entry_profile.json": "4bba5c9c4a5e6fe4e57e58ad821a78251d7a703a2fa083313d361d3ca9b97c5c",
+    "feedforward.json": "4bef46deac082ed3b96312d8b2f33a55351105c8f913170e992d00182f59f137",
+    "resolved.json": "32730b03479d54dba1e00d4ed1aa93039eb83c1d92839b41ff3075e13d599cde",
+    "settings.json": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5",
+    "setup.json": "9857e7f8fdb5f98b871222ace988104c29d6f769fea8e1f0a871e533633baedb",
+    "strokeplan.npz": "576d953bfd8fcc8d4392ae50a25b322920dd32c21ba709c0530d24ff714b3098",
+    "timeline.npz": "35f7e4299168a81f3bb061f10c613b781c45ef3f5d1e91ba19a8433ab37a5cc5"
+  },
+  "started_at": "2026-10-28T07:08:27.310766+00:00",
+  "status": "completed",
+  "writer_pid": 48552
+}

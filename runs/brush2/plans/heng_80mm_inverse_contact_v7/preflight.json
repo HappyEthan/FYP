@@ -1,0 +1,43 @@
+{
+  "parameters": {
+    "width_mm": 6.5,
+    "aspect": 1.4,
+    "center_response_mm": 5.5,
+    "turn_response_mm": 11.0,
+    "max_xy_offset_mm": 5.5,
+    "uncalibrated": true
+  },
+  "source_sha256": "e4beb9643507306b77284b58891b3b028ebb0e9f19dad0313b971c622237b0b4",
+  "model_tail_center_rmse_before_mm": 4.504513870184471,
+  "model_tail_center_rmse_after_mm": 0.9367673274949904,
+  "model_final_center_error_mm": 0.556777086212973,
+  "max_xy_offset_mm": 5.476957394558121,
+  "additional_retiming_factor": 0.7,
+  "writing_duration_s": 42.800000000000004,
+  "full_duration_s": 64.58,
+  "limits": {
+    "XY speed": 79.91642464931405,
+    "Z speed": 59.997440049151805,
+    "step": 1.5983284929862809,
+    "acceleration": 130.5633720355383,
+    "angular speed": 19.98874360269626,
+    "angular acceleration": 37.27256826412314
+  },
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  },
+  "ink_quality_verified": false
+}

@@ -1,0 +1,9 @@
+{
+  "run_status": "completed",
+  "writing_samples": 642,
+  "magnetic_rmse_uT": 30.64457969948075,
+  "magnetic_mae_uT": 18.6013921345816,
+  "fraction_within_20uT": 0.6947040498442367,
+  "feedback_abs_max_mm": 0.8000000000000002,
+  "ink_quality_assessed": false
+}

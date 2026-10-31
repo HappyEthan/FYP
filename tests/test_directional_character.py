@@ -145,6 +145,49 @@ def test_character_legacy_profile_rotates_at_contact_height_before_loading(tmp_p
     assert np.rad2deg(poses[load, 4]) == pytest.approx(15.)
 
 
+def test_per_stroke_contact_profiles_execute_with_own_targets_and_air_feedback_off(tmp_path):
+    from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+    from brushbot.experiments.strokeplan_character import tangent_rpy
+    from scripts.run_strokeplan_experiment import build_stack, run_recorded
+    plan,table,setup,entry=inputs(tmp_path)
+    plan.strokes[1].g_target[:]=200.
+    plan.strokes[1].orientation=tangent_rpy(np.full(len(plan.strokes[1].s),-np.pi/2),12.)
+    entry['stroke_profiles']=[dict(writing_tilt_deg=15.,node_angles=True,entry_reverse_mm=0.,
+        segment_magnetic_targets=dict(nodes_s=[0.,1.],values_uT=[180.])),
+        dict(writing_tilt_deg=12.,node_angles=True,entry_reverse_mm=0.,
+        segment_magnetic_targets=dict(nodes_s=[0.,1.],values_uT=[200.]))]
+    pi=dict(kp=1.,ki=.05,max_correction_mm=.8,max_correction_speed_mm_s=2.,
+        max_correction_accel_mm_s2=30.,taper_ticks=50,integral_limit_mm=.2,anti_windup='conditional')
+    plan.save(tmp_path/'sequence.npz')
+    artifacts={'strokeplan.npz':(tmp_path/'sequence.npz').read_bytes(),
+        **{n:json.dumps(v).encode() for n,v in [('feedforward.json',table),('settings.json',setup),('entry_profile.json',entry)]}}
+    clock=FakeClock();arm=FakeArm((-.370,.5,.13,0.,np.pi/12,0.),clock=clock);arm.realtime_state_reads=False
+    source=FakeMagneticSource(arm,clock,contact_z_mm=40.)
+    engine,hub=build_stack(plan=plan,table=table,setup=setup,artifacts=artifacts,
+        label='sequence_pi',root=tmp_path/'runs',arm=arm,source=source,clock=clock,
+        control_mode='pi',feedback_profile=pi,entry_profile=entry)
+    result=run_recorded(engine,hub,clock=clock)
+    assert result['state']=='END_WAIT',result
+    rows=[json.loads(s) for s in (Path(result['run_dir'])/'control.jsonl').read_text().splitlines()]
+    for i,target in enumerate([180.,200.]):
+        selected=[r for r in rows if r['phase']==f'measure_{i:02}']
+        assert selected and all(r['a_ref_uT']==target for r in selected)
+        assert selected[0]['i_correction_m']==0.
+    air=[r for r in rows if not r['phase'].startswith('measure_')]
+    assert air and all(r['depth_fb_m']==0. and r['a_ref_uT'] is None for r in air)
+
+
+@pytest.mark.parametrize('profiles',[
+    [{}], [{},dict(writing_tilt_deg=-1.)], [{},dict(node_angles='yes')],
+    [{},dict(entry_reverse_mm=float('nan'))], [{},dict(extra=1)],
+    [{},dict(segment_magnetic_targets=dict(nodes_s=[0.,1.],values_uT=[999999.]))],
+])
+def test_invalid_per_stroke_profiles_are_rejected(tmp_path,profiles):
+    from brushbot.experiments.strokeplan_execution import compile_recorded_plan
+    plan,table,setup,entry=inputs(tmp_path);entry['stroke_profiles']=profiles
+    with pytest.raises(ValueError):compile_recorded_plan(plan,table,setup,label='invalid',entry_profile=entry)
+
+
 @pytest.mark.parametrize('entry_order', ['unknown', True, None])
 def test_character_rejects_invalid_entry_order(tmp_path, entry_order):
     from brushbot.experiments.strokeplan_execution import compile_recorded_plan

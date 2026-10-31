@@ -143,3 +143,22 @@ def test_default_retiming_keeps_existing_zhong_behavior():
                                    angular_speed_deg_s=20., angular_accel_deg_s2=40., smoothing_mm=1.)
     for field in ("xy", "t", "g_target", "orientation"):
         assert np.array_equal(getattr(original, field), getattr(configured, field))
+
+
+def test_explicit_clockwise_tail_heading_with_fixed_tilt():
+    from scripts.generate_directional_character_trial import directional_stroke
+    from brushbot.experiments.strokeplan_character import orientation_heading
+    from brushbot.target_strokeplan import Stroke
+    xy=np.column_stack([np.linspace(0,.08,101),np.zeros(101)])
+    source=Stroke(np.linspace(0,1,101),xy,np.linspace(0,8,101),np.full(101,125.))
+    baseline=directional_stroke(source)
+    result=directional_stroke(source,heading_knots_s_deg=[[.6,None],[.75,-45],[.9,-90],[1,-90]])
+    heading=np.rad2deg(np.array([orientation_heading(rpy) for rpy in result.orientation]))
+    assert np.allclose(np.cos(result.orientation[:,0])*np.cos(result.orientation[:,1]),np.cos(np.deg2rad(15)),atol=1e-10)
+    assert np.allclose(heading[result.s<.6],0,atol=1e-10)
+    tail=heading[(result.s>=.75)&(result.s<=.9)]
+    assert np.all(np.diff(tail)<=1e-8)
+    assert np.interp(.75,result.s,heading)==pytest.approx(-45,abs=.02)
+    assert np.allclose(heading[result.s>=.9],-90,atol=1e-8)
+    assert np.allclose(result.xy[[0,-1]],baseline.xy[[0,-1]])
+    with pytest.raises(ValueError):directional_stroke(source,heading_knots_s_deg=[[.6,0],[1,-90]])

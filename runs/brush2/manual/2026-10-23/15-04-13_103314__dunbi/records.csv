@@ -1,0 +1,2 @@
+recording_id,created_at,action,sensor_csv,sensor_json,sample_count,duration_s,valid,photo,video,note
+2026-10-23_15-07-43_149333,2026-10-23T15:07:43.159516+08:00,heng,raw/2026-10-23_15-07-43_149333.csv,raw/2026-10-23_15-07-43_149333.json,5853,17.55600100000001,True,,,操作者确认：本次录制写了一横；具体触纸与起收时间尚未标注。

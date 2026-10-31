@@ -1,0 +1,52 @@
+{
+  "source_sha256": "82feaf0194e1a0a3801ccac09cb56250c19f83537a0c49d721f1752440634356",
+  "reference_sources": [
+    {
+      "url": "https://www.xinhuameiyu.com/subject/getChapter.action?vo.id=f5a2c60b55a46a550155a46a55580058",
+      "title": "新华美育：颜真卿多宝塔碑“持”笔画解析",
+      "support": "Qualitative teaching: move right/up, turn down to make a dot, finish toward the left.",
+      "limitation": "No robot coordinates, dwell duration, contact model or magnetic measurements."
+    },
+    {
+      "url": "https://jky.ntu.edu.cn/_upload/article/files/28/97/62111abb4e2bb5d0a6ac1ca82d12/358e3a16-14fa-4278-8220-3a6200c2cd76.pdf",
+      "title": "南通大学网站：“三笔字”书写技能训练",
+      "support": "General stroke vocabulary of a slight dot and finishing return; not a quantitative long-horizontal dataset.",
+      "limitation": "Not used to infer millimetres, contact force or magnetic target."
+    }
+  ],
+  "quantitative_dimensions_source": "authored engineering choices, not measured web data",
+  "hardware_executed": false,
+  "early_lift": false,
+  "writing_feedback": "pi throughout writing",
+  "stationary_dwell_s": 0.0,
+  "writing_duration_s": 24.04,
+  "full_duration_s": 45.82,
+  "retained_prefix_source_s": 0.84,
+  "body_extension_length_mm": 7.2895448591585765,
+  "dot_path_length_mm": 0.8998309334696099,
+  "retract_path_length_mm": 0.842962649026411,
+  "dot_duration_s": 0.6075728658892032,
+  "retract_duration_s": 0.8431593142604861,
+  "dot_displacement_mm": [
+    0.6,
+    -0.5
+  ],
+  "retract_displacement_mm": [
+    -0.8,
+    0.25
+  ],
+  "retiming_factor": 1.0,
+  "nominal_bbox_mm": [
+    79.64380218977388,
+    11.601971056990816
+  ],
+  "limits": {
+    "XY speed": 79.84656870543573,
+    "Z speed": 59.997440049151805,
+    "step": 1.5969313741087148,
+    "acceleration": 149.43549716228415,
+    "angular speed": 19.977044531072327,
+    "angular acceleration": 38.90776648800875
+  },
+  "ink_prediction_verified": false
+}

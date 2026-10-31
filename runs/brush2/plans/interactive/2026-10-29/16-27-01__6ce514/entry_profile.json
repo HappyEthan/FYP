@@ -1,0 +1,119 @@
+{
+  "mode": "directional_character",
+  "assume_pose_invariant": true,
+  "entry_contact_z_mm": 37.0,
+  "slow_below_z_mm": 50.0,
+  "transfer_z_mm": 130.0,
+  "entry_tilt_deg": 30.0,
+  "air_rotate_s": 1.5,
+  "rotate_s": 3.0,
+  "load_s": 3.0,
+  "transfer_speed_mm_s": 80.0,
+  "fast_z_speed_mm_s": 60.0,
+  "slow_z_speed_mm_s": 15.0,
+  "transit_accel_mm_s2": 100.0,
+  "angular_speed_deg_s": 40.0,
+  "angular_accel_deg_s2": 80.0,
+  "writing_tilt_deg": 15.0,
+  "entry_reverse_mm": 5.0,
+  "stroke_profiles": [
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 5.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.04127606857009454,
+          0.08329386857070487,
+          0.13453359710782473,
+          0.16709116382985645,
+          0.2411421950377438,
+          0.3053170462397914,
+          0.7210123416335112,
+          0.7906207625862747,
+          0.8150891215226982,
+          1.0
+        ],
+        "values_uT": [
+          null,
+          165.0,
+          null,
+          175.0,
+          200.0,
+          200.0,
+          200.0,
+          180.0,
+          180.0,
+          53.0
+        ]
+      },
+      "node_angles": true
+    },
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 0.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.04614120708404598,
+          0.11032871115487662,
+          0.25258329796445017,
+          0.30264950097872256,
+          0.7376440939019431,
+          0.8970526893239206,
+          1.0
+        ],
+        "values_uT": [
+          120.0,
+          100.0,
+          100.0,
+          100.0,
+          150.0,
+          100.0,
+          53.0
+        ]
+      },
+      "node_angles": true
+    },
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 0.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.04624801855344784,
+          0.7098394748115328,
+          1.0
+        ],
+        "values_uT": [
+          180.0,
+          120.0,
+          70.0
+        ]
+      },
+      "node_angles": true
+    },
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 0.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.27956520464044227,
+          0.4772476763591829,
+          0.7387613580651202,
+          0.7961958523534303,
+          1.0
+        ],
+        "values_uT": [
+          100.0,
+          140.0,
+          180.0,
+          250.0,
+          140.0
+        ]
+      },
+      "node_angles": true
+    }
+  ]
+}

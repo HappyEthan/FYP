@@ -1,0 +1,39 @@
+{
+  "source_sha256": "ed450a413399b230a020f48f04be22a69b5da93bc1ea5060f1ae076fcc272e85",
+  "geometry_change": {
+    "source_tail_start_s": 0.74,
+    "local_scale_x": 0.8,
+    "local_scale_y": 0.7,
+    "transition_mm": 3.0
+  },
+  "tail_exit": {
+    "start_s": 0.8062200681292778,
+    "end_s": 0.9495059843526285,
+    "end_z_mm": 42.0
+  },
+  "writing_and_exit_duration_s": 33.58,
+  "full_duration_s": 54.980000000000004,
+  "tail_exit_duration_s": 10.079999999999998,
+  "clearance_40_reached_after_exit_s": 4.699999999999996,
+  "nominal_exit_start_xyz_mm": [
+    -193.37310809280942,
+    507.0047204577183,
+    28.67151246887034
+  ],
+  "nominal_exit_end_xyz_mm": [
+    -195.67290398393726,
+    502.7860704928928,
+    42.0
+  ],
+  "limits": {
+    "XY speed": 79.73167321593657,
+    "Z speed": 59.997440049151805,
+    "step": 1.5946334643187312,
+    "acceleration": 194.67100041886155,
+    "angular speed": 19.97688655146739,
+    "angular acceleration": 38.907458803176894
+  },
+  "feedback_on_exit": false,
+  "hardware_executed": false,
+  "ink_quality_verified": false
+}

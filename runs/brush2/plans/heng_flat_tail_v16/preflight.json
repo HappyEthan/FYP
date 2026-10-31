@@ -1,0 +1,30 @@
+{
+  "hardware_executed": false,
+  "early_lift": false,
+  "ink_quality_verified": false,
+  "modification": "paper-plane Y rise; final Z clearance unchanged",
+  "rise_start_local_mm": [
+    15.05773672055427,
+    1.6628175519630484
+  ],
+  "old_rise_mm": 2.9057086104339636,
+  "new_rise_mm": 1.1864535737427409,
+  "old_dot_entry_mm": [
+    34.298506104290965,
+    4.568526162397012
+  ],
+  "new_dot_entry_mm": [
+    34.298506104290965,
+    2.849271125705789
+  ],
+  "writing_duration_s": 23.580000000000002,
+  "full_duration_s": 45.24,
+  "limits": {
+    "XY speed": 79.82316426519326,
+    "Z speed": 59.997440049151805,
+    "step": 1.5964632853038652,
+    "acceleration": 155.93174245947114,
+    "angular speed": 19.977181029063498,
+    "angular acceleration": 38.908032334742146
+  }
+}

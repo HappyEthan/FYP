@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "command_target_max_distance_mm": 8.038873388460929e-14,
+  "actual_xy_geometric_distance_p95_mm": 0.07442286812907212,
+  "magnetic_rmse_uT": 35.98287205832595,
+  "magnetic_mae_uT": 25.547303863041,
+  "fraction_within_20uT": 0.5921787709497207,
+  "ink_quality_assessed": false
+}

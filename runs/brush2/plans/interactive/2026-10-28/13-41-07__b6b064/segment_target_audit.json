@@ -1,0 +1,37 @@
+[
+  {
+    "segment": 2,
+    "requested_uT": 225.0,
+    "samples": 27,
+    "actual_reference_min_uT": 225.0,
+    "actual_reference_max_uT": 225.0
+  },
+  {
+    "segment": 3,
+    "requested_uT": 200.0,
+    "samples": 15,
+    "actual_reference_min_uT": 200.0,
+    "actual_reference_max_uT": 200.0
+  },
+  {
+    "segment": 8,
+    "requested_uT": 180.0,
+    "samples": 96,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "segment": 9,
+    "requested_uT": 200.0,
+    "samples": 88,
+    "actual_reference_min_uT": 200.0,
+    "actual_reference_max_uT": 200.0
+  },
+  {
+    "segment": 10,
+    "requested_uT": 180.0,
+    "samples": 59,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  }
+]

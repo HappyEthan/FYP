@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "session_id": "15-04-13_103314__dunbi",
+  "created_at": "2026-10-23T15:04:13.103314+08:00",
+  "timezone": "Asia/Shanghai",
+  "acquisition_mode": "handheld_manual",
+  "brush_id": "brush2",
+  "label": "dunbi",
+  "default_action": "dot",
+  "sensor_tip_offset_mm": {
+    "value": 5.0,
+    "source": "operator_report",
+    "measured": false
+  },
+  "paper": null,
+  "ink_or_water": null,
+  "wetting_method": null,
+  "brush_orientation": null,
+  "tcp_recorded": false,
+  "xy_recorded": false,
+  "video_synchronization": "not_established",
+  "signal_storage": "unfiltered delta B plus baseline; no display smoothing",
+  "raw_format": "monitor CSV + same-stem JSON",
+  "note": ""
+}

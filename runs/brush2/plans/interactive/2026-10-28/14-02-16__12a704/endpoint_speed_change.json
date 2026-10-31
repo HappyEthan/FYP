@@ -1,0 +1,17 @@
+{
+  "scope": "first and final segment endpoint requests",
+  "before_mm_s": {
+    "0": 7.056265253843069,
+    "1": 4.377323590593715,
+    "9": 5.951095438970277,
+    "10": 6.89944434342995
+  },
+  "after_mm_s": {
+    "0": 14.112530507686138,
+    "1": 8.75464718118743,
+    "9": 11.902190877940553,
+    "10": 13.7988886868599
+  },
+  "removed_middle_speed_controls": true,
+  "hardware_executed": false
+}

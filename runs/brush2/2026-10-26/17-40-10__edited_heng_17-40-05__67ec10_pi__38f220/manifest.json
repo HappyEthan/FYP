@@ -1,0 +1,27 @@
+{
+  "adapter": null,
+  "baselines": [],
+  "brush_id": "brush2",
+  "execution_environment": "hardware",
+  "filter": {
+    "alpha": 0.3,
+    "kind": "ema"
+  },
+  "finished_at": "2026-10-26T09:40:15.936529+00:00",
+  "reason": "baseline_failed",
+  "run_id": "20261026T094010.917202Z-38f220",
+  "sha256": {
+    "calibration.json": "20ea1bc675d5041c2abfb2a6339f177cfce143a1d5e29a6050a2eb2d2bc72d33",
+    "compiled_plan.npz": "0a78567f4035f5cabeb9d9b7ded714dd2fd2a68f3a1a97c8d9544681994b8b24",
+    "entry_profile.json": "13ed4d2173b91d456240a4e54a719144cbe0ae7005f48aa6cce67ba79347ecb6",
+    "feedforward.json": "51d1fc7757a33035822111beee84933f63139f8621d32e89c1f7eae438472a1a",
+    "resolved.json": "e70751f93351f9db4fb1bf784eb4f1f3020f46129d34d5f49a0ae775d9c3af54",
+    "settings.json": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65",
+    "setup.json": "d2e7f997a82e1fa04096b745a7588a9aea1432ed0f092fc884d39cf575fc8e31",
+    "strokeplan.npz": "f22ca0363923ac4474855bfed693d3828c608fb9cd94eb22ed9d58b00403ab38",
+    "timeline.npz": "0e5e3519c319780be5430d6171635b04ecebc4431468f4e18369151b39f4b72c"
+  },
+  "started_at": "2026-10-26T09:40:10.917202+00:00",
+  "status": "aborted",
+  "writer_pid": 321165
+}

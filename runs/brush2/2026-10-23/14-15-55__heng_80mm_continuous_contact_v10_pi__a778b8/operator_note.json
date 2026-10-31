@@ -1,0 +1,6 @@
+{
+  "reason": "operator reported brush was not wetted before trial",
+  "source": "user message: 重新开始，忘记占水了",
+  "exclude_from_wetted_trial_comparison": true,
+  "raw_recordings_preserved": true
+}

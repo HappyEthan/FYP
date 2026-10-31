@@ -1,0 +1,214 @@
+{
+  "node_enabled": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "endpoint_speed_mode": true,
+  "settings_override": null,
+  "entry_profile_override": null,
+  "node_speeds_mm_s": [
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599
+  ],
+  "segment_speeds_mm_s": [
+    null,
+    null,
+    null
+  ],
+  "speed_positions": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "node_angles_deg": [
+    [
+      15.000000000000018,
+      -15.0
+    ],
+    [
+      15.000000000000018,
+      -45.0
+    ],
+    [
+      15.000000000000018,
+      -80.0
+    ],
+    [
+      15.000000000000018,
+      -110.0
+    ]
+  ],
+  "schema_version": 1,
+  "source_folder": "/home/serein/FYP/runs/brush2/plans/standard/右点",
+  "base_recipe": {
+    "schema_version": 1,
+    "id": "heng",
+    "name": "交互编辑：交互编辑：交互编辑：横画v16：压低后半段上扬，保留顿笔内收",
+    "description": "User-edited XY geometry; magnetic levels and speed requests retained at corresponding source positions.",
+    "reference": "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long/template.json",
+    "placement": {
+      "origin_mm": [
+        140.0,
+        0.0
+      ],
+      "rotation_deg": 0,
+      "scale": 1.0
+    },
+    "path": {
+      "kind": "rounded_polyline",
+      "points_mm": [
+        [
+          -28.61727994183046,
+          64.18319403462013
+        ],
+        [
+          -22.36792844971926,
+          61.353501544319286
+        ],
+        [
+          -17.51085446586046,
+          51.08459616557252
+        ],
+        [
+          -22.0563,
+          47.0628
+        ]
+      ],
+      "corner_radius_mm": 0.0
+    },
+    "magnetic_target": {
+      "interpolation": "linear",
+      "knots_s_uT": [
+        [
+          0.0,
+          53.0
+        ],
+        [
+          0.2824376597030351,
+          53.0
+        ],
+        [
+          0.7501236050835652,
+          53.0
+        ],
+        [
+          1.0,
+          53.0
+        ]
+      ]
+    },
+    "timing": {
+      "speed_mm_s": 20.0,
+      "accel_mm_s2": 400.0,
+      "angular_speed_deg_s": 40.0,
+      "angular_accel_deg_s2": 80.0,
+      "speed_knots_s_mm_s": [
+        [
+          0.0,
+          13.7988886868599
+        ],
+        [
+          0.2824376597030351,
+          13.7988886868599
+        ],
+        [
+          0.7501236050835652,
+          13.7988886868599
+        ],
+        [
+          1.0,
+          13.7988886868599
+        ]
+      ]
+    },
+    "orientation": {
+      "kind": "tangent_tilt",
+      "tilt_deg": 15.0,
+      "smoothing_mm": 16.0
+    },
+    "filter_definition": {
+      "kind": "ema",
+      "alpha": 0.3
+    },
+    "notes": [
+      "XY edited in brush path editor; reference image/line is not measured ink.",
+      "Smooth magnetic curve supplies nominal Z feedforward only. Exact per-segment control references override it through entry_profile.segment_magnetic_targets, with no reference blending inside explicit segments. Writing Z offsets are stored separately.",
+      "Compiled timing and tangent-derived orientation may change with XY; existing limits still apply.",
+      "No early lift added; actual contact and ink shape require experimental verification."
+    ]
+  },
+  "indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "nodes_mm": [
+    [
+      -28.61727994183046,
+      64.18319403462013
+    ],
+    [
+      -22.36792844971926,
+      61.353501544319286
+    ],
+    [
+      -19.681175470819284,
+      49.63771549559996
+    ],
+    [
+      -27.733981379309604,
+      45.56754362769917
+    ]
+  ],
+  "magnetic_values_uT": [
+    53.0,
+    53.0,
+    53.0,
+    53.0
+  ],
+  "lift_mm": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "segment_magnetic_uT": [
+    150.0,
+    200.0,
+    200.0
+  ],
+  "height_mode": "writing_z_offset",
+  "allow_low_response_trial": false,
+  "feedforward_override": null,
+  "stroke_id": "stroke-b4de85c28642",
+  "stroke_name": "右点",
+  "rhythm_regions": [
+    {
+      "id": "28a916494f7c42f795f8d8289ffa602d",
+      "start": 0.0,
+      "end": 0.46850421951606136,
+      "label": "行笔",
+      "ratio": 1.0
+    },
+    {
+      "id": "b802c932194443bc9ef279dd417d2fa4",
+      "start": 0.46850421951606136,
+      "end": 1.0,
+      "label": "顿笔",
+      "ratio": 0.8
+    }
+  ],
+  "stroke_workspace": {
+    "order": [
+      "stroke-b4de85c28642"
+    ],
+    "others": [],
+    "pending_point": null,
+    "pending_stroke_position": "end"
+  }
+}

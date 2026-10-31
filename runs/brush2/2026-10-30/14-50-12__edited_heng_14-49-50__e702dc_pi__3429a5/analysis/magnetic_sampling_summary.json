@@ -1,0 +1,38 @@
+{
+  "source_run": "/home/serein/FYP/runs/brush2/2026-10-30/14-50-12__edited_heng_14-49-50__e702dc_pi__3429a5",
+  "output": "/home/serein/FYP/runs/brush2/2026-10-30/14-50-12__edited_heng_14-49-50__e702dc_pi__3429a5/analysis/magnetic_timeseries.csv",
+  "sensor_samples": 43680,
+  "nominal_sensor_interval_us": 3002.0,
+  "nominal_sensor_rate_hz": 333.11125916055965,
+  "elapsed_sensor_s": 139.97900000000485,
+  "invalid_samples": 0,
+  "raw_missing_rows": 0,
+  "delta_missing_rows": 0,
+  "offline_baseline_rows": 677,
+  "sensor_time_faults": 0,
+  "gaps": [
+    {
+      "before_seq": 7,
+      "interval_us": 8945002.0,
+      "nominal_interval_us": 3002.0
+    }
+  ],
+  "control_samples": 6445,
+  "control_null_counts": {
+    "a_ref_uT": 4409,
+    "e_center_uT": 4409,
+    "e_band_uT": 4409,
+    "actual_pose_m_rad": 6445,
+    "actual_rx_ns": 6445,
+    "feedback_lower_m": 4409,
+    "feedback_upper_m": 4409
+  },
+  "interpolated_samples": 0,
+  "raw_logs_modified": false,
+  "notes": [
+    "Sensor time is the sampling clock; host receive times may arrive in batches.",
+    "Baseline-acquisition rows use the first frozen B0 offline and are explicitly marked; not historical control feedback.",
+    "No missing samples or target fields are filled with synthetic measurements.",
+    "dBxy_norm_uT is unfiltered response, not force. Existing a_control_uT remains in control.jsonl."
+  ]
+}

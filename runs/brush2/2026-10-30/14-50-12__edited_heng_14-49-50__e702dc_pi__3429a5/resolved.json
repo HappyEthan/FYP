@@ -1,0 +1,308 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482-user-low-75dac4e0_cyg",
+  "control": {
+    "anti_windup": "conditional",
+    "enabled": true,
+    "integral_limit_mm": 0.2,
+    "ki": 0.1,
+    "kp": 1.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "measurement_phases": [
+      "measure_00",
+      "measure_01",
+      "measure_02",
+      "measure_03",
+      "measure_04"
+    ],
+    "mode": "pi",
+    "phase": "per_stroke",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "air_rotate_s": 1.5,
+    "angular_accel_deg_s2": 80.0,
+    "angular_speed_deg_s": 40.0,
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 37.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "directional_character",
+    "rotate_s": 3.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "stroke_profiles": [
+      {
+        "entry_reverse_mm": 5.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.24585659155927758,
+            0.6766311183468323,
+            1.0
+          ],
+          "values_uT": [
+            150.0,
+            200.0,
+            200.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.03722308502035949,
+            0.07511506930987964,
+            0.12132346167453513,
+            0.1506841327881658,
+            0.21746393827801244,
+            0.2753373265442938,
+            0.7492299026153225,
+            0.8113022434076108,
+            0.8332058361949227,
+            0.87489435928586,
+            0.9067033657793936,
+            0.9308258883397976,
+            0.9544263056500247,
+            0.975801819484147,
+            1.0
+          ],
+          "values_uT": [
+            null,
+            165.0,
+            null,
+            160.0,
+            200.0,
+            200.0,
+            200.0,
+            180.0,
+            150.0,
+            110.0,
+            100.0,
+            80.0,
+            70.0,
+            60.0,
+            53.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.04614120708404597,
+            0.11032871115487661,
+            0.25258329796445017,
+            0.30264950097872256,
+            0.7376440939019431,
+            0.8970526893239206,
+            1.0
+          ],
+          "values_uT": [
+            120.0,
+            100.0,
+            100.0,
+            100.0,
+            150.0,
+            100.0,
+            53.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.2007225380595627,
+            0.3236560561100114,
+            0.4909759006489028,
+            0.6765148793669655,
+            0.8382574396834828,
+            1.0
+          ],
+          "values_uT": [
+            120.0,
+            110.0,
+            100.0,
+            90.0,
+            70.0,
+            53.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.24985819211574273,
+            0.4265346317325447,
+            0.6602594824650059,
+            0.7115909023618979,
+            0.7703994181132917,
+            0.816226830187392,
+            0.8546969230535523,
+            0.891786798178801,
+            0.9376329443341102,
+            0.9626665086015262,
+            1.0
+          ],
+          "values_uT": [
+            100.0,
+            120.0,
+            160.0,
+            230.0,
+            200.0,
+            180.0,
+            140.0,
+            120.0,
+            100.0,
+            80.0,
+            63.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      }
+    ],
+    "transfer_speed_mm_s": 80.0,
+    "transfer_z_mm": 130.0,
+    "transit_accel_mm_s2": 100.0,
+    "writing_tilt_deg": 15.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "27d4587ee699605001bbbac07fd7f1e7d47216022d8792dca5884d64bb2ccb5a"
+    },
+    "feedforward.json": {
+      "sha256": "f3d8776d76b4f7112bc69e4552888c712b1cd5e480978470a0e98a011f8a7a79"
+    },
+    "settings.json": {
+      "sha256": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5"
+    },
+    "strokeplan.npz": {
+      "sha256": "05e469f689b6277fcca53b0d153993e91603c51f3b4ee1b7458a36fe2917082b"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "assume_pose_invariant": true,
+    "axis": "xy",
+    "dynamic_orientation": true,
+    "kind": "strokeplan",
+    "stroke_count": 5
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "installation_id": "brush2-z-ladder",
+      "run_label": "edited_heng_14-49-50__e702dc_pi"
+    },
+    "deadline_policy": null,
+    "finished_at": "2026-10-30T14:50:12.983255+08:00",
+    "initial_pose_m_rad": [
+      -0.26636000000000004,
+      0.447,
+      0.03507,
+      0.13318607521968728,
+      -0.22603759142578564,
+      -0.015132004614790837
+    ],
+    "last_pose_m_rad": [
+      -0.370048,
+      0.499971,
+      0.129957,
+      -3.490658503988659e-05,
+      0.2617470279215896,
+      0.00010471975511965978
+    ],
+    "motion_metrics": {
+      "XY speed": 79.65424597127624,
+      "Z speed": 59.72765273668731,
+      "acceleration": 89.50382141752075,
+      "angular acceleration": 22.615456994748083,
+      "angular speed": 19.978920143980613,
+      "step": 1.593084919425525
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 9.04,
+    "record_path": "/home/serein/FYP/runs/brush2/2026-10-30/positioning/strokeplan_9d30d64f94744cdf87a4b5f36172b32a.json",
+    "route_m_rad": [
+      [
+        -0.26636000000000004,
+        0.447,
+        0.13,
+        0.13318607521968728,
+        -0.22603759142578564,
+        -0.015132004614790837
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        0.13318607521968728,
+        -0.22603759142578564,
+        -0.015132004614790837
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 4012,
+      "host_ns": 924073523744,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-30T14:50:03.767423+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 452,
+      "max_command_duration_s": 0.004924023,
+      "max_lateness_s": 0.02451363
+    }
+  },
+  "run_label": "edited_heng_14-49-50__e702dc_pi",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

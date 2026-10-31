@@ -1,0 +1,71 @@
+{
+  "hardware_executed": false,
+  "ink_quality_verified": false,
+  "stroke_id": "stroke-8df5c0b7e5e4",
+  "stroke_name": "笔画3",
+  "workspace_stroke_count": 5,
+  "execution_scope": "all_strokes_in_order",
+  "execution_order": [
+    {
+      "stroke_id": "stroke-b4de85c28642",
+      "stroke_name": "新增首笔5",
+      "point_range": [
+        0,
+        2
+      ]
+    },
+    {
+      "stroke_id": "stroke-1",
+      "stroke_name": "笔画1",
+      "point_range": [
+        3,
+        18
+      ]
+    },
+    {
+      "stroke_id": "stroke-4ffd2d2876a2",
+      "stroke_name": "笔画2",
+      "point_range": [
+        19,
+        26
+      ]
+    },
+    {
+      "stroke_id": "stroke-8df5c0b7e5e4",
+      "stroke_name": "笔画3",
+      "point_range": [
+        27,
+        34
+      ]
+    },
+    {
+      "stroke_id": "stroke-de063dd87e96",
+      "stroke_name": "笔画4",
+      "point_range": [
+        35,
+        46
+      ]
+    }
+  ],
+  "transfer_z_mm": 130.0,
+  "test_node_range": [
+    0,
+    7
+  ],
+  "hidden_nodes": [],
+  "low_response_trial": false,
+  "retiming_factor": 1.0,
+  "writing_duration_s": 41.60000000000001,
+  "full_duration_s": 130.08,
+  "limits": {
+    "XY speed": 79.9340198079933,
+    "Z speed": 59.997440049151805,
+    "step": 1.598680396159866,
+    "acceleration": 393.7083167078483,
+    "angular speed": 39.922411552932054,
+    "angular acceleration": 70.53088626121703
+  },
+  "auto_speed_adaptation": true,
+  "local_speed_adapted": true,
+  "local_speed_iterations": 117
+}

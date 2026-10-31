@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "writing_duration_s": 35.32,
+  "tail_last10_duration_s": 5.940791177220813,
+  "magnetic_rmse_uT": 34.7807364689553,
+  "magnetic_mae_uT": 28.3165284070117,
+  "tail_last10_measured_mean_uT": 132.03628819327864,
+  "tail_last10_feedback_limit_fraction": 0.6073825503355704,
+  "ink_quality_assessed": false
+}

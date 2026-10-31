@@ -249,7 +249,11 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
         print('方向姿态：进笔倾角 {:g}°，书写倾角 {:g}°；Rx/Ry/Rz 随平滑行笔方向联动。'.format(
             entry_profile['entry_tilt_deg'], entry_profile['writing_tilt_deg']))
         reverse_mm = entry_profile.get('entry_reverse_mm', 0.)
-        if reverse_mm:
+        if entry_profile.get('stroke_profiles') is not None:
+            for i,profile in enumerate(entry_profile['stroke_profiles']):
+                print('第{}笔：书写起始倾角 {:g}°，进笔反向位移 {:g} mm。'.format(
+                    i+1,profile.get('writing_tilt_deg',entry_profile['writing_tilt_deg']),profile.get('entry_reverse_mm',reverse_mm)))
+        elif reverse_mm:
             print('旋转落笔：先沿首段方向前置 {:g} mm，再于接触旋转时同步反向移动 {:g} mm；Z 保持不变，结束于原笔画起点。'.format(
                 reverse_mm, reverse_mm))
         else:
@@ -334,6 +338,14 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
                               live_output_fn=panel.update,
                               pose_sampler=pose_sampler)
         panel.close()
+        if engine.run_dir:
+            try:
+                from brushbot.experiments.magnetic_timeseries import export_magnetic_timeseries
+                magnetic_export=export_magnetic_timeseries(engine.run_dir)
+                print('完整磁响应数据：'+magnetic_export['output'])
+                print(f'磁采样{magnetic_export["sensor_samples"]}条，典型{magnetic_export["nominal_sensor_rate_hz"]} Hz，时间间隔异常{len(magnetic_export["gaps"])}处；未插值补点。')
+            except Exception as exc:
+                print('磁响应整理失败，原sensor.csv/control.jsonl仍保留：'+str(exc))
         _report(result)
         if result.get('pose_capture') is not None:
             capture = result['pose_capture']

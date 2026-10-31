@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "exit_feedback_abs_max_mm": 0.0,
+  "exit_has_no_magnetic_reference": true,
+  "actual_time_to_40mm_after_exit_s": 1.7820003255,
+  "actual_exit_final_z_mm": 42.005,
+  "measurement_only_magnetic_rmse_uT": 30.832396703192746,
+  "rmse_comparable_to_full_stroke": false,
+  "ink_quality_assessed": false
+}

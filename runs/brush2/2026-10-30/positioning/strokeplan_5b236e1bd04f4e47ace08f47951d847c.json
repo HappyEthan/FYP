@@ -1,0 +1,84 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-30T14:38:32.428406+08:00",
+  "initial_pose_m_rad": [
+    -0.37000900000000003,
+    0.499995,
+    0.13000299999999998,
+    -0.0,
+    0.26181684109166936,
+    0.0
+  ],
+  "route_m_rad": [
+    [
+      -0.37,
+      0.5,
+      0.13,
+      -0.0,
+      0.26181684109166936,
+      0.0
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 2,
+  "context": {
+    "run_label": "edited_heng_14-38-28__3de6e7_pi",
+    "installation_id": "brush2-z-ladder"
+  },
+  "timing": {
+    "commands_sent": 23,
+    "max_lateness_s": 0.001929161,
+    "max_command_duration_s": 0.004244762
+  },
+  "deadline_policy": null,
+  "motion_metrics": {
+    "XY speed": 0.2573907535258759,
+    "Z speed": 0.0,
+    "step": 0.005147815070517519,
+    "acceleration": 12.869537676293799,
+    "angular speed": 0.050000000000028695,
+    "angular acceleration": 2.500000000001435
+  },
+  "planned_duration_s": 0.45999999999999996,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.37001,
+    0.499999,
+    0.130002,
+    0.0,
+    0.26181684109166936,
+    1.7453292519943296e-05
+  ],
+  "finished_at": "2026-10-30T14:38:32.976067+08:00",
+  "record_path": "/home/serein/FYP/runs/brush2/2026-10-30/positioning/strokeplan_5b236e1bd04f4e47ace08f47951d847c.json",
+  "sensor_buffer_reset": {
+    "discarded_bytes": 4002,
+    "host_ns": 224066258774,
+    "resynchronization": "skip through next newline"
+  }
+}

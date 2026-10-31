@@ -1,0 +1,56 @@
+{
+  "source_sha256": "0d68c2d3fbab36d61453d8a0366443472664c51f8c3f5b80fcdc98094c268ab5",
+  "prefix_end_source_s": 0.72,
+  "tail_scale": 0.5,
+  "transition_mm": 2.0,
+  "old_tail_length_mm": 29.040232831139022,
+  "new_tail_length_mm": 14.520141020457046,
+  "old_tail_duration_s": 12.049454110799136,
+  "new_tail_duration_s": 7.440184201288172,
+  "old_writing_duration_s": 32.3,
+  "writing_duration_s": 28.02,
+  "full_duration_s": 49.660000000000004,
+  "new_bbox_mm": [
+    76.46811757969397,
+    12.4303237335565
+  ],
+  "segments": [
+    {
+      "source_start_s": 0.72,
+      "source_end_s": 0.8,
+      "old_length_mm": 8.297209380325443,
+      "new_length_mm": 4.148629295050213
+    },
+    {
+      "source_start_s": 0.8,
+      "source_end_s": 0.86,
+      "old_length_mm": 6.222907035244071,
+      "new_length_mm": 3.111453517622053
+    },
+    {
+      "source_start_s": 0.86,
+      "source_end_s": 0.92,
+      "old_length_mm": 6.2229070352440825,
+      "new_length_mm": 3.1114535176220244
+    },
+    {
+      "source_start_s": 0.92,
+      "source_end_s": 1.0,
+      "old_length_mm": 8.297209380325432,
+      "new_length_mm": 4.148604690162756
+    }
+  ],
+  "magnetic_values_unchanged": true,
+  "early_lift": false,
+  "writing_feedback": "pi throughout measure_00",
+  "hardware_executed": false,
+  "actual_contact_verified": false,
+  "limits": {
+    "XY speed": 79.7718978706039,
+    "Z speed": 59.997440049151805,
+    "step": 1.5954379574120778,
+    "acceleration": 167.14482931295186,
+    "angular speed": 19.977264419270202,
+    "angular acceleration": 38.908194747488146
+  }
+}

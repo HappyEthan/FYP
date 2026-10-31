@@ -1,0 +1,2 @@
+{"event":"baseline_started","phase":"baseline","host_ns":25974736129490}
+{"event":"baseline_failed","phase":"baseline","host_ns":25979738690600,"error":"baseline standard deviation exceeds limit","samples":1679,"valid_samples":1679,"source":{"bytes_received":66221,"lines_seen":1685,"bad_lines":0}}

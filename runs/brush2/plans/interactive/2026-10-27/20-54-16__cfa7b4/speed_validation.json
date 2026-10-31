@@ -1,0 +1,75 @@
+{
+  "hardware_executed": false,
+  "previous_writing_duration_s": 56.14,
+  "writing_duration_s": 17.96,
+  "retiming_factor": 1.0,
+  "planned_max_writing_speed_mm_s": 10.000000000002881,
+  "max_acceleration_mm_s2": 180.51028549730867,
+  "acceleration_limit_mm_s2": 200.0,
+  "xy_magnetic_and_node_angles_unchanged": true,
+  "previous_failure": {
+    "global_retiming_factor": 0.25,
+    "unscaled_max_translation_acceleration_mm_s2": 801.65,
+    "unscaled_max_angular_acceleration_deg_s2": 73.33,
+    "short_turn_segment": 6,
+    "short_turn_length_mm": 2.627,
+    "short_turn_heading_deg": [
+      -46,
+      -120
+    ]
+  },
+  "search_candidates": [
+    {
+      "duration_s": 18.14,
+      "span": 0.018,
+      "iterations": 59,
+      "limits": {
+        "XY speed": 79.75282077262922,
+        "Z speed": 59.997440049151805,
+        "step": 1.5950564154525846,
+        "acceleration": 175.6997089081817,
+        "angular speed": 19.79197729714893,
+        "angular acceleration": 38.54732514690213
+      }
+    },
+    {
+      "duration_s": 18.68,
+      "span": 0.025,
+      "iterations": 49,
+      "limits": {
+        "XY speed": 79.75282077262922,
+        "Z speed": 59.997440049151805,
+        "step": 1.5950564154525846,
+        "acceleration": 184.83621259223983,
+        "angular speed": 19.79197729714893,
+        "angular acceleration": 38.54732514690213
+      }
+    },
+    {
+      "duration_s": 19.8,
+      "span": 0.012,
+      "iterations": 79,
+      "limits": {
+        "XY speed": 79.75282077262922,
+        "Z speed": 59.997440049151805,
+        "step": 1.5950564154525846,
+        "acceleration": 183.88947592920354,
+        "angular speed": 19.79197729714893,
+        "angular acceleration": 38.54732514690213
+      }
+    },
+    {
+      "duration_s": 24.94,
+      "span": 0.008,
+      "iterations": 105,
+      "limits": {
+        "XY speed": 79.75282077262922,
+        "Z speed": 59.997440049151805,
+        "step": 1.5950564154525846,
+        "acceleration": 188.9695207102173,
+        "angular speed": 19.79197729714893,
+        "angular acceleration": 39.98229277724562
+      }
+    }
+  ]
+}

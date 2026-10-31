@@ -1,0 +1,12 @@
+{
+  "source": "HRIF_ReadActTcpPos (independent connection)",
+  "clock": "host_monotonic_ns",
+  "units": "metres_and_radians",
+  "requested_interval_s": 0.1,
+  "samples": 823,
+  "valid_samples": 823,
+  "invalid_samples": 0,
+  "max_read_duration_ms": 7.196492,
+  "worker_stopped": true,
+  "worker_error": null
+}

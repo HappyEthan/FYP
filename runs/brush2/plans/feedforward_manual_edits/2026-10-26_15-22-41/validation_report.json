@@ -1,0 +1,20 @@
+{
+  "format_fix": "Added missing comma after depth_mm value 4.75",
+  "added_points_uT_mm": [
+    [
+      66,
+      4.5
+    ],
+    [
+      69,
+      4.75
+    ]
+  ],
+  "arrays_length": 43,
+  "original_points_unchanged": true,
+  "validation": "passed",
+  "offline_trajectory_preflight": "passed",
+  "trial_version": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-26/15-26-40__c9d677",
+  "hardware_executed": false,
+  "provenance": "user supplied; not independently verified measurements"
+}

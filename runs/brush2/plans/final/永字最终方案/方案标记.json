@@ -1,0 +1,135 @@
+{
+  "name": "永字最终方案",
+  "character": "永",
+  "designation": "final",
+  "designation_basis": "用户明确指定当前编辑器已保存草稿为最终方案",
+  "created_at": "2026-10-30T15:11:54.471500+08:00",
+  "source_draft": "/home/serein/FYP/outputs/brush_path_editor/draft_v3.json",
+  "source_draft_sha256": "383367b9c342cde53bcb7451323af5165bd83b1259848912779940a6a9b29816",
+  "latest_completed_run": "/home/serein/FYP/runs/brush2/2026-10-30/14-53-11__edited_heng_14-53-07__5900d7_pi__8e20e0",
+  "latest_completed_run_is_same_snapshot": false,
+  "hardware_executed_for_this_archive": false,
+  "offline_preflight_passed": true,
+  "execution_order": [
+    {
+      "source_stroke": "新增首笔5",
+      "standard_stroke": "右点",
+      "point_range": [
+        0,
+        3
+      ]
+    },
+    {
+      "source_stroke": "笔画1",
+      "standard_stroke": "横折钩",
+      "point_range": [
+        4,
+        19
+      ]
+    },
+    {
+      "source_stroke": "笔画2",
+      "standard_stroke": "横撇",
+      "point_range": [
+        20,
+        29
+      ]
+    },
+    {
+      "source_stroke": "笔画3",
+      "standard_stroke": "斜撇",
+      "point_range": [
+        30,
+        36
+      ]
+    },
+    {
+      "source_stroke": "笔画4",
+      "standard_stroke": "斜捺",
+      "point_range": [
+        37,
+        48
+      ]
+    }
+  ],
+  "standards": [
+    {
+      "source_stroke": "新增首笔5",
+      "standard_stroke": "右点",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/右点",
+      "source_point_range": [
+        0,
+        3
+      ],
+      "control_points": 4,
+      "writing_duration_s": 3.7600000000000002
+    },
+    {
+      "source_stroke": "笔画1",
+      "standard_stroke": "横折钩",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/横折钩",
+      "source_point_range": [
+        4,
+        19
+      ],
+      "control_points": 16,
+      "writing_duration_s": 16.54
+    },
+    {
+      "source_stroke": "笔画2",
+      "standard_stroke": "横撇",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/横撇",
+      "source_point_range": [
+        20,
+        29
+      ],
+      "control_points": 10,
+      "writing_duration_s": 9.88
+    },
+    {
+      "source_stroke": "笔画3",
+      "standard_stroke": "斜撇",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/斜撇",
+      "source_point_range": [
+        30,
+        36
+      ],
+      "control_points": 7,
+      "writing_duration_s": 3.54
+    },
+    {
+      "source_stroke": "笔画4",
+      "standard_stroke": "斜捺",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/斜捺",
+      "source_point_range": [
+        37,
+        48
+      ],
+      "control_points": 12,
+      "writing_duration_s": 7.34
+    }
+  ],
+  "configuration_policy": "freeze_all_source_configuration_and_rebind_editor_paths_inside_archive",
+  "artifact_sha256": {
+    "preflight.json": "9cdefa1b551929720ba4aba5d4588d392ea94e7e25f8ad52c1fc468b08789f2f",
+    "workspace_recipe.json": "8b096cb72bcc39fecbe896b158be7a65fd12c21ca23824cc81c33fe5e0c1a254",
+    "pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee",
+    "settings.json": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5",
+    "entry_profile.json": "e5f1a4e07e4d9e67cfaa830ca56cbb2763244b246c18a9150032aa57abd49f21",
+    "source_draft.json": "383367b9c342cde53bcb7451323af5165bd83b1259848912779940a6a9b29816",
+    "feedforward.json": "f3d8776d76b4f7112bc69e4552888c712b1cd5e480978470a0e98a011f8a7a79",
+    "latest_completed_run_manifest.json": "59b2023c091fef3435ff26740adb02758fe145289dc0aa9398ac3a768377eaba",
+    "editor_state.json": "4467b632e0ed14f657dbf6852514cf0014dd82292f80aef93265a04d51d0fb8e",
+    "segment_target_audit.json": "2e1734f0157274c509e61fd0eefd5435599445ffe7d832dffc9b1ece4e7a881e",
+    "speed_adaptation.json": "eba6a43095efc0e8daa78a9ccb87840ac87eecff75a743158f88bb6212a6d273",
+    "strokeplan.npz": "d861e78e4ff1da901be58661f1366078621c5d24147dd31c338183aa8f7422f8",
+    "README.md": "e6fe220f49fd7d9314196062b9786968ce8e311a5df5cec12819ffa30829cdeb",
+    "recipe.json": "f5d62e1947ba4cd24db5f1a48a4c2809f303c192813e3db8aa2dd7989a7fdde4",
+    "stroke_settings/stroke-de063dd87e96/entry_profile.json": "29a6f48d1d4a86fd5dcebb8aacde8590cac9994445daeed50856377d678976e3",
+    "stroke_settings/stroke-1/entry_profile.json": "723c49646db501c701617dd51ebb560ea38af08e891e888adac334d1697a4667",
+    "stroke_settings/stroke-8df5c0b7e5e4/entry_profile.json": "baba6971b41739647f25f6f50115f264c2cf5dc4b8396c4179ec7aa40f243931",
+    "stroke_settings/stroke-4ffd2d2876a2/entry_profile.json": "82358f32a34e64e05ee04eafa8835a3269f534ac558dcae68ac3b0905fac9e66",
+    "stroke_settings/stroke-b4de85c28642/entry_profile.json": "31ef71029a98d3be42ae6dead0405dc1e1460af370123db4dac0e3a505a14087"
+  },
+  "editor_state_equivalent_previous_export": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-30/14-56-42__b4ebdc"
+}

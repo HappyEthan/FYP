@@ -1,0 +1,47 @@
+{
+  "hardware_executed": false,
+  "ink_quality_verified": false,
+  "stroke_id": "stroke-4ffd2d2876a2",
+  "stroke_name": "笔画2",
+  "workspace_stroke_count": 2,
+  "execution_scope": "all_strokes_in_order",
+  "execution_order": [
+    {
+      "stroke_id": "stroke-1",
+      "stroke_name": "笔画1",
+      "point_range": [
+        0,
+        10
+      ]
+    },
+    {
+      "stroke_id": "stroke-4ffd2d2876a2",
+      "stroke_name": "笔画2",
+      "point_range": [
+        11,
+        18
+      ]
+    }
+  ],
+  "transfer_z_mm": 130.0,
+  "test_node_range": [
+    0,
+    7
+  ],
+  "hidden_nodes": [],
+  "low_response_trial": false,
+  "retiming_factor": 1.0,
+  "writing_duration_s": 25.42,
+  "full_duration_s": 63.5,
+  "limits": {
+    "XY speed": 79.97551296793657,
+    "Z speed": 59.997440049151805,
+    "step": 1.5995102593587314,
+    "acceleration": 377.10572747182977,
+    "angular speed": 39.914716828264226,
+    "angular acceleration": 58.51049503093363
+  },
+  "auto_speed_adaptation": true,
+  "local_speed_adapted": true,
+  "local_speed_iterations": 18
+}

@@ -1,0 +1,45 @@
+{
+  "change": "No inherited-curve rebound between explicit segments",
+  "comparison": [
+    {
+      "segment": 18,
+      "old_start_mid_end_uT": [
+        129.9981,
+        69.0,
+        131.3532
+      ],
+      "new_start_mid_end_uT": [
+        129.9981,
+        69.0,
+        69.0
+      ]
+    },
+    {
+      "segment": 19,
+      "old_start_mid_end_uT": [
+        131.3532,
+        69.0,
+        139.9999
+      ],
+      "new_start_mid_end_uT": [
+        69.0,
+        69.0,
+        69.0
+      ]
+    },
+    {
+      "segment": 20,
+      "old_start_mid_end_uT": [
+        139.9999,
+        69.0,
+        100.0
+      ],
+      "new_start_mid_end_uT": [
+        69.0,
+        69.0,
+        69.0
+      ]
+    }
+  ],
+  "hardware_executed": false
+}

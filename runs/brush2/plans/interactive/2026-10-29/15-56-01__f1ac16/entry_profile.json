@@ -1,0 +1,97 @@
+{
+  "mode": "directional_character",
+  "assume_pose_invariant": true,
+  "entry_contact_z_mm": 37.0,
+  "slow_below_z_mm": 50.0,
+  "transfer_z_mm": 130.0,
+  "entry_tilt_deg": 30.0,
+  "air_rotate_s": 1.5,
+  "rotate_s": 3.0,
+  "load_s": 3.0,
+  "transfer_speed_mm_s": 80.0,
+  "fast_z_speed_mm_s": 60.0,
+  "slow_z_speed_mm_s": 15.0,
+  "transit_accel_mm_s2": 100.0,
+  "angular_speed_deg_s": 40.0,
+  "angular_accel_deg_s2": 80.0,
+  "writing_tilt_deg": 15.0,
+  "entry_reverse_mm": 5.0,
+  "stroke_profiles": [
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 5.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.03907539680529148,
+          0.07885297894398362,
+          0.1273608139715188,
+          0.15818254391698847,
+          0.2282854759192306,
+          0.2890387855853891,
+          0.6825709019016027,
+          0.748468085522663,
+          0.8120702092659765,
+          1.0
+        ],
+        "values_uT": [
+          null,
+          165.0,
+          null,
+          175.0,
+          200.0,
+          200.0,
+          200.0,
+          180.0,
+          190.0,
+          53.0
+        ]
+      },
+      "node_angles": true
+    },
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 0.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.04614120708404598,
+          0.11032871115487662,
+          0.25258329796445017,
+          0.30264950097872256,
+          0.7376440939019431,
+          0.8970526893239206,
+          1.0
+        ],
+        "values_uT": [
+          120.0,
+          100.0,
+          100.0,
+          100.0,
+          150.0,
+          100.0,
+          53.0
+        ]
+      },
+      "node_angles": true
+    },
+    {
+      "writing_tilt_deg": 15.0,
+      "entry_reverse_mm": 0.0,
+      "segment_magnetic_targets": {
+        "nodes_s": [
+          0.0,
+          0.05610881321110588,
+          0.601506810944183,
+          1.0
+        ],
+        "values_uT": [
+          150.0,
+          120.0,
+          100.0
+        ]
+      },
+      "node_angles": true
+    }
+  ]
+}

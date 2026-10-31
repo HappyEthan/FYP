@@ -1,0 +1,4 @@
+{"event":"baseline_started","phase":"baseline","host_ns":26184201196325}
+{"event":"baseline_fixed","phase":"baseline","host_ns":26186207312507,"baseline_id":0,"effective_visit":0}
+{"event":"run_started","phase":"run","host_ns":26186309643358}
+{"event":"lift_completed","phase":"lift","host_ns":26228226153876}

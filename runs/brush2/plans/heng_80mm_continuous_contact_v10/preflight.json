@@ -1,0 +1,30 @@
+{
+  "source_sha256": "9a8564d1afc952fb67cfae56bf23acc0f31b3c3ecc21636c709cc6971306a709",
+  "hardware_executed": false,
+  "early_lift": false,
+  "writing_feedback": "pi throughout measure_00; normal final lift only",
+  "actual_contact_verified": false,
+  "ink_shape_prediction_verified": false,
+  "smoothing_mm": 0.8,
+  "max_tail_smoothing_offset_mm": 0.6321661752121828,
+  "writing_duration_s": 32.3,
+  "full_duration_s": 53.96,
+  "tail_last20_s": 9.716265841019084,
+  "tail_last10_s": 5.571854831602575,
+  "magnetic_range_uT": [
+    100.0,
+    185.0
+  ],
+  "nominal_writing_z_range_mm": [
+    28.694020208606002,
+    33.245521672601456
+  ],
+  "limits": {
+    "XY speed": 79.91642464931405,
+    "Z speed": 59.997440049151805,
+    "step": 1.5983284929862809,
+    "acceleration": 169.8145483626269,
+    "angular speed": 19.976905417856155,
+    "angular acceleration": 38.907495547801695
+  }
+}

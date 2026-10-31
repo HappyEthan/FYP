@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=毛笔路径编辑器
+Comment=编辑毛笔路径、磁目标、速度和笔杆角度，恢复上次草稿
+Exec=/home/serein/FYP/.venv/bin/python /home/serein/FYP/scripts/launch_brush_path_editor.py
+Path=/home/serein/FYP
+Icon=applications-graphics
+Terminal=false
+StartupNotify=false
+Categories=Graphics;

@@ -1,0 +1,14 @@
+{
+  "hardware_executed": false,
+  "requested_speed_multiplier": 2.0,
+  "previous_writing_duration_s": 24.42,
+  "new_writing_duration_s": 16.38,
+  "effective_speedup": 1.490842490842491,
+  "retiming_factor": 1.0,
+  "planned_max_writing_speed_mm_s": 10.000000000001918,
+  "max_full_acceleration_mm_s2": 160.97363446666884,
+  "acceleration_limit_mm_s2": 200.0,
+  "feedforward_speed_limit_mm_s": 10.0,
+  "full_double_not_achieved_due_to_existing_limits": true,
+  "geometry_and_magnetic_targets_unchanged": true
+}

@@ -1,0 +1,215 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482-user-low-75dac4e0_cyg",
+  "control": {
+    "anti_windup": "conditional",
+    "enabled": true,
+    "integral_limit_mm": 0.2,
+    "ki": 0.1,
+    "kp": 1.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "measurement_phases": [
+      "measure_00",
+      "measure_01"
+    ],
+    "mode": "pi",
+    "phase": "per_stroke",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "air_rotate_s": 1.5,
+    "angular_accel_deg_s2": 80.0,
+    "angular_speed_deg_s": 40.0,
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "directional_character",
+    "rotate_s": 3.0,
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "stroke_profiles": [
+      {
+        "entry_reverse_mm": 5.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.04009747913787009,
+            0.08091551044050124,
+            0.13069214899216502,
+            0.16232007281440458,
+            0.23425666420642796,
+            0.661810096174797,
+            0.7294309308052479,
+            0.8074581460753535,
+            1.0
+          ],
+          "values_uT": [
+            null,
+            180.0,
+            null,
+            180.0,
+            220.0,
+            190.0,
+            180.0,
+            190.0,
+            63.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      },
+      {
+        "entry_reverse_mm": 0.0,
+        "node_angles": true,
+        "segment_magnetic_targets": {
+          "nodes_s": [
+            0.0,
+            0.07559521654663481,
+            0.20567527498052512,
+            0.29310645120240647,
+            0.35654537711072126,
+            0.8664997625587704,
+            1.0
+          ],
+          "values_uT": [
+            120.0,
+            100.0,
+            100.0,
+            100.0,
+            150.0,
+            63.0
+          ]
+        },
+        "writing_tilt_deg": 15.0
+      }
+    ],
+    "transfer_speed_mm_s": 80.0,
+    "transfer_z_mm": 130.0,
+    "transit_accel_mm_s2": 100.0,
+    "writing_tilt_deg": 15.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "884fab61fea4067c5ac17bcc6c94d59b0c763aa34586a30d399f9d5af68af541"
+    },
+    "feedforward.json": {
+      "sha256": "523343dcdffdbecdc88b20577ddd3905656ac05a88891d8ea852fd67f7c824e0"
+    },
+    "settings.json": {
+      "sha256": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5"
+    },
+    "strokeplan.npz": {
+      "sha256": "22122c9a01e4828ce474697d3e2b638553fd48c5baeb1d7da52c9a7255b52bbe"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "assume_pose_invariant": true,
+    "axis": "xy",
+    "dynamic_orientation": true,
+    "kind": "strokeplan",
+    "stroke_count": 2
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "installation_id": "brush2-z-ladder",
+      "run_label": "edited_heng_14-54-17__8b709b_pi"
+    },
+    "deadline_policy": null,
+    "finished_at": "2026-10-29T14:54:20.490620+08:00",
+    "initial_pose_m_rad": [
+      -0.369996,
+      0.499999,
+      0.129988,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      -1.7453292519943296e-05
+    ],
+    "last_pose_m_rad": [
+      -0.369995,
+      0.499996,
+      0.12999100000000002,
+      -3.490658503988659e-05,
+      0.2617993877991494,
+      -1.7453292519943296e-05
+    ],
+    "motion_metrics": {
+      "XY speed": 0.2061552812807526,
+      "Z speed": 0.3000000000003,
+      "acceleration": 15.000000000015001,
+      "angular acceleration": 3.5355339059327378,
+      "angular speed": 0.07071067811865477,
+      "step": 0.0060000000000060005
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 0.6799999999999999,
+    "record_path": "/home/serein/FYP/runs/brush2/2026-10-29/positioning/strokeplan_927abcca889140e988d4364d1b4b01d9.json",
+    "route_m_rad": [
+      [
+        -0.369996,
+        0.499999,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        -1.7453292519943296e-05
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        -1.7453292519943296e-05
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 4030,
+      "host_ns": 3564907686703,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-29T14:54:19.694960+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 34,
+      "max_command_duration_s": 0.002865376,
+      "max_lateness_s": 0.001998429
+    }
+  },
+  "run_label": "edited_heng_14-54-17__8b709b_pi",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

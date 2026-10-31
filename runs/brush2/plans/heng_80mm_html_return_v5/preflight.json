@@ -1,0 +1,32 @@
+{
+  "retiming_factor": 0.6,
+  "writing_duration_s": 21.06,
+  "full_duration_s": 42.84,
+  "leftward_return_mm": 6.0852173651305685,
+  "limits": {
+    "XY speed": 79.91642464931405,
+    "Z speed": 59.997440049151805,
+    "step": 1.5983284929862809,
+    "acceleration": 148.93984558650536,
+    "angular speed": 19.988542221933063,
+    "angular acceleration": 35.77979661565479
+  },
+  "geometry_source": "runs/brush2/plans/template_four_strokes_100_240_zhong180_v3/heng/recipe.json",
+  "geometry_change": "uniform scaling only; all source vertices retained",
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  }
+}

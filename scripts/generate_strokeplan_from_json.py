@@ -117,7 +117,7 @@ def build_plan(recipe):
     if 'speed_knots_s_mm_s' in timing:
         timing_parameters['speed_knots_s_mm_s'] = _knots(timing['speed_knots_s_mm_s'], 'speed knots', positive=True)
     orientation = recipe['orientation']
-    _fields(orientation, ('kind', 'tilt_deg', 'smoothing_mm'), label='orientation')
+    _fields(orientation, ('kind', 'tilt_deg', 'smoothing_mm'), ('heading_knots_s_deg','node_angles_s_deg'), label='orientation')
     if orientation['kind'] != 'tangent_tilt':
         raise ValueError('orientation kind must be tangent_tilt')
     tilt = _number(orientation['tilt_deg'], 'tilt_deg', positive=True)
@@ -133,7 +133,9 @@ def build_plan(recipe):
     # g on final sampled arclength so the editable knots keep their exact meaning.
     stroke = directional_stroke(Stroke(s, xy, arc / (timing_parameters['speed_mm_s'] / 1000.),
                                       np.zeros(len(s))),
-                                **timing_parameters, tilt_deg=tilt, smoothing_mm=smoothing)
+                                **timing_parameters, tilt_deg=tilt, smoothing_mm=smoothing,
+                                heading_knots_s_deg=orientation.get('heading_knots_s_deg'),
+                                node_angles_s_deg=orientation.get('node_angles_s_deg'))
     stroke.g_target = (contact_profile(stroke.s, knots) if target['interpolation'] == 'quintic'
                        else np.interp(stroke.s, knots[:, 0], knots[:, 1]))
     recipe_hash = hashlib.sha256(json.dumps(recipe, ensure_ascii=False, sort_keys=True,

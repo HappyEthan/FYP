@@ -1,0 +1,44 @@
+{
+  "mode": "directional_character",
+  "assume_pose_invariant": true,
+  "entry_contact_z_mm": 36.0,
+  "slow_below_z_mm": 50.0,
+  "transfer_z_mm": 130.0,
+  "entry_tilt_deg": 30.0,
+  "writing_tilt_deg": 15.0,
+  "entry_reverse_mm": 5.0,
+  "air_rotate_s": 1.5,
+  "rotate_s": 3.0,
+  "load_s": 3.0,
+  "transfer_speed_mm_s": 80.0,
+  "fast_z_speed_mm_s": 60.0,
+  "slow_z_speed_mm_s": 15.0,
+  "transit_accel_mm_s2": 100.0,
+  "angular_speed_deg_s": 40.0,
+  "angular_accel_deg_s2": 80.0,
+  "segment_magnetic_targets": {
+    "nodes_s": [
+      0.0,
+      0.03729958246059482,
+      0.07526943885023776,
+      0.11888425733500055,
+      0.1483052677832823,
+      0.2152223129505117,
+      0.7066131419723045,
+      0.721397524927062,
+      0.818922217127,
+      1.0
+    ],
+    "values_uT": [
+      null,
+      180.0,
+      null,
+      180.0,
+      220.0,
+      200.0,
+      180.0,
+      180.0,
+      69.0
+    ]
+  }
+}

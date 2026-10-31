@@ -1,0 +1,92 @@
+{
+  "status": "completed",
+  "started_at": "2026-10-29T17:37:44.583857+08:00",
+  "initial_pose_m_rad": [
+    -0.216535,
+    0.530894,
+    0.129531,
+    0.13507103081184116,
+    -0.10260790672474662,
+    -0.006003932626860493
+  ],
+  "route_m_rad": [
+    [
+      -0.216535,
+      0.530894,
+      0.13,
+      0.13507103081184116,
+      -0.10260790672474662,
+      -0.006003932626860493
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.13507103081184116,
+      -0.10260790672474662,
+      -0.006003932626860493
+    ],
+    [
+      -0.37,
+      0.5,
+      0.13,
+      0.0,
+      0.2617993877991494,
+      0.0
+    ]
+  ],
+  "completed_waypoints": 3,
+  "context": {
+    "run_label": "edited_heng_17-37-41__5f4f63_pi",
+    "installation_id": "brush2-z-ladder"
+  },
+  "timing": {
+    "commands_sent": 328,
+    "max_lateness_s": 0.037572284,
+    "max_command_duration_s": 0.005629871
+  },
+  "deadline_policy": null,
+  "motion_metrics": {
+    "XY speed": 79.75445972764696,
+    "Z speed": 4.845356398922029,
+    "step": 1.595089194552939,
+    "acceleration": 80.41838134437151,
+    "angular speed": 19.882529768379406,
+    "angular acceleration": 29.145557119204238
+  },
+  "planned_duration_s": 6.5600000000000005,
+  "motion_profile": {
+    "mode": "directional_character",
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "slow_below_z_mm": 50.0,
+    "transfer_z_mm": 130.0,
+    "entry_tilt_deg": 30.0,
+    "writing_tilt_deg": 15.0,
+    "entry_reverse_mm": 0.0,
+    "air_rotate_s": 1.5,
+    "rotate_s": 3.0,
+    "load_s": 3.0,
+    "transfer_speed_mm_s": 80.0,
+    "fast_z_speed_mm_s": 60.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transit_accel_mm_s2": 100.0,
+    "angular_speed_deg_s": 20.0,
+    "angular_accel_deg_s2": 40.0
+  },
+  "last_pose_m_rad": [
+    -0.370036,
+    0.499981,
+    0.129947,
+    -5.235987755982989e-05,
+    0.26172957462906965,
+    8.726646259971648e-05
+  ],
+  "finished_at": "2026-10-29T17:37:51.322403+08:00",
+  "record_path": "/home/serein/FYP/runs/brush2/2026-10-29/positioning/strokeplan_b41cea0f7ad54c9bba24b3cc4bb7de20.json",
+  "sensor_buffer_reset": {
+    "discarded_bytes": 4013,
+    "host_ns": 13375739553308,
+    "resynchronization": "skip through next newline"
+  }
+}

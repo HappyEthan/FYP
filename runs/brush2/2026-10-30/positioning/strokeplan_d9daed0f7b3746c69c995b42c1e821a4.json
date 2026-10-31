@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "started_at": "2026-10-30T13:23:01.496668+08:00",
+  "initial_pose_m_rad": null,
+  "route_m_rad": [],
+  "completed_waypoints": 0,
+  "context": {
+    "run_label": "edited_heng_13-22-58__e2c5a8_pi",
+    "installation_id": "brush2-z-ladder"
+  },
+  "timing": {
+    "commands_sent": 0,
+    "max_lateness_s": 0.0,
+    "max_command_duration_s": 0.0
+  },
+  "deadline_policy": null,
+  "error": "workspace limit during automatic positioning",
+  "error_type": "RuntimeError",
+  "finished_at": "2026-10-30T13:23:01.501081+08:00"
+}

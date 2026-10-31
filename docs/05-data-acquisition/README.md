@@ -30,6 +30,8 @@ status: active
 
 ## 主题文件
 
+手持毛笔采集使用 `scripts/record_manual_brush.py`，按 `runs/<brush>/manual/<日期>/<时间>__<批次>/` 保存，独立于机器人试写。每批 `raw/` 保存未显示平滑的三轴 ΔB CSV 与基线 JSON，`media/` 保存照片和视频，`analysis/` 保存派生结果；`records.csv` 关联每条录制及媒体，`session.json` 记录纸张、蘸水、姿态等条件。每次停止录制后自动刷新索引，保留人工补填的动作、媒体路径和备注。手采不自动提供 XY、TCP 或视频同步信息。详见各批次 README；未录制的空批次不算实测数据。
+
 | 文档 | 内容 |
 |---|---|
 | [validation.md](validation.md) | 后续短轨迹采集与前馈验证方案。 |

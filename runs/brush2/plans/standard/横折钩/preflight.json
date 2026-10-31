@@ -1,0 +1,39 @@
+{
+  "hardware_executed": false,
+  "ink_quality_verified": false,
+  "stroke_id": "stroke-1",
+  "stroke_name": "横折钩",
+  "workspace_stroke_count": 1,
+  "execution_scope": "all_strokes_in_order",
+  "execution_order": [
+    {
+      "stroke_id": "stroke-1",
+      "stroke_name": "横折钩",
+      "point_range": [
+        0,
+        15
+      ]
+    }
+  ],
+  "transfer_z_mm": 130.0,
+  "test_node_range": [
+    0,
+    15
+  ],
+  "hidden_nodes": [],
+  "low_response_trial": false,
+  "retiming_factor": 1.0,
+  "writing_duration_s": 16.54,
+  "full_duration_s": 36.4,
+  "limits": {
+    "XY speed": 79.87959670848116,
+    "Z speed": 59.997440049151805,
+    "step": 1.5975919341696232,
+    "acceleration": 373.0162078860473,
+    "angular speed": 21.565099840498057,
+    "angular acceleration": 55.13817884733339
+  },
+  "auto_speed_adaptation": true,
+  "local_speed_adapted": true,
+  "local_speed_iterations": 17
+}

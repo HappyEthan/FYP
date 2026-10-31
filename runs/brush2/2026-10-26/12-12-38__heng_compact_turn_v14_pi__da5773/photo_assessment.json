@@ -1,0 +1,35 @@
+{
+  "operator_feedback": "尾端倒数第二段拉得特别长，最后一段没有明显回钩",
+  "quantitative_image_registration_done": false,
+  "stage_audit": [
+    {
+      "stage": "pre_dot_extension",
+      "command_length_mm": 7.28954485915866,
+      "duration_s": 2.215103297808337,
+      "actual_sampled_endpoint_delta_mm": [
+        6.811,
+        0.858
+      ]
+    },
+    {
+      "stage": "down_right_dot",
+      "command_length_mm": 1.65914935997769,
+      "duration_s": 1.1054042354183409,
+      "actual_sampled_endpoint_delta_mm": [
+        0.98,
+        -0.879
+      ]
+    },
+    {
+      "stage": "inward_return",
+      "command_length_mm": 1.5,
+      "duration_s": 1.2747132085535569,
+      "actual_sampled_endpoint_delta_mm": [
+        -1.261,
+        0.003
+      ]
+    }
+  ],
+  "actual_endpoint_method": "10 Hz TCP samples inside each command-defined stage; these do not coincide exactly with stage boundaries and are not precise full-stage tracking errors",
+  "interpretation": "The pre-dot extension is much longer than the dot and return. TCP samples show both downward and inward motions; ink return contour remains unresolved. Cause is not established by photo alone."
+}

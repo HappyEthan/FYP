@@ -1,0 +1,37 @@
+{
+  "name": "右点标准方案",
+  "designation": "standard",
+  "designation_basis": "用户指定对应笔画为标准方案",
+  "created_at": "2026-10-30T15:11:54.471500+08:00",
+  "source_final": "/home/serein/FYP/runs/brush2/plans/final/永字最终方案",
+  "source_draft": "/home/serein/FYP/outputs/brush_path_editor/draft_v3.json",
+  "source_stroke_name": "新增首笔5",
+  "source_stroke_id": "stroke-b4de85c28642",
+  "source_point_range": [
+    0,
+    3
+  ],
+  "local_point_range": [
+    0,
+    3
+  ],
+  "control_points": 4,
+  "coordinate_policy": "preserve_source_geometry_and_paper_placement_without_recentering",
+  "target_samples_preserved_exactly": true,
+  "hardware_executed_for_this_archive": false,
+  "offline_preflight_passed": true,
+  "artifact_sha256": {
+    "preflight.json": "346940e987fa12007d540dbb87325819ba3257d2ff51a6465755d81670bd04f4",
+    "pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee",
+    "settings.json": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5",
+    "entry_profile.json": "31ef71029a98d3be42ae6dead0405dc1e1460af370123db4dac0e3a505a14087",
+    "feedforward.json": "f3d8776d76b4f7112bc69e4552888c712b1cd5e480978470a0e98a011f8a7a79",
+    "editor_state.json": "ae201b2db06ca6f1e3bc479d4e83362a91d0d85ef0436e6509d4d7c36554013f",
+    "segment_target_audit.json": "a4433f0ccf63267d9bc363b97c3e460127744a44c19f5576a87b5ff9aa5f71c3",
+    "speed_adaptation.json": "6714fed21bfd7a0d0ce0af7dcfc0b2a03ad60b90693dd7c701dd9bde6db2d016",
+    "strokeplan.npz": "1746b20a4ee3f89502eea81230dd05692b8073abc1849b2d30c80f11a57b6c22",
+    "README.md": "b9c56e43d3d30c7030cd0e6cae65b3de8e6b74a0db307ae34c3e18e287f781d3",
+    "recipe.json": "0e1f65552f4a0565dc6dfe628df6f4851fc476db66020c49651381470a3f4955",
+    "source_stroke_state.json": "1ac8d1cbcfd7287bca8ad2e87d37235adfc5e5415d78dfb67e33b0cca9c0891d"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "writing_samples": 1180,
+  "magnetic_rmse_uT": 26.99977764734431,
+  "magnetic_mae_uT": 12.911100977673454,
+  "fraction_within_20uT": 0.885593220338983,
+  "feedback_amplitude_limit_fraction": 0.06271186440677966,
+  "final_target_uT": 100.0,
+  "final_measured_uT": 107.85038226229685,
+  "ink_quality_assessed": false
+}

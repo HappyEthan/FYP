@@ -1,0 +1,40 @@
+{
+  "hardware_executed": false,
+  "early_lift": false,
+  "ink_quality_verified": false,
+  "extension_length_mm": 2.5513407007053814,
+  "previous_extension_length_mm": 7.289544859158653,
+  "stage_duration_s": {
+    "extension": 0.9012443127640211,
+    "dot": 1.1044875100369573,
+    "return": 1.2758574221267018
+  },
+  "writing_duration_s": 23.66,
+  "full_duration_s": 45.32,
+  "tail_local_points_mm": [
+    [
+      31.76693246813994,
+      4.255424865226171
+    ],
+    [
+      34.298506104290965,
+      4.568526162397012
+    ],
+    [
+      35.19850610429097,
+      3.3685261623970124
+    ],
+    [
+      33.69850610429097,
+      3.3685261623970124
+    ]
+  ],
+  "limits": {
+    "XY speed": 79.83457437974218,
+    "Z speed": 59.997440049151805,
+    "step": 1.5966914875948435,
+    "acceleration": 142.96612312067725,
+    "angular speed": 19.97690715237294,
+    "angular acceleration": 38.9074989259926
+  }
+}

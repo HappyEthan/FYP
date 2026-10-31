@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "command_target_max_distance_mm": 8.038873388460929e-14,
+  "command_leftward_return_mm": 6.085217365130575,
+  "actual_tcp_leftward_return_mm": 5.896999999999991,
+  "actual_xy_geometric_distance_p95_mm": 0.077798894688312,
+  "magnetic_rmse_uT": 33.25398911681344,
+  "magnetic_mae_uT": 22.319774136346204,
+  "fraction_within_20uT": 0.6537001897533207,
+  "ink_quality_assessed": false
+}

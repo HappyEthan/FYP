@@ -1,0 +1,181 @@
+{
+  "baseline_quality_enforced": true,
+  "calibration_id": "slow-sweep-nonlinear-3702a4cae0d64482-user-low-75dac4e0",
+  "control": {
+    "anti_windup": "conditional",
+    "enabled": true,
+    "integral_limit_mm": 0.2,
+    "ki": 0.1,
+    "kp": 1.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "measurement_phases": [
+      "measure_00"
+    ],
+    "mode": "pi",
+    "phase": "per_stroke",
+    "taper_ticks": 50
+  },
+  "entry_profile": {
+    "air_rotate_s": 1.5,
+    "angular_accel_deg_s2": 40.0,
+    "angular_speed_deg_s": 20.0,
+    "assume_pose_invariant": true,
+    "entry_contact_z_mm": 36.0,
+    "entry_reverse_mm": 5.0,
+    "entry_tilt_deg": 30.0,
+    "fast_z_speed_mm_s": 60.0,
+    "load_s": 3.0,
+    "mode": "directional_character",
+    "rotate_s": 3.0,
+    "segment_magnetic_targets": {
+      "nodes_s": [
+        0.0,
+        0.041232935064467596,
+        0.06300635152346627,
+        0.08272006370778542,
+        0.7325020156138388,
+        0.7579840273572298,
+        0.7836935213700329,
+        0.8549209637192243,
+        1.0
+      ],
+      "values_uT": [
+        null,
+        225.0,
+        200.0,
+        null,
+        null,
+        null,
+        225.0,
+        180.0
+      ]
+    },
+    "slow_below_z_mm": 50.0,
+    "slow_z_speed_mm_s": 15.0,
+    "transfer_speed_mm_s": 80.0,
+    "transfer_z_mm": 130.0,
+    "transit_accel_mm_s2": 100.0,
+    "writing_tilt_deg": 15.0
+  },
+  "inputs": {
+    "entry_profile.json": {
+      "sha256": "e7852aeac10bf4e821470b97777d7aaa7640e37591cae32909563b4b35779885"
+    },
+    "feedforward.json": {
+      "sha256": "51d1fc7757a33035822111beee84933f63139f8621d32e89c1f7eae438472a1a"
+    },
+    "settings.json": {
+      "sha256": "52b7a0e0cc357519f18514dcef8f5388823c22dadcc335945a200eada3568c65"
+    },
+    "strokeplan.npz": {
+      "sha256": "063fdb2b8d15f72777f1bf3ccd0ee026fb401e33eb162ff8b5e120b0936d463f"
+    }
+  },
+  "name": "strokeplan",
+  "path": {
+    "assume_pose_invariant": true,
+    "axis": "xy",
+    "dynamic_orientation": true,
+    "kind": "strokeplan",
+    "stroke_count": 1
+  },
+  "positioning": {
+    "completed_waypoints": 3,
+    "context": {
+      "installation_id": "brush2-z-ladder",
+      "run_label": "edited_heng_20-49-55__c1be9b_pi"
+    },
+    "deadline_policy": null,
+    "finished_at": "2026-10-27T20:49:57.946678+08:00",
+    "initial_pose_m_rad": [
+      -0.369998,
+      0.500001,
+      0.129996,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      -0.0
+    ],
+    "last_pose_m_rad": [
+      -0.369997,
+      0.499999,
+      0.129997,
+      -1.7453292519943296e-05,
+      0.2617993877991494,
+      -0.0
+    ],
+    "motion_metrics": {
+      "XY speed": 0.11180339887572194,
+      "Z speed": 0.20000000000020002,
+      "acceleration": 10.000000000010001,
+      "angular acceleration": 2.5,
+      "angular speed": 0.05,
+      "step": 0.004000000000004
+    },
+    "motion_profile": {
+      "air_rotate_s": 1.5,
+      "angular_accel_deg_s2": 40.0,
+      "angular_speed_deg_s": 20.0,
+      "assume_pose_invariant": true,
+      "entry_contact_z_mm": 36.0,
+      "entry_reverse_mm": 0.0,
+      "entry_tilt_deg": 30.0,
+      "fast_z_speed_mm_s": 60.0,
+      "load_s": 3.0,
+      "mode": "directional_character",
+      "rotate_s": 3.0,
+      "slow_below_z_mm": 50.0,
+      "slow_z_speed_mm_s": 15.0,
+      "transfer_speed_mm_s": 80.0,
+      "transfer_z_mm": 130.0,
+      "transit_accel_mm_s2": 100.0,
+      "writing_tilt_deg": 15.0
+    },
+    "planned_duration_s": 0.66,
+    "record_path": "/home/serein/FYP/runs/brush2/2026-10-27/positioning/strokeplan_1b8eea6f28b74e58a087e9b2cfbcaf55.json",
+    "route_m_rad": [
+      [
+        -0.369998,
+        0.500001,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        -0.0
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        -1.7453292519943296e-05,
+        0.2617993877991494,
+        -0.0
+      ],
+      [
+        -0.37,
+        0.5,
+        0.13,
+        0.0,
+        0.2617993877991494,
+        0.0
+      ]
+    ],
+    "sensor_buffer_reset": {
+      "discarded_bytes": 4006,
+      "host_ns": 24492488742914,
+      "resynchronization": "skip through next newline"
+    },
+    "started_at": "2026-10-27T20:49:57.168012+08:00",
+    "status": "completed",
+    "timing": {
+      "commands_sent": 33,
+      "max_command_duration_s": 0.004968153,
+      "max_lateness_s": 0.001976225
+    }
+  },
+  "run_label": "edited_heng_20-49-55__c1be9b_pi",
+  "target_format_version": 3,
+  "timeline_policy": "sequential_20ms",
+  "version": 1,
+  "wetting": "manual_before_run"
+}

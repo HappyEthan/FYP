@@ -1,0 +1,23 @@
+[
+  {
+    "segment": 18,
+    "requested_uT": 69.0,
+    "samples": 319,
+    "actual_reference_min_uT": 69.0,
+    "actual_reference_max_uT": 69.0
+  },
+  {
+    "segment": 19,
+    "requested_uT": 69.0,
+    "samples": 562,
+    "actual_reference_min_uT": 69.0,
+    "actual_reference_max_uT": 69.0
+  },
+  {
+    "segment": 20,
+    "requested_uT": 69.0,
+    "samples": 1106,
+    "actual_reference_min_uT": 69.0,
+    "actual_reference_max_uT": 69.0
+  }
+]

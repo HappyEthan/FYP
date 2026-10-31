@@ -1,0 +1,26 @@
+{
+  "photo_context": "Photo supplied following identification of this latest run; association inferred from conversation sequence.",
+  "observation": "Tail shows a downward bulge and shiny pooled liquid; dark/wet appearance changes along stroke. Exact area and width not measured.",
+  "quantitative_image_registration_done": false,
+  "tail_stages": [
+    {
+      "segment": 18,
+      "length_mm": 1.9701845374988096,
+      "duration_s": 1.308811047948339,
+      "angle_deg": -48.57079644523181
+    },
+    {
+      "segment": 19,
+      "length_mm": 2.5191496637578865,
+      "duration_s": 1.6891886791596278,
+      "angle_deg": -70.32326348103959
+    },
+    {
+      "segment": 20,
+      "length_mm": 5.742706867075995,
+      "duration_s": 4.110010426936633,
+      "angle_deg": 160.91931656259436
+    }
+  ],
+  "causal_conclusion": "Not established; long contact sweep/return is a candidate, while water loading and brush state remain confounded."
+}

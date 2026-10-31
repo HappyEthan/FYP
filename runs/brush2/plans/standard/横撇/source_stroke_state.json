@@ -1,0 +1,340 @@
+{
+  "node_enabled": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "endpoint_speed_mode": true,
+  "settings_override": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-26/18-05-42__a584d3/settings_cyg.json",
+  "entry_profile_override": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-26/18-05-42__a584d3/entry_profile_cyg.json",
+  "node_speeds_mm_s": [
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599,
+    13.7988886868599
+  ],
+  "segment_speeds_mm_s": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "speed_positions": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "node_angles_deg": [
+    [
+      15.000000000000018,
+      -45.0
+    ],
+    [
+      15.000000000000018,
+      -45.0
+    ],
+    [
+      15.000000000000018,
+      -45.0
+    ],
+    [
+      15.000000000000018,
+      -45.0
+    ],
+    [
+      15.000000000000018,
+      -120.0
+    ],
+    [
+      15.000000000000018,
+      -120.0
+    ],
+    [
+      15.000000000000005,
+      -133.97315325922276
+    ],
+    [
+      15.000000000000004,
+      -147.86123391411462
+    ],
+    [
+      15.000000000000018,
+      -150.79591347664623
+    ],
+    [
+      15.000000000000018,
+      null
+    ]
+  ],
+  "schema_version": 1,
+  "source_folder": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-26/18-05-42__a584d3",
+  "base_recipe": {
+    "schema_version": 1,
+    "id": "heng",
+    "name": "交互编辑：交互编辑：交互编辑：横画v16：压低后半段上扬，保留顿笔内收",
+    "description": "User-edited XY geometry; magnetic levels and speed requests retained at corresponding source positions.",
+    "reference": "outputs/stroke_templates/strokes/sohu_heng_20261017_final/templates/heng_long/template.json",
+    "placement": {
+      "origin_mm": [
+        140.0,
+        0.0
+      ],
+      "rotation_deg": 0,
+      "scale": 1.0
+    },
+    "path": {
+      "kind": "rounded_polyline",
+      "points_mm": [
+        [
+          -52.01090065226435,
+          -3.7017669921367897
+        ],
+        [
+          -47.34462988597128,
+          -4.650310781047978
+        ],
+        [
+          -41.366325829726016,
+          -1.797597599667049
+        ],
+        [
+          -27.587563602379326,
+          3.2681313688324147
+        ],
+        [
+          -31.125274126987836,
+          -0.4975002985693715
+        ],
+        [
+          -60.25055344066996,
+          -34.65743332863598
+        ],
+        [
+          -66.82135098227685,
+          -40.33639578804775
+        ],
+        [
+          -74.11558885887003,
+          -43.84503724250067
+        ],
+        [
+          -79.05956020008531,
+          -45.70867503285457
+        ],
+        [
+          -84.0035315413006,
+          -47.57231282320847
+        ]
+      ],
+      "corner_radius_mm": 0.0
+    },
+    "magnetic_target": {
+      "interpolation": "linear",
+      "knots_s_uT": [
+        [
+          0.0,
+          63.0
+        ],
+        [
+          0.04602016980165844,
+          63.0
+        ],
+        [
+          0.11003929767370821,
+          63.0
+        ],
+        [
+          0.2519207232748367,
+          63.0
+        ],
+        [
+          0.301855592985642,
+          63.0
+        ],
+        [
+          0.7357091112229577,
+          63.0
+        ],
+        [
+          1.0,
+          63.0
+        ]
+      ]
+    },
+    "timing": {
+      "speed_mm_s": 20.0,
+      "accel_mm_s2": 400.0,
+      "angular_speed_deg_s": 40.0,
+      "angular_accel_deg_s2": 80.0,
+      "speed_knots_s_mm_s": [
+        [
+          0.0,
+          13.7988886868599
+        ],
+        [
+          0.04602016980165844,
+          13.7988886868599
+        ],
+        [
+          0.11003929767370821,
+          13.7988886868599
+        ],
+        [
+          0.2519207232748367,
+          13.7988886868599
+        ],
+        [
+          0.301855592985642,
+          13.7988886868599
+        ],
+        [
+          0.7357091112229577,
+          13.7988886868599
+        ],
+        [
+          1.0,
+          13.7988886868599
+        ]
+      ]
+    },
+    "orientation": {
+      "kind": "tangent_tilt",
+      "tilt_deg": 15.0,
+      "smoothing_mm": 16.0
+    },
+    "filter_definition": {
+      "kind": "ema",
+      "alpha": 0.3
+    },
+    "notes": [
+      "XY edited in brush path editor; reference image/line is not measured ink.",
+      "Smooth magnetic curve supplies nominal Z feedforward only. Exact per-segment control references override it through entry_profile.segment_magnetic_targets, with no reference blending inside explicit segments. Writing Z offsets are stored separately.",
+      "Compiled timing and tangent-derived orientation may change with XY; existing limits still apply.",
+      "No early lift added; actual contact and ink shape require experimental verification."
+    ]
+  },
+  "indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "nodes_mm": [
+    [
+      -52.01090065226435,
+      -3.7017669921367897
+    ],
+    [
+      -47.34462988597128,
+      -4.650310781047978
+    ],
+    [
+      -41.366325829726016,
+      -1.797597599667049
+    ],
+    [
+      -27.587563602379326,
+      3.2681313688324147
+    ],
+    [
+      -31.125274126987836,
+      -0.4975002985693715
+    ],
+    [
+      -60.25055344066996,
+      -34.65743332863598
+    ],
+    [
+      -66.82135098227685,
+      -40.33639578804775
+    ],
+    [
+      -74.11558885887003,
+      -43.84503724250067
+    ],
+    [
+      -79.05956020008531,
+      -45.70867503285457
+    ],
+    [
+      -84.0035315413006,
+      -47.57231282320847
+    ]
+  ],
+  "magnetic_values_uT": [
+    63.0,
+    63.0,
+    63.0,
+    63.0,
+    63.0,
+    63.0,
+    63.0
+  ],
+  "lift_mm": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "segment_magnetic_uT": [
+    120.0,
+    100.0,
+    100.0,
+    100.0,
+    150.0,
+    100.0,
+    100.0,
+    80.0,
+    53.0
+  ],
+  "height_mode": "writing_z_offset",
+  "allow_low_response_trial": false,
+  "feedforward_override": "/home/serein/FYP/runs/brush2/plans/interactive/2026-10-26/18-05-42__a584d3/feedforward_cyg.json",
+  "stroke_id": "stroke-4ffd2d2876a2",
+  "stroke_name": "笔画2",
+  "rhythm_regions": [
+    {
+      "id": "c1817c3baa5d47bba062d30d02cef176",
+      "start": 0.0,
+      "end": 1.0,
+      "label": "行笔",
+      "ratio": 1.0
+    }
+  ]
+}

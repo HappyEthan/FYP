@@ -1,0 +1,37 @@
+{
+  "name": "横撇标准方案",
+  "designation": "standard",
+  "designation_basis": "用户指定对应笔画为标准方案",
+  "created_at": "2026-10-30T15:11:54.471500+08:00",
+  "source_final": "/home/serein/FYP/runs/brush2/plans/final/永字最终方案",
+  "source_draft": "/home/serein/FYP/outputs/brush_path_editor/draft_v3.json",
+  "source_stroke_name": "笔画2",
+  "source_stroke_id": "stroke-4ffd2d2876a2",
+  "source_point_range": [
+    20,
+    29
+  ],
+  "local_point_range": [
+    0,
+    9
+  ],
+  "control_points": 10,
+  "coordinate_policy": "preserve_source_geometry_and_paper_placement_without_recentering",
+  "target_samples_preserved_exactly": true,
+  "hardware_executed_for_this_archive": false,
+  "offline_preflight_passed": true,
+  "artifact_sha256": {
+    "preflight.json": "445c753bdfe00ac445f6638c4bb8a3360ed4306bc7e7209a36bf5e956ba23671",
+    "pi_profile.json": "1c1da7b715d3351d2dfd2f92a7cf53416a0ecb28e8099869957c8b18d44a7cee",
+    "settings.json": "ba0889500a669d26ac5d73b9f8b01d060031a027263aa7236be875b5faf7e3e5",
+    "entry_profile.json": "82358f32a34e64e05ee04eafa8835a3269f534ac558dcae68ac3b0905fac9e66",
+    "feedforward.json": "f3d8776d76b4f7112bc69e4552888c712b1cd5e480978470a0e98a011f8a7a79",
+    "editor_state.json": "a4f7fae6d66665d03a47cdc4b1ac35dd2ed45732b8419664c6cb7ef9ce953511",
+    "segment_target_audit.json": "db21b9971cd7ee920cccc6fedcee34cbcd78e9e506577c44dcfcdf2bb730f786",
+    "speed_adaptation.json": "fa8d4c997f7015c8ab8758a9d618bbad1ace99dd740b7148228c8981bf548f19",
+    "strokeplan.npz": "9e97920f8a3e9d6364f958cfd769e2e7f15ca95d161a68fcbdcbc66be031aff6",
+    "README.md": "86003af8e8df779de9ab1d6828ca02bad80cb102e794dbf3bafcaf6689290a42",
+    "recipe.json": "36d715352d4f9bf5bf6daf7006a488a2caec892e0f27e27a4642336f882aaf0f",
+    "source_stroke_state.json": "ec5580f7880db3f056071cfe67175b0ac5ef66cd99f20ea01200f4df376987ec"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "hardware_executed": false,
+  "writing_duration_s": 24.98,
+  "full_duration_s": 46.76,
+  "return_duration_s": 1.2747132085535569,
+  "return_displacement_mm": [
+    -1.5,
+    0.0
+  ],
+  "dot_displacement_mm": [
+    0.9,
+    -1.2
+  ],
+  "early_lift": false,
+  "ink_quality_verified": false,
+  "unchanged_prefix_vertices": 1368,
+  "limits": {
+    "XY speed": 79.65755967300768,
+    "Z speed": 59.997440049151805,
+    "step": 1.5931511934601537,
+    "acceleration": 153.91834075722326,
+    "angular speed": 19.977139286059003,
+    "angular acceleration": 38.90795103507039
+  }
+}

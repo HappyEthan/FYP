@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-10-30T15:11:54.471500+08:00",
+  "final_plan": "/home/serein/FYP/runs/brush2/plans/final/永字最终方案",
+  "source_draft_sha256": "383367b9c342cde53bcb7451323af5165bd83b1259848912779940a6a9b29816",
+  "standards": [
+    {
+      "source_stroke": "新增首笔5",
+      "standard_stroke": "右点",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/右点",
+      "source_point_range": [
+        0,
+        3
+      ],
+      "control_points": 4,
+      "writing_duration_s": 3.7600000000000002
+    },
+    {
+      "source_stroke": "笔画1",
+      "standard_stroke": "横折钩",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/横折钩",
+      "source_point_range": [
+        4,
+        19
+      ],
+      "control_points": 16,
+      "writing_duration_s": 16.54
+    },
+    {
+      "source_stroke": "笔画2",
+      "standard_stroke": "横撇",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/横撇",
+      "source_point_range": [
+        20,
+        29
+      ],
+      "control_points": 10,
+      "writing_duration_s": 9.88
+    },
+    {
+      "source_stroke": "笔画3",
+      "standard_stroke": "斜撇",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/斜撇",
+      "source_point_range": [
+        30,
+        36
+      ],
+      "control_points": 7,
+      "writing_duration_s": 3.54
+    },
+    {
+      "source_stroke": "笔画4",
+      "standard_stroke": "斜捺",
+      "path": "/home/serein/FYP/runs/brush2/plans/standard/斜捺",
+      "source_point_range": [
+        37,
+        48
+      ],
+      "control_points": 12,
+      "writing_duration_s": 7.34
+    }
+  ]
+}

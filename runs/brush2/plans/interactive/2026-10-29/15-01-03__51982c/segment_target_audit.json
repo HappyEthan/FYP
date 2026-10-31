@@ -1,0 +1,119 @@
+[
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 2,
+    "requested_uT": 180.0,
+    "samples": 63,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 4,
+    "requested_uT": 180.0,
+    "samples": 97,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 5,
+    "requested_uT": 220.0,
+    "samples": 64,
+    "actual_reference_min_uT": 220.0,
+    "actual_reference_max_uT": 220.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 6,
+    "requested_uT": 190.0,
+    "samples": 250,
+    "actual_reference_min_uT": 190.0,
+    "actual_reference_max_uT": 190.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 7,
+    "requested_uT": 180.0,
+    "samples": 40,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 8,
+    "requested_uT": 190.0,
+    "samples": 54,
+    "actual_reference_min_uT": 190.0,
+    "actual_reference_max_uT": 190.0
+  },
+  {
+    "stroke_id": "stroke-1",
+    "stroke_name": "笔画1",
+    "segment": 9,
+    "requested_uT": 63.0,
+    "samples": 111,
+    "actual_reference_min_uT": 63.0,
+    "actual_reference_max_uT": 63.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 1,
+    "requested_uT": 120.0,
+    "samples": 83,
+    "actual_reference_min_uT": 120.0,
+    "actual_reference_max_uT": 120.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 2,
+    "requested_uT": 100.0,
+    "samples": 47,
+    "actual_reference_min_uT": 100.0,
+    "actual_reference_max_uT": 100.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 3,
+    "requested_uT": 100.0,
+    "samples": 66,
+    "actual_reference_min_uT": 100.0,
+    "actual_reference_max_uT": 100.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 4,
+    "requested_uT": 100.0,
+    "samples": 90,
+    "actual_reference_min_uT": 100.0,
+    "actual_reference_max_uT": 100.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 5,
+    "requested_uT": 150.0,
+    "samples": 177,
+    "actual_reference_min_uT": 150.0,
+    "actual_reference_max_uT": 150.0
+  },
+  {
+    "stroke_id": "stroke-4ffd2d2876a2",
+    "stroke_name": "笔画2",
+    "segment": 6,
+    "requested_uT": 63.0,
+    "samples": 50,
+    "actual_reference_min_uT": 63.0,
+    "actual_reference_max_uT": 63.0
+  }
+]

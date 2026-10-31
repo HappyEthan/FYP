@@ -1,0 +1,51 @@
+[
+  {
+    "segment": 2,
+    "requested_uT": 180.0,
+    "samples": 63,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "segment": 4,
+    "requested_uT": 180.0,
+    "samples": 96,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "segment": 5,
+    "requested_uT": 220.0,
+    "samples": 65,
+    "actual_reference_min_uT": 220.0,
+    "actual_reference_max_uT": 220.0
+  },
+  {
+    "segment": 6,
+    "requested_uT": 190.0,
+    "samples": 249,
+    "actual_reference_min_uT": 190.0,
+    "actual_reference_max_uT": 190.0
+  },
+  {
+    "segment": 7,
+    "requested_uT": 180.0,
+    "samples": 40,
+    "actual_reference_min_uT": 180.0,
+    "actual_reference_max_uT": 180.0
+  },
+  {
+    "segment": 8,
+    "requested_uT": 190.0,
+    "samples": 82,
+    "actual_reference_min_uT": 190.0,
+    "actual_reference_max_uT": 190.0
+  },
+  {
+    "segment": 9,
+    "requested_uT": 69.0,
+    "samples": 106,
+    "actual_reference_min_uT": 69.0,
+    "actual_reference_max_uT": 69.0
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "source_sha256": "9a8564d1afc952fb67cfae56bf23acc0f31b3c3ecc21636c709cc6971306a709",
+  "xy_vertices_unchanged": true,
+  "orientation_smoothing_mm": 16.0,
+  "writing_duration_s": 35.32,
+  "full_duration_s": 56.980000000000004,
+  "last20_duration_s": 10.490568632432357,
+  "last10_duration_s": 5.940791177220813,
+  "unloading_target_uT": 100.0,
+  "unloading_reached_s": 0.84,
+  "unloading_is_detachment": false,
+  "limits": {
+    "XY speed": 79.91642464931405,
+    "Z speed": 59.997440049151805,
+    "step": 1.5983284929862809,
+    "acceleration": 147.37105128575706,
+    "angular speed": 19.977277661869433,
+    "angular acceleration": 38.908220539089896
+  },
+  "control": {
+    "enabled": true,
+    "mode": "pi",
+    "phase": "per_stroke",
+    "kp": 1.0,
+    "ki": 0.1,
+    "max_correction_mm": 0.8,
+    "max_correction_speed_mm_s": 2.0,
+    "max_correction_accel_mm_s2": 30.0,
+    "taper_ticks": 50,
+    "integral_limit_mm": 0.2,
+    "anti_windup": "conditional",
+    "measurement_phases": [
+      "measure_00"
+    ]
+  }
+}
