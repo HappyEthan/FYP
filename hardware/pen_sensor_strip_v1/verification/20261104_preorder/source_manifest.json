@@ -1,0 +1,22 @@
+[
+  {
+    "path": "hardware/pen_sensor_strip_v1/easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json",
+    "sha256": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b"
+  },
+  {
+    "path": "hardware/pen_sensor_strip_v1/easyeda_std/PCB_11x40_四层_3V3两处分支钝角_原生DRC0_20261104.json",
+    "sha256": "d56eea18cbf91aa05f412a380f9a2762012d6ede5b7df6fddc6a57e29b3a479c"
+  },
+  {
+    "path": "hardware/pen_sensor_strip_v1/easyeda_std/PCB_11x40_四层_USB_BAT强制选择_保存重开_20261104.json",
+    "sha256": "c3529377090c8a4dc99ba4243878aedfd1412d1f2b1a0caa51503588cfd5f952"
+  },
+  {
+    "path": "hardware/pen_sensor_strip_v1/easyeda_std/SCH_USB_BAT强制选择_20261104.net",
+    "sha256": "63cac26f6fe18eab552aa4b1330226d4020775db39140c29e607422581724999"
+  },
+  {
+    "path": "hardware/pen_sensor_strip_v1/easyeda_std/SCH_独立总线六格_USB_BAT强制选择_保存重开_20261104.json",
+    "sha256": "86314a0a0cdbf4b1ff5c7262c9ca3e166607ac8782f801360b99023f649694df"
+  }
+]

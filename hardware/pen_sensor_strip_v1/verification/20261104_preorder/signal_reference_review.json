@@ -1,0 +1,98 @@
+{
+  "scope": "Nominal centerline projection, with a 0.205mm clearance around own via copper excluded; not a full-width field or impedance simulation. Bottom USB_DP uses L3 GND reference.",
+  "results": [
+    {
+      "net": "USB_DP",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    },
+    {
+      "net": "USB_DM",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    },
+    {
+      "net": "USB_DP_SOC",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    },
+    {
+      "net": "USB_DM_SOC",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    },
+    {
+      "net": "RF_SOC",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    },
+    {
+      "net": "R30_2",
+      "layers": [
+        {
+          "layer": "1",
+          "reference": "21",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        },
+        {
+          "layer": "2",
+          "reference": "22",
+          "uncovered_centerline_excluding_own_antipads_mm": 0.0
+        }
+      ]
+    }
+  ],
+  "USB_DP_bottom_cross_mm": 0.999998,
+  "USB_SOC_centerline_total_mismatch_mm": 1.8967,
+  "length_warning": "Total unique routed centerline is not an end-to-end differential path/propagation-delay measurement."
+}

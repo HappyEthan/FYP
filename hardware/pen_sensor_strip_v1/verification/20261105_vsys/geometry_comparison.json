@@ -1,0 +1,16 @@
+{
+  "actual_copper_changes_vs_before": [
+    {
+      "layer": "2",
+      "net": "GND",
+      "area_mm2": 0.01468500090149807
+    },
+    {
+      "layer": "2",
+      "net": "VSYS",
+      "area_mm2": 0.07051624433034234
+    }
+  ],
+  "saved_vs_candidate_difference_mm2": 0.0,
+  "exact_SCH_unchanged": true
+}

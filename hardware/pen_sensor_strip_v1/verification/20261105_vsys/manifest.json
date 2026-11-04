@@ -1,0 +1,13 @@
+{
+  "geometry_comparison.json": "7102fed26c91d2e001c1db232d5ca6d178c7528a925aead8d60e92ed90b0817a",
+  "source_manifest.json": "21d9166ec5a4081566ce6a391b6da22074f76346fe104e4f5281173975436fab",
+  "VSYS_before_after.png": "1aeacb451271075189b7e5d5ea8f43a39575e6a0263e5d22d3f2e6eaf712f38e",
+  "publication_provenance.json": "2afcc76b715cbd17c80e7a9d3367a6946d21de15588a0f7c8c88c085b8e494c6",
+  "PCB_Gerber_top_bottom.png": "f760a9f15efd360b4f8ba8f3ae9045dabddffedbfa6dc4ead38183c3df8c9e06",
+  "final_check.json": "8bbbca530e9f14a9e07818250d749546f23b55cc1fca71134e038a2036fc015b",
+  "README.md": "ea1718030543675adbcb31c0159869b8169aadab725b3d9ac4e627204fc08c0f",
+  "cam_audit.json": "55d7255fcd2dd58116ebcd21b53c521abeb66637d341ea7cb0baa8ab0569725a",
+  "native_DRC_saved_reopened.png": "ee096207380c76de71c8fc5ea20a26bc985956388ec5d03bf06ef2b5eb0700c9",
+  "native_DRC_saved_reopened.txt": "0fdc2325a349450cf3a44df5e4cb2496e71ba010c9bf20ab94510a674bce18a0",
+  "PCB_saved_reopened_audit.json": "a0f40d7a87a5e85255eb39b31e840303c7a3b68f2c96c7d9ce18e4efb33b465b"
+}

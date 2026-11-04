@@ -1,0 +1,331 @@
+					19 link lceda.cn/
+					20 text 标准
+					21 container
+						22 link Description: 文件, Value: javascript:;
+						23 link Description: 编辑, Value: javascript:;
+						24 link Description: 放置, Value: javascript:;
+						25 link Description: 格式, Value: javascript:;
+						26 link Description: 视图, Value: javascript:;
+						27 link Description: 设计, Value: javascript:;
+						28 link Description: 布线, Value: javascript:;
+						29 link Description: 工具, Value: javascript:;
+						30 link Description: 制造, Value: javascript:;
+						31 link Description: 高级, Value: javascript:;
+						32 link Description: 设置, Value: javascript:;
+						33 link Description: 帮助, Value: javascript:;
+					34 container
+						35 link Description: , Help: 新建工程..., Value: javascript:;
+						36 link Description: , Help: 保存, Value: javascript:void(0)
+						37 link Description: , Help: 撤销, Value: javascript:void(0)
+						38 link Description: , Help: 重做, Value: javascript:void(0)
+						39 link Description: , Help: 复制, Value: javascript:void(0)
+						40 link Description: , Help: 粘贴, Value: javascript:void(0)
+						41 link Description: , Help: 剪切, Value: javascript:void(0)
+						42 link Description: , Help: 删除, Value: javascript:void(0)
+						43 link Description: , Help: 查找..., Value: javascript:;
+						44 link Description: , Help: 查找相似对象..., Value: javascript:;
+						45 link Description: , Help: 测量距离, Value: javascript:;
+						46 link Description: , Help: 放大, Value: javascript:;
+						47 link Description: , Help: 缩小, Value: javascript:;
+						48 link Description: , Help: 适合窗口, Value: javascript:;
+						49 link Description: , Help: 2D预览, Value: javascript:;
+						50 link Description: , Help: 3D预览, Value: javascript:;
+						51 link Description: , Help: 逆时针旋转90度, Value: javascript:void(0)
+						52 link Description: , Help: 顺时针旋转90度, Value: javascript:void(0)
+						53 link Description: , Help: 水平翻转, Value: javascript:void(0)
+						54 link Description: , Help: 垂直翻转, Value: javascript:void(0)
+						55 link Description: , Help: 左对齐, Value: javascript:void(0)
+						56 link Description: , Help: 右对齐, Value: javascript:void(0)
+						57 link Description: , Help: 顶对齐, Value: javascript:void(0)
+						58 link Description: , Help: 底对齐, Value: javascript:void(0)
+						59 link Description: , Help: 水平居中对齐, Value: javascript:void(0)
+						60 link Description: , Help: 垂直居中对齐, Value: javascript:void(0)
+						61 link Description: , Help: 对齐网格, Value: javascript:void(0)
+						62 link Description: , Help: 水平等距分布, Value: javascript:void(0)
+						63 link Description: , Help: 垂直等距分布, Value: javascript:void(0)
+						64 link Description: , Help: 阵列分布..., Value: javascript:void(0)
+						65 link Description: , Help: 导入变更, Value: javascript:;
+						66 link Description: ມ, Help: 检查DRC, Value: javascript:;
+						67 link Description: , Help: 物料清单(BOM)..., Value: javascript:;
+						68 link Description: , Help: PCB制板文件(Gerber)..., Value: javascript:;
+						69 link Description: , Help: 坐标文件..., Value: javascript:;
+						70 link Description: , Help: 文档恢复..., Value: javascript:;
+						71 link Description: , Help: 备份工程, Value: javascript:;
+						72 link Description: , Help: 分享, Value: javascript:;
+					73 container
+						74 link Description: 个人, Value: javascript:;
+						75 link Description: , Value: lceda.cn/account/user/notifications/basic
+						76 Unlabelled image Avatar
+						77 link Eda_htyqpfoe
+							78 text Eda_htyqpfoe
+					79 container
+						80 container
+							81 text  工程
+							82 text 
+							83 text 设计管理器
+							84 text  常用库  元件库  立创商城  嘉立创  技术支持
+							85 text 
+							86 text 回收站
+						87 container
+							88 text field (settable) 过滤
+							89 text 
+							90 text 
+							91 text 
+							92 content list
+								93 container
+									94 text 元件
+									95 text (43)
+									96 text 
+								97 container
+									98 text 网络
+									99 text (27 / 27)
+									100 text 
+								101 container
+									102 container
+										103 text DRC错误 (0)
+										104 text 
+							105 content list
+						106 container
+							107 text 开始
+							108 container 标题: 07 TB01_VBUS裕量整改_双层_仅审核
+								109 text 
+								110 text 07 TB01_VBUS裕量整改_双层_仅审核
+							111 container 标题: NEW_PCB
+								112 text  *
+								113 text NEW_PCB
+							114 container 标题: 02 PCB_11mm长条四层
+								115 text 
+								116 text 02 PCB_11mm长条四层
+						117 container
+							118 image
+							119 image
+							120 HTML content 02 PCB_11mm长条四层, URL: lceda.cn/editor/6.5.61/htm_cn/editorpage3.html
+								121 text Test
+								122 container (showing 0-100 of 229 items)
+									123 container Unlock
+									124 container USB_IN
+									125 container USB_5V
+									126 container BAT_P
+									127 container BAT_IN
+									128 container GND
+									129 container 3V3
+									130 container GND
+									131 container PEN_SDA
+									132 container PEN_SCL
+									133 container GND
+									134 container 3V3
+									135 container GND
+									136 container 3V3
+									137 container GND
+									138 container BAT_P
+									139 container GND
+									140 container VSYS
+									141 container GND
+									142 container 3V3
+									143 container MCU_EN
+									144 container 3V3
+									145 container BOOT_N
+									146 container 3V3
+									147 container GND
+									148 container USB_5V
+									149 container BAT_IN
+									150 container VSYS
+									151 container USB_IN
+									152 container IMU_MISO
+									153 container GND
+									154 container GND
+									155 container IMU_INT
+									156 container 3V3
+									157 container GND
+									158 container GND
+									159 container 3V3
+									160 container IMU_CS_N
+									161 container IMU_SCK
+									162 container IMU_MOSI
+									163 container 3V3
+									164 container GND
+									165 container VSYS
+									166 container VSYS
+									167 container GND
+									168 container GND
+									169 container 3V3
+									170 container GND
+									171 container MCU_EN
+									172 container BAT_P
+									173 container GND
+									174 container SOD-882_L1.0-W0.6-RD-1
+									175 container SOT-323_L2.0-W1.3-H1.0-LS2.1-P1.30
+									176 container C0402_L1.0-W0.5-H0.5
+									177 container C0402_L1.0-W0.5-H0.5
+									178 container C0402_L1.0-W0.5-H0.5
+									179 container C0402_L1.0-W0.5-H0.5
+									180 container C0402_L1.0-W0.5-H0.5
+									181 container R0402_L1.0-W0.5-H0.4
+									182 container R0402_L1.0-W0.5-H0.4
+									183 container R0402_L1.0-W0.5-H0.4
+									184 container LGA-14_L2.5-W3.0-H0.9-P0.50
+									185 container WSON-6_L2.0-W2.0-H0.8-P0.65
+									186 container C0805_L2.0-W1.3-H1.3
+									187 container C0402_L1.0-W0.5-H0.5
+									188 container UTDFN-8_L2.5-W2.0-P0.40-TL-EP
+									189 container MLX_SCL
+									190 container MLX_SDA
+									191 container 3V3
+									192 container GND
+									193 container 3V3
+									194 container 3V3
+									195 container MLX_INT
+									196 container GND
+									197 container X1SON-2_L1.0-W0.6-P0.65-BI-1
+									198 container USB_5V
+									199 container GND
+									200 container X1SON-2_L1.0-W0.6-P0.65-BI-1
+									201 container J1_A5
+									202 container GND
+									203 container X1SON-2_L1.0-W0.6-P0.65-BI-1
+									204 container J1_B5
+									205 container GND
+									206 container SW-SMD_4P-L2.6-W1.6-P0.75-LS3.0
+									207 container BOOT_N
+									208 container BOOT_N
+									209 container GND
+									210 container GND
+									211 container SW-SMD_4P-L2.6-W1.6-P0.75-LS3.0
+									212 container MCU_EN
+									213 container MCU_EN
+									214 container GND
+									215 container GND
+									216 container C0402_L1.0-W0.5-H0.5
+									217 container GND
+									218 container 3V3
+									219 container C0402_L1.0-W0.5-H0.5
+									220 container GND
+									221 container 3V3
+									222 container C0402_L1.0-W0.5-H0.5
+						223 container
+							224 text 选中数量
+							225 text 0
+							226 container
+								227 text 画布属性
+							228 text 单位
+							229 pop-up button mm
+								230 (selected) mm
+							231 text 背景色
+							232 text field #000000
+							233 container
+								234 text 网格
+							235 text 网格可见
+							236 pop-up button 是
+								237 (selected) 是
+							238 text 网格颜色
+							239 text field #FFFFFF
+							240 text 网格样式
+							241 pop-up button 实线
+								242 (selected) 实线
+							243 text 吸附
+							244 pop-up button 是
+								245 (selected) 是
+							246 text 网格大小
+							247 text field (settable) 2.540mm
+							248 text 栅格尺寸
+							249 text field (settable) 0.127mm
+							250 text ALT键栅格
+							251 text field (settable) 0.127mm
+							252 container
+								253 text 其它
+							254 text 线宽
+							255 text field (settable) 0.254mm
+							256 text 拐角
+							257 pop-up button 线条45°
+								258 (selected) 线条45°
+							259 text 布线冲突
+							260 pop-up button 阻挡
+								261 (selected) 阻挡
+							262 text 移除回路
+							263 pop-up button 是
+								264 (selected) 是
+							265 text 铺铜区
+							266 pop-up button 可见
+								267 (selected) 可见
+							268 text 光标X
+							269 text 光标Y
+							270 text 光标DX
+							271 text field (disabled) 0.230mm
+							272 text 光标DY
+							273 text field (disabled) -19.053mm
+					274 container
+						275 text PCB工具
+						276 text 
+						277 text 
+						278 text 
+						279 text 
+						280 text 
+						281 text 
+						282 text 
+						283 text 
+						284 text 
+						285 text 
+						286 text 
+						287 text 
+						288 text 
+						289 text 
+						290 text 
+						291 text 
+						292 text 
+						293 text 
+						294 text 
+						295 text 
+					296 container
+						297 text 层与元素
+						298 text 
+						299 link Description: , Help: 层管理器..., Value: javascript:;
+						300 text 
+						301 content list
+							302 link Description: 全部层, Value: javascript:void(0)
+							303 link Description: 铜箔层, Value: javascript:void(0)
+							304 link Description: 非铜箔层, Value: javascript:void(0)
+							305 link Description: 元素, Value: javascript:void(0)
+						306 table
+							307 row
+								308 cell
+									309 text 顶层
+							310 row
+								311 cell
+									312 text 底层
+							313 row
+								314 cell
+									315 text 顶层丝印层
+							316 row
+								317 cell
+									318 text 底层丝印层
+							319 row
+								320 cell
+									321 text 顶层锡膏层
+							322 row
+								323 cell
+									324 text 底层锡膏层
+							325 row
+								326 cell
+									327 text 顶层阻焊层
+							328 row
+								329 cell
+									330 text 底层阻焊层
+							331 row
+								332 cell
+									333 text 飞线层
+							334 row
+								335 cell
+									336 text 边框层
+							337 row
+								338 cell
+									339 text 多层
+							340 row
+								341 cell
+									342 text 文档层
+							343 row
+								344 cell
+									345 text 内层1
+							346 row
+								347 cell
+									348 text 内层2
+					349 image

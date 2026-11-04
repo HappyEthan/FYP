@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-04",
+  "scope": "Process responsibility clarification; CAD unchanged",
+  "sources": [
+    "https://www.jlc.com/portal/t6i10417.html",
+    "https://www.jlc.com/portal/q6i974.html",
+    "https://www.jlc.com/portal/t7i38630.html",
+    "https://www.jlc.com/portal/server_guide_15544.html",
+    "https://www.jlc.com/portal/q7i4061.html",
+    "https://www.jlc.com/portal/t7i1325.html"
+  ],
+  "process_decisions": {
+    "U1_EP": "Factory PCB and SMT engineering must confirm filled/capped via process for this 4-layer order; can retain layout if accepted. Paste window optimization can be done in factory stencil data.",
+    "USB_NPTH": "0.20 mm copper clearance is a fabrication requirement. Local 3V3 reroute is recommended, or explicit factory CAM review of resulting trace geometry and connectivity. Ground copper clearing is routine.",
+    "CPL": "38 fitted positions must be unambiguous; geometric center differences require library alignment, not proof of wrong machine placement. No schematic or footprint redesign required.",
+    "silk": "0.8 mm height and 0.15 mm stroke satisfy high-precision character size rules. Spacing must still be checked; factory may clip insufficient-clearance silk. Local movement of affected operation labels is recommended for readability."
+  },
+  "actual_Gerber_bottom_silk_to_exposed_copper_min_mm": 0.12396000000000029,
+  "source_text_vs_actual_Gerber_exposed_copper": [
+    {
+      "label": "BAT+",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.38926000055994425,
+      "text_to_mask_mm": 0.3892600005599442
+    },
+    {
+      "label": "GND",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.12430000026001854,
+      "text_to_mask_mm": 0.12430000026001851
+    },
+    {
+      "label": "3V3",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.6593714604448426,
+      "text_to_mask_mm": 0.658570001220042
+    },
+    {
+      "label": "GND",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 1.1742199992200213,
+      "text_to_mask_mm": 1.1742199992200213
+    },
+    {
+      "label": "SDA",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.9085700000399485,
+      "text_to_mask_mm": 0.9085700000399486
+    },
+    {
+      "label": "SCL",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.25500000065999723,
+      "text_to_mask_mm": 0.204200000660002
+    },
+    {
+      "label": "BAT_IN",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.5533339607787947,
+      "text_to_mask_mm": 0.545209999400047
+    },
+    {
+      "label": "VSYS",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.6913921855843504,
+      "text_to_mask_mm": 0.6406390684279432
+    },
+    {
+      "label": "USB_IN",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 0.1960099992999957,
+      "text_to_mask_mm": 0.1452099992999969
+    },
+    {
+      "label": "BAT",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 1.0041799997400203,
+      "text_to_mask_mm": 1.0041799997400203
+    },
+    {
+      "label": "USB",
+      "side": "Bottom",
+      "text_to_exposed_copper_mm": 1.2492483385221402,
+      "text_to_mask_mm": 1.2352488811722204
+    },
+    {
+      "label": "BOOT",
+      "side": "Top",
+      "text_to_exposed_copper_mm": 0.9248462566123288,
+      "text_to_mask_mm": 0.924310000060025
+    },
+    {
+      "label": "RESET",
+      "side": "Top",
+      "text_to_exposed_copper_mm": 0.9243100000600252,
+      "text_to_mask_mm": 0.924310000060025
+    }
+  ]
+}

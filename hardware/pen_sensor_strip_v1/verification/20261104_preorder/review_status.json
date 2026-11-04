@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-04",
+  "review_status": "READY_FOR_FACTORY_ENGINEERING_REVIEW_NOT_PRODUCTION_RELEASE",
+  "formal_source_hashes_unchanged": true,
+  "native_DRC_errors": 0,
+  "native_connected_nets": 27,
+  "native_logical_nets": 27,
+  "new_netlist_audit": "PASS",
+  "CAD_modified": false,
+  "order_submitted": false,
+  "test_board_physical_status": "User confirmed manufactured and tested successfully",
+  "required_output_actions": [
+    "Unambiguous 38-part fit list excluding C30/C31 and manual J2/J4/SW1",
+    "J1 and ANT1 coordinate-origin and factory-library pin alignment; body center is not necessarily machine pick origin",
+    "Verify manufacturing drawings and stencil/placement previews before production"
+  ],
+  "documents": [
+    "PREORDER_REVIEW_20261104.md"
+  ],
+  "required_schematic_changes_identified": [],
+  "recommended_local_changes": [
+    "Move bottom 3V3 away from USB NPTH 0.20 mm clearance zone",
+    "Move battery GND legend to preserve readable clearance; 0.8 mm height may remain with high-precision character process"
+  ],
+  "factory_process_confirmation_required": [
+    "U1 nine via-in-pad holes: confirm filled/capped treatment available for this 4-layer order, or revise design if unsupported",
+    "U1 stencil segmentation and U6 aperture processing using successful test-board experience",
+    "Review final NPTH copper clearance and 3V3 geometry if handled in factory CAM",
+    "Select high-precision characters and verify final legends",
+    "4-layer 0.8 mm stackup and double-side assembly panel"
+  ],
+  "corrections_to_initial_review": [
+    "0.8 mm high-precision characters are supported",
+    "USB_IN distance to exposed copper is 0.196 mm; mask-only distance 0.145 mm is not a proven clearance violation",
+    "Battery GND actual Gerber distance to exposed copper remains 0.124 mm",
+    "Factory process closure does not automatically require source CAD modification before engineering review"
+  ],
+  "subsequent_CAD_update": {
+    "date": "2026-11-04",
+    "completed": [
+      "USB NPTH adjacent 3V3 trace clearance 0.2035 mm at unchanged 0.25 mm width",
+      "Battery GND label shifted 0.15 mm; actual exposed-copper gap 0.196541 mm"
+    ],
+    "native_DRC_errors": 0,
+    "native_connected_nets": "27/27",
+    "record": "../20261104_usb_gnd/README.md"
+  }
+}

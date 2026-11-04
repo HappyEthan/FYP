@@ -1,0 +1,7 @@
+{
+  "deliverables/pen_sensor_11x40_4layer_VSYS_review_20261105.zip": {
+    "sha256": "0274050b83684994578605e1451eb6ca711d53dab9d3ac2179da3d2e578fb48c",
+    "bytes": 8247387
+  },
+  "note": "Package excludes package_manifest.json to avoid self-referential hashes. Current CAD and Gerber bytes are unmodified."
+}

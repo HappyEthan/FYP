@@ -4,7 +4,7 @@
 
 - [当前板子的详细信息与操作指南](../pen_sensor_strip_v1/README.md)
 - [当前原理图、PCB、网表和检查证据](../pen_sensor_strip_v1/CAD_HANDOFF.md)
-- [当前工程审核包](../pen_sensor_strip_v1/deliverables/pen_sensor_11x40_4layer_3V3_junction_review_20261104.zip)
+- [当前工程审核包](../pen_sensor_strip_v1/deliverables/pen_sensor_11x40_4layer_VSYS_review_20261105.zip)
 
 当前板已采用两路独立 I²C＋IMU 四线 SPI；SW1 强制选择 USB 或电池，所选电源缺失时不上电。原圆板的共用 I²C、IMU 地址 0x6A、USB 优先和 SW1 ON/OFF 操作不适用于当前板。
 

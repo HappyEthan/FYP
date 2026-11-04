@@ -1,4 +1,6 @@
-# 2026-11-04 当前板验证记录
+# 2026-11-04 历史验证记录
+
+本目录对应 VSYS 加宽前版本。当前板入口和验证见 [2026-11-05 记录](../20261105_vsys/README.md)；本日期的旧正式源与审核包可从 [原发布提交](https://github.com/HappyEthan/FYP/tree/ae69e87/hardware/pen_sensor_strip_v1)恢复。
 
 对应正式 PCB：`easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json`。相对于本目录的文件入口见[工程交接](../../CAD_HANDOFF.md)。
 

@@ -1,0 +1,65 @@
+{
+  "status": "FACTORY_ENGINEERING_REVIEW_PENDING_NOT_PRODUCTION_RELEASE",
+  "files": [
+    {
+      "file": "CAM_four_layers.png",
+      "sha256": "4dfb66c20894b200c624e5c817b799212db93f8f6465cb40551b6598d02496aa",
+      "bytes": 472941
+    },
+    {
+      "file": "CAM_manufacturing_findings.png",
+      "sha256": "f0ce4cd0b0ea64ee291e58c7cebc22a3ac7123e8c0e3f0f3799b97bdf9fcab4f",
+      "bytes": 160892
+    },
+    {
+      "file": "CPL_centers.png",
+      "sha256": "a07019d4506aa55ca3f75aec48a8ccb0cebd800cb21818e36b27dd3d4adc54b6",
+      "bytes": 127551
+    },
+    {
+      "file": "Copper_12_regions.png",
+      "sha256": "2bd0815e32d63c44158796ae83ab59c4f1fe4bbb95d3cf9fead252c7711a995c",
+      "bytes": 409520
+    },
+    {
+      "file": "cam_audit.json",
+      "sha256": "151b63a507bb94246d843c65deb3f3114875482b56ebb73aec507d7dc74306de",
+      "bytes": 82602
+    },
+    {
+      "file": "detail_audit.json",
+      "sha256": "fc7b5c9fac1819fffdc1a714c25f2e952622685b8922735bd44c8b0dcdb2f565",
+      "bytes": 7869
+    },
+    {
+      "file": "jlc_process_clarification.json",
+      "sha256": "33dbe9cf5d51836fcb690b96b26c5940ad9af264fd24043b7617c2ca487d5a3a",
+      "bytes": 3490
+    },
+    {
+      "file": "native_DRC.txt",
+      "sha256": "2438dc70a13b4943a9c7acf27ba03e014aeb5bf2a4afaa13f4d56981365481b6",
+      "bytes": 18252
+    },
+    {
+      "file": "netlist_fresh_web_audit.json",
+      "sha256": "7dc545c2357e76d71d95f74fba1eb67488b493280cb30ca1b1b06d6151a851b2",
+      "bytes": 19904
+    },
+    {
+      "file": "review_status.json",
+      "sha256": "d02b859c6ca81c1855ee590cda586559798452000a041162d7dbe281568abd7f",
+      "bytes": 2311
+    },
+    {
+      "file": "signal_reference_review.json",
+      "sha256": "d99bb3a2d2066012fae3d45093d98c5eb8ad906738c0ee991c66d9cdb7ae9c4e",
+      "bytes": 2449
+    },
+    {
+      "file": "source_manifest.json",
+      "sha256": "b07a791cf52e02f6fea50fc1f427e418d700fb14819e0b9bb262ddf1e4486ac2",
+      "bytes": 1033
+    }
+  ]
+}

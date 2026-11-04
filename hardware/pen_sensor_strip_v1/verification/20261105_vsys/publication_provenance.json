@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-05",
+  "scope": "Publish existing saved/reopened CAD and Gerber, normalize paths and refresh documentation/preview; no new EDA execution.",
+  "metadata_normalization": {
+    "verification/20261104_preorder/netlist_fresh_web_audit.json": {
+      "pre_publication_sha256": "7dc545c2357e76d71d95f74fba1eb67488b493280cb30ca1b1b06d6151a851b2",
+      "change": "absolute local paths normalized only"
+    },
+    "verification/20261104_preorder/native_DRC.txt": {
+      "pre_publication_sha256": "2438dc70a13b4943a9c7acf27ba03e014aeb5bf2a4afaa13f4d56981365481b6",
+      "change": "Retained EDA UI evidence only; omitted browser chrome/tab inventory, tracking query and trailing whitespace; original snapshot kept locally."
+    },
+    "verification/20261104_usb_gnd/native_DRC_saved_reopened.txt": {
+      "pre_publication_sha256": "2bea66fe5becab064b41361a070b604c932bf45f39001b3054945a4e1850b6d7",
+      "change": "Retained EDA UI evidence only; omitted browser chrome/tab inventory, tracking query and trailing whitespace; original snapshot kept locally."
+    },
+    "verification/20261105_vsys/native_DRC_saved_reopened.txt": {
+      "pre_publication_sha256": "05c26dd0234d265fb7df08c3b8c8770073e4d2a132a4fddc957e50ab9e9805a5",
+      "change": "Retained EDA UI evidence only; omitted browser chrome/tab inventory, tracking query and trailing whitespace; original snapshot kept locally."
+    }
+  },
+  "preview_source": "manufacturing/Gerber_11x40_4layer_VSYS_20261105.zip",
+  "preview_render": "actual copper, solder-mask openings, silkscreen and drill polygons; bottom mirrored; no component render"
+}

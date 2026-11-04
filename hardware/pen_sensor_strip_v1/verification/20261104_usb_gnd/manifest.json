@@ -1,0 +1,50 @@
+{
+  "status": "CAD_VERIFIED_FACTORY_ENGINEERING_REVIEW_PENDING",
+  "files": [
+    {
+      "file": "PCB_saved_reopened_audit.json",
+      "sha256": "aabf3c22d22aed0ab6f0159def8fe6e463527f2b7a53d1feb32ee9e94f7c688b",
+      "bytes": 898
+    },
+    {
+      "file": "README.md",
+      "sha256": "7c104a51a878f6487d44f67361d694f9fbc7529dcee0e7a603976e74cf2869f7",
+      "bytes": 2266
+    },
+    {
+      "file": "USB_GND_before_after.png",
+      "sha256": "3451d6f811674b067d885289c6b4d62a6bb3fb072d659a400628d2d042cba804",
+      "bytes": 163653
+    },
+    {
+      "file": "cam_audit.json",
+      "sha256": "231c9d167e1b4f676fa35d7c2e98a84e1f26773651bb04dadb25fb7954b6ef41",
+      "bytes": 82602
+    },
+    {
+      "file": "final_check.json",
+      "sha256": "c8eb5aada39a7a0777963b15ea58e5fba69ee9cd3369f5d54f685cea9df78ddd",
+      "bytes": 1469
+    },
+    {
+      "file": "native_DRC_saved_reopened.png",
+      "sha256": "0311c134ee642ed8e006578df6bd2ce7b3e04e5f800df1a1a369df3d64893d66",
+      "bytes": 786945
+    },
+    {
+      "file": "native_DRC_saved_reopened.txt",
+      "sha256": "2bea66fe5becab064b41361a070b604c932bf45f39001b3054945a4e1850b6d7",
+      "bytes": 15695
+    },
+    {
+      "file": "source_manifest.json",
+      "sha256": "5b4f0bcb34fa9df98a809699bc3a81a0c9e7f64f128588e31d5b39edeb850e0b",
+      "bytes": 579
+    },
+    {
+      "file": "target_changes.json",
+      "sha256": "c7036f14ea3bbbac996b52284161a99dcd6c26c1afab595b31f1311f2a98bd05",
+      "bytes": 598
+    }
+  ]
+}
