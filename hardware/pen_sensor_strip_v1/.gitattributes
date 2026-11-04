@@ -1,0 +1,5 @@
+# Preserve native EDA export bytes and their recorded SHA256 on all platforms.
+easyeda_std/*.json -text
+# The native Protel export intentionally has trailing spaces on network names.
+easyeda_std/*.net -text -whitespace
+verification/20261104/baselines/*.json -text

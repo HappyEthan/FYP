@@ -1,0 +1,11 @@
+# Publish the current design and curated evidence; keep routing scratch/history local.
+/reviews/
+/references/
+/inputs/
+/scripts/
+/easyeda_std/*
+!/easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json
+!/easyeda_std/SCH_独立总线六格_USB_BAT强制选择_保存重开_20261104.json
+!/easyeda_std/SCH_USB_BAT强制选择_20261104.net
+/deliverables/*
+!/deliverables/pen_sensor_11x40_4layer_3V3_junction_review_20261104.zip

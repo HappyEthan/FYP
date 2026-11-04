@@ -1,0 +1,28 @@
+{
+  "candidate_sha256": "d56eea18cbf91aa05f412a380f9a2762012d6ede5b7df6fddc6a57e29b3a479c",
+  "reopened_sha256": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b",
+  "formal_pcb_uuid": "0c1548356a264e53beeaef436ec65992",
+  "shape_count_candidate": 1300,
+  "shape_count_reopened": 1300,
+  "nonpour_shapes_exact_equal": true,
+  "nonpour_shape_count": 1296,
+  "changed_pour_serializations": 1,
+  "actual_copper_difference_mm2": 0.0,
+  "metadata_differences": {
+    "editorVersion": [
+      "6.5.51",
+      "6.5.61"
+    ],
+    "top_layer_visibility": [
+      "false",
+      "true"
+    ]
+  },
+  "PASS": true,
+  "publication_metadata": {
+    "design_verification_date": "2026-11-04",
+    "publication_date": "2026-11-04",
+    "original_report_sha256": "881995fd99babcfd1d28daf96762881b42dbf5c3ea9b2a35fc915645edd2d547",
+    "transformation": "Replaced local absolute project paths with portable paths; check results unchanged."
+  }
+}

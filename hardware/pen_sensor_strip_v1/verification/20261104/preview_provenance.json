@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-04",
+  "application": "嘉立创 EDA 标准版网页版 6.5.61",
+  "pcb_uuid": "0c1548356a264e53beeaef436ec65992",
+  "pcb_source": "easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json",
+  "pcb_sha256": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b",
+  "method": "Crop actual native photo-preview screenshots; no geometry rendering or AI generation. Composite adds captions and margins only. Board images remain at source pixel size.",
+  "screenshots": [
+    {
+      "source": "photo_top_web_native.png",
+      "sha256": "41e323ef9c3317fbf004f1c4b0947995570ceddb696d97d29ce831928ef13efa",
+      "source_size_px": [
+        3420,
+        1990
+      ],
+      "crop_xyxy_px": [
+        1671,
+        416,
+        2104,
+        1989
+      ],
+      "output": "PCB_正面_网页原生预览.png",
+      "view": "top",
+      "flipped_or_rotated": false
+    },
+    {
+      "source": "photo_bottom_web_native.png",
+      "sha256": "b4a55fe9fbfab068f064ce70e1e9d515c4ace0d5b4a7f1acb0c1447c964d59c3",
+      "source_size_px": [
+        3420,
+        1990
+      ],
+      "crop_xyxy_px": [
+        1671,
+        416,
+        2104,
+        1989
+      ],
+      "output": "PCB_反面_网页原生预览.png",
+      "view": "bottom",
+      "flipped_or_rotated": false
+    }
+  ],
+  "composite": "PCB_正反面_网页原生预览.png",
+  "drc": {
+    "source": "native_DRC_web_saved_reopened_raw.png",
+    "sha256": "5fdca340c22da66d32dca75db9f84e26c0dbc23e569cf5044be9d7d42afb6aad",
+    "crop_xyxy_px": [
+      0,
+      310,
+      3420,
+      1990
+    ],
+    "output": "native_DRC_web_saved_reopened.png"
+  },
+  "raw_capture_availability": "Full browser captures are retained locally. Public files contain only PCB/EDA crops and their recorded provenance; raw browser chrome is not distributed.",
+  "publication_metadata": {
+    "design_verification_date": "2026-11-04",
+    "publication_date": "2026-11-04",
+    "original_report_sha256": "3fde7037eb161ca33de9d121d5d8b25bf71671f149248069ababede3f1c7759f",
+    "transformation": "Replaced local absolute project paths with portable paths; check results unchanged."
+  }
+}

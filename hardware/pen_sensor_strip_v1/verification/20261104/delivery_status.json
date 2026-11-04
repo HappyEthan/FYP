@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-04",
+  "stage": "web_saved_reopened_verified",
+  "formal_ui_save_success_observed": true,
+  "formal_close_reopen_verified": true,
+  "reopen_method": "User opened original cloud PCB UUID in web editor; native source exported and compared",
+  "formal_pcb_uuid": "0c1548356a264e53beeaef436ec65992",
+  "web_editor_version": "6.5.61",
+  "final_pcb": "easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json",
+  "final_source_sha256": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b",
+  "native_candidate_DRC": 0,
+  "native_candidate_connected_nets": "27/27",
+  "native_web_saved_reopened_DRC": 0,
+  "native_web_saved_reopened_connected_nets": "27/27",
+  "netlist_consistency_PASS": true,
+  "full_copper_audit_PASS": true,
+  "target_junction_geometry_PASS": true,
+  "candidate_actual_copper_difference_mm2": 0.0,
+  "orphan_copper_groups": 0,
+  "native_preview": "PCB_正反面_网页原生预览.png",
+  "review_only": true,
+  "manufacturing_release": false,
+  "physical_validation_performed": false,
+  "publication_metadata": {
+    "design_verification_date": "2026-11-04",
+    "publication_date": "2026-11-04",
+    "original_report_sha256": "3bd29ecb3c16d747c8e00b44c223cd70574d0559b37ce6e0a3dfcefd816cb7f0",
+    "transformation": "Replaced local absolute project paths with portable paths; check results unchanged."
+  }
+}

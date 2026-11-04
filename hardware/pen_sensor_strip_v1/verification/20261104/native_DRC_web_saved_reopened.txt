@@ -1,0 +1,10 @@
+原生网页界面记录摘录 · 2026-11-04
+文档 UUID：0c1548356a264e53beeaef436ec65992
+已执行原生 DRC 并刷新结果；以下为原始界面记录中保留的 EDA 行。
+完整浏览器界面文本只在本地保留，此文件没有重跑或改写检查结果。
+原始记录 SHA256：9f7847733991daa1bdb6285dd88c5d692a1d186332638609f77dc48bc32ddd4c
+
+102 text (43)
+106 text (27 / 27)
+110 text DRC错误 (0)
+121 HTML content 02 PCB_11mm长条四层, URL: lceda.cn/editor/6.5.61/htm_cn/editorpage3.html

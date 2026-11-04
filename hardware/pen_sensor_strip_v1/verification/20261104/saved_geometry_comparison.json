@@ -1,0 +1,111 @@
+{
+  "source": "easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json",
+  "source_sha256": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b",
+  "candidate_actual_copper_difference_mm2": 0.0,
+  "changed_copper_by_layer_and_net_mm2": {
+    "1": {
+      "3V3": 0.17137278420757343,
+      "GND": 0.023392747924235926
+    },
+    "21": {},
+    "22": {},
+    "2": {}
+  },
+  "exact_footprints_unchanged": true,
+  "exact_rules_unchanged": true,
+  "unexpected_removed_or_modified_objects": [],
+  "new_patch_hole_clearance_faults": [],
+  "junction_contour_measurement": [
+    {
+      "id": "gge999100003",
+      "vertices": [
+        {
+          "xy_mm": [
+            8.486089741020027,
+            -36.037145763414564
+          ],
+          "included_angle_deg": 134.9998830311967,
+          "adjacent_straight_lengths_mm": [
+            3.023381889801776,
+            0.4242684294955014
+          ]
+        },
+        {
+          "xy_mm": [
+            8.486088874879949,
+            -35.61287733391995
+          ],
+          "included_angle_deg": 135.00028441449695,
+          "adjacent_straight_lengths_mm": [
+            0.4242684294955014,
+            1.2326108949927435
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gge999100002",
+      "vertices": [
+        {
+          "xy_mm": [
+            8.662886075660603,
+            -35.43609934085606
+          ],
+          "included_angle_deg": 135.00007100440837,
+          "adjacent_straight_lengths_mm": [
+            1.2327561419855706,
+            0.4242461132741424
+          ]
+        },
+        {
+          "xy_mm": [
+            9.087132188919972,
+            -35.43609580025999
+          ],
+          "included_angle_deg": 134.9998596246222,
+          "adjacent_straight_lengths_mm": [
+            0.4242461132741424,
+            0.843825950090186
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gge999100001",
+      "vertices": [
+        {
+          "xy_mm": [
+            9.151776895800056,
+            -18.724988201459993
+          ],
+          "included_angle_deg": 112.5000002460028,
+          "adjacent_straight_lengths_mm": [
+            0.5964320457197925,
+            0.4592231789561005
+          ]
+        },
+        {
+          "xy_mm": [
+            8.976039792537273,
+            -19.14925509697195
+          ],
+          "included_angle_deg": 112.49999987599288,
+          "adjacent_straight_lengths_mm": [
+            0.4592231789561005,
+            0.7245796092998349
+          ]
+        }
+      ]
+    }
+  ],
+  "minimum_visible_straight_bevel_length_mm": 0.4242461132741424,
+  "scope_note": "Three new large straight bevels measured on the actual copper union at 0.001 mm contour simplification. This targeted visible-geometry check complements, and is not replaced by, the older 0.00005 mm vertex audit. Manufacturer footprint pad outlines are unchanged.",
+  "local_full_copper_audit_pass": true,
+  "PASS": true,
+  "publication_metadata": {
+    "design_verification_date": "2026-11-04",
+    "publication_date": "2026-11-04",
+    "original_report_sha256": "93612fe1d9b2f77caa096ce7431763ad052336c245b75d2b3e5ce79bad086e06",
+    "transformation": "Replaced local absolute project paths with portable paths; check results unchanged."
+  }
+}

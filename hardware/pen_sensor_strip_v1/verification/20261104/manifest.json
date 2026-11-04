@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-04",
+  "paths_relative_to": "hardware/pen_sensor_strip_v1",
+  "scope": "Current sources, guide and curated verification. Excludes this manifest and its containing ZIP to avoid recursive hashes. Original browser captures and routing history remain local.",
+  "files": {
+    ".gitattributes": "676e1b55be01f411ffcb11a196ed7bacb892592772b90d879a311821112dd957",
+    ".gitignore": "cc02f3d63d438afb9e8e7600c638133724e58d720eefba174c71a9024a9c5882",
+    "AGENTS.md": "cb3131e3648fbcac19b65118a04f24d89766700d6526af8f4b10d08dda4b1b87",
+    "CAD_HANDOFF.md": "45dce683e9876251d6eb9d6975d09d69537317d8c7e3ab526fc7c76498afbb50",
+    "README.md": "d9e9d6d83f436fd65d8f26b20d4ae1f068e0f3ef0dcc07d1756c38b687b5c264",
+    "easyeda_std/PCB_11x40_四层_3V3两处分支钝角_保存重开_20261104.json": "c55a10de161cae77b013ed8a844aacdf387a702aa9c9ca3cf26327b29e45190b",
+    "easyeda_std/SCH_USB_BAT强制选择_20261104.net": "63cac26f6fe18eab552aa4b1330226d4020775db39140c29e607422581724999",
+    "easyeda_std/SCH_独立总线六格_USB_BAT强制选择_保存重开_20261104.json": "86314a0a0cdbf4b1ff5c7262c9ca3e166607ac8782f801360b99023f649694df",
+    "verification/20261104/PCB_web_saved_reopened_audit.json": "5fbce4ac9e6ef9b2de5d0ca9e633325fcfc5acbfc0da59a627fdf4505368eb06",
+    "verification/20261104/PCB_反面_网页原生预览.png": "92eee3189e7dcdca801b05f720fe482828d1921bdd1a11ed59980dd3797ad65d",
+    "verification/20261104/PCB_正反面_网页原生预览.png": "570d9c77f38fca2d4845cbc63872bc552a8b94a516d6b1fc4d6fb3420432ca45",
+    "verification/20261104/PCB_正面_网页原生预览.png": "d0d137f0039f26ffb9f236d10cf498f27976be0216bb45ee4d7bfc8a179c7872",
+    "verification/20261104/README.md": "023c06948bea05568a4696f8cfae2146c26b3f6dcb46fe89e599f6d770bfcf5d",
+    "verification/20261104/baselines/PCB_before_3V3_revision.json": "b98a8b70f8c36e5693782d3d268918140a60950c5758f0e724563e4d0950a4dc",
+    "verification/20261104/baselines/PCB_native_candidate.json": "d56eea18cbf91aa05f412a380f9a2762012d6ede5b7df6fddc6a57e29b3a479c",
+    "verification/20261104/delivery_status.json": "87a6c26e6bfd485ce37e71f40f5f2a2346372bbf95fd10bb6bf00057d3227276",
+    "verification/20261104/native_DRC_web_saved_reopened.png": "75b2448e62ccbdb3559caed9bf1271301b11d4c075f3658f9343318ade5fdce1",
+    "verification/20261104/native_DRC_web_saved_reopened.txt": "83c76f9374bda4fd528fb68909ed28f53997eadcc2b96543ca8f2b5ee03499e0",
+    "verification/20261104/netlist_saved_reopened.json": "b14a6085e2abda169cfa3d4a1861b748159bd6be9132f0935f84dd249e49a594",
+    "verification/20261104/power_behavior_review.json": "2ea7a733e507d19a95e9acb7636b152c296e1214ac9151a768f060383df54982",
+    "verification/20261104/preview_provenance.json": "695ccab2f20521ff3501814b2a5cd0b11fda6063ca9bd8f3958a8f34b8b11ecc",
+    "verification/20261104/reopened_identity_comparison.json": "feebb7996b77e77c854ccccc4871da8c3734e19ddd7b29f2a9b379ea7071a218",
+    "verification/20261104/saved_geometry_comparison.json": "97109f5ea32b9198e3b7eab7be62aa7c22cfa7be78769ff827ea90bacf126e37",
+    "verification/20261104/target_changes.json": "d8b4123c14303cdfa0976296462509561849323c1b3e7d22d153ce0ac7b6e44a",
+    "verification/20261104/两处3V3_修改前后.png": "aa134649f4309310eb1f858f0b9fbe34ea01cb51c799f8e260636de00f4f324a"
+  }
+}

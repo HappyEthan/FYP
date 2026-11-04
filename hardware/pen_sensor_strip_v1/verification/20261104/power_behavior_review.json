@@ -1,0 +1,94 @@
+{
+  "requested_behavior": "SW1 strictly selects USB or battery; absent selected source means system off; no automatic fallback.",
+  "switch": {
+    "type": "external SPDT break-before-make",
+    "pads": {
+      "1": "BAT_IN",
+      "2": "VSYS common",
+      "3": "USB_IN"
+    },
+    "minimum_spec_to_verify": "DC 1 A / 5 V and actual inrush; external mechanical lever direction is not inferred from PCB pad side",
+    "switching": "momentary interruption/reset possible"
+  },
+  "paths": {
+    "USB": "USB_5V -> D4 -> USB_IN -> SW1.3/2 -> VSYS -> U5 IN + EN -> 3V3",
+    "BAT": "BAT_P -> Q1 reverse-polarity stage -> BAT_IN -> SW1.1/2 -> VSYS -> U5 IN + EN -> 3V3"
+  },
+  "pin_changes": {
+    "Q1.2": "GND",
+    "Q1.3": "BAT_IN",
+    "D4.1": "USB_IN",
+    "SW1.1": "BAT_IN",
+    "SW1.2": "VSYS",
+    "SW1.3": "USB_IN",
+    "U5.4": "VSYS"
+  },
+  "removed_components": [
+    "R11 (old EN pull-down)"
+  ],
+  "charging": "none; battery remains externally charged",
+  "truth_table": [
+    {
+      "usb_present": false,
+      "battery_present": false,
+      "selection": "USB",
+      "system_powered": false,
+      "source": null
+    },
+    {
+      "usb_present": false,
+      "battery_present": false,
+      "selection": "BAT",
+      "system_powered": false,
+      "source": null
+    },
+    {
+      "usb_present": false,
+      "battery_present": true,
+      "selection": "USB",
+      "system_powered": false,
+      "source": null
+    },
+    {
+      "usb_present": false,
+      "battery_present": true,
+      "selection": "BAT",
+      "system_powered": true,
+      "source": "BAT"
+    },
+    {
+      "usb_present": true,
+      "battery_present": false,
+      "selection": "USB",
+      "system_powered": true,
+      "source": "USB"
+    },
+    {
+      "usb_present": true,
+      "battery_present": false,
+      "selection": "BAT",
+      "system_powered": false,
+      "source": null
+    },
+    {
+      "usb_present": true,
+      "battery_present": true,
+      "selection": "USB",
+      "system_powered": true,
+      "source": "USB"
+    },
+    {
+      "usb_present": true,
+      "battery_present": true,
+      "selection": "BAT",
+      "system_powered": true,
+      "source": "BAT"
+    }
+  ],
+  "sources": [
+    "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+    "https://www.diodes.com/_files/datasheets/DMP2165UW.pdf",
+    "https://www.ti.com/lit/pdf/swru458"
+  ],
+  "implementation_boundary": "Schematic and PCB design verification; not measured power, switching, BLE, impedance or thermal acceptance."
+}

@@ -1,0 +1,108 @@
+{
+  "removed_old_small_bevels": [
+    "gge995000001",
+    "gge995000022"
+  ],
+  "removed_microsegment": "gge990001383",
+  "reset_new_junction_mm": [
+    8.8750013,
+    -35.8250109
+  ],
+  "bevels": [
+    {
+      "area": "U1",
+      "id": "gge999100001",
+      "original_corner": {
+        "layer": "1",
+        "net": "3V3",
+        "xy": [
+          8.55177289575538,
+          -18.724988200190054
+        ],
+        "previous": [
+          9.488394947782686,
+          -19.66161025221736
+        ],
+        "following": [
+          9.748208941519849,
+          -18.724988200190054
+        ],
+        "turn_deg": -135.0,
+        "type": "concave",
+        "adjacent_lengths": [
+          1.3245836087947347,
+          1.196436045764468
+        ]
+      },
+      "leg_mm": 0.6,
+      "added_area_mm2": 0.12728091767551092
+    },
+    {
+      "area": "RESET",
+      "id": "gge999100002",
+      "original_corner": {
+        "layer": "1",
+        "net": "3V3",
+        "xy": [
+          8.875001299999987,
+          -35.64823420443459
+        ],
+        "previous": [
+          9.683800798851653,
+          -34.83941430736131
+        ],
+        "following": [
+          7.791186906365777,
+          -34.56441981080038
+        ],
+        "turn_deg": -90.001,
+        "type": "concave",
+        "adjacent_lengths": [
+          1.1438296443283562,
+          1.5327450145726693
+        ]
+      },
+      "leg_mm": 0.3,
+      "added_area_mm2": 0.04500196809278855
+    },
+    {
+      "area": "RESET",
+      "id": "gge999100003",
+      "original_corner": {
+        "layer": "1",
+        "net": "3V3",
+        "xy": [
+          8.698224604434653,
+          -35.82501089999993
+        ],
+        "previous": [
+          7.614501555845179,
+          -34.741287851410455
+        ],
+        "following": [
+          6.348235904624636,
+          -38.17499959981004
+        ],
+        "turn_deg": -90.0,
+        "type": "concave",
+        "adjacent_lengths": [
+          1.5326158331715525,
+          3.323385890694909
+        ]
+      },
+      "leg_mm": 0.3,
+      "added_area_mm2": 0.04500139313263183
+    }
+  ],
+  "clearance_faults": [],
+  "widths_changed": false,
+  "native_refill_required": true,
+  "vertex_corners_without_pour_note": "These unfilled-copper entries include thermal fragments and are not final copper defects; final actual-copper audit includes native refill.",
+  "vertex_corner_count_without_pours": 642,
+  "publication_metadata": {
+    "design_verification_date": "2026-11-04",
+    "publication_date": "2026-11-04",
+    "original_report_sha256": "4ae7fd2f4940cddadd5f3856afec987b2a62d5c65228fdff256f244527b15c82",
+    "transformation": "Replaced local absolute project paths with portable paths; check results unchanged."
+  }
+}
