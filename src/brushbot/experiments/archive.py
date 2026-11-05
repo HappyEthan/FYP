@@ -22,7 +22,8 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_ARCHIVE_ROOT = REPO_ROOT / 'runs' / '毛笔实验数据'
 PLAN_FILES = ('strokeplan.npz', 'feedforward.json', 'settings.json', 'entry_profile.json',
               'pi_profile.json', 'recipe.json', 'workspace_recipe.json', 'editor_state.json',
-              'preflight.json', 'segment_target_audit.json', 'speed_adaptation.json')
+              'preflight.json', 'segment_target_audit.json', 'speed_adaptation.json',
+              'writing_variation.json')
 
 
 class _ConsoleTee:

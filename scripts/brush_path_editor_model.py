@@ -6,6 +6,9 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 import uuid
 import numpy as np
+from brushbot.experiments.writing_variation import (
+    PROFILE_KEY, default_config, validate_config, new_seed, baseline_digest,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT = ROOT/'runs/brush2/plans/heng_flat_tail_v16'
@@ -59,6 +62,10 @@ class PathModel:
         self.pending_point=None
         self.pending_stroke_position='end'
         self.rhythm_regions=[]
+        self.writing_variation=default_config()
+        self.variation_snapshot=None
+        self.variation_repeat_seed=new_seed()
+        self.variation_locked=False
         self.validate()
 
     def validate(self):
@@ -318,6 +325,9 @@ class PathModel:
             if path:settings[name]=json.loads(Path(path).read_text())
         settings['feedforward.json'].pop('low_response_trial',None)
         settings['feedforward.json'].pop('low_response_trial_note',None)
+        # An opened exported plan may contain a frozen execution realization.
+        # Rebuild the standard first; the workspace applies that realization once.
+        settings['entry_profile.json'].pop(PROFILE_KEY,None)
         return settings
 
     def select_feedforward(self,path):
@@ -527,6 +537,9 @@ class PathModel:
         result['settings_snapshot']=copy.deepcopy(getattr(self,'settings_snapshot',None))
         if include_workspace:
             result['stroke_workspace']=dict(order=self.stroke_order.copy(),others=copy.deepcopy(self.other_strokes),pending_point=copy.deepcopy(self.pending_point),pending_stroke_position=self.pending_stroke_position)
+            result.update(writing_variation=copy.deepcopy(self.writing_variation),
+                variation_snapshot=copy.deepcopy(self.variation_snapshot),
+                variation_repeat_seed=self.variation_repeat_seed, variation_locked=self.variation_locked)
         return result
 
     def portable_state(self):
@@ -586,6 +599,13 @@ class PathModel:
         obj.pending_stroke_position=workspace.get('pending_stroke_position','end')
         if obj.pending_stroke_position not in ('start','end'):raise ValueError('新笔画顺序须为最前或末尾')
         obj.rhythm_regions=state.get('rhythm_regions',[])
+        obj.writing_variation=validate_config(state.get('writing_variation',default_config()))
+        obj.variation_snapshot=copy.deepcopy(state.get('variation_snapshot'))
+        obj.variation_repeat_seed=state.get('variation_repeat_seed',new_seed())
+        obj.variation_locked=state.get('variation_locked',False)
+        if (type(obj.variation_repeat_seed) is not int or not 0<=obj.variation_repeat_seed<2**31
+                or type(obj.variation_locked) is not bool):
+            raise ValueError('书写随机量种子或锁定状态无效')
         from scripts.brush_rhythm import validate_regions
         validate_regions(obj.rhythm_regions)
         if obj.pending_point is not None:
@@ -623,6 +643,7 @@ class PathModel:
         candidate=self.from_state(target)
         candidate.other_strokes=[copy.deepcopy(s) for s in self.other_strokes if s['stroke_id']!=stroke_id]+[copy.deepcopy(self.state(False))]
         candidate.stroke_order=self.stroke_order.copy()
+        self._copy_variation_to(candidate)
         self.__dict__=candidate.__dict__
 
     def add_independent_point(self,xy,position='end'):
@@ -654,6 +675,7 @@ class PathModel:
         candidate=self.from_state(state)
         candidate.other_strokes=copy.deepcopy(self.other_strokes)+[copy.deepcopy(self.state(False))]
         candidate.stroke_order=[candidate.stroke_id,*self.stroke_order] if self.pending_stroke_position=='start' else [*self.stroke_order,candidate.stroke_id]
+        self._copy_variation_to(candidate)
         self.__dict__=candidate.__dict__
         return True
 
@@ -751,7 +773,51 @@ class PathModel:
         self.audit_targets(compiled)
         return recipe,plan,compiled,settings,limits
 
+    def _copy_variation_to(self,candidate):
+        for key in ('writing_variation','variation_snapshot','variation_repeat_seed','variation_locked'):
+            setattr(candidate,key,copy.deepcopy(getattr(self,key)))
+
+    def set_writing_variation(self,config):
+        config=validate_config(config)
+        if config!=self.writing_variation:
+            self.writing_variation=config
+            self.variation_snapshot=None
+            self.variation_locked=False
+
+    def regenerate_writing_variation(self):
+        self.variation_repeat_seed=new_seed()
+        self.variation_snapshot=None
+        self.variation_locked=False
+
     def compile_workspace(self):
+        result=self._compile_standard_workspace()
+        self.last_standard_compiled=result[2]
+        self.last_variation=None
+        config=validate_config(self.writing_variation)
+        if not config['enabled']:return result
+        from brushbot.experiments.writing_variation import generate
+        from brushbot.experiments.strokeplan_execution import compile_recorded_plan
+        recipe,plan,baseline,settings,_=result
+        digest=baseline_digest(baseline,baseline['nominal_g_uT'],settings['feedforward.json'],
+            baseline['setup_snapshot'],settings['entry_profile.json'])
+        snapshot=self.variation_snapshot
+        stale=(snapshot is None or snapshot.get('baseline_sha256')!=digest
+               or snapshot.get('config')!=config or snapshot.get('repeat_seed')!=self.variation_repeat_seed)
+        if stale:
+            if self.variation_locked and snapshot is not None:
+                raise ValueError('标准输入或配置已改变，无法复用锁定结果；请重新生成本次变化')
+            snapshot=generate(baseline,baseline['nominal_g_uT'],settings['feedforward.json'],
+                baseline['setup_snapshot'],settings['entry_profile.json'],config,self.variation_repeat_seed)
+        settings=copy.deepcopy(settings)
+        settings['entry_profile.json'][PROFILE_KEY]=copy.deepcopy(snapshot)
+        compiled=compile_recorded_plan(plan,settings['feedforward.json'],settings['settings.json'],
+            label='interactive_brush_sequence_pi',control_mode='pi',feedback_profile=settings['pi_profile.json'],
+            entry_profile=settings['entry_profile.json'])
+        self.variation_snapshot=copy.deepcopy(snapshot)
+        self.last_variation=snapshot
+        return recipe,plan,compiled,settings,compiled['variation_limits']
+
+    def _compile_standard_workspace(self):
         """Compile each stroke locally, then verify one complete lift/transfer sequence."""
         if self.pending_point is not None:raise ValueError('新笔画只有独立起点；请添加第二个点或取消独立起点')
         if len(self.stroke_order)==1:
@@ -846,7 +912,16 @@ class PathModel:
             auto_speed_adaptation=True,local_speed_adapted=self.last_speed_adaptation['adapted'],
             local_speed_iterations=self.last_speed_adaptation['iterations'])
         extra={'workspace_recipe.json':recipe} if multiple else {}
+        if self.last_variation is not None:
+            extra['writing_variation.json']=self.last_variation
+            summary['writing_variation']=dict(enabled=True,profile=copy.deepcopy(self.writing_variation['profile']),
+                repeat_seed=self.variation_repeat_seed,
+                strokes=[row['report'] for row in self.last_variation['strokes']])
+        audit=self.last_workspace_audit if multiple else self.audit_targets(self.last_standard_compiled)
+        if self.last_variation is not None:
+            audit=dict(standard_segments=audit,effective_targets_verified=True,
+                realization_file='writing_variation.json')
         current_recipe=next(row['recipe'] for row in self.last_workspace_strokes if row['stroke_id']==self.stroke_id)
-        for name,value in {**settings,**extra,'recipe.json':current_recipe,'editor_state.json':self.portable_state(),'preflight.json':summary,'segment_target_audit.json':self.last_workspace_audit if multiple else self.audit_targets(compiled),'speed_adaptation.json':self.last_speed_adaptation}.items():
+        for name,value in {**settings,**extra,'recipe.json':current_recipe,'editor_state.json':self.portable_state(),'preflight.json':summary,'segment_target_audit.json':audit,'speed_adaptation.json':self.last_speed_adaptation}.items():
             (folder/name).write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
         return folder,summary
