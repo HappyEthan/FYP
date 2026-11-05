@@ -75,13 +75,19 @@ def test_session_reuses_devices_and_closes_once(monkeypatch, tmp_path, record_tc
         assert kwargs['source'].started
         assert not any(s.closed for s in sockets)
         trials.append(kwargs)
-        return SimpleNamespace(), SimpleNamespace()
+        return SimpleNamespace(run_dir=str(tmp_path/'fake-run')), SimpleNamespace()
     def run(engine, hub, **kwargs):
         if record_tcp:
             assert kwargs['pose_sampler'].reader() == (0,)*6
         return {'state': 'END_WAIT', 'pose_capture': {'worker_stopped': worker_stopped}
                 if record_tcp else None}
     monkeypatch.setattr(runner, 'run_recorded', run)
+    from brushbot.experiments.archive import ExperimentArchive
+    import brushbot.experiments.magnetic_timeseries as magnetic
+    import scripts.brush_experiment_dialogs as dialogs
+    monkeypatch.setattr(magnetic, 'export_magnetic_timeseries', lambda path: {})
+    monkeypatch.setattr(ExperimentArchive, 'archive_success', lambda *a, **kw: tmp_path/'saved-run')
+    monkeypatch.setattr(dialogs, 'name_completed_experiment', lambda store, folder: folder)
     def batch():
         with runner.hardware_session(setup, record_tcp=record_tcp) as session:
             for y in (500., 450.):

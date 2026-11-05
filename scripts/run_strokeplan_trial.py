@@ -72,7 +72,7 @@ SETTINGS = None
 SERIAL_PORT = "/dev/ttyACM0"
 BAUD = 115200
 ARM_IP = "192.168.0.10"
-RUN_ROOT = ROOT / "runs/brush2"
+RUN_ROOT = ROOT / "runs/毛笔实验数据"
 # None：单笔 FF/P 默认关闭，其余实验开启；也可指定 True / False。
 RECORD_ACTUAL_TCP = None
 # ==================== 参数区结束 ====================

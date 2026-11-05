@@ -16,6 +16,8 @@ import uuid
 
 import numpy as np
 
+from brushbot.experiments.reproduce import read_json as read_data_json
+
 from brushbot.experiments.feedforward_calibration_validation import (
     COMMON_WAIT, ValidationEngine, ValidationHub, compile_trial, load_calibration,
     summarize_rows, trial_metadata, write_json,
@@ -34,7 +36,7 @@ else:
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = ROOT/'runs/brush2/plans/feedforward_calibration_handoff_v2'
 SETTINGS = ROOT/'runs/brush2/plans/12_中字朝负Y_正X为右/settings.json'
-RUN_ROOT = ROOT/'runs/brush2/正向前馈校准验证'
+RUN_ROOT = ROOT/'runs/毛笔实验数据'
 EXPERIMENT_FOLDER = '公共前馈与方向校准'
 
 
@@ -220,9 +222,11 @@ def main(argv=None):
                               deadline_recovery_count=snapshot.get('deadline_recovery_count', 0),
                               last_deadline_recovery=snapshot.get('last_deadline_recovery'))
                 if engine.run_dir:
-                    metric_path = Path(engine.run_dir)/'validation_metrics.json'
-                    if metric_path.exists():
-                        result['metrics'] = json.loads(metric_path.read_text())
+                    try:
+                        result['metrics'] = read_data_json(engine.run_dir, 'validation_metrics.json')
+                    except FileNotFoundError:
+                        pass
+                    else:
                         metric = result['metrics']['primary']
                         print('本笔中段:', json.dumps({k:metric[k] for k in (
                             'coverage', 'calibrated_median_uT', 'calibrated_rmse_uT_valid_only',

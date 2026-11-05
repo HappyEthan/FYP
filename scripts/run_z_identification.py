@@ -43,7 +43,7 @@ else:
 
 ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = ROOT/'runs/brush2/plans/ry15_rz0_suite_60_200_v1/settings.json'
-RUN_ROOT = ROOT/'runs/brush2'
+RUN_ROOT = ROOT/'runs/毛笔实验数据'
 EXPERIMENT_FOLDER = '05_Z动态辨识'
 ARM_IP = '192.168.0.10'
 SERIAL_PORT = '/dev/ttyACM0'
@@ -169,11 +169,12 @@ def hardware_session(setup, *, record_tcp):
     # All device imports and connections occur after the operator's RUN.
     sys.path.insert(0, str(ADAPTER_ROOT))
     from huayan_robot import HuayanRobot
+    from brushbot.experiments.archive import terminal_stream
 
     clock = MonotonicClock()
     source = SerialSource(SERIAL_PORT, BAUD)
     lock = RobotResourceLock(Path('/tmp/brushbot-feedforward.lock'), ARM_IP)
-    panel = LiveStatusPanel(sys.stdout)
+    panel = LiveStatusPanel(terminal_stream(sys.stdout))
     robot = pose_client = None
     installation = copy.deepcopy(setup)
     lock.acquire()
@@ -208,22 +209,44 @@ def hardware_session(setup, *, record_tcp):
             arm = ElfinExperimentArm(robot, current_setup, transport_timeout_s=.5, clock_ns=clock.now_ns)
             sampler = (TCPPoseSampler(lambda: backend.read().tcp_pose, clock_ns=clock.now_ns)
                        if backend is not None else None)
-            factory = build_stack if stack_factory is None else stack_factory
-            engine, hub = factory(profile=profile, setup=current_setup, root=root, arm=arm,
-                                  source=source, clock=clock, settings_source_bytes=source_bytes)
+            from brushbot.experiments.archive import ExperimentArchive, without_console_capture
+            from brushbot.experiments.magnetic_timeseries import export_magnetic_timeseries
+            store = ExperimentArchive(root)
+            store.cleanup_stale()
+            with store.session() as stage:
+                factory = build_stack if stack_factory is None else stack_factory
+                engine, hub = factory(profile=profile, setup=current_setup, root=stage/'raw', arm=arm,
+                                      source=source, clock=clock, settings_source_bytes=source_bytes)
 
-            def show(lines):
-                panel.update((lines[0].replace('StrokePlan', display_name), lines[1]))
+                def show(lines):
+                    panel.update((lines[0].replace('StrokePlan', display_name), lines[1]))
 
-            result = run_recorded(engine, hub, clock=clock, live_output_fn=show, pose_sampler=sampler)
-            panel.close()
-            _report(result)
-            if result.get('pose_capture'):
-                print('实际 TCP 采集:', json.dumps(result['pose_capture'], ensure_ascii=False))
-                if not result['pose_capture'].get('worker_stopped', False):
-                    print('实际 TCP 采集线程未停止；停止批次，不复用仍在读取的连接。')
+                with without_console_capture():
+                    result = run_recorded(engine, hub, clock=clock, live_output_fn=show, pose_sampler=sampler)
+                store.record_result(stage, result)
+                panel.close()
+                _report(result)
+                if result.get('pose_capture'):
+                    print('实际 TCP 采集:', json.dumps(result['pose_capture'], ensure_ascii=False))
+                    if not result['pose_capture'].get('worker_stopped',False):
+                        print('实际 TCP 采集线程未停止，临时数据不归档。')
+                        return 2
+                if result['state'] != 'END_WAIT':
+                    print('实验未完成，全部数据保留在临时失败实验目录。')
                     return 2
-            return 0 if result['state'] == 'END_WAIT' else 2
+                export_magnetic_timeseries(engine.run_dir)
+                folder = store.archive_success(stage, engine.run_dir, require_tcp=record_tcp)
+                engine.run_dir = str(folder)
+            print('实验成功，数据已归档：'+str(folder))
+            if __package__:
+                from .brush_experiment_dialogs import name_completed_experiment
+            else:
+                from brush_experiment_dialogs import name_completed_experiment
+            try:
+                engine.run_dir = str(name_completed_experiment(store, folder))
+            except (Exception, KeyboardInterrupt) as exc:
+                print('数据已保存，保留默认名称：'+str(exc))
+            return 0
 
         yield execute
     finally:

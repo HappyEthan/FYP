@@ -54,7 +54,7 @@ SERIAL_BAUD = 115200
 TRANSPORT_TIMEOUT_S = 0.5
 DEFAULT_EXPERIMENT = REPO_ROOT / "configs" / "experiments" / "z_ladder_x.json"
 BRUSH_ID = "brush2"
-DEFAULT_RUN_ROOT = REPO_ROOT / "runs" / BRUSH_ID
+DEFAULT_RUN_ROOT = REPO_ROOT / "runs" / "毛笔实验数据"
 
 # brush2：离线预检默认 Ry15/Rz0；真机轨迹采用启动时读取的 TCP 姿态。
 # 接触零点 40 mm，本批按用户设置跑 Z=36→24 mm、8 档。
@@ -582,37 +582,54 @@ def main(argv=None) -> int:
         print("已记录当前 TCP 姿态 RPY = ({:.3f}, {:.3f}, {:.3f})°；"
               "本次所有轨迹保持该姿态。".format(
                   *(math.degrees(value) for value in captured_rpy)))
-        engine, hub = build_experiment_stack(
-            spec=spec, setup=setup, arm=arm, source=source,
-            root=Path(args.run_root), clock=clock,
-            experiment_folder="01_四方向阶梯实验",
-            run_folder_label=ORIENTATION_NAMES.get(
-                spec["run_label"], spec["run_label"]))
-        print("已就绪。启动位置不限；取 baseline 时请保持笔尖离纸静止。"
-              "随后将从当前位置直接 MoveL 到第一段轨迹起点，请确认直线路径无遮挡。"
-              "Ctrl+C 会走抬笔中止。")
-        panel = LiveStatusPanel(sys.stdout)
+        from brushbot.experiments.archive import ExperimentArchive, terminal_stream, without_console_capture
+        store=ExperimentArchive(args.run_root)
+        store.cleanup_stale()
+        with store.session() as stage:
+            engine, hub = build_experiment_stack(
+                spec=spec, setup=setup, arm=arm, source=source,
+                root=stage/'raw', clock=clock,
+                experiment_folder="01_四方向阶梯实验",
+                run_folder_label=ORIENTATION_NAMES.get(
+                    spec["run_label"], spec["run_label"]))
+            print("已就绪。启动位置不限；取 baseline 时请保持笔尖离纸静止。"
+                  "随后将从当前位置直接 MoveL 到第一段轨迹起点，请确认直线路径无遮挡。"
+                  "Ctrl+C 会走抬笔中止。")
+            panel = LiveStatusPanel(terminal_stream(sys.stdout))
+            try:
+                with without_console_capture():
+                    snapshot = run_experiment(
+                        engine, hub, clock=clock,
+                        live_output_fn=panel.update,
+                        live_break_fn=panel.pause,
+                        require_wait_position=False)
+            except RuntimeError as exc:
+                print("无法开始: %s" % exc, file=sys.stderr)
+                return 2
+            except KeyboardInterrupt:
+                panel.close()
+                _report(engine.snapshot())
+                print("实验已中止并抬笔。", file=sys.stderr)
+                return 130
+            finally:
+                panel.close()
+            _report(snapshot)
+            store.record_result(stage, snapshot)
+            if snapshot.get("state") != "END_WAIT":
+                print("实验未正常结束，请检查 run 目录里的 manifest.json。", file=sys.stderr)
+                return 2
+            from brushbot.experiments.magnetic_timeseries import export_magnetic_timeseries
+            export_magnetic_timeseries(engine.run_dir)
+            folder=store.archive_success(stage,engine.run_dir)
+            engine.run_dir=str(folder)
+        if __package__:
+            from .brush_experiment_dialogs import name_completed_experiment
+        else:
+            from brush_experiment_dialogs import name_completed_experiment
         try:
-            snapshot = run_experiment(
-                engine, hub, clock=clock,
-                live_output_fn=panel.update,
-                live_break_fn=panel.pause,
-                require_wait_position=False)
-        except RuntimeError as exc:
-            print("无法开始: %s" % exc, file=sys.stderr)
-            return 2
-        except KeyboardInterrupt:
-            panel.close()
-            _report(engine.snapshot())
-            print("实验已中止并抬笔。", file=sys.stderr)
-            return 130
-        finally:
-            panel.close()
-        _report(snapshot)
-        if snapshot.get("state") != "END_WAIT":
-            print("实验未正常结束，请检查 run 目录里的 manifest.json。", file=sys.stderr)
-            return 2
-        print("完成。下一步：summarize_ladder / split_ladder_run.py 对该 run 目录。")
+            name_completed_experiment(store,folder)
+        except (Exception,KeyboardInterrupt) as exc:
+            print('数据已保存，保留默认名称：'+str(exc))
         return 0
     finally:
         source.stop()

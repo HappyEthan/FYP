@@ -3,12 +3,15 @@
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
+import traceback
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT), str(ROOT/'src'), str(Path.home()/'桌面/elfin-dhag-adapter')]
 from scripts.run_strokeplan_experiment import main as run_experiment
+from brushbot.experiments.archive import DEFAULT_ARCHIVE_ROOT, PLAN_FILES, ExperimentArchive
 PLAN = None
 
 def confirm(prompt):
@@ -25,11 +28,39 @@ def confirm(prompt):
         raise RuntimeError('传感器已被其他进程占用，请关闭录制/监控后重试。占用PID：'+busy.stdout.strip())
     return 'RUN'
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('plan_dir',type=Path)
     parser.add_argument('--execute',action='store_true')
-    args = parser.parse_args()
+    parser.add_argument('--run-root',type=Path,default=DEFAULT_ARCHIVE_ROOT)
+    parser.add_argument('--consume-stage',type=Path,help=argparse.SUPPRESS)
+    args = parser.parse_args(argv)
+    store = ExperimentArchive(args.run_root) if args.consume_stage or args.execute else None
+    capture_inputs = store is not None and args.consume_stage is None
+    if capture_inputs:args.consume_stage = store.new_stage(kind='launch')
+    if store is not None:store.claim_stage(args.consume_stage,kind='launch')
+    if store is None:
+        return run_plan(args)
+    with store.capture_console(args.consume_stage):
+        try:
+            if capture_inputs:
+                inputs = args.consume_stage / 'inputs'
+                inputs.mkdir()
+                for name in PLAN_FILES:
+                    source = args.plan_dir / name
+                    if source.is_file():shutil.copyfile(source, inputs / name)
+            code = run_plan(args)
+        except BaseException as exc:
+            traceback.print_exc()
+            if args.consume_stage.exists():
+                store.retain_stage(args.consume_stage, reason='launcher_exception', exception=exc)
+            raise
+        if args.consume_stage.exists():
+            store.retain_stage(args.consume_stage, reason='launch_cancelled_or_not_executed' if code == 0 else 'launch_failed')
+        return code
+
+
+def run_plan(args):
     PLAN=args.plan_dir.resolve()
     args.dry_run=not args.execute
     if not args.dry_run and not os.access('/dev/ttyACM0', os.R_OK | os.W_OK):
@@ -58,8 +89,10 @@ def main():
         print('低响应试验已启用：0..标定下限采用未实测线性映射；0μT对应零名义压深，不保证触纸。')
     argv = [str(PLAN/'strokeplan.npz'), '--feedforward', str(PLAN/'feedforward.json'),
         '--settings', str(PLAN/'settings.json'), '--entry-profile', str(PLAN/'entry_profile.json'),
-        '--control-mode', 'pi', '--record-actual-tcp', '--run-label', 'edited_heng_'+PLAN.name+'_pi',
-        '--run-root', str(ROOT/'runs/brush2'), '--dry-run' if args.dry_run else '--execute']
+        '--control-mode', 'pi', '--record-actual-tcp', '--run-label', 'edited_brush_path_pi',
+        '--bundle-dir', str(PLAN), '--run-root', str(args.run_root), '--dry-run' if args.dry_run else '--execute']
+    if args.consume_stage is not None:
+        argv += ['--session-stage', str(args.consume_stage)]
     return run_experiment(argv, feedback_profile=json.loads((PLAN/'pi_profile.json').read_text()), confirm_execution=confirm)
 
 if __name__ == '__main__':

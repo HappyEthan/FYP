@@ -40,7 +40,7 @@ else:
 
 ROOT = Path(__file__).resolve().parents[1]
 SETTINGS = ROOT/'runs/brush2/plans/12_中字朝负Y_正X为右/settings.json'
-RUN_ROOT = ROOT/'runs/brush2'
+RUN_ROOT = ROOT/'runs/毛笔实验数据'
 EXPERIMENT_FOLDER = '四方向速度下压实验'
 DIRECTION_ORDER = ('right', 'up', 'left', 'down')
 SPEEDS_MM_S = (10., 15., 7.)

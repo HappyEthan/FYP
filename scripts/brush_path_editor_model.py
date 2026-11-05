@@ -51,6 +51,7 @@ class PathModel:
         self.feedforward_override=None
         self.settings_override=None
         self.entry_profile_override=None
+        self.settings_snapshot=None
         self.stroke_id='stroke-1'
         self.stroke_name='笔画1'
         self.stroke_order=[self.stroke_id]
@@ -304,8 +305,12 @@ class PathModel:
         self.nodes[k+1:]+=delta
 
     def settings(self):
-        settings={n:json.loads(((self.folder if (self.folder/n).exists() else CONTEXT)/n).read_text())
-            for n in ['feedforward.json','settings.json','entry_profile.json','pi_profile.json']}
+        names=['feedforward.json','settings.json','entry_profile.json','pi_profile.json']
+        if getattr(self,'settings_snapshot',None) is not None:
+            settings=copy.deepcopy(self.settings_snapshot)
+            if set(names)-settings.keys():raise ValueError('实验存档的配置快照不完整')
+        else:
+            settings={n:json.loads(((self.folder if (self.folder/n).exists() else CONTEXT)/n).read_text()) for n in names}
         if self.feedforward_override:
             settings['feedforward.json']=json.loads(Path(self.feedforward_override).read_text())
         for attribute,name in [('settings_override','settings.json'),('entry_profile_override','entry_profile.json')]:
@@ -519,9 +524,21 @@ class PathModel:
         result=dict(node_enabled=self.node_enabled.tolist(),endpoint_speed_mode=self.endpoint_speed_mode,settings_override=getattr(self,'settings_override',None),entry_profile_override=getattr(self,'entry_profile_override',None),node_speeds_mm_s=self.node_speeds.tolist(),segment_speeds_mm_s=self.segment_speeds.tolist(),speed_positions=self.speed_positions.tolist(),node_angles_deg=self.node_angles.tolist(),schema_version=1,source_folder=str(self.folder),base_recipe=self.base,
                     indices=self.indices.tolist(),nodes_mm=self.nodes.tolist(),magnetic_values_uT=self.magnetic_values.tolist(),lift_mm=self.lift_mm.tolist(),segment_magnetic_uT=self.segment_magnetic.tolist(),height_mode='writing_z_offset',allow_low_response_trial=self.allow_low_response,feedforward_override=str(self.feedforward_override) if self.feedforward_override else None)
         result.update(stroke_id=self.stroke_id,stroke_name=self.stroke_name,rhythm_regions=copy.deepcopy(self.rhythm_regions))
+        result['settings_snapshot']=copy.deepcopy(getattr(self,'settings_snapshot',None))
         if include_workspace:
             result['stroke_workspace']=dict(order=self.stroke_order.copy(),others=copy.deepcopy(self.other_strokes),pending_point=copy.deepcopy(self.pending_point),pending_stroke_position=self.pending_stroke_position)
         return result
+
+    def portable_state(self):
+        """Bind every stroke's effective settings; source paths become provenance only."""
+        state=self.state()
+        def bind(item):
+            model=PathModel.from_state(item)
+            item['settings_snapshot']=model.settings()
+            for key in ('feedforward_override','settings_override','entry_profile_override'):item[key]=None
+        bind(state)
+        for other in state['stroke_workspace']['others']:bind(other)
+        return state
 
     @classmethod
     def restore(cls,path):
@@ -552,6 +569,7 @@ class PathModel:
         obj.feedforward_override=state.get('feedforward_override')
         obj.settings_override=state.get('settings_override')
         obj.entry_profile_override=state.get('entry_profile_override')
+        obj.settings_snapshot=state.get('settings_snapshot')
         obj.stroke_id=state.get('stroke_id','stroke-1')
         obj.stroke_name=state.get('stroke_name','笔画1')
         workspace=state.get('stroke_workspace',{})
@@ -829,6 +847,6 @@ class PathModel:
             local_speed_iterations=self.last_speed_adaptation['iterations'])
         extra={'workspace_recipe.json':recipe} if multiple else {}
         current_recipe=next(row['recipe'] for row in self.last_workspace_strokes if row['stroke_id']==self.stroke_id)
-        for name,value in {**settings,**extra,'recipe.json':current_recipe,'editor_state.json':self.state(),'preflight.json':summary,'segment_target_audit.json':self.last_workspace_audit if multiple else self.audit_targets(compiled),'speed_adaptation.json':self.last_speed_adaptation}.items():
+        for name,value in {**settings,**extra,'recipe.json':current_recipe,'editor_state.json':self.portable_state(),'preflight.json':summary,'segment_target_audit.json':self.last_workspace_audit if multiple else self.audit_targets(compiled),'speed_adaptation.json':self.last_speed_adaptation}.items():
             (folder/name).write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
         return folder,summary

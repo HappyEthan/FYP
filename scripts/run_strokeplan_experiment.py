@@ -19,6 +19,8 @@ from zoneinfo import ZoneInfo
 import numpy as np
 
 from brushbot.experiments.acquisition import SampleHub
+from brushbot.experiments.archive import (DEFAULT_ARCHIVE_ROOT, ExperimentArchive, PLAN_FILES,
+                                         read_json, without_console_capture)
 from brushbot.experiments.adapter import ElfinExperimentArm, RobotResourceLock
 from brushbot.experiments.strokeplan_execution import (
     StrokePlanExperimentEngine, compile_recorded_plan, runtime_settings,
@@ -51,7 +53,7 @@ class StrokePlanRecorder(DatedLadderRecorder):
     def _write_snapshots(self, snapshots):
         super()._write_snapshots(snapshots)
         for name, payload in snapshots['strokeplan_inputs'].items():
-            if name not in {'strokeplan.npz', 'feedforward.json', 'settings.json', 'entry_profile.json'}:
+            if name not in PLAN_FILES:
                 raise ValueError('unsupported StrokePlan snapshot filename')
             self._save_bytes(name, payload)
 
@@ -176,7 +178,7 @@ def _drive_recorded(engine, hub, *, clock, sleep, live_output_fn):
                 engine.fail(hub.fault or f'driver_fault: {type(exc).__name__}: {exc}')
 
 
-def main(argv=None, *, feedback_profile=None, confirm_execution=None):
+def main(argv=None, *, feedback_profile=None, confirm_execution=None, naming_prompt=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('plan', type=Path)
     parser.add_argument('--feedforward', type=Path, required=True)
@@ -189,7 +191,9 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
     parser.add_argument('--serial-port', default='/dev/ttyACM0')
     parser.add_argument('--baud', type=int, default=115200)
     parser.add_argument('--ip', default='192.168.0.10')
-    parser.add_argument('--run-root', type=Path, default=ROOT/'runs'/'brush2')
+    parser.add_argument('--run-root', type=Path, default=DEFAULT_ARCHIVE_ROOT)
+    parser.add_argument('--bundle-dir', type=Path, help='complete editor export to capture with the run')
+    parser.add_argument('--session-stage', type=Path, help=argparse.SUPPRESS)
     parser.add_argument('--run-label')
     parser.add_argument('--experiment-folder',
                         help='directory under Shanghai date for this experiment')
@@ -214,6 +218,19 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
         if args.entry_profile is not None:
             artifacts['entry_profile.json'] = args.entry_profile.read_bytes()
             entry_profile = json.loads(artifacts['entry_profile.json'])
+        bundle_dir = args.bundle_dir or (args.plan.parent if (args.plan.parent/'editor_state.json').is_file() else None)
+        if bundle_dir is not None:
+            for name in PLAN_FILES:
+                path = bundle_dir/name
+                if path.is_file() and name not in artifacts:artifacts[name] = path.read_bytes()
+            state = json.loads(artifacts['editor_state.json'])
+            states = [state, *state.get('stroke_workspace',{}).get('others',[])]
+            required = {'feedforward.json','settings.json','entry_profile.json','pi_profile.json'}
+            if any(not isinstance(item.get('settings_snapshot'),dict) or required-item['settings_snapshot'].keys()
+                   or any(item.get(key) for key in ('feedforward_override','settings_override','entry_profile_override')) for item in states):
+                raise ValueError('编辑器存档尚未包含完整独立配置，请重新导出路径版本')
+        if feedback_profile is not None:
+            artifacts['pi_profile.json'] = (json.dumps(feedback_profile,ensure_ascii=False,indent=2,allow_nan=False)+'\n').encode('utf-8')
         label = args.run_label or 'strokeplan_'+args.plan.stem
         compiled = compile_recorded_plan(plan, table, setup, label=label,
                                          control_mode=args.control_mode,
@@ -291,6 +308,41 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
     if confirm('确认已手动沾水、自动回位与书写路径净空足够；输入 RUN: ').strip() != 'RUN':
         return 0
 
+    store = ExperimentArchive(args.run_root)
+    store.cleanup_stale()
+    with store.session(args.session_stage) as stage:
+        inputs = stage / 'inputs'
+        inputs.mkdir(exist_ok=True)
+        for name, data in artifacts.items():
+            (inputs / name).write_bytes(data)
+        print('执行期间保持原终端显示，暂停附加终端日志落盘；原始传感器、控制和 TCP 记录照常保存。')
+        with without_console_capture():
+            result = _execute_hardware(args, plan=plan, table=table, setup=setup,
+                artifacts=artifacts, label=label, feedback_profile=feedback_profile,
+                entry_profile=entry_profile, work_root=stage/'raw')
+        store.record_result(stage, result)
+        if result['state'] != 'END_WAIT':
+            print('本次试写中断或出错；全部数据保留在临时失败实验目录，不生成成功存档。')
+            return 2
+        folder = store.archive_success(stage, result['run_dir'], input_files=artifacts,
+            require_tcp=args.record_actual_tcp, require_editor=bundle_dir is not None)
+    print('试写成功，实验数据已保存：'+str(folder))
+    try:
+        if naming_prompt is None:
+            if __package__:
+                from .brush_experiment_dialogs import name_completed_experiment
+            else:
+                from brush_experiment_dialogs import name_completed_experiment
+            naming_prompt = name_completed_experiment
+        naming_prompt(store, folder)
+    except (Exception, KeyboardInterrupt) as exc:
+        print('实验已成功保存；命名未完成，保留默认名称：'+folder.name+'。'+str(exc))
+    return 0
+
+
+def _execute_hardware(args, *, plan, table, setup, artifacts, label,
+                      feedback_profile, entry_profile, work_root):
+    """Close every hardware connection and recorder before archive publication."""
     sys.path.insert(0, str(ADAPTER_ROOT))
     from huayan_robot import HuayanRobot
     clock = MonotonicClock()
@@ -326,7 +378,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
         # after opening; do not consume the source from another monitor process.
         source.start()
         engine, hub = build_stack(plan=plan, table=table, setup=setup,
-                                  artifacts=artifacts, label=label, root=args.run_root,
+                                  artifacts=artifacts, label=label, root=work_root,
                                   arm=arm, source=source, clock=clock,
                                   control_mode=args.control_mode,
                                   feedback_profile=feedback_profile,
@@ -337,6 +389,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
         result = run_recorded(engine, hub, clock=clock,
                               live_output_fn=panel.update,
                               pose_sampler=pose_sampler)
+        ExperimentArchive.record_result(Path(work_root).parent, result)
         panel.close()
         if engine.run_dir:
             try:
@@ -345,7 +398,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
                 print('完整磁响应数据：'+magnetic_export['output'])
                 print(f'磁采样{magnetic_export["sensor_samples"]}条，典型{magnetic_export["nominal_sensor_rate_hz"]} Hz，时间间隔异常{len(magnetic_export["gaps"])}处；未插值补点。')
             except Exception as exc:
-                print('磁响应整理失败，原sensor.csv/control.jsonl仍保留：'+str(exc))
+                raise RuntimeError('磁响应整理失败，本次数据不归档：'+str(exc)) from exc
         _report(result)
         if result.get('pose_capture') is not None:
             capture = result['pose_capture']
@@ -358,7 +411,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
                     or not capture['worker_stopped']):
                 print('实际 TCP 采集不完整；不能据此评价运行阶段位姿。'
                       '详情见 actual_tcp_meta.json。')
-        return 0 if result['state'] == 'END_WAIT' else 2
+        return result
     finally:
         try:
             panel.close()

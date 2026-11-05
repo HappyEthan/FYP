@@ -279,7 +279,9 @@ def test_selected_feedforward_override_is_restored_and_exported(tmp_path):
     folder,_=m.export(tmp_path/'exports')
     assert json.loads((folder/'feedforward.json').read_text())==table
     restored=PathModel.restore(folder/'editor_state.json')
-    assert restored.feedforward_override==str(selected)
+    assert restored.feedforward_override is None
+    selected.unlink()
+    assert restored.settings()['feedforward.json']==table
 
 
 def test_equal_adjacent_segment_targets_never_rebound_at_nodes():

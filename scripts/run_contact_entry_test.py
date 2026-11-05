@@ -18,6 +18,8 @@ from zoneinfo import ZoneInfo
 
 import numpy as np
 
+from brushbot.experiments.reproduce import read_json as read_data_json, read_bytes as read_data_bytes
+
 from brushbot.experiments.contact_entry_test import (
     ENTRY_POLICY, LEGACY_ENTRY_POLICY, ContactHub, ContactTestEngine, compile_contact_test,
     summarize_repeats, summarize_rows,
@@ -35,7 +37,7 @@ else:
     from run_z_identification import execute_hardware, hardware_session
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN_ROOT = ROOT/'runs/brush2'
+RUN_ROOT = ROOT/'runs/毛笔实验数据'
 EXPERIMENT_FOLDER = '独立接触参数测试'
 PROFILE = dict(SWEEP_PROFILE, mode='four-direction-hold', direction='up',
                start_z_mm=28., end_z_mm=28., rotate_s=6., return_to_origin=True)
@@ -267,7 +269,7 @@ def result_record(trial,engine=None,*,execution_ok=False,reason=''):
         last_deadline_recovery=snapshot.get('last_deadline_recovery'))
     if folder:
         try:
-            record['metrics'] = json.loads((folder/'contact_metrics.json').read_text())
+            record['metrics'] = read_data_json(folder, 'contact_metrics.json')
         except (OSError,ValueError) as exc:
             record.update(metrics_error=f'{type(exc).__name__}: {exc}',execution_ok=False)
     return record
@@ -283,8 +285,8 @@ def analyze_batch(path):
         record = copy.deepcopy(record)
         if record.get('run_dir') and record.get('execution_ok',True):
             folder = Path(record['run_dir'])
-            metrics = json.loads((folder/'contact_metrics.json').read_text())
-            if hashlib.sha256((folder/'control.jsonl').read_bytes()).hexdigest() != metrics['source_control_sha256']:
+            metrics = read_data_json(folder, 'contact_metrics.json')
+            if hashlib.sha256(read_data_bytes(folder, 'control.jsonl')).hexdigest() != metrics['source_control_sha256']:
                 raise ValueError('control source changed: '+str(folder))
             record['metrics'] = metrics
         elif not record.get('execution_ok',True):

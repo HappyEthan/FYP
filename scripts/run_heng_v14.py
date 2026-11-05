@@ -35,7 +35,7 @@ def main():
     argv = [str(PLAN/'strokeplan.npz'), '--feedforward', str(PLAN/'feedforward.json'),
         '--settings', str(PLAN/'settings.json'), '--entry-profile', str(PLAN/'entry_profile.json'),
         '--control-mode', 'pi', '--record-actual-tcp', '--run-label', 'heng_compact_turn_v14_pi',
-        '--run-root', str(ROOT/'runs/brush2'), '--dry-run' if args.dry_run else '--execute']
+        '--run-root', str(ROOT/'runs/毛笔实验数据'), '--dry-run' if args.dry_run else '--execute']
     return run_experiment(argv, feedback_profile=json.loads((PLAN/'pi_profile.json').read_text()), confirm_execution=confirm)
 
 if __name__ == '__main__':

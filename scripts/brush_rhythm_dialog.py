@@ -54,7 +54,7 @@ class RhythmDialog(W.QDialog):
         self.selected_region=None;self.clipboard=None;self.bands=[];self.reference=None;self.actual=None
         self.revision=0;self.loading=False;self._worker=None;self._preview_again=False;self._closed=False
         self.history=[self.snapshot()]
-        self.setWindowTitle('区域运笔节奏 — 框选后调整顿笔、行笔、收笔');self.resize(1320,880)
+        self.setWindowTitle('运笔节奏');self.resize(1320,880)
         layout=W.QVBoxLayout(self)
         note=W.QLabel('在路径上框选至少两个点，再选择顿笔／行笔／收笔；滑块控制相对参考速度，日常无需填写mm/s。\n下方彩色节奏带可拖动两端或整体平移，路径高亮同步变化。参考速度经过预检，最终执行前仍检查完整多笔轨迹。')
         note.setWordWrap(True);layout.addWidget(note)
