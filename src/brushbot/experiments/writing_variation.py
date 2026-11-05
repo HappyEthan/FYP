@@ -402,12 +402,9 @@ def apply(compiled, nominal, table, setup, entry, snapshot):
             raise ValueError('磁扰动关闭时不能有磁附加量')
         delta = fg+rg
         varied = base+delta
-        metrics = shape_metrics(base, varied)
-        if metrics['correlation'] is not None and metrics['correlation'] < .98:
-            raise ValueError('磁目标形状相关系数低于 0.98')
-        if any(metrics[key] is not None and metrics[key] > .02 for key in (
-                'peak_shift_fraction', 'trough_shift_fraction')):
-            raise ValueError('磁目标主要峰谷位置变化超过 2%')
+        # Waveform differences are experimental outcomes, not rejection criteria.
+        # Descriptive shape metrics are recorded by generate(), never used to
+        # reject or reduce a realization here.
         if delta.any():
             try:
                 lookup_depth_m(table, varied)

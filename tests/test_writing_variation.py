@@ -148,6 +148,27 @@ def test_incompatible_fixed_bias_is_rejected_without_silent_bias_reduction():
         v.generate(*args, enabled_config(bias_pct=20.), 6)
 
 
+@pytest.mark.parametrize('bias, level', [(20., 'none'), (0., 'medium')])
+def test_waveform_changes_do_not_reject_or_reduce_magnetic_variation(bias, level):
+    from brushbot.experiments import writing_variation as v
+    args = writing_inputs()
+    q = args[0]['s'][4:-4]
+    base = 30. + .01*np.exp(-((q-.35)/.03)**2)
+    args[0]['g_ref_uT'][4:-4] = base
+    args[1][4:-4] = base
+    args[0]['pose_m_rad'][4:-4, 2] = .037-np.interp(base, [20, 40, 80], [5, 6, 8])/1000
+    config = dict(enabled_config(bias_pct=bias, repeat_level=level), xy_enabled=False)
+    snapshot = v.generate(*args, config, 17)
+    row = snapshot['strokes'][0]
+    assert row['report']['correlation'] < .98
+    assert row['repeat_magnetic_scale'] == 1.
+    if level == 'medium':
+        assert row['report']['peak_shift_fraction'] > .02
+    _, targets, _ = v.apply(*args, json.loads(json.dumps(snapshot)))
+    np.testing.assert_allclose(targets[4:-4], base+np.asarray(row['fixed_g_uT'])
+                               +np.asarray(row['repeat_g_uT']), rtol=0, atol=1e-12)
+
+
 def test_profile_library_survives_sessions_and_versions_edits(tmp_path):
     from brushbot.experiments import writing_variation as v
     path = tmp_path/'profiles.json'

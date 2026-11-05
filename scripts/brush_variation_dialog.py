@@ -230,7 +230,7 @@ class WritingVariationDialog(W.QDialog):
             return
         report = snapshot['strokes'][index]['report']
         correlation = report['correlation']
-        shape = '近似常量目标' if correlation is None else f'目标形状相关系数 {correlation:.4f}'
+        shape = '近似常量目标' if correlation is None else f'目标相关系数 {correlation:.4f}（仅供参考）'
         self.report.setText(f'预检通过：最大路径偏差 {report["xy_max_mm"]:.4f} mm，'
             f'最大磁目标变化 {report["magnetic_max_uT"]:.2f} μT；{shape}。'
             f'固定路径生效比例 {report["fixed_xy_scale"]:.1%}，'

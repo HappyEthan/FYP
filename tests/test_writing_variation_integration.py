@@ -72,8 +72,13 @@ def test_old_state_defaults_to_disabled_and_configuration_survives_switching_str
 
 def test_export_and_recompile_use_frozen_arrays_even_after_portable_restore(tmp_path):
     model = model_with_variation()
+    model.segment_magnetic[:] = np.linspace(150., 150.1, len(model.segment_magnetic))
+    config = copy.deepcopy(model.writing_variation)
+    config['profile']['bias_pct'] = 1.
+    model.set_writing_variation(config)
     first = model.compile_workspace()[2]
     snapshot = copy.deepcopy(model.variation_snapshot)
+    assert snapshot['strokes'][0]['report']['correlation'] < .98
     folder, summary = model.export(tmp_path)
     actual, _, settings = reload_compiled(folder)
     assert np.array_equal(first['pose_m_rad'], actual['pose_m_rad'])
