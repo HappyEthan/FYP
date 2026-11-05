@@ -35,7 +35,7 @@ status: active
 | 文档 | 内容 |
 |---|---|
 | [validation.md](validation.md) | 后续短轨迹采集与前馈验证方案。 |
-| [esp32-s3-n16r8-firmware.md](esp32-s3-n16r8-firmware.md) | S3-N16R8 + MLX90393 原生 USB 固件、接线与烧录说明。 |
+| [esp32-s3-pico1-firmware.md](esp32-s3-pico1-firmware.md) | ESP32-S3-PICO-1 + MLX90393 + LSM6DSOX 原生 USB 固件、接线与烧录说明。 |
 
 ## 实验记录
 
