@@ -3,7 +3,7 @@ import subprocess
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FIRMWARE = ROOT / "firmware" / "mlx_s3_monitor_fixed90"
+FIRMWARE = ROOT / "firmware" / "xiao_esp32s3_mlx90393_monitor_fixed90"
 
 
 def test_frame_guard_accepts_sustained_signal_and_rejects_corrupt_frames(tmp_path):

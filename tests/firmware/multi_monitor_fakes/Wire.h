@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <cstddef>
 #include <iomanip>
 #include <set>
 #include <sstream>
@@ -54,5 +55,9 @@ struct TwoWire {
     fakeUs += 25;
     return connected.count(address) ? 0 : 2;
   }
+  uint8_t endTransmission(bool) { return endTransmission(); }
+  std::size_t write(uint8_t) { return 1; }
+  uint8_t requestFrom(int, int, bool) { return 0; }
+  int read() { return 0; }
 };
 static TwoWire Wire;

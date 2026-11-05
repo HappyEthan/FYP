@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "../../firmware/mlx_s3_monitor_fixed90/mlx_s3_monitor_fixed90.ino"
+#include "../../firmware/xiao_esp32s3_mlx90393_monitor_fixed90/xiao_esp32s3_mlx90393_monitor_fixed90.ino"
 
 static void require(bool condition, const char* message) {
   if (!condition) {

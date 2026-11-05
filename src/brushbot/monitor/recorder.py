@@ -58,6 +58,7 @@ class Recorder:
             "board": "Seeed Studio XIAO ESP32-C3" if is_hardware else None,
             "port": self.source_info.get("port"),
             "baud": self.source_info.get("baud"),
+            "sensor_address": self.source_info.get("sensor_address"),
             "units": {"t_us": "us", "t_s": "s",
                       "dBx_uT": "uT", "dBy_uT": "uT", "dBz_uT": "uT"},
             "delta_definition": "dB = B - B0",

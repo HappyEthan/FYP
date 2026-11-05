@@ -1,0 +1,14 @@
+ESP32-S3-PICO-1 MLX90393 + LSM6DSOX IMU firmware
+
+Build configuration:
+- MCU/module: ESP32-S3-PICO-1
+- Memory: 8 MB Flash + 8 MB PSRAM
+- FQBN: esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,FlashMode=qio,FlashSize=8M,PSRAM=opi,PartitionScheme=default_8MB
+- I2C: SDA GPIO1, SCL GPIO2
+- MLX90393: addresses 0x0C, 0x0D, 0x10 when present
+- IMU: LSM6DSOX, address 0x6A, 104 Hz, +/-4 g, +/-500 dps
+- Build output: build/esp32.esp32.esp32s3/
+- Full image for esptool at offset 0x0: esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90_8MB_merged.bin
+- Application-only image: esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90_8MB_app.bin
+
+Serial commands: IMU ON, IMU OFF, IMU?, REBOOT

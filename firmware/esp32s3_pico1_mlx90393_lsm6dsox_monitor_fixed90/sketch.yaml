@@ -1,0 +1,3 @@
+# Native USB CDC, 8 MB Quad-SPI flash, 8 MB Octal-SPI PSRAM.
+# Keep the port unset: select the native USB device attached to this board.
+default_fqbn: esp32:esp32:esp32s3:USBMode=hwcdc,CDCOnBoot=cdc,FlashMode=qio,FlashSize=8M,PSRAM=opi,PartitionScheme=default_8MB

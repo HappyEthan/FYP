@@ -15,19 +15,19 @@ ROBOT_IP = "192.168.0.10"
 GRIPPER_GID = 1
 TCP_NAME = "TCP_brush"
 
-# 目标位置：mm；目标姿态：degree。
-ORIGIN_X_MM = -370.0
+# 对齐四方向实验默认第一笔（+X）的等待位：位置 mm，姿态 degree。
+ORIGIN_X_MM = -150.0
 ORIGIN_Y_MM = 500.0
-ORIGIN_Z_MM = 130.0
+ORIGIN_Z_MM = 70.0
 ORIGIN_RX_DEG = 0.0
 ORIGIN_RY_DEG = 15.0
 ORIGIN_RZ_DEG = 0.0
 
-# 回位安全边界与速度。目标和当前位置都必须位于此范围内。
+# 回位安全边界与速度。XY 与四方向实验一致；目标和当前位置都必须位于此范围内。
 RETURN_SPEED_MM_S = 30.0
 RETURN_SETUP = {
-    "workspace_min_mm": [-400.0, 400.0, 17.0],
-    "workspace_max_mm": [100.0, 600.0, 150.0],
+    "workspace_min_mm": [-400.0, 300.0, 17.0],
+    "workspace_max_mm": [100.0, 700.0, 150.0],
     "return_speed_mm_s": RETURN_SPEED_MM_S,
     "max_xy_speed_mm_s": RETURN_SPEED_MM_S,
     "max_z_speed_mm_s": RETURN_SPEED_MM_S,

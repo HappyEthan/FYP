@@ -1,0 +1,9 @@
+Seeed XIAO ESP32-S3 MLX90393 monitor firmware
+
+- Board: Seeed XIAO ESP32-S3
+- Flash: 8 MB
+- I2C: primary SDA GPIO7 (D8), SCL GPIO8 (D9); automatic fallback pin pairs are retained.
+- Sensor: MLX90393, legacy fixed90 protocol.
+- Build output: build/esp32.esp32.XIAO_ESP32S3/
+- Full image: xiao_esp32s3_mlx90393_monitor_fixed90_8MB_merged.bin
+- Application-only image: xiao_esp32s3_mlx90393_monitor_fixed90_8MB_app.bin

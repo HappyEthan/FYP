@@ -137,6 +137,15 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.ed_port.setMaximumWidth(190)
         self.ed_port.setToolTip("输入传感器串口路径，例如 /dev/ttyACM0")
         source_row.addWidget(self.ed_port)
+        self.lbl_address = QtWidgets.QLabel("地址")
+        source_row.addWidget(self.lbl_address)
+        self.cb_address = QtWidgets.QComboBox()
+        self.cb_address.setEditable(True)
+        self.cb_address.setInsertPolicy(QtWidgets.QComboBox.NoInsert)
+        self.cb_address.addItems(["主传感器", "0x0C", "0x0D", "0x0E", "0x0F"])
+        self.cb_address.setMaximumWidth(145)
+        self.cb_address.setToolTip("选择或输入十六进制地址；切换时先断开连接")
+        source_row.addWidget(self.cb_address)
         self.lbl_source = hint("打开 CSV 与配套 JSON 开始回放")
         self.lbl_source.setMinimumWidth(0)
         self.lbl_source.setSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Preferred)
@@ -373,12 +382,17 @@ class MonitorWindow(QtWidgets.QMainWindow):
         is_replay = isinstance(self.src, S.ReplaySource) if connected else mode == "回放"
         self.ed_port.setVisible(mode == "串口")
         self.ed_port.setEnabled(not connected)
+        self.lbl_address.setVisible(mode == "串口")
+        self.cb_address.setVisible(mode == "串口")
+        self.cb_address.setEnabled(not connected and self.experiment_service is None)
         self._group_replay.setVisible(mode != "串口")
         self.btn_conn.setText("断开" if connected else
                               {"串口": "连接传感器", "回放": "打开回放…"}[mode])
         self.btn_conn.setEnabled(self.experiment_service is None)
         if connected:
             name = self.src.info.get("name", mode)
+            if self.src.info.get("sensor_address"):
+                name += " · " + self.src.info["sensor_address"]
             self.lbl_source.setText(name)
             self.lbl_source.setToolTip(name)
         else:
@@ -476,7 +490,11 @@ class MonitorWindow(QtWidgets.QMainWindow):
         mode = self._src_mode
         try:
             if mode == "串口":
-                self.src = S.SerialSource(self.ed_port.text().strip())
+                address = self.cb_address.currentText().strip()
+                self.src = S.SerialSource(
+                    self.ed_port.text().strip(),
+                    address=None if address == "主传感器" else address,
+                )
             else:
                 path, _ = QtWidgets.QFileDialog.getOpenFileName(
                     self, "选择录制的 CSV", "", "CSV (*.csv)")
@@ -493,6 +511,15 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self.rb = RingBuffer(BUF_SECONDS * MAX_EXPECTED_RATE_HZ)
         self.bl = Baseline()
         self.ema = self._make_ema(self.cb_alpha.currentText())
+        self._display_bad_frames = 0
+        self._latest_frame_valid = True
+        for curve in (self.cur_x, self.cur_y, self.cur_z, self.cur_mag,
+                      self.c_pt, self.c_vec):
+            curve.setData([], [])
+        self.lbl_read.setText("等待数据")
+        self.lbl_contact.setText("阈值状态：待基线")
+        self.lbl_contact.setStyleSheet("")
+        self.contact_dot.setBrush(pg.mkBrush("#484f58"))
         if isinstance(self.src, S.ReplaySource):
             self.bl.b0 = self.src.b0
         self.btn_conn.setText("断开")
@@ -694,7 +721,8 @@ class MonitorWindow(QtWidgets.QMainWindow):
         rate = self.measured_rate_hz()
         off_nominal = False
         if rate is None:
-            parts.append("— Hz")
+            address = self.src.info.get("sensor_address")
+            parts.append("等待 %s 数据" % address if address else "— Hz")
         else:
             parts.append("%.1f Hz" % rate)
             off_nominal = nominal > 0 and abs(rate - nominal) / nominal > RATE_TOLERANCE

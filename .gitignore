@@ -30,6 +30,9 @@ docs/*
 # 生成物: ΔB 交互回放页(由 scripts/make_replay.py 生成)
 deltab_replay.html
 
+# 固件构建目录默认只保留本地
+firmware/*/build/
+
 # 实测数据和生成输出默认只保留本地；需要提交时使用 git add -f
 recordings/
 runs/
