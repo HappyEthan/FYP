@@ -7,11 +7,12 @@
 - [详细信息与操作指南](hardware/pen_sensor_strip_v1/README.md)：器件、接口、GPIO、USB/BAT 供电、接线、烧录、传感器和 BLE 使用。
 - [工程交接与检查范围](hardware/pen_sensor_strip_v1/CAD_HANDOFF.md)：正式原理图、PCB、网表、保存重开与检查证据。
 - [工程审核包](hardware/pen_sensor_strip_v1/deliverables/pen_sensor_11x40_4layer_VSYS_review_20261105.zip)：当前 PCB、原理图、Gerber、指南与检查记录。
+- [含阻抗资料的送审包](hardware/pen_sensor_strip_v1/manufacturing/Gerber_11x40_4layer_VSYS_20261105_with_impedance.zip)：含参数、位置图，原制造文件未改。
 - [Gerber 与钻孔文件](hardware/pen_sensor_strip_v1/manufacturing/Gerber_11x40_4layer_VSYS_20261105.zip)：可单独下载的最新四层制造审核输出。
 
 当前设计采用 ESP32-S3-PICO-1-N8R8、板载 MLX90393、LSM6DSOX 和外接笔头 MLX90393。两颗磁传感器各用一路 I²C，IMU 使用四线 SPI。USB-C 位于笔尾，电池焊盘同端，笔头接口位于另一端。
 
-SW1 强制选择 USB 或电池：所选电源接入即上电，缺失时不自动回退。板上不充电，SW1 不负责切换 USB/BLE 通信模式。
+SW1 强制选择 USB 或电池：所选电源接入即上电，缺失时不自动回退。板上不充电，SW1 不负责切换 USB/BLE 通信模式。**使用方案已确认：实验／测试使用 USB 版固件；演示前通过 USB 烧录 BLE 版，再拔 USB、选 BAT、电池供电。两套固件和电脑接收程序待实现及实测，当前 PCB 保持不变。**
 
 2026-11-05 正式 PCB 已将 U5 旁 VSYS 短颈改为 0.40 mm，并采用平滑渐变接入焊盘；此前 USB 孔避让和电池 GND 丝印调整均保留。原工程保存重开后 DRC 0、27/27 网络连通，新 Gerber 连通检查通过。首板上电、USB、三传感器采集、BLE、温升、射频和制造装配仍待验证。
 
