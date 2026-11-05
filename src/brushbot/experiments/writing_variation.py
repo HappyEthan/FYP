@@ -239,6 +239,19 @@ def _scale_rows(snapshot, keys, factor):
             row[key] = (np.asarray(row[key])*factor).tolist()
 
 
+def _component_snapshot(snapshot, component):
+    """Check each variable against the standard, independently of its sibling."""
+    result = copy.deepcopy(snapshot)
+    if component == 'xy':
+        result['config']['magnetic_enabled'] = False
+        _scale_rows(result, ['fixed_g_uT', 'repeat_g_uT'], 0.)
+    else:
+        result['config']['xy_enabled'] = False
+        _scale_rows(result, ['fixed_xy_mm', 'repeat_xy_mm'], 0.)
+    _seal(result)
+    return result
+
+
 def generate(compiled, nominal, table, setup, entry, config, repeat_seed):
     config = validate_config(config)
     _integer(repeat_seed, '本次种子')
@@ -282,24 +295,18 @@ def generate(compiled, nominal, table, setup, entry, config, repeat_seed):
             repeat_g[:] = 0.
         snapshot['strokes'].append(dict(phase=name, fixed_xy_mm=fixed_xy.tolist(),
             repeat_xy_mm=np.zeros_like(repeat_xy).tolist(), fixed_g_uT=fixed_g.tolist(),
-            repeat_g_uT=np.zeros_like(repeat_g).tolist(), fixed_xy_scale=1., repeat_scale=1.))
+            repeat_g_uT=np.zeros_like(repeat_g).tolist(), fixed_xy_scale=1.,
+            repeat_xy_scale=1., repeat_magnetic_scale=1.))
         desired_repeat.append((repeat_xy, repeat_g))
 
     # Establish that the requested fixed magnetic tendency itself is compatible.
-    fixed_xy_saved = [row['fixed_xy_mm'] for row in snapshot['strokes']]
-    for row in snapshot['strokes']:
-        row['fixed_xy_mm'] = np.zeros_like(row['fixed_xy_mm']).tolist()
-    _seal(snapshot)
     try:
-        apply(compiled, nominal, table, setup, entry, snapshot)
+        apply(compiled, nominal, table, setup, entry, _component_snapshot(snapshot, 'magnetic'))
     except ValueError as exc:
         raise ValueError('固定轻重配置与当前笔画不兼容，请调整整体轻重：'+str(exc)) from exc
-    for row, xy in zip(snapshot['strokes'], fixed_xy_saved):
-        row['fixed_xy_mm'] = xy
     for attempt in range(14):
-        _seal(snapshot)
         try:
-            apply(compiled, nominal, table, setup, entry, snapshot)
+            apply(compiled, nominal, table, setup, entry, _component_snapshot(snapshot, 'xy'))
             break
         except ValueError as exc:
             if not _motion_error(exc) or attempt == 13:
@@ -308,28 +315,38 @@ def generate(compiled, nominal, table, setup, entry, config, repeat_seed):
             for row in snapshot['strokes']:
                 row['fixed_xy_scale'] *= .5
 
-    # Shrink the repetition only. The fixed layer stays identical across runs.
+    # Each repetition component has its own reduction. A radial XY limit must
+    # never reduce a magnetic draw (or change a single-factor comparison).
     for row, (xy, delta) in zip(snapshot['strokes'], desired_repeat):
         row['repeat_xy_mm'], row['repeat_g_uT'] = xy.tolist(), delta.tolist()
-    for attempt in range(15):
-        _seal(snapshot)
-        try:
-            apply(compiled, nominal, table, setup, entry, snapshot)
-            break
-        except ValueError:
-            if attempt == 14:
-                raise
-            factor = 0. if attempt == 13 else .5
-            _scale_rows(snapshot, ['repeat_xy_mm', 'repeat_g_uT'], factor)
-            for row in snapshot['strokes']:
-                row['repeat_scale'] *= factor
+    for component, key, scale_key in [('xy', 'repeat_xy_mm', 'repeat_xy_scale'),
+                                       ('magnetic', 'repeat_g_uT', 'repeat_magnetic_scale')]:
+        for attempt in range(15):
+            try:
+                apply(compiled, nominal, table, setup, entry, _component_snapshot(snapshot, component))
+                break
+            except ValueError:
+                if attempt == 14:
+                    raise
+                factor = 0. if attempt == 13 else .5
+                _scale_rows(snapshot, [key], factor)
+                for row in snapshot['strokes']:
+                    row[scale_key] *= factor
+    _seal(snapshot)
+    try:
+        apply(compiled, nominal, table, setup, entry, snapshot)
+    except ValueError as exc:
+        # Coupled XYZ motion can be infeasible even if each factor is valid.
+        # Reject it explicitly instead of silently changing the other factor.
+        raise ValueError('路径与磁目标组合未通过预检，请减小偏差或每次变化程度：'+str(exc)) from exc
     for row, (_, mask) in zip(snapshot['strokes'], _masks(compiled)):
         xy = np.asarray(row['fixed_xy_mm'])+np.asarray(row['repeat_xy_mm'])
         delta = np.asarray(row['fixed_g_uT'])+np.asarray(row['repeat_g_uT'])
         base = compiled['g_ref_uT'][mask]
         row['report'] = dict(xy_max_mm=float(np.linalg.norm(xy, axis=1).max()),
                             magnetic_max_uT=float(abs(delta).max()),
-                            fixed_xy_scale=row['fixed_xy_scale'], repeat_scale=row['repeat_scale'],
+                            fixed_xy_scale=row['fixed_xy_scale'], repeat_xy_scale=row['repeat_xy_scale'],
+                            repeat_magnetic_scale=row['repeat_magnetic_scale'],
                             **shape_metrics(base, base+delta))
     _seal(snapshot)
     return snapshot

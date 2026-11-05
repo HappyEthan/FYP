@@ -20,8 +20,10 @@ class WritingVariationDialog(W.QDialog):
         self.store = ProfileStore(profiles_path or PROFILES)
         self.profiles = self.store.load()
         current = copy.deepcopy(model.writing_variation['profile'])
-        # An experiment can carry a profile version absent from the local library.
-        self.profiles = [p for p in self.profiles if p['id'] != current['id']] + [current]
+        # Keep the library's latest version AND the experiment's exact version.
+        # Loading a historic snapshot must not hide a newer saved configuration.
+        if current not in self.profiles:
+            self.profiles.append(current)
         self.profile = current
         self.preview_data = None
         self.loading = True
@@ -51,8 +53,9 @@ class WritingVariationDialog(W.QDialog):
         profile_row.addWidget(W.QLabel('书写配置'))
         self.profile_selector = W.QComboBox()
         for profile in self.profiles:
-            self.profile_selector.addItem(profile['name']+f' · v{profile["revision"]}', profile['id'])
-        self.profile_selector.setCurrentIndex(self.profile_selector.findData(current['id']))
+            self.profile_selector.addItem(profile['name']+f' · v{profile["revision"]}',
+                                          (profile['id'], profile['revision']))
+        self.profile_selector.setCurrentIndex(next(i for i, p in enumerate(self.profiles) if p == current))
         profile_row.addWidget(self.profile_selector, 1)
         self.profile_name = W.QLineEdit(current['name'])
         self.profile_name.setMaximumWidth(210)
@@ -177,7 +180,7 @@ class WritingVariationDialog(W.QDialog):
             profile = dict(self.config()['profile'], id=uuid.uuid4().hex, revision=1,
                            seed=new_seed(), name=f'书写配置 {len(self.profiles)+1}')
             self.profiles.append(profile)
-            self.profile_selector.addItem(profile['name']+' · v1', profile['id'])
+            self.profile_selector.addItem(profile['name']+' · v1', (profile['id'], profile['revision']))
             self.profile_selector.setCurrentIndex(len(self.profiles)-1)
             self.load_profile(profile)
             self.mark_stale()
@@ -230,7 +233,9 @@ class WritingVariationDialog(W.QDialog):
         shape = '近似常量目标' if correlation is None else f'目标形状相关系数 {correlation:.4f}'
         self.report.setText(f'预检通过：最大路径偏差 {report["xy_max_mm"]:.4f} mm，'
             f'最大磁目标变化 {report["magnetic_max_uT"]:.2f} μT；{shape}。'
-            f'固定路径生效比例 {report["fixed_xy_scale"]:.1%}，本次变化生效比例 {report["repeat_scale"]:.1%}。'
+            f'固定路径生效比例 {report["fixed_xy_scale"]:.1%}，'
+            f'本次路径 {report.get("repeat_xy_scale", report.get("repeat_scale", 1.)):.1%}，'
+            f'本次磁变化 {report.get("repeat_magnetic_scale", report.get("repeat_scale", 1.)):.1%}。'
             + ('已锁定本次结果。' if self.candidate.variation_locked else '本次结果已冻结用于下一次试写。')
             + ' 未连接硬件，以上为控制目标。')
 
@@ -255,7 +260,11 @@ class WritingVariationDialog(W.QDialog):
         try:
             locked = self.candidate.variation_locked
             config = self.config()
-            config['profile'] = self.store.save(config['profile'])
+            latest = next((p for p in self.store.load() if p['id'] == config['profile']['id']), None)
+            historic_unchanged = (latest is not None and config['profile'] == self.profile
+                                   and latest['revision'] > config['profile']['revision'])
+            if not historic_unchanged:
+                config['profile'] = self.store.save(config['profile'])
             self.candidate.set_writing_variation(config)
             # A saved edit gets a new profile revision; rebuild its authoritative
             # snapshot with the same seeds before handing it to the editor.

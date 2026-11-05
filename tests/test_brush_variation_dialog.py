@@ -61,7 +61,7 @@ def test_saved_profile_can_be_loaded_in_a_new_dialog(app, tmp_path):
     saved = copy.deepcopy(dialog.candidate.writing_variation['profile'])
     assert saved in ProfileStore(tmp_path/'profiles.json').load()
     again = make_dialog(tmp_path)
-    index = again.profile_selector.findData(saved['id'])
+    index = again.profile_selector.findText(saved['name']+f' · v{saved["revision"]}')
     assert index >= 0
     again.profile_selector.setCurrentIndex(index)
     assert again.profile_name.text() == '轻重验证配置'
@@ -117,3 +117,27 @@ def test_menu_is_reachable_and_trial_preserves_preview_then_prepares_next_repeat
     assert window.model.variation_snapshot is None
     assert window.model.variation_repeat_seed != snapshot['repeat_seed']
     window.close()
+
+
+def test_latest_library_version_and_historic_experiment_are_both_selectable(app, tmp_path):
+    from brushbot.experiments.writing_variation import ProfileStore, preset_profiles
+    latest = ProfileStore(tmp_path/'profiles.json').save(
+        dict(preset_profiles()[1], name='跨会话轻重配置', bias_pct=10.))
+    dialog = make_dialog(tmp_path)
+    assert dialog.config()['profile']['revision'] == 1  # Loaded experiment remains exact.
+    index = dialog.profile_selector.findText('跨会话轻重配置 · v2')
+    assert index >= 0
+    dialog.profile_selector.setCurrentIndex(index)
+    assert dialog.config()['profile'] == latest
+    dialog.reject()
+
+
+def test_unchanged_historic_profile_can_save_settings_without_overwriting_latest(app, tmp_path):
+    from brushbot.experiments.writing_variation import ProfileStore, preset_profiles
+    store = ProfileStore(tmp_path/'profiles.json')
+    latest = store.save(dict(preset_profiles()[1], name='最新配置', bias_pct=10.))
+    dialog = make_dialog(tmp_path)
+    historic = copy.deepcopy(dialog.config()['profile'])
+    assert dialog.save_settings() is True
+    assert dialog.candidate.writing_variation['profile'] == historic
+    assert latest in store.load()

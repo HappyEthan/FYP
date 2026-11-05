@@ -83,13 +83,14 @@ def test_two_layer_radial_bound_and_discrete_endpoint_velocity_are_preserved():
         assert not np.asarray(row[key])[[0, 1, -2, -1]].any()
 
 
-def test_subswitches_and_repeat_degree_do_not_redraw_fixed_style():
+@pytest.mark.parametrize('repeat_seed', [2, 41])
+def test_subswitches_and_repeat_degree_do_not_redraw_fixed_style(repeat_seed):
     from brushbot.experiments import writing_variation as v
     args = writing_inputs()
     config = enabled_config(bias_pct=-10., repeat_level='medium')
-    both = v.generate(*args, config, 41)['strokes'][0]
-    xy_only = v.generate(*args, dict(config, magnetic_enabled=False), 41)['strokes'][0]
-    magnetic_only = v.generate(*args, dict(config, xy_enabled=False), 41)['strokes'][0]
+    both = v.generate(*args, config, repeat_seed)['strokes'][0]
+    xy_only = v.generate(*args, dict(config, magnetic_enabled=False), repeat_seed)['strokes'][0]
+    magnetic_only = v.generate(*args, dict(config, xy_enabled=False), repeat_seed)['strokes'][0]
     assert both['fixed_xy_mm'] == xy_only['fixed_xy_mm']
     assert both['repeat_xy_mm'] == xy_only['repeat_xy_mm']
     assert both['fixed_g_uT'] == magnetic_only['fixed_g_uT']
@@ -163,3 +164,16 @@ def test_profile_library_survives_sessions_and_versions_edits(tmp_path):
     path.write_text('{bad data')
     with pytest.raises(ValueError, match='配置'):
         store.load()
+
+
+def test_coupled_motion_rejects_instead_of_changing_an_independent_fixed_style():
+    from brushbot.experiments import writing_variation as v
+    args = writing_inputs()
+    # The independent maxima are 2.03732 and 27.45692 mm/s²; their
+    # XYZ combination reaches 27.45941. Neither independent style may change.
+    args[3]['max_accel_mm_s2'] = 27.458
+    config = enabled_config(bias_pct=20., repeat_level='none')
+    v.generate(*args, dict(config, magnetic_enabled=False), 2)
+    v.generate(*args, dict(config, xy_enabled=False), 2)
+    with pytest.raises(ValueError, match='组合未通过'):
+        v.generate(*args, config, 2)
