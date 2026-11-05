@@ -27,14 +27,6 @@ def runtime_settings(settings: dict, *, hardware=False) -> dict:
 def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
                           dt_s=.02, control_mode='feedforward',
                           feedback_profile=None, entry_profile=None):
-    from brushbot.experiments.writing_variation import PROFILE_KEY
-    original_entry = entry_profile
-    variation = (entry_profile or {}).get(PROFILE_KEY)
-    if variation is not None:
-        entry_profile = copy.deepcopy(entry_profile)
-        entry_profile.pop(PROFILE_KEY)
-        if entry_profile.get('mode') != 'directional_character' or entry_profile.get('tail_exit'):
-            raise ValueError('书写随机扰动仅支持完整 directional_character 书写')
     character = entry_profile is not None and entry_profile.get('mode') == 'directional_character'
     tail_exit = entry_profile.get('tail_exit') if entry_profile is not None else None
     if tail_exit is not None and not character:
@@ -68,7 +60,6 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
     phases = np.asarray([*phases, *(['hold'] * 10)])
     g_ref = np.full(len(poses), np.nan)
     progress = np.full(len(poses), np.nan)
-    nominal_targets = np.full(len(poses), np.nan)
     derived_strokes = []
     for i, stroke in enumerate(plan.strokes):
         measure = phases == f'measure_{i:02}'
@@ -76,7 +67,6 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
         ticks, _, target, depth = sample_stroke(stroke, table, dt_s)
         if drawing.sum() != len(ticks):
             raise ValueError('compiled measurement timeline differs from target samples')
-        nominal_targets[drawing] = target
         from brushbot.experiments.strokeplan_segment_targets import stroke_entry_profile
         stroke_entry=stroke_entry_profile(entry_profile,i)
         segment_targets=stroke_entry.get('segment_magnetic_targets')
@@ -90,19 +80,6 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
                                       g_press=target.copy(),
                                       z_ff=(depth.copy() if tail_exit is None and not stroke_entry.get('writing_height') else
                                             np.maximum(setup['contact_z_mm']/1000-poses[drawing,2],0.))))
-    variation_limits = None
-    if variation is not None:
-        from brushbot.experiments.writing_variation import apply
-        baseline = dict(t_s=np.arange(len(poses))*dt_s, s=progress,
-                        phase=phases, pose_m_rad=poses, g_ref_uT=g_ref)
-        poses, g_ref, variation_limits = apply(
-            baseline, nominal_targets, table, setup, entry_profile, variation)
-        derived_strokes = []
-        for i in range(len(plan.strokes)):
-            mask = phases == f'measure_{i:02}'
-            derived_strokes.append(Stroke(s=progress[mask].copy(), xy=poses[mask, :2].copy(),
-                g_press=g_ref[mask].copy(),
-                z_ff=np.maximum(setup['contact_z_mm']/1000-poses[mask, 2], 0.)))
     depth_ff = np.maximum(setup['contact_z_mm']/1000. - poses[:, 2], 0.)
     spec = {
         'version': 1, 'name': 'strokeplan', 'run_label': label,
@@ -115,7 +92,7 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
         'target_format_version': 3,
     }
     if entry_profile is not None:
-        spec['entry_profile'] = copy.deepcopy(original_entry)
+        spec['entry_profile'] = copy.deepcopy(entry_profile)
         spec['timeline_policy'] = 'sequential_20ms'
         if entry_profile.get('mode') == 'stationary':
             spec['path'].update(axis='xy', assume_direction_invariant=entry_profile['assume_direction_invariant'])
@@ -134,7 +111,6 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
     return dict(plan=derived, t_s=np.arange(len(poses))*dt_s, s=progress,
                 phase=phases, pose_m_rad=poses, g_ref_uT=g_ref,
                 depth_ff_m=depth_ff, spec_snapshot=spec,
-                nominal_g_uT=nominal_targets, variation_limits=variation_limits,
                 setup_snapshot=copy.deepcopy(setup))
 
 

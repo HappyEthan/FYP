@@ -181,9 +181,6 @@ class Editor(EditorLayout,W.QMainWindow):
         self.loading=False
     def refresh(self,sync_handles=False):
         self.refresh_strokes()
-        variation=self.model.writing_variation
-        self.variation_status.setText('随机扰动：'+variation['profile']['name'] if variation['enabled'] else '随机扰动：关闭')
-        self.variation_status.setToolTip('高级设置 → 书写随机扰动；关闭后恢复标准执行。')
         self.speed_status.setStyleSheet('color:#8a5b00')
         self.speed_status.setText('自动适速已启用：预检或导出时，按当前XY、磁目标和笔杆角度重算局部限速。')
         p=self.model.points();self.draw_test_path(p)
@@ -548,16 +545,6 @@ class Editor(EditorLayout,W.QMainWindow):
     def save_state(self):
         if not self.commit_pending_edits():return
         self.autosave();self.message('已保存编辑存档：'+str(DRAFT))
-    def edit_writing_variation(self):
-        if not self.commit_pending_edits():return
-        from scripts.brush_variation_dialog import WritingVariationDialog
-        try:
-            dialog=WritingVariationDialog(self.model,self)
-            if dialog.exec_()!=W.QDialog.Accepted:return
-            dialog.candidate._copy_variation_to(self.model)
-            self.refresh();self.remember()
-            self.message('书写随机设置已保存；预览结果用于下一次试写，执行中的运行保持原结果。')
-        except Exception as exc:self.fail(exc)
     def show_speed_result(self,factor,duration):
         report=getattr(self.model,'last_speed_adaptation',None)
         if report is None:return
@@ -571,11 +558,9 @@ class Editor(EditorLayout,W.QMainWindow):
             _,plan,c,settings,_=self.model.compile_workspace()
             duration=sum(float(st.t[-1]) for st in plan.strokes);self.show_speed_result(1.,duration)
             parts=[]
-            for i,(st,row) in enumerate(zip(plan.strokes,self.model.last_workspace_strokes)):
+            for st,row in zip(plan.strokes,self.model.last_workspace_strokes):
                 placement=row['recipe']['placement'];theta=np.deg2rad(placement['rotation_deg']);rot=np.array([[np.cos(theta),-np.sin(theta)],[np.sin(theta),np.cos(theta)]])
-                xy=c['pose_m_rad'][c['phase']==f'measure_{i:02}',:2]*1000
-                xy-=np.array([settings['settings.json']['origin_x_mm'],settings['settings.json']['origin_y_mm']])
-                q=(xy-np.array(placement['origin_mm']))@rot/placement['scale']
+                q=(st.xy*1000-np.array(placement['origin_mm']))@rot/placement['scale']
                 parts.extend([q,np.full((1,2),np.nan)])
             q=np.vstack(parts);self.compiled.setData(q[:,0],q[:,1],connect='finite')
             order=' → '.join(f'{row["stroke_name"]}[{row["point_range"][0]}–{row["point_range"][1]}]' for row in self.model.last_workspace_strokes)
@@ -601,10 +586,6 @@ class Editor(EditorLayout,W.QMainWindow):
                      '--execute','--run-root',str(self.archive.root),'--consume-stage',str(stage)]
             shell=shlex.join(command)+'; read -r -p "终端结束，按回车关闭。"'
             subprocess.run(['gnome-terminal','--title=毛笔试写','--working-directory='+str(ROOT),'--','bash','-c',shell],check=True)
-            # The exported plan stays frozen. Prepare a fresh repetition only
-            # AFTER opening this trial, so a preview is never redrawn at launch.
-            if self.model.writing_variation['enabled'] and not self.model.variation_locked:
-                self.model.regenerate_writing_variation();self.refresh();self.autosave()
             self.message('试写终端已打开；成功后自动归档并命名，中断或错误数据保留在实验库的“临时失败实验”目录。')
         except Exception as exc:
             if stage.exists():self.archive.retain_stage(stage,reason='launch_failed',exception=exc)

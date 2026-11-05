@@ -64,7 +64,6 @@ class EditorLayout:
         self.action(advanced, '运笔节奏…', self.edit_speed)
         self.action(advanced, '精确速度…', self.edit_precise_speed)
         self.action(advanced, '载入前馈表…', self.open_feedforward)
-        self.action(advanced, '书写随机扰动…', self.edit_writing_variation)
 
         self.toolbar = self.addToolBar('常用操作')
         self.toolbar.setMovable(False)
@@ -219,8 +218,6 @@ class EditorLayout:
         self.statusBar().addWidget(self.status, 1)
         self.save_status = W.QLabel('自动保存已启用')
         self.statusBar().addPermanentWidget(self.save_status)
-        self.variation_status = W.QLabel('随机扰动：关闭')
-        self.statusBar().addPermanentWidget(self.variation_status)
         self.speed_status = W.QLabel(self)
         self.speed_status.hide()
 
