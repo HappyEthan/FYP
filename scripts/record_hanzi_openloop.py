@@ -7,6 +7,7 @@ import argparse, math, os, sys
 from brushbot.calligraphy.hanzi import load_medians, medians_to_strokes
 from brushbot.backends.vendor.CPS import CPSClient
 from brushbot.monitor.control import send_command
+from brushbot.platform_support import runtime_temp_path
 from brushbot.runtime import RealClock
 
 WORK_Z_MM = 25.0
@@ -164,7 +165,7 @@ def execute(cps, poses, *, monitor_socket, confirm=True, dt=0.02, lookahead=0.05
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--ip", default="192.168.0.10")
-    p.add_argument("--monitor-socket", default="/tmp/brushbot-monitor.sock")
+    p.add_argument("--monitor-socket", default=str(runtime_temp_path("brushbot-monitor.sock")))
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args(argv)
     drawing = build_hanzi_waypoints()

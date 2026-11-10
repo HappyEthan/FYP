@@ -7,6 +7,8 @@ import numpy as np
 import json
 import os
 
+from brushbot.platform_support import default_serial_port
+
 Sample = tuple  # (t_s, Bx, By, Bz)
 
 
@@ -111,7 +113,7 @@ class SerialSource:
     # Firmware emits the raw uint32 micros() counter, including its rollover.
     sensor_time_modulus_us = 2**32
 
-    def __init__(self, port: str = "/dev/ttyUSB0", baud: int = 115200, *, address=None):
+    def __init__(self, port: str | None = None, baud: int = 115200, *, address=None):
         if isinstance(address, str):
             try:
                 address = int(address.strip(), 16)
@@ -122,7 +124,7 @@ class SerialSource:
         ):
             raise ValueError("传感器地址须为 0x08 至 0x77 的十六进制地址")
         self.address = address
-        self.port = port
+        self.port = port or default_serial_port()
         self.baud = baud
         self._ser = None
         self._buf = b""

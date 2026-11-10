@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import fcntl
 import json
 import math
 import os
@@ -10,6 +9,39 @@ import time
 from pathlib import Path
 
 import numpy as np
+
+try:  # POSIX development environments
+    import fcntl
+except ImportError:  # pragma: no cover - exercised on Windows
+    fcntl = None
+
+
+def _lock_file(handle) -> None:
+    if os.name == "nt":
+        try:
+            import portalocker
+        except ModuleNotFoundError as exc:  # pragma: no cover - Windows setup
+            raise RuntimeError(
+                "Windows robot execution requires the 'portalocker' package"
+            ) from exc
+        try:
+            portalocker.lock(handle, portalocker.LOCK_EX | portalocker.LOCK_NB)
+        except portalocker.exceptions.LockException as exc:
+            raise BlockingIOError from exc
+        return
+    if fcntl is None:  # pragma: no cover - defensive
+        raise RuntimeError("no local file-lock backend is available")
+    fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+
+def _unlock_file(handle) -> None:
+    if os.name == "nt":
+        import portalocker
+
+        portalocker.unlock(handle)
+        return
+    if fcntl is not None:
+        fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
 def _pose(values) -> tuple[float, ...]:
@@ -46,7 +78,7 @@ class RobotResourceLock:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         handle = self.path.open("a+", encoding="utf-8")
         try:
-            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            _lock_file(handle)
         except BlockingIOError as exc:
             handle.close()
             raise RuntimeError(f"robot {self.address} is already owned") from exc
@@ -59,7 +91,7 @@ class RobotResourceLock:
     def release(self) -> None:
         if self._handle is None:
             return
-        fcntl.flock(self._handle.fileno(), fcntl.LOCK_UN)
+        _unlock_file(self._handle)
         self._handle.close()
         self._handle = None
 

@@ -1,6 +1,9 @@
 ---
 project: 08-system-evaluation
 status: draft
+document_role: experiment-plan
+research_track: reference-curve-application
+paper_sections: "4.3-4.4, 5.2, 6.4-6.5"
 ---
 
 # 多笔画拆分实验简要计划

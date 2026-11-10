@@ -3,18 +3,19 @@
 from __future__ import annotations
 
 import json
-import os
 import queue
 import socket
 import threading
-from pathlib import Path
+
+from brushbot.local_ipc import bind_local_server, connect_local, remove_endpoint
+from brushbot.platform_support import runtime_temp_path
 
 
 class MonitorControlServer:
-    """Unix-socket server whose requests are drained on the Qt thread."""
+    """Local server whose requests are drained on the Qt thread."""
 
-    def __init__(self, path="/tmp/brushbot-monitor.sock"):
-        self.path = str(path)
+    def __init__(self, path=None):
+        self.path = str(path or runtime_temp_path("brushbot-monitor.sock"))
         self._requests = queue.Queue()
         self._stop = threading.Event()
         self._socket = None
@@ -23,16 +24,8 @@ class MonitorControlServer:
     def start(self):
         if self._thread is not None:
             return
-        path = Path(self.path)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            path.unlink()
-        except FileNotFoundError:
-            pass
-        sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        sock.bind(self.path)
-        sock.listen(4)
-        sock.settimeout(0.1)
+        sock, endpoint = bind_local_server(self.path)
+        self.path = str(endpoint)
         self._socket = sock
         self._thread = threading.Thread(target=self._serve, daemon=True)
         self._thread.start()
@@ -81,19 +74,14 @@ class MonitorControlServer:
             self._thread.join(timeout=1.0)
         self._thread = None
         self._socket = None
-        try:
-            os.unlink(self.path)
-        except FileNotFoundError:
-            pass
+        remove_endpoint(self.path)
 
 
 def send_command(path, action, *, timeout=5.0):
     """Send one action and return the Monitor's JSON response."""
     request = {"action": str(action)}
-    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-    sock.settimeout(float(timeout))
+    sock = connect_local(path, timeout=float(timeout))
     try:
-        sock.connect(str(path))
         sock.sendall((json.dumps(request) + "\n").encode("utf-8"))
         data = b""
         while b"\n" not in data:

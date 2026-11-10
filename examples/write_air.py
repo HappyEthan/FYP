@@ -56,7 +56,9 @@ def die(msg):
 
 
 def confirm(prompt):
-    """读确认输入。优先直接读 /dev/tty —— conda run 会把 stdin 吞成 EOF。"""
+    """读确认输入；POSIX 下优先绕过 conda 的 stdin，Windows 直接使用 input。"""
+    if os.name == "nt":
+        return input(prompt).strip().lower() == "yes"
     try:
         with open("/dev/tty", "r") as tty:
             print(prompt, end="", flush=True)

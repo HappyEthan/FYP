@@ -6,6 +6,8 @@ dependencies = ["numpy", "pillow", "matplotlib", "mujoco"]
 
 [project.optional-dependencies]
 monitor = ["pyqtgraph>=0.13", "PyQt5>=5.15", "pyserial>=3.5", "websocket-client>=1.7"]
+windows = ["tzdata>=2024.1", "portalocker>=2.8"]
+test = ["pytest>=8", "pytest-qt>=4"]
 
 [build-system]
 requires = ["setuptools>=61"]

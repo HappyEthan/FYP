@@ -58,7 +58,7 @@ class _FakeSerial:
 
 
 def _serial_with(chunks):
-    src = SerialSource("/dev/null")
+    src = SerialSource("loopback-test")
     src._ser = _FakeSerial(chunks)
     src._buf = b""
     src._t0_us = None

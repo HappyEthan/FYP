@@ -53,4 +53,17 @@ esptool --chip esp32s3 --port /dev/ttyACM0 write-flash \
   0x0 firmware/esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90/esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90_8MB_merged.bin
 ```
 
+Windows PowerShell 使用 COM 端口。先运行 `arduino-cli board list`，将下面的
+`COM7` 替换为当前实际端口：
+
+```powershell
+arduino-cli compile --clean firmware\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90
+python -m esptool --chip esp32s3 --port COM7 write-flash `
+  0x0 firmware\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90_8MB_merged.bin
+arduino-cli monitor --port COM7 --config baudrate=115200
+```
+
+Windows 需要安装对应的 USB 驱动。ESP32 原生 USB 在复位或进入下载模式后可能
+重新枚举，烧录前应再次确认 COM 号。
+
 串口监视器使用 115200 baud。原生 USB 端口可能在进入下载模式或复位后重新枚举，烧录前请用 `arduino-cli board list` 确认实际端口。

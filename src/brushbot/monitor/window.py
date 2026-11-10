@@ -17,6 +17,7 @@ from brushbot.monitor import sources as S
 from brushbot.monitor.experiment_panel import ExperimentPanel
 from brushbot.monitor.cartesian_return_panel import CartesianReturnPanel
 from brushbot.monitor.control import MonitorControlServer
+from brushbot.platform_support import default_serial_port, runtime_temp_path
 
 BUF_SECONDS = 60
 RATE_HZ = 100
@@ -28,7 +29,7 @@ RATE_TOLERANCE = 0.02
 class MonitorWindow(QtWidgets.QMainWindow):
     def __init__(self, out_dir="recordings", config_dir="configs", *,
                  experiment_service=None, experiment_setup=None,
-                 control_socket="/tmp/brushbot-monitor.sock"):
+                 control_socket=None):
         super().__init__()
         self.setWindowTitle("ΔB 实时监控")
         self.resize(1200, 780)
@@ -50,7 +51,9 @@ class MonitorWindow(QtWidgets.QMainWindow):
         self._auto_baseline_ref_t = None
         self._display_bad_frames = 0
         self._latest_frame_valid = True
-        self.control_server = MonitorControlServer(control_socket)
+        self.control_server = MonitorControlServer(
+            control_socket or runtime_temp_path("brushbot-monitor.sock")
+        )
 
         self._build_ui()
         self.timer = QtCore.QTimer(self)
@@ -132,10 +135,10 @@ class MonitorWindow(QtWidgets.QMainWindow):
         for button in (self.btn_src_serial, self.btn_src_replay):
             button.setCheckable(True)
             source_row.addWidget(button)
-        self.ed_port = QtWidgets.QLineEdit("/dev/ttyACM0")
+        self.ed_port = QtWidgets.QLineEdit(default_serial_port())
         self.ed_port.setPlaceholderText("串口设备路径")
         self.ed_port.setMaximumWidth(190)
-        self.ed_port.setToolTip("输入传感器串口路径，例如 /dev/ttyACM0")
+        self.ed_port.setToolTip("输入传感器串口路径，例如 COM7 或 /dev/ttyACM0")
         source_row.addWidget(self.ed_port)
         self.lbl_address = QtWidgets.QLabel("地址")
         source_row.addWidget(self.lbl_address)
@@ -739,7 +742,7 @@ class MonitorWindow(QtWidgets.QMainWindow):
 
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("--control-socket", default="/tmp/brushbot-monitor.sock")
+    parser.add_argument("--control-socket", default=str(runtime_temp_path("brushbot-monitor.sock")))
     qt_argv = argv or []
     args, _ = parser.parse_known_args(qt_argv[1:] if qt_argv else None)
     app = QtWidgets.QApplication(qt_argv)

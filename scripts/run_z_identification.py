@@ -26,6 +26,7 @@ from brushbot.experiments.z_identification import (
     DEPTH_DELTAS, IdentificationEngine, compile_identification, default_profile, default_sweep_profile,
 )
 from brushbot.monitor.sources import SerialSource
+from brushbot.platform_support import default_serial_port, runtime_temp_path
 
 if __package__:
     from .run_ladder_experiment import (
@@ -46,7 +47,7 @@ SETTINGS = ROOT/'runs/brush2/plans/ry15_rz0_suite_60_200_v1/settings.json'
 RUN_ROOT = ROOT/'runs/brush2'
 EXPERIMENT_FOLDER = '05_Z动态辨识'
 ARM_IP = '192.168.0.10'
-SERIAL_PORT = '/dev/ttyACM0'
+SERIAL_PORT = default_serial_port()
 BAUD = 115200
 
 # User-confirmed entry and usable +X line. Named tool/UCS values come from SETTINGS.
@@ -172,7 +173,7 @@ def hardware_session(setup, *, record_tcp):
 
     clock = MonotonicClock()
     source = SerialSource(SERIAL_PORT, BAUD)
-    lock = RobotResourceLock(Path('/tmp/brushbot-feedforward.lock'), ARM_IP)
+    lock = RobotResourceLock(runtime_temp_path('brushbot-feedforward.lock'), ARM_IP)
     panel = LiveStatusPanel(sys.stdout)
     robot = pose_client = None
     installation = copy.deepcopy(setup)

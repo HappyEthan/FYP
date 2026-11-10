@@ -7,8 +7,12 @@ import argparse
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from brushbot.platform_support import adapter_root
 
-ADAPTER_ROOT = Path(__file__).resolve().parents[2] / "elfin-dhag-adapter"
+
+ADAPTER_ROOT = adapter_root()
 if ADAPTER_ROOT.is_dir() and str(ADAPTER_ROOT) not in sys.path:
     sys.path.insert(0, str(ADAPTER_ROOT))
 
@@ -16,8 +20,8 @@ try:
     from huayan_robot import GripperError, HuayanRobot
 except ModuleNotFoundError as exc:  # pragma: no cover - depends on external adapter
     raise SystemExit(
-        "找不到 elfin-dhag-adapter；请使用其 Python 环境，或设置 "
-        "PYTHONPATH=/home/ethan/elfin-dhag-adapter") from exc
+        "找不到 elfin-dhag-adapter；请安装其 Python 环境，或设置 "
+        "ELFIN_DHAG_ADAPTER 环境变量") from exc
 
 
 DEFAULT_WIDTH_MM = 14.0

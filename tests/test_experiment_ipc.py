@@ -7,6 +7,8 @@ from brushbot.experiments.fake import make_rig
 from brushbot.experiments.cartesian_return import CartesianReturnController
 from brushbot.experiments.ipc import ExperimentIPCServer, send_ipc_request
 from brushbot.experiments.service import ExperimentService
+from brushbot.local_ipc import connect_local
+from brushbot import local_ipc
 
 
 def test_ipc_exposes_status_but_not_arbitrary_motion(tmp_path):
@@ -22,7 +24,8 @@ def test_ipc_exposes_status_but_not_arbitrary_motion(tmp_path):
         rejected = send_ipc_request(path, {"request_id": "2", "action": "move"})
         assert rejected["status"] == "rejected"
         assert rig.arm.calls == []
-        assert path.stat().st_mode & 0o777 == 0o600
+        if not local_ipc.IS_WINDOWS:
+            assert path.stat().st_mode & 0o777 == 0o600
     finally:
         server.close()
         service.close()
@@ -36,8 +39,7 @@ def test_ipc_rejects_oversized_message(tmp_path):
     server = ExperimentIPCServer(service, path, max_message_bytes=128)
     server.start()
     try:
-        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
-            client.connect(str(path))
+        with connect_local(path) as client:
             client.sendall((json.dumps({"action": "status", "padding": "x" * 500}) + "\n").encode())
             response = json.loads(client.makefile("r").readline())
         assert response["status"] == "rejected"

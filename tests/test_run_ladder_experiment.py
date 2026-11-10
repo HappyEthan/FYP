@@ -166,7 +166,7 @@ def test_zero_argument_defaults_compile_the_hardcoded_real_ladder():
 
     assert args.installation is None
     assert args.ip == "192.168.0.10"
-    assert args.serial_port == "/dev/ttyACM0"
+    assert args.serial_port == script.default_serial_port()
     assert Path(args.run_root) == ROOT / "runs" / "brush2"
     setup = script._hardcoded_setup()
     assert setup["origin_x_mm"] == pytest.approx(-200.0)

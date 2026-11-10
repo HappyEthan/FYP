@@ -1,6 +1,22 @@
 # FYP 项目文档导航
 
-文档按两类阅读：**StrokePlan 生成与实施**，以及**实验记录与脚本索引**。正文继续按八个项目归属保存，同一主题保留一份。Git 跟踪总导航和八个项目目录；`其他/`、`assets/` 与临时文件保留在本地。
+文档保留两种互补视图：工程维护按八个项目归属保存，研究阅读按论文研究问题和实验任务导航。同一主题只保留一份正文，避免为了论文章节复制工程文档。Git 跟踪总导航和八个项目目录；`其他/`、`assets/` 与临时文件保留在本地。
+
+## 按论文研究问题导航
+
+论文大纲把磁响应数据拆成“分析、区分、帮助生成”三种用途。下面的研究入口是逻辑分类，不改变文档的唯一 owner；需要追溯具体实现时，继续从对应项目 README 进入。
+
+| 研究入口 | 回答的问题 | 主要文档 | 论文对应 |
+|---|---|---|---|
+| **F0 · 总体问题与论文** | 研究问题、贡献边界和章节如何组织？ | [论文大纲（本地）](其他/论文大纲_初版_20261023.md)、[当前研究计划书（本地）](其他/proposal_ethan_260925.md)、[研究决策与 TODO（本地）](其他/research-decisions-and-todo.md) | 第 1、2、7、8 章 |
+| **F1 · 共同方法与信号** | 磁毛、采集、Bxy 幅值/方向和计划数据如何定义？ | [Monitor + Filter](01-monitor-filter/README.md)、[Data Acquisition](05-data-acquisition/README.md)、[StrokePlan](02-strokeplan/README.md) | 第 3 章 |
+| **F2 · A 过程表征** | 横/竖的幅值阶段和横折的方向过渡是否可观察、可量化？ | [笔法操作分析方案](08-system-evaluation/磁响应笔法操作分析方案.md) | 第 4.1、5、6.2 节 |
+| **F3 · B 完整笔画分类** | 时间归一化的整笔曲线能区分哪些完整笔画？ | [笔画分类方案](08-system-evaluation/磁响应曲线笔画分类方案.md) | 第 4.2、5、6.3 节 |
+| **F4 · C 书写参考应用** | 采集曲线怎样组装为 StrokePlan、执行并复用？ | [多笔画拆分计划](08-system-evaluation/multi-stroke-experiment-plan.md)、[图像到 StrokePlan 基线](07-image-to-strokeplan-baseline/README.md)、[Robot Control](04-robot-control/README.md) | 第 4.3–4.4、6.4–6.5 节 |
+| **F5 · 结果与证据** | 每项主张由哪些运行、指标、对照和失败记录支持？ | [实验总览与脚本索引](08-system-evaluation/实验清单.md)、[评价设计](08-system-evaluation/evaluation-design.md)、[XY 离线比较](08-system-evaluation/xy-offline-comparison.md) | 第 5、6 章 |
+| **H · 历史** | 哪些设计已被替代，为什么仍保留？ | 各项目 `archive/`、`docs/其他/history/` | 补充材料与追溯 |
+
+F2 和 F3 是两条独立验证任务：过程表征解释整笔内部的预定义阶段，完整分类只回答整条曲线对应的类别，不把一个任务的结果当成另一个任务的证据。F4 是应用路线，是否成立由执行记录和同次成品决定，不要求先完成分类模型。
 
 ## 完整项目路线与当前阶段
 

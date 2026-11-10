@@ -69,7 +69,7 @@ FEEDFORWARD = None
 SETTINGS = None
 
 # 连接和输出参数。实际 TCP 采集独立于反馈，不参与 Z 修正。
-SERIAL_PORT = "/dev/ttyACM0"
+SERIAL_PORT = None
 BAUD = 115200
 ARM_IP = "192.168.0.10"
 RUN_ROOT = ROOT / "runs/brush2"
@@ -81,6 +81,9 @@ RECORD_ACTUAL_TCP = None
 sys.path.insert(0, str(ROOT / "src"))
 from brushbot.feedforward import require_execution_approval
 from brushbot.experiments.strokeplan_execution import runtime_settings
+from brushbot.platform_support import default_serial_port
+
+SERIAL_PORT = default_serial_port()
 
 if __package__:
     from .run_strokeplan_experiment import main as run_experiment

@@ -26,6 +26,7 @@ from brushbot.experiments.strokeplan_execution import (
 from brushbot.experiments.tcp_pose_capture import TCPPoseSampler
 from brushbot.feedforward import require_execution_approval
 from brushbot.monitor.sources import SerialSource
+from brushbot.platform_support import default_serial_port, runtime_temp_path
 from brushbot.target_strokeplan import StrokePlan
 
 if __package__:
@@ -186,7 +187,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument('--execute', action='store_true')
     mode.add_argument('--dry-run', action='store_true')
-    parser.add_argument('--serial-port', default='/dev/ttyACM0')
+    parser.add_argument('--serial-port', default=default_serial_port())
     parser.add_argument('--baud', type=int, default=115200)
     parser.add_argument('--ip', default='192.168.0.10')
     parser.add_argument('--run-root', type=Path, default=ROOT/'runs'/'brush2')
@@ -291,7 +292,7 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None):
     from huayan_robot import HuayanRobot
     clock = MonotonicClock()
     source = SerialSource(args.serial_port, args.baud)
-    lock = RobotResourceLock(Path('/tmp/brushbot-feedforward.lock'), args.ip)
+    lock = RobotResourceLock(runtime_temp_path('brushbot-feedforward.lock'), args.ip)
     panel = LiveStatusPanel(sys.stdout)
     robot = None
     pose_client = None

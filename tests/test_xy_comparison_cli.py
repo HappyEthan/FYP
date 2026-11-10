@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 
 import numpy as np
 from PIL import Image, ImageDraw
@@ -19,7 +20,8 @@ def cli(*args):
     return subprocess.run([sys.executable, str(ROOT/'scripts/compare_strokeplan_xy.py'),
                            *map(str, args)], cwd=ROOT, capture_output=True, text=True,
                           env=dict(os.environ, PYTHONPATH=str(ROOT/'src'),
-                                   MPLCONFIGDIR='/tmp/fyp-xy-mpl', PYTHONDONTWRITEBYTECODE='1'))
+                                   MPLCONFIGDIR=str(Path(tempfile.gettempdir()) / 'fyp-xy-mpl'),
+                                   PYTHONDONTWRITEBYTECODE='1'))
 
 
 def fixture(tmp_path):

@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import numpy as np
 import pytest
 from tests.test_target_feedforward import settings, table
@@ -12,7 +13,8 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def cli(script,*args):
     return subprocess.run([sys.executable,str(ROOT/'scripts'/script),*map(str,args)],
-        cwd=ROOT,env=dict(os.environ,PYTHONPATH=str(ROOT/'src'),MPLCONFIGDIR='/tmp/fyp-mpl'),
+        cwd=ROOT,env=dict(os.environ,PYTHONPATH=str(ROOT/'src'),
+                          MPLCONFIGDIR=str(Path(tempfile.gettempdir()) / 'fyp-mpl')),
         capture_output=True,text=True)
 
 

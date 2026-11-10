@@ -8,7 +8,11 @@ import sys
 import time
 from pathlib import Path
 
-ADAPTER_ROOT = Path(__file__).resolve().parents[2] / "elfin-dhag-adapter"
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from brushbot.platform_support import adapter_root
+
+ADAPTER_ROOT = adapter_root()
 
 # 零参数真机配置：需要改连接或回位目标时，只改这里。
 ROBOT_IP = "192.168.0.10"
@@ -132,7 +136,7 @@ def _connect_arm(ip: str, gid: int, tcp_name: str):
     except ModuleNotFoundError as exc:
         raise RuntimeError(
             "找不到 elfin-dhag-adapter；请使用其 Python 环境，或设置 "
-            "PYTHONPATH={}".format(ADAPTER_ROOT)) from exc
+            "ELFIN_DHAG_ADAPTER={}".format(ADAPTER_ROOT)) from exc
     return _HuayanReturnArm(HuayanRobot(
         ip, gripper_gid=gid, tcp_name=tcp_name))
 

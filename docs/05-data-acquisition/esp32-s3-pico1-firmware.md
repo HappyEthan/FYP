@@ -57,6 +57,20 @@ arduino-cli upload \
   firmware/esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90
 ```
 
+Windows PowerShell 使用 `COMx` 端口：
+
+```powershell
+arduino-cli compile --clean firmware\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90
+arduino-cli board list
+arduino-cli upload `
+  --port COM7 `
+  --input-dir outputs\firmware\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90 `
+  firmware\esp32s3_pico1_mlx90393_lsm6dsox_monitor_fixed90
+arduino-cli monitor --port COM7 --config baudrate=115200
+```
+
+复位或进入下载模式后原生 USB 可能重新枚举，烧录和采集前需要重新核对 COM 号。
+
 使用 Arduino IDE 时，打开新目录内同名 `.ino`，手动设置：
 
 | 选项 | 值 |

@@ -4,30 +4,24 @@ from __future__ import annotations
 
 import json
 import math
-import os
 import socket
 import threading
-from pathlib import Path
+
+from brushbot.local_ipc import bind_local_server, connect_local, remove_endpoint
 
 
 class ExperimentIPCServer:
     def __init__(self, service, path, *, max_message_bytes=4096):
         self.service = service
-        self.path = Path(path)
+        self.path = str(path)
         self.max_message_bytes = int(max_message_bytes)
         self._socket = None
         self._thread = None
         self._closed = threading.Event()
 
     def start(self):
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        if self.path.exists():
-            self.path.unlink()
-        server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-        server.bind(str(self.path))
-        os.chmod(self.path, 0o600)
-        server.listen(4)
-        server.settimeout(0.1)
+        server, endpoint = bind_local_server(self.path)
+        self.path = str(endpoint)
         self._socket = server
         self._thread = threading.Thread(target=self._serve, name="experiment-ipc", daemon=True)
         self._thread.start()
@@ -86,15 +80,12 @@ class ExperimentIPCServer:
             self._socket.close()
         if self._thread is not None:
             self._thread.join(timeout=1.0)
-        if self.path.exists():
-            self.path.unlink()
+        remove_endpoint(self.path)
 
 
 def send_ipc_request(path, request: dict, *, timeout_s=1.0) -> dict:
     payload = (json.dumps(request, ensure_ascii=False) + "\n").encode()
-    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as client:
-        client.settimeout(float(timeout_s))
-        client.connect(str(path))
+    with connect_local(path, timeout=float(timeout_s)) as client:
         client.sendall(payload)
         line = client.makefile("r", encoding="utf-8").readline()
     if not line:

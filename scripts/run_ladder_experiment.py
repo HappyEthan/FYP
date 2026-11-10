@@ -35,13 +35,14 @@ from brushbot.experiments.config import (
 from brushbot.experiments.engine import ExperimentEngine
 from brushbot.experiments.recording import RunRecorder
 from brushbot.monitor.sources import SerialSource
+from brushbot.platform_support import adapter_root, default_serial_port
 
 # 引擎的终态：走到这三个之一即不再推进。
 TERMINAL = {"END_WAIT", "ABORTED", "FAULT"}
 # 这些状态下引擎不消费传感器样本（与 fake.FakeRig.advance 一致）。
 IDLE = {"READY", "WAIT_OPERATOR", "END_WAIT", "ABORTED", "FAULT"}
 
-ADAPTER_ROOT = Path(__file__).resolve().parents[2] / "elfin-dhag-adapter"
+ADAPTER_ROOT = adapter_root()
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
 # 零参数真机配置。日常执行只需：python scripts/run_ladder_experiment.py
@@ -49,7 +50,7 @@ ROBOT_IP = "192.168.0.10"
 GRIPPER_GID = 1
 TCP_NAME = "TCP_brush"
 UCS_NAME = "Base"
-SERIAL_PORT = "/dev/ttyACM0"
+SERIAL_PORT = default_serial_port()
 SERIAL_BAUD = 115200
 TRANSPORT_TIMEOUT_S = 0.5
 DEFAULT_EXPERIMENT = REPO_ROOT / "configs" / "experiments" / "z_ladder_x.json"
@@ -548,7 +549,7 @@ def main(argv=None) -> int:
         from huayan_robot import HuayanRobot
     except ModuleNotFoundError:
         print("找不到 elfin-dhag-adapter；请用其 Python 环境，或设置 "
-              "PYTHONPATH=%s" % ADAPTER_ROOT, file=sys.stderr)
+              "ELFIN_DHAG_ADAPTER=%s" % ADAPTER_ROOT, file=sys.stderr)
         return 2
 
     clock = MonotonicClock()

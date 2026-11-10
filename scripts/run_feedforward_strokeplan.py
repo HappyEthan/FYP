@@ -13,6 +13,7 @@ from brushbot.strokeplan import StrokePlan
 from brushbot.target_strokeplan import StrokePlan as TargetPlan
 from brushbot.strokeplan_compile import compile_target_plan, LIMITATIONS
 from brushbot.feedforward import require_execution_approval
+from brushbot.platform_support import adapter_root, runtime_temp_path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN_PATH = ROOT / 'runs/plans/target_v3.npz'
@@ -210,13 +211,13 @@ def main():
         return
     if input('确认已沾水、位于上述 wait 位姿且路径净空足够；输入 RUN 开始: ').strip() != 'RUN':
         return
-    sys.path.insert(0,str(ROOT.parent/'elfin-dhag-adapter'))
+    sys.path.insert(0, str(adapter_root()))
     from huayan_robot import HuayanRobot
     # This module import has no hardware side effects.
     sys.path.insert(0,str(ROOT/'scripts'))
     from run_ladder_experiment import _read_named_coordinate, _vendor_coord_to_si
     from brushbot.experiments.adapter import ElfinExperimentArm, RobotResourceLock
-    lock = RobotResourceLock(Path('/tmp/brushbot-feedforward.lock'), ROBOT_IP)
+    lock = RobotResourceLock(runtime_temp_path('brushbot-feedforward.lock'), ROBOT_IP)
     lock.acquire()
     try:
         robot = HuayanRobot(ROBOT_IP, tcp_name=setup['tcp_name'], ucs_name=setup['ucs_name'],
