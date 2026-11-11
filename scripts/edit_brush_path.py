@@ -229,7 +229,7 @@ class Editor(EditorLayout,W.QMainWindow):
         self.selection_changed();self.paint_path_selection()
     def refresh_strokes(self):
         self.stroke_selector.blockSignals(True);self.stroke_selector.clear()
-        for key,name in self.model.stroke_entries():self.stroke_selector.addItem(f'{name}（起点 {self.model.stroke_node_offset(key)}）',key)
+        for index,(key,name) in enumerate(self.model.stroke_entries()):self.stroke_selector.addItem(f'{index+1}. {name}（起点 {self.model.stroke_node_offset(key)}）',key)
         self.stroke_selector.setCurrentIndex(self.stroke_selector.findData(self.model.stroke_id));self.stroke_selector.blockSignals(False)
         for curve in self.other_stroke_curves:self.plot.removeItem(curve)
         for label in self.other_stroke_labels:self.plot.removeItem(label)
@@ -269,6 +269,43 @@ class Editor(EditorLayout,W.QMainWindow):
         if self.model.pending_point is not None:self.reveal_add_panel()
         self.first_stroke_button.setEnabled(self.model.pending_point is None)
         self.new_stroke_button.setEnabled(self.model.pending_point is None)
+        complete=self.model.pending_point is None
+        position=self.model.stroke_order.index(self.model.stroke_id)
+        self.import_stroke_action.setEnabled(complete)
+        self.move_up_button.setEnabled(complete and position>0)
+        self.move_down_button.setEnabled(complete and position<len(self.model.stroke_order)-1)
+
+    def move_stroke(self,step):
+        if not self.commit_pending_edits():return
+        before=self.snapshot()
+        try:
+            order=self.model.stroke_order.copy();index=order.index(self.model.stroke_id)
+            destination=index+step
+            if not 0<=destination<len(order):return
+            order[index],order[destination]=order[destination],order[index]
+            self.model.reorder_strokes(order)
+            self.rebuild_handles();self.refresh(True);self.remember()
+            self.message(f'「{self.model.stroke_name}」已调整为第 {destination+1} 笔；点号和执行顺序已更新，可撤销，请重新预检导出。')
+        except Exception as exc:self.restore_snapshot(before);self.rebuild_handles();self.refresh(True);self.fail(exc)
+
+    def import_strokes(self):
+        if not self.commit_pending_edits():return
+        if self.model.pending_point is not None:
+            self.fail(ValueError('请先添加第二个点完成新笔画，或取消独立起点'));return
+        path,_=W.QFileDialog.getOpenFileName(self,'导入笔画到当前画板',str(ROOT/'runs/brush2/plans/final'),
+            '笔画存档 (editor_state.json recipe.json *.json)')
+        if not path:return
+        try:
+            from scripts.brush_stroke_import import load_stroke_source
+            from scripts.brush_stroke_import_dialog import StrokeImportDialog
+            dialog=StrokeImportDialog(self.model,load_stroke_source(path),self)
+            if dialog.exec_()!=W.QDialog.Accepted:return
+            count=len(dialog.candidate.stroke_order)-len(self.model.stroke_order)
+            self.model=dialog.candidate
+            self.rebuild_handles();self.refresh(True);self.full_view();self.remember()
+            note='；原随机结果已过期，请重新生成' if self.model.variation_status()['state'] in ('stale','missing') else ''
+            self.message(f'已追加导入 {count} 笔，可选择笔画并上移／下移调整执行顺序；支持撤销，请重新预检导出。'+note)
+        except Exception as exc:self.fail(exc)
     def begin_independent_stroke(self):
         self.insert_mode.setCurrentIndex(0);self.reveal_add_panel();self.click_insert_button.setChecked(True)
         self.message('已有独立起点，请点击第二个点完成新笔画；也可取消独立起点重新放置。' if self.model.pending_point is not None else '在图中空白处点击第一个点，再点击第二个点生成独立笔画；也可以填写X/Y后按坐标添加。与原笔画之间不连线。')
@@ -413,6 +450,20 @@ class Editor(EditorLayout,W.QMainWindow):
     def undo(self):
         if len(self.history)>1:
             self.history.pop();self.restore_snapshot(self.history[-1]);self.rebuild_handles();self.refresh(True);self.autosave();self.message('已撤销。')
+    def edit_variation(self):
+        if not self.commit_pending_edits():return
+        from scripts.brush_variation_dialog import VariationDialog
+        dialog=VariationDialog(self.model,self)
+        if dialog.exec_()!=W.QDialog.Accepted:return
+        self.model=dialog.candidate
+        self.rebuild_handles();self.refresh(True);self.remember();self.show_variation_result()
+
+    def show_variation_result(self):
+        status=self.model.variation_status()
+        if status['state']=='ready':self.message('随机变化已保存；本次种子 '+status['seed']+'。预检、导出与试写使用同一份结果。')
+        elif status['state']=='off':self.message('随机变化已关闭，使用标准方案。')
+        else:self.message('随机结果缺失或已过期，请在高级设置中重新生成。')
+
     def edit_orientation(self):
         self.choose_segment(max(0,self.table.currentRow()))
         self.segment_fields[6].setFocus()

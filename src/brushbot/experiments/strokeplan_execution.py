@@ -64,15 +64,14 @@ def compile_recorded_plan(plan, table: dict, setup: dict, *, label: str,
     for i, stroke in enumerate(plan.strokes):
         measure = phases == f'measure_{i:02}'
         drawing = measure | (phases == f'tail_exit_{i:02}')
-        ticks, _, target, depth = sample_stroke(stroke, table, dt_s)
+        from brushbot.experiments.strokeplan_segment_targets import stroke_entry_profile
+        from brushbot.experiments.strokeplan_targets import sample_execution_stroke
+        stroke_entry=stroke_entry_profile(entry_profile,i)
+        if stroke_entry.get('magnetic_variation') is not None and not character:
+            raise ValueError('magnetic_variation requires directional_character')
+        ticks, _, _, target, depth = sample_execution_stroke(stroke, table, stroke_entry, dt_s)
         if drawing.sum() != len(ticks):
             raise ValueError('compiled measurement timeline differs from target samples')
-        from brushbot.experiments.strokeplan_segment_targets import stroke_entry_profile
-        stroke_entry=stroke_entry_profile(entry_profile,i)
-        segment_targets=stroke_entry.get('segment_magnetic_targets')
-        if segment_targets is not None:
-            from brushbot.experiments.strokeplan_segment_targets import apply_segment_targets
-            target=apply_segment_targets(np.interp(ticks,stroke.t,stroke.s),target,segment_targets,table)
         g_ref[drawing] = target
         g_ref[phases == f'tail_exit_{i:02}'] = np.nan
         progress[drawing] = np.interp(ticks, stroke.t, stroke.s)

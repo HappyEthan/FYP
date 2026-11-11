@@ -39,7 +39,7 @@ def compile_character_target(plan, table, setup, profile):
     p = dict(profile)
     stroke_profiles=p.pop('stroke_profiles',None)
     if stroke_profiles is not None:
-        allowed={'writing_tilt_deg','segment_magnetic_targets','writing_height','node_angles','entry_reverse_mm'}
+        allowed={'writing_tilt_deg','segment_magnetic_targets','writing_height','node_angles','entry_reverse_mm','magnetic_variation'}
         if (not isinstance(stroke_profiles,list) or len(stroke_profiles)!=len(plan.strokes)
                 or any(not isinstance(row,dict) or set(row)-allowed for row in stroke_profiles)
                 or any(key in p for key in ('segment_magnetic_targets','writing_height','tail_exit'))):
@@ -53,6 +53,7 @@ def compile_character_target(plan, table, setup, profile):
         validate_segment_targets(segment_targets,table)
         if len(plan.strokes)!=1 or tail_exit is not None:
             raise ValueError('segment_magnetic_targets requires one stroke and no tail_exit')
+    magnetic_variation = p.pop('magnetic_variation', None)
     writing_height = p.pop('writing_height', None)
     height_knots = None
     if writing_height is not None:
@@ -162,10 +163,16 @@ def compile_character_target(plan, table, setup, profile):
             raise ValueError('target speed outside table support')
         if (np.linalg.norm(np.diff(orient,axis=0),axis=1)/np.diff(st.t)).max() > np.deg2rad(p['angular_speed_deg_s'])+1e-8:
             raise ValueError('target angular speed limit')
+        from brushbot.experiments.strokeplan_targets import sample_execution_stroke, validate_execution_targets
+        from brushbot.experiments.strokeplan_segment_targets import stroke_entry_profile
+        target_profile=stroke_entry_profile(profile,i)
+        validate_execution_targets(st,table,target_profile)
         all_depth = lookup_depth_m(table,st.g_target)
         if max(all_depth)*1000 > setup['max_depth_mm']:
             raise ValueError('target depth limit')
-        ticks,xy,_,depth = sample_stroke(st,table,DT)
+        ticks,xy,_,_,depth = sample_execution_stroke(st,table,target_profile,DT)
+        if max(depth)*1000 > setup['max_depth_mm']:
+            raise ValueError('target depth limit')
         if not math.isclose(ticks[-1],st.t[-1],abs_tol=1e-9):
             raise ValueError('target duration must be a multiple of 20 ms')
         xy = xy+start[:2]

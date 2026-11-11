@@ -1,0 +1,4 @@
+# Use the same Python environment as scripts/run_stroke_classifier.sh.
+-r requirements-stroke-training.txt
+pyqtgraph>=0.13,<0.15
+pyserial>=3.5,<4

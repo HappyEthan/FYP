@@ -5,6 +5,7 @@ import numpy as np
 from scripts.generate_strokeplan_from_json import build_plan
 from brushbot.experiments.strokeplan_execution import compile_recorded_plan
 from brushbot.experiments.z_identification import TrajectoryLimitError, _check_trajectory
+from brushbot.planning import check_cancelled
 
 
 def _compress(q,values,tolerance=.02):
@@ -36,6 +37,7 @@ def adapt_speed(requested,settings,*,max_iterations=160):
     failures=[]
 
     def compile_recipe(candidate):
+        check_cancelled()
         plan=build_plan(candidate)
         compiled=compile_recorded_plan(plan,settings['feedforward.json'],setup,
             label='interactive_heng_pi',control_mode='pi',feedback_profile=settings['pi_profile.json'],entry_profile=entry)
@@ -46,6 +48,7 @@ def adapt_speed(requested,settings,*,max_iterations=160):
     if 'speed_knots_s_mm_s' in timing:
         timing['speed_knots_s_mm_s']=[[float(s),float(min(v,cap))] for s,v in knots]
     for iteration in range(max_iterations+1):
+        check_cancelled()
         if iteration:timing['speed_knots_s_mm_s']=np.column_stack([q,values]).tolist()
         try:
             plan,compiled,limits=compile_recipe(recipe)

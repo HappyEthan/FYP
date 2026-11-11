@@ -236,6 +236,9 @@ def main(argv=None, *, feedback_profile=None, confirm_execution=None, naming_pro
                                          control_mode=args.control_mode,
                                          feedback_profile=feedback_profile,
                                          entry_profile=entry_profile)
+        if bundle_dir is not None:
+            from brushbot.experiments.variation_bundle import validate_variation_bundle
+            validate_variation_bundle(bundle_dir,compiled)
         if args.execute:
             require_execution_approval(table, setup)
             runtime_settings(setup, hardware=True)

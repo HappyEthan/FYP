@@ -179,6 +179,7 @@ class PathModel:
         else:
             candidate._extend_endpoint(node,xy)
         candidate.validate()
+        if getattr(self,'random_variation',None) is not None:candidate.random_variation=copy.deepcopy(self.random_variation)
         self.__dict__=candidate.__dict__
         return node
 
@@ -443,6 +444,7 @@ class PathModel:
         return np.interp(q,knots[:,0],knots[:,1])
 
     def recipe(self):
+        if hasattr(self,"_variation_baked_recipe"):return copy.deepcopy(self._variation_baked_recipe)
         p=self.points();before=arc(self.original);after=arc(p)
         result=copy.deepcopy(self.base)
         result['name']='交互编辑：'+self.base['name']
@@ -525,6 +527,9 @@ class PathModel:
                     indices=self.indices.tolist(),nodes_mm=self.nodes.tolist(),magnetic_values_uT=self.magnetic_values.tolist(),lift_mm=self.lift_mm.tolist(),segment_magnetic_uT=self.segment_magnetic.tolist(),height_mode='writing_z_offset',allow_low_response_trial=self.allow_low_response,feedforward_override=str(self.feedforward_override) if self.feedforward_override else None)
         result.update(stroke_id=self.stroke_id,stroke_name=self.stroke_name,rhythm_regions=copy.deepcopy(self.rhythm_regions))
         result['settings_snapshot']=copy.deepcopy(getattr(self,'settings_snapshot',None))
+        if getattr(self,'import_source',None) is not None:result['import_source']=copy.deepcopy(self.import_source)
+        if hasattr(self,'_variation_baked_recipe'):result['variation_execution_recipe']=copy.deepcopy(self._variation_baked_recipe)
+        if include_workspace and getattr(self,'random_variation',None) is not None:result['random_variation']=copy.deepcopy(self.random_variation)
         if include_workspace:
             result['stroke_workspace']=dict(order=self.stroke_order.copy(),others=copy.deepcopy(self.other_strokes),pending_point=copy.deepcopy(self.pending_point),pending_stroke_position=self.pending_stroke_position)
         return result
@@ -570,6 +575,7 @@ class PathModel:
         obj.settings_override=state.get('settings_override')
         obj.entry_profile_override=state.get('entry_profile_override')
         obj.settings_snapshot=state.get('settings_snapshot')
+        obj.import_source=state.get('import_source')
         obj.stroke_id=state.get('stroke_id','stroke-1')
         obj.stroke_name=state.get('stroke_name','笔画1')
         workspace=state.get('stroke_workspace',{})
@@ -591,12 +597,25 @@ class PathModel:
         if obj.pending_point is not None:
             xy=np.asarray(obj.pending_point,float)
             if xy.shape!=(2,) or not np.isfinite(xy).all():raise ValueError('独立起点坐标必须为有限X/Y')
+        obj.random_variation=state.get('random_variation')
+        if 'variation_execution_recipe' in state:obj._variation_baked_recipe=state['variation_execution_recipe']
         obj.validate();return obj
 
     def stroke_entries(self):
         entries={s['stroke_id']:s['stroke_name'] for s in self.other_strokes}
         entries[self.stroke_id]=self.stroke_name
         return [(key,entries[key]) for key in self.stroke_order]
+
+    def import_strokes(self,source,**options):
+        from scripts.brush_stroke_import import import_strokes
+        return import_strokes(self,source,**options)
+
+    def reorder_strokes(self,order):
+        if self.pending_point is not None:raise ValueError('请先添加第二个点完成新笔画，或取消独立起点')
+        order=list(order)
+        if len(order)!=len(self.stroke_order) or len(set(order))!=len(order) or set(order)!=set(self.stroke_order):
+            raise ValueError('执行顺序必须恰好包含当前全部笔画，且不能重复')
+        self.stroke_order=order
 
     def stroke_node_offset(self,stroke_id=None):
         """Global, contiguous point numbers follow stroke order, including hidden points."""
@@ -623,6 +642,7 @@ class PathModel:
         candidate=self.from_state(target)
         candidate.other_strokes=[copy.deepcopy(s) for s in self.other_strokes if s['stroke_id']!=stroke_id]+[copy.deepcopy(self.state(False))]
         candidate.stroke_order=self.stroke_order.copy()
+        if getattr(self,'random_variation',None) is not None:candidate.random_variation=copy.deepcopy(self.random_variation)
         self.__dict__=candidate.__dict__
 
     def add_independent_point(self,xy,position='end'):
@@ -654,6 +674,7 @@ class PathModel:
         candidate=self.from_state(state)
         candidate.other_strokes=copy.deepcopy(self.other_strokes)+[copy.deepcopy(self.state(False))]
         candidate.stroke_order=[candidate.stroke_id,*self.stroke_order] if self.pending_stroke_position=='start' else [*self.stroke_order,candidate.stroke_id]
+        if getattr(self,'random_variation',None) is not None:candidate.random_variation=copy.deepcopy(self.random_variation)
         self.__dict__=candidate.__dict__
         return True
 
@@ -702,7 +723,38 @@ class PathModel:
                 partial.rhythm_regions.append(dict(row,start=(start-lo)/(hi-lo),end=(end-lo)/(hi-lo)))
         return partial
 
+    def set_variation_options(self,*,enabled,xy_enabled=True,magnetic_enabled=True,parameters=None):
+        from brushbot.experiments.stroke_variation import validate_parameters
+        if any(type(v) is not bool for v in (enabled,xy_enabled,magnetic_enabled)):raise ValueError('随机开关须为布尔值')
+        old=getattr(self,'random_variation',None) or {}
+        params=validate_parameters(parameters if parameters is not None else old.get('parameters'))
+        self.random_variation=dict(options=dict(enabled=enabled,xy_enabled=xy_enabled,magnetic_enabled=magnetic_enabled),parameters=params,batch=old.get('batch'))
+
+    def generate_variation(self,*,seed=None):
+        from scripts.brush_path_variation import make_batch
+        if not getattr(self,'random_variation',None):self.set_variation_options(enabled=True)
+        self.random_variation['batch']=make_batch(self,seed=seed,parameters=self.random_variation['parameters'])
+        return copy.deepcopy(self.random_variation['batch'])
+
+    def variation_status(self):
+        from scripts.brush_path_variation import workspace_source
+        c=getattr(self,'random_variation',None)
+        if not c or not c['options']['enabled']:return dict(state='off')
+        if self.pending_point is not None:return dict(state='stale',reason='请先完成新笔画的第二个点')
+        batch=c.get('batch')
+        if not batch:return dict(state='missing')
+        try:
+            stale=workspace_source(self)[1]!=batch['source_digest'] or c['parameters']!=batch['parameters']
+        except (ValueError,KeyError,TypeError):stale=True
+        return dict(state='stale' if stale else 'ready',seed=batch.get('root_seed'))
+
     def compile(self,entry_adjustments=None,reference_only=False):
+        if self.variation_status()['state']!='off':
+            from scripts.brush_path_variation import compile_variation
+            return compile_variation(self,current_only=True,entry_adjustments=entry_adjustments,reference_only=reference_only)
+        return self._compile_standard(entry_adjustments,reference_only)
+
+    def _compile_standard(self,entry_adjustments=None,reference_only=False):
         if self.pending_point is not None:raise ValueError('新笔画只有独立起点；请添加第二个点或取消独立起点后再预检、导出')
         effective=self.execution_model()
         if effective is not self:
@@ -752,6 +804,12 @@ class PathModel:
         return recipe,plan,compiled,settings,limits
 
     def compile_workspace(self):
+        if self.variation_status()['state']!='off':
+            from scripts.brush_path_variation import compile_variation
+            return compile_variation(self)
+        return self._compile_workspace_standard()
+
+    def _compile_workspace_standard(self):
         """Compile each stroke locally, then verify one complete lift/transfer sequence."""
         if self.pending_point is not None:raise ValueError('新笔画只有独立起点；请添加第二个点或取消独立起点')
         if len(self.stroke_order)==1:
@@ -764,7 +822,7 @@ class PathModel:
         from brushbot.experiments.z_identification import _check_trajectory
         states={s['stroke_id']:s for s in self.other_strokes};states[self.stroke_id]=self.state(False)
         parts=[];profiles=[];common=None;shared_entry=None;rows=[];models=[]
-        contact_keys={'writing_tilt_deg','segment_magnetic_targets','writing_height','entry_reverse_mm'}
+        contact_keys={'writing_tilt_deg','segment_magnetic_targets','writing_height','entry_reverse_mm','magnetic_variation'}
         for i,key in enumerate(self.stroke_order):
             model=self.from_state(states[key]);models.append(model)
             # Every later pen-down starts directly at its first enabled point.
@@ -811,6 +869,7 @@ class PathModel:
         return manifest,combined,compiled,settings_all,limits
 
     def audit_targets(self,compiled):
+        if self.variation_status()['state']=='ready' and hasattr(self,'last_variation_audit'):return copy.deepcopy(self.last_variation_audit)
         effective=self.execution_model()
         if effective is not self:return effective.audit_targets(compiled)
         distances=arc(self.points());nodes=distances[self.indices]/distances[-1]
@@ -822,13 +881,32 @@ class PathModel:
             if value is None:continue
             samples=targets[owner==k]
             if len(samples)==0:raise ValueError(f'第{k+1}段没有控制采样点，不能保证执行该段磁目标')
-            if not np.allclose(samples,float(value),atol=1e-10,rtol=0):
+            expected=np.full(len(samples),float(value))
+            field=self.settings()['entry_profile.json'].get('magnetic_variation')
+            if field is not None:
+                from brushbot.experiments.stroke_variation import evaluate_fields
+                source=np.interp(q[owner==k],field['execution_s'],field['source_s'])
+                expected*=1+evaluate_fields(field['fields'],source,magnetic_scale=field['magnetic_scale'])[1]
+            if not np.allclose(samples,expected,atol=1e-10,rtol=0):
                 raise ValueError(f'第{k+1}段磁目标与设置不一致，禁止导出')
             report.append(dict(segment=k+1,requested_uT=float(value),samples=len(samples),
                 actual_reference_min_uT=float(samples.min()),actual_reference_max_uT=float(samples.max())))
         return report
 
     def export(self,parent=None):
+        import tempfile
+        # Validate before creating any export directory; publish only complete versions.
+        self.compile_workspace()
+        parent=Path(parent) if parent else ROOT/'runs/brush2/plans/interactive'
+        parent.mkdir(parents=True,exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix='.pending-export-',dir=parent) as staging:
+            folder,summary=self._export_into(Path(staging))
+            target=parent/folder.relative_to(staging)
+            target.parent.mkdir(parents=True,exist_ok=True)
+            folder.rename(target)
+        return target,summary
+
+    def _export_into(self,parent=None):
         # Compile before creating an executable version; failure leaves no runnable export.
         recipe,plan,compiled,settings,limits=self.compile_workspace()
         parent=Path(parent) if parent else ROOT/'runs/brush2/plans/interactive'
@@ -849,4 +927,10 @@ class PathModel:
         current_recipe=next(row['recipe'] for row in self.last_workspace_strokes if row['stroke_id']==self.stroke_id)
         for name,value in {**settings,**extra,'recipe.json':current_recipe,'editor_state.json':self.portable_state(),'preflight.json':summary,'segment_target_audit.json':self.last_workspace_audit if multiple else self.audit_targets(compiled),'speed_adaptation.json':self.last_speed_adaptation}.items():
             (folder/name).write_text(json.dumps(value,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+        if self.variation_status()['state']=='ready':
+            from brushbot.experiments.variation_bundle import write_variation_bundle,validate_variation_bundle
+            summary['random_variation']=copy.deepcopy({k:self.last_variation[k] for k in ('algorithm','scales','statistics')})
+            (folder/'preflight.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2,allow_nan=False)+'\n')
+            write_variation_bundle(folder,self.last_variation,self._variation_arrays)
+            validate_variation_bundle(folder,compiled)
         return folder,summary

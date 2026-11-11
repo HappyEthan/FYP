@@ -20,7 +20,7 @@ from .reproduce import archive_path, file_hash, open_bundle, read_json as read_d
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_ARCHIVE_ROOT = REPO_ROOT / 'runs' / '毛笔实验数据'
-PLAN_FILES = ('strokeplan.npz', 'feedforward.json', 'settings.json', 'entry_profile.json',
+PLAN_FILES = ('variation.json', 'variation_arrays.npz', 'strokeplan.npz', 'feedforward.json', 'settings.json', 'entry_profile.json',
               'pi_profile.json', 'recipe.json', 'workspace_recipe.json', 'editor_state.json',
               'preflight.json', 'segment_target_audit.json', 'speed_adaptation.json')
 
