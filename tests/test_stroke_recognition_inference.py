@@ -55,7 +55,7 @@ def test_too_short_direction_prefix_reports_waiting_not_fallback(model_store):
     result = evaluate_job(make_job(model, last=202))
     assert result['status'] == 'unavailable'
     assert result['predicted'] is None
-    assert '锚点' in result['error']
+    assert '方向' in result['error'] and '不足' in result['error']
 
 
 def test_tampered_model_rejected_before_deserialization(tmp_path, model_store):
