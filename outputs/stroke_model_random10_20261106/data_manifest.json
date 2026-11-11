@@ -1,0 +1,1180 @@
+{
+  "sources": [
+    {
+      "run_number": 1,
+      "name": "随机测试1（xy，磁）_001",
+      "run_id": "20261106T073743.618741Z-0055bd",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_001/随机测试1（xy，磁）_001.brushrun",
+      "started_at_beijing": "2026-11-06T15:37:43.618741+08:00",
+      "archive_sha256": "0fa37806c8bd6af91c725efb810e6d37b5e72c9b248e59a569baa25574a22a47",
+      "member_sha256": {
+        "manifest.json": "e6dca22141c38a6cfc746c3d95e763e806f8da8fc07c12e03c665ed33dd6fc90",
+        "experiment.json": "921ca78b1b0ea0a47965bf35346cd568842062fc18708fe7bf4ad534e356cfa1",
+        "sensor.csv": "a53418743d3bb976cfae501214ee3b989f81e5286a05d3c82001bf406d29ad3d",
+        "control.jsonl": "d637893ea9b7b5f1d0a7e09ff60e6a2e302bacb38c04212d62fe1ba944906d09",
+        "preflight.json": "a8ca7716d45410e8721d9ee8e5dc2765c6c9e23b06306da31b2317a260e54e77",
+        "variation.json": "4d0226fc59700ef361ac07ed9f1de5dc3dac0b59171611cb9bc71dcee92bf7f8",
+        "variation_arrays.npz": "2d57dc46dac6f37705af31f43ec73e0d9ac3f3d2d09cf521a0a77f42d8d966e9",
+        "strokeplan.npz": "8b96220fba7df665bea1aeeb13544d6a190a9be663fe74d257128244b552de8d"
+      },
+      "root_seed": "148176726641537289797090519302872569681",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.5677836918248923,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.542607473052716,
+          "max_magnetic_relative_change": 0.3190391180714965
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.41019527434118086,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.7865096195557,
+          "max_magnetic_relative_change": 0.16781637323168216
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.8919889841991971,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.75372600723533,
+          "max_magnetic_relative_change": 0.0898102648454744
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.6512857109216601,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.674731415028994,
+          "max_magnetic_relative_change": 0.03734439089495124
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 1.3650964266909562,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 77.73565857661896,
+          "max_magnetic_relative_change": 0.3035883095262721
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-1": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 0.5,
+          "magnetic": 0.25,
+          "reasons": [
+            "target outside measured range; extrapolation disabled",
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-de063dd87e96": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        }
+      }
+    },
+    {
+      "run_number": 2,
+      "name": "随机测试1（xy，磁）_002",
+      "run_id": "20261106T074425.725239Z-e2b87c",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_002/随机测试1（xy，磁）_002.brushrun",
+      "started_at_beijing": "2026-11-06T15:44:25.725239+08:00",
+      "archive_sha256": "ba99cd6a21fdf2635f73a4f39f5533353019666c10ccf4b260bd3a2a79b53912",
+      "member_sha256": {
+        "manifest.json": "adcf2eb6734936913672459d7e1bcdb2781a98b9825a734e32130882d93c78b8",
+        "experiment.json": "c396bb08498004642378c5b6782c255dee76ceaa0a6034133b11d5579c32937e",
+        "sensor.csv": "de36843c3195124dffdc7ebc6419a63b2066143cc0a34f4b74ea7f41788646ef",
+        "control.jsonl": "57380842ebd2c653031601b524c6365984c866f3d84916598d5e18de279d7bd9",
+        "preflight.json": "4ed7a93f4939863f4ad44ecc276279be2e37d5623f64702de31faee1566780a4",
+        "variation.json": "4b168f76a92235d5fb74d26a9bcc567af1417f40f231bd5abdff188eb7c0cec0",
+        "variation_arrays.npz": "b0ff3c0e83f046df84b3e332e7ff17bc593716ed17f70b10c376460c51be98e6",
+        "strokeplan.npz": "66be81ef1ef7efed0603bcac9c4313dcac5ae65efedf45a361dd1ddf2e0ee28b"
+      },
+      "root_seed": "318827034915080312202102963654660012307",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 1.9704965273774824,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 30.221594906595765,
+          "max_magnetic_relative_change": 0.5846238520303372
+        },
+        "stroke-1": {
+          "max_displacement_mm": 2.1501560159819566,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 158.64125150480345,
+          "max_magnetic_relative_change": 0.4439201014173001
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 1.4870354135281496,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 104.00024461232213,
+          "max_magnetic_relative_change": 0.2652631741063966
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 1.7066960237211677,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 47.13781827441654,
+          "max_magnetic_relative_change": 0.1405295539961768
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 4.36066848087133,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 77.84040745815994,
+          "max_magnetic_relative_change": 0.26762052800720687
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        }
+      }
+    },
+    {
+      "run_number": 3,
+      "name": "随机测试1（xy，磁）_003",
+      "run_id": "20261106T093324.085244Z-a73a4e",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_003/随机测试1（xy，磁）_003.brushrun",
+      "started_at_beijing": "2026-11-06T17:33:24.085244+08:00",
+      "archive_sha256": "0b02a92934cea4a1d51cec8492ff4d47e5b5dcd56883fc8b8fe023d710dafcf6",
+      "member_sha256": {
+        "manifest.json": "9735a30db6fe137221f9e5b85b9f176cbf808040cfe81773df73a4521f26ec6c",
+        "experiment.json": "474e54af4cb4108e6be9713c1cd782d63fcb70469dfbb4b3f62abd6947ec24fd",
+        "sensor.csv": "183792d81c316858f4f80d92b35608ee57bb056d4cff423eb7b2320374e79fa5",
+        "control.jsonl": "b48930cc4481e211d3fb6d25fb97b558efdd6befe03fe0a40a0207bf8bfb73d7",
+        "preflight.json": "ce9edaca55f62c6c7c5cf61e596883935871c7fb5f8c0e466966550178585e10",
+        "variation.json": "28f2f12ef78ea81afdd9fa6eb04d1a1c26220fb32f42dc201ef927088d0554e8",
+        "variation_arrays.npz": "6cefafa3e2014690b1352e351844e6c19b20ce39bbaae641f2300f9b28bba136",
+        "strokeplan.npz": "a32872e26a0b083f617b7c1c4e29596aec3625276bb4abdb89306115a6102423"
+      },
+      "root_seed": "82304030901674518443071691603159802140",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.5957714067330875,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.542231135754438,
+          "max_magnetic_relative_change": 0.16634766590004013
+        },
+        "stroke-1": {
+          "max_displacement_mm": 2.4630787686777103,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 158.617496533829,
+          "max_magnetic_relative_change": 0.299562594662646
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 1.1247243044325852,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 101.54029721436433,
+          "max_magnetic_relative_change": 0.3035727216636093
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 1.3675789379625416,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 47.09479178908841,
+          "max_magnetic_relative_change": 0.21116169592281872
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 4.359302653733361,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 77.69820506709436,
+          "max_magnetic_relative_change": 0.6567975928354217
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 4,
+      "name": "随机测试1（xy，磁）_004",
+      "run_id": "20261106T093926.824904Z-8e9477",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_004/随机测试1（xy，磁）_004.brushrun",
+      "started_at_beijing": "2026-11-06T17:39:26.824904+08:00",
+      "archive_sha256": "33e089aaf0912c71185a721c61f4501fc59429d14a81fc65b67278a00b20dce1",
+      "member_sha256": {
+        "manifest.json": "a1154bd181c214f6b7ab7dd053226e09231da5f723b21baaead4ded6533446a3",
+        "experiment.json": "dd119163c151e50fee761dbab2988b268923c5b3d11a953a2539103f726d1c09",
+        "sensor.csv": "3ce52f391a06da4daa42748f360b04abf2de72cf48065c421fcddc94b0cbc8ce",
+        "control.jsonl": "6537c5a991c13ac1a0911679dee37d9178f0084b373645969ed9a61f744356ec",
+        "preflight.json": "820777a86ce12ace71ef11fad8385e6784493604c391cab633bf0add6706132d",
+        "variation.json": "444f9fe10e43fd8866dc030340d760bd953942f99428d558b38a5cc577bc5088",
+        "variation_arrays.npz": "2aa121da267530c9b7199bcb6683963d29b48d363996229c662e905c2daaa08a",
+        "strokeplan.npz": "9293bacdafc4c89ba4db2a06a3d1bf88fd07ad98441aa0b432d00169a3d92ccd"
+      },
+      "root_seed": "59629753056249317697732327715608703699",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.5681667097285077,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 28.526703566282833,
+          "max_magnetic_relative_change": 0.2509056099396543
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.1500261603792084,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.6970778850588,
+          "max_magnetic_relative_change": 0.27080639050333793
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.2299596700651282,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.53528983051116,
+          "max_magnetic_relative_change": 0.2968749270383666
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.32274353515143767,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.85080990430404,
+          "max_magnetic_relative_change": 0.2928757259714323
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.8048369505670451,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.01134710892785,
+          "max_magnetic_relative_change": 0.36976948969750895
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 5,
+      "name": "随机测试1（xy，磁）_005",
+      "run_id": "20261106T094326.260031Z-05616f",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_005/随机测试1（xy，磁）_005.brushrun",
+      "started_at_beijing": "2026-11-06T17:43:26.260031+08:00",
+      "archive_sha256": "8d5715af151111783107a59f34a3cf43362c3c35925022e0161905334c79ee7d",
+      "member_sha256": {
+        "manifest.json": "e9f0e337c1093f72d9b96e1516e8ebfb9f43e65bb7bee6b1de3cf748af4e21ad",
+        "experiment.json": "e7b6e6ccdaf72c0e7d65de2ca1e86b701a436e89e452cfc6b1c09b4f5131fc6a",
+        "sensor.csv": "e5a4904b58330ee80b5b52a9e89cfa1b2dfa9dc8324fb76d3353c6752c261640",
+        "control.jsonl": "94d2d7c1bb95171072597cc631aec04c5e97ac8c1efd0b7ae81dc6ea8741d6ed",
+        "preflight.json": "e57762b69960c530b4f4950e38c947d781c8ab311ca78e5e76e505ce965f215e",
+        "variation.json": "fd4aedc35e2fd9b6063b2db141c63e601a93569d318a6233c0819c498b1f0c36",
+        "variation_arrays.npz": "db9314fd8a0da086d918cd5f9032d833210331328e7d2c75fc814898ebb47ca5",
+        "strokeplan.npz": "cb1f90c847b77eb44f40f0dd50e13c9e19b70dfedf8487b3116ab95fb056ddb6"
+      },
+      "root_seed": "320834008219076905969260153936323278942",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.3103101944138224,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.94377317645638,
+          "max_magnetic_relative_change": 0.42618254575639847
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.34876027345504945,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.55033297624354,
+          "max_magnetic_relative_change": 0.4377420879090291
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.5668244475163138,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.40034510359054,
+          "max_magnetic_relative_change": 0.4716981666010455
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.1398903645879481,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.76583350837927,
+          "max_magnetic_relative_change": 0.26173432803986113
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.8465898697780421,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.4123748449517,
+          "max_magnetic_relative_change": 0.28301065048312724
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 6,
+      "name": "随机测试1（xy，磁）_006",
+      "run_id": "20261106T094606.370852Z-595c7d",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_006/随机测试1（xy，磁）_006.brushrun",
+      "started_at_beijing": "2026-11-06T17:46:06.370852+08:00",
+      "archive_sha256": "c3895833cf2b2da6844304eb6bf06a28aace0305d8f66c229fea127f27065437",
+      "member_sha256": {
+        "manifest.json": "b0e5f20d9ef03745c5a7045ac50d5d58cad5af80eae416d0abbc769d414c592b",
+        "experiment.json": "8b7d5b0b758bce60d81891a1bf0ea6cc8a5676e0726cea417a1e5719ab5607bf",
+        "sensor.csv": "9b2125bf9fe005cab44cc4889dcc7fbb9ee0562c3483cf886732bee4ece7493f",
+        "control.jsonl": "3f4069baa4eb77521395cbe276f1a6ac0406035c717684f8b8d90d0ed68c01ac",
+        "preflight.json": "045a8e19e664d8ef30515a12cd4da06328992a2f82515f09825e4333abda836d",
+        "variation.json": "51c2b952e3ca18e17705a0aa37ac0f50372397c0dba1f5725ae6a9b4b48341ff",
+        "variation_arrays.npz": "e0dee5d125029235f11fc284815f42ddad566d1402808e133f6dde110e269320",
+        "strokeplan.npz": "e5f86ab69834d959e1a0dc51518986a64cf77227ba5fe5c3af91b92433a8382d"
+      },
+      "root_seed": "162926785729303768766271297777377256095",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.6018678846096681,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.574987146742917,
+          "max_magnetic_relative_change": 0.3974912225035667
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.5977236291346901,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.85631899208857,
+          "max_magnetic_relative_change": 0.37703636390133
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.2503234428411414,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.46290934853808,
+          "max_magnetic_relative_change": 0.5119902481265914
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.6783706786068378,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.79543046316854,
+          "max_magnetic_relative_change": 0.3316901609376895
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.7893615074417806,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.01208815717504,
+          "max_magnetic_relative_change": 0.3234525096963827
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 7,
+      "name": "随机测试1（xy，磁）_007",
+      "run_id": "20261106T095223.460524Z-92cfb1",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_007/随机测试1（xy，磁）_007.brushrun",
+      "started_at_beijing": "2026-11-06T17:52:23.460524+08:00",
+      "archive_sha256": "9c553c7591c8a0e746193e0fee92ebf1a7b1927c211ea45095590874970e3de8",
+      "member_sha256": {
+        "manifest.json": "4d2c771b1daad2d6f29761aef324fa1adc790480a1e0c84729ff13272eeb2645",
+        "experiment.json": "b770d9e69a8ac46fd2834b81025c3704b4bb58c39e9a980dc249928c629dbbbc",
+        "sensor.csv": "63613fd53b16be378ec591912454153b6e6e9fc825a4354a08aa6aeeb47fd382",
+        "control.jsonl": "0ea32758903afe18b23ad77970c62e8e71f0dbdddfaaaa2c730724458117186c",
+        "preflight.json": "0e0790c8c9f16a5f12b74c1394451485628b2821d2ac46bccb0ae8a8f9c5347a",
+        "variation.json": "cda98e628b6c51adb1f6baf0d8a26238afadce6a4826dc5f61fa1965f3080ab7",
+        "variation_arrays.npz": "86596f922e449f089c75686699d6886476f797491abea5863607876ac7e6113a",
+        "strokeplan.npz": "3f8449cb984978dcca52f28f3af21792dad40eabcb1534f15b1a709c420a1760"
+      },
+      "root_seed": "255309372450685106245089035738584124449",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.5469301546047723,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 28.51598192560686,
+          "max_magnetic_relative_change": 0.5055732961754946
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.5138043839183832,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.5281486296713,
+          "max_magnetic_relative_change": 0.2382351710540074
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.38557022181550654,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 104.00140325028548,
+          "max_magnetic_relative_change": 0.34848115375390026
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.5211764290123136,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.9077817263096,
+          "max_magnetic_relative_change": 0.3931474547749789
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.3312096027100948,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.25778986873162,
+          "max_magnetic_relative_change": 0.21658337783124335
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 8,
+      "name": "随机测试1（xy，磁）_008",
+      "run_id": "20261106T095519.630893Z-58ca2f",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_008/随机测试1（xy，磁）_008.brushrun",
+      "started_at_beijing": "2026-11-06T17:55:19.630893+08:00",
+      "archive_sha256": "92fd3aecffccee9f85f9bb0bce10dfd571dac07eb2985fda8a2613a1e3ec8833",
+      "member_sha256": {
+        "manifest.json": "09a91ff9f30097cb896a4e692d8c9ef688ad236889f029e28b81176e4ab9576c",
+        "experiment.json": "d4205deddd1bae7c609fe00a36280326743101a2a15a87b757284951246fe0d2",
+        "sensor.csv": "ec2e5de895d66c7fc9471484b8ea35826f8ac7b5290b01257dd31c95a3cc787b",
+        "control.jsonl": "f0d218e2c3b019369bd4a1891ab4d5063561cb341c4d787c7b7225f1a4d4455e",
+        "preflight.json": "3ebcdc316e3ead94ccbb040638c8610d440789e95e6e10ab67620c713a1f68fa",
+        "variation.json": "88c54abce20b3dec07e45ce2345e0420d928f4d5b53b8989a941e75e3e5a4f9d",
+        "variation_arrays.npz": "0e561118c103a15eb5ad59f66b3481beb26d155f95654bb5ed43e60b04c43dd3",
+        "strokeplan.npz": "a1ca1e1bf22c8c38535d436d61adb970c1cd3ca4e358c461af2a8e34ca934a7f"
+      },
+      "root_seed": "247357010983694259034082096820346306917",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.7132225905076716,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.450025440845746,
+          "max_magnetic_relative_change": 0.24393704097441152
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.5860432500000803,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.58946662736145,
+          "max_magnetic_relative_change": 0.2043056163740959
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.2587395313545823,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.6673439653944,
+          "max_magnetic_relative_change": 0.3805995480547817
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.7622195073030772,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.83504607882735,
+          "max_magnetic_relative_change": 0.18921105202511007
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.47393724644410373,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.09818428796682,
+          "max_magnetic_relative_change": 0.29390664140880807
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-1": {
+          "xy": 1.0,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        },
+        "stroke-de063dd87e96": {
+          "xy": 1.0,
+          "magnetic": 1.0,
+          "reasons": []
+        }
+      }
+    },
+    {
+      "run_number": 9,
+      "name": "随机测试1（xy，磁）_009",
+      "run_id": "20261106T095808.450804Z-6869ab",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_009/随机测试1（xy，磁）_009.brushrun",
+      "started_at_beijing": "2026-11-06T17:58:08.450804+08:00",
+      "archive_sha256": "8636f1a325740435dc18da0c839173309b4f4dc5d42300efdb2216920fd75e76",
+      "member_sha256": {
+        "manifest.json": "95210e128d00c0765a1c94c756cbd4378b01a0a9a9f2ef7ad1c6fc578debb96a",
+        "experiment.json": "436ad52453b1dddea1ace6750c72200ced1f72249d87dd1dd5cead5acac4cf9f",
+        "sensor.csv": "e55b2bf168a97fe472f2999811a7f5b8b39ea6b436faab942e1b004e3648d57a",
+        "control.jsonl": "36e4cd70fcfeff886979d58f08b4f0a31d3a6e0ae2722dd96d0bf1011f1e719b",
+        "preflight.json": "41be840b19c81a97d5b0729339ff8439bfec99c98d22fab519944bff8f53ec6d",
+        "variation.json": "e00ac2f325433a4e2fa82ca426842de9423520f80e558fcfcf39a864fc9dd499",
+        "variation_arrays.npz": "6cf31c387800a7b580ee8c02e45513c837567ab838bec7ccd19b21ba51082d63",
+        "strokeplan.npz": "e28ecdaf18585f21ec694346a8d12d5bcfeb01f91b2ff87f275573dc4ec4f4b9"
+      },
+      "root_seed": "305628128341075261517816030172063937738",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.10262223035094303,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.945809808258794,
+          "max_magnetic_relative_change": 0.1588844295760107
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.06165949365519594,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.59278438980778,
+          "max_magnetic_relative_change": 0.22729441292114502
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.2573640919557014,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.72043709909448,
+          "max_magnetic_relative_change": 0.10629894441615971
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.33509827576278456,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.83109845611289,
+          "max_magnetic_relative_change": 0.03813535541468075
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.21271364930580558,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.26344142734959,
+          "max_magnetic_relative_change": 0.12595284107696825
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 0.5,
+          "magnetic": 0.25,
+          "reasons": [
+            "target outside measured range; extrapolation disabled",
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-1": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 0.5,
+          "magnetic": 0.125,
+          "reasons": [
+            "target outside measured range; extrapolation disabled",
+            "target outside measured range; extrapolation disabled",
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-de063dd87e96": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        }
+      }
+    },
+    {
+      "run_number": 10,
+      "name": "随机测试1（xy，磁）_010",
+      "run_id": "20261106T100124.028836Z-65a2ed",
+      "path": "/home/serein/FYP/runs/毛笔实验数据/随机测试1（xy，磁）_010/随机测试1（xy，磁）_010.brushrun",
+      "started_at_beijing": "2026-11-06T18:01:24.028836+08:00",
+      "archive_sha256": "e7aeb6d0f4e533b98958ff7f69ea493c4a5d87eded01186c146a3232f6927f13",
+      "member_sha256": {
+        "manifest.json": "3b17c7b0664c92eca0570c8bc3203cdac5c14123608ed48e63c14a6d78f53183",
+        "experiment.json": "4b2c329158564b19fa6546d513e1205f3d598cc333257aa7f1f6602e0e524cb1",
+        "sensor.csv": "389d941d4c6adeb3579ef033a065b5ad03d9f3c742feca0aeb8ea2290e1ab784",
+        "control.jsonl": "769da44e89becd14aa120516254468fa70552b5fccecbd16882cb6fda52c1dec",
+        "preflight.json": "a324791a8f955d175e2a163bd6da5a6ac72173c5fffdf4291e1421a8d9c1efd5",
+        "variation.json": "fe791a11007c176585d65fdb8980f64afe644188b714c02721527cdad56018bc",
+        "variation_arrays.npz": "a9c542c297c45529a304e476d4339d675d6fc9085e367e991ceb0e772eb1e2a0",
+        "strokeplan.npz": "dc28a33200261fffb703cbd5ef0d9b97811e30e2ef4a850cd7f897fba87312e6"
+      },
+      "root_seed": "234079942755269715524057471849996599316",
+      "parameters": {},
+      "effective_statistics": {
+        "stroke-b4de85c28642": {
+          "max_displacement_mm": 0.2863891800974882,
+          "standard_length_mm": 27.903024076658767,
+          "execution_length_mm": 27.6961699794761,
+          "max_magnetic_relative_change": 0.285921883197509
+        },
+        "stroke-1": {
+          "max_displacement_mm": 0.3181186993496319,
+          "standard_length_mm": 157.67491157786066,
+          "execution_length_mm": 157.59449913776035,
+          "max_magnetic_relative_change": 0.24728759206091208
+        },
+        "stroke-4ffd2d2876a2": {
+          "max_displacement_mm": 0.2879250502350647,
+          "standard_length_mm": 103.46991996153197,
+          "execution_length_mm": 103.68466948221297,
+          "max_magnetic_relative_change": 0.08932631652400759
+        },
+        "stroke-8df5c0b7e5e4": {
+          "max_displacement_mm": 0.11655485562538688,
+          "standard_length_mm": 46.77547083431234,
+          "execution_length_mm": 46.78946866069157,
+          "max_magnetic_relative_change": 0.1085280560601103
+        },
+        "stroke-de063dd87e96": {
+          "max_displacement_mm": 0.1422172719034056,
+          "standard_length_mm": 78.16131948279667,
+          "execution_length_mm": 78.19429411775916,
+          "max_magnetic_relative_change": 0.07347443479274082
+        }
+      },
+      "scales": {
+        "stroke-b4de85c28642": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-1": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-4ffd2d2876a2": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-8df5c0b7e5e4": {
+          "xy": 0.5,
+          "magnetic": 0.25,
+          "reasons": [
+            "target outside measured range; extrapolation disabled",
+            "target outside measured range; extrapolation disabled"
+          ]
+        },
+        "stroke-de063dd87e96": {
+          "xy": 0.5,
+          "magnetic": 0.5,
+          "reasons": [
+            "target outside measured range; extrapolation disabled"
+          ]
+        }
+      }
+    }
+  ],
+  "application_source_snapshot": {
+    "src/brushbot/__init__.py": "b172e1ee0dca0b84021717191814e91b6b1c47b866981b0c8eae8ba91a6d9118",
+    "src/brushbot/backends/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/brushbot/backends/base.py": "2d444ea491c9053d0e29f0411301bb5a9940875074dea246d29f1895433d2002",
+    "src/brushbot/backends/fake.py": "42080bcdfc94904a39227b97d82a7f3093da973093575de96e66ca2016cc018a",
+    "src/brushbot/backends/huayan.py": "9e28589f2a37c6242fa06f1ef1edf634ccee23c144d118e5ed78107bcb6a0e4c",
+    "src/brushbot/backends/vendor/CPS.py": "28bd396fbd432f46fac8a06a7002e052cadf02cbdbe77675ca659242e34e3fc4",
+    "src/brushbot/backends/vendor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/brushbot/calligraphy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/brushbot/calligraphy/calibration.py": "8e947bdebf93fb412b6994bf0af44d02f3193c386d14dfedee9d572760358b3e",
+    "src/brushbot/calligraphy/hanzi.py": "eb2197b1b7b6967ffbf2e05c1120e140c3ff55caf2bb72a367da1e2e73072c8f",
+    "src/brushbot/calligraphy/render.py": "da9a709a4b70423f37239ab7ba4d25ee3f07e3ed7b555470d4c233462190b8a3",
+    "src/brushbot/calligraphy/strokeseq.py": "2585267b93f5ae0fecb81cc39163a57bb3820dcaeb7b6cc02d17d61cba9671a0",
+    "src/brushbot/character_xy/__init__.py": "0d185c2343f7520e83f54c0586899c773a4eb9865df4d8ccf25727fecfb3aa03",
+    "src/brushbot/character_xy/bundle.py": "d60e6214ffe19ab9d6b8c4d6ca355aa7c610143270207311f6cdf3ff7d126706",
+    "src/brushbot/character_xy/pipeline.py": "b017e9d08fe9e1758a6e0c553b24dded7ad7627ac7f173761a0f016d90bf0c75",
+    "src/brushbot/character_xy/preview.py": "ba9741adb060773bebb7663098a06402d0ebf66e5a729891601c87a34c77a1d1",
+    "src/brushbot/character_xy/processing.py": "f39d1fbaa668db738b4f7540d590dda4109810b6106d0c6fd28e89e667c2d105",
+    "src/brushbot/character_xy/topology.py": "14adfe7ef69f85346ef4b62f6b932dc63a44712e3f23190dfe18d175fd89ee4f",
+    "src/brushbot/config.py": "07dfb64cf5f7c2284460bf454a2e32a9197a71c878baec7dc962dfa1adce6d58",
+    "src/brushbot/controller.py": "01160c4b6231361aa9ecb1d7e46afa82321d4312bb97e07985a2434d57c1a965",
+    "src/brushbot/demo_pipeline.py": "00e56c442dfb4ecf13ea18d689e99a00c6dd597ba2cb1ee57e0e7fcf5cf852fa",
+    "src/brushbot/examples/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/brushbot/examples/strokes.py": "94efaca03f006eaa688c8705fe0b3cfcbc7bd95da40f3d1ba0a2472788065027",
+    "src/brushbot/exhibition/__init__.py": "a43ef3f95376d8bbe54a6ce904f7c0f74657080da9ba3bd12ebb30484385b72d",
+    "src/brushbot/exhibition/__main__.py": "540fd0a5992ca535482a9d44b2e268ce3a39bb47a0576f301214afa5ef4494b9",
+    "src/brushbot/exhibition/contracts.py": "c49177dad02e60b690844f8324bb5aca17238e26f5c6d26fa2af67044214d626",
+    "src/brushbot/exhibition/hanzi_preview.py": "2aadadc303e115ee77ea0d3062baaef1fc24196583e9f096a857837edad5b1c7",
+    "src/brushbot/exhibition/robot_service.py": "f61f3aee5f4b9a3dc9d6a85f007d63ffde813c0e5f77152e9483d1c647645d2b",
+    "src/brushbot/exhibition/sensor_service.py": "b3531d19df1cfa247408480b00b16031b4214665f887bcebcb23fdd0185c9e5a",
+    "src/brushbot/exhibition/server.py": "eb40efa40896c7d11ac37814423538e60da802ca58d3248cfe585422ee1ff96a",
+    "src/brushbot/exhibition/windows_launcher.py": "380b7fa674fee624de3452e87475d141080afc82a31358cc20827020f7d4f53b",
+    "src/brushbot/exhibition_monitor/__init__.py": "d4a62bf502db1c038b765b1cfa307b59b6b45b25785783da80022498651f35cb",
+    "src/brushbot/exhibition_monitor/__main__.py": "75ccffe99cec38d2e5ca08ec04f5e641da1ade4c803f96e2efb2a3feec76041c",
+    "src/brushbot/exhibition_monitor/app.py": "942f24ef9ff80eafae848f039cc01c86d3040bc7a9cc44651fb1af3128424e3a",
+    "src/brushbot/exhibition_monitor/connection_panel.py": "ef7849e8cb380c8e7c1585fce4219e969dd5a1bbe7287c4bd10d184ae4dd4806",
+    "src/brushbot/exhibition_monitor/gateway.py": "f603739b8626e9dc225812d0e26a90655633a09272efbe73106191693023ff8c",
+    "src/brushbot/exhibition_monitor/monitor_page.py": "ddf5291608faaa4cf7e5e119ae05aac8e4b5e6cff0091932fd4f4b5ad09c6b22",
+    "src/brushbot/exhibition_monitor/navigation.py": "7382d743213bfa948330eb62d555f5c61709fcfa7f6e5a65e11eeb1dec66b44d",
+    "src/brushbot/exhibition_monitor/practice_panel.py": "dea262aacf9f0a1daa54797586dc0b2547fb09593094e0fa10900a2257af3335",
+    "src/brushbot/exhibition_monitor/pressure_plot.py": "441691465f6a40b5d0dc69ec2f39e06a915df9e97ecae63fdbc0bea55f0a3cbf",
+    "src/brushbot/exhibition_monitor/pressure_practice.py": "0bc7150b52117bdefb1fb92ef420cb2128e0c7a3e9e357bf8611597dc1e9cd9c",
+    "src/brushbot/exhibition_monitor/pressure_smoothing.py": "44234f0d54ec8b333662d97bc4626a68a6a1c64898942adb3cff131abfe0819f",
+    "src/brushbot/exhibition_monitor/sensor_panels.py": "bfcb14e3669d4feb7aaa74f6a3daedab6fff1bd67fe0ad67a048d9eb991aeeb6",
+    "src/brushbot/exhibition_monitor/serial_port.py": "b8cc9b743ce538e6e9f98beed5d2bb5eb9f8f18e602a723a7934050956fe37b0",
+    "src/brushbot/exhibition_monitor/state_store.py": "13027746af6239cb779e4553bbcb609eeeadd20fbef99ee9239d9c664448729a",
+    "src/brushbot/exhibition_monitor/sz_canvas.py": "5050993dfe222f0e2a4df0a4e4125c986dc79874df0b1f6049c51d0541da8703",
+    "src/brushbot/exhibition_monitor/sz_template.py": "5a86b50a2b87652fb3af91d2019755cb74c9d727ce6022edd6df515b99f2823c",
+    "src/brushbot/exhibition_monitor/theme.py": "77c52c1cef3f4a77f89467fb7c8a9c265482d6e96119e01e1113f0c2bdadb7b2",
+    "src/brushbot/exhibition_monitor/window.py": "3b84a3f60f5d3b53c0c7bd4ee1ffe00bc49e0e67ba303ffbf4b3fe3ade24c78d",
+    "src/brushbot/exhibition_monitor/writing_page.py": "bd0ae3ad495a90a3c6b5482fe9cbd3d851fe2dd9f159c999b74d891f11d4391f",
+    "src/brushbot/experiments/__init__.py": "f3b6f1db3b163596fd0ea90ebd25f1c231de7831ea7cd1d5fe71e044fff522ad",
+    "src/brushbot/experiments/acquisition.py": "4e9692c0b014838d4e10b641f874a71f2f72393b1c60d62abea996eb2f571047",
+    "src/brushbot/experiments/adapter.py": "59d93fd927ba39dd1e87699817ba3823eced6300620f6f1f9461e9cf37a7a4f2",
+    "src/brushbot/experiments/archive.py": "b8f868d9269d759d32d58d0efe51ea9c38bc3c15ae51fbd8b39f321e2d1fd852",
+    "src/brushbot/experiments/calibration.py": "41ebe43376c83294b084fbf8f22ce02e915b5febc47052b9c641194ad22dee02",
+    "src/brushbot/experiments/cartesian_return.py": "65c9e8eb0d65a3e5a75466d93023923f75b7607c5fde03157af5cee5d34254ab",
+    "src/brushbot/experiments/cli.py": "84bbd8b3a174f119a51eea5385ad1998ff3c130a572611a7ef3006f3c1e9412b",
+    "src/brushbot/experiments/config.py": "92c02302600d5cd0e248d2aa4a85537b91b63fb699551562ad879da7ba245e31",
+    "src/brushbot/experiments/contact_entry_test.py": "98f191faa8b092e2420ea4e40139e1cfcbaa53b214f9a7ad03ee1b44fdd2c358",
+    "src/brushbot/experiments/engine.py": "5a29b9a8bf2441ae4fde92c8733e06879ee7f677bb71650c0e99b70401de65b0",
+    "src/brushbot/experiments/fake.py": "8a225ec1ad88f10b4873de6afe46b99dca8410bcfb215d0573b180b66cbf6570",
+    "src/brushbot/experiments/feedforward_calibration_validation.py": "46019b8bf4d6ff7dc5cc6e613ee5d2d4d1ea47a9dd5b07a0cfa4eeb4cb7df180",
+    "src/brushbot/experiments/four_direction_sweep.py": "9b376e3e040abefeafc809e0ab72da3ebf28e5f32a38d943809ccfcb0cc6e75f",
+    "src/brushbot/experiments/identification_analysis.py": "6f1b3cc5496b2bbecd08d5fbc74f7a12f065d1d077393b37406e09439a560e20",
+    "src/brushbot/experiments/ipc.py": "d9f1b5bdaaf2125f69e9b2544f5df317a19012d0a8125ce79756c004827a4d6b",
+    "src/brushbot/experiments/magnetic_timeseries.py": "ddc284be856db140dc0ee2e798f0e569b6c4d20173422d81cc61d90b855e89ce",
+    "src/brushbot/experiments/recording.py": "d9c452130e768b19ecae39b1d89a0184f6edf10eb54b85c4c8e06c061e80b85b",
+    "src/brushbot/experiments/reproduce.py": "739e48b967bda32c17377e98819075b414f1565434a89ac290261f20f5f927ca",
+    "src/brushbot/experiments/service.py": "bb4e8fd248897f8137e7c7cce04a05505f0a8a9ef91455a0da1f2f52d9854b63",
+    "src/brushbot/experiments/stroke_variation.py": "9dc518056232786b83f52c7387884aaab647dbed36e0f492980cb87a154d364c",
+    "src/brushbot/experiments/strokeplan_character.py": "0e6bc65754c04cc8de736c286dd6d923d63e75de2722eda93310bc5f13aecedd",
+    "src/brushbot/experiments/strokeplan_entry.py": "275c0d2c8d4b9521bda69fa69af893080fa7d2eea21f9704c78c4374a1371ccc",
+    "src/brushbot/experiments/strokeplan_execution.py": "3665fec4c958ca64041156b04239127430a9c317b31a2aa981a2bfe135047369",
+    "src/brushbot/experiments/strokeplan_feedback.py": "887e0694f0cc6167d2e59c680b5beb25d4ec0b06863eebd9efa9111cb4ea36c2",
+    "src/brushbot/experiments/strokeplan_pi_feedback.py": "0403ecf786c4fa336a757a8d44d47a961663fec8d36e5b955dc496b3b2411ea6",
+    "src/brushbot/experiments/strokeplan_segment_targets.py": "74d1ecfe6b5b6d5962dce119f1d819d9f6fd3b60573f1efbd5e26cf87916d885",
+    "src/brushbot/experiments/strokeplan_targets.py": "4dd4b35832f78389f4d4b815133bd301455d91e8047aeb8d6f5c7bfb6de97e06",
+    "src/brushbot/experiments/tcp_pose_capture.py": "3cbd853b71e73ce2de4fcc4a6472c3895b6d1d8764a986b30754da3acb6e9a10",
+    "src/brushbot/experiments/trajectory.py": "cc9102c7898620299c61f49136fd066f5292851f33525d98a3b6ddee55ce2581",
+    "src/brushbot/experiments/variation_bundle.py": "aca21536d5ef36bd3dada5eee5be10726d05db0d3f986b71c3f145381503d43f",
+    "src/brushbot/experiments/z_identification.py": "a6ff0653d7315be52c25720a938f130b3bde362586ae72587a91cc4f95ab23e3",
+    "src/brushbot/feedforward.py": "5cdfb580e2763f69faf36a8ff29bdaf5b8823d501dcf346c6dec2f8cd9d69687",
+    "src/brushbot/filter.py": "ac84562006133ffc125a37fa29382acc562f2158aa24c58106d6761d6d2d04db",
+    "src/brushbot/gripper.py": "a6ca8f8f0449230ddde54b30b2d5dcf41557d41df20bef29a8e839162aa4e249",
+    "src/brushbot/image_geometry.py": "d77a12fd495c1cc80ada64f8e985d647c4b13bc7310b5e778555020491014cef",
+    "src/brushbot/monitor/__init__.py": "65113fee4e2d6bbc964e15159b3cec6da7a142822a183184354309d7b530f08f",
+    "src/brushbot/monitor/__main__.py": "4fef0b73b6b37da47fedc911098815dea8abdfe4e85300d10b5cb2556823b8b0",
+    "src/brushbot/monitor/cartesian_return_panel.py": "14bcb2fa3b7107b46f26ba83e0402449b392885ee9e38ee231078e5fa9a3fb0e",
+    "src/brushbot/monitor/control.py": "5619ef4b6dbbf375c8abd6fb819829b27794ef4e5480b4f136f5980ecf47f4a2",
+    "src/brushbot/monitor/core.py": "12d23c80d06d9255ee997ac29ab46a5530e1b6f1a1a8ead757f0868e73e02a2a",
+    "src/brushbot/monitor/experiment_panel.py": "a50c29e948dc0165c37f86709723408e6cd88ebf033b75eaea3a977f92248865",
+    "src/brushbot/monitor/recorder.py": "af508faadd31fd6994f9ee0922ad8b8cb240aa970f736477d6425723f0d22fcd",
+    "src/brushbot/monitor/sources.py": "2029c2e00151968c6362c7d2a745326d31900ab2eae1ced312f8baa1b291dc17",
+    "src/brushbot/monitor/window.py": "cad32b3b4d1ab74153b4284d247ec2c01a420abcd5c5fa1d5caed23192f81c78",
+    "src/brushbot/run.py": "1281f3899b7087b00739c0e3537d0773c057186c4904e38c6d8d3c1f3178b955",
+    "src/brushbot/runtime.py": "9c09f20442752c32b9e16fd52385641d0c82646c34f96b8024b80bcd8b3c44de",
+    "src/brushbot/sim_loop.py": "d43df67fc6d8ecb818be8b0245e276827486976dfaa893ce74afc3e0ef104214",
+    "src/brushbot/stroke_templates/__init__.py": "58b68ac65dfb0d9f1a89eb453d90a59fdb8c498b94f753c12469aa496763697a",
+    "src/brushbot/stroke_templates/annotations.py": "e067f5bb78c1df571308e3210a0a7004eadee9e1da82c11a6d680d4bfb1791cb",
+    "src/brushbot/stroke_templates/bundle.py": "9dc67a4985c912d787a9545a4f9eb44c97486a9577bc70603c9cf40c3e750f2f",
+    "src/brushbot/stroke_templates/catalog.py": "f25160399332b49741308260d8c541e8059a525783983fa3a687b0373a0aae3b",
+    "src/brushbot/stroke_templates/composition.py": "a3e66912653e4d5c6c5bcaa643aa7a82cb1e7b5c7be298fbba2e5a2041d5d14a",
+    "src/brushbot/stroke_templates/examples.py": "369ffa903d94cdde4a2652eb4d7f369c6366bac2fec611c31ece73a8218ccfe5",
+    "src/brushbot/stroke_templates/geometry.py": "07c3e12b8165270f11cd0c94218a1e96237847f9f6fa28714b5e900e290fe0b8",
+    "src/brushbot/stroke_templates/guide_report.py": "a9264f17209148a71fdbacc8144aa91682a6d894d31bd5d30804d07e61c15dcd",
+    "src/brushbot/stroke_templates/guide_templates.py": "9b956ffaa170b1277a1081c05e58691fb782a89887847658893e62cf341417dc",
+    "src/brushbot/stroke_templates/guide_tracing.py": "25db72f31d88962fb1fd31b4aa80e698f01aa794296dd99686316560ea746e29",
+    "src/brushbot/stroke_templates/hints.py": "59f60375c604248e83f57ebf1f05b9a29c2fccce24b97f10b363daf2c83c6369",
+    "src/brushbot/stroke_templates/image_consistency.py": "898ed8a0f0b2bac985c2224f5f35f741d8f7620081bdc4e9ad449aceaca89ca6",
+    "src/brushbot/stroke_templates/piecewise.py": "5f697913ab7ff0570a819474fff49843d0d67b7cd7a729fb48be1d36fe0d8151",
+    "src/brushbot/stroke_templates/quick_review.py": "7f027eaeeaac0ae169f2140b0200801d519caa4f1d4dd2fdfa1c9ec2f850ae9d",
+    "src/brushbot/stroke_templates/report.py": "c2f82ff2d311a40ca748d2d9ab5f4939faef23dd356ef5a375e94526e4c52ce7",
+    "src/brushbot/stroke_templates/schema.py": "e53c4960531e2d5e6c33f0223d1fe27e60054e4eeb438645dfb9889f727c6834",
+    "src/brushbot/stroke_templates/teaching.py": "30c3bb324958fc4c21ff89daab683e736ef21fbabf49a82311357eab09683d8b",
+    "src/brushbot/stroke_templates/teaching_basics.py": "ed394b02bb931d3f47341fdae3ea03e9f99f807a0a447ac41c00790ff536a321",
+    "src/brushbot/stroke_templates/teaching_recipes.py": "81127e07d992f64a3e2ffddef235140affe5383a1bdce6f93d0c943525785fe1",
+    "src/brushbot/stroke_templates/teaching_report.py": "2711b537c0bcfb06b3209d5dfafd77321cc2efb9bcc0eff673a88add77186b24",
+    "src/brushbot/stroke_templates/widths.py": "c0a97340dd259bc260c916940655ed707ad0f37c9caade42f4bd45d1fe8a92d8",
+    "src/brushbot/strokeplan.py": "3a412c1906957e8932418955088f2855c146675690b94941c97d4d6c77b930d9",
+    "src/brushbot/strokeplan_compile.py": "8bc5db00ace2ae8cf9e0d64e5074199b24a1797a89e2019a1422d9c7a58b78f6",
+    "src/brushbot/tactile/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/brushbot/tactile/antenna_model.py": "7b2c5338c20834e7f56922bb2078c04d433f7f4723902a1a6103d9d451f18b2c",
+    "src/brushbot/tactile/contact_sim.py": "da0e5e3fc1947ecc089f419d64e2b01bb0427ca9edc671451f113132a205620c",
+    "src/brushbot/tactile/mj_write.py": "0bdc26bd2d2ce16f49a53256ca06c7bd0d7c571e0b065eb304c703505988bbf4",
+    "src/brushbot/tactile/separability.py": "f942ceaa0ef031fafad7ae55569ec227fb093bf83abad2492a505244048d8873",
+    "src/brushbot/tactile/writing_tactile.py": "f9abae2d0342d0750ddb63190e3179205f04f29fa75b2790a5065a879ba1c05c",
+    "src/brushbot/target_strokeplan.py": "8c4c8c07c127916104f80311d5df088e39c3bac1bc985656878d83002c3a7e9a",
+    "src/brushbot/types.py": "fd4e3b25c0cdd6263964de61ad37ccf9f03c169bbaecbe815b4dacabc7345668",
+    "src/brushbot/vector_paths.py": "73e441c899d19646940b4c85d549afde44edaa01c0b4cb09e2252bd8b0bfcb83",
+    "src/brushbot/xy_comparison/__init__.py": "1cb581c88f7cea579f22baeb85bddaf77cdbecdb38c7d0306c6bf46a2ded9173",
+    "src/brushbot/xy_comparison/geometry.py": "52ee8b9c535e8022e8ee6a88fa6e57504285f65f38dc87d31fb69721985efe6f",
+    "src/brushbot/xy_comparison/image_reference.py": "073dc410521227b10008807a4d3ad83dd66b6d284956908e0ee391d4b4e32463",
+    "src/brushbot/xy_comparison/report.py": "52288ba898e88a194d196eb9d042df987640fb836f593dd338cbd3b8a017f3fe",
+    "src/brushbot/z_control.py": "d226cb43ff04e33be2ce8d469e1aa7a28c165dea827aca06e7a417a42e562e90",
+    "scripts/analyze_brush2_vector_direction.py": "92abe06d794c7b0fcf6625935edf339a6951592f94d13bded9aa2e01b5de92cd",
+    "scripts/analyze_calligraphy_run.py": "96ce72a0a5ec96d513831f00e12b7eda324d89528ec05bd5f53dd1a502b813e3",
+    "scripts/analyze_deltab.py": "79200cb1eec3cc781c398b514d708619b9eedccb3ec483ed10085ba4f162fada",
+    "scripts/analyze_experiment_scan.py": "2dec53e646b15930a0d6b7309ade97da1f58b26eba4157121d55e30eff6850f2",
+    "scripts/analyze_z_identification.py": "cd956772e39d1980a51f0af9ebd5d3e390ed24a665acbccbe9bc71ed00778b4f",
+    "scripts/brush_editor_interaction.py": "725840aeffb0af3f6ed2c52c33910c0bb1d0e2da8559775d2ad11a45f3f7989e",
+    "scripts/brush_experiment_dialogs.py": "fa842bd62cc01637cb6162b4f7d7667b36432b241d5cabf965a97b480ce2905a",
+    "scripts/brush_path_editor_model.py": "7b181172200ce755ad541016454708006ac0329b86650c66b9ec271073ec1627",
+    "scripts/brush_path_editor_ui.py": "1c72603a45b8ed5259efe8be30f76ff91839c2042b51d96c688ec5ce3c9468ec",
+    "scripts/brush_path_variation.py": "ba40116ec7b024749fc204e95ed1223683d2822a18978554c0f766d6925c4a43",
+    "scripts/brush_rhythm.py": "82b7681fe983fbb0a68324f2fa3cc4be7275e7e07e41551552172f7aaf4e982e",
+    "scripts/brush_rhythm_dialog.py": "9cc0bcbb6e3210bcdf7db8378d24cff3a213c1f51302b8026a5de87cfbb3a9d1",
+    "scripts/brush_speed_adaptation.py": "03e23aa0f5fc0d77126d5748b09a8419f8e26049f9a538dce6b051b2c057eb3d",
+    "scripts/brush_variation_dialog.py": "01067e2551f57bdd69be25a53d8ccdd949921842698572f574a0e3d263d6a62a",
+    "scripts/build_feedforward_table.py": "f6be8eb9838f9a457078d820223f32a5a956f014d752ffbeeeb4828365dc7322",
+    "scripts/check_docs_layout.py": "5917586aadc077657566989b1fe08865462df0b70fa3d2d16e3bb2aea9c187b2",
+    "scripts/clamp_brush.py": "3a3b6a65ec98030069390846b61e5a0b29a35975593a64c2ada60c2b83ccb8e8",
+    "scripts/compare_brush2_orientations.py": "b5a1a1feeda705e9553255aabdf87905316769a964c6c08268523bb92e0210f6",
+    "scripts/compare_calligraphy_runs.py": "88a6c574537e83717313e8ced5335eda54db82d20e82a5e833608d7a6ce69867",
+    "scripts/compare_filters.py": "1512dc913ca5708711de642ed510e5688973b35cec16ac3b64180dab13c2fff1",
+    "scripts/compare_strokeplan_xy.py": "ac59243f15ed3ed98eb7d68c531db74d3a0914da7f7ae74bc28b2b178f16f24e",
+    "scripts/edit_brush_path.py": "eaa2c7a6742155505093788b64657799460044cd9c5f9b15c99d544c9a40c55b",
+    "scripts/execute_strokeplan.py": "3f4cfb66f61b81f33969da971b18142ee2058dc082976560bfb7ac3a84e9c6c4",
+    "scripts/export_magnetic_timeseries.py": "0c2a8c3847e42870acce2113a382e79d3dc948c4a25b6601752530c766072559",
+    "scripts/extract_character_xy.py": "639edf6cb20e6ab53bc078966444e7986a2ea68cba5e4fa26986fb3966d86e52",
+    "scripts/generate_calligraphy_trial.py": "a41cc872a32fc32b2ed59cac9d8033c083a8fea0ad27c52bfb9913470ffa08ce",
+    "scripts/generate_character_xy_examples.py": "735d3272a8d67365e69788977f6f1ac65690041448fe3b2f9bcedcd56c9945ef",
+    "scripts/generate_directional_character_trial.py": "e275a792cb84dd614f46ab2c68e8ac0e2f7028d2b89ff226f08d0231ac230841",
+    "scripts/generate_experiment_navigation.py": "cb2bd9fd51722abaac603ad44d1e32dcdc7c124a3e9790c58233947d1e028d6f",
+    "scripts/generate_heng_contact_preview.py": "63b599b1e5fd1a4d4c3f24a6762aef68bde102fb35ae867ff4fb99e338373cce",
+    "scripts/generate_heng_dot_retract_preview.py": "5ab7e580401a1d4c2dc02b55226ec17c1cf1b8fe1348604cc2d3f8e09547a48e",
+    "scripts/generate_heng_exit_trial.py": "fb36c2b6bf4f507024d20c5bcd580c3ceab143b847681383192d1f4f0230f1d2",
+    "scripts/generate_heng_inverse_contact_trial.py": "c98137fa0582983974218978f0ff0654872d33cd27e5585d7add122c72e415f1",
+    "scripts/generate_heng_short_tail_preview.py": "1aac1163bb549be2904ab73461003e58cb610a67f5c437386bebf6bc557ca591",
+    "scripts/generate_heng_tail_lead_trial.py": "240e3c267b0b5447a7260ffe4296f239d1efdfd58e0c50242ad7cea27fcca99b",
+    "scripts/generate_heng_unload_trial.py": "3c11c33bca6453eca5de50d5094991fc7d1bb641ea8dd28158eca0bda83e986d",
+    "scripts/generate_measured_strokeplan.py": "feb7eaced89944f8a80332366d4b8837b97e99aeee8e58c261cd772c756c6684",
+    "scripts/generate_short_plateau_trial.py": "6ac976ede1654c46375c65d2b9446dd29dc9aecc6301a56d3466410720002aeb",
+    "scripts/generate_slow_press_plan.py": "300236ecdddf2eae4b5cc995c4ba69ca8476354049dbf2271b95e8b9ba6ec7d6",
+    "scripts/generate_strokeplan.py": "97e86c21ad8cf08d7d7e6ba81f040aa7e80add5a94d086bc6783a48064aad979",
+    "scripts/generate_strokeplan_from_json.py": "b5c38398d26c4ad7865600d85e37ab1c1598a943163233a1b26f7442fb235baa",
+    "scripts/generate_strokeplan_suite.py": "442aaf601abb644eaeb40ca13a396131f693294d58e53d37661516728abb16ad",
+    "scripts/generate_zhong_negative_y_trial.py": "a5aa45457e397e221ac6bfd6cc392634bb0387b37af6cc7eb7520392dbf78650",
+    "scripts/generate_zhong_refined_trial.py": "ebd1968346492691ac74df2cbb363da3f955b96762826f16115f6e57b3dec54e",
+    "scripts/generate_zhong_shape_trial.py": "8132d72a1c7e3e7531aefb57b857e4c63dd1e6ec6c0b8791f34c9a02232793df",
+    "scripts/launch_brush_path_editor.py": "eb8d94c1c6fa77824848827ff159b2a3e63cff872b2a0b8f6504f1d3e6880616",
+    "scripts/make_replay.py": "6482be35a45d796a7aefdc3b9b019b1321c9b19a0b9a47e259c8e4f90b2a7f45",
+    "scripts/merge_ladder_runs.py": "5a8287a865a5c8d6793f5a90e537b2776f93d53ca9607c05a0560d83b6d2e9c1",
+    "scripts/organize_runs.py": "822ca2c58fcda47183f92e6b23fe121791bb5b9ab647b4e39c8815e6b88402f2",
+    "scripts/plot_brush2_selected_p_analysis.py": "1ff3a979368e016d1ff11e8775957b6950fa9e87f039feddef7dd0fd15b64bcc",
+    "scripts/plot_combined_ladders.py": "b4596f875bd283ff83c81f754a464b478c9da49ca9206b2c6b4e46efe28bc3e9",
+    "scripts/plot_strokeplan_tracking.py": "d4f6e87ca216d57d160c1ca77695c40e712446899547eda3ce2c8cc3ec87186a",
+    "scripts/prepare_heng_compact_turn_v14.py": "4b75e1634e0bc7398d43539aea34ead9d1b13a695d8ee1c5fb0fd56736af4776",
+    "scripts/prepare_heng_early_dot_v15.py": "d283c4d8612db6e4d389e23070db4cdb955e6a805736249153624a849d7b67bd",
+    "scripts/prepare_heng_flat_tail_v16.py": "876edb340e64d0303f18795af983a5f197de409ba3d8608412c93f3a1fc75df0",
+    "scripts/prepare_heng_horizontal_retract_v13.py": "512cc3ce72a7a5412cdf05949beaa902f750bef1e0d59067e4ea896c8b39c7e0",
+    "scripts/preview_strokeplan.py": "ddf0c9567a49e3c386405db72c897a6fd88c578b350b09bad840d892b8bdad13",
+    "scripts/record_hanzi_openloop.py": "663ad0351af8d7bbf3d3b0a59dee6c0c2052f4410c84b576ff476a479b3f28d0",
+    "scripts/record_manual_brush.py": "24de83bdac27ab5c6271287b7a66f10849f8332e82bff84848334363b2c265c5",
+    "scripts/return_experiment_start.py": "4d620b52aaa56d11f966defa452127e6924d1c24e8028f89862b4f9fef7ec518",
+    "scripts/return_to_origin.py": "1137f3ab735c3739c9509273436e5059bc11b7c9abd65441f2411b2befffaa81",
+    "scripts/run_contact_entry_test.py": "90c83cac15c6428192aed4ece713c7eb353f278ecd1b8a271fc0aebd776bfd59",
+    "scripts/run_edited_brush_path.py": "99a43b99e8ef3e0404418611a193317d2965ac0f43f3d6548ec17dd65c09e738",
+    "scripts/run_feedforward_calibration_validation.py": "b4d8d661f6485fd000b7a4c143b8e6c0bcf52304b7d58203de937dccc5afc288",
+    "scripts/run_feedforward_strokeplan.py": "d9204bb25fe4dd837bdf076a2d5efe647a3cea827ee5a02f499926527552a676",
+    "scripts/run_four_direction_sweep.py": "1b42f90a156f07195acae913568f94e50ed50d77758424ebb10161775c53f2a9",
+    "scripts/run_heng_v13.py": "906e946a4e897e953079a94220c5fd244af7f9856c76d97ca4d1c20ac95d03b9",
+    "scripts/run_heng_v14.py": "ebad587fd6f6ab0b1929a39e1fafbaf70fa0696296e296397744ca2086ec14bd",
+    "scripts/run_heng_v15.py": "1297ff8adc8796097a8ebd3a51d9020e91b64722582c466de961178d4c7b90c8",
+    "scripts/run_heng_v16.py": "ee18e14c81c50c4cb5799473a8f19bb7a2f29049e4730530fd977ac29ade7d21",
+    "scripts/run_ladder_experiment.py": "09442e5496a376c6f14574d714fd5de92dc1a8305a40adcd4aef8935da6938e4",
+    "scripts/run_strokeplan_experiment.py": "8881ba90dce1d3cd680657b82ced2457aa77537392f559d3f275171d1c61474b",
+    "scripts/run_strokeplan_trial.py": "6442741d19a5f97144a288d5bdf872af3837117daed26f2462d95b2a67b79d7d",
+    "scripts/run_z_identification.py": "b7930dab38d4fabd5fb4950fdbf70ec37a9284a550485fb18c69f2d83d426a60",
+    "scripts/shadow_replay_strokeplan_feedback.py": "d408bce996e9a2c82916e313c382b09ee24caffb7d22115ba50e9d7b2b6e903e",
+    "scripts/split_ladder_run.py": "aee49316e75ce8fa647a704c24d89d5ce522e87f9bf9fd56c671c4b442539113",
+    "scripts/stroke_templates.py": "b1c30946ff0cac452f9e23fb819b85d51f149e5692800e3a7f3594983cead5e0",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/quick_browser_helper.py": "d3eaa9b2bee18b953bd065eb5793d6ab872612321bc086140b06ec9ac2f1851c",
+    "tests/test_brush_editor_compact_ui.py": "15c0f882b80bc7246096bbf10bb1a54b3d7d789167ef570d4903453d7e881c95",
+    "tests/test_brush_editor_interaction.py": "eecf81ec80269217256229c87a50bf19bbfe56e7cfac99d6b97559365f6b5e5c",
+    "tests/test_brush_experiment_archive.py": "a06564665e2da6984d687ed404cd8cd29099d34db2a0dd7b409da47fd6c06135",
+    "tests/test_brush_path_editor.py": "9564193a30e18f58e40a41d8b859d8c331c217f5a2202963b8846b25983a9d3c",
+    "tests/test_brush_rhythm.py": "58210d7e33a178705f154719ef1cc178d1926e7754afb9169a7dd5099afa6e69",
+    "tests/test_brush_variation_model.py": "9d1dc31e3c5167cceff793d042f3fd995f57e12f8fb3040407d20daf1c5fe971",
+    "tests/test_brush_variation_ui.py": "309af096cb3e67fb2c2932373fe327c5ea42d4059b3fda86d268ee2d855035c5",
+    "tests/test_calibration.py": "5617a917ff9cded1563274d3517ed45415f2c60c3cf0b1250214430e6e265a71",
+    "tests/test_calligraphy_trial.py": "6eb44887113d5dd2ab7c5e34668ee3cfc4c989c3b109d41f276e38f44b9595fe",
+    "tests/test_cartesian_return.py": "a15eba457dd55d48fd4e384863fd88a1d1218db624fa6c2818ac6f53da1756c3",
+    "tests/test_character_library_browser.py": "3fa4adf780ddac572cc0bf2cf93a0a9d558a1c8eb7e5d6cdf65e0b844b242183",
+    "tests/test_character_xy_bundle.py": "168f6b5e2da38f37c9f2496b4fb7146f778bc8aaaa06e12b7325af40a3021ee7",
+    "tests/test_character_xy_cli.py": "d86ed652a7486c5ae5063cf65e7b7d7060b5b41ae560047cdb7f991299b28f70",
+    "tests/test_character_xy_pipeline.py": "c03923f2a40ccd191d734f61769986dbfa35d65fe67cdf1107815242a76ff920",
+    "tests/test_character_xy_topology.py": "e01da534d7b88c105dfa4be59e8582e8863705b2eb9812d88cb24adb7f6471e3",
+    "tests/test_compare_filters.py": "43e2cc2547e48694e7d57d710a21ef8e212c9bc131a02232c6161aae3c4ff968",
+    "tests/test_constants.py": "bbc13373f421d8005fdcd6b701a5d58c1873aa7f45d2bdbdfc50e911e9ec1a6c",
+    "tests/test_contact_entry_test.py": "070236f89daf6acc8a30dda783f0a18b884113daf7cb6306209d77656592f169",
+    "tests/test_controller.py": "926c7e403d5a6cfa4ed6b2efca8abd270bbc05e1d72edb9a507a7ddfce2ae4a3",
+    "tests/test_demo_pipeline.py": "8138fef4d45b43fae55459d8b1e06c7b1b1b03d7c9e1a3cfc563c3cd23a48ff4",
+    "tests/test_directional_character.py": "a3d0352f21a985931720186ac6962f75d2f44ac69ad875b28bfecc8fcf1c5462",
+    "tests/test_docs_layout.py": "3827a4ab1e1436dcaf84f6a721764f5f3e4fc2b73a7ec732048ed639a807e917",
+    "tests/test_execute_strokeplan.py": "61e00c02b2296a67252a32b559ae3cec320f28e547ad32c5eb383f03a749be2b",
+    "tests/test_exhibition_api.py": "28220d06defd35005ef970518e4908cdc72c0f29b35e210cd7acbb017fbc565e",
+    "tests/test_exhibition_monitor_gateway.py": "ddcd7b96d3e069a870e316f79747836f523852cbfa9ac6c3a9a9f514a2209db7",
+    "tests/test_exhibition_monitor_navigation.py": "c83480d3e56566326cc35c1317d3d35a5a206e49fc0e04db0ca49066133e148a",
+    "tests/test_exhibition_monitor_panels.py": "055cb909277d0dd70d9cb602d9f0520de9401eecbbe15cb706c0785f9d936c50",
+    "tests/test_exhibition_monitor_pressure_plot.py": "d09d275020b9611e7d1714e2353e032411acd994162f471a34a75e6d0badbacd",
+    "tests/test_exhibition_monitor_pressure_practice.py": "241f2cf7976b2d63260584a90b4e31daed207cd2099a46af66d0620c9dd571c9",
+    "tests/test_exhibition_monitor_pressure_smoothing.py": "dbe100711825b7885702457f616c894ddc8ec12507d8bac846d4f9ea5cbef7c8",
+    "tests/test_exhibition_monitor_sz.py": "069d4ae71e4fdf69513eb6e4ce439802eefd11f6eae66263e153ef69194e63fe",
+    "tests/test_exhibition_monitor_window.py": "08339470da8773241992bc4eff7c9efb85f342f14722c8ce9184186c38e06718",
+    "tests/test_exhibition_preview.py": "8e37f634c3da3695baf6392c4559c07a8ae3547bf2e19da02b352f1ae6137cf8",
+    "tests/test_exhibition_robot_service.py": "fa364f5d25b3c356135136b317be262cf99d26b4e918a63a5f231d6350311ee0",
+    "tests/test_exhibition_sensor_service.py": "e2755f1f01f1ed10954f222b07098023dd657819d3ed83deb028afe8238301ea",
+    "tests/test_experiment_acquisition.py": "11c75a23b28d52ec39e8d6fd8403b966763fd6a768224d475c5e40f1caef38d3",
+    "tests/test_experiment_adapter.py": "22e9085349f3a1d451b3a75fa9d4152988ca1647a82cd571a0deea2e702a4109",
+    "tests/test_experiment_calibration.py": "e8abd8da4e1936f97a5d7cc375c8f67721c43318402cfa6ede95bff03afae25a",
+    "tests/test_experiment_config.py": "4c71a31bb12e3f8cc9e2e65b4602a91c685774c33bfe0179ca2fd385918725ac",
+    "tests/test_experiment_control.py": "096d888435ae6791faaaf290f9591ade7a57f57869dc27344dea3ef4233321d2",
+    "tests/test_experiment_engine.py": "7a7558763bc1ac7dd69313734a992842f7f166654b6e71999d485dc660b83b49",
+    "tests/test_experiment_integration.py": "ed7eb0dea9bfe05870ebccc8244f02947ba857ffb5deb41515fad9a559d3d243",
+    "tests/test_experiment_ipc.py": "e895314417abfab9de973d36e49016cc2c76858e449c431a9e89b5a16afd9762",
+    "tests/test_experiment_ladder.py": "777db005d89690c3a33e118861684f132dbd0ff01c16ee449d3a1b54e830b9a8",
+    "tests/test_experiment_recording.py": "d63bd9576ce5d5f4fff8198b57e69b5685f90ea3b60bc905c4bfc2e75ba1f4b8",
+    "tests/test_experiment_service.py": "b930fac299ab5acb0ef37c7b94407cab263fe261c0acc98a5aa6f9dd65737b73",
+    "tests/test_experiment_trajectory.py": "a013fdd5e43191384a12a66fd75abe93b9259dff1da34cbd71f2c436bd7e3b21",
+    "tests/test_failed_experiment_retention.py": "3a33c0e926dfa94779c8f0438b6ebf00b0f9f856f1c167882e4e909a8ef5b90c",
+    "tests/test_feedforward_calibration_validation.py": "73b14a5834006569646a2cf7f11aa6da0bcb39bb9bec4b167852d28a88d624b0",
+    "tests/test_filter.py": "ec45dbac9c7159580f07f302283dad33bb2041ef79314a9ed1410cc11038faf7",
+    "tests/test_four_direction_sweep.py": "81034bb083d5904865a2b0d454c1948ac0b09489f0f41d8b326b3097f71267f8",
+    "tests/test_gripper.py": "f656bb048eb7168cceb9ecac72ebd7e9f61d38648602cc3efbc2b468b03122f0",
+    "tests/test_guide_stroke_browser.py": "e194717bb1ffa55ae46c2d05aa90873ceae4803129f5bff1eda598fb18c7aff8",
+    "tests/test_guide_stroke_library.py": "bf938984e76b908f061a65e000b20f7c9f3c98f7576020e271369872715a719e",
+    "tests/test_guide_stroke_templates.py": "5db4c6292c7d74b334a2bb196d2491c8f61780a7aefd61ae02a354ffa73e248c",
+    "tests/test_hanzi.py": "9f8aaa09409bcf0470cafadc2db89e112ef54acb03378b82093181b81fef7339",
+    "tests/test_huayan_backend.py": "162e01ddcd1f01b792497afe771538c17d628ffe976a6281881944faf94888b9",
+    "tests/test_identification_hardware_session.py": "63694e1c4d3376701862994d2970a79f37700363f2e389528889771affb46273",
+    "tests/test_magnetic_timeseries.py": "c32c9f06ac265be23f6efe73dafffab56bf4c4427c32e89844e185cfb4ed5f5c",
+    "tests/test_manual_capture_layout.py": "3f796ed2e61418a2071d8364776fdc7db0a996c9c494125fd49d75dc07ded7c4",
+    "tests/test_measured_strokeplan.py": "f0522feaaeb2d127d4a96ef8bb618c5913df8546516d750c02c06ce5d41901c6",
+    "tests/test_merge_ladder_runs.py": "f8f803aca3da19f42e4f5482a42aabbe9b6fd5cbb830ae23ed0bb1da850221a6",
+    "tests/test_monitor_cartesian_return.py": "a0cc60ed2f7d4316375e745413acf143c4488c939f1f1688d3f00861ed30d505",
+    "tests/test_monitor_contracts.py": "c9a57a9dd29360760ca93f771bc293852dab42e18d52c756d2e21b6fbd69d1df",
+    "tests/test_monitor_control.py": "7d31a585509a8d46529bdfbd56d560e410c8f8342b5da8848c332481be99d388",
+    "tests/test_monitor_core.py": "895651a13e590e89ee13b7dd84b4bfecfbe6775423ada9342836c6d0ebd8ec6e",
+    "tests/test_monitor_experiments.py": "603e1a349fd116a97e81fda5bc42a312ed0ae6034221e381e791116b72c7ffd4",
+    "tests/test_monitor_firmware.py": "ae03d9d97a89ea66e07b469ec5457e955a8931c95ac60a036aa306fb7c59ab5f",
+    "tests/test_monitor_recorder.py": "f53bae0616eda5a79e23c7f13ceb4ee221689b8affdbf8d5114ab87e8a6fdaf2",
+    "tests/test_monitor_sources.py": "a932d2fa55578d56ce985a8e953a098ed4186a7ce04a53a5fa3404d4d3d344ac",
+    "tests/test_monitor_window.py": "7cacf93b1911b16645d19751276aa84b742483111803ad725c207173eee29b37",
+    "tests/test_nonlinear_ff_scan_cli.py": "4de718499e897c1808c131aa944b56992a122dc8c627b5cee62a4675f4cafffe",
+    "tests/test_organize_runs.py": "881f4088b42fc3e6e76dcf8e547575c99e43806f760a2c888d6e0820b53b37a2",
+    "tests/test_record_hanzi_openloop.py": "7e7f8622ae1c7491eba6fb55d0317104b547e88ce1acaff16302c2dc70e9da4c",
+    "tests/test_render.py": "e5049d604fc98720debb0ca79c3a6daec5797a0c94067b96b0b1aeb03c94a97d",
+    "tests/test_return_to_origin.py": "9b75e5e014e0d3705e1827394b29edeb62ebe4d524019bcfb3ab14aaea2f47cb",
+    "tests/test_run.py": "2eb77fca89a1d2ea20d2ea8938af8e810b34ee0b1071dfbef82234ce40a5ef37",
+    "tests/test_run_ladder_experiment.py": "3c05a594a596364469a8e08da4925855db1c0f145f1b87c49f4dc307e1e3738b",
+    "tests/test_runtime.py": "b773c6f6f2f9af4c80af59b321f45c2368493499f15c7a787944b16159b29d08",
+    "tests/test_sensor_reboot.py": "72f160e15270be7c3c2ebb2e063a88196e1770c2ce2da5127eda06923f54d4b3",
+    "tests/test_short_plateau_ki_scan.py": "172de438699669911091aaa8682c7aef67486a22911a5d88ea82e1d175a122f2",
+    "tests/test_short_plateau_pi_experiment.py": "d7f5fb85f635fe165baf174c3fa105814909ef70b2e28d08d16cf8b14b254b9e",
+    "tests/test_sim_loop.py": "0105c46cc669192e6504677d345e7361ea7d19a78a74562f59007f5769581a8f",
+    "tests/test_slow_press_plan.py": "e3b9d9d50d1ec24dc190a766dad2e638e804e268c26c40283f50f5e5813acdc8",
+    "tests/test_smoke.py": "8855f7c953aab9d6462e3a035ac138055ce4188dd9fcebd6fefa85bae24c526e",
+    "tests/test_stroke_template_annotations.py": "aaaa29349b56f8142bd25ed81321759f4c312b1cc00500abda96b6894edf2d40",
+    "tests/test_stroke_template_browser.py": "2578d09213f6eade07eee7df4c70a45115f9be29254cc1082aa0dccf1178036e",
+    "tests/test_stroke_template_catalog.py": "237bcaa8a61199e7c267ae263b5baad42694eb94b60a37797fe20ceca5d7e710",
+    "tests/test_stroke_template_catalog_browser.py": "883b85fd636ca633628c8f76cbcd986e7862d6b320e504c232f2593a08ec046f",
+    "tests/test_stroke_template_cli.py": "77cba9003f756b27fa1fe8f3c11bf00eaae885414837404f9c39728da559e07a",
+    "tests/test_stroke_template_examples.py": "ef93313bd9e34624e1f50da8dcb4541a8cdde00c52012ea80c90c6a393185e2a",
+    "tests/test_stroke_templates.py": "008d2a1b939707f9ead4fb31f88d2b7eda9a2f4ae9e6cc4560196f682257def7",
+    "tests/test_stroke_variation.py": "377644c5f022d496fe1b987be371b5567e926f97433c98917a29881e5597887f",
+    "tests/test_strokeplan.py": "39440ddb4e6a0e05e080f0a6f2ba04f9049f11199772b6279cb47db7edad424a",
+    "tests/test_strokeplan_experiment.py": "21ac9aca3e024adfc9f1576db9ebdbedd8a9436d837751ded095410b213c4bf5",
+    "tests/test_strokeplan_feedback.py": "5ba38bd5a859b249e4db15cf56b6d20ec6fb8de1f5693e3347c6d4974e7f541f",
+    "tests/test_strokeplan_json.py": "99a05bc8328b2f09cfeb5a612640c069e2890eb04f9705d38e316123c0a1f720",
+    "tests/test_strokeplan_operator_scripts.py": "fe69cdf7ab72aaf0a75053f996f482bcdbd8743003c6d09e14a734c7ea12129b",
+    "tests/test_strokeplan_pi_feedback.py": "e9182af182645595bf4c7c55b6130b36313f3b0224c1861caac971b649df8b9e",
+    "tests/test_strokeplan_rotational_entry.py": "4e2045c43cfd25df07b9c00597dc54780ff691331926314776af76888b4f4f6a",
+    "tests/test_strokeplan_stationary_entry.py": "bce424f1ba09039621691b26274ae800f05057e08213f5a7151f342e5ad34b45",
+    "tests/test_strokeplan_tail_exit.py": "05e3185d4dcb9e1f2f0334d83aa058cfc779b8bec423189accb70281d5a4fa60",
+    "tests/test_strokeplan_variation_targets.py": "083481e81411e744a3dc02781f1d085d83f574459432bc1dfd74dbe299fd64cd",
+    "tests/test_strokeseq.py": "1cf6030f931d650c5e41f4e2f7f2acbe01dd480ab69b69201c286c7edc8e3fd9",
+    "tests/test_target_feedforward.py": "215867fccf1862caf251c437409a29a19b753eedf33d47c171e117a4546834d8",
+    "tests/test_target_strokeplan.py": "325aba36e7b1484e957226c9240d40e9882eade81b80656c72afbd03cbfb9cea",
+    "tests/test_target_tools.py": "0bc5420162884aa3d8d8f9e25ac8fb6f9681dbeb21407f688038ae66c0e72d11",
+    "tests/test_tcp_pose_capture.py": "b3598193a42593f113362af00fde98dfe9ece058e59df5ba7aad108be17efd9f",
+    "tests/test_teaching_stroke_browser.py": "d1e2496399eea282fdb0f2bf6f38f311e3e0045bd0721587a577ab6fd026ea54",
+    "tests/test_teaching_stroke_distribution.py": "10cd295d9a07a030785e11cd998c863343334a31373d528949ddbe266c58ce6d",
+    "tests/test_teaching_stroke_library.py": "ce575b5a507b1d2cfa08c0e208003013655a47e90154e753d8022363a3014261",
+    "tests/test_template_character_composition.py": "d11c70826dd6c52f13ac3f8cc58cbd47b4c481a73d316115e1a0fb3fdf6bd062",
+    "tests/test_template_composition_browser.py": "43a7f827c0ef7bfe8b0518a25fce841620311e462bb3027280600c0580a587c2",
+    "tests/test_template_image_consistency.py": "af3eda43ad9a83ac486d69a9052d29b40b42b8537540aa3646dd3045dae2081f",
+    "tests/test_types.py": "f998782be5cbd8be4dbb101674dd19e222086b0601fa6b8cd527136b1cbb3489",
+    "tests/test_variation_bundle.py": "8cb9cf34750c16d180479b7f480fa9d00fd18dbf8875ba0fdd9a6956dc891a1e",
+    "tests/test_windows_packaging.py": "a4018226442a74140cd6bf8abdd252c23a3d447a2a96e6d0051e12a14827dc1b",
+    "tests/test_xiao_monitor_firmware.py": "1765af063f84ba9fb36a3dfefd51a3af662111e3b28c20abdec2af2bdc5c6aa9",
+    "tests/test_xy_comparison.py": "f254e89c91d39bd6bd0da7776b3ea052c7d2fa24254a8c4861884b927d27df2d",
+    "tests/test_xy_comparison_cli.py": "72c016a8e0ab83f7ad1077b3c7e3dac7443fab0c019f328ede81b7527ea0e9bf",
+    "tests/test_xy_image_reference.py": "f9e6f2c94de17bf5bb52342c184f7edc5a7e714d89a787ca6a740851513f810e",
+    "tests/test_yong_quick_browser.py": "f2338187845e71b4c25ec31d291ea7dbe6bd5be70a48859e9862411453b2b989",
+    "tests/test_yong_quick_review.py": "e8f6b0f2a6f3e898e9e0af7180fb97070e07829ae9134b3a9c7b089ac1e9b5f9",
+    "tests/test_z_control.py": "06f139c8ff537c242ff205cefd986ddc1703aa7c890c49076f100f2e7fb8f8b8",
+    "tests/test_z_identification.py": "c5fb020cd333a81d0f8ecb9316ed5a904541357522d80211d8dab182d1549169",
+    "tests/test_z_identification_analysis.py": "71e2b57d52a9ba9438ddb2a0bbcbdc9141edd5e05b412c4e296e09acaa002215"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "families": [
+    "F0",
+    "F1",
+    "F2",
+    "F4"
+  ],
+  "cs": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "kernels": [
+    "linear",
+    "rbf"
+  ],
+  "gammas": [
+    "scale",
+    0.001,
+    0.01,
+    0.1
+  ],
+  "amplitudes": [
+    "A0",
+    "A1",
+    "A2",
+    "A4"
+  ],
+  "directions": [
+    "D1",
+    "D2",
+    "D3"
+  ],
+  "weights": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "direction_weights": null,
+  "difference_weights": null,
+  "late_weights": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "feature_config": {
+    "alpha": 0.3,
+    "points": 128,
+    "direction_threshold": 5.0,
+    "direction_coverage": 0.9,
+    "warmup": 100
+  },
+  "robustness": true
+}

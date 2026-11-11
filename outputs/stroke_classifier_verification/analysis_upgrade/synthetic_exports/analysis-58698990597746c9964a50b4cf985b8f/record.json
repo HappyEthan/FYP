@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "task_id": "20261110-170742-f8aabf86",
+  "model_id": "9f5d121a1811",
+  "task_name": "界面验证 · 合成实验（非真实成绩）",
+  "model_name": "形状／变化率融合",
+  "created_at": "2026-11-10T17:07:43.868472+08:00",
+  "request": {
+    "root": "/tmp/tmp00rwpor_/store",
+    "task_id": "20261110-170742-f8aabf86",
+    "model_id": "9f5d121a1811",
+    "analysis_id": "58698990597746c9964a50b4cf985b8f",
+    "source_fingerprint": "d029c6aa962a871440bacf78a1a42f7510464d145b2873578eb1f829a9fb4e2f",
+    "analysis": {
+      "kind": "joint",
+      "sizes": [],
+      "seeds": [
+        20261110,
+        20261111,
+        20261112
+      ],
+      "cs": [
+        0.1,
+        1.0
+      ],
+      "weights": [
+        0.5,
+        2.0
+      ]
+    }
+  }
+}

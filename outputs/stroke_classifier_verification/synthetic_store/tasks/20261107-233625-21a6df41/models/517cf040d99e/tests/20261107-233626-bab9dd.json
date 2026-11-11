@@ -1,0 +1,362 @@
+{
+  "id": "20261107-233626-bab9dd",
+  "model_id": "517cf040d99e",
+  "task_id": "20261107-233625-21a6df41",
+  "model_version": "magnetic-seven-stroke-v1",
+  "feature_config": {
+    "alpha": 0.3,
+    "points": 128,
+    "direction_threshold": 5.0,
+    "direction_coverage": 0.9,
+    "warmup": 100
+  },
+  "labels": [
+    "右点",
+    "横折钩",
+    "横撇",
+    "撇",
+    "捺",
+    "横",
+    "竖"
+  ],
+  "summary": "回放／无标签，不计新数据准确率",
+  "created_at": "2026-11-07T23:36:26.889825",
+  "sources": [
+    {
+      "run_id": "synthetic-0",
+      "sensor_hash": "b76a4030dad6af618d8687cec2a7e622a6f5bac164a1ebebe51708d74a5da10d",
+      "name": "模拟实验_01"
+    }
+  ],
+  "predictions": [
+    {
+      "sample_id": "synthetic-0:stroke1",
+      "run_id": "synthetic-0",
+      "stroke": 1,
+      "true_label": 0,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 0,
+      "correct": true,
+      "scores": [
+        6.285729501447889,
+        5.217032587461367,
+        3.895949911356311,
+        2.955572109587296,
+        0.7460288590963486,
+        1.8246934884708663,
+        -0.2489725814600585
+      ],
+      "branch_scores": [
+        [
+          6.285729501447889,
+          5.217032587461367,
+          3.895949911356311,
+          2.955572109587296,
+          0.7460288590963486,
+          1.8246934884708663,
+          -0.2489725814600585
+        ]
+      ],
+      "projection": [
+        14.582801702814722,
+        5.028995810581528,
+        0.4414366975089821
+      ],
+      "branch_projections": [
+        [
+          14.582801702814722,
+          5.028995810581528,
+          0.4414366975089821
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke2",
+      "run_id": "synthetic-0",
+      "stroke": 2,
+      "true_label": 1,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 1,
+      "correct": true,
+      "scores": [
+        0.7900653135160046,
+        6.2857277961748235,
+        5.125601708680869,
+        2.8332541720651436,
+        4.08852891432836,
+        1.7864477339122227,
+        -0.23763519789830856
+      ],
+      "branch_scores": [
+        [
+          0.7900653135160046,
+          6.2857277961748235,
+          5.125601708680869,
+          2.8332541720651436,
+          4.08852891432836,
+          1.7864477339122227,
+          -0.23763519789830856
+        ]
+      ],
+      "projection": [
+        3.5007611503968867,
+        -3.3900836391543563,
+        -5.862380210337644
+      ],
+      "branch_projections": [
+        [
+          3.5007611503968867,
+          -3.3900836391543563,
+          -5.862380210337644
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke3",
+      "run_id": "synthetic-0",
+      "stroke": 3,
+      "true_label": 2,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 2,
+      "correct": true,
+      "scores": [
+        -0.2504848861681009,
+        4.1124117852847455,
+        6.2857173553564545,
+        5.194273826398715,
+        1.7948911377383954,
+        3.0213996834216887,
+        0.7432611657643768
+      ],
+      "branch_scores": [
+        [
+          -0.2504848861681009,
+          4.1124117852847455,
+          6.2857173553564545,
+          5.194273826398715,
+          1.7948911377383954,
+          3.0213996834216887,
+          0.7432611657643768
+        ]
+      ],
+      "projection": [
+        0.7323449511235547,
+        -6.173797671719419,
+        4.24979127417579
+      ],
+      "branch_projections": [
+        [
+          0.7323449511235547,
+          -6.173797671719419,
+          4.24979127417579
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke4",
+      "run_id": "synthetic-0",
+      "stroke": 4,
+      "true_label": 3,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 3,
+      "correct": true,
+      "scores": [
+        -0.2530383205723614,
+        2.8156060721997136,
+        5.167282039814657,
+        6.285763631810057,
+        4.1650619857879185,
+        0.7727747037718461,
+        1.801907219108333
+      ],
+      "branch_scores": [
+        [
+          -0.2530383205723614,
+          2.8156060721997136,
+          5.167282039814657,
+          6.285763631810057,
+          4.1650619857879185,
+          0.7727747037718461,
+          1.801907219108333
+        ]
+      ],
+      "projection": [
+        -1.5344849243489571,
+        -4.747215994170242,
+        5.920257592023477
+      ],
+      "branch_projections": [
+        [
+          -1.5344849243489571,
+          -4.747215994170242,
+          5.920257592023477
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke5",
+      "run_id": "synthetic-0",
+      "stroke": 5,
+      "true_label": 4,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 4,
+      "correct": true,
+      "scores": [
+        -0.2734896568288714,
+        3.0600113406373595,
+        1.7933972810764067,
+        5.1841299082264145,
+        6.285768797868301,
+        4.145739768492808,
+        0.776379167873434
+      ],
+      "branch_scores": [
+        [
+          -0.2734896568288714,
+          3.0600113406373595,
+          1.7933972810764067,
+          5.1841299082264145,
+          6.285768797868301,
+          4.145739768492808,
+          0.776379167873434
+        ]
+      ],
+      "projection": [
+        -5.144752201596544,
+        -3.6779178444328653,
+        -5.233936451502439
+      ],
+      "branch_projections": [
+        [
+          -5.144752201596544,
+          -3.6779178444328653,
+          -5.233936451502439
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke6",
+      "run_id": "synthetic-0",
+      "stroke": 6,
+      "true_label": 5,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 5,
+      "correct": true,
+      "scores": [
+        -0.26015069894616405,
+        0.7867717888280816,
+        3.0156464633173607,
+        1.780378668004745,
+        5.161279127220644,
+        6.285818347595045,
+        4.068696448449547
+      ],
+      "branch_scores": [
+        [
+          -0.26015069894616405,
+          0.7867717888280816,
+          3.0156464633173607,
+          1.780378668004745,
+          5.161279127220644,
+          6.285818347595045,
+          4.068696448449547
+        ]
+      ],
+      "projection": [
+        -5.20170934133262,
+        4.21694678804519,
+        -1.9516026337008368
+      ],
+      "branch_projections": [
+        [
+          -5.20170934133262,
+          4.21694678804519,
+          -1.9516026337008368
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "synthetic-0:stroke7",
+      "run_id": "synthetic-0",
+      "stroke": 7,
+      "true_label": 6,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/outputs/stroke_classifier_verification/synthetic_sources/模拟实验_01.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "predicted": 6,
+      "correct": true,
+      "scores": [
+        -0.2653658455666277,
+        1.8134957788597608,
+        0.7636845301733843,
+        4.081431133578438,
+        2.8570943733246583,
+        5.223574639225645,
+        6.285717872739981
+      ],
+      "branch_scores": [
+        [
+          -0.2653658455666277,
+          1.8134957788597608,
+          0.7636845301733843,
+          4.081431133578438,
+          2.8570943733246583,
+          5.223574639225645,
+          6.285717872739981
+        ]
+      ],
+      "projection": [
+        -6.962773093107688,
+        8.75833829934486,
+        2.4252144575463146
+      ],
+      "branch_projections": [
+        [
+          -6.962773093107688,
+          8.75833829934486,
+          2.4252144575463146
+        ]
+      ],
+      "training_overlap": true
+    }
+  ]
+}

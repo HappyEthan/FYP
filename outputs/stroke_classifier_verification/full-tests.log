@@ -1,0 +1,2423 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.1.1, pluggy-1.7.0
+rootdir: /home/serein/FYP
+configfile: pyproject.toml
+testpaths: tests
+collected 1471 items
+
+tests/test_brush_editor_compact_ui.py .......                            [  0%]
+tests/test_brush_editor_interaction.py ...........                       [  1%]
+tests/test_brush_experiment_archive.py ................................. [  3%]
+                                                                         [  3%]
+tests/test_brush_path_editor.py ........................................ [  6%]
+.....................                                                    [  7%]
+tests/test_brush_rhythm.py .............                                 [  8%]
+tests/test_brush_stroke_import.py ..................                     [  9%]
+tests/test_brush_stroke_import_ui.py .....                               [ 10%]
+tests/test_brush_variation_model.py .............                        [ 10%]
+tests/test_brush_variation_ui.py ....                                    [ 11%]
+tests/test_calibration.py ..                                             [ 11%]
+tests/test_calligraphy_trial.py FFFFFFFFFF                               [ 12%]
+tests/test_cartesian_return.py ............                              [ 12%]
+tests/test_character_library_browser.py F                                [ 12%]
+tests/test_character_xy_bundle.py .......                                [ 13%]
+tests/test_character_xy_cli.py ..                                        [ 13%]
+tests/test_character_xy_pipeline.py ......................               [ 15%]
+tests/test_character_xy_topology.py .......                              [ 15%]
+tests/test_compare_filters.py ...........                                [ 16%]
+tests/test_constants.py .....                                            [ 16%]
+tests/test_contact_entry_test.py .......................FFFFF........... [ 19%]
+........                                                                 [ 19%]
+tests/test_controller.py ...                                             [ 19%]
+tests/test_demo_pipeline.py .............                                [ 20%]
+tests/test_directional_character.py ....................                 [ 22%]
+tests/test_docs_layout.py .....................                          [ 23%]
+tests/test_execute_strokeplan.py ...                                     [ 23%]
+tests/test_exhibition_api.py .F.......                                   [ 24%]
+tests/test_exhibition_monitor_gateway.py .....                           [ 24%]
+tests/test_exhibition_monitor_navigation.py ..                           [ 24%]
+tests/test_exhibition_monitor_panels.py .......                          [ 25%]
+tests/test_exhibition_monitor_pressure_plot.py ...                       [ 25%]
+tests/test_exhibition_monitor_pressure_practice.py ..................... [ 27%]
+...........                                                              [ 27%]
+tests/test_exhibition_monitor_pressure_smoothing.py ...                  [ 28%]
+tests/test_exhibition_monitor_sz.py .......................              [ 29%]
+tests/test_exhibition_monitor_window.py .............                    [ 30%]
+tests/test_exhibition_preview.py FF                                      [ 30%]
+tests/test_exhibition_robot_service.py ......                            [ 30%]
+tests/test_exhibition_sensor_service.py ........                         [ 31%]
+tests/test_experiment_acquisition.py .......................             [ 33%]
+tests/test_experiment_adapter.py .........                               [ 33%]
+tests/test_experiment_calibration.py .......................             [ 35%]
+tests/test_experiment_config.py ............                             [ 36%]
+tests/test_experiment_control.py .......                                 [ 36%]
+tests/test_experiment_engine.py .........................                [ 38%]
+tests/test_experiment_integration.py ...                                 [ 38%]
+tests/test_experiment_ipc.py .......                                     [ 38%]
+tests/test_experiment_ladder.py ........................................ [ 41%]
+.....................                                                    [ 43%]
+tests/test_experiment_recording.py .................                     [ 44%]
+tests/test_experiment_service.py ......                                  [ 44%]
+tests/test_experiment_trajectory.py ...........                          [ 45%]
+tests/test_failed_experiment_retention.py ..........                     [ 46%]
+tests/test_feedforward_calibration_validation.py .....................   [ 47%]
+tests/test_filter.py ....................                                [ 48%]
+tests/test_four_direction_sweep.py ...................F.............F... [ 51%]
+...........F.FF..F..                                                     [ 52%]
+tests/test_gripper.py .............                                      [ 53%]
+tests/test_guide_stroke_browser.py ..                                    [ 53%]
+tests/test_guide_stroke_library.py ........                              [ 54%]
+tests/test_guide_stroke_templates.py ......                              [ 54%]
+tests/test_hanzi.py ......                                               [ 55%]
+tests/test_huayan_backend.py ..................                          [ 56%]
+tests/test_identification_hardware_session.py ........                   [ 56%]
+tests/test_magnetic_timeseries.py ....                                   [ 57%]
+tests/test_manual_capture_layout.py ...                                  [ 57%]
+tests/test_measured_strokeplan.py ........                               [ 57%]
+tests/test_merge_ladder_runs.py ....                                     [ 58%]
+tests/test_monitor_cartesian_return.py ..                                [ 58%]
+tests/test_monitor_contracts.py ......                                   [ 58%]
+tests/test_monitor_control.py .                                          [ 58%]
+tests/test_monitor_core.py ............                                  [ 59%]
+tests/test_monitor_experiments.py ...                                    [ 59%]
+tests/test_monitor_firmware.py ..                                        [ 59%]
+tests/test_monitor_recorder.py .......                                   [ 60%]
+tests/test_monitor_sources.py ......................                     [ 61%]
+tests/test_monitor_window.py .......                                     [ 62%]
+tests/test_nonlinear_ff_scan_cli.py ................                     [ 63%]
+tests/test_organize_runs.py ..                                           [ 63%]
+tests/test_record_hanzi_openloop.py F...F..F..                           [ 64%]
+tests/test_render.py ..                                                  [ 64%]
+tests/test_return_to_origin.py ......                                    [ 64%]
+tests/test_run.py ..                                                     [ 64%]
+tests/test_run_ladder_experiment.py ..........F.FF......                 [ 66%]
+tests/test_runtime.py ................                                   [ 67%]
+tests/test_sensor_reboot.py .........                                    [ 68%]
+tests/test_short_plateau_ki_scan.py ................                     [ 69%]
+tests/test_short_plateau_pi_experiment.py F...                           [ 69%]
+tests/test_sim_loop.py sssss.....s.s.......                              [ 70%]
+tests/test_slow_press_plan.py ..                                         [ 70%]
+tests/test_smoke.py .                                                    [ 70%]
+tests/test_stroke_classifier_data.py ........                            [ 71%]
+tests/test_stroke_classifier_legacy.py .                                 [ 71%]
+tests/test_stroke_classifier_store.py ..                                 [ 71%]
+tests/test_stroke_classifier_training.py .......                         [ 72%]
+tests/test_stroke_classifier_ui.py ......                                [ 72%]
+tests/test_stroke_template_annotations.py ..........                     [ 73%]
+tests/test_stroke_template_browser.py .                                  [ 73%]
+tests/test_stroke_template_catalog.py ..F.......                         [ 74%]
+tests/test_stroke_template_catalog_browser.py F                          [ 74%]
+tests/test_stroke_template_cli.py .......                                [ 74%]
+tests/test_stroke_template_examples.py F                                 [ 74%]
+tests/test_stroke_templates.py .................                         [ 75%]
+tests/test_stroke_variation.py ............                              [ 76%]
+tests/test_strokeplan.py ..........                                      [ 77%]
+tests/test_strokeplan_experiment.py ........................             [ 78%]
+tests/test_strokeplan_feedback.py ...........                            [ 79%]
+tests/test_strokeplan_json.py ................                           [ 80%]
+tests/test_strokeplan_operator_scripts.py ...................            [ 82%]
+tests/test_strokeplan_pi_feedback.py ..............                      [ 83%]
+tests/test_strokeplan_rotational_entry.py .....FF....FFFF..              [ 84%]
+tests/test_strokeplan_stationary_entry.py .........F                     [ 84%]
+tests/test_strokeplan_tail_exit.py .......                               [ 85%]
+tests/test_strokeplan_variation_targets.py ....                          [ 85%]
+tests/test_strokeseq.py ..                                               [ 85%]
+tests/test_target_feedforward.py ....................                    [ 87%]
+tests/test_target_strokeplan.py ..................                       [ 88%]
+tests/test_target_tools.py ...                                           [ 88%]
+tests/test_tcp_pose_capture.py .....                                     [ 88%]
+tests/test_teaching_stroke_browser.py .                                  [ 88%]
+tests/test_teaching_stroke_distribution.py F                             [ 88%]
+tests/test_teaching_stroke_library.py ..............                     [ 89%]
+tests/test_template_character_composition.py FFFFFFFFFFF                 [ 90%]
+tests/test_template_composition_browser.py F                             [ 90%]
+tests/test_template_image_consistency.py .....                           [ 91%]
+tests/test_types.py ..                                                   [ 91%]
+tests/test_variation_bundle.py ............                              [ 92%]
+tests/test_windows_packaging.py ....                                     [ 92%]
+tests/test_xiao_monitor_firmware.py ....                                 [ 92%]
+tests/test_xy_comparison.py .................                            [ 93%]
+tests/test_xy_comparison_cli.py .....                                    [ 94%]
+tests/test_xy_image_reference.py ................                        [ 95%]
+tests/test_yong_quick_browser.py F.F                                     [ 95%]
+tests/test_yong_quick_review.py F.FFFFF....                              [ 96%]
+tests/test_z_control.py ................                                 [ 97%]
+tests/test_z_identification.py ...............FF..........F.......FFF    [ 99%]
+tests/test_z_identification_analysis.py ...                              [100%]
+
+=================================== FAILURES ===================================
+______ test_zhong_preserves_stroke_order_shape_and_target_only_provenance ______
+
+    def test_zhong_preserves_stroke_order_shape_and_target_only_provenance():
+        from scripts.generate_calligraphy_trial import generate_target
+>       plan = generate_target(size_mm=160.)
+
+tests/test_calligraphy_trial.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+____ test_trial_exports_same_paper_coordinates_for_each_independent_stroke _____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_trial_exports_same_paper_0')
+
+    def test_trial_exports_same_paper_coordinates_for_each_independent_stroke(tmp_path):
+        from scripts.generate_calligraphy_trial import generate
+        from brushbot.target_strokeplan import StrokePlan
+        import json
+        folder = tmp_path/'trial'
+>       result = generate(folder)
+
+tests/test_calligraphy_trial.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+_________ test_zhong_runner_defaults_to_offline_pi_for_selected_stroke _________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_zhong_runner_defaults_to_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7f740520>
+capsys = <_pytest.capture.CaptureFixture object at 0x72cd7f7405b0>
+
+    def test_zhong_runner_defaults_to_offline_pi_for_selected_stroke(tmp_path, monkeypatch, capsys):
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+________ test_omitting_stroke_preflights_all_four_without_confirmation _________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_omitting_stroke_preflight0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7ddade70>
+capsys = <_pytest.capture.CaptureFixture object at 0x72cd7ddadff0>
+
+    def test_omitting_stroke_preflights_all_four_without_confirmation(tmp_path, monkeypatch, capsys):
+        from scripts.generate_calligraphy_trial import generate
+        from scripts.run_strokeplan_trial import main
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+__ test_character_confirmation_order_and_stop_on_failure[RUN-None-expected0] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_character_confirmation_or0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7ddb80d0>
+answer = 'RUN', failure = None, expected = [1, 2, 3, 4]
+
+    @pytest.mark.parametrize('answer, failure, expected', [
+        ('RUN', None, [1, 2, 3, 4]), ('RUN', 2, [1, 2]), ('cancel', None, []),
+    ])
+    def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch, answer, failure, expected):
+        import json
+        from pathlib import Path
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+____ test_character_confirmation_order_and_stop_on_failure[RUN-2-expected1] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_character_confirmation_or1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7ddade10>
+answer = 'RUN', failure = 2, expected = [1, 2]
+
+    @pytest.mark.parametrize('answer, failure, expected', [
+        ('RUN', None, [1, 2, 3, 4]), ('RUN', 2, [1, 2]), ('cancel', None, []),
+    ])
+    def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch, answer, failure, expected):
+        import json
+        from pathlib import Path
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+_ test_character_confirmation_order_and_stop_on_failure[cancel-None-expected2] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_character_confirmation_or2')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7e66b460>
+answer = 'cancel', failure = None, expected = []
+
+    @pytest.mark.parametrize('answer, failure, expected', [
+        ('RUN', None, [1, 2, 3, 4]), ('RUN', 2, [1, 2]), ('cancel', None, []),
+    ])
+    def test_character_confirmation_order_and_stop_on_failure(tmp_path, monkeypatch, answer, failure, expected):
+        import json
+        from pathlib import Path
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+_____ test_invalid_last_stroke_blocks_whole_character_before_confirmation ______
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_invalid_last_stroke_block0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7ddbb520>
+
+    def test_invalid_last_stroke_blocks_whole_character_before_confirmation(tmp_path, monkeypatch):
+        from scripts.generate_calligraphy_trial import generate
+        from scripts.run_strokeplan_trial import main
+        folder = tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+__________ test_edited_character_stroke_rejects_invalid_selection[0] ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_edited_character_stroke_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7f743d00>
+capsys = <_pytest.capture.CaptureFixture object at 0x72cd7f741c90>, stroke = 0
+
+    @pytest.mark.parametrize('stroke',[0,5])
+    def test_edited_character_stroke_rejects_invalid_selection(tmp_path,monkeypatch,capsys,stroke):
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder=tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+__________ test_edited_character_stroke_rejects_invalid_selection[5] ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_edited_character_stroke_r1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x72cd7e669990>
+capsys = <_pytest.capture.CaptureFixture object at 0x72cd7e66a710>, stroke = 5
+
+    @pytest.mark.parametrize('stroke',[0,5])
+    def test_edited_character_stroke_rejects_invalid_selection(tmp_path,monkeypatch,capsys,stroke):
+        from scripts.generate_calligraphy_trial import generate
+        from scripts import run_strokeplan_trial as runner
+        folder=tmp_path/'trial'
+>       generate(folder)
+
+tests/test_calligraphy_trial.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/generate_calligraphy_trial.py:110: in generate
+    plan = generate_target(size_mm=size_mm, speed_mm_s=speed_mm_s)
+scripts/generate_calligraphy_trial.py:63: in generate_target
+    medians = load_medians('中', str(graphics_path))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '中'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+_ test_character_library_defaults_to_compositions_in_practice_order_without_removing_history _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_character_library_default0')
+
+    def test_character_library_defaults_to_compositions_in_practice_order_without_removing_history(tmp_path):
+>       root,path,recipe,legacy=composition_fixture(tmp_path)
+
+tests/test_character_library_browser.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_____________ test_completed_fake_run_records_vectors_and_metrics ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_completed_fake_run_record0')
+
+    def test_completed_fake_run_records_vectors_and_metrics(tmp_path):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        trial = prepare_trials(settings(), suite='single', repeats=1)[0]
+        clock = FakeClock()
+        arm = FakeArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=FakeMagneticSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+        engine.start(require_wait_position=True)
+        for _ in range(10000):
+            hub.poll_once()
+            engine.step()
+            if engine.state in {'END_WAIT','FAULT','ABORTED'}:
+                break
+            clock.advance(.02)
+            time.sleep(0)  # Yield to the real asynchronous recorder while fake time advances.
+>       assert engine.state == 'END_WAIT', engine.snapshot()
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153659.008156Z-ba9859', 'phase': 'fault', 'progress': 0.9710351377018044, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:130: AssertionError
+_________ test_servo_restart_latency_is_excluded_from_contact_timeline _________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_servo_restart_latency_is_0')
+
+    def test_servo_restart_latency_is_excluded_from_contact_timeline(tmp_path):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        from scripts.run_strokeplan_experiment import run_recorded
+        trial = prepare_trials(settings())[0]
+        clock = FakeClock()
+    
+        class SlowRestartArm(FakeArm):
+            def start_servo(self):
+                super().start_servo()
+                if sum(c['action'] == 'start_servo' for c in self.calls) == 2:
+                    clock.advance(.16)
+    
+        arm = SlowRestartArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=FakeMagneticSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+        result = run_recorded(engine, hub, clock=clock, sleep=time.sleep)
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:160: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_servo_restart_latency_is_0/2026-11-07/独立接触参数测试/raw/23-36-59_Z28_up_A30_W15_S32_T6_R1_第1次
+____ test_recorded_contact_driver_does_not_catch_up_in_a_command_burst[0.0] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_recorded_contact_driver_d0')
+preparation_s = 0.0
+
+    @pytest.mark.parametrize('preparation_s', [0., .002])
+    def test_recorded_contact_driver_does_not_catch_up_in_a_command_burst(tmp_path, preparation_s):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        from scripts.run_strokeplan_experiment import run_recorded
+        trial = prepare_trials(settings())[0]
+        virtual = FakeClock()
+    
+        class Clock:
+            def now_ns(self):
+                return virtual.now_ns()
+    
+        clock = Clock()  # Exercise the production wall-clock pacing branch.
+        starts = []
+    
+        class SlowPushArm(FakeArm):
+            def push_pose(self, pose):
+                starts.append(clock.now_ns())
+                super().push_pose(pose)
+                if len(starts) == 20:
+                    virtual.advance(.06)
+    
+        arm = SlowPushArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+    
+        class PreparationSource(FakeMagneticSource):
+            def read_frames(self):
+                virtual.advance(preparation_s)
+                return super().read_frames()
+    
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=PreparationSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+    
+        def sleep(seconds):
+            virtual.advance(seconds)
+            time.sleep(0)
+    
+        result = run_recorded(engine, hub, clock=clock, sleep=sleep)
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:203: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_recorded_contact_driver_d0/2026-11-07/独立接触参数测试/raw/23-36-59_Z28_up_A30_W15_S32_T6_R1_第1次
+___ test_recorded_contact_driver_does_not_catch_up_in_a_command_burst[0.002] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_recorded_contact_driver_d1')
+preparation_s = 0.002
+
+    @pytest.mark.parametrize('preparation_s', [0., .002])
+    def test_recorded_contact_driver_does_not_catch_up_in_a_command_burst(tmp_path, preparation_s):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        from scripts.run_strokeplan_experiment import run_recorded
+        trial = prepare_trials(settings())[0]
+        virtual = FakeClock()
+    
+        class Clock:
+            def now_ns(self):
+                return virtual.now_ns()
+    
+        clock = Clock()  # Exercise the production wall-clock pacing branch.
+        starts = []
+    
+        class SlowPushArm(FakeArm):
+            def push_pose(self, pose):
+                starts.append(clock.now_ns())
+                super().push_pose(pose)
+                if len(starts) == 20:
+                    virtual.advance(.06)
+    
+        arm = SlowPushArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+    
+        class PreparationSource(FakeMagneticSource):
+            def read_frames(self):
+                virtual.advance(preparation_s)
+                return super().read_frames()
+    
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=PreparationSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+    
+        def sleep(seconds):
+            virtual.advance(seconds)
+            time.sleep(0)
+    
+        result = run_recorded(engine, hub, clock=clock, sleep=sleep)
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:203: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_recorded_contact_driver_d1/2026-11-07/独立接触参数测试/raw/23-37-00_Z28_up_A30_W15_S32_T6_R1_第1次
+_____________ test_contact_continues_after_160_ms_stall_above_z20 ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_contact_continues_after_10')
+
+    def test_contact_continues_after_160_ms_stall_above_z20(tmp_path):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        from scripts.run_strokeplan_experiment import run_recorded
+        trial = prepare_trials(settings())[0]
+        virtual = FakeClock()
+    
+        class Clock:
+            def now_ns(self):
+                return virtual.now_ns()
+    
+        clock = Clock()
+        starts = []
+    
+        class SlowContactArm(FakeArm):
+            stalled = False
+            def push_pose(self, pose):
+                starts.append(clock.now_ns())
+                super().push_pose(pose)
+                if not self.stalled and pose[2] == .028 and pose[1] > .451:
+                    self.stalled = True
+                    virtual.advance(.16)
+    
+        arm = SlowContactArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=FakeMagneticSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+    
+        def sleep(seconds):
+            virtual.advance(seconds)
+            time.sleep(0)
+    
+        result = run_recorded(engine, hub, clock=clock, sleep=sleep)
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:242: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_contact_continues_after_10/2026-11-07/独立接触参数测试/raw/23-37-00_Z28_up_A30_W15_S32_T6_R1_第1次
+_____ test_preview_rejects_multiple_characters_and_returns_strokes_for_one _____
+
+    def test_preview_rejects_multiple_characters_and_returns_strokes_for_one():
+        app, _ = make_app()
+>       result, code = app.dispatch("POST", "/api/robot/preview", {"character": "一"})
+
+tests/test_exhibition_api.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/exhibition/server.py:78: in dispatch
+    return preview_character(character, self.graphics_path), 200
+src/brushbot/exhibition/hanzi_preview.py:14: in preview_character
+    medians = load_medians(character, str(graphics_path or DEFAULT_GRAPHICS))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '一'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+________________ test_preview_contains_single_character_strokes ________________
+
+    def test_preview_contains_single_character_strokes():
+>       result = preview_character("永")
+
+tests/test_exhibition_preview.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/exhibition/hanzi_preview.py:14: in preview_character
+    medians = load_medians(character, str(graphics_path or DEFAULT_GRAPHICS))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '永'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+__________ test_plan_builder_returns_fixed_six_dimensional_waypoints ___________
+
+    def test_plan_builder_returns_fixed_six_dimensional_waypoints():
+>       plan = build_hanzi_plan("永")
+
+tests/test_exhibition_preview.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/exhibition/hanzi_preview.py:34: in build_hanzi_plan
+    medians = load_medians(character, str(graphics_path or DEFAULT_GRAPHICS))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '永'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+_______ test_execution_rebaselines_in_direction_and_records_no_feedback ________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_execution_rebaselines_in_0')
+
+    def test_execution_rebaselines_in_direction_and_records_no_feedback(tmp_path):
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153717.442468Z-f06bf0', 'phase': 'fault', 'progress': 0.3978599221789883, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:125: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_execution_rebaselines_in_0/2026-11-07/四方向速度下压实验/raw/23-37-17_半程下压_up_Z36到25_速度2_第1次
+_________ test_constant_height_no_return_run_keeps_direction_baseline __________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_constant_height_no_return0')
+
+    def test_constant_height_no_return_run_keeps_direction_baseline(tmp_path):
+        from scripts.run_four_direction_sweep import build_stack
+        from scripts.run_strokeplan_experiment import run_recorded
+        from brushbot.experiments.four_direction_sweep import default_profile
+        s = setup()
+        clock = FakeClock()
+        arm = FakeArm((-.2, .5, .13, *s['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock)
+        p = dict(default_profile(), mode='four-direction-hold', start_z_mm=34.,
+                 end_z_mm=34., return_to_origin=False)
+        engine, hub = build_stack(profile=p, setup=s, root=tmp_path, arm=arm, source=source, clock=clock)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT'
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:333: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_constant_height_no_return0/2026-11-07/四方向速度下压实验/raw/23-37-18_定高_right_Z34到34_速度2_第1次
+_______ test_successful_sensor_reboot_is_saved_with_each_trial_baselines _______
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_successful_sensor_reboot_0')
+
+    def test_successful_sensor_reboot_is_saved_with_each_trial_baselines(tmp_path):
+        from scripts.run_four_direction_sweep import build_stack
+        from scripts.run_strokeplan_experiment import run_recorded
+        from brushbot.experiments.four_direction_sweep import default_profile
+        clock = FakeClock()
+        arm = FakeArm((-.2, .5, .13, *setup()['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        class Source(FakeMagneticSource):
+            def reboot(self):
+                return dict(status='completed', first_frame_sensor_t_us=200000,
+                            method='esp32_software_restart')
+        engine, hub = build_stack(profile=default_profile(), setup=setup(), root=tmp_path,
+            arm=arm, source=Source(arm, clock), clock=clock, reboot_sensor=True, trial_index=3)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT'
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:547: AssertionError
+----------------------------- Captured stdout call -----------------------------
+发送 REBOOT；等待板子重新初始化、READY 与新数据（最多15秒）…
+板子软复位已确认；设备首帧计时: 0.2 s；随后重新取基线。
+run 目录: /tmp/pytest-of-serein/pytest-19/test_successful_sensor_reboot_0/2026-11-07/四方向速度下压实验/raw/23-37-19_半程下压_right_Z36到25_速度2_第1次
+_ test_baseline_recovers_after_startup_outlier_without_dropping_raw_data[BASELINE] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_baseline_recovers_after_s0')
+affected_phase = 'BASELINE'
+
+    @pytest.mark.parametrize('affected_phase', ['BASELINE', 'REBASELINE'])
+    def test_baseline_recovers_after_startup_outlier_without_dropping_raw_data(tmp_path, affected_phase):
+        import csv
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        original = source.read_frames
+        affected_time = None
+        def frames():
+            nonlocal affected_time
+            rows = original()
+            if engine.state == affected_phase and affected_time is None:
+                affected_time = clock.now_ns()
+                rows[0]['B_uT'][0] = 0.
+            return rows
+        source.read_frames = frames
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153719.821342Z-8cb6e1', 'phase': 'fault', 'progress': 0.40428015564202335, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:583: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_baseline_recovers_after_s0/2026-11-07/四方向速度下压实验/raw/23-37-19_半程下压_up_Z36到25_速度2_第1次
+_ test_baseline_recovers_after_startup_outlier_without_dropping_raw_data[REBASELINE] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_baseline_recovers_after_s1')
+affected_phase = 'REBASELINE'
+
+    @pytest.mark.parametrize('affected_phase', ['BASELINE', 'REBASELINE'])
+    def test_baseline_recovers_after_startup_outlier_without_dropping_raw_data(tmp_path, affected_phase):
+        import csv
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        original = source.read_frames
+        affected_time = None
+        def frames():
+            nonlocal affected_time
+            rows = original()
+            if engine.state == affected_phase and affected_time is None:
+                affected_time = clock.now_ns()
+                rows[0]['B_uT'][0] = 0.
+            return rows
+        source.read_frames = frames
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153720.222376Z-bdb267', 'phase': 'fault', 'progress': 0.39727626459143967, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:583: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_baseline_recovers_after_s1/2026-11-07/四方向速度下压实验/raw/23-37-20_半程下压_up_Z36到25_速度2_第1次
+_________ test_bz_variation_is_recorded_but_does_not_gate_xy_baseline __________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_bz_variation_is_recorded_0')
+
+    def test_bz_variation_is_recorded_but_does_not_gate_xy_baseline(tmp_path):
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        original = source.read_frames
+        count = 0
+        def frames():
+            nonlocal count
+            rows = original()
+            count += 1
+            rows[0]['B_uT'][2] = count * 1000. + (10000. if count % 2 else 0.)
+            return rows
+        source.read_frames = frames
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT'
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_four_direction_sweep.py:626: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_bz_variation_is_recorded_0/2026-11-07/四方向速度下压实验/raw/23-37-20_半程下压_up_Z36到25_速度2_第1次
+________________ test_yong_waypoints_are_multi_stroke_and_safe _________________
+
+    def test_yong_waypoints_are_multi_stroke_and_safe():
+>       waypoints = build_hanzi_waypoints("永")
+
+tests/test_record_hanzi_openloop.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/record_hanzi_openloop.py:25: in build_hanzi_waypoints
+    strokes = medians_to_strokes(load_medians(character, GRAPHICS), size=size_mm / 1000.0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '永'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+______________ test_actual_tcp_is_first_pose_for_continuous_entry ______________
+
+    def test_actual_tcp_is_first_pose_for_continuous_entry():
+>       planned = build_servo_waypoints()
+
+tests/test_record_hanzi_openloop.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/record_hanzi_openloop.py:86: in build_servo_waypoints
+    drawing = build_hanzi_waypoints()
+scripts/record_hanzi_openloop.py:25: in build_hanzi_waypoints
+    strokes = medians_to_strokes(load_medians(character, GRAPHICS), size=size_mm / 1000.0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '永'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+__________________ test_initial_xy_move_stays_at_wait_height ___________________
+
+    def test_initial_xy_move_stays_at_wait_height():
+>       poses = build_servo_waypoints()
+
+tests/test_record_hanzi_openloop.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/record_hanzi_openloop.py:86: in build_servo_waypoints
+    drawing = build_hanzi_waypoints()
+scripts/record_hanzi_openloop.py:25: in build_hanzi_waypoints
+    strokes = medians_to_strokes(load_medians(character, GRAPHICS), size=size_mm / 1000.0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+character = '永'
+graphics_path = '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+    def load_medians(character, graphics_path):
+        """从 graphics.txt 取某字每一笔的中线点列; 字不存在则 KeyError。"""
+>       with open(graphics_path, encoding="utf-8") as f:
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+src/brushbot/calligraphy/hanzi.py:14: FileNotFoundError
+____________ test_runner_prompts_after_passes_four_eight_and_twelve ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_runner_prompts_after_pass0')
+
+    def test_runner_prompts_after_passes_four_eight_and_twelve(tmp_path):
+        script = _load_script()
+        rig = make_ladder_rig(
+            recorder_root=str(tmp_path), steps=8, pause_every_passes=4)
+        spec = copy.deepcopy(rig.spec)
+        spec["path"]["pause_z_mm"] = 100.0
+        engine, hub = script.build_experiment_stack(
+            spec=spec, setup=rig.setup, arm=rig.arm, source=rig.source,
+            root=tmp_path, clock=rig.clock)
+        prompts = []
+        pause_z_m = []
+    
+        snapshot = script.run_experiment(
+            engine, hub, clock=rig.clock,
+            input_fn=lambda prompt: (
+                prompts.append(prompt), pause_z_m.append(rig.arm.pose[2]), "")[-1])
+    
+>       assert snapshot["state"] == "END_WAIT"
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_run_ladder_experiment.py:321: AssertionError
+________ test_runner_prompts_to_wet_and_rebaselines_between_every_path _________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_runner_prompts_to_wet_and0')
+
+    def test_runner_prompts_to_wet_and_rebaselines_between_every_path(tmp_path):
+        script = _load_script()
+        rig = make_ladder_rig(
+            recorder_root=str(tmp_path), steps=5, pause_every_passes=1)
+        spec = copy.deepcopy(rig.spec)
+        spec["path"]["order"] = "one_way"
+        spec["path"]["pause_z_mm"] = 100.0
+        engine, hub = script.build_experiment_stack(
+            spec=spec, setup=rig.setup, arm=rig.arm, source=rig.source,
+            root=tmp_path, clock=rig.clock)
+        prompts = []
+        pause_z_m = []
+    
+        snapshot = script.run_experiment(
+            engine, hub, clock=rig.clock,
+            input_fn=lambda prompt: (
+                prompts.append(prompt), pause_z_m.append(rig.arm.pose[2]), "")[-1])
+    
+>       assert snapshot["state"] == "END_WAIT"
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_run_ladder_experiment.py:396: AssertionError
+________ test_runner_automatically_rebaselines_after_each_wetting_cycle ________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_runner_automatically_reba0')
+
+    def test_runner_automatically_rebaselines_after_each_wetting_cycle(tmp_path):
+        script = _load_script()
+        rig = make_ladder_rig(recorder_root=str(tmp_path), steps=5)
+        spec = copy.deepcopy(rig.spec)
+        spec["path"]["order"] = "one_way"
+        spec["path"]["wetting"] = {
+            "every_paths": 1,
+            "x_mm": 0.0,
+            "y_mm": 200.0,
+            "cup_rim_z_mm": 80.0,
+            "safe_z_mm": 100.0,
+            "dip_z_mm": 50.0,
+            "dwell_s": 0.04,
+            "settle_s": 0.04,
+        }
+        engine, hub = script.build_experiment_stack(
+            spec=spec, setup=rig.setup, arm=rig.arm, source=rig.source,
+            root=tmp_path, clock=rig.clock)
+        prompts = []
+    
+        snapshot = script.run_experiment(
+            engine, hub, clock=rig.clock,
+            input_fn=lambda prompt: prompts.append(prompt) or "")
+    
+>       assert snapshot["state"] == "END_WAIT"
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_run_ladder_experiment.py:431: AssertionError
+________________ test_pi_records_state_only_during_measurement _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_pi_records_state_only_dur0')
+
+    def test_pi_records_state_only_during_measurement(tmp_path):
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        from brushbot.target_strokeplan import StrokePlan
+        generate_trial(tmp_path)
+        root = tmp_path/'trial'
+        plan = StrokePlan.load(root/'plateau_160_240_160.npz')
+        artifacts = {name: (root/name).read_bytes() for name in
+                     ('feedforward.json', 'settings.json', 'entry_profile.json')}
+        artifacts['strokeplan.npz'] = (root/'plateau_160_240_160.npz').read_bytes()
+        table, setup, entry = [json.loads(artifacts[name]) for name in
+                              ('feedforward.json', 'settings.json', 'entry_profile.json')]
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='pi', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode='pi', feedback_profile=profile(),
+            entry_profile=entry)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153730.592040Z-0ee73f', 'phase': 'fault', 'progress': 0.28135313531353134, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_short_plateau_pi_experiment.py:45: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_pi_records_state_only_dur0/runs/2026-11-07/23-37-30__pi__0ee73f
+_ test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_practice_order_keeps_late0')
+
+    def test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft(tmp_path):
+        from brushbot.stroke_templates.annotations import load_font_record,prepare_annotation
+        from brushbot.stroke_templates.bundle import write_json
+        from brushbot.stroke_templates.examples import _render_font
+    
+        root=tmp_path/'library';image=tmp_path/'two.png'
+>       record=load_font_record('二',Path(__file__).resolve().parents[1]/'data/makemeahanzi/graphics.txt')
+
+tests/test_stroke_template_catalog.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_____________ test_catalog_search_versions_and_links_work_offline ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_catalog_search_versions_a0')
+
+    def test_catalog_search_versions_and_links_work_offline(tmp_path):
+        root = tmp_path/"library space ' $ literal"
+        folder = root/'characters/永 # first'
+>       generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', folder, image_size=300)
+
+tests/test_stroke_template_catalog_browser.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_demo_publishes_simple_characters_and_length_transfer_without_validation_claim _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_demo_publishes_simple_cha0')
+
+    def test_demo_publishes_simple_characters_and_length_transfer_without_validation_claim(tmp_path):
+        output = tmp_path/'examples'
+>       result = generate_examples(ROOT/'data/makemeahanzi/graphics.txt', output, image_size=220)
+
+tests/test_stroke_template_examples.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/examples.py:93: in generate_examples
+    for line in Path(graphics_path).read_text(encoding='utf-8').splitlines():
+/usr/lib/python3.10/pathlib.py:1134: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+______ test_recorded_rotation_and_p_only_during_measurement[feedforward] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_recorded_rotation_and_p_o0')
+mode = 'feedforward'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    def test_recorded_rotation_and_p_only_during_measurement(tmp_path, mode):
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'rotation_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'rotation_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='rotation', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153748.784763Z-27a555', 'phase': 'fault', 'progress': 0.23458491215983465, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:84: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_recorded_rotation_and_p_o0/runs/2026-11-07/23-37-48__rotation__27a555
+___________ test_recorded_rotation_and_p_only_during_measurement[p] ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_recorded_rotation_and_p_o1')
+mode = 'p'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    def test_recorded_rotation_and_p_only_during_measurement(tmp_path, mode):
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'rotation_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'rotation_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='rotation', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153749.067761Z-a2fee7', 'phase': 'fault', 'progress': 0.23458491215983465, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:84: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_recorded_rotation_and_p_o1/runs/2026-11-07/23-37-49__rotation__a2fee7
+_ test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[late_tick-feedforward] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_0')
+mode = 'feedforward', disturbance = 'late_tick'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    @pytest.mark.parametrize('disturbance', ['late_tick', 'repeated_poll', 'deadline'])
+    def test_comparison_keeps_command_samples_in_order_under_scheduler_jitter(
+            tmp_path, mode, disturbance):
+        """A late/extra poll must not turn 10 mm/s into a 500 mm/s² XY jump."""
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'jitter_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'jitter_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='jitter', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        injected = False
+    
+        def disturb(_):
+            nonlocal injected
+            if not injected and (engine.snapshot().get('telemetry') or {}).get('phase') == 'measure_00':
+                injected = True
+                if disturbance == 'repeated_poll':
+                    engine.step()  # Same clock instant; do not emit a duplicate point.
+                else:
+                    clock.advance(.025 if disturbance == 'late_tick' else .2)
+    
+        result = run_recorded(engine, hub, clock=clock, live_output_fn=disturb)
+        assert injected
+        if disturbance == 'deadline':
+            assert result['state'] == 'ABORTED'
+            assert result['last_error'] == 'deadline_miss'
+            assert arm.pose[2] == pytest.approx(.13)
+            return
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:179: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_0/runs/2026-11-07/23-37-50__jitter__1fc0d3
+_ test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[late_tick-p] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_1')
+mode = 'p', disturbance = 'late_tick'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    @pytest.mark.parametrize('disturbance', ['late_tick', 'repeated_poll', 'deadline'])
+    def test_comparison_keeps_command_samples_in_order_under_scheduler_jitter(
+            tmp_path, mode, disturbance):
+        """A late/extra poll must not turn 10 mm/s into a 500 mm/s² XY jump."""
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'jitter_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'jitter_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='jitter', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        injected = False
+    
+        def disturb(_):
+            nonlocal injected
+            if not injected and (engine.snapshot().get('telemetry') or {}).get('phase') == 'measure_00':
+                injected = True
+                if disturbance == 'repeated_poll':
+                    engine.step()  # Same clock instant; do not emit a duplicate point.
+                else:
+                    clock.advance(.025 if disturbance == 'late_tick' else .2)
+    
+        result = run_recorded(engine, hub, clock=clock, live_output_fn=disturb)
+        assert injected
+        if disturbance == 'deadline':
+            assert result['state'] == 'ABORTED'
+            assert result['last_error'] == 'deadline_miss'
+            assert arm.pose[2] == pytest.approx(.13)
+            return
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:179: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_1/runs/2026-11-07/23-37-50__jitter__415c59
+_ test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[repeated_poll-feedforward] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_2')
+mode = 'feedforward', disturbance = 'repeated_poll'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    @pytest.mark.parametrize('disturbance', ['late_tick', 'repeated_poll', 'deadline'])
+    def test_comparison_keeps_command_samples_in_order_under_scheduler_jitter(
+            tmp_path, mode, disturbance):
+        """A late/extra poll must not turn 10 mm/s into a 500 mm/s² XY jump."""
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'jitter_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'jitter_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='jitter', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        injected = False
+    
+        def disturb(_):
+            nonlocal injected
+            if not injected and (engine.snapshot().get('telemetry') or {}).get('phase') == 'measure_00':
+                injected = True
+                if disturbance == 'repeated_poll':
+                    engine.step()  # Same clock instant; do not emit a duplicate point.
+                else:
+                    clock.advance(.025 if disturbance == 'late_tick' else .2)
+    
+        result = run_recorded(engine, hub, clock=clock, live_output_fn=disturb)
+        assert injected
+        if disturbance == 'deadline':
+            assert result['state'] == 'ABORTED'
+            assert result['last_error'] == 'deadline_miss'
+            assert arm.pose[2] == pytest.approx(.13)
+            return
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:179: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_2/runs/2026-11-07/23-37-50__jitter__fcca19
+_ test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[repeated_poll-p] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_3')
+mode = 'p', disturbance = 'repeated_poll'
+
+    @pytest.mark.parametrize('mode', ['feedforward', 'p'])
+    @pytest.mark.parametrize('disturbance', ['late_tick', 'repeated_poll', 'deadline'])
+    def test_comparison_keeps_command_samples_in_order_under_scheduler_jitter(
+            tmp_path, mode, disturbance):
+        """A late/extra poll must not turn 10 mm/s into a 500 mm/s² XY jump."""
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+        plan, table, setup, entry = fixture(tmp_path)
+        plan.save(tmp_path/'jitter_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'jitter_target.npz').read_bytes(),
+                     'feedforward.json': json.dumps(table).encode(),
+                     'settings.json': json.dumps(setup).encode(),
+                     'entry_profile.json': json.dumps(entry).encode()}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup,
+            artifacts=artifacts, label='jitter', root=tmp_path/'runs', arm=arm,
+            source=source, clock=clock, control_mode=mode, entry_profile=entry)
+        injected = False
+    
+        def disturb(_):
+            nonlocal injected
+            if not injected and (engine.snapshot().get('telemetry') or {}).get('phase') == 'measure_00':
+                injected = True
+                if disturbance == 'repeated_poll':
+                    engine.step()  # Same clock instant; do not emit a duplicate point.
+                else:
+                    clock.advance(.025 if disturbance == 'late_tick' else .2)
+    
+        result = run_recorded(engine, hub, clock=clock, live_output_fn=disturb)
+        assert injected
+        if disturbance == 'deadline':
+            assert result['state'] == 'ABORTED'
+            assert result['last_error'] == 'deadline_miss'
+            assert arm.pose[2] == pytest.approx(.13)
+            return
+>       assert result['state'] == 'END_WAIT', result['last_error']
+E       AssertionError: logger_fault
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_rotational_entry.py:179: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_comparison_keeps_command_3/runs/2026-11-07/23-37-51__jitter__59df32
+__________ test_stationary_pi_records_whole_curve_and_resets_at_lift ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_stationary_pi_records_who0')
+
+    def test_stationary_pi_records_whole_curve_and_resets_at_lift(tmp_path):
+        import json
+        from pathlib import Path
+        from brushbot.experiments.fake import FakeArm, FakeClock, FakeMagneticSource
+        from scripts.run_strokeplan_experiment import build_stack, run_recorded
+    
+        plan, table, setup, entry = stationary_inputs(tmp_path)
+        pi = dict(kp=1., ki=.05, max_correction_mm=.8,
+                  max_correction_speed_mm_s=2., max_correction_accel_mm_s2=30.,
+                  taper_ticks=50, integral_limit_mm=.2, anti_windup='conditional')
+        plan.save(tmp_path/'stationary_target.npz')
+        artifacts = {'strokeplan.npz': (tmp_path/'stationary_target.npz').read_bytes(),
+                     **{n: json.dumps(v).encode() for n, v in [
+                         ('feedforward.json', table), ('settings.json', setup),
+                         ('entry_profile.json', entry)]}}
+        clock = FakeClock()
+        arm = FakeArm((-.370, .5, .13, 0., np.pi/12, 0.), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock, contact_z_mm=40.)
+        engine, hub = build_stack(plan=plan, table=table, setup=setup, artifacts=artifacts,
+            label='stationary_pi', root=tmp_path/'runs', arm=arm, source=source,
+            clock=clock, control_mode='pi', feedback_profile=pi, entry_profile=entry)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153752.353230Z-09dd16', 'phase': 'fault', 'progress': 0.4703175333640129, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_strokeplan_stationary_entry.py:134: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_stationary_pi_records_who0/runs/2026-11-07/23-37-52__stationary_pi__09dd16
+______ test_built_wheel_can_load_all_recipes_without_the_source_checkout _______
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_built_wheel_can_load_all_0')
+
+    def test_built_wheel_can_load_all_recipes_without_the_source_checkout(tmp_path):
+        root=Path(__file__).resolve().parents[1]
+        project=tmp_path/'project';project.mkdir()
+        shutil.copyfile(root/'pyproject.toml',project/'pyproject.toml')
+        shutil.copytree(root/'src/brushbot',project/'src/brushbot',ignore=shutil.ignore_patterns('__pycache__'))
+        result=subprocess.run([sys.executable,'-m','pip','wheel','--no-deps','--no-build-isolation',
+            '--no-index','--wheel-dir',str(tmp_path/'dist'),str(project)],capture_output=True,text=True,timeout=90)
+        assert result.returncode==0,result.stdout+result.stderr
+        installed=tmp_path/'installed'
+>       with zipfile.ZipFile(next((tmp_path/'dist').glob('brushbot-*.whl'))) as wheel:
+E       StopIteration
+
+tests/test_teaching_stroke_distribution.py:19: StopIteration
+_ test_cli_composes_yong_from_library_and_rebuilds_from_its_self_contained_recipe _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_cli_composes_yong_from_li0')
+
+    def test_cli_composes_yong_from_library_and_rebuilds_from_its_self_contained_recipe(tmp_path):
+>       root, path, recipe, legacy = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_____________ test_parameter_changes_affect_only_the_chosen_stroke _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_parameter_changes_affect_0')
+
+    def test_parameter_changes_affect_only_the_chosen_stroke(tmp_path):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_explicit_reference_ink_constraint_rejects_in_canvas_but_misaligned_paths _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_explicit_reference_ink_co0')
+
+    def test_explicit_reference_ink_constraint_rejects_in_canvas_but_misaligned_paths(tmp_path):
+>       _,path,recipe,_ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_rebuilding_an_old_character_cannot_promote_its_template_snapshots_over_newer_library_models _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_rebuilding_an_old_charact0')
+
+    def test_rebuilding_an_old_character_cannot_promote_its_template_snapshots_over_newer_library_models(tmp_path):
+        from brushbot.stroke_templates.catalog import collect_catalog
+>       root, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_composition_rejects_template_files_not_bound_by_the_manifest[template.json] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_composition_rejects_templ0')
+missing = 'template.json'
+
+    @pytest.mark.parametrize('missing', ['template.json', 'report.html'])
+    def test_composition_rejects_template_files_not_bound_by_the_manifest(tmp_path, missing):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_composition_rejects_template_files_not_bound_by_the_manifest[report.html] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_composition_rejects_templ1')
+missing = 'report.html'
+
+    @pytest.mark.parametrize('missing', ['template.json', 'report.html'])
+    def test_composition_rejects_template_files_not_bound_by_the_manifest(tmp_path, missing):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+________ test_composition_can_reuse_one_versioned_model_for_two_strokes ________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_composition_can_reuse_one0')
+
+    def test_composition_can_reuse_one_versioned_model_for_two_strokes(tmp_path):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_bad_composition_inputs_cannot_publish_an_incomplete_character[template_id] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_bad_composition_inputs_ca0')
+bad = 'template_id'
+
+    @pytest.mark.parametrize('bad', ['template_id', 'layout_id', 'missing_stroke', 'unknown_parameter'])
+    def test_bad_composition_inputs_cannot_publish_an_incomplete_character(tmp_path, bad):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_bad_composition_inputs_cannot_publish_an_incomplete_character[layout_id] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_bad_composition_inputs_ca1')
+bad = 'layout_id'
+
+    @pytest.mark.parametrize('bad', ['template_id', 'layout_id', 'missing_stroke', 'unknown_parameter'])
+    def test_bad_composition_inputs_cannot_publish_an_incomplete_character(tmp_path, bad):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_bad_composition_inputs_cannot_publish_an_incomplete_character[missing_stroke] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_bad_composition_inputs_ca2')
+bad = 'missing_stroke'
+
+    @pytest.mark.parametrize('bad', ['template_id', 'layout_id', 'missing_stroke', 'unknown_parameter'])
+    def test_bad_composition_inputs_cannot_publish_an_incomplete_character(tmp_path, bad):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_bad_composition_inputs_cannot_publish_an_incomplete_character[unknown_parameter] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_bad_composition_inputs_ca3')
+bad = 'unknown_parameter'
+
+    @pytest.mark.parametrize('bad', ['template_id', 'layout_id', 'missing_stroke', 'unknown_parameter'])
+    def test_bad_composition_inputs_cannot_publish_an_incomplete_character(tmp_path, bad):
+>       _, path, recipe, _ = composition_fixture(tmp_path)
+
+tests/test_template_character_composition.py:149: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_latest_yong_opens_as_template_composition_with_layout_toggle_and_source_links _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_latest_yong_opens_as_temp0')
+
+    def test_latest_yong_opens_as_template_composition_with_layout_toggle_and_source_links(tmp_path):
+>       root, recipe, _, _ = composition_fixture(tmp_path)
+
+tests/test_template_composition_browser.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_template_character_composition.py:25: in composition_fixture
+    generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', legacy, image_size=360)
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+___ test_local_drag_undo_and_direct_exports_preserve_the_other_four_strokes ____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_local_drag_undo_and_direc0')
+
+    def test_local_drag_undo_and_direct_exports_preserve_the_other_four_strokes(tmp_path):
+>       generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', tmp_path/'yong', image_size=300)
+
+tests/test_yong_quick_browser.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_______ test_advanced_yong_edits_keep_named_features_on_the_same_points ________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_advanced_yong_edits_keep_0')
+
+    def test_advanced_yong_edits_keep_named_features_on_the_same_points(tmp_path):
+        from brushbot.stroke_templates.schema import validate_annotation
+>       generate_yong_example(ROOT/'data/makemeahanzi/graphics.txt', tmp_path/'yong', image_size=300)
+
+tests/test_yong_quick_browser.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/examples.py:33: in generate_yong_example
+    record = load_font_record('永', graphics_path)
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+______ test_yong_has_five_named_strokes_and_explicit_turn_hook_landmarks _______
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_yong_has_five_named_strok0')
+
+    def test_yong_has_five_named_strokes_and_explicit_turn_hook_landmarks(tmp_path):
+>       _, annotation = yong_annotation(tmp_path)
+
+tests/test_yong_quick_review.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_yong_quick_review.py:21: in yong_annotation
+    record = load_font_record('永', ROOT/'data/makemeahanzi/graphics.txt')
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+____ test_all_five_yong_templates_build_and_fit_without_user_phase_editing _____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_all_five_yong_templates_b0')
+
+    def test_all_five_yong_templates_build_and_fit_without_user_phase_editing(tmp_path):
+>       image, annotation = yong_annotation(tmp_path)
+
+tests/test_yong_quick_review.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_yong_quick_review.py:21: in yong_annotation
+    record = load_font_record('永', ROOT/'data/makemeahanzi/graphics.txt')
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+__ test_manual_preserve_mode_keeps_all_points_exactly_even_without_a_template __
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_manual_preserve_mode_keep0')
+
+    def test_manual_preserve_mode_keeps_all_points_exactly_even_without_a_template(tmp_path):
+        from brushbot.stroke_templates.quick_review import review_annotation
+>       image, annotation = yong_annotation(tmp_path)
+
+tests/test_yong_quick_review.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_yong_quick_review.py:21: in yong_annotation
+    record = load_font_record('永', ROOT/'data/makemeahanzi/graphics.txt')
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_____________ test_yong_cli_publishes_a_direct_quick_review_entry ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_yong_cli_publishes_a_dire0')
+
+    def test_yong_cli_publishes_a_direct_quick_review_entry(tmp_path):
+        result = subprocess.run([sys.executable, 'scripts/stroke_templates.py', 'yong',
+            '--image-size', '300', '--output-dir', str(tmp_path/'yong')], cwd=ROOT,
+            env=dict(os.environ, PYTHONPATH='src:.', PYTHONDONTWRITEBYTECODE='1'), text=True, capture_output=True)
+>       assert result.returncode == 0, result.stderr
+E       AssertionError: usage: stroke_templates.py [-h]
+E                                    {prepare,build,fit,demo,yong,teaching,import-guides,trace-guides,compose,catalog}
+E                                    ...
+E         stroke_templates.py: error: [Errno 2] No such file or directory: 'data/makemeahanzi/graphics.txt'
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/home/serein/FYP/.venv/bin/python', 'scripts/stroke_templates.py', 'yong', '--image-size', '30...             ...\nstroke_templates.py: error: [Errno 2] No such file or directory: 'data/makemeahanzi/graphics.txt'\n").returncode
+
+tests/test_yong_quick_review.py:105: AssertionError
+___ test_incompatible_yong_dictionary_hint_is_an_actionable_error[truncate] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_incompatible_yong_diction0')
+change = 'truncate'
+
+    @pytest.mark.parametrize('change', ['truncate', 'insert_same_polyline_vertex'])
+    def test_incompatible_yong_dictionary_hint_is_an_actionable_error(tmp_path, change):
+>       image, _ = yong_annotation(tmp_path)
+
+tests/test_yong_quick_review.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_yong_quick_review.py:21: in yong_annotation
+    record = load_font_record('永', ROOT/'data/makemeahanzi/graphics.txt')
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_incompatible_yong_dictionary_hint_is_an_actionable_error[insert_same_polyline_vertex] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_incompatible_yong_diction1')
+change = 'insert_same_polyline_vertex'
+
+    @pytest.mark.parametrize('change', ['truncate', 'insert_same_polyline_vertex'])
+    def test_incompatible_yong_dictionary_hint_is_an_actionable_error(tmp_path, change):
+>       image, _ = yong_annotation(tmp_path)
+
+tests/test_yong_quick_review.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_yong_quick_review.py:21: in yong_annotation
+    record = load_font_record('永', ROOT/'data/makemeahanzi/graphics.txt')
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] 没有那个文件或目录: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+_ test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay[sweep-down] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_sweep_recording_and_analy0')
+mode = 'sweep-down'
+
+    @pytest.mark.parametrize('mode', ['sweep-down', 'sweep-cycle'])
+    def test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay(tmp_path, mode):
+        from scripts.run_z_identification import build_stack
+        from scripts.run_strokeplan_experiment import run_recorded
+        from scripts.analyze_z_identification import analyze
+        from brushbot.experiments.z_identification import default_sweep_profile
+        clock = FakeClock()
+        arm = FakeArm((-.37, .5, .13, *setup()['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock)
+        engine, hub = build_stack(profile=default_sweep_profile(mode), setup=setup(),
+                                  root=tmp_path/'runs', arm=arm, source=source, clock=clock)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153814.542308Z-36c145', 'phase': 'fault', 'progress': 0.30709134615384615, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:164: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_sweep_recording_and_analy0/runs/2026-11-07/05_Z动态辨识/raw/23-38-14_连续下压_Z36到24mm_单程30s_第1次
+_ test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay[sweep-cycle] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_sweep_recording_and_analy1')
+mode = 'sweep-cycle'
+
+    @pytest.mark.parametrize('mode', ['sweep-down', 'sweep-cycle'])
+    def test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay(tmp_path, mode):
+        from scripts.run_z_identification import build_stack
+        from scripts.run_strokeplan_experiment import run_recorded
+        from scripts.analyze_z_identification import analyze
+        from brushbot.experiments.z_identification import default_sweep_profile
+        clock = FakeClock()
+        arm = FakeArm((-.37, .5, .13, *setup()['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        source = FakeMagneticSource(arm, clock)
+        engine, hub = build_stack(profile=default_sweep_profile(mode), setup=setup(),
+                                  root=tmp_path/'runs', arm=arm, source=source, clock=clock)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153814.860645Z-2febf0', 'phase': 'fault', 'progress': 0.31234718826405866, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:164: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_sweep_recording_and_analy1/runs/2026-11-07/05_Z动态辨识/raw/23-38-14_下压回升_Z36到24mm_单程15s_第1次
+____ test_full_run_records_null_targets_segments_and_one_airborne_baseline _____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_full_run_records_null_tar0')
+
+    def test_full_run_records_null_targets_segments_and_one_airborne_baseline(tmp_path):
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153815.273246Z-64c758', 'phase': 'fault', 'progress': 0.31093203588262125, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:227: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_full_run_records_null_tar0/2026-11-07/05_Z动态辨识/raw/23-38-15_压深7p5mm_扰动0p5mm_先下压_第1次
+_________ test_analysis_exports_quality_flags_and_preserves_raw_input __________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_analysis_exports_quality_0')
+
+    def test_analysis_exports_quality_flags_and_preserves_raw_input(tmp_path):
+        from scripts.run_strokeplan_experiment import run_recorded
+        from scripts.analyze_z_identification import analyze
+        engine, hub, arm, source, clock = build(tmp_path/'raw_runs')
+        result = run_recorded(engine, hub, clock=clock)
+        folder = Path(result['run_dir'])
+        original = (folder/'control.jsonl').read_bytes()
+>       output = analyze([folder], tmp_path/'analysis')
+
+tests/test_z_identification.py:310: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/analyze_z_identification.py:21: in analyze
+    loaded = [summarize_run(folder) for folder in folders]
+scripts/analyze_z_identification.py:21: in <listcomp>
+    loaded = [summarize_run(folder) for folder in folders]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+folder = PosixPath('/tmp/pytest-of-serein/pytest-19/test_analysis_exports_quality_0/raw_runs/2026-11-07/05_Z动态辨识/raw/23-38-16_压深7p5mm_扰动0p5mm_先下压_第1次')
+
+    def summarize_run(folder):
+        folder = Path(folder)
+        manifest = json.loads((folder/'manifest.json').read_text())
+        spec = json.loads((folder/'resolved.json').read_text())
+        if spec.get('control', {}).get('mode') != 'identification':
+            raise ValueError('not a Z identification run')
+        if manifest['status'] != 'completed':
+>           raise ValueError('incomplete run: preserve raw evidence; do not fit a complete experiment')
+E           ValueError: incomplete run: preserve raw evidence; do not fit a complete experiment
+
+src/brushbot/experiments/identification_analysis.py:61: ValueError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_analysis_exports_quality_0/raw_runs/2026-11-07/05_Z动态辨识/raw/23-38-16_压深7p5mm_扰动0p5mm_先下压_第1次
+____ test_analysis_retains_completed_run_with_timing_quality_flags[skipped] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_analysis_retains_complete0')
+jitter = 'skipped'
+
+    @pytest.mark.parametrize('jitter', ['skipped', 'balanced_duplicate'])
+    def test_analysis_retains_completed_run_with_timing_quality_flags(tmp_path, jitter):
+        from scripts.run_strokeplan_experiment import run_recorded
+        from brushbot.experiments.identification_analysis import summarize_run
+        engine, hub, arm, source, clock = build(tmp_path)
+        original = source.read_frames
+        fired = False
+        def frames():
+            nonlocal fired
+            if ((engine.snapshot().get('telemetry') or {}).get('phase') == 'id_hold_00'
+                    and not fired and jitter == 'skipped'):
+                clock.advance(.02)
+                fired = True
+            return original()
+        source.read_frames = frames
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT'
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:339: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_analysis_retains_complete0/2026-11-07/05_Z动态辨识/raw/23-38-17_压深7p5mm_扰动0p5mm_先下压_第1次
+_ test_analysis_retains_completed_run_with_timing_quality_flags[balanced_duplicate] _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-19/test_analysis_retains_complete1')
+jitter = 'balanced_duplicate'
+
+    @pytest.mark.parametrize('jitter', ['skipped', 'balanced_duplicate'])
+    def test_analysis_retains_completed_run_with_timing_quality_flags(tmp_path, jitter):
+        from scripts.run_strokeplan_experiment import run_recorded
+        from brushbot.experiments.identification_analysis import summarize_run
+        engine, hub, arm, source, clock = build(tmp_path)
+        original = source.read_frames
+        fired = False
+        def frames():
+            nonlocal fired
+            if ((engine.snapshot().get('telemetry') or {}).get('phase') == 'id_hold_00'
+                    and not fired and jitter == 'skipped'):
+                clock.advance(.02)
+                fired = True
+            return original()
+        source.read_frames = frames
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT'
+E       AssertionError: assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:339: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-19/test_analysis_retains_complete1/2026-11-07/05_Z动态辨识/raw/23-38-17_压深7p5mm_扰动0p5mm_先下压_第1次
+=========================== short test summary info ============================
+FAILED tests/test_calligraphy_trial.py::test_zhong_preserves_stroke_order_shape_and_target_only_provenance
+FAILED tests/test_calligraphy_trial.py::test_trial_exports_same_paper_coordinates_for_each_independent_stroke
+FAILED tests/test_calligraphy_trial.py::test_zhong_runner_defaults_to_offline_pi_for_selected_stroke
+FAILED tests/test_calligraphy_trial.py::test_omitting_stroke_preflights_all_four_without_confirmation
+FAILED tests/test_calligraphy_trial.py::test_character_confirmation_order_and_stop_on_failure[RUN-None-expected0]
+FAILED tests/test_calligraphy_trial.py::test_character_confirmation_order_and_stop_on_failure[RUN-2-expected1]
+FAILED tests/test_calligraphy_trial.py::test_character_confirmation_order_and_stop_on_failure[cancel-None-expected2]
+FAILED tests/test_calligraphy_trial.py::test_invalid_last_stroke_blocks_whole_character_before_confirmation
+FAILED tests/test_calligraphy_trial.py::test_edited_character_stroke_rejects_invalid_selection[0]
+FAILED tests/test_calligraphy_trial.py::test_edited_character_stroke_rejects_invalid_selection[5]
+FAILED tests/test_character_library_browser.py::test_character_library_defaults_to_compositions_in_practice_order_without_removing_history
+FAILED tests/test_contact_entry_test.py::test_completed_fake_run_records_vectors_and_metrics
+FAILED tests/test_contact_entry_test.py::test_servo_restart_latency_is_excluded_from_contact_timeline
+FAILED tests/test_contact_entry_test.py::test_recorded_contact_driver_does_not_catch_up_in_a_command_burst[0.0]
+FAILED tests/test_contact_entry_test.py::test_recorded_contact_driver_does_not_catch_up_in_a_command_burst[0.002]
+FAILED tests/test_contact_entry_test.py::test_contact_continues_after_160_ms_stall_above_z20
+FAILED tests/test_exhibition_api.py::test_preview_rejects_multiple_characters_and_returns_strokes_for_one
+FAILED tests/test_exhibition_preview.py::test_preview_contains_single_character_strokes
+FAILED tests/test_exhibition_preview.py::test_plan_builder_returns_fixed_six_dimensional_waypoints
+FAILED tests/test_four_direction_sweep.py::test_execution_rebaselines_in_direction_and_records_no_feedback
+FAILED tests/test_four_direction_sweep.py::test_constant_height_no_return_run_keeps_direction_baseline
+FAILED tests/test_four_direction_sweep.py::test_successful_sensor_reboot_is_saved_with_each_trial_baselines
+FAILED tests/test_four_direction_sweep.py::test_baseline_recovers_after_startup_outlier_without_dropping_raw_data[BASELINE]
+FAILED tests/test_four_direction_sweep.py::test_baseline_recovers_after_startup_outlier_without_dropping_raw_data[REBASELINE]
+FAILED tests/test_four_direction_sweep.py::test_bz_variation_is_recorded_but_does_not_gate_xy_baseline
+FAILED tests/test_record_hanzi_openloop.py::test_yong_waypoints_are_multi_stroke_and_safe
+FAILED tests/test_record_hanzi_openloop.py::test_actual_tcp_is_first_pose_for_continuous_entry
+FAILED tests/test_record_hanzi_openloop.py::test_initial_xy_move_stays_at_wait_height
+FAILED tests/test_run_ladder_experiment.py::test_runner_prompts_after_passes_four_eight_and_twelve
+FAILED tests/test_run_ladder_experiment.py::test_runner_prompts_to_wet_and_rebaselines_between_every_path
+FAILED tests/test_run_ladder_experiment.py::test_runner_automatically_rebaselines_after_each_wetting_cycle
+FAILED tests/test_short_plateau_pi_experiment.py::test_pi_records_state_only_during_measurement
+FAILED tests/test_stroke_template_catalog.py::test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft
+FAILED tests/test_stroke_template_catalog_browser.py::test_catalog_search_versions_and_links_work_offline
+FAILED tests/test_stroke_template_examples.py::test_demo_publishes_simple_characters_and_length_transfer_without_validation_claim
+FAILED tests/test_strokeplan_rotational_entry.py::test_recorded_rotation_and_p_only_during_measurement[feedforward]
+FAILED tests/test_strokeplan_rotational_entry.py::test_recorded_rotation_and_p_only_during_measurement[p]
+FAILED tests/test_strokeplan_rotational_entry.py::test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[late_tick-feedforward]
+FAILED tests/test_strokeplan_rotational_entry.py::test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[late_tick-p]
+FAILED tests/test_strokeplan_rotational_entry.py::test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[repeated_poll-feedforward]
+FAILED tests/test_strokeplan_rotational_entry.py::test_comparison_keeps_command_samples_in_order_under_scheduler_jitter[repeated_poll-p]
+FAILED tests/test_strokeplan_stationary_entry.py::test_stationary_pi_records_whole_curve_and_resets_at_lift
+FAILED tests/test_teaching_stroke_distribution.py::test_built_wheel_can_load_all_recipes_without_the_source_checkout
+FAILED tests/test_template_character_composition.py::test_cli_composes_yong_from_library_and_rebuilds_from_its_self_contained_recipe
+FAILED tests/test_template_character_composition.py::test_parameter_changes_affect_only_the_chosen_stroke
+FAILED tests/test_template_character_composition.py::test_explicit_reference_ink_constraint_rejects_in_canvas_but_misaligned_paths
+FAILED tests/test_template_character_composition.py::test_rebuilding_an_old_character_cannot_promote_its_template_snapshots_over_newer_library_models
+FAILED tests/test_template_character_composition.py::test_composition_rejects_template_files_not_bound_by_the_manifest[template.json]
+FAILED tests/test_template_character_composition.py::test_composition_rejects_template_files_not_bound_by_the_manifest[report.html]
+FAILED tests/test_template_character_composition.py::test_composition_can_reuse_one_versioned_model_for_two_strokes
+FAILED tests/test_template_character_composition.py::test_bad_composition_inputs_cannot_publish_an_incomplete_character[template_id]
+FAILED tests/test_template_character_composition.py::test_bad_composition_inputs_cannot_publish_an_incomplete_character[layout_id]
+FAILED tests/test_template_character_composition.py::test_bad_composition_inputs_cannot_publish_an_incomplete_character[missing_stroke]
+FAILED tests/test_template_character_composition.py::test_bad_composition_inputs_cannot_publish_an_incomplete_character[unknown_parameter]
+FAILED tests/test_template_composition_browser.py::test_latest_yong_opens_as_template_composition_with_layout_toggle_and_source_links
+FAILED tests/test_yong_quick_browser.py::test_local_drag_undo_and_direct_exports_preserve_the_other_four_strokes
+FAILED tests/test_yong_quick_browser.py::test_advanced_yong_edits_keep_named_features_on_the_same_points
+FAILED tests/test_yong_quick_review.py::test_yong_has_five_named_strokes_and_explicit_turn_hook_landmarks
+FAILED tests/test_yong_quick_review.py::test_all_five_yong_templates_build_and_fit_without_user_phase_editing
+FAILED tests/test_yong_quick_review.py::test_manual_preserve_mode_keeps_all_points_exactly_even_without_a_template
+FAILED tests/test_yong_quick_review.py::test_yong_cli_publishes_a_direct_quick_review_entry
+FAILED tests/test_yong_quick_review.py::test_incompatible_yong_dictionary_hint_is_an_actionable_error[truncate]
+FAILED tests/test_yong_quick_review.py::test_incompatible_yong_dictionary_hint_is_an_actionable_error[insert_same_polyline_vertex]
+FAILED tests/test_z_identification.py::test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay[sweep-down]
+FAILED tests/test_z_identification.py::test_sweep_recording_and_analysis_preserve_directions_without_fitting_delay[sweep-cycle]
+FAILED tests/test_z_identification.py::test_full_run_records_null_targets_segments_and_one_airborne_baseline
+FAILED tests/test_z_identification.py::test_analysis_exports_quality_flags_and_preserves_raw_input
+FAILED tests/test_z_identification.py::test_analysis_retains_completed_run_with_timing_quality_flags[skipped]
+FAILED tests/test_z_identification.py::test_analysis_retains_completed_run_with_timing_quality_flags[balanced_duplicate]
+============ 69 failed, 1395 passed, 7 skipped in 115.71s (0:01:55) ============

@@ -1,0 +1,29 @@
+{
+  "root": "/home/serein/FYP/outputs/stroke_classifier",
+  "task_id": "20261110-181201-6695e34d",
+  "model_id": "1557030a51bd",
+  "analysis_id": "fb4b3d3463d54ae8a9cc1e83b0aa9b12",
+  "source_fingerprint": "479eb678e3d9f3b76d7d15847c03590a19e9dfe247e1ec9cc83008fa51d65c6f",
+  "analysis": {
+    "kind": "C",
+    "sizes": [],
+    "seeds": [
+      20261110,
+      20261111,
+      20261112
+    ],
+    "cs": [
+      0.00025,
+      0.0005,
+      0.001,
+      0.002,
+      0.004
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ]
+  }
+}

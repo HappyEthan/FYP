@@ -1,0 +1,26 @@
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 1, "folds": 4, "candidates": 1}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 2, "folds": 4, "candidates": 1}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 3, "folds": 4, "candidates": 1}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 4, "folds": 4, "candidates": 1}
+{"message": "幅值模型 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F0"}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 1, "folds": 4, "candidates": 1}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 2, "folds": 4, "candidates": 1}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 3, "folds": 4, "candidates": 1}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 4, "folds": 4, "candidates": 1}
+{"message": "方向模型 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F1"}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 1, "folds": 4, "candidates": 1}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 2, "folds": 4, "candidates": 1}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 3, "folds": 4, "candidates": 1}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 4, "folds": 4, "candidates": 1}
+{"message": "特征融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F2"}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 1, "folds": 4, "candidates": 1}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 2, "folds": 4, "candidates": 1}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 3, "folds": 4, "candidates": 1}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 4, "folds": 4, "candidates": 1}
+{"message": "分数融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F3"}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 1, "folds": 4, "candidates": 1}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 2, "folds": 4, "candidates": 1}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 3, "folds": 4, "candidates": 1}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 4, "folds": 4, "candidates": 1}
+{"message": "形状／变化率融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F4"}
+{"message": "训练完成", "stage": "done", "task_id": "20261107-233625-21a6df41"}

@@ -1,0 +1,113 @@
+{
+  "paths": [
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_009/七笔第一轮训练数据_009.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_002/七笔第一轮训练数据_002.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_003/七笔第一轮训练数据_003.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_004/七笔第一轮训练数据_004.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_005/七笔第一轮训练数据_005.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_006/七笔第一轮训练数据_006.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_007/七笔第一轮训练数据_007.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_008/七笔第一轮训练数据_008.brushrun",
+    "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_010/七笔第一轮训练数据_010.brushrun"
+  ],
+  "sources": [
+    [
+      "20261109T061247.010698Z-535917",
+      "d592c7bb7e2e4330c73a809b3c72c288c6cf1a85ba37b598991cc43b2b69ecf8"
+    ],
+    [
+      "20261109T071416.862960Z-403e00",
+      "a8428b4400f212f8a43bf940ca9dc583aa4903cda432cc8d34377769759cb9c4"
+    ],
+    [
+      "20261109T061737.160708Z-193ea2",
+      "67d3efcb8f38b35cd47afcff4b35e4e503813cbc341632c65be02b88496d20f9"
+    ],
+    [
+      "20261109T064524.447172Z-c09559",
+      "3a08d9a72938d251b10a24a931b065d74834f38bb302c6c09146e075cb866463"
+    ],
+    [
+      "20261109T064927.787030Z-9d8747",
+      "ecbd76e336c14531e5624f2abe0c9d09a52113217dab1819d0eda4e45b5dd1a2"
+    ],
+    [
+      "20261109T065330.993956Z-1d1813",
+      "e067ac9a14c29791ec7ec1496b3148cc7a1d640c5956258d8438cb0e246634df"
+    ],
+    [
+      "20261109T065736.224137Z-82b911",
+      "0b531b3cc52537c5a686d52de2a5054cd5b1fe5527a61a3c47b97a1e4312d4a3"
+    ],
+    [
+      "20261109T070121.156345Z-03a060",
+      "1fe04448a7191eeba9cfe7a2e88be88aa3f2a23265b4c4845c121fc28903ef32"
+    ],
+    [
+      "20261109T070721.673443Z-1e3a90",
+      "7809aeaa848fd934077b28aa2d6f0e6126aff01adb721d780a39a230f6b82358"
+    ],
+    [
+      "20261109T071802.735697Z-004610",
+      "81452404e091c820ef7651fa8ee52fe9b44f2c3b817103e90f928346913d6a3c"
+    ]
+  ],
+  "config": {
+    "families": [
+      "F0",
+      "F1",
+      "F2",
+      "F3",
+      "F4"
+    ],
+    "cs": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "kernels": [
+      "linear",
+      "rbf"
+    ],
+    "gammas": [
+      "scale",
+      0.001,
+      0.01,
+      0.1
+    ],
+    "amplitudes": [
+      "A0",
+      "A1",
+      "A2",
+      "A4"
+    ],
+    "directions": [
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "late_weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "feature_config": {
+      "alpha": 0.3,
+      "points": 128,
+      "direction_threshold": 5.0,
+      "direction_coverage": 0.9,
+      "warmup": 100
+    },
+    "robustness": true
+  },
+  "root": "/home/serein/FYP/outputs/stroke_classifier",
+  "name": "七类毛笔第一轮训练（十组数据）"
+}

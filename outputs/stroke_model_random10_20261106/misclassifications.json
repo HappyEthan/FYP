@@ -1,0 +1,23 @@
+[
+  {
+    "sample_id": "20261106T074425.725239Z-e2b87c_stroke01",
+    "run_number": 2,
+    "true_label": "右点",
+    "predicted_label": "撇",
+    "figure": "figures/误分类/run02_stroke01.png"
+  },
+  {
+    "sample_id": "20261106T074425.725239Z-e2b87c_stroke05",
+    "run_number": 2,
+    "true_label": "捺",
+    "predicted_label": "横撇",
+    "figure": "figures/误分类/run02_stroke05.png"
+  },
+  {
+    "sample_id": "20261106T093324.085244Z-a73a4e_stroke05",
+    "run_number": 3,
+    "true_label": "捺",
+    "predicted_label": "横撇",
+    "figure": "figures/误分类/run03_stroke05.png"
+  }
+]

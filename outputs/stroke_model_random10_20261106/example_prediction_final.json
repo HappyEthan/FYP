@@ -1,0 +1,14 @@
+{
+  "predicted_label": "右点",
+  "predicted_class_id": 0,
+  "decision_scores_not_probabilities": {
+    "右点": 4.286903258633016,
+    "横折钩": -0.2764362064488275,
+    "横撇": 0.7312643763843172,
+    "撇": 3.272822690505304,
+    "捺": 1.7915452575256507
+  },
+  "reference_baseline_uT": 39.056949059779015,
+  "scope": "one of five known classes; no unknown rejection",
+  "role": "training-sample interface smoke test; not independent evaluation"
+}

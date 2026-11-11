@@ -1,0 +1,50 @@
+{
+  "status": "running",
+  "task_id": "20261110-181201-6695e34d",
+  "model_id": "1557030a51bd",
+  "task_name": "七笔第三轮训练（30组）",
+  "model_name": "特征融合",
+  "created_at": "2026-11-11T13:10:53.709927+08:00",
+  "request": {
+    "root": "/home/serein/FYP/outputs/stroke_classifier",
+    "task_id": "20261110-181201-6695e34d",
+    "model_id": "1557030a51bd",
+    "analysis_id": "4a26a435227b4d72a5c80aa3558c37ed",
+    "source_fingerprint": "479eb678e3d9f3b76d7d15847c03590a19e9dfe247e1ec9cc83008fa51d65c6f",
+    "analysis": {
+      "kind": "learning",
+      "sizes": [
+        4,
+        6,
+        8,
+        10,
+        12,
+        15,
+        18,
+        21,
+        24,
+        27,
+        29
+      ],
+      "seeds": [
+        20261110,
+        20261111,
+        20261112
+      ],
+      "cs": [
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "weights": [
+        0.25,
+        0.5,
+        1.0,
+        2.0
+      ]
+    }
+  }
+}

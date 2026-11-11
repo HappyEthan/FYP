@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "numerical_contracts": 6,
+  "samples": 50,
+  "classes": 5,
+  "outer_group_folds": 10,
+  "inner_group_splits": 90,
+  "fold_models_reloaded": 20,
+  "fixed_kernel_oof_predictions_replayed": 100,
+  "outer_test_coverage": "each sample exactly once",
+  "final_model_loaded": true,
+  "final_kernel": "linear",
+  "raw_single_stroke_cli": "passed",
+  "source_python_files_unchanged": 339,
+  "raw_archives_unchanged": 10,
+  "png_files_verified": 7,
+  "interactive_browser_selection": "manually verified on real browser",
+  "independent_raw_recalculation_max_abs_error_uT": 2.362e-11,
+  "independent_review": "no Critical/Important issues",
+  "results": {
+    "linear": {
+      "correct": 48,
+      "total": 50,
+      "accuracy": 0.96,
+      "macro_f1": 0.9598997493734336
+    },
+    "rbf": {
+      "correct": 47,
+      "total": 50,
+      "accuracy": 0.94,
+      "macro_f1": 0.9395458342826764
+    },
+    "nested_selected": {
+      "correct": 47,
+      "total": 50,
+      "accuracy": 0.94,
+      "macro_f1": 0.9395458342826764
+    }
+  }
+}

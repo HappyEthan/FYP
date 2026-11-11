@@ -1,0 +1,47 @@
+{
+  "created_at": "2026-11-06T18:22:43.488573+08:00",
+  "model_type": "sklearn Pipeline(StandardScaler,SVC)",
+  "kernel": "linear",
+  "C": 1.0,
+  "gamma": "scale",
+  "break_ties": true,
+  "decision_function_shape": "ovr",
+  "probability": false,
+  "label_mapping": {
+    "0": "右点",
+    "1": "横折钩",
+    "2": "横撇",
+    "3": "撇",
+    "4": "捺"
+  },
+  "preprocessing": {
+    "version": "scalar-ema-baseline128-v1",
+    "alpha": 0.3,
+    "points": 128,
+    "amplitude": "sqrt(dBx_uT**2+dBy_uT**2) before EMA",
+    "ema_scope": "continuous valid sensor record, not reset at stroke boundary",
+    "baseline_mode": "first_10_percent_fallback",
+    "baseline": "median of native EMA points with tau<=0.1",
+    "time": "sensor_t_us unwrapped; tau=(t-t0)/(t1-t0)",
+    "interpolation": "linear in normalized sensor time",
+    "units": "uT",
+    "model_input": "128-point baseline-subtracted EMA vector; no metadata",
+    "minimum_valid_history_samples": 100
+  },
+  "training_samples": 50,
+  "training_runs": 10,
+  "feature_dimensions": 128,
+  "model_sha256": "e6617ec60f7d1390a741def73f64ca9e613723b75fbcdc8feb722d42de02587b",
+  "versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.9",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "python": "3.10.12",
+  "input_format": "model.joblib takes already-preprocessed 128-point delta-uT vectors; predict_stroke.py handles raw CSV",
+  "scope": "five known classes, pre-segmented complete measure stroke; no unknown rejection or live segmenter",
+  "metrics_role": "CV evaluates the modeling procedure; final model has not seen a fresh independent test run"
+}

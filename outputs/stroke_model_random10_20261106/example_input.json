@@ -1,0 +1,7 @@
+{
+  "seq_start": 5689,
+  "seq_end": 6942,
+  "true_label": "右点",
+  "sample_id": "20261106T073743.618741Z-0055bd_stroke01",
+  "role": "training-sample interface demonstration, not independent evaluation"
+}

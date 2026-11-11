@@ -1,0 +1,32 @@
+{
+  "root": "/tmp/tmp00rwpor_/store",
+  "task_id": "20261110-170742-f8aabf86",
+  "model_id": "9f5d121a1811",
+  "analysis_id": "f7be8d8359cf44c0a8a12bdff31fc725",
+  "source_fingerprint": "d029c6aa962a871440bacf78a1a42f7510464d145b2873578eb1f829a9fb4e2f",
+  "analysis": {
+    "kind": "learning",
+    "sizes": [
+      2,
+      3
+    ],
+    "seeds": [
+      10,
+      11
+    ],
+    "cs": [
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ]
+  }
+}

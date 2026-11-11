@@ -1,0 +1,394 @@
+[
+  {
+    "sample_id": "synthetic-0:stroke1",
+    "run_id": "synthetic-0",
+    "label": 0,
+    "seq_start": 210,
+    "seq_end": 340,
+    "baseline": 95.29087022290571,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992375064931501,
+      "anchor": 0.1376673435651073
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke2",
+    "run_id": "synthetic-0",
+    "label": 1,
+    "seq_start": 370,
+    "seq_end": 500,
+    "baseline": 135.09461067384063,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9999413469598285,
+      "anchor": 0.38621953804823345
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke3",
+    "run_id": "synthetic-0",
+    "label": 2,
+    "seq_start": 530,
+    "seq_end": 660,
+    "baseline": 174.13048906329914,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9996581643565191,
+      "anchor": 0.27799718916197047
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke4",
+    "run_id": "synthetic-0",
+    "label": 3,
+    "seq_start": 690,
+    "seq_end": 820,
+    "baseline": 212.14711107291663,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992657170895834,
+      "anchor": -0.0859068888409204
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke5",
+    "run_id": "synthetic-0",
+    "label": 4,
+    "seq_start": 850,
+    "seq_end": 980,
+    "baseline": 248.2087660770178,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9998729336496115,
+      "anchor": -0.37058359209633374
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke6",
+    "run_id": "synthetic-0",
+    "label": 5,
+    "seq_start": 1010,
+    "seq_end": 1140,
+    "baseline": 282.5263460710421,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.999774877323473,
+      "anchor": -0.31441784166392767
+    }
+  },
+  {
+    "sample_id": "synthetic-0:stroke7",
+    "run_id": "synthetic-0",
+    "label": 6,
+    "seq_start": 1170,
+    "seq_end": 1300,
+    "baseline": 316.46661927614986,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.99925449468051,
+      "anchor": 0.030385926615483283
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke1",
+    "run_id": "synthetic-1",
+    "label": 0,
+    "seq_start": 210,
+    "seq_end": 340,
+    "baseline": 95.2629002997034,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992373580425332,
+      "anchor": 0.13766630902819363
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke2",
+    "run_id": "synthetic-1",
+    "label": 1,
+    "seq_start": 370,
+    "seq_end": 500,
+    "baseline": 135.08163479515503,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9999413560992336,
+      "anchor": 0.3862200665460773
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke3",
+    "run_id": "synthetic-1",
+    "label": 2,
+    "seq_start": 530,
+    "seq_end": 660,
+    "baseline": 174.14121690888868,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.99965816831277,
+      "anchor": 0.27799569417771397
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke4",
+    "run_id": "synthetic-1",
+    "label": 3,
+    "seq_start": 690,
+    "seq_end": 820,
+    "baseline": 212.12536578617167,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.999265771986946,
+      "anchor": -0.08590636448753598
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke5",
+    "run_id": "synthetic-1",
+    "label": 4,
+    "seq_start": 850,
+    "seq_end": 980,
+    "baseline": 248.23567243274994,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9998729196469389,
+      "anchor": -0.3705838058822073
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke6",
+    "run_id": "synthetic-1",
+    "label": 5,
+    "seq_start": 1010,
+    "seq_end": 1140,
+    "baseline": 282.51888658339146,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9997748578950102,
+      "anchor": -0.31441773632160286
+    }
+  },
+  {
+    "sample_id": "synthetic-1:stroke7",
+    "run_id": "synthetic-1",
+    "label": 6,
+    "seq_start": 1170,
+    "seq_end": 1300,
+    "baseline": 316.4498038421183,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992544855881984,
+      "anchor": 0.030385917138707783
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke1",
+    "run_id": "synthetic-2",
+    "label": 0,
+    "seq_start": 210,
+    "seq_end": 340,
+    "baseline": 95.28945095912431,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992374605716494,
+      "anchor": 0.1376682653515381
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke2",
+    "run_id": "synthetic-2",
+    "label": 1,
+    "seq_start": 370,
+    "seq_end": 500,
+    "baseline": 135.0882268318362,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.999941342819144,
+      "anchor": 0.3862196906585028
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke3",
+    "run_id": "synthetic-2",
+    "label": 2,
+    "seq_start": 530,
+    "seq_end": 660,
+    "baseline": 174.161716549741,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9996581952023733,
+      "anchor": 0.27799579980910316
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke4",
+    "run_id": "synthetic-2",
+    "label": 3,
+    "seq_start": 690,
+    "seq_end": 820,
+    "baseline": 212.12752438450744,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992657204215206,
+      "anchor": -0.0859072532740779
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke5",
+    "run_id": "synthetic-2",
+    "label": 4,
+    "seq_start": 850,
+    "seq_end": 980,
+    "baseline": 248.21815595436772,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9998729237495144,
+      "anchor": -0.370583517792029
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke6",
+    "run_id": "synthetic-2",
+    "label": 5,
+    "seq_start": 1010,
+    "seq_end": 1140,
+    "baseline": 282.51285246301643,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9997748609203385,
+      "anchor": -0.31441852345903804
+    }
+  },
+  {
+    "sample_id": "synthetic-2:stroke7",
+    "run_id": "synthetic-2",
+    "label": 6,
+    "seq_start": 1170,
+    "seq_end": 1300,
+    "baseline": 316.42069487031534,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992545119218361,
+      "anchor": 0.030385650836890907
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke1",
+    "run_id": "synthetic-3",
+    "label": 0,
+    "seq_start": 210,
+    "seq_end": 340,
+    "baseline": 95.27943141415196,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.999237415766958,
+      "anchor": 0.13766519499611668
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke2",
+    "run_id": "synthetic-3",
+    "label": 1,
+    "seq_start": 370,
+    "seq_end": 500,
+    "baseline": 135.0932354811759,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9999413471186276,
+      "anchor": 0.3862199484219361
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke3",
+    "run_id": "synthetic-3",
+    "label": 2,
+    "seq_start": 530,
+    "seq_end": 660,
+    "baseline": 174.1493324117467,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9996581577279463,
+      "anchor": 0.2779966538414849
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke4",
+    "run_id": "synthetic-3",
+    "label": 3,
+    "seq_start": 690,
+    "seq_end": 820,
+    "baseline": 212.1472886199947,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992657346557722,
+      "anchor": -0.08590781727772769
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke5",
+    "run_id": "synthetic-3",
+    "label": 4,
+    "seq_start": 850,
+    "seq_end": 980,
+    "baseline": 248.20868969610294,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9998729311492152,
+      "anchor": -0.37058369868277047
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke6",
+    "run_id": "synthetic-3",
+    "label": 5,
+    "seq_start": 1010,
+    "seq_end": 1140,
+    "baseline": 282.5349361067249,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9997748715735224,
+      "anchor": -0.31441805244973076
+    }
+  },
+  {
+    "sample_id": "synthetic-3:stroke7",
+    "run_id": "synthetic-3",
+    "label": 6,
+    "seq_start": 1170,
+    "seq_end": 1300,
+    "baseline": 316.45804199224847,
+    "direction": {
+      "coverage": 1.0,
+      "anchor_ok": true,
+      "anchor_r": 0.9992545038854824,
+      "anchor": 0.030386156214262675
+    }
+  }
+]

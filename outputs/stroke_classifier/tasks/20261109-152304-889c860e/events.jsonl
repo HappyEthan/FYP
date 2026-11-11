@@ -1,0 +1,126 @@
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 1, "folds": 10, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 2, "folds": 10, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 3, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 1, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 4, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 11, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 5, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 6, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 31, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 7, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 41, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 8, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 51, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 9, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 61, "candidates": 80}
+{"message": "幅值模型 · 整次实验留出", "stage": "validation", "family": "F0", "fold": 10, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 80}
+{"message": "幅值模型 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F0"}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 1, "folds": 10, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 2, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 3, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 51, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 4, "folds": 10, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 5, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 11, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 6, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 41, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 7, "folds": 10, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 8, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 1, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 9, "folds": 10, "candidates": 60}
+{"message": "训练侧参数比较", "candidate": 31, "candidates": 60}
+{"message": "方向模型 · 整次实验留出", "stage": "validation", "family": "F1", "fold": 10, "folds": 10, "candidates": 60}
+{"message": "方向模型 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F1"}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 1, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 2, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 3, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 4, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 5, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 6, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 7, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 8, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 9, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "特征融合 · 整次实验留出", "stage": "validation", "family": "F2", "fold": 10, "folds": 10, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 240}
+{"message": "特征融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F2"}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 240}
+{"message": "训练侧参数比较", "candidate": 221, "candidates": 240}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 1, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 2, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 81, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 3, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 91, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 4, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 1, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 101, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 5, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 11, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 111, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 6, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 121, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 7, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 31, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 131, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 8, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 41, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 141, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 9, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 51, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 151, "candidates": 180}
+{"message": "分数融合 · 整次实验留出", "stage": "validation", "family": "F3", "fold": 10, "folds": 10, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 61, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 161, "candidates": 180}
+{"message": "分数融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F3"}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 180}
+{"message": "训练侧参数比较", "candidate": 171, "candidates": 180}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 1, "folds": 10, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 2, "folds": 10, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 3, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 1, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 4, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 11, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 5, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 21, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 6, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 31, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 7, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 41, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 8, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 51, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 9, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 61, "candidates": 80}
+{"message": "形状／变化率融合 · 整次实验留出", "stage": "validation", "family": "F4", "fold": 10, "folds": 10, "candidates": 80}
+{"message": "训练侧参数比较", "candidate": 71, "candidates": 80}
+{"message": "形状／变化率融合 · 全部开发数据最终拟合", "stage": "final_fit", "family": "F4"}
+{"message": "训练完成", "stage": "done", "task_id": "20261109-152304-889c860e"}

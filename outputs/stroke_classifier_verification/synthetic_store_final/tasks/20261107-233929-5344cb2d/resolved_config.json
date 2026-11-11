@@ -1,0 +1,38 @@
+{
+  "families": [
+    "F0",
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "cs": [
+    1.0
+  ],
+  "kernels": [
+    "linear"
+  ],
+  "gammas": [
+    "scale"
+  ],
+  "amplitudes": [
+    "A1"
+  ],
+  "directions": [
+    "D3"
+  ],
+  "weights": [
+    1.0
+  ],
+  "late_weights": [
+    0.5
+  ],
+  "feature_config": {
+    "alpha": 0.3,
+    "points": 128,
+    "direction_threshold": 5.0,
+    "direction_coverage": 0.9,
+    "warmup": 100
+  },
+  "robustness": true
+}

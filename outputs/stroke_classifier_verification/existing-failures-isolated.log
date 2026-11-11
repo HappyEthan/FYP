@@ -1,0 +1,96 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.1.1, pluggy-1.7.0
+rootdir: /home/serein/FYP
+configfile: pyproject.toml
+collected 3 items
+
+tests/test_contact_entry_test.py F                                       [ 33%]
+tests/test_z_identification.py F                                         [ 66%]
+tests/test_stroke_template_catalog.py F                                  [100%]
+
+=================================== FAILURES ===================================
+_____________ test_completed_fake_run_records_vectors_and_metrics ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-24/test_completed_fake_run_record0')
+
+    def test_completed_fake_run_records_vectors_and_metrics(tmp_path):
+        from scripts.run_contact_entry_test import build_stack, prepare_trials
+        trial = prepare_trials(settings(), suite='single', repeats=1)[0]
+        clock = FakeClock()
+        arm = FakeArm((-.15, .45, .07, *trial['setup']['vertical_rpy_rad']), clock=clock)
+        arm.realtime_state_reads = False
+        engine, hub = build_stack(profile=trial['profile'], setup=trial['setup'], root=tmp_path,
+            arm=arm, source=FakeMagneticSource(arm, clock), clock=clock, trial=trial, auto_position=False)
+        engine.start(require_wait_position=True)
+        for _ in range(10000):
+            hub.poll_once()
+            engine.step()
+            if engine.state in {'END_WAIT','FAULT','ABORTED'}:
+                break
+            clock.advance(.02)
+            time.sleep(0)  # Yield to the real asynchronous recorder while fake time advances.
+>       assert engine.state == 'END_WAIT', engine.snapshot()
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153941.336444Z-9c9970', 'phase': 'fault', 'progress': 0.9729344729344729, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_contact_entry_test.py:130: AssertionError
+____ test_full_run_records_null_targets_segments_and_one_airborne_baseline _____
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-24/test_full_run_records_null_tar0')
+
+    def test_full_run_records_null_targets_segments_and_one_airborne_baseline(tmp_path):
+        from scripts.run_strokeplan_experiment import run_recorded
+        engine, hub, arm, source, clock = build(tmp_path)
+        result = run_recorded(engine, hub, clock=clock)
+>       assert result['state'] == 'END_WAIT', result
+E       AssertionError: {'state': 'FAULT', 'run_id': '20261107T153941.744753Z-3af644', 'phase': 'fault', 'progress': 0.3107799908772997, ...}
+E       assert 'FAULT' == 'END_WAIT'
+E         
+E         - END_WAIT
+E         + FAULT
+
+tests/test_z_identification.py:227: AssertionError
+----------------------------- Captured stdout call -----------------------------
+run 目录: /tmp/pytest-of-serein/pytest-24/test_full_run_records_null_tar0/2026-11-07/05_Z动态辨识/raw/23-39-41_压深7p5mm_扰动0p5mm_先下压_第1次
+_ test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft _
+
+tmp_path = PosixPath('/tmp/pytest-of-serein/pytest-24/test_practice_order_keeps_late0')
+
+    def test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft(tmp_path):
+        from brushbot.stroke_templates.annotations import load_font_record,prepare_annotation
+        from brushbot.stroke_templates.bundle import write_json
+        from brushbot.stroke_templates.examples import _render_font
+    
+        root=tmp_path/'library';image=tmp_path/'two.png'
+>       record=load_font_record('二',Path(__file__).resolve().parents[1]/'data/makemeahanzi/graphics.txt')
+
+tests/test_stroke_template_catalog.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/brushbot/stroke_templates/annotations.py:18: in load_font_record
+    with Path(graphics_path).open(encoding='utf-8') as stream:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/serein/FYP/data/makemeahanzi/graphics.txt'), mode = 'r'
+buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/home/serein/FYP/data/makemeahanzi/graphics.txt'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_contact_entry_test.py::test_completed_fake_run_records_vectors_and_metrics
+FAILED tests/test_z_identification.py::test_full_run_records_null_targets_segments_and_one_airborne_baseline
+FAILED tests/test_stroke_template_catalog.py::test_practice_order_keeps_latest_unlisted_character_before_its_partial_draft
+============================== 3 failed in 1.08s ===============================

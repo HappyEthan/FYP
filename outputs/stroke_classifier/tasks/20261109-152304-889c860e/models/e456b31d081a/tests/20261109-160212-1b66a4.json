@@ -1,0 +1,369 @@
+{
+  "id": "20261109-160212-1b66a4",
+  "model_id": "e456b31d081a",
+  "task_id": "20261109-152304-889c860e",
+  "model_version": "magnetic-seven-stroke-v1",
+  "feature_config": {
+    "alpha": 0.3,
+    "points": 128,
+    "direction_threshold": 5.0,
+    "direction_coverage": 0.9,
+    "warmup": 100
+  },
+  "labels": [
+    "右点",
+    "横折钩",
+    "横撇",
+    "撇",
+    "捺",
+    "横",
+    "竖"
+  ],
+  "summary": "回放／无标签，不计新数据准确率",
+  "created_at": "2026-11-09T16:02:12.713123",
+  "sources": [
+    {
+      "run_id": "20261109T061247.010698Z-535917",
+      "sensor_hash": "51a8180e46a912325c3af2ffa2e2caa69b7931c1ed72b974a2b687c2930c093c",
+      "name": "七笔第一轮训练数据_001"
+    }
+  ],
+  "predictions": [
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke1",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 1,
+      "true_label": 0,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 0,
+      "correct": true,
+      "scores": [
+        6.298524082083423,
+        -0.2781864300172857,
+        2.7935933478458863,
+        0.733155055271908,
+        5.260890954909746,
+        1.7535572086893274,
+        4.19106217296807
+      ],
+      "branch_scores": [
+        [
+          6.298524082083423,
+          -0.2781864300172857,
+          2.7935933478458863,
+          0.733155055271908,
+          5.260890954909746,
+          1.7535572086893274,
+          4.19106217296807
+        ]
+      ],
+      "projection": [
+        -10.35128536657687,
+        -4.013272262213542,
+        2.453829244776647
+      ],
+      "branch_projections": [
+        [
+          -10.35128536657687,
+          -4.013272262213542,
+          2.453829244776647
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke2",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 2,
+      "true_label": 1,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 1,
+      "correct": true,
+      "scores": [
+        -0.2939369989289106,
+        6.289754672689233,
+        3.2250853971684164,
+        5.1932574596973735,
+        0.7007968575986956,
+        4.233523559597187,
+        2.2635960662826853
+      ],
+      "branch_scores": [
+        [
+          -0.2939369989289106,
+          6.289754672689233,
+          3.2250853971684164,
+          5.1932574596973735,
+          0.7007968575986956,
+          4.233523559597187,
+          2.2635960662826853
+        ]
+      ],
+      "projection": [
+        9.228874202503661,
+        5.357382552789141,
+        -8.169488139580336
+      ],
+      "branch_projections": [
+        [
+          9.228874202503661,
+          5.357382552789141,
+          -8.169488139580336
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke3",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 3,
+      "true_label": 2,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 2,
+      "correct": true,
+      "scores": [
+        5.215707280504386,
+        4.013894053434461,
+        6.291320509196604,
+        0.7463619061765663,
+        0.7230023750431415,
+        2.8359271618841837,
+        1.0682448630816166
+      ],
+      "branch_scores": [
+        [
+          5.215707280504386,
+          4.013894053434461,
+          6.291320509196604,
+          0.7463619061765663,
+          0.7230023750431415,
+          2.8359271618841837,
+          1.0682448630816166
+        ]
+      ],
+      "projection": [
+        -2.535854032511256,
+        -3.9566487272505064,
+        -1.8806604605718866
+      ],
+      "branch_projections": [
+        [
+          -2.535854032511256,
+          -3.9566487272505064,
+          -1.8806604605718866
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke4",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 4,
+      "true_label": 3,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 3,
+      "correct": true,
+      "scores": [
+        1.9307105102292572,
+        4.1727097845882435,
+        5.216471177864349,
+        6.29486868611157,
+        -0.30618975341227,
+        3.1893455942764346,
+        0.9107246056022056
+      ],
+      "branch_scores": [
+        [
+          1.9307105102292572,
+          4.1727097845882435,
+          5.216471177864349,
+          6.29486868611157,
+          -0.30618975341227,
+          3.1893455942764346,
+          0.9107246056022056
+        ]
+      ],
+      "projection": [
+        9.797537236863237,
+        -2.1152591821423594,
+        2.764371607043752
+      ],
+      "branch_projections": [
+        [
+          9.797537236863237,
+          -2.1152591821423594,
+          2.764371607043752
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke5",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 5,
+      "true_label": 4,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 4,
+      "correct": true,
+      "scores": [
+        4.2633664010611865,
+        0.7134160639227468,
+        1.736774307018143,
+        -0.30195234713443586,
+        6.299525903879392,
+        2.8745755590704927,
+        5.294054333477816
+      ],
+      "branch_scores": [
+        [
+          4.2633664010611865,
+          0.7134160639227468,
+          1.736774307018143,
+          -0.30195234713443586,
+          6.299525903879392,
+          2.8745755590704927,
+          5.294054333477816
+        ]
+      ],
+      "projection": [
+        -13.876394066235198,
+        3.3726475490934615,
+        0.39492802034879365
+      ],
+      "branch_projections": [
+        [
+          -13.876394066235198,
+          3.3726475490934615,
+          0.39492802034879365
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke6",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 6,
+      "true_label": 5,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 5,
+      "correct": true,
+      "scores": [
+        0.7331009445604877,
+        1.8402690394493995,
+        4.1576368335067695,
+        5.249165290719989,
+        -0.30134049212128905,
+        6.296513899870139,
+        3.236598664664878
+      ],
+      "branch_scores": [
+        [
+          0.7331009445604877,
+          1.8402690394493995,
+          4.1576368335067695,
+          5.249165290719989,
+          -0.30134049212128905,
+          6.296513899870139,
+          3.236598664664878
+        ]
+      ],
+      "projection": [
+        6.880398144562986,
+        3.1336152748735993,
+        4.559766597621548
+      ],
+      "branch_projections": [
+        [
+          6.880398144562986,
+          3.1336152748735993,
+          4.559766597621548
+        ]
+      ],
+      "training_overlap": true
+    },
+    {
+      "sample_id": "20261109T061247.010698Z-535917:stroke7",
+      "run_id": "20261109T061247.010698Z-535917",
+      "stroke": 7,
+      "true_label": 6,
+      "label_source": "user-declared-yong-heng-shu-v1",
+      "input_source": {
+        "path": "/home/serein/FYP/runs/毛笔实验数据/七笔第一轮训练数据_001/七笔第一轮训练数据_001.brushrun",
+        "protocol": "yong-heng-shu-v1",
+        "label_source": "user-declared-fixed-task-order"
+      },
+      "unsupported": false,
+      "predicted": 6,
+      "correct": true,
+      "scores": [
+        4.245717681696817,
+        0.7210272449175387,
+        1.7773196251324657,
+        -0.3024537279138765,
+        5.280245659091034,
+        2.931830392523651,
+        6.300371138953362
+      ],
+      "branch_scores": [
+        [
+          4.245717681696817,
+          0.7210272449175387,
+          1.7773196251324657,
+          -0.3024537279138765,
+          5.280245659091034,
+          2.931830392523651,
+          6.300371138953362
+        ]
+      ],
+      "projection": [
+        -12.876550505805525,
+        2.9297419160424463,
+        -0.3894392108319551
+      ],
+      "branch_projections": [
+        [
+          -12.876550505805525,
+          2.9297419160424463,
+          -0.3894392108319551
+        ]
+      ],
+      "training_overlap": true
+    }
+  ]
+}

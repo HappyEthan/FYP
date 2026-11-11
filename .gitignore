@@ -78,3 +78,16 @@ runs/*
 outputs/*
 !outputs/stroke_templates/
 outputs/stroke_templates/.guide_sync_trials/
+
+# 笔画分类器训练成果、验证数据、历史基线与学习曲线
+!outputs/stroke_classifier/
+!outputs/stroke_classifier_verification/
+!outputs/stroke_model_random10_20261106/
+!outputs/learning_curve_20261110_F4/
+
+# 分类器使用的七笔训练/测试数据与历史五类训练存档
+!runs/毛笔实验数据/
+runs/毛笔实验数据/*
+!runs/毛笔实验数据/七笔第一轮训练数据_*/
+!runs/毛笔实验数据/七笔测试模型数据_*/
+!runs/毛笔实验数据/随机测试1（xy，磁）_*/
