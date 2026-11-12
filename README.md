@@ -20,6 +20,7 @@ SW1 强制选择 USB 或电池：所选电源接入即上电，缺失时不自�
 
 ## 其他项目入口
 
+- [XZ 电机与触觉磁场采集工作台](hardware/xz-control/README.md)：Linux 键盘/鼠标点动、动作流程、空载基线校准和原始/校正磁场记录。采集数据保留在本地。
 - [旧单 MLX90393 固件](firmware/mlx90393_sensor/mlx90393_sensor.ino)：旧硬件迁移参考，不是当前笔杆板的完整固件。
 - [采集与闭环快速开始](quick_start.md)。
 - [MuJoCo 快速开始](quick_start_mujoco.md)。
